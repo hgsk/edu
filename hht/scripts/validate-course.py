@@ -65,6 +65,29 @@ for group, terms in requirements.items():
     for term in terms:
         require(term in curriculum, f"Curriculum missing [{group}] term: {term}")
 
+workbook = (ROOT / "docs/student-workbook.md").read_text(encoding="utf-8")
+workbook_days = re.split(r"(?=^## DAY \d+ )", workbook, flags=re.MULTILINE)
+workbook_days = [block for block in workbook_days if re.match(r"^## DAY \d+ ", block)]
+require(len(workbook_days) == 15, f"Expected 15 workbook days; found {len(workbook_days)}")
+for block in workbook_days:
+    title = block.splitlines()[0]
+    for marker in (
+        "からの",
+        "**今日のミッション:**",
+        "**作戦会議:**",
+        "**今日覚える技:**",
+        "**制作メモ:**",
+        "**返信チャレンジ:**",
+        "**星チェック:**",
+    ):
+        require(marker in block, f"{title} missing {marker}")
+for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/workbook/[^)]+)\)", workbook):
+    relative = match.group(1)
+    require(
+        (ROOT / "docs" / relative).resolve().exists(),
+        f"Broken workbook image: {relative}",
+    )
+
 advanced_requirements = {
     "ディレクション": ("要件定義", "WBS", "制作指示", "受入基準"),
     "設計": ("サイトマップ", "ユーザーフロー", "Figma", "ワイヤー"),
@@ -127,6 +150,9 @@ expected_images = {
     "assets/glossary/workflow.webp": "WEBP",
     "assets/glossary/website-layers.webp": "WEBP",
     "assets/glossary/ec-cycle.webp": "WEBP",
+    "assets/workbook/01-request-arrives.webp": "WEBP",
+    "assets/workbook/02-build-and-check.webp": "WEBP",
+    "assets/workbook/03-client-approval.webp": "WEBP",
 }
 for relative, expected_format in expected_images.items():
     with Image.open(ROOT / relative) as image:

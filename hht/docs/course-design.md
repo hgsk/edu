@@ -6,6 +6,8 @@
 
 技術と業務を分離しないことが特徴です。たとえば価格変更ではHTMLを書き換えるだけでなく、「同じ価格が別ページにもないか」「似た名前の別商品を変えていないか」「税込表示か」を確認します。
 
+各回は「依頼を読む → 判断する → 必要な技術を学ぶ → 制作する → 検証する → クライアントへ返信する」の順で進めます。技術を先にまとめて教えるのではなく、その日の仕事を終えるための道具としてHTML・CSSを学びます。
+
 ## 2. 学習の柱
 
 | 柱 | 学ぶこと | 主な証拠 |
@@ -23,10 +25,10 @@
 
 | サイクル | 講義10分 | ディスカッション20分 | ハンズオン30分 |
 |---|---|---|---|
-| 前半 | HTML・CSSの技術とデモ | コード、表示、使い分けを検討 | 小さな技術課題を実装 |
-| 後半 | 今回の実務依頼と注意点 | 対象、影響範囲、確認事項を検討 | サイト修正、検証、報告 |
+| 前半 | クライアント依頼を提示 | 目的、対象、対象外、質問を検討 | 依頼に必要なHTML・CSSを試す |
+| 後半 | 制作のヒントとデモ | サイト制作とペア確認 | 仕上げ、検証、返信 |
 
-ディスカッションには、前回の振り返り、依頼メールの読解、相互レビューを含めます。後半ハンズオンの最後に検証と提出を行います。
+ディスカッションには、前回の振り返り、依頼メールの読解、相互レビューを含めます。画面を作っただけでは仕事は完了しません。後半ハンズオンの最後に検証し、変更内容と未確認事項をクライアントへ報告します。
 
 ## 4. 教え方
 
@@ -36,6 +38,15 @@
 - 見た目だけでなく、キーボード操作、画面幅、代替テキスト、文書構造も確認する
 - 公開ボタンを押す能力より、公開してよい状態を判断する能力を評価する
 - AIの出力は素材案として扱い、事実・権利・適合性を人が確認する
+
+### 設計の参考
+
+現実に近い課題、学習者自身の判断、フィードバック後の改善、振り返りを重視するPBLの考え方を参考にしています。
+
+- [UNESCO IBE: Curriculum Resource Pack](https://www.ibe.unesco.org/sites/default/files/medias/fichiers/2023/10/CRP%202023%20-Handbook%20for%20training%20Educators%20and%20Teachers%20in%20CURRICULUM.pdf)
+- [ERIC: Project Based Learning Design Principles](https://files.eric.ed.gov/fulltext/ED578933.pdf)
+- [米国教育省 IES: Performance Assessment](https://ies.ed.gov/learn/blog/performance-assessment-engaging-alternative-traditional-test-taking)
+- [W3C WAI: Tips for Developing Alternative Text](https://www.w3.org/WAI/tips/developing/)
 
 ## 5. 成果物
 

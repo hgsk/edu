@@ -118,6 +118,12 @@ for term in ("見てほしい", "制作実績", "個人情報", "portfolio/index
     require(term in portfolio_brief, f"Portfolio project missing term: {term}")
 for relative in ("portfolio/index.html", "portfolio/css/style.css"):
     require((ROOT / relative).exists(), f"Missing portfolio starter file: {relative}")
+release_approval = ROOT / "student/requests/day13-release-approval.md"
+require(release_approval.exists(), "Missing Day 13 explicit release approval")
+if release_approval.exists():
+    approval_text = release_approval.read_text(encoding="utf-8")
+    for term in ("採用案", "最終承認", "公開可", "公開後"):
+        require(term in approval_text, f"Day 13 release approval missing term: {term}")
 require("ポートフォリオ" in lesson_blocks[13], "Lesson 14 must be a portfolio lesson")
 require("ポートフォリオ" in lesson_blocks[14], "Lesson 15 must be a portfolio lesson")
 for term in ("差し戻し", "最終承認", "公開"):

@@ -1,16 +1,17 @@
-# 第13回 keyframes
+# 第13回 keyframes・最終承認・公開
 
 ## 今日使う資料
 
-- **生徒:** [ワークブック DAY 13](../../docs/student-workbook.md#day-13-新しいお知らせを目立たせて)
-- **講師:** [第13回の導入・振り返りトーク](../../docs/instructor-talk-guide.md#第13回-新しいお知らせを目立たせて)
-- **進行:** [カリキュラム 第13回](../../docs/curriculum.md#第13回-cssアニメーションkeyframes)
-- **制作:** [トップページ](../../starter-site/index.html)／[CSS](../../starter-site/css/style.css)
+- **生徒:** [ワークブック DAY 13](../../docs/student-workbook.md#day-13-カフェサイトを承認公開しよう)
+- **講師:** [第13回の導入・振り返りトーク](../../docs/instructor-talk-guide.md#第13回-カフェサイトの最終承認と公開)
+- **進行:** [カリキュラム 第13回](../../docs/curriculum.md#第13回-keyframes最終承認公開)
+- **制作:** [スターターサイト](../../starter-site/)／[練習サーバー](../../practice-server/)
+- **記録:** [公開・完了報告テンプレート](../../docs/templates.md)
 
 ## 今日確認するもの
 
-`@keyframes`、transform、opacity、一度だけの動き、`prefers-reduced-motion`、静かな代替案
+動く案と静かな案、動き低減、最終承認、バックアップ、公開対象、公開後QA、ロールバック
 
 ## 今日できるもの
 
-動く案と静かな案、動き低減版、比較メモ、選択をお願いする返信
+2案比較、承認記録、バックアップ、公開記録、完了報告

@@ -24,11 +24,11 @@
 | [DAY 8](../docs/student-workbook.md#day-8-営業時間を見逃さないようにして) | 営業時間を見逃さない配置 |
 | [DAY 9](../docs/student-workbook.md#day-9-もっとインパクトのある写真に) | ファーストビュー画像 |
 | [DAY 10](../docs/student-workbook.md#day-10-スマホでボタンが押しにくい) | スマートフォン対応 |
-| [DAY 11](../docs/student-workbook.md#day-11-5つの更新依頼を安全に直して) | 5つの更新依頼 |
-| [DAY 12](../docs/student-workbook.md#day-12-操作できることを動きで伝えて) | transition |
-| [DAY 13](../docs/student-workbook.md#day-13-新しいお知らせを目立たせて) | keyframes |
-| [DAY 14](../docs/student-workbook.md#day-14-お客さまのチェックに対応しよう) | 差し戻し対応 |
-| [DAY 15](../docs/student-workbook.md#day-15-公開して仕事を完了しよう) | 公開と完了報告 |
+| [DAY 11](../docs/student-workbook.md#day-11-5つの更新依頼を安全に直して) | 5つの更新依頼とクライアント確認 |
+| [DAY 12](../docs/student-workbook.md#day-12-動きを整えて差し戻しに対応しよう) | transitionと差し戻し対応 |
+| [DAY 13](../docs/student-workbook.md#day-13-カフェサイトを承認公開しよう) | keyframes・最終承認・公開 |
+| [DAY 14](../docs/student-workbook.md#day-14-自分のポートフォリオを企画しよう) | 自分のポートフォリオ企画 |
+| [DAY 15](../docs/student-workbook.md#day-15-ポートフォリオを完成公開しよう) | ポートフォリオの完成・公開・発表 |
 
 ## 学生が使う資料
 
@@ -38,6 +38,8 @@
 - [実務シナリオ](../docs/project-brief.md)
 - [Web制作・AI指示の用語集](../docs/glossary.md)
 - [メール・確認・変更記録テンプレート](../docs/templates.md)
+- [自分のポートフォリオ制作ガイド](../docs/portfolio-project.md)
+- [ポートフォリオ制作フォルダー](../portfolio/)
 - [制作するカフェサイト](../starter-site/)
 
 講師専用の進行手順、評価基準、依頼の回答情報は別の入口で管理します。

@@ -22,6 +22,7 @@
 - [求人スキル分析](../docs/job-skill-analysis.md)
 - [発展講座カリキュラム](../docs/advanced-curriculum.md)
 - [発展講座プロジェクト](../docs/advanced-project-brief.md)
+- [学生用ポートフォリオ制作ガイド](../docs/portfolio-project.md)
 
 ## 取り扱いに注意する資料
 

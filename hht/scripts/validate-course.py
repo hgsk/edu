@@ -96,15 +96,34 @@ for block in workbook_days:
         "**作戦会議:**",
         "**今日覚える技:**",
         "**制作メモ:**",
-        "**返信チャレンジ:**",
         "**星チェック:**",
     ):
         require(marker in block, f"{title} missing {marker}")
+    require(
+        any(
+            marker in block
+            for marker in ("**返信チャレンジ:**", "**相談チャレンジ:**", "**発表チャレンジ:**")
+        ),
+        f"{title} missing communication challenge",
+    )
 for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/workbook/[^)]+)\)", workbook):
     relative = match.group(1)
     require(
         (ROOT / "docs" / relative).resolve().exists(),
         f"Broken workbook image: {relative}",
+    )
+
+portfolio_brief = (ROOT / "docs/portfolio-project.md").read_text(encoding="utf-8")
+for term in ("見てほしい", "制作実績", "個人情報", "portfolio/index.html", "portfolio/css/style.css", "2分間"):
+    require(term in portfolio_brief, f"Portfolio project missing term: {term}")
+for relative in ("portfolio/index.html", "portfolio/css/style.css"):
+    require((ROOT / relative).exists(), f"Missing portfolio starter file: {relative}")
+require("ポートフォリオ" in lesson_blocks[13], "Lesson 14 must be a portfolio lesson")
+require("ポートフォリオ" in lesson_blocks[14], "Lesson 15 must be a portfolio lesson")
+for term in ("差し戻し", "最終承認", "公開"):
+    require(
+        term in "".join(lesson_blocks[10:13]),
+        f"Lessons 11-13 missing accelerated client-work term: {term}",
     )
 
 talk_guide = (ROOT / "docs/instructor-talk-guide.md").read_text(encoding="utf-8")

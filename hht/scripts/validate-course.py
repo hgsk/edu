@@ -133,6 +133,19 @@ for group, terms in advanced_requirements.items():
         require(term in advanced, f"Advanced course missing [{group}] term: {term}")
 
 readme = (ROOT / "README.md").read_text(encoding="utf-8")
+repository_readme = (ROOT.parent / "README.md").read_text(encoding="utf-8")
+for term in ("リポジトリのルート", "Visual Studio Code", "作業ブランチ"):
+    require(term in repository_readme, f"Repository README missing VS Code workflow term: {term}")
+for document_name, document in {
+    "course README": readme,
+    "curriculum": curriculum,
+    "student workbook": workbook,
+    "lesson packs": (ROOT / "lessons/README.md").read_text(encoding="utf-8"),
+}.items():
+    require(
+        "リポジトリのルート" in document and ("VS Code" in document or "Visual Studio Code" in document),
+        f"{document_name} missing repository-root VS Code rule",
+    )
 for match in re.finditer(r"\]\((\./[^)]+)\)", readme):
     relative = match.group(1)
     require((ROOT / relative).exists(), f"Broken README link: {relative}")

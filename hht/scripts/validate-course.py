@@ -32,7 +32,7 @@ lesson_blocks = [block for block in lesson_blocks if re.match(r"^## 第\d+回 ",
 require(len(lesson_blocks) == 15, f"Expected 15 lesson blocks; found {len(lesson_blocks)}")
 for block in lesson_blocks:
     title = block.splitlines()[0]
-    for marker in ("**到達目標:**", "**120分:**", "**実務課題:**", "**副教材:**", "**提出物:**", "**合格条件:**"):
+    for marker in ("**この回のゴール:**", "**120分:**", "**やってみよう:**", "**提出物:**", "**できたかチェック:**"):
         require(marker in block, f"{title} missing {marker}")
     timing_match = re.search(r"\*\*120分:\*\* ([^\n]+)", block)
     if timing_match:
@@ -49,17 +49,17 @@ require(
 requirements = {
     "受注メールとCC": ("CC", "受領返信"),
     "ブラウザ確認と編集": ("ブラウザ", "エディター"),
-    "クライアント確認": ("確認依頼", "承認"),
+    "クライアント確認": ("確認", "OK"),
     "サーバー公開": ("ステージング", "公開"),
     "AI画像生成": ("AI", "プロンプト"),
-    "カメラマン依頼": ("カメラマン", "撮影依頼"),
+    "カメラマン依頼": ("撮影", "お願い"),
     "画像形式最適化": ("WebP", "AVIF"),
-    "添付文章と校正": ("添付", "校正"),
-    "ダミー箇所確認": ("ダミー", "候補箇所"),
+    "添付文章と校正": ("文章", "質問"),
+    "ダミー箇所確認": ("ダミー", "どこ"),
     "営業時間横断修正": ("営業時間", "構造化データ"),
     "ラストオーダー影響": ("ラストオーダー",),
-    "対象商品の価格限定": ("価格", "全置換"),
-    "更新年度と意味": ("更新年度", "著作権表示"),
+    "対象商品の価格限定": ("価格", "まとめて変更"),
+    "更新年度と意味": ("フッター", "年"),
 }
 for group, terms in requirements.items():
     for term in terms:

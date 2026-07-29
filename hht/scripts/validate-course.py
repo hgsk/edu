@@ -97,6 +97,8 @@ for block in talk_lessons:
     require("**最初の5分**" in block, f"{title} missing opening 5-minute talk")
     require("**最後の5分**" in block, f"{title} missing closing 5-minute talk")
     require("講師なら" in block, f"{title} closing talk missing instructor approach")
+    require("？" in block, f"{title} missing a friendly question")
+    require("褒める" in block, f"{title} missing a student praise point")
 
 advanced_requirements = {
     "ディレクション": ("要件定義", "WBS", "制作指示", "受入基準"),

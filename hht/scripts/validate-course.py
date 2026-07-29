@@ -32,12 +32,16 @@ lesson_blocks = [block for block in lesson_blocks if re.match(r"^## 第\d+回 ",
 require(len(lesson_blocks) == 15, f"Expected 15 lesson blocks; found {len(lesson_blocks)}")
 for block in lesson_blocks:
     title = block.splitlines()[0]
-    for marker in ("**到達目標:**", "**120分:**", "**実務課題:**", "**副教材:**", "**提出物:**", "**合格条件:**"):
+    for marker in ("**この回のゴール:**", "**120分:**", "**やってみよう:**", "**提出物:**", "**できたかチェック:**"):
         require(marker in block, f"{title} missing {marker}")
     timing_match = re.search(r"\*\*120分:\*\* ([^\n]+)", block)
     if timing_match:
         minutes = [int(value) for value in re.findall(r"(\d+)分", timing_match.group(1))]
         require(sum(minutes) == 120, f"{title} timing sums to {sum(minutes)}, not 120")
+
+first_lesson = lesson_blocks[0]
+for term in ("デプロイ", "バージョン管理", "バックアップ", "復元", "自習"):
+    require(term in first_lesson, f"Lesson 1 missing early self-study setup term: {term}")
 
 advanced = (ROOT / "docs/advanced-curriculum.md").read_text(encoding="utf-8")
 advanced_lesson_count = len(re.findall(r"^### 第\d+回 ", advanced, flags=re.MULTILINE))
@@ -49,21 +53,71 @@ require(
 requirements = {
     "受注メールとCC": ("CC", "受領返信"),
     "ブラウザ確認と編集": ("ブラウザ", "エディター"),
-    "クライアント確認": ("確認依頼", "承認"),
+    "クライアント確認": ("確認", "OK"),
     "サーバー公開": ("ステージング", "公開"),
     "AI画像生成": ("AI", "プロンプト"),
-    "カメラマン依頼": ("カメラマン", "撮影依頼"),
+    "カメラマン依頼": ("撮影", "お願い"),
     "画像形式最適化": ("WebP", "AVIF"),
-    "添付文章と校正": ("添付", "校正"),
-    "ダミー箇所確認": ("ダミー", "候補箇所"),
+    "添付文章と校正": ("文章", "質問"),
+    "ダミー箇所確認": ("ダミー", "どこ"),
     "営業時間横断修正": ("営業時間", "構造化データ"),
     "ラストオーダー影響": ("ラストオーダー",),
-    "対象商品の価格限定": ("価格", "全置換"),
-    "更新年度と意味": ("更新年度", "著作権表示"),
+    "対象商品の価格限定": ("価格", "まとめて変更"),
+    "更新年度と意味": ("フッター", "年"),
 }
 for group, terms in requirements.items():
     for term in terms:
         require(term in curriculum, f"Curriculum missing [{group}] term: {term}")
+
+textbook_coverage = {
+    "HTMLメタ情報": ("meta description", "OGP"),
+    "HTML構造詳細": ("空要素", "入れ子", "文字実体参照"),
+    "リンクとパス": ("相対・絶対・ルート相対パス", "target"),
+    "CSS競合": ("詳細度", "!important", "インラインCSS"),
+    "CSS初期化": ("reset", "normalize", "sanitize"),
+    "フォーム選択部品": ("checkbox", "radio", "placeholder", "method", "action"),
+    "レスポンシブ読解": ("only screen", "リキッドレイアウト"),
+    "対応状況": ("ブラウザ対応状況",),
+}
+coverage_source = curriculum + (ROOT / "docs/textbook-guide.md").read_text(encoding="utf-8")
+for group, terms in textbook_coverage.items():
+    for term in terms:
+        require(term in coverage_source, f"Textbook coverage missing [{group}] term: {term}")
+
+workbook = (ROOT / "docs/student-workbook.md").read_text(encoding="utf-8")
+workbook_days = re.split(r"(?=^## DAY \d+ )", workbook, flags=re.MULTILINE)
+workbook_days = [block for block in workbook_days if re.match(r"^## DAY \d+ ", block)]
+require(len(workbook_days) == 15, f"Expected 15 workbook days; found {len(workbook_days)}")
+for block in workbook_days:
+    title = block.splitlines()[0]
+    for marker in (
+        "からの",
+        "**今日のミッション:**",
+        "**作戦会議:**",
+        "**今日覚える技:**",
+        "**制作メモ:**",
+        "**返信チャレンジ:**",
+        "**星チェック:**",
+    ):
+        require(marker in block, f"{title} missing {marker}")
+for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/workbook/[^)]+)\)", workbook):
+    relative = match.group(1)
+    require(
+        (ROOT / "docs" / relative).resolve().exists(),
+        f"Broken workbook image: {relative}",
+    )
+
+talk_guide = (ROOT / "docs/instructor-talk-guide.md").read_text(encoding="utf-8")
+talk_lessons = re.split(r"(?=^## 第\d+回 )", talk_guide, flags=re.MULTILINE)
+talk_lessons = [block for block in talk_lessons if re.match(r"^## 第\d+回 ", block)]
+require(len(talk_lessons) == 15, f"Expected 15 instructor talk lessons; found {len(talk_lessons)}")
+for block in talk_lessons:
+    title = block.splitlines()[0]
+    require("**最初の5分**" in block, f"{title} missing opening 5-minute talk")
+    require("**最後の5分**" in block, f"{title} missing closing 5-minute talk")
+    require("講師なら" in block, f"{title} closing talk missing instructor approach")
+    require("？" in block, f"{title} missing a friendly question")
+    require("褒める" in block, f"{title} missing a student praise point")
 
 advanced_requirements = {
     "ディレクション": ("要件定義", "WBS", "制作指示", "受入基準"),
@@ -79,9 +133,55 @@ for group, terms in advanced_requirements.items():
         require(term in advanced, f"Advanced course missing [{group}] term: {term}")
 
 readme = (ROOT / "README.md").read_text(encoding="utf-8")
+repository_readme = (ROOT.parent / "README.md").read_text(encoding="utf-8")
+for term in ("リポジトリのルート", "Visual Studio Code", "作業ブランチ"):
+    require(term in repository_readme, f"Repository README missing VS Code workflow term: {term}")
+for document_name, document in {
+    "course README": readme,
+    "curriculum": curriculum,
+    "student workbook": workbook,
+    "lesson packs": (ROOT / "lessons/README.md").read_text(encoding="utf-8"),
+}.items():
+    require(
+        "リポジトリのルート" in document and ("VS Code" in document or "Visual Studio Code" in document),
+        f"{document_name} missing repository-root VS Code rule",
+    )
+student_portal = (ROOT / "student/README.md").read_text(encoding="utf-8")
+instructor_portal = (ROOT / "instructor/README.md").read_text(encoding="utf-8")
+require("15日分のお仕事" in student_portal, "Student portal missing 15-day navigation")
+require("講師トークガイド" not in student_portal, "Student portal exposes instructor talk guide")
+require("講師トークガイド" in instructor_portal, "Instructor portal missing instructor talk guide")
+require("取り扱いに注意する資料" in instructor_portal, "Instructor portal missing protected-material guidance")
+for portal_name, portal_path in {
+    "student": ROOT / "student/README.md",
+    "instructor": ROOT / "instructor/README.md",
+}.items():
+    portal = portal_path.read_text(encoding="utf-8")
+    for match in re.finditer(r"\]\((\.\./[^)#]+)(?:#[^)]+)?\)", portal):
+        relative = match.group(1)
+        require(
+            (portal_path.parent / relative).resolve().exists(),
+            f"{portal_name} portal broken link: {relative}",
+        )
 for match in re.finditer(r"\]\((\./[^)]+)\)", readme):
     relative = match.group(1)
     require((ROOT / relative).exists(), f"Broken README link: {relative}")
+
+lesson_pack_root = ROOT / "lessons"
+lesson_pack_files = [lesson_pack_root / f"{number:02d}" / "README.md" for number in range(1, 16)]
+require(len([path for path in lesson_pack_files if path.exists()]) == 15, "Expected 15 lesson packs")
+for number, path in enumerate(lesson_pack_files, start=1):
+    if not path.exists():
+        continue
+    pack = path.read_text(encoding="utf-8")
+    for marker in ("## 今日使う資料", "**生徒:**", "**講師:**", "**進行:**", "## 今日できるもの"):
+        require(marker in pack, f"Lesson pack {number:02d} missing {marker}")
+    for match in re.finditer(r"\]\((\.\./\.\./[^)#]+)(?:#[^)]+)?\)", pack):
+        relative = match.group(1)
+        require(
+            (path.parent / relative).resolve().exists(),
+            f"Lesson pack {number:02d} broken link: {relative}",
+        )
 
 glossary = (ROOT / "docs/glossary.md").read_text(encoding="utf-8")
 glossary_rows = len(re.findall(r"^\| [^|-].* \|$", glossary, flags=re.MULTILINE))
@@ -127,6 +227,9 @@ expected_images = {
     "assets/glossary/workflow.webp": "WEBP",
     "assets/glossary/website-layers.webp": "WEBP",
     "assets/glossary/ec-cycle.webp": "WEBP",
+    "assets/workbook/01-request-arrives.webp": "WEBP",
+    "assets/workbook/02-build-and-check.webp": "WEBP",
+    "assets/workbook/03-client-approval.webp": "WEBP",
 }
 for relative, expected_format in expected_images.items():
     with Image.open(ROOT / relative) as image:

@@ -2,7 +2,14 @@
 
 教育用教材を管理するリポジトリです。
 
+## VS Codeで授業を始める
+
+北ハイテクHTML・CSS講座は、毎回このリポジトリのルートをVisual Studio Codeで開いて実施します。VS Codeのエクスプローラーに、この`README.md`と`hht`が表示されている状態が正しい開始位置です。
+
+共有の`main`は直接編集せず、受講者ごとのコピーまたは作業ブランチを使います。授業資料、制作ファイル、変更差分、バージョン履歴を一つのワークスペースで確認してください。
+
 ## Contents
 
-- `hht/`: 北ハイテク HTML・CSS／Webデザイン講座
-
+- [hht/](./hht/README.md): 北ハイテク HTML・CSS／Webデザイン講座
+- [学生向け入口](./hht/student/README.md): 授業と制作を始める
+- [講師向け入口](./hht/instructor/README.md): 授業準備と進行を始める

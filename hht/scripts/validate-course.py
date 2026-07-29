@@ -146,6 +146,23 @@ for document_name, document in {
         "リポジトリのルート" in document and ("VS Code" in document or "Visual Studio Code" in document),
         f"{document_name} missing repository-root VS Code rule",
     )
+student_portal = (ROOT / "student/README.md").read_text(encoding="utf-8")
+instructor_portal = (ROOT / "instructor/README.md").read_text(encoding="utf-8")
+require("15日分のお仕事" in student_portal, "Student portal missing 15-day navigation")
+require("講師トークガイド" not in student_portal, "Student portal exposes instructor talk guide")
+require("講師トークガイド" in instructor_portal, "Instructor portal missing instructor talk guide")
+require("取り扱いに注意する資料" in instructor_portal, "Instructor portal missing protected-material guidance")
+for portal_name, portal_path in {
+    "student": ROOT / "student/README.md",
+    "instructor": ROOT / "instructor/README.md",
+}.items():
+    portal = portal_path.read_text(encoding="utf-8")
+    for match in re.finditer(r"\]\((\.\./[^)#]+)(?:#[^)]+)?\)", portal):
+        relative = match.group(1)
+        require(
+            (portal_path.parent / relative).resolve().exists(),
+            f"{portal_name} portal broken link: {relative}",
+        )
 for match in re.finditer(r"\]\((\./[^)]+)\)", readme):
     relative = match.group(1)
     require((ROOT / relative).exists(), f"Broken README link: {relative}")

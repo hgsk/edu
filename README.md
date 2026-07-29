@@ -11,4 +11,5 @@
 ## Contents
 
 - [hht/](./hht/README.md): 北ハイテク HTML・CSS／Webデザイン講座
-- [15回分 授業パック](./hht/lessons/README.md): 今日使う資料から授業を始める
+- [学生向け入口](./hht/student/README.md): 授業と制作を始める
+- [講師向け入口](./hht/instructor/README.md): 授業準備と進行を始める

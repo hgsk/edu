@@ -137,6 +137,22 @@ for match in re.finditer(r"\]\((\./[^)]+)\)", readme):
     relative = match.group(1)
     require((ROOT / relative).exists(), f"Broken README link: {relative}")
 
+lesson_pack_root = ROOT / "lessons"
+lesson_pack_files = [lesson_pack_root / f"{number:02d}" / "README.md" for number in range(1, 16)]
+require(len([path for path in lesson_pack_files if path.exists()]) == 15, "Expected 15 lesson packs")
+for number, path in enumerate(lesson_pack_files, start=1):
+    if not path.exists():
+        continue
+    pack = path.read_text(encoding="utf-8")
+    for marker in ("## 今日使う資料", "**生徒:**", "**講師:**", "**進行:**", "## 今日できるもの"):
+        require(marker in pack, f"Lesson pack {number:02d} missing {marker}")
+    for match in re.finditer(r"\]\((\.\./\.\./[^)#]+)(?:#[^)]+)?\)", pack):
+        relative = match.group(1)
+        require(
+            (path.parent / relative).resolve().exists(),
+            f"Lesson pack {number:02d} broken link: {relative}",
+        )
+
 glossary = (ROOT / "docs/glossary.md").read_text(encoding="utf-8")
 glossary_rows = len(re.findall(r"^\| [^|-].* \|$", glossary, flags=re.MULTILINE))
 require(glossary_rows >= 100, f"Expected at least 100 glossary table rows; found {glossary_rows}")

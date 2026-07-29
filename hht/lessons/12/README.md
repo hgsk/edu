@@ -7,6 +7,7 @@
 - **進行:** [カリキュラム 第12回](../../docs/curriculum.md#第12回-transition差し戻し対応)
 - **制作:** [CSS](../../starter-site/css/style.css)／[スターターサイト](../../starter-site/)
 - **記録:** [確認・変更記録テンプレート](../../docs/templates.md)
+- **差し戻し:** [クライアントからの確認結果](../../student/requests/day12-feedback.md)
 
 ## 今日確認するもの
 

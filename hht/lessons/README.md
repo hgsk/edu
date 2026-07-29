@@ -31,6 +31,7 @@
 
 ## どの回でも使う資料
 
+- [15日分 課題の完成条件](../student/assignment-checks.md)
 - [授業全体のプロジェクト説明](../docs/project-brief.md)
 - [新人Webデザイナー お仕事ワークブック](../docs/student-workbook.md)
 - [15回分 講師トークガイド](../docs/instructor-talk-guide.md)

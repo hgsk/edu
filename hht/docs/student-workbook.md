@@ -146,7 +146,7 @@
 
 **作戦会議:** 本当に必要な個人情報はどれ？ 必須項目は？ 今回作らない機能は？
 
-**今日覚える技:** `form`、`label`、`input`、`select`、`textarea`、`button`、`required`
+**今日覚える技:** `form`、`label`、`input`、checkbox、radio、`fieldset`、`legend`、`select`、`textarea`、`button`、`required`
 
 **制作メモ:** テストに使った架空の入力内容と、使いにくかった場所を書こう。
 

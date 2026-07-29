@@ -13,6 +13,7 @@
 ## 講師が使う資料
 
 - [講師ガイド](../docs/instructor-guide.md)
+- [15日分 課題の完成条件](../student/assignment-checks.md)
 - [15回分 講師トークガイド](../docs/instructor-talk-guide.md)
 - [15回分 授業パック](../lessons/README.md)
 - [講座設計](../docs/course-design.md)

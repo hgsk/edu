@@ -32,6 +32,8 @@
 
 ## 学生が使う資料
 
+- [15日分 課題の完成条件](./assignment-checks.md)
+- [提出フォルダーの使い方](../submissions/README.md)
 - [新人Webデザイナー お仕事ワークブック](../docs/student-workbook.md)
 - [授業レジュメ・シラバス](../docs/syllabus.md)
 - [15回・30時間カリキュラム](../docs/curriculum.md)

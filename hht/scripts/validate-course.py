@@ -126,6 +126,17 @@ for term in ("差し戻し", "最終承認", "公開"):
         f"Lessons 11-13 missing accelerated client-work term: {term}",
     )
 
+assignment_checks = (ROOT / "student/assignment-checks.md").read_text(encoding="utf-8")
+assignment_blocks = re.split(r"(?=^## DAY \d+ )", assignment_checks, flags=re.MULTILINE)
+assignment_blocks = [block for block in assignment_blocks if re.match(r"^## DAY \d+ ", block)]
+require(len(assignment_blocks) == 15, f"Expected 15 assignment quality blocks; found {len(assignment_blocks)}")
+for block in assignment_blocks:
+    title = block.splitlines()[0]
+    for marker in ("**入力:**", "**完成物:**", "**完成条件:**", "**証拠:**", "**追加チャレンジ:**"):
+        require(marker in block, f"{title} missing quality marker {marker}")
+    condition_count = len(re.findall(r"^- ", block, flags=re.MULTILINE))
+    require(condition_count >= 4, f"{title} needs at least four acceptance conditions")
+
 talk_guide = (ROOT / "docs/instructor-talk-guide.md").read_text(encoding="utf-8")
 talk_lessons = re.split(r"(?=^## 第\d+回 )", talk_guide, flags=re.MULTILINE)
 talk_lessons = [block for block in talk_lessons if re.match(r"^## 第\d+回 ", block)]

@@ -7,6 +7,7 @@
 - **進行:** [カリキュラム 第13回](../../docs/curriculum.md#第13回-keyframes最終承認公開)
 - **制作:** [スターターサイト](../../starter-site/)／[練習サーバー](../../practice-server/)
 - **記録:** [公開・完了報告テンプレート](../../docs/templates.md)
+- **承認依頼:** [最終承認と公開の条件](../../student/requests/day13-approval.md)
 
 ## 今日確認するもの
 

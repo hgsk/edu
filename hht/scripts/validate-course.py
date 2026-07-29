@@ -69,9 +69,9 @@ advanced_requirements = {
     "ディレクション": ("要件定義", "WBS", "制作指示", "受入基準"),
     "設計": ("サイトマップ", "ユーザーフロー", "Figma", "ワイヤー"),
     "WordPress": ("WordPress", "オリジナルテーマ", "バックアップ", "復元"),
-    "EC": ("商品マスター", "SKU", "購入導線", "テスト注文"),
+    "EC": ("商品マスター", "SKU", "購入導線", "テスト注文", "EC-CUBE", "バックアップ・復元"),
     "SEO": ("SEO", "301", "Search Console"),
-    "プラットフォーム": ("STORES", "Shopify", "Webflow"),
+    "制作環境": ("Figma", "WordPress", "EC-CUBE"),
     "応募・継続": ("24時間以内", "ポートフォリオ", "応募文"),
 }
 for group, terms in advanced_requirements.items():

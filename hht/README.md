@@ -64,3 +64,5 @@
 - `practice-server/`: バックアップ、ステージング、本番相当の公開演習領域
 - `references/textbook/`: 指定書籍のサンプルZIPと目次画像
 - `references/textbook/sample_files/`: 解凍済みの書籍サンプル529ファイル
+
+発展講座の実機ツールはFigma、WordPress、受講者ごとのローカルEC-CUBEです。STUDIOとWebflowは求人用語として紹介しますが、操作演習には使用しません。

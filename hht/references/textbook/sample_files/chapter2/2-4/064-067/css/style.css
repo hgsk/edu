@@ -1,0 +1,19 @@
+﻿@import url(sanitize.css);
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+.content {
+    /* 以下、前後のコメントを外してご確認ください */
+    /* background-color: black; */
+    /* background-color: rgb(255, 0, 0); */
+    /* background-color: rgb(50%, 50%, 0%); */
+    /* background-color: rgb(255, 0, 51); */
+    /* background-color: #ff0033; */
+    /* background-color: #f03; */
+    /* background-color: rgba(0, 0, 0, .5); */
+    /* background-color: hsl(0, 100%, 50%); */
+    /* background-color: hsl(120, 100%, 50%); */
+    /* background-color: hsla(0, 100%, 50%, .5); */
+    width: 600px;
+}

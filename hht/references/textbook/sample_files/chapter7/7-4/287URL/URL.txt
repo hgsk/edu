@@ -1,0 +1,2 @@
+・jQueryのメソッド
+http://api.jquery.com/

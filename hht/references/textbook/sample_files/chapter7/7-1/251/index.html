@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>My Photos</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <h1>My Photos</h1>
+    </header>
+
+<div class="container">
+    <div id="img_unit">
+        <div class="photo">
+            <img src="img/img01.jpg">
+            <div class="inner"><p> こっちは貫禄ありすぎ<span>sansaisan</span></p></div>
+        </div>
+    </div>
+</div><!-- container -->
+<script>
+var images = [
+    {
+        "path": "img/img01.jpg",
+        "name": "sansaisan",
+        "caption": " こっちは貫禄ありすぎ"
+    },
+    {
+        "path": "img/img02.jpg",
+        "name": "yukky_13dream",
+        "caption": " 年明け富士山"
+    },
+    {
+        "path": "img/img03.jpg",
+        "name": "maako",
+        "caption": " 空と大地の境界線って、どのあたり？ "
+    }
+];
+alert(images[0].caption)
+</script>
+</body>
+</html>

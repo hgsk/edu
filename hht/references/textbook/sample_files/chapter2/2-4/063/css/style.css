@@ -1,0 +1,9 @@
+﻿@import url(sanitize.css);
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+.content {
+    background-color: #fcc;
+    width: 600px;
+}

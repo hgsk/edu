@@ -39,6 +39,10 @@ for block in lesson_blocks:
         minutes = [int(value) for value in re.findall(r"(\d+)分", timing_match.group(1))]
         require(sum(minutes) == 120, f"{title} timing sums to {sum(minutes)}, not 120")
 
+first_lesson = lesson_blocks[0]
+for term in ("デプロイ", "バージョン管理", "バックアップ", "復元", "自習"):
+    require(term in first_lesson, f"Lesson 1 missing early self-study setup term: {term}")
+
 advanced = (ROOT / "docs/advanced-curriculum.md").read_text(encoding="utf-8")
 advanced_lesson_count = len(re.findall(r"^### 第\d+回 ", advanced, flags=re.MULTILINE))
 require(
@@ -64,6 +68,21 @@ requirements = {
 for group, terms in requirements.items():
     for term in terms:
         require(term in curriculum, f"Curriculum missing [{group}] term: {term}")
+
+textbook_coverage = {
+    "HTMLメタ情報": ("meta description", "OGP"),
+    "HTML構造詳細": ("空要素", "入れ子", "文字実体参照"),
+    "リンクとパス": ("相対・絶対・ルート相対パス", "target"),
+    "CSS競合": ("詳細度", "!important", "インラインCSS"),
+    "CSS初期化": ("reset", "normalize", "sanitize"),
+    "フォーム選択部品": ("checkbox", "radio", "placeholder", "method", "action"),
+    "レスポンシブ読解": ("only screen", "リキッドレイアウト"),
+    "対応状況": ("ブラウザ対応状況",),
+}
+coverage_source = curriculum + (ROOT / "docs/textbook-guide.md").read_text(encoding="utf-8")
+for group, terms in textbook_coverage.items():
+    for term in terms:
+        require(term in coverage_source, f"Textbook coverage missing [{group}] term: {term}")
 
 workbook = (ROOT / "docs/student-workbook.md").read_text(encoding="utf-8")
 workbook_days = re.split(r"(?=^## DAY \d+ )", workbook, flags=re.MULTILINE)

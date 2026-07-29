@@ -1,0 +1,48 @@
+﻿@import url(sanitize.css);
+
+h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.content {
+    background-color: #fff;
+    width: 600px;
+    margin: 10px auto;
+    border: 1px solid #d1d1d1;
+    padding: 30px;
+}
+
+input {
+    border-bottom: 1px solid #d1d1d1;
+    font-size: 1.2em;
+    width: 100%;
+    padding: 8px;
+}
+
+button {
+    width: 100%;
+    background-color: #2096F3;
+    color: #fff;
+    padding: 15px;
+    border-radius: 3px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, .4);
+}
+
+.control {
+    margin-bottom: 3em;
+}
+
+label {
+    display: block;
+    margin-bottom: .5em;
+}
+
+.required {
+    margin-left: .3em; /* 左の余白を0.3em（1 文字の30%）に */
+    color: #f33; /* 文字の色を#f33 に */
+    font-size: .9em; /* フォントサイズを0.9em（1 文字の90%）に */
+    padding: 3px; /* 要素内余白を3px に */
+    background-color: #fee; /* 背景色を#fee に */
+    font-weight: bold;
+}

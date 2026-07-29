@@ -1,0 +1,13 @@
+﻿div {
+    color: #666;
+}
+
+div p {
+    color: #c00; 
+}
+
+@media only screen and (max-width:600px){
+    div p {
+        color: inherit; 
+    }
+}

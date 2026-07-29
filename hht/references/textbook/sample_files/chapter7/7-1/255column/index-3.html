@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+
+    <title>My Photos</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+
+<div class="container">
+    <div id="img_unit">
+    </div>
+</div><!-- container -->
+<script>
+var pref = [' 北海道', ' 青森県', ' 岩手県'];
+
+pref.push(' 宮城県'); // 末尾に宮城県を追加
+pref.pop(); // 末尾（宮城県）を取り出して配列から削除
+for (var i=0; i<pref.length; i++) {
+    document.write('<br>' + pref[i]);
+}
+
+</script>
+</body>
+</html>

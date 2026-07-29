@@ -1,0 +1,18 @@
+<?xml version="1.0" ?>
+    <images>
+    <image>
+        <path>img/img01.jpg</path>
+        <caption> こっちは貫禄ありすぎ</caption>
+        <name>sansaisan</name>
+    </image>
+    <image>
+        <path>img/img02.jpg</path>
+        <caption> 年明け富士山</caption>
+        <name>yukky_13dream</name>
+    </image>
+    <image>
+        <path>img/img03.jpg</path>
+        <caption> 空と大地の境界線って、どのあたり？ </caption>
+        <name>maako</name>
+    </image>
+</images>

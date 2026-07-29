@@ -1,0 +1,20 @@
+﻿header {
+    margin-top: 30px; /* 上に余白を 30px つける */
+    color: #2E99A9; /* 文字の色を緑に */
+}
+hr {
+    border-width: 3px; /* 太さを 3px に */
+    border-color: #2E99A9; /* 線の色を緑に */
+    margin: 30px 0; /* 上下の余白を 30px に */
+}
+h1 {
+    font-size: 18px; /* 文字の大きさを 18px に */
+    font-weight: bold; /* 文字の太さを太く */
+    margin: 0; /* 余白をなくす */
+}
+.align-right {
+    text-align: right;
+}
+.checkbox {
+    padding-left: 20px;
+}

@@ -88,6 +88,16 @@ for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/workbook/[^)]+)\)", workboo
         f"Broken workbook image: {relative}",
     )
 
+talk_guide = (ROOT / "docs/instructor-talk-guide.md").read_text(encoding="utf-8")
+talk_lessons = re.split(r"(?=^## 第\d+回 )", talk_guide, flags=re.MULTILINE)
+talk_lessons = [block for block in talk_lessons if re.match(r"^## 第\d+回 ", block)]
+require(len(talk_lessons) == 15, f"Expected 15 instructor talk lessons; found {len(talk_lessons)}")
+for block in talk_lessons:
+    title = block.splitlines()[0]
+    require("**最初の5分**" in block, f"{title} missing opening 5-minute talk")
+    require("**最後の5分**" in block, f"{title} missing closing 5-minute talk")
+    require("講師なら" in block, f"{title} closing talk missing instructor approach")
+
 advanced_requirements = {
     "ディレクション": ("要件定義", "WBS", "制作指示", "受入基準"),
     "設計": ("サイトマップ", "ユーザーフロー", "Figma", "ワイヤー"),

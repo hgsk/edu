@@ -30,6 +30,7 @@
 - [15回カリキュラム](./docs/curriculum.md): 各回の120分進行と課題
 - [実務シナリオ](./docs/project-brief.md): クライアント、サイト、依頼の設定
 - [講師ガイド](./docs/instructor-guide.md): 準備、声かけ、つまずき対応
+- [15回分 講師トークガイド](./docs/instructor-talk-guide.md): 冒頭5分と最後5分で話す要点
 - [新人Webデザイナー お仕事ワークブック](./docs/student-workbook.md): 15日分の依頼メール、ミッション、制作、確認、返信チャレンジ
 - [メール・チェックリスト集](./docs/templates.md): 実務で使う雛形
 - [評価ルーブリック](./docs/rubric.md): 中間・最終課題の基準

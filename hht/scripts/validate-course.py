@@ -96,16 +96,52 @@ for block in workbook_days:
         "**作戦会議:**",
         "**今日覚える技:**",
         "**制作メモ:**",
-        "**返信チャレンジ:**",
         "**星チェック:**",
     ):
         require(marker in block, f"{title} missing {marker}")
+    require(
+        any(
+            marker in block
+            for marker in ("**返信チャレンジ:**", "**相談チャレンジ:**", "**発表チャレンジ:**")
+        ),
+        f"{title} missing communication challenge",
+    )
 for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/workbook/[^)]+)\)", workbook):
     relative = match.group(1)
     require(
         (ROOT / "docs" / relative).resolve().exists(),
         f"Broken workbook image: {relative}",
     )
+
+portfolio_brief = (ROOT / "docs/portfolio-project.md").read_text(encoding="utf-8")
+for term in ("見てほしい", "制作実績", "個人情報", "portfolio/index.html", "portfolio/css/style.css", "2分間"):
+    require(term in portfolio_brief, f"Portfolio project missing term: {term}")
+for relative in ("portfolio/index.html", "portfolio/css/style.css"):
+    require((ROOT / relative).exists(), f"Missing portfolio starter file: {relative}")
+release_approval = ROOT / "student/requests/day13-release-approval.md"
+require(release_approval.exists(), "Missing Day 13 explicit release approval")
+if release_approval.exists():
+    approval_text = release_approval.read_text(encoding="utf-8")
+    for term in ("採用案", "最終承認", "公開可", "公開後"):
+        require(term in approval_text, f"Day 13 release approval missing term: {term}")
+require("ポートフォリオ" in lesson_blocks[13], "Lesson 14 must be a portfolio lesson")
+require("ポートフォリオ" in lesson_blocks[14], "Lesson 15 must be a portfolio lesson")
+for term in ("差し戻し", "最終承認", "公開"):
+    require(
+        term in "".join(lesson_blocks[10:13]),
+        f"Lessons 11-13 missing accelerated client-work term: {term}",
+    )
+
+assignment_checks = (ROOT / "student/assignment-checks.md").read_text(encoding="utf-8")
+assignment_blocks = re.split(r"(?=^## DAY \d+ )", assignment_checks, flags=re.MULTILINE)
+assignment_blocks = [block for block in assignment_blocks if re.match(r"^## DAY \d+ ", block)]
+require(len(assignment_blocks) == 15, f"Expected 15 assignment quality blocks; found {len(assignment_blocks)}")
+for block in assignment_blocks:
+    title = block.splitlines()[0]
+    for marker in ("**入力:**", "**完成物:**", "**完成条件:**", "**証拠:**", "**追加チャレンジ:**"):
+        require(marker in block, f"{title} missing quality marker {marker}")
+    condition_count = len(re.findall(r"^- ", block, flags=re.MULTILINE))
+    require(condition_count >= 4, f"{title} needs at least four acceptance conditions")
 
 talk_guide = (ROOT / "docs/instructor-talk-guide.md").read_text(encoding="utf-8")
 talk_lessons = re.split(r"(?=^## 第\d+回 )", talk_guide, flags=re.MULTILINE)

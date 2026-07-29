@@ -23,14 +23,15 @@
 | [08](./08/README.md) | 営業時間を見逃さない配置 |
 | [09](./09/README.md) | ファーストビュー画像 |
 | [10](./10/README.md) | スマートフォン対応 |
-| [11](./11/README.md) | 5つの更新依頼 |
-| [12](./12/README.md) | transition |
-| [13](./13/README.md) | keyframes |
-| [14](./14/README.md) | 差し戻し対応 |
-| [15](./15/README.md) | 公開と完了報告 |
+| [11](./11/README.md) | 5つの更新依頼とクライアント確認 |
+| [12](./12/README.md) | transitionと差し戻し対応 |
+| [13](./13/README.md) | keyframes・最終承認・公開 |
+| [14](./14/README.md) | 自分のポートフォリオ企画 |
+| [15](./15/README.md) | ポートフォリオの完成・公開・発表 |
 
 ## どの回でも使う資料
 
+- [15日分 課題の完成条件](../student/assignment-checks.md)
 - [授業全体のプロジェクト説明](../docs/project-brief.md)
 - [新人Webデザイナー お仕事ワークブック](../docs/student-workbook.md)
 - [15回分 講師トークガイド](../docs/instructor-talk-guide.md)

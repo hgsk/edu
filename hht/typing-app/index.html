@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Web制作で使う英単語と記号を、意味とコード例を見ながら覚えるタイピング練習アプリ">
+  <title>CODE TYPE COURSE｜Web制作タイピング</title>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./extra-items.js?v=20260730-2" defer></script>
+  <script src="./app.js?v=20260730-2" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="../student/README.md" aria-label="学生向け授業入口へ戻る">
+      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+      <span>CODE TYPE COURSE</span>
+    </a>
+    <button class="sound-button" id="soundButton" type="button" aria-pressed="true">
+      <span aria-hidden="true">♪</span> 効果音 ON
+    </button>
+    <button class="voice-button" id="voiceButton" type="button" aria-pressed="true">
+      <span aria-hidden="true">●</span> 読み上げ ON
+    </button>
+  </header>
+
+  <main>
+    <section class="game-shell" aria-label="タイピングゲーム">
+      <aside class="mission-panel">
+        <div>
+          <p class="panel-label">COURSE</p>
+          <h2>コースを選ぶ</h2>
+        </div>
+        <div class="course-list" id="courseList" role="radiogroup" aria-label="出題コース"></div>
+        <div class="best-score">
+          <span>自己ベスト</span>
+          <strong><span id="bestScore">0</span> pt</strong>
+        </div>
+        <div class="completion-card">
+          <div><span>コンプリート</span><strong id="completionRate">0%</strong></div>
+          <div class="completion-track" aria-hidden="true"><span id="completionBar"></span></div>
+          <small><span id="masteredCount">0</span> / <span id="totalWords">40</span> 問クリア</small>
+        </div>
+      </aside>
+
+      <section class="play-panel" id="playPanel">
+        <div class="red-alert" id="redAlert" aria-hidden="true">
+          <span>MISS!</span>
+        </div>
+        <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+        <div class="status-row" role="group" aria-label="ゲーム状況">
+          <div><span>スコア</span><strong id="score">0</strong></div>
+          <div><span>正解</span><strong id="liveCorrect">0</strong></div>
+          <div><span>コンボ</span><strong id="combo">0</strong></div>
+          <div class="status-featured status-time">
+            <span>経過時間</span><strong id="elapsedTime">0:00</strong>
+          </div>
+          <div class="status-featured status-remaining">
+            <span>残り問題数</span><strong><span id="remaining">10</span><small>問</small></strong>
+          </div>
+        </div>
+
+        <div class="progress-track" aria-hidden="true">
+          <span id="progressBar"></span>
+        </div>
+
+        <div class="start-view" id="startView">
+          <div class="quest-illustration" aria-hidden="true">
+            <span class="code-card">&lt;h1&gt;</span>
+            <span class="keyboard-symbol">⌨</span>
+            <span class="code-card">{ color: }</span>
+          </div>
+          <h2>準備はいい？</h2>
+          <p>表示された文字をそのまま入力しよう。<br>正解すると自動で次へ進むよ。</p>
+          <button class="primary-button" id="startButton" type="button">コース開始！</button>
+          <p class="key-help"><kbd>Enter</kbd> スタート　<kbd>Esc</kbd> やり直し</p>
+        </div>
+
+        <div class="question-view" id="questionView" hidden>
+          <div class="combo-burst" id="comboBurst" aria-hidden="true">
+            <strong id="comboBurstNumber">0</strong><span>COMBO!</span>
+          </div>
+          <p class="category-badge" id="categoryBadge">HTML</p>
+          <p class="question-label">この文字を入力しよう</p>
+          <div class="target" id="target" aria-live="polite"></div>
+          <p class="reading" id="reading"></p>
+          <label class="sr-only" for="typingInput">回答を入力</label>
+          <input id="typingInput" class="typing-input" type="text" autocomplete="off"
+            autocapitalize="off" spellcheck="false" inputmode="text">
+          <p class="feedback" id="feedback" aria-live="assertive"></p>
+          <section class="keyboard-guide" aria-labelledby="keyboardTitle">
+            <div class="keyboard-heading">
+              <div>
+                <span class="keyboard-kicker">JAPANESE 106 KEYBOARD｜文字入力エリア</span>
+                <h3 id="keyboardTitle">指の色とキーを合わせよう</h3>
+              </div>
+              <p><span class="home-dot" aria-hidden="true"></span> ホームポジション</p>
+            </div>
+            <div class="keyboard-scroll">
+              <div class="keyboard" id="keyboard" role="group" aria-label="日本語106キーボードのキー配置"></div>
+            </div>
+            <p class="key-hint" id="keyHint" aria-live="polite">
+              3秒止まると、次に押すキーが光るよ
+            </p>
+            <div class="hands-guide">
+              <img src="./images/touch-typing-hands-transparent.png"
+                   alt="左右の手。小指から人差し指まで、担当キーと同じ色で示している">
+            </div>
+            <div class="finger-legend" role="group" aria-label="指と色の対応">
+              <span class="finger-lp">左小指</span><span class="finger-lr">左薬指</span>
+              <span class="finger-lm">左中指</span><span class="finger-li">左人差し指</span>
+              <span class="finger-thumb">親指</span>
+              <span class="finger-ri">右人差し指</span><span class="finger-rm">右中指</span>
+              <span class="finger-rr">右薬指</span><span class="finger-rp">右小指</span>
+            </div>
+          </section>
+          <div class="meaning-card">
+            <div class="meaning-visual" id="meaningVisual" role="img"></div>
+            <span>ヒント</span>
+            <strong id="meaning"></strong>
+            <code id="example"></code>
+          </div>
+          <button class="skip-button" id="skipButton" type="button" hidden>わからないので答えを見る</button>
+        </div>
+
+        <div class="result-view" id="resultView" hidden>
+          <p class="result-icon" aria-hidden="true">★</p>
+          <p class="panel-label">COURSE CLEAR!</p>
+          <h2 id="resultTitle">おつかれさま！</h2>
+          <div class="result-score"><strong id="finalScore">0</strong><span>pt</span></div>
+          <div class="score-reel" id="scoreReel" role="group" aria-label="スコアの内訳">
+            <div><span>基本点</span><strong id="baseScoreResult">0</strong></div>
+            <div><span>コンボ加点</span><strong id="comboBonusResult">0</strong></div>
+            <div><span>クリアボーナス</span><strong id="clearBonusResult">0</strong></div>
+            <div class="score-reel-total"><span>合計</span><strong id="totalScoreResult">0</strong></div>
+          </div>
+          <section class="rank-certificate" aria-labelledby="rankHeading">
+            <div>
+              <p class="panel-label">WORD PROCESSING TEST ESTIMATE</p>
+              <h3 id="rankHeading">ワープロ検定・推定ランク</h3>
+              <dl class="rank-details">
+                <div><dt>10分換算</dt><dd><span id="rankScore">0</span>文字</dd></div>
+                <div><dt>入力ミス</dt><dd><span id="examMistakeCount">0</span>回</dd></div>
+              </dl>
+              <p id="rankNote">添付の速度採点基準から推定しています。</p>
+            </div>
+            <div class="rank-stamp" id="rankStamp" role="status" aria-live="polite">
+              <strong id="rankName">練習中</strong>
+              <span>推定認定</span>
+            </div>
+          </section>
+          <dl class="result-stats">
+            <div><dt>正解</dt><dd id="correctCount">0 / 10</dd></div>
+            <div><dt>最高コンボ</dt><dd id="maxCombo">0</dd></div>
+            <div><dt>クリアタイム</dt><dd id="clearTime">0:00</dd></div>
+          </dl>
+          <p id="resultMessage"></p>
+          <button class="primary-button" id="retryButton" type="button">もう一度チャレンジ</button>
+          <button class="secondary-button" id="reviewButton" type="button">まちがえた問題を復習</button>
+        </div>
+      </section>
+    </section>
+
+    <section class="achievements" aria-labelledby="achievementTitle">
+      <div class="achievement-heading">
+        <div>
+          <p class="eyebrow">ACHIEVEMENTS</p>
+          <h2 id="achievementTitle">トロフィーコレクション</h2>
+        </div>
+        <strong><span id="achievementCount">0</span> / 10</strong>
+      </div>
+      <div class="achievement-grid" id="achievementGrid"></div>
+    </section>
+
+    <section class="how-to" aria-labelledby="howToTitle">
+      <p class="eyebrow">LEVEL UP</p>
+      <h2 id="howToTitle">うまくなるコツ</h2>
+      <div class="tip-grid">
+        <article><span>01</span><h3>まず意味を見る</h3><p>文字だけでなく「何をする言葉か」も声に出そう。</p></article>
+        <article><span>02</span><h3>記号も正確に</h3><p>半角・大文字・スペースまで、画面と同じように打とう。</p></article>
+        <article><span>03</span><h3>ミスを味方に</h3><p>まちがえた問題だけを復習すると、ぐんぐん定着するよ。</p></article>
+      </div>
+    </section>
+  </main>
+
+  <div class="achievement-toast" id="achievementToast" role="status" aria-live="polite">
+    <span aria-hidden="true">🏆</span>
+    <div><small>ACHIEVEMENT UNLOCKED!</small><strong id="toastTitle"></strong></div>
+  </div>
+
+  <footer>
+    <p>NORTH HIGH-TECH HTML + CSS COURSE</p>
+    <p class="voice-credit">音声: VOICEVOX:あいえるたん</p>
+  </footer>
+</body>
+</html>

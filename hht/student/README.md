@@ -32,6 +32,7 @@
 
 ## 学生が使う資料
 
+- [CODE TYPE QUEST（英単語・記号タイピング）](../typing-app/index.html)
 - [15日分 課題の完成条件](./assignment-checks.md)
 - [提出フォルダーの使い方](../submissions/README.md)
 - [新人Webデザイナー お仕事ワークブック](../docs/student-workbook.md)
@@ -43,5 +44,7 @@
 - [自分のポートフォリオ制作ガイド](../docs/portfolio-project.md)
 - [ポートフォリオ制作フォルダー](../portfolio/)
 - [制作するカフェサイト](../starter-site/)
+- [夏祭りサイト 新年度版制作ハンズオン](../hands-on/summer-festival-annual-update/README.md)
+- [夏祭りサイト 追加実務ミッション](../hands-on/summer-festival-annual-update/student/extension-missions.md)
 
 講師専用の進行手順、評価基準、依頼の回答情報は別の入口で管理します。

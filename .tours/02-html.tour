@@ -1,0 +1,62 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "02 HTMLを書いてみよう",
+  "description": "タグ、属性、見出し、文章、リンク、リストを使ってページの内容を作ります。",
+  "nextTour": "03 CSSで見た目を整えよう",
+  "steps": [
+    {
+      "file": "hht/tour/index.html",
+      "line": 1,
+      "title": "HTMLは内容の設計図",
+      "description": "## どんな情報かをタグで伝える\n\nHTMLは、文章に「これは見出し」「これはリンク」と意味をつける言葉です。\n\n`<`と`>`で囲まれたものが**タグ**。多くのタグは開始タグと終了タグのペアです。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 2,
+      "title": "ページ全体の設定",
+      "description": "## 日本語のページだと伝える\n\n`lang=\"ja\"`のように、タグへ追加する情報を**属性**といいます。\n\n`ja`は日本語。読み上げソフトや検索エンジンにも役立ちます。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 4,
+      "title": "headとbody",
+      "description": "## 見えない情報と、見える内容\n\n`head`にはページ名や文字コードなどの設定、`body`にはブラウザ画面に見える内容を書きます。\n\n`title`はブラウザのタブに表示されます。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 11,
+      "title": "ページを大きく分ける",
+      "description": "## header・main・footer\n\nページ上部は`header`、中心となる内容は`main`、最後の情報は`footer`です。\n\n見た目ではなく**役割**でタグを選ぶのがポイントです。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 20,
+      "title": "見出しと文章",
+      "description": "## h1とpを書きかえよう\n\n`h1`はページの中心となる見出し、`p`はひとまとまりの文章です。\n\n見出しを自分の目標に、次の文章を「このページで紹介したいこと」に書きかえて保存してみよう。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 23,
+      "title": "リンクと属性",
+      "description": "## aタグで移動する\n\n`a`はリンクです。`href=\"#about\"`は、同じページにある`id=\"about\"`の場所へ移動します。\n\nブラウザでボタンを押し、自己紹介まで移動するか確かめよう。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 26,
+      "title": "自分の文章を入れる",
+      "description": "## ダミー文を本物にしよう\n\n`ここを、自分の名前や…`の文章を、自分の自己紹介へ書きかえてください。\n\n文章を変えたら保存し、ブラウザで確認します。HTMLの仕事は「正しい場所へ、正しい内容を入れる」ことです。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 33,
+      "title": "リストを増やす",
+      "description": "## ulとli\n\n`ul`は順番のない一覧、`li`は一覧の1項目です。\n\n3つの`li`を自分の好きなものに書きかえ、もう1つ`<li class=\"card\">...</li>`を追加してみよう。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 42,
+      "title": "入れ子を確認",
+      "description": "## インデントは親子関係の手がかり\n\nタグの中にタグが入る関係を**入れ子**といいます。開始タグと終了タグの位置はそろっていますか？\n\n`Shift + Alt + F`で整形すると、入れ子の間違いを見つけやすくなります。\n\n次はCSSで、この内容を見やすく整えます。"
+    }
+  ]
+}

@@ -1,0 +1,57 @@
+{
+  "$schema": "https://aka.ms/codetour-schema",
+  "title": "01 はじめてのVS Code",
+  "description": "ファイルを開く、編集する、保存する、ブラウザで確認する流れを体験します。",
+  "isPrimary": true,
+  "nextTour": "02 HTMLを書いてみよう",
+  "steps": [
+    {
+      "file": "hht/tour/README.md",
+      "line": 1,
+      "title": "ようこそ！",
+      "description": "## VS Codeを探検しよう\n\n今日は「どこに何があるか」を覚えるツアーです。全部暗記しなくて大丈夫。迷ったら、ここへ戻ってきましょう。\n\nまず左端を見てください。縦に並ぶアイコンを**アクティビティバー**といいます。"
+    },
+    {
+      "file": "hht/tour/README.md",
+      "line": 5,
+      "title": "エクスプローラー",
+      "description": "## ファイルはどこにある？\n\n左端の一番上にあるファイル型アイコンを押してみよう。これが**エクスプローラー**です。\n\n`hht` → `tour`を開き、`index.html`と`style.css`があるか探せますか？"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 1,
+      "title": "エディター",
+      "description": "## ファイルを開く場所\n\n中央の広い場所が**エディター**です。タブをクリックすると、開いているファイルを切り替えられます。\n\n`index.html`のタブと、このツアーの説明を行き来してみよう。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 6,
+      "title": "編集して保存",
+      "description": "## タイトルを変えてみよう\n\n`わたしのWebデザイン練習帳`を、好きなページ名に書きかえてください。\n\n書きかえたら `Ctrl + S` で保存します。タブにあった白い丸が消えれば保存完了です。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 20,
+      "title": "便利な検索",
+      "description": "## 目的の言葉へジャンプ\n\n`Ctrl + F`を押し、`はじめてのページ`と入力してみよう。長いファイルでも、すぐ目的の場所へ移動できます。\n\n検索欄は`Esc`で閉じられます。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 1,
+      "title": "コマンドパレット",
+      "description": "## VS Codeへお願いする入口\n\n`Ctrl + Shift + P`を押すと**コマンドパレット**が開きます。`format document`と入力し、`ドキュメントのフォーマット`を探してみよう。\n\nコマンド名が分からなくても、言葉で検索できます。今は実行せず`Esc`で閉じてもOKです。"
+    },
+    {
+      "file": "hht/tour/index.html",
+      "line": 1,
+      "title": "ブラウザで確認",
+      "description": "## 作ったページを見よう\n\nエクスプローラーの`index.html`を右クリックし、**Open with Live Server**を選びます。\n\nブラウザが開いたら、さきほど変えたページ名がタブに表示されていますか？ 表示されないときは保存を確認しましょう。"
+    },
+    {
+      "file": "hht/tour/README.md",
+      "line": 23,
+      "title": "変更はこわくない",
+      "description": "## 元に戻せるから試せる\n\n`Ctrl + Z`は1つ前へ戻す、`Ctrl + Shift + Z`はやり直す操作です。\n\n左の**ソース管理**では、変更したファイルを一覧で確認できます。赤や緑の行は「悪い」の意味ではなく、変更前との差です。\n\n次はHTMLを書いて、ページの中身を作ります。"
+    }
+  ]
+}

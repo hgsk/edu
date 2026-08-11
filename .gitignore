@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+
+# PDF visual-QA renders are local verification artifacts.
+hht/output/pdf/rendered-cheatsheet-*.png
+
+# Common local test/build outputs.
+node_modules/
+test-results/
+coverage/

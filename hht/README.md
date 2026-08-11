@@ -14,6 +14,10 @@
 
 共有の`main`ブランチは直接編集しません。提出、デプロイ、バックアップを含む授業作業は、すべてこのリポジトリを開いたVS Codeから始めます。
 
+初めてVS Codeを使う場合は、CodeTour拡張を入れて
+`01 はじめてのVS Code` → `02 HTMLを書いてみよう` → `03 CSSで見た目を整えよう`
+の順に進めます。練習ファイルと始め方は[VS Code・HTML・CSS はじめてツアー](./tour/README.md)にあります。
+
 ## 講座の仕様
 
 - 期間: 週1回・120分 × 15回（全30時間）
@@ -42,6 +46,7 @@
 - [学生向け 授業入口](./student/README.md): 15日分の仕事、ワークブック、シラバス、制作ファイル
 - [新人Webデザイナー お仕事ワークブック](./docs/student-workbook.md): 15日分の依頼メール、ミッション、制作、確認、返信チャレンジ
 - [Web制作・AI指示の用語集](./docs/glossary.md): 授業と仕事で使う言葉
+- [CODE TYPE QUEST](./typing-app/index.html): 教材に出てくる英単語・HTML/CSSタグ・記号のタイピング練習
 - [自分のポートフォリオ制作ガイド](./docs/portfolio-project.md): 第14・15回の企画、制作、確認、公開
 
 ### 講師向け
@@ -79,6 +84,7 @@
 ## 演習素材
 
 - `starter-site/`: 受講者が編集する開始時点のサイト
+- `hands-on/summer-festival-annual-update/`: 前年版と企画資料から夏祭りの新年度版を作る追加ハンズオン
 - `fixtures/emails/`: 情報不足や影響範囲を含む依頼メール
 - `fixtures/attachments/`: 添付原稿
 - `fixtures/photographer-delivery/`: AI候補と模擬撮影納品

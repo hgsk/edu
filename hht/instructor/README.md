@@ -24,6 +24,9 @@
 - [発展講座カリキュラム](../docs/advanced-curriculum.md)
 - [発展講座プロジェクト](../docs/advanced-project-brief.md)
 - [学生用ポートフォリオ制作ガイド](../docs/portfolio-project.md)
+- [夏祭りサイト 新年度版制作ハンズオン](../hands-on/summer-festival-annual-update/README.md)
+- [夏祭りハンズオン 講師用進行ガイド](../hands-on/summer-festival-annual-update/instructor/guide.md)
+- [夏祭り追加ミッション 講師用運用ガイド](../hands-on/summer-festival-annual-update/instructor/extension-guide.md)
 
 ## 取り扱いに注意する資料
 

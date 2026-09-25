@@ -1,95 +1,25 @@
 # 実作業で学ぶWebデザイン講座
 
-新人Webデザイナーとして架空のカフェ「NORTH LIGHT COFFEE」の更新業務を受注し、HTML、CSS、Webデザイン、確認、公開までを15回・30時間で学ぶ教材です。
+架空のカフェ「NORTH LIGHT COFFEE」の更新を題材に、15回・30時間で小規模サイトの制作、確認、公開を学びます。最後に自分のポートフォリオも制作します。
 
-## 授業で最初にすること
+## 今日の授業へ
 
-授業は毎回、このリポジトリをVisual Studio Codeで開いて実施します。
+- **学生:** [学生向け入口](./student/README.md)から今日のDAYを開く。
+- **講師:** [講師向け入口](./instructor/README.md)から今日の授業パックを開く。
+- **初めてCodespacesを使う人:** [はじめてツアー](./tour/README.md)から始める。
 
-1. 受講者ごとに用意されたこのリポジトリのコピーまたはブランチを開く。
-2. Visual Studio Codeの「フォルダーを開く」で、`hht`だけではなくリポジトリのルートを選ぶ。
-3. エクスプローラーに`README.md`と`hht`が表示されていることを確認する。
-4. 学生は[学生向け入口](./student/README.md)、講師は[講師向け入口](./instructor/README.md)を開く。
-5. ソース管理で現在のブランチと変更ファイルを確認してから作業する。
+作業は自分用のコピーまたはブランチで行います。毎回、[Codespaceを起動](https://codespaces.new/hgsk/edu)し、依頼を読む → 計画する → 編集する → 確認する → 報告する、の順に進めます。
 
-共有の`main`ブランチは直接編集しません。提出、デプロイ、バックアップを含む授業作業は、すべてこのリポジトリを開いたVS Codeから始めます。
+## 資料を探す
 
-初めてVS Codeを使う場合は、CodeTour拡張を入れて
-`01 はじめてのVS Code` → `02 HTMLを書いてみよう` → `03 CSSで見た目を整えよう`
-の順に進めます。練習ファイルと始め方は[VS Code・HTML・CSS はじめてツアー](./tour/README.md)にあります。
+| 目的 | 資料 |
+|---|---|
+| 各回の課題を読む | [学生ワークブック](./docs/student-workbook.md) |
+| 授業の予定を知る | [シラバス](./docs/syllabus.md) |
+| 制作を始める | [カフェサイト](./starter-site/) |
+| 提出方法を確認する | [提出フォルダーの使い方](./submissions/README.md) |
+| 講師が授業を準備する | [15回分の授業パック](./lessons/README.md)・[演習運営手順](./docs/exercise-operations.md) |
+| Google Cloudの公開演習をする | [練習インスタンスの接続手順](./docs/google-cloud-practice.md) |
+| 追加の実務演習をする | [夏祭りサイトの更新](./hands-on/summer-festival-annual-update/README.md) |
 
-## 講座の仕様
-
-- 期間: 週1回・120分 × 15回（全30時間）
-- 対象: PCの基本操作ができる高校生・専門学校生
-- 形式: 1人1台のPCを使う演習中心
-- 制作物: 3ページの店舗サイトと更新記録、自分の1ページポートフォリオ
-- 想定ツール: ブラウザ、Visual Studio Code、画像編集ツール
-- 公開: 模擬公開から始め、講師用SFTP、XServerのSSH/SFTPへ段階的に進む
-
-## 到達目標
-
-受講後、受講者は次のことができます。
-
-1. 依頼メールから対象・期限・承認者・不明点を整理できる
-2. セマンティックなHTMLで小規模サイトを作成・修正できる
-3. CSSで読みやすくレスポンシブな画面を実装できる
-4. 画像を目的に合わせて選び、軽量化し、代替テキストを判断できる
-5. 文言、営業時間、価格などを影響範囲まで確認して安全に更新できる
-6. アクセシビリティ、表示、リンク、差分を確認して承認依頼を出せる
-7. バックアップ、ステージング、公開、公開後確認の手順を説明できる
-
-## 教材の読み方
-
-### 学生向け
-
-- [学生向け 授業入口](./student/README.md): 15日分の仕事、ワークブック、シラバス、制作ファイル
-- [新人Webデザイナー お仕事ワークブック](./docs/student-workbook.md): 15日分の依頼メール、ミッション、制作、確認、返信チャレンジ
-- [Web制作・AI指示の用語集](./docs/glossary.md): 授業と仕事で使う言葉
-- [CODE TYPE QUEST](./typing-app/index.html): 教材に出てくる英単語・HTML/CSSタグ・記号のタイピング練習
-- [自分のポートフォリオ制作ガイド](./docs/portfolio-project.md): 第14・15回の企画、制作、確認、公開
-
-### 講師向け
-
-- [講師向け 授業入口](./instructor/README.md): 授業準備、安全管理、評価、講師専用資料
-- [15回分 授業パック](./lessons/README.md): 各回で必要な資料を横断整理
-- [講座設計](./docs/course-design.md): 全体方針、評価方法、授業運営
-- [授業レジュメ・シラバス](./docs/syllabus.md): 科目概要、到達目標、15回の授業計画
-- [15回カリキュラム](./docs/curriculum.md): 各回の120分進行と課題
-- [実務シナリオ](./docs/project-brief.md): クライアント、サイト、依頼の設定
-- [講師ガイド](./docs/instructor-guide.md): 準備、声かけ、つまずき対応
-- [15回分 講師トークガイド](./docs/instructor-talk-guide.md): 冒頭5分と最後5分で話す要点
-- [メール・チェックリスト集](./docs/templates.md): 実務で使う雛形
-- [評価ルーブリック](./docs/rubric.md): 中間・最終課題の基準
-- [演習運営手順](./docs/exercise-operations.md): 配布、模擬承認、公開演習
-- [求人スキル分析](./docs/job-skill-analysis.md): 5社の求人から導いた能力
-- [発展16回カリキュラム](./docs/advanced-curriculum.md): Webディレクション・WordPress・EC
-- [発展課題](./docs/advanced-project-brief.md): リニューアル案件とEC立ち上げ案件
-- [発展評価ルーブリック](./docs/advanced-rubric.md): 求人に対応する実務能力の評価
-- [Web制作・EC業務用語集](./docs/glossary.md): AIへの指示例と説明画像付き用語集
-- [判断待ちIssue](./ISSUES.md): 選択肢と回答欄
-
-## 標準の授業サイクル
-
-各回は「依頼を読む → 作業計画 → 実装 → 検証 → 報告」の順で進みます。正解を写すのではなく、作業前後の差分と判断理由を残すことを重視します。
-
-## 完了条件
-
-- 15回すべてに到達目標、120分の時間配分、実務課題、提出物がある
-- 15回×120分で合計30時間となる
-- 元の依頼例（文章、ファーストビュー、添付原稿、営業時間、価格、年度）を演習で扱う
-- クライアント確認前と公開前後のチェックが教材化されている
-- 判断が必要な事項が `ISSUES.md` にのみ集約されている
-
-## 演習素材
-
-- `starter-site/`: 受講者が編集する開始時点のサイト
-- `hands-on/summer-festival-annual-update/`: 前年版と企画資料から夏祭りの新年度版を作る追加ハンズオン
-- `fixtures/emails/`: 情報不足や影響範囲を含む依頼メール
-- `fixtures/attachments/`: 添付原稿
-- `fixtures/photographer-delivery/`: AI候補と模擬撮影納品
-- `practice-server/`: バックアップ、ステージング、本番相当の公開演習領域
-- `references/textbook/`: 指定書籍のサンプルZIPと目次画像
-- `references/textbook/sample_files/`: 解凍済みの書籍サンプル529ファイル
-
-発展講座の実機ツールはFigma、WordPress、受講者ごとのローカルEC-CUBEです。STUDIOとWebflowは求人用語として紹介しますが、操作演習には使用しません。
+授業設計や発展講座などの詳細資料は[docs](./docs/)にあります。

@@ -1,14 +1,12 @@
 # 学生向け 授業入口
 
-ここは学生が授業中に使う入口です。毎回、VS Codeでリポジトリのルートを開き、このページから今日の仕事を始めましょう。
+毎回このページから今日の課題を開きます。
 
 ## 毎回の始め方
 
-1. VS Code左側に、ルートの`README.md`と`hht`が見えるか確認する。
-2. ソース管理で、自分のブランチになっているか確認する。
-3. 下の表から今日のDAYを開く。
-4. 依頼を読み、作戦を立ててから制作を始める。
-5. 最後にチェックと返信まで終わらせる。
+1. Codespaceでリポジトリのルートを開き、自分のコピーまたはブランチを確認する。
+2. 下の表から今日のDAYを開く。
+3. 依頼を読む → 計画する → 制作する → 確認する → 返信する。
 
 ## 15日分のお仕事
 
@@ -30,21 +28,10 @@
 | [DAY 14](../docs/student-workbook.md#day-14-自分のポートフォリオを企画しよう) | 自分のポートフォリオ企画 |
 | [DAY 15](../docs/student-workbook.md#day-15-ポートフォリオを完成公開しよう) | ポートフォリオの完成・公開・発表 |
 
-## 学生が使う資料
+## 作業に使うもの
 
-- [CODE TYPE QUEST（英単語・記号タイピング）](../typing-app/index.html)
-- [15日分 課題の完成条件](./assignment-checks.md)
-- [提出フォルダーの使い方](../submissions/README.md)
-- [新人Webデザイナー お仕事ワークブック](../docs/student-workbook.md)
-- [授業レジュメ・シラバス](../docs/syllabus.md)
-- [15回・30時間カリキュラム](../docs/curriculum.md)
-- [実務シナリオ](../docs/project-brief.md)
-- [Web制作・AI指示の用語集](../docs/glossary.md)
-- [メール・確認・変更記録テンプレート](../docs/templates.md)
-- [自分のポートフォリオ制作ガイド](../docs/portfolio-project.md)
-- [ポートフォリオ制作フォルダー](../portfolio/)
-- [制作するカフェサイト](../starter-site/)
-- [夏祭りサイト 新年度版制作ハンズオン](../hands-on/summer-festival-annual-update/README.md)
-- [夏祭りサイト 追加実務ミッション](../hands-on/summer-festival-annual-update/student/extension-missions.md)
-
-講師専用の進行手順、評価基準、依頼の回答情報は別の入口で管理します。
+- [制作するカフェサイト](../starter-site/)・[提出方法](../submissions/README.md)・[完成条件](./assignment-checks.md)
+- [用語集](../docs/glossary.md)・[メールと変更記録のテンプレート](../docs/templates.md)
+- DAY 14〜15: [ポートフォリオ制作ガイド](../docs/portfolio-project.md)・[制作フォルダー](../portfolio/)
+- 追加演習: [夏祭りサイトの更新](../hands-on/summer-festival-annual-update/README.md)
+- 練習: [CODE TYPE QUEST](../typing-app/index.html)

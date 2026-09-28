@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="北ハイテクHTML+CSS講座の課題文と解説文を読むRSVPリーダー">
+  <title>READING LAB｜教材RSVPリーダー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="./reader.css?v=20260927-2">
+  <link rel="stylesheet" href="./arcade.css?v=20260928">
+  <script src="./firebase-config.js" defer></script>
+  <script src="./account.js" defer></script>
+</head>
+<body class="reader-page">
+  <header class="site-header">
+    <a class="brand" href="../student/README.md" aria-label="学生向け授業入口へ戻る">
+      <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
+      <span>CODE TYPE COURSE</span>
+    </a>
+    <nav class="mode-nav" aria-label="学習モード">
+      <a class="mode-link" href="./index.html">タイピング</a>
+      <a class="mode-link is-active" href="./reader.html" aria-current="page">教材を読む</a>
+    </nav>
+  </header>
+
+  <main class="reader-main">
+    <section class="reader-intro" aria-labelledby="readerTitle">
+      <div class="reader-intro-copy">
+        <p class="eyebrow">READING LAB</p>
+        <h1 id="readerTitle">読むチカラ、レベルアップ。</h1>
+        <p>最初に3つの文章を読み、内容を答えます。正しく読めた段階の速度を、課題と解説文を読むときの基準にします。</p>
+      </div>
+      <div class="reader-stat-card" aria-live="polite">
+        <span class="reader-stat-label">MY READING SPEED</span>
+        <strong id="readerSpeedStatus">未測定</strong>
+        <small id="readerCalibrationStatus">まずはキャリブレーション</small>
+      </div>
+    </section>
+
+    <section class="calibration-card" aria-labelledby="calibrationTitle">
+      <div class="section-heading calibration-heading">
+        <div>
+          <p class="eyebrow">STEP 01 — CALIBRATION</p>
+          <h2 id="calibrationTitle">読む速さをチェック！</h2>
+        </div>
+        <span class="calibration-badge" id="calibrationBadge">未測定</span>
+      </div>
+
+      <div class="calibration-steps" id="calibrationSteps" role="group" aria-label="キャリブレーションの進み具合">
+        <span class="calibration-step is-current" data-step="0"><strong>01</strong><small>ゆっくり</small></span>
+        <span class="calibration-step" data-step="1"><strong>02</strong><small>標準</small></span>
+        <span class="calibration-step" data-step="2"><strong>03</strong><small>速め</small></span>
+      </div>
+
+      <div class="calibration-panel" id="calibrationIntro">
+        <div class="calibration-copy">
+          <h3>3段階、各1問です</h3>
+          <p>文章が中央に1まとまりずつ表示されます。読み終わると、文章の内容について三択問題が出ます。速さよりも、内容を覚えているかを優先してください。</p>
+          <ul class="calibration-rules">
+            <li>第1段階：180文字/分</li>
+            <li>第2段階：240文字/分</li>
+            <li>第3段階：300文字/分</li>
+          </ul>
+        </div>
+        <button class="primary-button" id="startCalibration" type="button">▶ 3ステージに挑戦！</button>
+      </div>
+
+      <div class="calibration-panel" id="calibrationRun" hidden>
+        <div class="calibration-run-heading">
+          <div>
+            <p class="panel-label" id="calibrationStageLabel">第1段階</p>
+            <h3 id="calibrationStageTitle">ゆっくり読んでみよう</h3>
+          </div>
+          <strong id="calibrationStageSpeed">180文字/分</strong>
+        </div>
+        <p class="calibration-instruction" id="calibrationInstruction">読み終わったら「読む」を押してください。</p>
+        <div class="calibration-stage" role="group" aria-label="キャリブレーション文章">
+          <div class="calibration-word" id="calibrationWord" aria-hidden="true">準備</div>
+        </div>
+        <div class="reader-progress calibration-progress" aria-hidden="true"><span id="calibrationProgressBar"></span></div>
+        <div class="calibration-controls">
+          <button class="primary-button" id="startCalibrationStage" type="button">第1段階を読む</button>
+          <button class="secondary-button" id="pauseCalibration" type="button" hidden>一時停止</button>
+        </div>
+
+        <section class="calibration-question" id="calibrationQuestion" aria-labelledby="calibrationQuestionTitle" hidden>
+          <p class="panel-label">COMPREHENSION CHECK</p>
+          <h3 id="calibrationQuestionTitle">文章の内容を選んでください</h3>
+          <div class="choice-grid" id="calibrationChoices"></div>
+          <p class="calibration-feedback" id="calibrationFeedback" aria-live="polite"></p>
+          <button class="primary-button" id="nextCalibrationStage" type="button" hidden>第2段階へ</button>
+        </section>
+      </div>
+
+      <div class="calibration-panel calibration-complete" id="calibrationComplete" hidden>
+        <div class="completion-mark" aria-hidden="true">✓</div>
+        <div>
+          <p class="panel-label">CALIBRATION COMPLETE</p>
+          <h3 id="calibrationResultTitle">あなたの読みやすい速度</h3>
+          <p id="calibrationResultText">正答できた段階を基準に設定しました。</p>
+          <strong class="calibration-result-speed" id="calibrationResultSpeed">180文字/分</strong>
+        </div>
+        <button class="secondary-button" id="restartCalibration" type="button">もう一度測る</button>
+      </div>
+    </section>
+
+    <section class="reader-workspace" aria-labelledby="workspaceTitle">
+      <div class="section-heading reader-workspace-heading">
+        <div>
+          <p class="eyebrow">STEP 02 — READ</p>
+          <h2 id="workspaceTitle">課題・解説文を読む</h2>
+        </div>
+        <p class="reader-gate" id="readerGate">キャリブレーション後に開始できます</p>
+      </div>
+
+      <div class="reader-grid">
+        <aside class="reader-sidebar" aria-label="読書設定">
+          <div class="setting-block">
+            <label for="contentSelect">読む教材</label>
+            <select id="contentSelect">
+              <option value="assignment">課題文｜カフェサイトの公開前チェック</option>
+              <option value="htmlExplanation">解説文｜HTMLの役割</option>
+              <option value="cssExplanation">解説文｜CSSで見た目を整える</option>
+              <option value="workflowExplanation">解説文｜依頼から公開まで</option>
+              <option value="custom">自分の文章を貼り付ける</option>
+            </select>
+          </div>
+
+          <div class="content-summary" aria-live="polite">
+            <span class="content-type" id="contentType">課題文</span>
+            <h3 id="contentTitle">カフェサイトの公開前チェック</h3>
+            <p id="contentSummary">制作したページを、公開前に確認する課題文です。</p>
+            <small><span id="contentCount">0</span>文字・約<span id="contentMinutes">0</span>分</small>
+          </div>
+
+          <div class="custom-input" id="customInput" hidden>
+            <label for="customText">読む文章</label>
+            <textarea id="customText" rows="6" placeholder="課題や解説文をここへ貼り付けてください"></textarea>
+            <button class="secondary-button" id="loadCustomText" type="button">この文章を使う</button>
+          </div>
+
+          <div class="setting-block speed-setting">
+            <div class="setting-label-row">
+              <label for="speedRange">読む速度</label>
+              <output id="speedOutput" for="speedRange">180文字/分</output>
+            </div>
+            <input id="speedRange" type="range" min="120" max="600" step="10" value="180">
+            <div class="range-labels" aria-hidden="true"><span>ゆっくり</span><span>速く</span></div>
+            <p>キャリブレーション結果を基準にしています。理解しにくいときは少し下げましょう。</p>
+          </div>
+        </aside>
+
+        <section class="reader-player" aria-labelledby="playerTitle">
+          <div class="player-heading">
+            <div>
+              <span class="player-kicker">RAPID SERIAL VISUAL PRESENTATION</span>
+              <h3 id="playerTitle">1まとまりずつ表示</h3>
+            </div>
+            <span class="player-state" id="playerState">準備中</span>
+          </div>
+
+          <div class="rsvp-stage" id="readerStage">
+            <div class="rsvp-word" id="rsvpWord" aria-hidden="true">準備完了</div>
+            <p class="rsvp-accessible-text" id="readerAccessibleText" aria-live="polite">キャリブレーション後に読書を開始できます。</p>
+          </div>
+
+          <progress class="sr-only" aria-label="読書の進み具合" max="100" value="0" id="readerProgressTrack"></progress>
+          <div class="reader-progress" aria-hidden="true">
+            <span id="readerProgressBar"></span>
+          </div>
+          <div class="reader-progress-meta"><span id="readerProgressText">0 / 0</span><span id="readerRemainingText">準備中</span></div>
+
+          <div class="reader-controls">
+            <button class="icon-button" id="readerBack" type="button" aria-label="1つ戻る">←</button>
+            <button class="primary-button reader-play-button" id="readerPlay" type="button" disabled>▶ 読む</button>
+            <button class="icon-button" id="readerNext" type="button" aria-label="1つ進む">→</button>
+          </div>
+          <button class="reader-restart" id="readerRestart" type="button">最初から読む</button>
+          <p class="reader-shortcuts"><kbd>Space</kbd> 再生/一時停止　<kbd>←</kbd><kbd>→</kbd> 前後へ</p>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>NORTH HIGH-TECH HTML + CSS COURSE</p>
+    <p class="voice-credit"><a href="./index.html">タイピングゲームへ戻る</a></p>
+  </footer>
+</body>
+</html>

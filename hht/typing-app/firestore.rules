@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /courseUsers/{uid}/progress/{key} {
+      function owner() { return request.auth != null && request.auth.uid == uid; }
+      allow read: if owner();
+      allow create, update: if owner()
+        && key.matches('^(code-type-quest-progress-v1|code-type-quest-best-[a-z0-9-]+|code-type-rsvp-(speed|calibration|completed)-v1|code-type-handle-v1)$')
+        && request.resource.data.keys().hasOnly(['value', 'updatedAt'])
+        && request.resource.data.value is string
+        && request.resource.data.value.size() <= 100000
+        && request.resource.data.updatedAt == request.time
+        && (key != 'code-type-handle-v1' || request.resource.data.value.matches('^[A-Z]{3}$'));
+    }
+  }
+}

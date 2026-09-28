@@ -5,9 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Web制作で使う英単語と記号を、意味とコード例を見ながら覚えるタイピング練習アプリ">
   <title>CODE TYPE COURSE｜Web制作タイピング</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;700;900&family=Mochiy+Pop+One&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./style.css">
   <script src="./extra-items.js?v=20260730-2" defer></script>
-  <script src="./app.js?v=20260730-2" defer></script>
+  <link rel="stylesheet" href="./arcade.css?v=20260928">
+  <script src="./firebase-config.js" defer></script>
+  <script src="./account.js" defer></script>
 </head>
 <body>
   <header class="site-header">
@@ -15,6 +20,10 @@
       <span class="brand-mark" aria-hidden="true">&lt;/&gt;</span>
       <span>CODE TYPE COURSE</span>
     </a>
+    <nav class="mode-nav" aria-label="学習モード">
+      <a class="mode-link is-active" href="./index.html" aria-current="page">タイピング</a>
+      <a class="mode-link" href="./reader.html">教材を読む</a>
+    </nav>
     <button class="sound-button" id="soundButton" type="button" aria-pressed="true">
       <span aria-hidden="true">♪</span> 効果音 ON
     </button>
@@ -24,6 +33,12 @@
   </header>
 
   <main>
+    <section class="arcade-intro" aria-labelledby="arcadeTitle">
+      <div><p class="eyebrow">PLAY. LEARN. LEVEL UP.</p>
+        <h1 id="arcadeTitle">学びを、プレイしよう。</h1>
+        <p>好きなコースで、今日の自己ベストに挑戦！</p></div>
+      <div class="arcade-sticker" aria-hidden="true"><span>✦</span>LET’S PLAY</div>
+    </section>
     <section class="game-shell" aria-label="タイピングゲーム">
       <aside class="mission-panel">
         <div>
@@ -71,8 +86,12 @@
           </div>
           <h2>準備はいい？</h2>
           <p>表示された文字をそのまま入力しよう。<br>正解すると自動で次へ進むよ。</p>
-          <button class="primary-button" id="startButton" type="button">コース開始！</button>
+          <button class="primary-button" id="startButton" type="button">▶ プレイ！</button>
           <p class="key-help"><kbd>Enter</kbd> スタート　<kbd>Esc</kbd> やり直し</p>
+          <a class="reader-cta" href="./reader.html">
+            <span aria-hidden="true">◉</span>
+            先に教材を読む・読む速さを合わせる
+          </a>
         </div>
 
         <div class="question-view" id="questionView" hidden>

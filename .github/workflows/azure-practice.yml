@@ -1,0 +1,110 @@
+name: Configure Azure practice VM
+
+on:
+  workflow_dispatch:
+    inputs:
+      operation:
+        description: '既存Ubuntu VMへの設定、または受講者の追加'
+        required: true
+        type: choice
+        options: [setup, add_student]
+      student_id:
+        description: 'add_student時の受講者ID (英小文字で開始、英小文字・数字・_・-、2〜31文字)'
+        required: false
+        type: string
+      student_public_key:
+        description: 'add_student時の受講者の ssh-ed25519 公開鍵'
+        required: false
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: azure-practice-vm
+  cancel-in-progress: false
+
+jobs:
+  configure:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    env:
+      OPERATION: ${{ inputs.operation }}
+      STUDENT_ID: ${{ inputs.student_id }}
+      STUDENT_PUBLIC_KEY: ${{ inputs.student_public_key }}
+      VM_HOST: ${{ secrets.AZURE_VM_HOST }}
+      VM_ADMIN: ${{ secrets.AZURE_VM_ADMIN_USER }}
+      VM_ADMIN_KEY: ${{ secrets.AZURE_VM_ADMIN_PRIVATE_KEY }}
+      VM_KNOWN_HOSTS: ${{ secrets.AZURE_VM_KNOWN_HOSTS }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate inputs
+        run: |
+          python - <<'PY'
+          import base64
+          import os
+          import re
+          import sys
+
+          host = os.environ['VM_HOST']
+          admin = os.environ['VM_ADMIN']
+          if not re.fullmatch(r'[A-Za-z0-9][A-Za-z0-9.-]{0,252}', host):
+              sys.exit('AZURE_VM_HOST を設定してください')
+          if not re.fullmatch(r'[a-z_][a-z0-9_-]{0,31}', admin):
+              sys.exit('AZURE_VM_ADMIN_USER を設定してください')
+          if not os.environ['VM_ADMIN_KEY'] or not os.environ['VM_KNOWN_HOSTS']:
+              sys.exit('管理用の秘密鍵とホスト鍵をGitHub Secretsに設定してください')
+          if os.environ['OPERATION'] == 'add_student':
+              if not re.fullmatch(r'[a-z][a-z0-9_-]{1,30}', os.environ['STUDENT_ID']):
+                  sys.exit('受講者IDが不正です')
+              parts = os.environ['STUDENT_PUBLIC_KEY'].strip().split()
+              if len(parts) not in (2, 3) or parts[0] != 'ssh-ed25519':
+                  sys.exit('ssh-ed25519 公開鍵を入力してください')
+              try:
+                  if len(base64.b64decode(parts[1], validate=True)) < 32:
+                      raise ValueError('short key')
+              except (ValueError, base64.binascii.Error):
+                  sys.exit('公開鍵が不正です')
+          PY
+
+      - name: Configure existing VM
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -d -m 0700 "$RUNNER_TEMP/hht-ssh"
+          printf '%s\n' "$VM_ADMIN_KEY" > "$RUNNER_TEMP/hht-ssh/admin_key"
+          printf '%s\n' "$VM_KNOWN_HOSTS" > "$RUNNER_TEMP/hht-ssh/known_hosts"
+          chmod 0600 "$RUNNER_TEMP/hht-ssh/admin_key" "$RUNNER_TEMP/hht-ssh/known_hosts"
+          ssh-keygen -F "$VM_HOST" -f "$RUNNER_TEMP/hht-ssh/known_hosts" >/dev/null || {
+            echo 'AZURE_VM_KNOWN_HOSTS に接続先のホスト鍵がありません' >&2
+            exit 1
+          }
+          ssh_opts=(-o BatchMode=yes -o ConnectTimeout=10 -o StrictHostKeyChecking=yes
+            -o "UserKnownHostsFile=$RUNNER_TEMP/hht-ssh/known_hosts"
+            -i "$RUNNER_TEMP/hht-ssh/admin_key")
+          remote="${VM_ADMIN}@${VM_HOST}"
+          remote_base="/tmp/hht-practice-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          cleanup() {
+            ssh "${ssh_opts[@]}" "$remote" "rm -f '${remote_base}.sh' '${remote_base}.pub'" || true
+            rm -f "$RUNNER_TEMP/hht-ssh/admin_key" "$RUNNER_TEMP/hht-ssh/known_hosts" "$RUNNER_TEMP/hht-ssh/student.pub"
+          }
+          trap cleanup EXIT
+          scp "${ssh_opts[@]}" hht/scripts/setup-azure-practice.sh "$remote:${remote_base}.sh"
+          if [[ "$OPERATION" == setup ]]; then
+            ssh "${ssh_opts[@]}" "$remote" "sudo -n bash '${remote_base}.sh' setup"
+            http_status=$(curl --silent --show-error --max-time 15 --output /dev/null --write-out '%{http_code}' "http://$VM_HOST/")
+            [[ "$http_status" =~ ^[234][0-9][0-9]$ ]] || { echo "HTTP確認に失敗: $http_status" >&2; exit 1; }
+            echo 'Apache の設定を適用し、外部からHTTP応答を確認しました。受講者の実接続は講師が確認してください。' >> "$GITHUB_STEP_SUMMARY"
+          else
+            printf '%s\n' "$STUDENT_PUBLIC_KEY" > "$RUNNER_TEMP/hht-ssh/student.pub"
+            scp "${ssh_opts[@]}" "$RUNNER_TEMP/hht-ssh/student.pub" "$remote:${remote_base}.pub"
+            ssh "${ssh_opts[@]}" "$remote" "sudo -n bash '${remote_base}.sh' add-student '$STUDENT_ID' '${remote_base}.pub'"
+            curl --fail --silent --show-error --max-time 15 "http://$VM_HOST/students/$STUDENT_ID/" >/dev/null
+            {
+              echo "受講者 \`hht-$STUDENT_ID\` を追加しました。"
+              echo "公開URL: \`http://$VM_HOST/students/$STUDENT_ID/\`"
+              echo "転送先: \`/srv/hht-public/$STUDENT_ID/\`"
+            } >> "$GITHUB_STEP_SUMMARY"
+          fi

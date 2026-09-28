@@ -1,17 +1,17 @@
-# VS Code・HTML・CSS はじめてツアー
+# Codespaces・HTML・CSS はじめてツアー
 
-このフォルダーは、VS CodeのCodeTour機能を使って学ぶ練習場所です。
+このフォルダーは、CodespacesのCodeTour機能を使って学ぶ練習場所です。
 
 ## 始め方
 
-1. VS Codeで、`README.md`と`hht`が見えるリポジトリのルートを開きます。
+1. Codespacesで、`README.md`と`hht`が見えるリポジトリのルートを開きます。
 2. おすすめに表示された`CodeTour`と`Live Server`をインストールします。
 3. 左側のアクティビティバーから`CodeTour`を開きます。
-4. `01 はじめてのVS Code`の再生ボタンを押します。
+4. `01 はじめてのCodespaces`の再生ボタンを押します。
 
 ツアーは次の順番で進みます。
 
-1. はじめてのVS Code
+1. はじめてのCodespaces
 2. HTMLを書いてみよう
 3. CSSで見た目を整えよう
 

@@ -36,9 +36,10 @@ ISSUE-10: 自由記述
 - A: Visual Studio Code + ローカルファイル
 - B: Visual Studio Code + Git/GitHub
 - C: ブラウザ完結型エディター
+- D: GitHub Codespaces + GitHub
 - 暫定: B。ただし第1〜5回はGitなしでも進行可能
-- 選択: A
-- 反映: Visual Studio Codeとローカルファイルを必須環境とし、Gitは必須から除外
+- 選択: D（2026-09-25変更）
+- 反映: READMEからCodespaceを起動し、受講者用コピーまたは作業ブランチで進める
 
 ## ISSUE-03 公開演習の方式
 
@@ -48,8 +49,8 @@ ISSUE-10: 自由記述
 - B: 講師が用意したステージングへSFTP
 - C: 模擬公開のみ（ローカルの公開フォルダーへコピー）
 - 暫定: C。講師判断でAを発展課題にする
-- 選択: C → B → A。AではXServer、SSH、SFTPを利用する
-- 反映: 模擬公開、講師用SFTP、XServer実習の3段階へ変更。XServerは公開鍵認証、接続先、対象パス、バックアップを事前確認
+- 選択: C → B → A。Aでは講師が用意したAzure Ubuntu VMでSSH、SCP、SFTPを利用する（2026-09-25変更）
+- 反映: 模擬公開、講師用SFTP、Azure VM実習の3段階へ変更。受講者別アカウントとApache配信先を設定し、接続先、対象パス、バックアップを事前確認
 
 ## ISSUE-04 架空クライアントの業種
 

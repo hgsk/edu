@@ -222,7 +222,7 @@ function itemKey(item) {
 }
 
 function saveProgress() {
-  localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
+  window.CourseStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
 }
 
 function courseComplete(data, course) {
@@ -662,7 +662,7 @@ function finishGame() {
   launchConfetti(ratio === 1 ? 90 : 50);
   const best = Number(localStorage.getItem(bestKey()) || 0);
   if (score > best) {
-    localStorage.setItem(bestKey(), String(score));
+    window.CourseStorage.setItem(bestKey(), String(score));
     updateBest();
   }
   beep(523, .08);
@@ -814,7 +814,7 @@ els.soundButton.addEventListener("click", () => {
 });
 els.voiceButton.addEventListener("click", async () => {
   voiceEnabled = !voiceEnabled;
-  localStorage.setItem("code-type-quest-voice", voiceEnabled ? "on" : "off");
+  window.CourseStorage.setItem("code-type-quest-voice", voiceEnabled ? "on" : "off");
   if (!voiceEnabled) {
     currentVoiceAudio?.pause();
     updateVoiceButton("off");
@@ -826,6 +826,7 @@ els.voiceButton.addEventListener("click", async () => {
   }
 });
 document.addEventListener("keydown", event => {
+  if (event.target.closest(".account-panel")) return;
   showPressedKey(event.key, true);
   if (event.key === "Escape") resetToStart();
   if (event.key === "Enter" && !els.startView.hidden) startGame();

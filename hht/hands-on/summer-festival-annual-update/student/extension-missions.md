@@ -119,7 +119,7 @@
 - 存在しないページやページ内リンク
 - HTML/CSSの構文
 
-### Tips: VS Codeのターミナルで確認
+### Tips: Codespacesのターミナルで確認
 
 ```powershell
 # リンクとページ内リンク

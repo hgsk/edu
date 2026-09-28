@@ -31,7 +31,7 @@
 
 ### Tips: ツールでリンク切れを探す
 
-目でクリックしたあと、VS Codeのターミナルで次を実行します。
+目でクリックしたあと、Codespacesのターミナルで次を実行します。
 
 ```powershell
 npx --yes linkinator hht/hands-on/summer-festival-annual-update/starter --recurse --check-fragments
@@ -41,7 +41,7 @@ npx --yes linkinator hht/hands-on/summer-festival-annual-update/starter --recurs
 
 ## 3. 変更範囲を探す（15分）
 
-VS Codeの検索で`2026`、日付、時刻、イベント名を探します。
+Codespacesの検索で`2026`、日付、時刻、イベント名を探します。
 
 - [ ] ブラウザのタブ名
 - [ ] 検索結果に使われる説明

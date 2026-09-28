@@ -30,7 +30,9 @@ AI生成物は、上記の一般原則に加え、授業で使用する生成サ
 
 - [IPA: 安全なウェブサイトの運用管理に向けた20ヶ条](https://www.ipa.go.jp/security/vuln/websecurity/sitecheck.html) — 不要ファイル、継続確認等の運用上の注意
 - [Google Search Central: Influencing title links](https://developers.google.com/search/docs/appearance/title-link) — タイトル表示と情報の整合
-- [XServer: SSH設定](https://www.xserver.ne.jp/manual/man_server_ssh.php) — 公開鍵認証、SSH有効化、接続情報と操作上の注意
+- [Azure: Linux VMへSSH接続](https://learn.microsoft.com/en-us/azure/virtual-machines/linux-vm-connect) — 公開IP、NSG、公開鍵認証
+- [Azure: Apacheを使うWebサーバー](https://learn.microsoft.com/en-us/azure/virtual-machines/linux/tutorial-lamp-stack) — HTTP公開とApacheの導入
+- [GitHub: Codespace起動リンク](https://docs.github.com/en/codespaces/setting-up-your-project-for-codespaces/setting-up-your-repository/facilitating-quick-creation-and-resumption-of-codespaces) — READMEの起動リンク
 
 ## 発展講座
 

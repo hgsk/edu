@@ -11,4 +11,4 @@
 - [学生向け入口](./hht/student/README.md)
 - [講師向け入口](./hht/instructor/README.md)
 - [教材全体の案内](./hht/README.md)
-- [Google Cloud 練習インスタンスの接続手順](./hht/docs/google-cloud-practice.md)
+- [講師のAzure VMへの接続手順](./hht/docs/azure-practice.md)

@@ -19,7 +19,7 @@
 | 制作を始める | [カフェサイト](./starter-site/) |
 | 提出方法を確認する | [提出フォルダーの使い方](./submissions/README.md) |
 | 講師が授業を準備する | [15回分の授業パック](./lessons/README.md)・[演習運営手順](./docs/exercise-operations.md) |
-| Google Cloudの公開演習をする | [練習インスタンスの接続手順](./docs/google-cloud-practice.md) |
+| Azure VMの公開演習をする | [講師のVMへの接続手順](./docs/azure-practice.md) |
 | 追加の実務演習をする | [夏祭りサイトの更新](./hands-on/summer-festival-annual-update/README.md) |
 
 授業設計や発展講座などの詳細資料は[docs](./docs/)にあります。

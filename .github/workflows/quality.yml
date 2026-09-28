@@ -29,16 +29,24 @@ jobs:
       - name: Validate course structure and local assets
         run: python hht/scripts/validate-course.py
 
+      - name: Check Azure setup script syntax
+        run: bash -n hht/scripts/setup-azure-practice.sh
+
       - name: Check JavaScript syntax
         run: |
           node --check hht/typing-app/app.js
           node --check hht/typing-app/extra-items.js
+          node --check hht/typing-app/reader.js
+          node --check hht/typing-app/account.js
+          node --check hht/typing-app/firebase-config.js
+          node --test hht/typing-app/progress-store.test.mjs
 
       - name: Validate HTML
         run: >-
           npx --yes html-validate
           "hht/tour/index.html"
           "hht/typing-app/index.html"
+          "hht/typing-app/reader.html"
           "hht/starter-site/*.html"
           "hht/portfolio/index.html"
           "hht/hands-on/summer-festival-annual-update/starter/*.html"
@@ -48,6 +56,8 @@ jobs:
           npx --yes stylelint
           hht/tour/style.css
           hht/typing-app/style.css
+          hht/typing-app/reader.css
+          hht/typing-app/arcade.css
           hht/starter-site/css/style.css
           hht/portfolio/css/style.css
           hht/hands-on/summer-festival-annual-update/starter/css/style.css

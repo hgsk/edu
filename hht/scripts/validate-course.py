@@ -170,8 +170,8 @@ for group, terms in advanced_requirements.items():
 
 readme = (ROOT / "README.md").read_text(encoding="utf-8")
 repository_readme = (ROOT.parent / "README.md").read_text(encoding="utf-8")
-for term in ("リポジトリのルート", "Visual Studio Code", "作業ブランチ"):
-    require(term in repository_readme, f"Repository README missing VS Code workflow term: {term}")
+for term in ("codespaces.new/hgsk/edu", "README.md", "hht", "作業ブランチ"):
+    require(term in repository_readme, f"Repository README missing Codespaces workflow term: {term}")
 for document_name, document in {
     "course README": readme,
     "curriculum": curriculum,
@@ -179,15 +179,15 @@ for document_name, document in {
     "lesson packs": (ROOT / "lessons/README.md").read_text(encoding="utf-8"),
 }.items():
     require(
-        "リポジトリのルート" in document and ("VS Code" in document or "Visual Studio Code" in document),
-        f"{document_name} missing repository-root VS Code rule",
+        "Codespace" in document and ("リポジトリのルート" in document or "Codespaceを起動" in document),
+        f"{document_name} missing Codespaces start rule",
     )
 student_portal = (ROOT / "student/README.md").read_text(encoding="utf-8")
 instructor_portal = (ROOT / "instructor/README.md").read_text(encoding="utf-8")
 require("15日分のお仕事" in student_portal, "Student portal missing 15-day navigation")
 require("講師トークガイド" not in student_portal, "Student portal exposes instructor talk guide")
 require("講師トークガイド" in instructor_portal, "Instructor portal missing instructor talk guide")
-require("取り扱いに注意する資料" in instructor_portal, "Instructor portal missing protected-material guidance")
+require("資料の取り扱い" in instructor_portal, "Instructor portal missing protected-material guidance")
 for portal_name, portal_path in {
     "student": ROOT / "student/README.md",
     "instructor": ROOT / "instructor/README.md",

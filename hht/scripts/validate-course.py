@@ -85,8 +85,8 @@ for group, terms in textbook_coverage.items():
         require(term in coverage_source, f"Textbook coverage missing [{group}] term: {term}")
 
 workbook = (ROOT / "docs/student-workbook.md").read_text(encoding="utf-8")
-workbook_days = re.split(r"(?=^# DAY \\d+ )", workbook, flags=re.MULTILINE)
-workbook_days = [block for block in workbook_days if re.match(r"^# DAY \\d+ ", block)]
+workbook_days = re.split(r"(?=^# DAY \d+ )", workbook, flags=re.MULTILINE)
+workbook_days = [block for block in workbook_days if re.match(r"^# DAY \d+ ", block)]
 require(len(workbook_days) == 15, f"Expected 15 workbook days; found {len(workbook_days)}")
 for block in workbook_days:
     title = block.splitlines()[0]

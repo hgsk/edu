@@ -1,409 +1,215 @@
 # GitHub / Codespaces を使ったWeb学習標準
 
-本資料は、HHTのWeb学習においてGitHubとGitHub Codespacesをどのように活用するかを、**講師・担任・学校関係者向け**に整理した方針です。
+本資料は、HHTのWeb学習でGitHubとGitHub Codespacesをどのように使うかを、**講師・担任・学校関係者向け**に簡潔にまとめたものです。
 
-目的は、単にGitやクラウドIDEを教えることではありません。  
-Web制作・Web開発の学習を、**再現可能な開発環境、提出、レビュー、障害調査、成果物管理まで一つの流れとして学べる形にすること**です。
+まず想定するのは、**Webデザイナー、Webディレクターを目指す学生**です。  
+プログラマー向けの高度な開発環境を教えることが目的ではありません。
+
+Web制作の中で必要になる、
+
+- ファイルを編集する
+- 変更を保存する
+- 他の人と共有する
+- 修正内容を確認する
+- 制作物を提出する
+
+という基本的な流れを、GitHub / Codespacesで統一します。
 
 ---
 
-## 1. 位置づけ
+## 1. 何のために使うか
 
-GitHub / Codespacesは、Web学習における共通基盤として利用します。
+### Codespaces
+
+ブラウザから開ける制作環境として使います。
+
+学生は、学校PCや自宅PCの環境差をあまり意識せずに、
+
+1. 教材を開く
+2. HTML / CSSなどを編集する
+3. ブラウザで確認する
+4. 保存する
+
+という作業に集中できます。
+
+### GitHub
+
+制作物の保存・共有・提出先として使います。
+
+変更履歴が残るため、
+
+- どこを変更したか
+- いつ修正したか
+- 修正前の状態
+- 講師からの指摘をどう直したか
+
+を確認できます。
+
+---
+
+## 2. Webデザイナー学習での使い方
+
+最初は難しいGit操作を覚えることより、**Web制作の流れの中で自然に使うこと**を重視します。
 
 ```text
-教材
+教材を開く
   ↓
-Codespacesで開発
-  ↓
-Gitで履歴を残す
-  ↓
-GitHubへpush
-  ↓
-Pull Request / 提出
-  ↓
-レビュー・自動確認
-  ↓
-成果物・ポートフォリオ
-```
-
-この仕組みにより、完成したWebページだけでなく、
-
-- どのように作業したか
-- どの単位で変更したか
-- 問題をどう修正したか
-- 他者のレビューをどう反映したか
-- テストやビルドを通せたか
-
-といった**開発プロセスそのものを学習対象にできます**。
-
----
-
-## 2. Web学習での主なメリット
-
-### 学習環境を揃えやすい
-
-CodespacesとDev Containerを利用すると、教材側で次のような環境を定義できます。
-
-- Node.js
-- PHP / Composer
-- Git
-- MySQL / MariaDB / PostgreSQL
-- Docker / Docker Compose
-- ESLint / Prettier
-- 必要なVS Code拡張
-- Web表示用ポート
-
-これにより、
-
-- PCごとにNode.jsのバージョンが違う
-- PATHが通らない
-- Windowsだけ挙動が違う
-- 必要なソフトが入っていない
-
-といった環境差による授業停止を減らせます。
-
-### 学生の作業履歴が残る
-
-GitHub上には、
-
-- commit
-- branch
-- diff
-- Pull Request
-- review
-- GitHub Actions
-
-が残ります。
-
-そのため、提出物だけを見るのではなく、**学習の過程や改善の履歴も確認できます**。
-
-### 自宅・学校で同じ学習を続けやすい
-
-ブラウザからCodespaceを開けば、学校PC、自宅PC、貸出端末などでも同じ構成を再現しやすくなります。
-
----
-
-## 3. 基本的な学習フロー
-
-学生には、まず次の流れを習慣化します。
-
-```text
-Repositoryを開く
-  ↓
-Codespaceを起動
-  ↓
-課題を確認
-  ↓
-編集
+Codespacesで編集
   ↓
 ブラウザで確認
   ↓
-commit
+GitHubへ保存
   ↓
-push
+提出
   ↓
-提出 / Pull Request
+講師が確認・コメント
+  ↓
+修正
 ```
 
-初学者には環境構築を最初から要求せず、まずは制作とGitの基本操作に集中させます。
+主な対象は、
 
-その後、
+- HTML / CSS
+- JavaScriptの基礎
+- レスポンシブWebデザイン
+- Webサイトの更新
+- WordPressのテーマ編集
+- ポートフォリオ制作
 
-```text
-HTML / CSS
-  ↓
-JavaScript
-  ↓
-Git / GitHub
-  ↓
-HTTP
-  ↓
-PHP / Node.js
-  ↓
-Database
-  ↓
-Docker
-  ↓
-CI/CD
-  ↓
-SSH / SFTP
-```
+です。
 
-と、徐々に下位レイヤーを開示していきます。
-
-Codespacesは「環境構築を学ばなくてよい仕組み」ではなく、**難しい部分を段階的に学ぶための入口**として位置づけます。
+学生にとってGitHubは、最初は「難しい開発ツール」ではなく、**制作物を安全に残し、講師やチームと共有する場所**として扱います。
 
 ---
 
-## 4. WordPressなどOSSサービスの構築
+## 3. Webディレクター学習での使い方
 
-Codespaces上では、WordPressなどのOSSサービスも教材化できます。
+Webディレクター志望の学生にもGitHubは有効です。
 
-推奨はDocker Composeを使った構成です。
+コードを書くことだけでなく、
 
-```text
-Codespace
-├─ WordPress / PHP
-├─ MariaDB
-├─ 必要に応じて管理ツール
-└─ Webポート
-      ↓
-Port Forwarding
-      ↓
-Browser
-```
+- 制作物の確認
+- 修正依頼
+- 担当者との共有
+- 変更前後の比較
+- 作業状況の確認
 
-学習項目としては、次の内容につなげられます。
+を経験できます。
 
-- WordPress初期構築
-- PHPとWebサーバーの関係
-- DB接続
-- theme / plugin
-- ファイル権限
-- environment variables
-- backup / restore
-- migration
-- バージョンアップ
-- 障害調査
-- Docker Compose
-- サービス間通信
+例えば、講師や学生同士で、
 
-同じ考え方で、nginx、Apache、Node.js、PostgreSQL、Redis、小規模APIなども扱えます。
+> この見出しを修正する  
+> スマートフォン表示を確認する  
+> 画像を差し替える
 
-### 本番環境としては使わない
+といった修正内容を共有し、作業後の変更を確認します。
 
-Codespaceは**開発・実験・演習用**です。
-
-```text
-ソースコード → Git
-DBデータ     → dump / fixture
-環境設定     → devcontainer / compose
-秘密情報     → Secrets等
-```
-
-という形で、いつでも再構築できる状態を基本とします。
+これにより、**「依頼する → 制作する → 確認する → 修正する」**というWeb制作の基本的な仕事の流れを学べます。
 
 ---
 
-## 5. SSH / SFTP演習
+## 4. 講師側のメリット
 
-### SSH
+### 学生ごとの環境差を減らせる
 
-SSHは次の2段階に分けます。
+Codespacesを使うことで、
 
-1. 自分のCodespaceへSSHしてLinux操作を学ぶ
-2. Codespaceから外部の練習サーバーへSSHする
+- 必要なソフトが入っていない
+- 自宅PCと学校PCで動きが違う
+- 設定を間違えた
 
-これにより、
+といった理由で授業が止まるケースを減らせます。
 
-- Linux shell
-- process確認
-- log確認
-- 権限
-- サーバー操作
-- 障害調査
+### 修正履歴を確認できる
 
-へ自然に接続できます。
+完成したファイルだけではなく、途中の変更も確認できます。
 
-### SFTP
+そのため、
 
-SFTPは、Codespaceから学生専用の練習サーバー領域へ接続する形を基本とします。
+- どこでつまずいたか
+- どのように直したか
+- 指摘を反映できたか
 
-```text
-Codespace
-   │
-   │ SFTP
-   ↓
-学生専用の練習サーバー領域
-```
+を見やすくなります。
 
-演習では、
+### 「動かない」の調査がしやすい
 
-1. 接続先の確認
-2. remote pathの確認
-3. アップロード
-4. Web表示確認
-5. 問題発生時の復旧
+学生がGitHubへ保存していれば、講師側でも同じファイルを開いて確認できます。
 
-までを一連の作業として扱います。
-
-秘密鍵、password、tokenなどはRepositoryへcommitしません。
+学生のPCを直接触らなくても、問題を再現しやすくなります。
 
 ---
 
-## 6. 講師による学生環境の確認
+## 5. WordPressなどへの接続
 
-Codespaces導入の大きな利点は、講師が学生PCそのものを直接触らなくても、**同じ状態を再現して調査しやすいこと**です。
+Web制作の延長として、WordPressなどのOSSも扱えます。
 
-学生のRepositoryやbranchが確認できれば、講師は次を確認できます。
+最初からサーバー構築を教える必要はありません。
 
-- ソースコード
-- commit履歴
-- diff
-- branch
-- Pull Request
-- GitHub Actions
-- devcontainer
-- Docker Compose
-- lock file
+まずは、
 
-学生から、
+- WordPressを起動する
+- テーマを編集する
+- CSSを変更する
+- 画像を差し替える
+- ページを確認する
 
-> このcommitで動きません
+といった**Webデザイナーに近い作業**から始めます。
 
-と報告してもらえば、講師側で同じcommitから環境を再現できます。
+その後、必要な学生には、
 
-```text
-学生の不具合
-   ↓
-commit SHA / branch
-   ↓
-講師側で同じ状態を再現
-   ↓
-原因調査
-```
+- Webサーバー
+- データベース
+- SFTP
+- SSH
+- Linux
 
-### 学生本人のCodespaceへ直接入る運用にはしない
-
-通常は、講師が学生本人のCodespaceへ直接SSHして調査するのではなく、再現調査を基本とします。
-
-未commitの状態や、その瞬間のprocessを確認する必要がある場合は、
-
-- 画面共有
-- Terminal出力
-- `git status`
-- `docker compose ps`
-- `docker compose logs`
-- 必要な変更のcommit / push
-
-を使います。
-
-これにより、学生自身にも**再現条件を説明する、ログを残す、問題を切り分ける**という実務的な習慣を身につけさせます。
+など、Webサイトを支える仕組みへ段階的に広げられます。
 
 ---
 
-## 7. GitHub Actionsの活用
+## 6. 将来の学習へのつながり
 
-GitHub Actionsは、自動採点だけでなく最低限の品質確認に利用できます。
+Web学習でGitHubに慣れておくと、別分野でも同じ考え方を使えます。
 
-```text
-push / Pull Request
-      ↓
-lint
-      ↓
-test
-      ↓
-build
-      ↓
-必要に応じてE2E
-```
+- **Linux OS研修**  
+  Webサイトの公開やサーバー操作からLinux学習へつなげられます。
 
-自動化しやすい項目は機械に任せ、講師は、
+- **システム開発研修**  
+  複数人での変更管理やレビューへ発展できます。
 
-- UI / UX
-- 可読性
-- 要件理解
-- 設計
-- 説明
-- レビューへの対応
+- **ゲーム・アプリ開発演習**  
+  制作物の保存、変更履歴、チーム共有という考え方をそのまま使えます。
 
-など、人が見るべき部分に時間を使えます。
+最初はWeb制作のための道具として使い、必要に応じて高度な開発学習へ広げます。
 
 ---
 
-## 8. 保存とセキュリティの基本
+## 7. 他学科への波及
 
-学生には次を明確にします。
+GitHubはプログラミング学科だけでなく、共同制作にも利用できます。
 
-```text
-Codespace = 作業環境
-Git       = バージョン記録
-GitHub    = 共有・提出・成果物
-```
+例えば、
 
-授業終了時は、
+- Web
+- デザイン
+- ゲーム
+- 映像
+- 企画
 
-1. `git status`
-2. 必要な変更をcommit
-3. push
-4. GitHub上で確認
+の学生が一つの制作物に関わる場合、変更履歴や修正依頼を同じ場所で確認できます。
 
-までを基本動作とします。
-
-Repositoryへ次の情報は入れません。
-
-- password
-- SSH private key
-- API token
-- 個人情報
-- 本番DB dump
-- 実在顧客の認証情報
-
-DB、SSH、管理画面などのポートも、理由なくpublicにしません。
+特にWeb制作を入口にすると、**「ファイルを共有する」「修正内容を伝える」「変更を確認する」**という基本的な共同作業を他学科にも展開しやすくなります。
 
 ---
 
-## 9. 将来の研修への接続
+## 8. 基本方針
 
-Web学習でGitHub / Codespaces / Dev Containerを使うと、その後の技術研修へ同じ考え方を引き継げます。
+1. GitHub / Codespacesは、まずWeb制作を学びやすくするために使う。
+2. Webデザイナー、Webディレクターに必要な範囲から始める。
+3. Gitの専門用語や高度なサーバー技術を最初から要求しない。
+4. Codespacesで学生の制作環境を揃える。
+5. GitHubで制作物・変更履歴・提出を管理する。
+6. 講師は学生の変更過程を確認し、修正指導に活用する。
+7. WordPress、Linux、システム開発、ゲーム、アプリ開発へ必要に応じて発展させる。
 
-### Linux OS研修
-
-Web演習で使ったshell、SSH、process、権限、log、Dockerの知識を、そのままLinux OS研修へ接続できます。
-
-### システム開発研修
-
-Issue、branch、Pull Request、review、CI/CDを継続利用できるため、チームによるシステム開発演習へ移行しやすくなります。
-
-### ゲーム・アプリ開発演習
-
-Git、GitHub、Issue、Pull Request、Actionsといった開発プロセスは、Web以外でも共通です。
-
-ゲーム開発やモバイルアプリ開発では実行環境そのものは別途必要になりますが、**ソース管理・課題管理・レビュー・CIという開発習慣はそのまま引き継げます**。
-
----
-
-## 10. 他学科への波及メリット
-
-GitHubはプログラミング専用の仕組みではありません。
-
-他学科でも、
-
-- Markdownによる資料作成
-- ファイルの変更履歴
-- チームでの共同作業
-- Issueによる課題管理
-- レビュー
-- 成果物のポートフォリオ化
-
-に利用できます。
-
-特に、デザイン、映像、ゲーム、ネットワーク、AI、企画系の学科と共同制作する場合、**共通の作業履歴と課題管理の場を持てること**が大きなメリットです。
-
-Web学習を入口にGitHubの基本を身につけておくことで、学科をまたいだ共同制作でも同じ開発プロセスを共有しやすくなります。
-
----
-
-## 11. 運用原則
-
-1. GitHub / Codespacesは「Web学習標準」として扱う。
-2. 初学者の環境差はCodespacesでできるだけ吸収する。
-3. 開発環境はDev Container等で再現可能にする。
-4. Codespaceを成果物の保存場所にはしない。
-5. 学生の作業履歴はGitで残す。
-6. 講師は学生PCを直接直すより、commitから再現して調査する。
-7. WordPress等のOSSはDocker Composeで再現可能にする。
-8. SSH / SFTPは安全な練習環境で行う。
-9. GitHub Actionsで機械的な確認を自動化する。
-10. Web学習で身につけた開発習慣を、Linux、システム開発、ゲーム、アプリ、他学科との共同制作へつなげる。
-
----
-
-## 参考
-
-- GitHub Codespaces: https://docs.github.com/en/codespaces
-- GitHub Codespaces security: https://docs.github.com/en/codespaces/reference/security-in-github-codespaces
-- GitHub CLI + Codespaces: https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-with-github-cli
-- Forwarding ports: https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace
-- Dev Container Specification: https://containers.dev/

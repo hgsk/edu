@@ -85,26 +85,22 @@ for group, terms in textbook_coverage.items():
         require(term in coverage_source, f"Textbook coverage missing [{group}] term: {term}")
 
 workbook = (ROOT / "docs/student-workbook.md").read_text(encoding="utf-8")
-workbook_days = re.split(r"(?=^## DAY \d+ )", workbook, flags=re.MULTILINE)
-workbook_days = [block for block in workbook_days if re.match(r"^## DAY \d+ ", block)]
+workbook_days = re.split(r"(?=^# DAY \\d+ )", workbook, flags=re.MULTILINE)
+workbook_days = [block for block in workbook_days if re.match(r"^# DAY \\d+ ", block)]
 require(len(workbook_days) == 15, f"Expected 15 workbook days; found {len(workbook_days)}")
 for block in workbook_days:
     title = block.splitlines()[0]
-    for marker in (
-        "からの",
-        "**今日のミッション:**",
-        "**作戦会議:**",
-        "**今日覚える技:**",
-        "**制作メモ:**",
-        "**星チェック:**",
-    ):
-        require(marker in block, f"{title} missing {marker}")
+    require("からの" in block, f"{title} missing client/request context")
+    require("## 今日の目的" in block, f"{title} missing learning purpose")
+    require("## 今日のゴール" in block, f"{title} missing completion goal")
+    require("## STEP 1" in block, f"{title} missing step-by-step procedure")
     require(
-        any(
-            marker in block
-            for marker in ("**返信チャレンジ:**", "**相談チャレンジ:**", "**発表チャレンジ:**")
-        ),
-        f"{title} missing communication challenge",
+        "## 完了チェック" in block or "## 最終チェック" in block,
+        f"{title} missing completion checklist",
+    )
+    require(
+        any(term in block for term in ("報告", "返信", "確認を依頼", "発表")),
+        f"{title} missing communication/reporting task",
     )
 for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/workbook/[^)]+)\)", workbook):
     relative = match.group(1)

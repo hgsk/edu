@@ -1,235 +1,152 @@
-# GitHub / Codespaces を使ったWeb開発教育方針
+# GitHub / Codespaces を使ったWeb学習標準
 
-HHTでGitHubとGitHub Codespacesを、単なる提出先やクラウドIDEではなく、**学校標準の再現可能なWeb開発環境**として利用するための方針です。
+本資料は、HHTのWeb学習においてGitHubとGitHub Codespacesをどのように活用するかを、**講師・担任・学校関係者向け**に整理した方針です。
 
-対象はHTML/CSS/JavaScriptだけでなく、PHP、WordPress、Node.js、データベース、SSH/SFTP、Docker、CI/CD、チーム開発までを含みます。
+目的は、単にGitやクラウドIDEを教えることではありません。  
+Web制作・Web開発の学習を、**再現可能な開発環境、提出、レビュー、障害調査、成果物管理まで一つの流れとして学べる形にすること**です。
 
 ---
 
-## 1. ねらい
+## 1. 位置づけ
 
-GitHubを使う最大の目的は、完成物だけでなく**開発過程そのものを教育・評価対象にすること**です。
+GitHub / Codespacesは、Web学習における共通基盤として利用します。
 
 ```text
-Issue
+教材
   ↓
-作業ブランチ
+Codespacesで開発
   ↓
-commit
+Gitで履歴を残す
   ↓
-Pull Request
+GitHubへpush
   ↓
-レビュー
+Pull Request / 提出
   ↓
-修正
+レビュー・自動確認
   ↓
-CI
-  ↓
-merge / deploy
+成果物・ポートフォリオ
 ```
 
-これにより、次の能力を継続的に確認できます。
+この仕組みにより、完成したWebページだけでなく、
 
-- 要件を読んで作業を分解する
-- 変更単位を考えてcommitする
-- 差分を確認する
-- 他人のコードをレビューする
-- 指摘を受けて修正する
-- test / lint / buildを通す
-- 公開前後の確認を行う
-- 障害時に以前の状態へ戻す
+- どのように作業したか
+- どの単位で変更したか
+- 問題をどう修正したか
+- 他者のレビューをどう反映したか
+- テストやビルドを通せたか
 
-最終成果物だけではなく、**「開発者としてどう作業したか」**を残すことを重視します。
+といった**開発プロセスそのものを学習対象にできます**。
 
 ---
 
-## 2. HHTでの基本構成
+## 2. Web学習での主なメリット
 
-HHTでは次の役割分担を基本とします。
+### 学習環境を揃えやすい
 
-| 役割 | GitHub上の仕組み |
-|---|---|
-| 教材 | Repository / Markdown |
-| 開発環境 | Codespaces |
-| 環境定義 | `.devcontainer/` |
-| 課題・作業依頼 | Issues / 教材内の依頼文 |
-| 作業単位 | branch |
-| 提出 | Pull Request / submissions |
-| レビュー | Pull Request Review |
-| 自動確認 | GitHub Actions |
-| 開発履歴 | commit / diff |
-| 成果物 | Repository |
-| 公開演習 | CodespacesのPort Forwarding / 外部練習サーバー |
+CodespacesとDev Containerを利用すると、教材側で次のような環境を定義できます。
 
-GitHub Classroomは2026年8月28日にサービス終了しているため、HHTではClassroomを前提にしません。
+- Node.js
+- PHP / Composer
+- Git
+- MySQL / MariaDB / PostgreSQL
+- Docker / Docker Compose
+- ESLint / Prettier
+- 必要なVS Code拡張
+- Web表示用ポート
 
-代わりに、
+これにより、
 
-```text
-GitHub Organization / Repository
-        +
-Template相当の教材
-        +
-Codespaces
-        +
-devcontainer
-        +
-Issues / PR
-        +
-GitHub Actions
-```
+- PCごとにNode.jsのバージョンが違う
+- PATHが通らない
+- Windowsだけ挙動が違う
+- 必要なソフトが入っていない
 
-を基本構成とします。
+といった環境差による授業停止を減らせます。
+
+### 学生の作業履歴が残る
+
+GitHub上には、
+
+- commit
+- branch
+- diff
+- Pull Request
+- review
+- GitHub Actions
+
+が残ります。
+
+そのため、提出物だけを見るのではなく、**学習の過程や改善の履歴も確認できます**。
+
+### 自宅・学校で同じ学習を続けやすい
+
+ブラウザからCodespaceを開けば、学校PC、自宅PC、貸出端末などでも同じ構成を再現しやすくなります。
 
 ---
 
-## 3. Codespacesを学校標準環境にする
+## 3. 基本的な学習フロー
 
-Codespacesの価値はブラウザ版VS Codeそのものではなく、**教材と開発環境を同じRepositoryから再現できること**にあります。
-
-学生は原則として次の流れで作業します。
+学生には、まず次の流れを習慣化します。
 
 ```text
 Repositoryを開く
   ↓
 Codespaceを起動
   ↓
-自分のbranch / copyを確認
-  ↓
-課題を読む
+課題を確認
   ↓
 編集
   ↓
-ブラウザ確認
+ブラウザで確認
   ↓
 commit
   ↓
 push
   ↓
-PR / 提出
+提出 / Pull Request
 ```
 
-これにより、授業時間を次のような環境差トラブルに消費しにくくなります。
+初学者には環境構築を最初から要求せず、まずは制作とGitの基本操作に集中させます。
 
-- Node.jsやPHPのバージョンが違う
-- PATHが通っていない
-- Windowsだけ動作が異なる
-- 必要なVS Code拡張がない
-- DBの初期設定が違う
-- npm / Composer等の依存関係が揃わない
-
-### 環境はRepository側で定義する
-
-将来的にはリポジトリルートへ`.devcontainer/devcontainer.json`を置き、授業で必要なものを定義します。
-
-例:
-
-- Node.js
-- PHP / Composer
-- Git / GitHub CLI
-- Docker / Docker Compose
-- MySQL / MariaDB / PostgreSQL
-- ESLint / Prettier
-- Playwright等のテストツール
-- 授業で使用するVS Code拡張
-- 自動ForwardするWebポート
-
-Dev ContainerはCodespacesだけの仕組みにせず、ローカルVS Code + Dev Containersでも利用できる構成を目指します。
+その後、
 
 ```text
-                 Repository
-                     │
-              .devcontainer
-                     │
-        ┌────────────┴────────────┐
-        ↓                         ↓
-   GitHub Codespaces       Local VS Code
-      初学者標準            Docker利用者
+HTML / CSS
+  ↓
+JavaScript
+  ↓
+Git / GitHub
+  ↓
+HTTP
+  ↓
+PHP / Node.js
+  ↓
+Database
+  ↓
+Docker
+  ↓
+CI/CD
+  ↓
+SSH / SFTP
 ```
+
+と、徐々に下位レイヤーを開示していきます。
+
+Codespacesは「環境構築を学ばなくてよい仕組み」ではなく、**難しい部分を段階的に学ぶための入口**として位置づけます。
 
 ---
 
-## 4. 初学者と上級者で抽象化レベルを変える
+## 4. WordPressなどOSSサービスの構築
 
-最初から環境構築をすべて学生へ要求しません。
+Codespaces上では、WordPressなどのOSSサービスも教材化できます。
 
-### 初期
-
-学生は、
-
-1. Codespaceを起動する
-2. ファイルを編集する
-3. Webページを確認する
-4. commitする
-
-ことに集中します。
-
-### 中期
-
-次に、
-
-- Node.js
-- npm
-- PHP
-- Web Server
-- DB
-- Linux shell
-- environment variables
-
-を理解します。
-
-### 後期
-
-さらに、
-
-- devcontainer
-- Docker
-- Docker Compose
-- CI/CD
-- SSH
-- SFTP
-- サーバー運用
-
-へ進みます。
-
-つまりCodespacesを**環境構築を教えない仕組み**ではなく、下層を段階的に開示するための抽象化層として使います。
-
----
-
-## 5. Webアプリの表示
-
-Codespace内でWebサーバーを起動し、Port Forwardingでブラウザから確認できます。
-
-例:
-
-```bash
-npm run dev
-```
-
-```bash
-php -S 0.0.0.0:8000
-```
-
-転送ポートは原則として**private**を使用します。
-
-必要な演習だけOrganization内共有を検討し、public公開は目的とリスクを確認した場合だけ使用します。
-
-DBポートは通常外部公開しません。
-
----
-
-## 6. WordPressなどのOSSサービス構築
-
-Codespaces上でもWordPress等のOSSサービス構築演習は可能です。
-
-推奨構成はDocker Composeです。
+推奨はDocker Composeを使った構成です。
 
 ```text
 Codespace
-│
 ├─ WordPress / PHP
 ├─ MariaDB
-├─ 必要に応じて phpMyAdmin 等
+├─ 必要に応じて管理ツール
 └─ Webポート
       ↓
 Port Forwarding
@@ -237,41 +154,26 @@ Port Forwarding
 Browser
 ```
 
-教材として扱える内容:
+学習項目としては、次の内容につなげられます。
 
-- WordPressの初期構築
+- WordPress初期構築
 - PHPとWebサーバーの関係
 - DB接続
-- `wp-config.php`
 - theme / plugin
 - ファイル権限
 - environment variables
-- DB backup / restore
-- uploadsの扱い
-- バージョンアップ
+- backup / restore
 - migration
+- バージョンアップ
 - 障害調査
 - Docker Compose
 - サービス間通信
 
-WordPress以外にも、同じ方法で次のようなサービスを扱えます。
+同じ考え方で、nginx、Apache、Node.js、PostgreSQL、Redis、小規模APIなども扱えます。
 
-- nginx / Apache
-- PHP
-- Node.js
-- MySQL / MariaDB
-- PostgreSQL
-- Redis
-- CMS
-- 小規模なAPIサーバー
+### 本番環境としては使わない
 
-### Codespaceを本番サーバーにはしない
-
-Codespaceは**開発・実験・演習環境**として扱います。
-
-Codespaceを削除すれば、その環境固有のデータは失われる可能性があります。
-
-したがって、
+Codespaceは**開発・実験・演習用**です。
 
 ```text
 ソースコード → Git
@@ -280,58 +182,33 @@ DBデータ     → dump / fixture
 秘密情報     → Secrets等
 ```
 
-として、必要なものを再構築できる状態にします。
+という形で、いつでも再構築できる状態を基本とします。
 
 ---
 
-## 7. SSH
+## 5. SSH / SFTP演習
 
-SSHには2種類あるため、授業では区別します。
+### SSH
 
-### A. 自分のCodespaceへSSHする
+SSHは次の2段階に分けます。
 
-GitHub CLIを使うと、自分が作成したCodespaceへSSHできます。
+1. 自分のCodespaceへSSHしてLinux操作を学ぶ
+2. Codespaceから外部の練習サーバーへSSHする
 
-```bash
-gh codespace list
-gh codespace ssh
-```
+これにより、
 
-用途:
-
-- Linux shellの練習
-- GUIを使わない作業
+- Linux shell
 - process確認
 - log確認
-- CLIでの障害調査
+- 権限
+- サーバー操作
+- 障害調査
 
-これは通常のVPSへSSHする演習の前段として使えます。
+へ自然に接続できます。
 
-### B. Codespaceから外部サーバーへSSHする
+### SFTP
 
-CodespaceをSSHクライアントとして使い、学校が用意した練習サーバーへ接続できます。
-
-```text
-Student
-   ↓
-Codespace
-   ↓ SSH
-Training Server
-```
-
-こちらは実務のサーバー管理に近い演習です。
-
-既存の[演習運営手順](./docs/exercise-operations.md)にある段階B・Aの考え方と組み合わせます。
-
----
-
-## 8. SFTP
-
-SFTPも実施できます。
-
-ただし、**CodespaceをSFTPサーバーとして学生同士で利用する構成は基本にしません**。
-
-推奨するのは、
+SFTPは、Codespaceから学生専用の練習サーバー領域へ接続する形を基本とします。
 
 ```text
 Codespace
@@ -341,152 +218,74 @@ Codespace
 学生専用の練習サーバー領域
 ```
 
-です。
+演習では、
 
-学生ごとに、
+1. 接続先の確認
+2. remote pathの確認
+3. アップロード
+4. Web表示確認
+5. 問題発生時の復旧
 
-- host
-- port
-- username
-- SSH key
-- remote path
+までを一連の作業として扱います。
 
-を分離します。
-
-演習では次を確認します。
-
-1. 接続先を確認する
-2. `pwd`等で現在位置を確認する
-3. アップロード対象を確認する
-4. バックアップを作る
-5. SFTPで対象ファイルだけ送る
-6. HTTPで表示確認する
-7. 問題があれば対象ファイルだけ戻す
-
-秘密鍵、password、token等はRepositoryへcommitしません。
-
-詳細な公開ルールは[演習運営手順](./docs/exercise-operations.md)を優先します。
+秘密鍵、password、tokenなどはRepositoryへcommitしません。
 
 ---
 
-## 9. 講師による学生環境の調査
+## 6. 講師による学生環境の確認
 
-ここはCodespaces運用で重要です。
+Codespaces導入の大きな利点は、講師が学生PCそのものを直接触らなくても、**同じ状態を再現して調査しやすいこと**です。
 
-### 講師が確認できるもの
-
-学生のRepositoryまたは作業branchを講師が閲覧できれば、次を確認できます。
+学生のRepositoryやbranchが確認できれば、講師は次を確認できます。
 
 - ソースコード
 - commit履歴
 - diff
 - branch
 - Pull Request
-- review履歴
-- GitHub Actionsの結果
-- devcontainer設定
-- Docker Compose等の環境定義
+- GitHub Actions
+- devcontainer
+- Docker Compose
+- lock file
 
-学生が「動きません」と報告した場合は、学生のcommit SHAを指定して講師側に同じ環境を再現します。
+学生から、
+
+> このcommitで動きません
+
+と報告してもらえば、講師側で同じcommitから環境を再現できます。
 
 ```text
-学生
-「このcommitで動きません」
-        │
-        ↓
+学生の不具合
+   ↓
 commit SHA / branch
-        │
-        ↓
-講師自身のCodespaceで再現
-        │
-        ↓
+   ↓
+講師側で同じ状態を再現
+   ↓
 原因調査
 ```
 
-これは各学生PCを直接調査する方式より再現性が高くなります。
+### 学生本人のCodespaceへ直接入る運用にはしない
 
-### 講師が直接確認できないもの
+通常は、講師が学生本人のCodespaceへ直接SSHして調査するのではなく、再現調査を基本とします。
 
-**Codespaceそのものへの接続は作成者に限定されます。**
-
-そのため講師が学生本人のCodespaceへ勝手にSSHして、
-
-- 未commitファイル
-- 現在動いているprocess
-- shell history
-- 一時ファイル
-- container内部のその瞬間の状態
-
-を直接確認する運用にはしません。
-
-### ライブ環境を確認したい場合
-
-学生本人に次の情報を取得してもらいます。
-
-```bash
-git status
-git log --oneline -n 10
-pwd
-ls
-ps aux
-docker compose ps
-docker compose logs
-```
-
-必要に応じて、
+未commitの状態や、その瞬間のprocessを確認する必要がある場合は、
 
 - 画面共有
-- Terminal出力の共有
-- commit / push
-- logファイルの提出
+- Terminal出力
+- `git status`
+- `docker compose ps`
+- `docker compose logs`
+- 必要な変更のcommit / push
 
-を行います。
+を使います。
 
-**障害調査できる状態をcommitとして残すこと自体を教育対象にします。**
-
----
-
-## 10. 講師による再現調査を基本にする理由
-
-従来型の授業では、
-
-```text
-先生、自分のPCだけ動きません
-```
-
-に対して学生のPCを直接触る必要がありました。
-
-HHTでは、
-
-```text
-Repository
-+
-commit SHA
-+
-devcontainer
-+
-依存関係lock file
-```
-
-を揃えることで、講師側で同じ状態を再現できるようにします。
-
-これにより学生にも、
-
-- 状態を説明する
-- 再現条件を書く
-- エラーメッセージを残す
-- Gitへ保存する
-- 問題を切り分ける
-
-という実務的な障害報告を習慣化できます。
+これにより、学生自身にも**再現条件を説明する、ログを残す、問題を切り分ける**という実務的な習慣を身につけさせます。
 
 ---
 
-## 11. GitHub Actions
+## 7. GitHub Actionsの活用
 
-GitHub Actionsは自動採点だけでなく、最低限の品質ゲートとして使います。
-
-例:
+GitHub Actionsは、自動採点だけでなく最低限の品質確認に利用できます。
 
 ```text
 push / Pull Request
@@ -500,50 +299,39 @@ build
 必要に応じてE2E
 ```
 
-採点例:
+自動化しやすい項目は機械に任せ、講師は、
 
-| 項目 | 自動化 |
-|---|---|
-| HTML構文 | 自動 |
-| lint | 自動 |
-| unit test | 自動 |
-| build | 自動 |
-| リンク確認 | 一部自動 |
-| UI/UX | 講師 |
-| 可読性 | 講師 |
-| 要件理解 | 講師 |
-| コミュニケーション | 講師 |
+- UI / UX
+- 可読性
+- 要件理解
+- 設計
+- 説明
+- レビューへの対応
 
-単純な確認を自動化し、講師は設計、UX、説明、レビューなど人間が見るべき部分へ時間を使います。
+など、人が見るべき部分に時間を使えます。
 
 ---
 
-## 12. 保存場所の原則
+## 8. 保存とセキュリティの基本
 
 学生には次を明確にします。
 
 ```text
-Codespace = 作業PC
+Codespace = 作業環境
 Git       = バージョン記録
 GitHub    = 共有・提出・成果物
 ```
 
-「Codespaceにファイルがあるから保存済み」とは考えません。
-
-授業終了時は原則として、
+授業終了時は、
 
 1. `git status`
 2. 必要な変更をcommit
 3. push
-4. GitHub上でcommitを確認
+4. GitHub上で確認
 
-まで行います。
+までを基本動作とします。
 
----
-
-## 13. セキュリティ
-
-Repositoryへ次を入れません。
+Repositoryへ次の情報は入れません。
 
 - password
 - SSH private key
@@ -552,113 +340,70 @@ Repositoryへ次を入れません。
 - 本番DB dump
 - 実在顧客の認証情報
 
-公開ポートも必要最小限にします。
-
-特に、
-
-- DB
-- SSH
-- 管理画面
-- phpMyAdmin等
-
-を理由なくpublicにしません。
-
-学生ごとの練習環境は可能な限り分離します。
+DB、SSH、管理画面などのポートも、理由なくpublicにしません。
 
 ---
 
-## 14. 費用とアカウント
+## 9. 将来の研修への接続
 
-基本はGitHub Freeを入口とし、教育機関・学生についてGitHub Educationの対象になる場合はEducation特典を利用します。
+Web学習でGitHub / Codespaces / Dev Containerを使うと、その後の技術研修へ同じ考え方を引き継げます。
 
-2026年9月時点では、認証済み学生は個人アカウントでGitHub Codespacesを月180 core-hoursまで利用できる案内があります。
+### Linux OS研修
 
-ただし料金、無料枠、Education特典は変更される可能性があるため、**授業設計を特定の無料枠の数値に依存させません**。
+Web演習で使ったshell、SSH、process、権限、log、Dockerの知識を、そのままLinux OS研修へ接続できます。
 
-原則:
+### システム開発研修
 
-- 軽量なWeb授業は小さいmachine typeを使う
-- 不要なCodespaceは停止する
-- 不要になったCodespaceは削除する
-- Gitへ保存して環境を使い捨て可能にする
+Issue、branch、Pull Request、review、CI/CDを継続利用できるため、チームによるシステム開発演習へ移行しやすくなります。
 
----
+### ゲーム・アプリ開発演習
 
-## 15. HHTでの推奨到達形
+Git、GitHub、Issue、Pull Request、Actionsといった開発プロセスは、Web以外でも共通です。
 
-最終的には次の構成を目指します。
-
-```text
-HHT Repository
-│
-├─ hht/
-│   ├─ student/
-│   ├─ instructor/
-│   ├─ docs/
-│   ├─ lessons/
-│   ├─ starter-site/
-│   └─ submissions/
-│
-├─ .devcontainer/
-│   └─ devcontainer.json
-│
-├─ compose.yaml
-│
-└─ .github/
-    └─ workflows/
-```
-
-教育の進行は、
-
-```text
-HTML/CSS
-  ↓
-JavaScript
-  ↓
-Git / GitHub
-  ↓
-HTTP
-  ↓
-PHP / Node
-  ↓
-Database
-  ↓
-WordPress / OSS
-  ↓
-Docker
-  ↓
-SSH / SFTP
-  ↓
-CI/CD
-  ↓
-チーム開発
-```
-
-とし、すべて同じRepository・Codespaces・Gitの考え方で接続します。
+ゲーム開発やモバイルアプリ開発では実行環境そのものは別途必要になりますが、**ソース管理・課題管理・レビュー・CIという開発習慣はそのまま引き継げます**。
 
 ---
 
-## 16. HHTでの運用原則
+## 10. 他学科への波及メリット
 
-1. 初学者の環境差はCodespacesで吸収する。
-2. 開発環境は可能な限りコードとしてRepositoryへ置く。
-3. Codespaceを成果物の保存場所にしない。
-4. 学生の作業履歴はGitで残す。
-5. 講師は学生のPCを直接直すより、同じcommitを再現する。
-6. WordPress等のOSSはDocker Composeで再現可能にする。
-7. SSH/SFTPは学生専用の練習領域で行う。
-8. 認証情報はGitへ入れない。
-9. GitHub Actionsで機械的確認を自動化する。
-10. GitHubの操作そのものではなく、実務の開発プロセスを学ばせる。
+GitHubはプログラミング専用の仕組みではありません。
+
+他学科でも、
+
+- Markdownによる資料作成
+- ファイルの変更履歴
+- チームでの共同作業
+- Issueによる課題管理
+- レビュー
+- 成果物のポートフォリオ化
+
+に利用できます。
+
+特に、デザイン、映像、ゲーム、ネットワーク、AI、企画系の学科と共同制作する場合、**共通の作業履歴と課題管理の場を持てること**が大きなメリットです。
+
+Web学習を入口にGitHubの基本を身につけておくことで、学科をまたいだ共同制作でも同じ開発プロセスを共有しやすくなります。
+
+---
+
+## 11. 運用原則
+
+1. GitHub / Codespacesは「Web学習標準」として扱う。
+2. 初学者の環境差はCodespacesでできるだけ吸収する。
+3. 開発環境はDev Container等で再現可能にする。
+4. Codespaceを成果物の保存場所にはしない。
+5. 学生の作業履歴はGitで残す。
+6. 講師は学生PCを直接直すより、commitから再現して調査する。
+7. WordPress等のOSSはDocker Composeで再現可能にする。
+8. SSH / SFTPは安全な練習環境で行う。
+9. GitHub Actionsで機械的な確認を自動化する。
+10. Web学習で身につけた開発習慣を、Linux、システム開発、ゲーム、アプリ、他学科との共同制作へつなげる。
 
 ---
 
 ## 参考
 
-- GitHub Codespaces documentation: https://docs.github.com/en/codespaces
+- GitHub Codespaces: https://docs.github.com/en/codespaces
 - GitHub Codespaces security: https://docs.github.com/en/codespaces/reference/security-in-github-codespaces
 - GitHub CLI + Codespaces: https://docs.github.com/en/codespaces/developing-in-a-codespace/using-github-codespaces-with-github-cli
 - Forwarding ports: https://docs.github.com/en/codespaces/developing-in-a-codespace/forwarding-ports-in-your-codespace
-- GitHub Education for students: https://docs.github.com/en/education/about-github-education/github-education-for-students/about-github-education-for-students
 - Dev Container Specification: https://containers.dev/
-- GitHub Classroom deprecation: https://github.blog/changelog/2026-08-27-github-classroom-deprecated/

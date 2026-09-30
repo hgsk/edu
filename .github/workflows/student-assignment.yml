@@ -35,7 +35,9 @@ jobs:
           persist-credentials: false
 
       - name: Collect changed files
-        run: git -C student diff --name-only HEAD^1 HEAD^2 > "$RUNNER_TEMP/changed-files.txt"
+        run: |
+          merge_base="$(git -C student merge-base HEAD^1 HEAD^2)"
+          git -C student diff --name-only "$merge_base" HEAD^2 > "$RUNNER_TEMP/changed-files.txt"
 
       - name: Grade assignment
         run: >-

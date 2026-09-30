@@ -8,6 +8,15 @@
 2. 下の表から今日のDAYを開く。
 3. 依頼を読む → 計画する → 制作する → 確認する → 返信する。
 
+### DAY 1を始める人
+
+DAY 1は、[ワークブックのDAY 1](../docs/student-workbook.md#day-1-はじめての依頼メール)を上から順に進めれば、講師から接続先を聞かなくても完了できます。
+
+- 学校から練習用URL・接続方法が配布されている → 配布された情報だけを使う
+- 配布されていない → [practice-server/staging](../practice-server/)を模擬公開先として使う
+- URL、ユーザー名、パスワード、秘密鍵を自分で推測しない
+- 最後に[DAY 1の完成条件](./assignment-checks.md#day-1-環境デプロイ復元)と[提出方法](../submissions/README.md)を確認する
+
 ## 15日分のお仕事
 
 | 回 | 今日の仕事 |
@@ -30,7 +39,7 @@
 
 ## 作業に使うもの
 
-- [制作するカフェサイト](../starter-site/)・[提出方法](../submissions/README.md)・[完成条件](./assignment-checks.md)
+- [制作するカフェサイト](../starter-site/)・[模擬公開領域](../practice-server/)・[提出方法](../submissions/README.md)・[完成条件](./assignment-checks.md)
 - [用語集](../docs/glossary.md)・[メールと変更記録のテンプレート](../docs/templates.md)
 - DAY 14〜15: [ポートフォリオ制作ガイド](../docs/portfolio-project.md)・[制作フォルダー](../portfolio/)
 - 追加演習: [夏祭りサイトの更新](../hands-on/summer-festival-annual-update/README.md)

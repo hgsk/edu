@@ -1,0 +1,43 @@
+name: Student Assignment
+
+on:
+  pull_request_target:
+    branches: [main]
+    types: [opened, synchronize, reopened, ready_for_review]
+    paths:
+      - "hht/submissions/**"
+
+permissions:
+  contents: read
+
+jobs:
+  grade:
+    name: Grade student submission
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout trusted grader
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.base.sha }}
+          path: trusted
+          persist-credentials: false
+
+      - name: Checkout pull request merge
+        uses: actions/checkout@v5
+        with:
+          ref: refs/pull/${{ github.event.pull_request.number }}/merge
+          path: student
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Collect changed files
+        run: git -C student diff --name-only HEAD^1 HEAD^2 > "$RUNNER_TEMP/changed-files.txt"
+
+      - name: Grade assignment
+        run: >-
+          python trusted/hht/scripts/grade_student_pr.py
+          --base trusted
+          --student student
+          --changed-files "$RUNNER_TEMP/changed-files.txt"
+          --summary "$GITHUB_STEP_SUMMARY"

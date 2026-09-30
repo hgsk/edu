@@ -29,6 +29,9 @@ jobs:
       - name: Validate course structure and local assets
         run: python hht/scripts/validate-course.py
 
+      - name: Test student PR grader
+        run: python hht/scripts/test_grade_student_pr.py
+
       - name: Check JavaScript syntax
         run: |
           node --check hht/typing-app/app.js

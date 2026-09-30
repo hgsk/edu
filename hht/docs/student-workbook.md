@@ -327,7 +327,7 @@ cp hht/starter-site/index.html hht/practice-server/staging/index.html
 最低限、次を埋めます。
 
 ~~~md
-# DAY 1 作業記録
+DAY 1 作業記録
 - 依頼: 「創業10年」の文章修正依頼を受領。DAY 1では環境確認と復元練習まで実施
 - 質問:
 - 変更した場所: hht/starter-site/index.html のh1（DAY 1練習）

@@ -6,6 +6,9 @@ on:
     types: [opened, synchronize, reopened, ready_for_review]
     paths:
       - "hht/submissions/**"
+      - "hht/starter-site/**"
+      - "hht/portfolio/**"
+      - "hht/practice-server/**"
 
 permissions:
   contents: read

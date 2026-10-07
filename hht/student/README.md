@@ -4,7 +4,7 @@
 
 ## 毎回の始め方
 
-1. Codespaceでリポジトリのルートを開き、自分のコピーまたはブランチを確認する。
+1. VS Codeで自分用の教材フォルダー（リポジトリのルートに相当）を開く。左側にREADME.mdとhhtが見え、フォルダーの保存場所が自分用であることを確認する。Git/GitHub・Codespacesは任意。使う人だけソース管理で自分のブランチを確認する。
 2. 下の表から今日のDAYを開く。
 3. 依頼を読む → 計画する → 制作する → 確認する → 返信する。
 
@@ -16,6 +16,10 @@ DAY 1は、[ワークブックのDAY 1](../docs/student-workbook.md#day-1-はじ
 - 配布されていない → [practice-server/staging](../practice-server/)を模擬公開先として使う
 - URL、ユーザー名、パスワード、秘密鍵を自分で推測しない
 - 最後に[DAY 1の完成条件](./assignment-checks.md#day-1-環境デプロイ復元)と[提出方法](../submissions/README.md)を確認する
+
+## 全15回の提出とレビュー
+
+標準は[ZIP提出](../submissions/local-submission.md)。Git/GitHubアカウントもPRも不要です。毎回、作業前後のソース、WORKLOG、画面と証拠を残し、講師の指摘を直して再提出します。[提出方法](../submissions/README.md)で任意のPR提出も選べます。完成条件と評価基準は共通です。
 
 ## 15日分のお仕事
 

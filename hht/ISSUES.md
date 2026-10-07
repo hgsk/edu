@@ -39,6 +39,7 @@ ISSUE-10: 自由記述
 - 暫定: B。ただし第1〜5回はGitなしでも進行可能
 - 選択: A
 - 反映: Visual Studio Codeとローカルファイルを必須環境とし、Gitは必須から除外
+- 整合確認（2026-10-07）: 後続履歴にこの選択を必須Gitへ上書きする明示的決定は確認できない。[履歴照合記録](./docs/submission-policy-history.md)を参照。全15回で[ZIP提出・講師レビュー](./submissions/local-submission.md)を標準経路として使用し、PR＋CI／Codespacesは任意とする。完成条件と評価基準は共通。
 
 ## ISSUE-03 公開演習の方式
 

@@ -13,7 +13,9 @@ Web制作の中で必要になる、
 - 修正内容を確認する
 - 制作物を提出する
 
-という基本的な流れを、GitHub / Codespacesで統一します。
+という基本的な流れを、GitHub / Codespacesを利用する場合に統一します。
+
+**HHT基礎講座の位置づけ:** 本資料は任意のGitHub活用案です。[ISSUE-02](./ISSUES.md#issue-02-コーディング環境)の「VS Code＋ローカルファイル／Gitは必須から除外」を変更しません。Git/GitHubを使わない学生も[全15回のZIP提出](./submissions/local-submission.md)で同じ完成条件・評価を満たせます。
 
 ---
 

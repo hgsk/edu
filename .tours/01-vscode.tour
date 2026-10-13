@@ -1,6 +1,6 @@
 {
   "$schema": "https://aka.ms/codetour-schema",
-  "title": "01 はじめてのCodespaces",
+  "title": "01 はじめてのVS Code",
   "description": "ファイルを開く、編集する、保存する、ブラウザで確認する流れを体験します。",
   "isPrimary": true,
   "nextTour": "02 HTMLを書いてみよう",
@@ -9,7 +9,7 @@
       "file": "hht/tour/README.md",
       "line": 1,
       "title": "ようこそ！",
-      "description": "## Codespacesを探検しよう\n\n今日は「どこに何があるか」を覚えるツアーです。全部暗記しなくて大丈夫。迷ったら、ここへ戻ってきましょう。\n\nまず左端を見てください。縦に並ぶアイコンを**アクティビティバー**といいます。"
+      "description": "## VS Codeを探検しよう\n\n今日は「どこに何があるか」を覚えるツアーです。全部暗記しなくて大丈夫。迷ったら、ここへ戻ってきましょう。\n\nまず左端を見てください。縦に並ぶアイコンを**アクティビティバー**といいます。"
     },
     {
       "file": "hht/tour/README.md",
@@ -39,7 +39,7 @@
       "file": "hht/tour/index.html",
       "line": 1,
       "title": "コマンドパレット",
-      "description": "## Codespacesへお願いする入口\n\n`Ctrl + Shift + P`を押すと**コマンドパレット**が開きます。`format document`と入力し、`ドキュメントのフォーマット`を探してみよう。\n\nコマンド名が分からなくても、言葉で検索できます。今は実行せず`Esc`で閉じてもOKです。"
+      "description": "## VS Codeへお願いする入口\n\n`Ctrl + Shift + P`を押すと**コマンドパレット**が開きます。`format document`と入力し、`ドキュメントのフォーマット`を探してみよう。\n\nコマンド名が分からなくても、言葉で検索できます。今は実行せず`Esc`で閉じてもOKです。"
     },
     {
       "file": "hht/tour/index.html",

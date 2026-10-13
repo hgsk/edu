@@ -64,6 +64,7 @@ class GraderTests(unittest.TestCase):
 
     def test_author_routing(self):
         docs = ["hht/submissions/README.md", "hht/submissions/local-submission.md",
+                "hht/submissions/git-lan-submission.md",
                 "hht/docs/student-workbook.md", "hht/scripts/validate-course.py"]
         self.assertFalse(requires_grading("hgsk", "hgsk/edu", docs))
         self.assertTrue(requires_grading("student", "hgsk/edu", docs))

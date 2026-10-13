@@ -8,3 +8,6 @@ hht/output/pdf/rendered-cheatsheet-*.png
 node_modules/
 test-results/
 coverage/
+
+# Private Git submission history, destinations and transfer receipts.
+.hht-submit/

@@ -10,6 +10,16 @@ permissions:
   contents: read
 
 jobs:
+  submit-windows:
+    name: Test local Git submission on Windows
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22.20.0"
+      - run: node --test hht/scripts/test_submit.mjs
+
   validate:
     runs-on: ubuntu-latest
     steps:
@@ -31,6 +41,9 @@ jobs:
 
       - name: Test student PR grader
         run: python hht/scripts/test_grade_student_pr.py
+
+      - name: Test local Git submission commands
+        run: node --test hht/scripts/test_submit.mjs
 
       - name: Check JavaScript syntax
         run: |

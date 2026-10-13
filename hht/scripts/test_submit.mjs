@@ -6,12 +6,13 @@ import path from 'node:path';
 import crypto from 'node:crypto';
 import { spawnSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
+import { removeTree } from './submit.mjs';
 
 const script = fileURLToPath(new URL('./submit.mjs', import.meta.url));
 const fields = ['依頼', '質問', '変更した場所', '変更しなかった場所', '確認したこと', '未確認', 'バージョン', '確認URL'];
 function fixture(t) {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'hht-submit-'));
-  t.after(() => fs.rmSync(temp, { recursive: true, force: true }));
+  t.after(() => removeTree(temp));
   const root = path.join(temp, '教材 with spaces');
   const share = path.join(temp, 'LAN share');
   fs.mkdirSync(root); fs.mkdirSync(share);
@@ -80,7 +81,7 @@ test('begin is immutable, resubmission gets a new revision, earlier submission p
 });
 
 test('network failure retains outbox; retry sends identical revision idempotently', t => {
-  const f = fixture(t); f.init(); f.prepare(); fs.rmSync(f.share, { recursive: true });
+  const f = fixture(t); f.init(); f.prepare(); removeTree(f.share);
   assert.match(f.failed('submit'), /手元の提出物は保存済み/);
   const original = f.manifest(); assert.ok(fs.existsSync(original));
   fs.mkdirSync(f.share); f.ok('send'); f.ok('send');
@@ -92,7 +93,7 @@ test('secrets and links fail before creating submission commits', t => {
   f.write('hht/submissions/day-01/evidence/secret.md', 'password: hunter2');
   const error = f.failed('submit'); assert.match(error, /秘密情報/); assert.doesNotMatch(error, /hunter2/);
   assert.equal(f.config().days['01'].revision, 0);
-  fs.rmSync(path.join(f.root, 'hht/submissions/day-01/evidence/secret.md'));
+  removeTree(path.join(f.root, 'hht/submissions/day-01/evidence/secret.md'));
   fs.symlinkSync(path.join(f.root, 'hht/instructor/answer.md'), path.join(f.root, 'hht/starter-site/leak.md'));
   assert.match(f.failed('submit'), /リンクは禁止/);
 });
@@ -139,7 +140,7 @@ test('receiver rejects a forged Git bundle with files outside the submission sco
   cmd('add', '--all'); cmd('-c', 'user.name=student', '-c', 'user.email=s001@hht.invalid', 'commit', '-m', 'forge');
   const manifest = JSON.parse(fs.readFileSync(f.receipt()));
   const bundle = path.join(path.dirname(f.receipt()), manifest.bundle);
-  fs.rmSync(bundle); cmd('bundle', 'create', bundle, 'refs/heads/submission');
+  removeTree(bundle); cmd('bundle', 'create', bundle, 'refs/heads/submission');
   manifest.head = cmd('rev-parse', 'HEAD');
   manifest.sha256 = crypto.createHash('sha256').update(fs.readFileSync(bundle)).digest('hex');
   fs.writeFileSync(f.receipt(), JSON.stringify(manifest));

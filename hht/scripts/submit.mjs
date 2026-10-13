@@ -18,6 +18,24 @@ const writeJSON = (file, value) => {
 };
 const digest = file => crypto.createHash('sha256').update(fs.readFileSync(file)).digest('hex');
 function ensure(condition, message) { if (!condition) throw new Error(message); }
+// Avoid native recursive rmSync: older Windows Node builds can abort on Unicode paths.
+// Walk with lstat so links are removed themselves, never followed.
+export function removeTree(target) {
+  let info;
+  try { info = fs.lstatSync(target); }
+  catch (error) { if (error.code === 'ENOENT') return; throw error; }
+  if (info.isDirectory() && !info.isSymbolicLink()) {
+    for (const name of fs.readdirSync(target)) removeTree(path.join(target, name));
+    fs.rmdirSync(target);
+  } else {
+    try { fs.unlinkSync(target); }
+    catch (error) {
+      if (!['EPERM', 'EACCES'].includes(error.code) || info.isSymbolicLink()) throw error;
+      fs.chmodSync(target, 0o600);
+      fs.unlinkSync(target);
+    }
+  }
+}
 function git(cwd, ...args) {
   const result = spawnSync('git', ['-c', `core.hooksPath=${path.join(cwd, '.git', 'disabled-hooks')}`, '-c', 'commit.gpgSign=false', ...args], {
     cwd, encoding: 'utf8', timeout: 120000, maxBuffer: 16 * 1024 * 1024,
@@ -66,7 +84,7 @@ function selected(root, day) {
 }
 function snapshot(root, repo, day, message, student) {
   const files = selected(root, day); // Validate everything before altering the private mirror.
-  for (const entry of fs.readdirSync(repo)) if (entry !== '.git') fs.rmSync(path.join(repo, entry), { recursive: true, force: true });
+  for (const entry of fs.readdirSync(repo)) if (entry !== '.git') removeTree(path.join(repo, entry));
   for (const relative of files) {
     const output = path.join(repo, relative);
     fs.mkdirSync(path.dirname(output), { recursive: true });
@@ -136,7 +154,7 @@ function receive(manifestPath, output) {
     fs.writeFileSync(path.join(output, 'REVIEW.diff'), git(output, 'diff', manifest.base, manifest.head, '--') + '\n');
     writeJSON(path.join(output, 'RECEIPT.json'), { ...manifest, receivedAt: new Date().toISOString() });
   } catch (error) {
-    fs.rmSync(output, { recursive: true, force: true });
+    removeTree(output);
     throw error;
   }
   console.log(`受け取り検証完了: ${output}\nREVIEW.diffとWORKLOG・画面を確認してください。学生コードは実行していません。`);

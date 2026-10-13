@@ -4,11 +4,6 @@ on:
   pull_request_target:
     branches: [main]
     types: [opened, synchronize, reopened, ready_for_review]
-    paths:
-      - "hht/submissions/**"
-      - "hht/starter-site/**"
-      - "hht/portfolio/**"
-      - "hht/practice-server/**"
 
 permissions:
   contents: read
@@ -39,7 +34,21 @@ jobs:
           merge_base="$(git -C student merge-base HEAD^1 HEAD^2)"
           git -C student diff --name-only "$merge_base" HEAD^2 > "$RUNNER_TEMP/changed-files.txt"
 
+      - name: Classify PR using trusted author rules
+        id: classify
+        env:
+          PR_AUTHOR: ${{ github.event.pull_request.user.login }}
+          PR_HEAD_REPOSITORY: ${{ github.event.pull_request.head.repo.full_name }}
+        run: >-
+          python trusted/hht/scripts/classify_student_pr.py
+          --author "$PR_AUTHOR"
+          --head-repository "$PR_HEAD_REPOSITORY"
+          --changed-files "$RUNNER_TEMP/changed-files.txt"
+          --output "$GITHUB_OUTPUT"
+          --summary "$GITHUB_STEP_SUMMARY"
+
       - name: Grade assignment
+        if: steps.classify.outputs.grade == 'true'
         run: >-
           python trusted/hht/scripts/grade_student_pr.py
           --base trusted

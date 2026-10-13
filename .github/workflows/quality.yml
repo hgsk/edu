@@ -40,6 +40,7 @@ jobs:
           node --check hht/typing-app/account.js
           node --check hht/typing-app/firebase-config.js
           node --test hht/typing-app/progress-store.test.mjs
+          node --test hht/typing-app/audio-catalog.test.mjs
 
       - name: Validate HTML
         run: >-

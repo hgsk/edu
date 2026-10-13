@@ -54,3 +54,34 @@ test('an edit during an in-flight write remains queued', async () => {
   assert.equal(local.getItem(`course-pending:${HANDLE_KEY}`), 'BBB');
   await store.connect({}, { write: async () => {} });
 });
+
+test('denied reads and missing storage allow progress in memory', () => {
+  for (const local of [undefined, { getItem() { throw Error('denied'); } }]) {
+    const statuses = [];
+    const store = createProgressStore(local, text => statuses.push(text));
+    assert.equal(store.getItem(HANDLE_KEY), null);
+    store.setItem(HANDLE_KEY, 'ABC');
+    assert.equal(store.getItem(HANDLE_KEY), 'ABC');
+    assert.equal(store.persistent, false);
+    assert.match(statuses.at(-1), /再読み込みで失われます/);
+  }
+});
+
+test('quota failure keeps the latest progress and pending update in memory', async () => {
+  const local = storage();
+  local.setItem(HANDLE_KEY, 'OLD');
+  const broken = {
+    getItem: key => local.getItem(key),
+    setItem() { throw Error('quota'); },
+    removeItem: key => local.removeItem(key)
+  };
+  const statuses = [];
+  const store = createProgressStore(broken, text => statuses.push(text));
+  store.setItem(HANDLE_KEY, 'NEW');
+  const writes = [];
+  await store.connect({ [HANDLE_KEY]: 'REMOTE' }, { write: async (...args) => writes.push(args) });
+  assert.equal(store.getItem(HANDLE_KEY), 'NEW');
+  assert.deepEqual(writes, [[HANDLE_KEY, 'NEW']]);
+  assert.equal(store.getItem(`course-pending:${HANDLE_KEY}`), null);
+  assert.match(statuses.at(-1), /再読み込みで失われます/);
+});

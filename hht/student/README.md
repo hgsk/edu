@@ -35,3 +35,5 @@
 - DAY 14〜15: [ポートフォリオ制作ガイド](../docs/portfolio-project.md)・[制作フォルダー](../portfolio/)
 - 追加演習: [夏祭りサイトの更新](../hands-on/summer-festival-annual-update/README.md)
 - 練習: [CODE TYPE QUEST](../typing-app/index.html)・[RSVP教材リーダー](../typing-app/reader.html)
+- アプリの使い方: [付属アプリの解説と遊び方](../docs/app-play-guide.md)
+- アプリの起動: [Python不要の起動手順](../docs/app-start-guide.md)

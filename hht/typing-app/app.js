@@ -41,33 +41,32 @@ const ITEMS = [
   { course: "symbols", target: "calc(100% - 32px)", meaning: "丸かっこ・パーセント・マイナスを使う計算", example: "width: calc(100% - 32px);" },
   { course: "symbols", target: "[hidden] { display: none; }", meaning: "角かっこで属性を選ぶCSS", example: "hidden属性の要素を非表示にする" },
   { course: "symbols", target: "* { box-sizing: border-box; }", meaning: "アスタリスクですべての要素を選ぶCSS", example: "全要素のサイズ計算を揃える" },
-  { course: "sentences", target: "Web design connects people with information.", reading: "ウェブデザイン コネクツ ピープル ウィズ インフォメーション", meaning: "Webデザインは人と情報をつなぐ", example: "長文では単語間のスペースにも注目しよう" },
+  { course: "sentences", target: "Web design connects people with information.", reading: "ウェブデザイン コネクツ ピープル ウィズ インフォメーション", meaning: "Webデザインは人と情報をつなぐ", example: "connect A with Bは「AとBをつなぐ」という表現" },
   { course: "sentences", target: "Check every page before you deploy the website.", reading: "チェック エブリ ページ ビフォア ユー デプロイ ザ ウェブサイト", meaning: "公開する前にすべてのページを確認する", example: "確認 → 公開の仕事の流れ" },
   { course: "sentences", target: "A clear heading helps users find information quickly.", reading: "ア クリア ヘディング ヘルプス ユーザーズ ファインド インフォメーション クイックリー", meaning: "明確な見出しは情報をすばやく見つける助けになる", example: "見出し階層とユーザビリティ" },
   { course: "sentences", target: "Responsive design works on phones, tablets, and computers.", reading: "レスポンシブ デザイン ワークス オン フォーンズ タブレッツ アンド コンピューターズ", meaning: "レスポンシブデザインは様々な画面で使える", example: "スマートフォン対応の基本" },
   { course: "sentences", target: "Save a backup before changing the production website.", reading: "セーブ ア バックアップ ビフォア チェンジング ザ プロダクション ウェブサイト", meaning: "本番サイトを変更する前にバックアップを保存する", example: "安全な更新作業の基本" },
-  { course: "htmlCode", target: "<header class=\"site-header\">NORTH LIGHT COFFEE</header>", reading: "ヘッダー クラス サイトヘッダー", meaning: "クラス名を付けたヘッダーを作る", example: "開始タグ・内容・終了タグを正確に入力" },
-  { course: "htmlCode", target: "<a class=\"button\" href=\"menu.html\">View menu</a>", reading: "エー クラス ボタン エイチレフ メニュードットエイチティーエムエル", meaning: "メニューページへ移動するリンクを作る", example: "属性の引用符とスペースに注意" },
+  { course: "htmlCode", target: "<header class=\"site-header\">NORTH LIGHT COFFEE</header>", reading: "ヘッダー クラス サイトヘッダー", meaning: "クラス名を付けたヘッダーを作る", example: "headerはページ上部のまとまり。classはCSSとつながる名前" },
+  { course: "htmlCode", target: "<a class=\"button\" href=\"menu.html\">View menu</a>", reading: "エー クラス ボタン エイチレフ メニュードットエイチティーエムエル", meaning: "メニューページへ移動するリンクを作る", example: "hrefはリンク先。引用符の中が属性の値" },
   { course: "htmlCode", target: "<img src=\"images/cafe.webp\" alt=\"Cafe interior\">", reading: "イメージ ソース オルト", meaning: "代替テキスト付きの画像を表示する", example: "srcは画像の場所、altは画像の意味" },
-  { course: "htmlCode", target: "<section class=\"menu\"><h2>Popular menu</h2></section>", reading: "セクション クラス メニュー エイチツー", meaning: "人気メニューを一つのセクションにまとめる", example: "要素の入れ子を確認しよう" },
+  { course: "htmlCode", target: "<section class=\"menu\"><h2>Popular menu</h2></section>", reading: "セクション クラス メニュー エイチツー", meaning: "人気メニューを一つのセクションにまとめる", example: "sectionの中にh2がある親子関係" },
   { course: "htmlCode", target: "<label for=\"email\">Email</label><input id=\"email\" type=\"email\">", reading: "ラベル フォー メール インプット アイディー メール", meaning: "ラベルとメール入力欄を関連付ける", example: "forとidを同じ値にする" },
   { course: "cssCode", target: ".button { color: white; background: blue; }", reading: "ドット ボタン カラー ホワイト バックグラウンド ブルー", meaning: "ボタンを白文字・青背景にする", example: "セレクタと宣言ブロック" },
   { course: "cssCode", target: ".menu { display: grid; gap: 24px; }", reading: "ドット メニュー ディスプレイ グリッド ギャップ", meaning: "メニューをグリッドで並べ、間隔を空ける", example: "Gridレイアウトの基本" },
   { course: "cssCode", target: ".site-header { position: sticky; top: 0; }", reading: "ドット サイトヘッダー ポジション スティッキー トップ ゼロ", meaning: "ヘッダーを画面上部に追従させる", example: "positionとtopを組み合わせる" },
   { course: "cssCode", target: "@media (max-width: 600px) { .menu { display: block; } }", reading: "アットメディア マックスウィズ ロッピャクピクセル", meaning: "600px以下でメニューを縦並びにする", example: "レスポンシブ対応のメディアクエリ" },
   { course: "cssCode", target: ".button:hover { transform: translateY(-2px); }", reading: "ドット ボタン ホバー トランスフォーム トランスレートワイ", meaning: "ボタンにマウスを重ねると少し上へ動かす", example: "疑似クラスとtransform" },
-  { course: "recall", target: "<h1>", prompt: "ページで最も大切な見出しを作るHTMLタグは？", reading: "日本語の質問からコードを思い出そう", meaning: "開始タグだけを半角で入力します", example: "ヒント：見出しレベル1", canReveal: true },
-  { course: "recall", target: "<a>", prompt: "別のページへ移動するリンクを作るHTMLタグは？", reading: "日本語の質問からコードを思い出そう", meaning: "開始タグだけを半角で入力します", example: "ヒント：anchorの頭文字", canReveal: true },
-  { course: "recall", target: "color", prompt: "CSSで文字の色を指定するプロパティは？", reading: "日本語の質問から英単語を思い出そう", meaning: "プロパティ名だけを半角英字で入力します", example: "ヒント：色を表す英単語", canReveal: true },
-  { course: "recall", target: "margin", prompt: "CSSで要素の外側の余白を指定するプロパティは？", reading: "日本語の質問から英単語を思い出そう", meaning: "プロパティ名だけを半角英字で入力します", example: "ヒント：内側の余白はpadding", canReveal: true },
-  { course: "recall", target: ".class", prompt: "CSSでclass属性を選ぶときの書き方は？", reading: "日本語の質問から記号と単語を思い出そう", meaning: "ドットとclassを続けて入力します", example: "ヒント：先頭はピリオド", canReveal: true },
+  { course: "recall", target: "<h1>", prompt: "ページで最も大切な見出しを作るHTMLタグは？", reading: "日本語の質問からコードを思い出そう", meaning: "文書全体の題名を表す、いちばん上の見出し", example: "見出しタグはheadingのhと段階を表す数字の組み合わせ", canReveal: true },
+  { course: "recall", target: "<a>", prompt: "別のページへ移動するリンクを作るHTMLタグは？", reading: "日本語の質問からコードを思い出そう", meaning: "リンク先へ移動するための要素", example: "anchorの頭文字。href属性がリンク先を表す", canReveal: true },
+  { course: "recall", target: "color", prompt: "CSSで文字の色を指定するプロパティは？", reading: "日本語の質問から英単語を思い出そう", meaning: "文字そのものの色。背景の色とは別", example: "色を表す英単語。#17233bなどの値と組み合わせる", canReveal: true },
+  { course: "recall", target: "margin", prompt: "CSSで要素の外側の余白を指定するプロパティは？", reading: "日本語の質問から英単語を思い出そう", meaning: "要素と隣の要素との間にできる空き", example: "内側の余白はpadding、外側の余白は別のプロパティ", canReveal: true },
+  { course: "recall", target: ".class", prompt: "CSSでclass属性を選ぶときの書き方は？", reading: "日本語の質問から記号と単語を思い出そう", meaning: "同じclass名が付いた複数の要素を選ぶ書き方", example: "idを選ぶときは#、classを選ぶときは別の記号", canReveal: true },
   ...window.EXTRA_ITEMS
 ];
 
-ITEMS.forEach((item, index) => {
-  const audioNumber = index + 1;
-  const hasAudio = audioNumber <= 60 || (audioNumber >= 64 && audioNumber <= 143);
-  item.audio = hasAudio ? `./audio/${String(audioNumber).padStart(3, "0")}.webm` : null;
+ITEMS.forEach(item => {
+  const entry = window.COURSE_AUDIO?.[`${item.course}:${item.target}`];
+  item.audio = entry?.src ?? null;
 });
 
 const COURSES = [
@@ -85,7 +84,7 @@ const COURSES = [
 const els = Object.fromEntries([
   "courseList", "bestScore", "score", "combo", "remaining", "progressBar",
   "startView", "startButton", "questionView", "categoryBadge", "target",
-  "reading", "typingInput", "feedback", "meaning", "example", "skipButton",
+  "reading", "typingInput", "feedback", "meaning", "meaningLabel", "example", "skipButton",
   "resultView", "resultTitle", "finalScore", "correctCount", "maxCombo",
   "resultMessage", "retryButton", "reviewButton", "soundButton", "playPanel",
   "redAlert", "confettiLayer", "keyboard", "keyHint", "completionRate",
@@ -111,6 +110,7 @@ let examCorrectCharacters = 0;
 let examMistakes = 0;
 let mistakes = [];
 let answerLocked = false;
+let nextQuestionTimer;
 let soundOn = true;
 let audioContext;
 let wrongInputActive = false;
@@ -119,7 +119,7 @@ let toastTimer;
 let elapsedTimer;
 let gameStartedAt = 0;
 let elapsedSeconds = 0;
-let voiceEnabled = localStorage.getItem("code-type-quest-voice") !== "off";
+let voiceEnabled = window.CourseStorage.getItem("code-type-quest-voice") !== "off";
 let currentVoiceAudio;
 const WORD_PROCESSING_RANKS = [
   { name: "初段", threshold: 800, penalty: 5 },
@@ -203,7 +203,7 @@ function shuffle(items) {
 function loadProgress() {
   const empty = { mastered: [], totalCorrect: 0, maxCombo: 0, perfectRuns: 0, unlocked: [] };
   try {
-    const saved = JSON.parse(localStorage.getItem(PROGRESS_KEY));
+    const saved = JSON.parse(window.CourseStorage.getItem(PROGRESS_KEY));
     if (!saved) return empty;
     const loaded = { ...empty, ...saved };
     if (loaded.mastered.some(value => !value.includes(":"))) {
@@ -308,7 +308,7 @@ function bestKey() {
 }
 
 function updateBest() {
-  els.bestScore.textContent = localStorage.getItem(bestKey()) || "0";
+  els.bestScore.textContent = window.CourseStorage.getItem(bestKey()) || "0";
 }
 
 function buildQueue(source = null) {
@@ -318,6 +318,7 @@ function buildQueue(source = null) {
 }
 
 function startGame(reviewItems = null) {
+  window.clearTimeout(nextQuestionTimer);
   queue = buildQueue(reviewItems);
   currentIndex = 0;
   score = 0;
@@ -385,6 +386,7 @@ function showQuestion() {
   els.reading.hidden = !showsPronunciation;
   els.reading.textContent = showsPronunciation ? item.reading : "";
   els.meaning.textContent = item.meaning;
+  els.meaningLabel.textContent = item.course === "recall" ? "考えるヒント" : item.course === "sentences" ? "英文のポイント" : "意味・使い方";
   els.example.textContent = item.example;
   els.skipButton.hidden = !item.canReveal;
   showMeaningVisual(item);
@@ -467,7 +469,7 @@ function submitAnswer() {
     beep(180, .12);
   }
   updateStatus();
-  window.setTimeout(nextQuestion, 900);
+  nextQuestionTimer = window.setTimeout(nextQuestion, 900);
 }
 
 function showComboBurst() {
@@ -618,7 +620,7 @@ function revealAnswer() {
   els.feedback.textContent = `答えは「${showSpaces(item.target)}」。次は自分で入力してみよう！`;
   els.feedback.style.color = "var(--coral)";
   updateStatus();
-  window.setTimeout(nextQuestion, 1800);
+  nextQuestionTimer = window.setTimeout(nextQuestion, 1800);
 }
 
 function nextQuestion() {
@@ -660,7 +662,7 @@ function finishGame() {
   els.reviewButton.hidden = mistakes.length === 0;
   playScoreReel();
   launchConfetti(ratio === 1 ? 90 : 50);
-  const best = Number(localStorage.getItem(bestKey()) || 0);
+  const best = Number(window.CourseStorage.getItem(bestKey()) || 0);
   if (score > best) {
     window.CourseStorage.setItem(bestKey(), String(score));
     updateBest();
@@ -736,6 +738,8 @@ function playScoreReel() {
 }
 
 function resetToStart() {
+  window.clearTimeout(nextQuestionTimer);
+  currentVoiceAudio?.pause();
   window.clearInterval(elapsedTimer);
   elapsedTimer = undefined;
   elapsedSeconds = 0;
@@ -788,8 +792,8 @@ function updateVoiceButton(state) {
 }
 
 function speakQuestion(item) {
-  if (!voiceEnabled || !item.audio) return;
   currentVoiceAudio?.pause();
+  if (!voiceEnabled || !item.audio) return;
   currentVoiceAudio = new Audio(item.audio);
   currentVoiceAudio.play()
     .then(() => updateVoiceButton("ready"))

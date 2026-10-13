@@ -8,19 +8,42 @@ export function normalizeHandle(value) {
 
 // One pending record per key survives navigation, failed writes and browser restarts.
 export function createProgressStore(storage, status) {
+  const memory = new Map();
+  let persistent = Boolean(storage);
+  const report = message => status(persistent ? message : '保存できません。このページ内でのみ進捗を保持します。再読み込みで失われます。');
+  function getItem(key) {
+    if (memory.has(key)) return memory.get(key);
+    try { return storage?.getItem(key) ?? null; }
+    catch { persistent = false; report(); return null; }
+  }
+  function writeItem(key, value) {
+    memory.set(key, value);
+    try { if (persistent) storage.setItem(key, value); }
+    catch { persistent = false; report(); }
+  }
+  function removeItem(key) {
+    memory.set(key, null);
+    try { if (persistent) storage.removeItem(key); }
+    catch { persistent = false; report(); }
+  }
   const pendingKey = key => `course-pending:${key}`;
   let backend;
   let timer;
   let flushing = false;
-  const keys = () => Object.keys(storage).filter(isProgressKey);
-  const pending = () => keys().filter(key => storage.getItem(pendingKey(key)) !== null);
+  const keys = () => {
+    let storedKeys = [];
+    try { storedKeys = storage ? Object.keys(storage) : []; }
+    catch { persistent = false; report(); }
+    return [...new Set([...storedKeys, ...memory.keys()])].filter(isProgressKey);
+  };
+  const pending = () => keys().filter(key => getItem(pendingKey(key)) !== null);
   function setItem(key, value) {
     value = String(value);
     // Mark first: a crash between these operations must not lose the pending update.
-    if (isProgressKey(key)) storage.setItem(pendingKey(key), value);
-    storage.setItem(key, value);
+    if (isProgressKey(key)) writeItem(pendingKey(key), value);
+    writeItem(key, value);
     if (isProgressKey(key)) {
-      status(backend ? '未同期の変更があります' : 'この端末に保存済み（クラウド未接続）');
+      report(backend ? '未同期の変更があります' : 'この端末に保存済み（クラウド未接続）');
       clearTimeout(timer);
       if (backend) timer = setTimeout(flush, 800);
     }
@@ -29,30 +52,30 @@ export function createProgressStore(storage, status) {
     if (!backend || flushing) return;
     clearTimeout(timer);
     flushing = true;
-    status('同期中…');
+    report('同期中…');
     try {
       for (const key of pending()) {
-        const value = storage.getItem(pendingKey(key));
+        const value = getItem(pendingKey(key));
         await backend.write(key, value);
-        if (storage.getItem(pendingKey(key)) === value) storage.removeItem(pendingKey(key));
+        if (getItem(pendingKey(key)) === value) removeItem(pendingKey(key));
       }
-      status(pending().length ? '未同期の変更があります' : 'クラウドに保存済み');
+      report(pending().length ? '未同期の変更があります' : 'クラウドに保存済み');
       if (pending().length) timer = setTimeout(flush, 800);
     } catch {
-      status('端末に保存済み・同期失敗（再試行できます）');
+      report('端末に保存済み・同期失敗（再試行できます）');
     } finally { flushing = false; }
   }
   function connect(remote, adapter) {
     for (const [key, value] of Object.entries(remote)) {
-      if (isProgressKey(key) && typeof value === 'string' && storage.getItem(pendingKey(key)) === null) {
-        storage.setItem(key, value);
+      if (isProgressKey(key) && typeof value === 'string' && getItem(pendingKey(key)) === null) {
+        writeItem(key, value);
       }
     }
     for (const key of keys()) {
-      if (!(key in remote) && storage.getItem(pendingKey(key)) === null) storage.setItem(pendingKey(key), storage.getItem(key));
+      if (!(key in remote) && getItem(pendingKey(key)) === null) writeItem(pendingKey(key), getItem(key));
     }
     backend = adapter;
     return flush();
   }
-  return { setItem, connect, flush };
+  return { getItem, setItem, connect, flush, get persistent() { return persistent; } };
 }

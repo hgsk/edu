@@ -15,8 +15,11 @@
   let store;
   try {
     const { createProgressStore, HANDLE_KEY, normalizeHandle } = await import('./progress-store.mjs');
-    store = createProgressStore(localStorage, status);
+    let local;
+    try { local = window.localStorage; } catch { /* Continue without browser storage. */ }
+    store = createProgressStore(local, status);
     window.CourseStorage = store;
+    input.value = store.getItem(HANDLE_KEY) || '';
     document.getElementById('handleForm').addEventListener('submit', event => {
       event.preventDefault();
       try {
@@ -26,6 +29,10 @@
     });
     document.getElementById('accountRetry').addEventListener('click', () => connected ? store.flush() : location.reload());
     async function connect() {
+      if (!store.persistent) {
+        status('保存できません。このページ内でのみ進捗を保持します。再読み込みで失われます。');
+        return;
+      }
       const config = window.COURSE_FIREBASE_CONFIG;
       if (!config?.apiKey || !config?.projectId || !config?.appId) {
         status('この端末に保存中（Firebase接続設定待ち）');
@@ -46,9 +53,10 @@
       const user = auth.currentUser || (await authSDK.signInAnonymously(auth)).user;
       if (!active) return;
       const ownerKey = `course-owner:${config.projectId}`;
-      const oldOwner = localStorage.getItem(ownerKey);
+      const oldOwner = store.getItem(ownerKey);
       if (oldOwner && oldOwner !== user.uid) throw new Error('認証情報が変わりました。進捗の自動移行を停止しました。');
-      localStorage.setItem(ownerKey, user.uid);
+      store.setItem(ownerKey, user.uid);
+      if (!store.persistent) throw new Error('端末に認証情報を保存できません。クラウド同期を停止しました。');
       const db = dbSDK.getFirestore(app);
       const collection = dbSDK.collection(db, 'courseUsers', user.uid, 'progress');
       const snapshot = await dbSDK.getDocs(collection);
@@ -66,14 +74,23 @@
         timeout = setTimeout(() => reject(new Error('接続できません。端末に保存し、同期は再試行できます。')), 10000);
       })]);
     } catch (error) {
-      status(error.message.startsWith('認証情報') ? error.message : '接続できません。端末に保存し、同期は再試行できます。');
+      status(!store.persistent
+        ? '保存できません。このページ内でのみ進捗を保持します。再読み込みで失われます。'
+        : error.message.startsWith('認証情報') ? error.message : '接続できません。端末に保存し、同期は再試行できます。');
     } finally { clearTimeout(timeout); active = false; }
-    input.value = localStorage.getItem(HANDLE_KEY) || '';
+    input.value = store.getItem(HANDLE_KEY) || '';
     window.addEventListener('online', () => { if (connected) void store.flush(); });
     document.addEventListener('visibilitychange', () => { if (document.hidden) void store.flush(); });
   } catch {
     status('端末の保存領域を利用できません。ブラウザの設定を確認してください。');
-    window.CourseStorage = { setItem() { status('保存できません。ブラウザの設定を確認してください。'); } };
+    const memory = new Map();
+    window.CourseStorage = {
+      getItem(key) { return memory.get(key) ?? null; },
+      setItem(key, value) {
+        memory.set(key, String(value));
+        status('保存できません。このページ内でのみ進捗を保持します。再読み込みで失われます。');
+      }
+    };
   } finally {
     const script = document.createElement('script');
     script.src = document.body.classList.contains('reader-page') ? './reader.js' : './app.js';

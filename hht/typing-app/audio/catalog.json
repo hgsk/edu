@@ -1,0 +1,3757 @@
+{
+  "words:browser": {
+    "src": "./audio/course-25c69a497cebec4f.webm",
+    "text": "ブラウザー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ブラウザー",
+        "file": "aier-2eafb38144a92ce5.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:editor": {
+    "src": "./audio/course-6858bb32dd9c60bd.webm",
+    "text": "エディター",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "エディター",
+        "file": "aier-468040906cff341e.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:header": {
+    "src": "./audio/course-8ba8cbb5445a3cfc.webm",
+    "text": "ヘッダー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ヘッダー",
+        "file": "aier-df8c77c076eef708.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:footer": {
+    "src": "./audio/course-9d439cb6d983d7a4.webm",
+    "text": "フッター",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "フッター",
+        "file": "aier-d76160479f0005c4.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:main": {
+    "src": "./audio/course-c1317c4bdbd4cd71.webm",
+    "text": "メイン",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "メイン",
+        "file": "aier-7ebb1903a5df5e77.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:section": {
+    "src": "./audio/course-7f7e1a0963c8dd86.webm",
+    "text": "セクション",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セクション",
+        "file": "aier-179c909215cd1dc6.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:class": {
+    "src": "./audio/course-bf1529e903805af6.webm",
+    "text": "クラス",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "クラス",
+        "file": "aier-428926567c1a5445.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:responsive": {
+    "src": "./audio/course-7e926a6e5148b188.webm",
+    "text": "レスポンシブ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "レスポンシブ",
+        "file": "aier-97b5d5be03d42a96.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:deploy": {
+    "src": "./audio/course-93ab3ffe278f48cf.webm",
+    "text": "デプロイ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "デプロイ",
+        "file": "aier-52b617d5f4648be2.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:backup": {
+    "src": "./audio/course-a74f757ae451ac99.webm",
+    "text": "バックアップ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "バックアップ",
+        "file": "aier-b8e489d000158a85.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "html:<h1>": {
+    "src": "./audio/course-abb35da98c2a7f7d.webm",
+    "text": "小なり、h、1、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "h",
+        "file": "zira-aaa9402664f1a41f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "1、大なり",
+        "file": "aier-e8f32ef0012f7dfc.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "html:<p>": {
+    "src": "./audio/course-e08be4e5bf8ca4e8.webm",
+    "text": "小なり、p、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "p",
+        "file": "zira-148de9c5a7a44d19.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "html:<a>": {
+    "src": "./audio/course-c089d25e553dbf0b.webm",
+    "text": "小なり、a、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "a",
+        "file": "zira-ca978112ca1bbdca.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "html:<img>": {
+    "src": "./audio/course-cd36697d4945696f.webm",
+    "text": "小なり、img、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "img",
+        "file": "zira-b29814cf5792e684.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "html:<ul>": {
+    "src": "./audio/course-1e767453fd5539d4.webm",
+    "text": "小なり、ul、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "ul",
+        "file": "zira-51db253425817abf.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "html:<li>": {
+    "src": "./audio/course-bc0aa30b46be907c.webm",
+    "text": "小なり、li、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "li",
+        "file": "zira-00a9e4255a5b6306.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "html:<form>": {
+    "src": "./audio/course-cca0ceac365b9545.webm",
+    "text": "小なり、form、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "form",
+        "file": "zira-07397d633f25a710.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "html:<label>": {
+    "src": "./audio/course-7a19e63f96b174b8.webm",
+    "text": "小なり、label、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "label",
+        "file": "zira-1aca80e8b55c802f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "html:<input>": {
+    "src": "./audio/course-ed5164e10ec5c5a1.webm",
+    "text": "小なり、input、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "input",
+        "file": "zira-c96c6d5be8d08a12.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "html:<button>": {
+    "src": "./audio/course-19f8e04123d81d53.webm",
+    "text": "小なり、button、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "button",
+        "file": "zira-c3e2d78f3ff33572.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:color": {
+    "src": "./audio/course-8af388a7a2ed7532.webm",
+    "text": "color",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "color",
+        "file": "zira-74284d9dcbcc0992.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:background": {
+    "src": "./audio/course-c47d515c8e3ee00b.webm",
+    "text": "background",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "background",
+        "file": "zira-89b91df19d9d75d4.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:margin": {
+    "src": "./audio/course-6aac2325d5fe60ab.webm",
+    "text": "margin",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "margin",
+        "file": "zira-34e39f662ff56641.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:padding": {
+    "src": "./audio/course-c6976e7e9df4974a.webm",
+    "text": "padding",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "padding",
+        "file": "zira-b08c9e29be44eb99.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:border": {
+    "src": "./audio/course-789d4424c65da07e.webm",
+    "text": "border",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "border",
+        "file": "zira-4f1a55de40bce901.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:display": {
+    "src": "./audio/course-06fe9aec69541e82.webm",
+    "text": "display",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "display",
+        "file": "zira-dfbb889cf19bda82.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:flex": {
+    "src": "./audio/course-f32d78de62eb617d.webm",
+    "text": "flex",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "flex",
+        "file": "zira-222f930b87524636.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:grid": {
+    "src": "./audio/course-86df5631ded6e30d.webm",
+    "text": "grid",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "grid",
+        "file": "zira-0f2a693e93e2ed70.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:position": {
+    "src": "./audio/course-3ae1b8ddd46d948f.webm",
+    "text": "position",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "position",
+        "file": "zira-5a452459503be70d.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:transition": {
+    "src": "./audio/course-b21fc8805ead18ea.webm",
+    "text": "transition",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "transition",
+        "file": "zira-70dd37c11434d9c5.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "symbols:.card { }": {
+    "src": "./audio/course-f1f1972107b6ef38.webm",
+    "text": "ドット、card、スペース、開き波かっこ、スペース、閉じ波かっこ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ドット",
+        "file": "aier-9f1de8ed31ad4649.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "card",
+        "file": "zira-8367cd66fdd136bb.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース、開き波かっこ、スペース、閉じ波かっこ",
+        "file": "aier-ee854f1c69693237.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "symbols:#page-title { }": {
+    "src": "./audio/course-5c85a60bf012c3c7.webm",
+    "text": "ハッシュ、page、ハイフン、title、スペース、開き波かっこ、スペース、閉じ波かっこ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハッシュ",
+        "file": "aier-1df636a121758e40.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "page",
+        "file": "zira-3660315a9af3df25.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "title",
+        "file": "zira-aaf2320646108059.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース、開き波かっこ、スペース、閉じ波かっこ",
+        "file": "aier-ee854f1c69693237.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "symbols:color: #17233b;": {
+    "src": "./audio/course-817ba6be336c3426.webm",
+    "text": "color、コロン、スペース、ハッシュ、17233、b、セミコロン",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "color",
+        "file": "zira-74284d9dcbcc0992.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース、ハッシュ、17233",
+        "file": "aier-180c1f9fe383dbcd.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "b",
+        "file": "zira-3e23e8160039594a.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セミコロン",
+        "file": "aier-605bb5d9760e0851.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "symbols:.button:hover": {
+    "src": "./audio/course-a56ded84b9b55afd.webm",
+    "text": "ドット、button、コロン、hover",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ドット",
+        "file": "aier-9f1de8ed31ad4649.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "button",
+        "file": "zira-c3e2d78f3ff33572.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン",
+        "file": "aier-07e7c44617fe8b7b.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "hover",
+        "file": "zira-7c8b29e7dc08862f.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "symbols:@media (max-width: 768px)": {
+    "src": "./audio/course-c9e9b6910a284dfb.webm",
+    "text": "アットマーク、media、スペース、開き丸かっこ、max、ハイフン、width、コロン、スペース、768、px、閉じ丸かっこ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "アットマーク",
+        "file": "aier-04d7dccca3b80c2e.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "media",
+        "file": "zira-721c9525ade2ea89.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース、開き丸かっこ",
+        "file": "aier-815c7b889d04252b.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "max",
+        "file": "zira-9baf3a40312f3984.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "width",
+        "file": "zira-dec0f004eaa07c2a.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース、768",
+        "file": "aier-aa561744ab8ae33a.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "px",
+        "file": "zira-6ee2cc105a677431.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "閉じ丸かっこ",
+        "file": "aier-d09bfd49b33437be.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "symbols:width: 100%;": {
+    "src": "./audio/course-8a9163185d932ca0.webm",
+    "text": "width、コロン、スペース、100、パーセント、セミコロン",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "width",
+        "file": "zira-dec0f004eaa07c2a.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース、100、パーセント、セミコロン",
+        "file": "aier-d9034ad205784887.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "symbols:var(--color-ink)": {
+    "src": "./audio/course-9cba01e9db9a8c87.webm",
+    "text": "var、開き丸かっこ、ハイフン、ハイフン、color、ハイフン、ink、閉じ丸かっこ",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "var",
+        "file": "zira-c86872dc97dd35aa.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "開き丸かっこ、ハイフン、ハイフン",
+        "file": "aier-f4b073ff6bbabbc3.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "color",
+        "file": "zira-74284d9dcbcc0992.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "ink",
+        "file": "zira-b728b7e775f708fa.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "閉じ丸かっこ",
+        "file": "aier-d09bfd49b33437be.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "symbols:calc(100% - 32px)": {
+    "src": "./audio/course-40509c7156b508b9.webm",
+    "text": "calc、開き丸かっこ、100、パーセント、スペース、ハイフン、スペース、32、px、閉じ丸かっこ",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "calc",
+        "file": "zira-311f38b7836c4228.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "開き丸かっこ、100、パーセント、スペース、ハイフン、スペース、32",
+        "file": "aier-72fab2e968c51c6a.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "px",
+        "file": "zira-6ee2cc105a677431.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "閉じ丸かっこ",
+        "file": "aier-d09bfd49b33437be.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "symbols:[hidden] { display: none; }": {
+    "src": "./audio/course-a1c51cd4ef00b5dd.webm",
+    "text": "開き角かっこ、hidden、閉じ角かっこ、スペース、開き波かっこ、スペース、display、コロン、スペース、none、セミコロン、スペース、閉じ波かっこ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "開き角かっこ",
+        "file": "aier-d353a3f6dd431f60.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "hidden",
+        "file": "zira-e564b4081d7a9ea4.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "閉じ角かっこ、スペース、開き波かっこ、スペース",
+        "file": "aier-40bed8c0feae1518.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "display",
+        "file": "zira-dfbb889cf19bda82.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース",
+        "file": "aier-85b0506db80ef6a1.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "none",
+        "file": "zira-140bedbf9c3f6d56.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セミコロン、スペース、閉じ波かっこ",
+        "file": "aier-312d31f414e22893.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "symbols:* { box-sizing: border-box; }": {
+    "src": "./audio/course-e5d114b8ed324059.webm",
+    "text": "アスタリスク、スペース、開き波かっこ、スペース、box、ハイフン、sizing、コロン、スペース、border、ハイフン、box、セミコロン、スペース、閉じ波かっこ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "アスタリスク、スペース、開き波かっこ、スペース",
+        "file": "aier-7f5342b7b3cc2209.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "box",
+        "file": "zira-26f8567f25691822.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "sizing",
+        "file": "zira-ca3eb1da136dc1f5.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース",
+        "file": "aier-85b0506db80ef6a1.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "border",
+        "file": "zira-4f1a55de40bce901.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "box",
+        "file": "zira-26f8567f25691822.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セミコロン、スペース、閉じ波かっこ",
+        "file": "aier-312d31f414e22893.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "sentences:Web design connects people with information.": {
+    "src": "./audio/course-1795fb506ad4617e.webm",
+    "text": "ウェブデザイン コネクツ ピープル ウィズ インフォメーション",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ウェブデザイン コネクツ ピープル ウィズ インフォメーション",
+        "file": "aier-f3f80875c27c787f.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "sentences:Check every page before you deploy the website.": {
+    "src": "./audio/course-ba45f87bba341e8a.webm",
+    "text": "チェック エブリ ページ ビフォア ユー デプロイ ザ ウェブサイト",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "チェック エブリ ページ ビフォア ユー デプロイ ザ ウェブサイト",
+        "file": "aier-9b22db2c1874e232.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "sentences:A clear heading helps users find information quickly.": {
+    "src": "./audio/course-5894eb479bf6ce0d.webm",
+    "text": "ア クリア ヘディング ヘルプス ユーザーズ ファインド インフォメーション クイックリー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ア クリア ヘディング ヘルプス ユーザーズ ファインド インフォメーション クイックリー",
+        "file": "aier-364facce5324645b.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "sentences:Responsive design works on phones, tablets, and computers.": {
+    "src": "./audio/course-144f3681aaa732c4.webm",
+    "text": "レスポンシブ デザイン ワークス オン フォーンズ タブレッツ アンド コンピューターズ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "レスポンシブ デザイン ワークス オン フォーンズ タブレッツ アンド コンピューターズ",
+        "file": "aier-7f3a3000b4cb50e8.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "sentences:Save a backup before changing the production website.": {
+    "src": "./audio/course-f9f0d7caca8b5b7f.webm",
+    "text": "セーブ ア バックアップ ビフォア チェンジング ザ プロダクション ウェブサイト",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セーブ ア バックアップ ビフォア チェンジング ザ プロダクション ウェブサイト",
+        "file": "aier-fbce1fce03bc47fe.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "htmlCode:<header class=\"site-header\">NORTH LIGHT COFFEE</header>": {
+    "src": "./audio/course-8c115300d71b9b4b.webm",
+    "text": "小なり、header、スペース、class、イコール、ダブルクォーテーション、site、ハイフン、header、ダブルクォーテーション、大なり、NORTH、スペース、LIGHT、スペース、COFFEE、小なり、スラッシュ、header、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "header",
+        "file": "zira-1e0584a25d9f43bf.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "class",
+        "file": "zira-0889113e04d3203f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "イコール、ダブルクォーテーション",
+        "file": "aier-4c12f5279834058f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "site",
+        "file": "zira-fbae041b02c41ed0.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "header",
+        "file": "zira-1e0584a25d9f43bf.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダブルクォーテーション、大なり",
+        "file": "aier-a52ee88a927825ed.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "NORTH",
+        "file": "zira-34a489fb589a0a73.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "LIGHT",
+        "file": "zira-5818428b08945d56.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "COFFEE",
+        "file": "zira-967d1f886b03dc74.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり、スラッシュ",
+        "file": "aier-48a76a22ae58ea68.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "header",
+        "file": "zira-1e0584a25d9f43bf.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "htmlCode:<a class=\"button\" href=\"menu.html\">View menu</a>": {
+    "src": "./audio/course-9e176c35bf47c994.webm",
+    "text": "小なり、a、スペース、class、イコール、ダブルクォーテーション、button、ダブルクォーテーション、スペース、href、イコール、ダブルクォーテーション、menu、ドット、html、ダブルクォーテーション、大なり、View、スペース、menu、小なり、スラッシュ、a、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "a",
+        "file": "zira-ca978112ca1bbdca.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "class",
+        "file": "zira-0889113e04d3203f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "イコール、ダブルクォーテーション",
+        "file": "aier-4c12f5279834058f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "button",
+        "file": "zira-c3e2d78f3ff33572.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダブルクォーテーション、スペース",
+        "file": "aier-c1c4d2c9bec60841.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "href",
+        "file": "zira-fea45fa70a7a8b4e.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "イコール、ダブルクォーテーション",
+        "file": "aier-4c12f5279834058f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "menu",
+        "file": "zira-398991009da1d251.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ドット",
+        "file": "aier-9f1de8ed31ad4649.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "html",
+        "file": "zira-e5e239560bc125a2.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダブルクォーテーション、大なり",
+        "file": "aier-a52ee88a927825ed.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "View",
+        "file": "zira-dcc839a4015c4b7d.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "menu",
+        "file": "zira-398991009da1d251.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり、スラッシュ",
+        "file": "aier-48a76a22ae58ea68.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "a",
+        "file": "zira-ca978112ca1bbdca.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "htmlCode:<img src=\"images/cafe.webp\" alt=\"Cafe interior\">": {
+    "src": "./audio/course-4e3f074403ce9606.webm",
+    "text": "小なり、img、スペース、src、イコール、ダブルクォーテーション、images、スラッシュ、cafe、ドット、webp、ダブルクォーテーション、スペース、alt、イコール、ダブルクォーテーション、Cafe、スペース、interior、ダブルクォーテーション、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "img",
+        "file": "zira-b29814cf5792e684.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "src",
+        "file": "zira-25a6634263c1b1f6.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "イコール、ダブルクォーテーション",
+        "file": "aier-4c12f5279834058f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "images",
+        "file": "zira-21b2eed1e328a2c6.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スラッシュ",
+        "file": "aier-462c5dd9314302e2.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "cafe",
+        "file": "zira-a860b858265b22da.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ドット",
+        "file": "aier-9f1de8ed31ad4649.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "webp",
+        "file": "zira-a57bb082e728a0cd.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダブルクォーテーション、スペース",
+        "file": "aier-c1c4d2c9bec60841.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "alt",
+        "file": "zira-4d48fba6cf5f7d6a.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "イコール、ダブルクォーテーション",
+        "file": "aier-4c12f5279834058f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Cafe",
+        "file": "zira-0d5f2e74a9f6051f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "interior",
+        "file": "zira-6b6b85aed8adda90.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダブルクォーテーション、大なり",
+        "file": "aier-a52ee88a927825ed.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "htmlCode:<section class=\"menu\"><h2>Popular menu</h2></section>": {
+    "src": "./audio/course-7117ffd1bd3c64fc.webm",
+    "text": "小なり、section、スペース、class、イコール、ダブルクォーテーション、menu、ダブルクォーテーション、大なり、小なり、h、2、大なり、Popular、スペース、menu、小なり、スラッシュ、h、2、大なり、小なり、スラッシュ、section、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "section",
+        "file": "zira-3fb45623cb3075a8.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "class",
+        "file": "zira-0889113e04d3203f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "イコール、ダブルクォーテーション",
+        "file": "aier-4c12f5279834058f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "menu",
+        "file": "zira-398991009da1d251.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダブルクォーテーション、大なり、小なり",
+        "file": "aier-069630525f0001fc.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "h",
+        "file": "zira-aaa9402664f1a41f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "2、大なり",
+        "file": "aier-a9b9c8aafac87cc0.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Popular",
+        "file": "zira-76327dec9ae3a06a.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "menu",
+        "file": "zira-398991009da1d251.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり、スラッシュ",
+        "file": "aier-48a76a22ae58ea68.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "h",
+        "file": "zira-aaa9402664f1a41f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "2、大なり、小なり、スラッシュ",
+        "file": "aier-b4c637eca5520678.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "section",
+        "file": "zira-3fb45623cb3075a8.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり",
+        "file": "aier-c1b6dd92ca1f5087.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "htmlCode:<label for=\"email\">Email</label><input id=\"email\" type=\"email\">": {
+    "src": "./audio/course-60c416e1b990e663.webm",
+    "text": "小なり、label、スペース、for、イコール、ダブルクォーテーション、email、ダブルクォーテーション、大なり、Email、小なり、スラッシュ、label、大なり、小なり、input、スペース、id、イコール、ダブルクォーテーション、email、ダブルクォーテーション、スペース、type、イコール、ダブルクォーテーション、email、ダブルクォーテーション、大なり",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり",
+        "file": "aier-9c33ed1ce15f53da.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "label",
+        "file": "zira-1aca80e8b55c802f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "for",
+        "file": "zira-10c22bcf4c768b51.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "イコール、ダブルクォーテーション",
+        "file": "aier-4c12f5279834058f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "email",
+        "file": "zira-82244417f956ac7c.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダブルクォーテーション、大なり",
+        "file": "aier-a52ee88a927825ed.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Email",
+        "file": "zira-969ccbd3cf6300ec.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "小なり、スラッシュ",
+        "file": "aier-48a76a22ae58ea68.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "label",
+        "file": "zira-1aca80e8b55c802f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "大なり、小なり",
+        "file": "aier-5fafaaa28ad1e565.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "input",
+        "file": "zira-c96c6d5be8d08a12.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース",
+        "file": "aier-e2b9305288b9649f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "id",
+        "file": "zira-a56145270ce6b3be.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "イコール、ダブルクォーテーション",
+        "file": "aier-4c12f5279834058f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "email",
+        "file": "zira-82244417f956ac7c.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダブルクォーテーション、スペース",
+        "file": "aier-c1c4d2c9bec60841.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "type",
+        "file": "zira-1303c06b0b014d0c.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "イコール、ダブルクォーテーション",
+        "file": "aier-4c12f5279834058f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "email",
+        "file": "zira-82244417f956ac7c.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダブルクォーテーション、大なり",
+        "file": "aier-a52ee88a927825ed.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "cssCode:.button { color: white; background: blue; }": {
+    "src": "./audio/course-ef002ee533693dbc.webm",
+    "text": "ドット、button、スペース、開き波かっこ、スペース、color、コロン、スペース、white、セミコロン、スペース、background、コロン、スペース、blue、セミコロン、スペース、閉じ波かっこ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ドット",
+        "file": "aier-9f1de8ed31ad4649.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "button",
+        "file": "zira-c3e2d78f3ff33572.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース、開き波かっこ、スペース",
+        "file": "aier-be76578771c35d2b.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "color",
+        "file": "zira-74284d9dcbcc0992.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース",
+        "file": "aier-85b0506db80ef6a1.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "white",
+        "file": "zira-018fa96a44715c90.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セミコロン、スペース",
+        "file": "aier-9cbd113aeda3ff20.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "background",
+        "file": "zira-89b91df19d9d75d4.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース",
+        "file": "aier-85b0506db80ef6a1.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "blue",
+        "file": "zira-16477688c0e00699.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セミコロン、スペース、閉じ波かっこ",
+        "file": "aier-312d31f414e22893.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "cssCode:.menu { display: grid; gap: 24px; }": {
+    "src": "./audio/course-e5463e19ada436a4.webm",
+    "text": "ドット、menu、スペース、開き波かっこ、スペース、display、コロン、スペース、grid、セミコロン、スペース、gap、コロン、スペース、24、px、セミコロン、スペース、閉じ波かっこ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ドット",
+        "file": "aier-9f1de8ed31ad4649.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "menu",
+        "file": "zira-398991009da1d251.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース、開き波かっこ、スペース",
+        "file": "aier-be76578771c35d2b.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "display",
+        "file": "zira-dfbb889cf19bda82.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース",
+        "file": "aier-85b0506db80ef6a1.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "grid",
+        "file": "zira-0f2a693e93e2ed70.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セミコロン、スペース",
+        "file": "aier-9cbd113aeda3ff20.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "gap",
+        "file": "zira-54d5dbf0124e59af.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース、24",
+        "file": "aier-9a321f09b740eb98.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "px",
+        "file": "zira-6ee2cc105a677431.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セミコロン、スペース、閉じ波かっこ",
+        "file": "aier-312d31f414e22893.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "cssCode:.site-header { position: sticky; top: 0; }": {
+    "src": "./audio/course-c07292a498bd1d10.webm",
+    "text": "ドット、site、ハイフン、header、スペース、開き波かっこ、スペース、position、コロン、スペース、sticky、セミコロン、スペース、top、コロン、スペース、0、セミコロン、スペース、閉じ波かっこ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ドット",
+        "file": "aier-9f1de8ed31ad4649.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "site",
+        "file": "zira-fbae041b02c41ed0.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "header",
+        "file": "zira-1e0584a25d9f43bf.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース、開き波かっこ、スペース",
+        "file": "aier-be76578771c35d2b.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "position",
+        "file": "zira-5a452459503be70d.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース",
+        "file": "aier-85b0506db80ef6a1.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "sticky",
+        "file": "zira-964a9431ff491fd7.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セミコロン、スペース",
+        "file": "aier-9cbd113aeda3ff20.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "top",
+        "file": "zira-28720365c5e7476a.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース、0、セミコロン、スペース、閉じ波かっこ",
+        "file": "aier-6b0a64b813d5a2ab.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "cssCode:@media (max-width: 600px) { .menu { display: block; } }": {
+    "src": "./audio/course-f7145d287bfdf5a6.webm",
+    "text": "アットマーク、media、スペース、開き丸かっこ、max、ハイフン、width、コロン、スペース、600、px、閉じ丸かっこ、スペース、開き波かっこ、スペース、ドット、menu、スペース、開き波かっこ、スペース、display、コロン、スペース、block、セミコロン、スペース、閉じ波かっこ、スペース、閉じ波かっこ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "アットマーク",
+        "file": "aier-04d7dccca3b80c2e.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "media",
+        "file": "zira-721c9525ade2ea89.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース、開き丸かっこ",
+        "file": "aier-815c7b889d04252b.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "max",
+        "file": "zira-9baf3a40312f3984.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "width",
+        "file": "zira-dec0f004eaa07c2a.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース、600",
+        "file": "aier-a4a2a2ba9d37daca.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "px",
+        "file": "zira-6ee2cc105a677431.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "閉じ丸かっこ、スペース、開き波かっこ、スペース、ドット",
+        "file": "aier-6950a35574f1971f.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "menu",
+        "file": "zira-398991009da1d251.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース、開き波かっこ、スペース",
+        "file": "aier-be76578771c35d2b.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "display",
+        "file": "zira-dfbb889cf19bda82.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース",
+        "file": "aier-85b0506db80ef6a1.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "block",
+        "file": "zira-496aca80e4d8f29f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "セミコロン、スペース、閉じ波かっこ、スペース、閉じ波かっこ",
+        "file": "aier-f071126887a0668e.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "cssCode:.button:hover { transform: translateY(-2px); }": {
+    "src": "./audio/course-065b018ad8041b64.webm",
+    "text": "ドット、button、コロン、hover、スペース、開き波かっこ、スペース、transform、コロン、スペース、translateY、開き丸かっこ、ハイフン、2、px、閉じ丸かっこ、セミコロン、スペース、閉じ波かっこ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ドット",
+        "file": "aier-9f1de8ed31ad4649.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "button",
+        "file": "zira-c3e2d78f3ff33572.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン",
+        "file": "aier-07e7c44617fe8b7b.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "hover",
+        "file": "zira-7c8b29e7dc08862f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スペース、開き波かっこ、スペース",
+        "file": "aier-be76578771c35d2b.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "transform",
+        "file": "zira-aa214ea38326805d.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コロン、スペース",
+        "file": "aier-85b0506db80ef6a1.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "translateY",
+        "file": "zira-ce0db59227a49aa1.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "開き丸かっこ、ハイフン、2",
+        "file": "aier-a42b225d0338a0c5.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "px",
+        "file": "zira-6ee2cc105a677431.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "閉じ丸かっこ、セミコロン、スペース、閉じ波かっこ",
+        "file": "aier-6fa71e2275e309dd.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "recall:<h1>": {
+    "src": "./audio/course-80c3b59313e3a4f8.webm",
+    "text": "ページで最も大切な見出しを作るHTMLタグは？",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ページで最も大切な見出しを作るHTMLタグは？",
+        "file": "aier-8d06e4393174e276.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "recall:<a>": {
+    "src": "./audio/course-9260e5c9f0b2d30a.webm",
+    "text": "別のページへ移動するリンクを作るHTMLタグは？",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "別のページへ移動するリンクを作るHTMLタグは？",
+        "file": "aier-14912ae2fbb0dd3a.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "recall:color": {
+    "src": "./audio/course-85d3b91536298829.webm",
+    "text": "CSSで文字の色を指定するプロパティは？",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "CSSで文字の色を指定するプロパティは？",
+        "file": "aier-72fd99552ce9c001.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "recall:margin": {
+    "src": "./audio/course-2d2af4fc94943556.webm",
+    "text": "CSSで要素の外側の余白を指定するプロパティは？",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "CSSで要素の外側の余白を指定するプロパティは？",
+        "file": "aier-8a2a798ba497f473.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "recall:.class": {
+    "src": "./audio/course-cb3f377553d3d308.webm",
+    "text": "CSSでclass属性を選ぶときの書き方は？",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "CSSでclass属性を選ぶときの書き方は？",
+        "file": "aier-bd0dbb1c8f6d63b2.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Tailwind CSS": {
+    "src": "./audio/course-0b67c9b2a9319b1e.webm",
+    "text": "テイルウィンド シーエスエス",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "テイルウィンド シーエスエス",
+        "file": "aier-6b03bc040b898d76.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:utility-first": {
+    "src": "./audio/course-13053e4d16eaab47.webm",
+    "text": "ユーティリティ ファースト",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ユーティリティ ファースト",
+        "file": "aier-75fe61bf85cb3164.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:utility class": {
+    "src": "./audio/course-5bdc1762b24b53f1.webm",
+    "text": "ユーティリティ クラス",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ユーティリティ クラス",
+        "file": "aier-46afd9e6fa1569d0.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:responsive variant": {
+    "src": "./audio/course-d1c5a53f5de6ddb0.webm",
+    "text": "レスポンシブ バリアント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "レスポンシブ バリアント",
+        "file": "aier-bf7ad8a79528dc23.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:breakpoint": {
+    "src": "./audio/course-67ed3531df1b56b2.webm",
+    "text": "ブレイクポイント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ブレイクポイント",
+        "file": "aier-a26d0f759d1399a5.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:state variant": {
+    "src": "./audio/course-5354a9717eaa3bb5.webm",
+    "text": "ステート バリアント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ステート バリアント",
+        "file": "aier-081ffe9ba60d41fb.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:dark mode": {
+    "src": "./audio/course-f9e6b90cec0526ab.webm",
+    "text": "ダーク モード",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダーク モード",
+        "file": "aier-ae69d340b0cb71ac.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:theme variable": {
+    "src": "./audio/course-270db5e002343e32.webm",
+    "text": "テーマ バリアブル",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "テーマ バリアブル",
+        "file": "aier-7cc5735534d76bcd.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:arbitrary value": {
+    "src": "./audio/course-7f7fc31fbffe16f1.webm",
+    "text": "アービトラリー バリュー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "アービトラリー バリュー",
+        "file": "aier-ca4e887905da7210.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Preflight": {
+    "src": "./audio/course-e91bb648644c643d.webm",
+    "text": "プリフライト",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "プリフライト",
+        "file": "aier-a08fd0d76fb5b404.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Bootstrap": {
+    "src": "./audio/course-e35e544b1d1afbb7.webm",
+    "text": "ブートストラップ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ブートストラップ",
+        "file": "aier-048faaa657b3f449.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:container-fluid": {
+    "src": "./audio/course-c270c26db24d631e.webm",
+    "text": "コンテナー フルイド",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コンテナー フルイド",
+        "file": "aier-e2fdf0fadbbd00ba.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Bootstrap container": {
+    "src": "./audio/course-6c608358bb2bdb79.webm",
+    "text": "ブートストラップ コンテナー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ブートストラップ コンテナー",
+        "file": "aier-e446615afb029dba.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Bootstrap row": {
+    "src": "./audio/course-f0226d823867624e.webm",
+    "text": "ブートストラップ ロウ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ブートストラップ ロウ",
+        "file": "aier-e9fa3cb8ba0d6f6f.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Bootstrap column": {
+    "src": "./audio/course-c7fffd05ae62a9d0.webm",
+    "text": "ブートストラップ カラム",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ブートストラップ カラム",
+        "file": "aier-2bc04bffcc5cf407.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:gutter": {
+    "src": "./audio/course-a7acc885c4aa3a21.webm",
+    "text": "ガター",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ガター",
+        "file": "aier-ef91fa2d1cb048ed.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:navbar": {
+    "src": "./audio/course-7f698678af438181.webm",
+    "text": "ナビバー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ナビバー",
+        "file": "aier-0a81935bfdb07764.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Bootstrap modal": {
+    "src": "./audio/course-b21f0dae1d85209d.webm",
+    "text": "ブートストラップ モーダル",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ブートストラップ モーダル",
+        "file": "aier-79f7de670d8db9b5.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:accordion": {
+    "src": "./audio/course-3a85b84343be7ab7.webm",
+    "text": "アコーディオン",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "アコーディオン",
+        "file": "aier-59a397be1f9dd067.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:utility API": {
+    "src": "./audio/course-3b4ba585872b206d.webm",
+    "text": "ユーティリティ エーピーアイ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ユーティリティ エーピーアイ",
+        "file": "aier-4805bf0578a40bf9.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Material UI": {
+    "src": "./audio/course-fd48e68dbb786fd6.webm",
+    "text": "マテリアル ユーアイ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "マテリアル ユーアイ",
+        "file": "aier-bfbcfa3c65e18a4d.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:React component": {
+    "src": "./audio/course-0d36f143cfd4d30b.webm",
+    "text": "リアクト コンポーネント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "リアクト コンポーネント",
+        "file": "aier-df52b56dfe051ee1.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:MUI prop": {
+    "src": "./audio/course-3eea26f843ed25b6.webm",
+    "text": "エムユーアイ プロップ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "エムユーアイ プロップ",
+        "file": "aier-f03fe96cd6422694.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:sx prop": {
+    "src": "./audio/course-ef636ed8eced3c69.webm",
+    "text": "エスエックス プロップ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "エスエックス プロップ",
+        "file": "aier-9009a3ece9ac39de.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:ThemeProvider": {
+    "src": "./audio/course-cf84af301bba5ca5.webm",
+    "text": "テーマ プロバイダー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "テーマ プロバイダー",
+        "file": "aier-da566847e80ecb7d.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:createTheme": {
+    "src": "./audio/course-90421d38ed8d9946.webm",
+    "text": "クリエイト テーマ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "クリエイト テーマ",
+        "file": "aier-ff93d0905c1e6d5b.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:MUI palette": {
+    "src": "./audio/course-1706c1abd2b878f6.webm",
+    "text": "エムユーアイ パレット",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "エムユーアイ パレット",
+        "file": "aier-f6817943edb58b8f.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:MUI typography": {
+    "src": "./audio/course-a394897fa50a2ff6.webm",
+    "text": "エムユーアイ タイポグラフィ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "エムユーアイ タイポグラフィ",
+        "file": "aier-036f8d5459cdec3d.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:MUI Grid": {
+    "src": "./audio/course-c65b1b71cb5fa0b3.webm",
+    "text": "エムユーアイ グリッド",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "エムユーアイ グリッド",
+        "file": "aier-e5b66fd7a25223d6.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:breakpoint helper": {
+    "src": "./audio/course-f8d1b64933fcb2dc.webm",
+    "text": "ブレイクポイント ヘルパー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ブレイクポイント ヘルパー",
+        "file": "aier-721403fb0d8f69e0.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:shadcn/ui": {
+    "src": "./audio/course-da59f4a48b1000d2.webm",
+    "text": "シャドシーエヌ ユーアイ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "シャドシーエヌ ユーアイ",
+        "file": "aier-2e5a884a51d0a158.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:component registry": {
+    "src": "./audio/course-bb450272073de5d4.webm",
+    "text": "コンポーネント レジストリ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コンポーネント レジストリ",
+        "file": "aier-1a2bd498d4addf4f.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:shadcn CLI": {
+    "src": "./audio/course-a1390b1636feb31a.webm",
+    "text": "シャドシーエヌ シーエルアイ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "シャドシーエヌ シーエルアイ",
+        "file": "aier-40af4cc0e4312275.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:components.json": {
+    "src": "./audio/course-d323c4adece62b70.webm",
+    "text": "コンポーネンツ ドット ジェイソン",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コンポーネンツ ドット ジェイソン",
+        "file": "aier-2295729634fa7683.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Button component": {
+    "src": "./audio/course-6356847b6f3a62d8.webm",
+    "text": "ボタン コンポーネント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ボタン コンポーネント",
+        "file": "aier-043224a84d66d69b.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Card component": {
+    "src": "./audio/course-5dd567befad8a97c.webm",
+    "text": "カード コンポーネント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "カード コンポーネント",
+        "file": "aier-26e30136f4df44d9.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Dialog component": {
+    "src": "./audio/course-1c1ecf73d4e44b90.webm",
+    "text": "ダイアログ コンポーネント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ダイアログ コンポーネント",
+        "file": "aier-a012c1c2104d21bd.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Form component": {
+    "src": "./audio/course-e87998ab5fb78377.webm",
+    "text": "フォーム コンポーネント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "フォーム コンポーネント",
+        "file": "aier-0049003adaaa4bdf.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:shadcn CSS variables": {
+    "src": "./audio/course-495755e9388fcbf6.webm",
+    "text": "シャドシーエヌ シーエスエス バリアブルズ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "シャドシーエヌ シーエスエス バリアブルズ",
+        "file": "aier-c7111acd6146e0af.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:copy and own": {
+    "src": "./audio/course-afd926606ef798f8.webm",
+    "text": "コピー アンド オウン",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コピー アンド オウン",
+        "file": "aier-faa6728e0e9a5570.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Figma": {
+    "src": "./audio/course-16bb7aaace29ccad.webm",
+    "text": "フィグマ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "フィグマ",
+        "file": "aier-4efcbcb1700628ef.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:canvas": {
+    "src": "./audio/course-8afce3a6a77c9c03.webm",
+    "text": "キャンバス",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "キャンバス",
+        "file": "aier-358eb42a80201401.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Figma frame": {
+    "src": "./audio/course-02352e124cfdd142.webm",
+    "text": "フィグマ フレーム",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "フィグマ フレーム",
+        "file": "aier-ee17c804bed96719.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:layer": {
+    "src": "./audio/course-c1e73bdea7dd31a4.webm",
+    "text": "レイヤー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "レイヤー",
+        "file": "aier-28191be09b7d3efb.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Figma section": {
+    "src": "./audio/course-ecbd2d3b938670a9.webm",
+    "text": "フィグマ セクション",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "フィグマ セクション",
+        "file": "aier-3d35df7ceada647b.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Figma page": {
+    "src": "./audio/course-51b3cb66f11a2b9c.webm",
+    "text": "フィグマ ページ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "フィグマ ページ",
+        "file": "aier-68a20d6c16a564b2.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:auto layout": {
+    "src": "./audio/course-6d5ad9b3527e7870.webm",
+    "text": "オート レイアウト",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "オート レイアウト",
+        "file": "aier-6bcd3532ae49a957.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Figma component": {
+    "src": "./audio/course-d66c995567433f4b.webm",
+    "text": "フィグマ コンポーネント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "フィグマ コンポーネント",
+        "file": "aier-f902ae4188951323.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:instance": {
+    "src": "./audio/course-4218373253898f57.webm",
+    "text": "インスタンス",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "インスタンス",
+        "file": "aier-54a70dcc8ee2262c.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:variant": {
+    "src": "./audio/course-98cbd05e10ccfe51.webm",
+    "text": "バリアント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "バリアント",
+        "file": "aier-c381a16bcdfc1d56.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:component set": {
+    "src": "./audio/course-dbe6343012d1332d.webm",
+    "text": "コンポーネント セット",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コンポーネント セット",
+        "file": "aier-e69080a5cfa8470c.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:constraint": {
+    "src": "./audio/course-1ddf76cdb6197d99.webm",
+    "text": "コンストレイント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コンストレイント",
+        "file": "aier-95c8eac175c62ac7.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:prototype": {
+    "src": "./audio/course-535582fdac7d013e.webm",
+    "text": "プロトタイプ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "プロトタイプ",
+        "file": "aier-d0072c8ce3165823.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:interaction": {
+    "src": "./audio/course-e3336e1ed75c8fdc.webm",
+    "text": "インタラクション",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "インタラクション",
+        "file": "aier-087b786becf04da3.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:overlay": {
+    "src": "./audio/course-b9ccf0c83dc29ffa.webm",
+    "text": "オーバーレイ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "オーバーレイ",
+        "file": "aier-0d8b1804df96049b.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Dev Mode": {
+    "src": "./audio/course-4425de591316bbed.webm",
+    "text": "デブ モード",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "デブ モード",
+        "file": "aier-1d2156eb4750d77a.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:inspect panel": {
+    "src": "./audio/course-4224aa125cab8bb3.webm",
+    "text": "インスペクト パネル",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "インスペクト パネル",
+        "file": "aier-89463df0cf5caebd.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:Figma variable": {
+    "src": "./audio/course-87fa874f7e957c2e.webm",
+    "text": "フィグマ バリアブル",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "フィグマ バリアブル",
+        "file": "aier-4d8061802e56b92a.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:design token": {
+    "src": "./audio/course-bb75b4b3d6092f5c.webm",
+    "text": "デザイン トークン",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "デザイン トークン",
+        "file": "aier-8e5d7c2f8abf5186.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:team library": {
+    "src": "./audio/course-45e991c153bb7620.webm",
+    "text": "チーム ライブラリ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "チーム ライブラリ",
+        "file": "aier-a6a9efeac402cf89.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:wireframe": {
+    "src": "./audio/course-30183148183edf6c.webm",
+    "text": "ワイヤーフレーム",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ワイヤーフレーム",
+        "file": "aier-76089504a30cb176.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:mockup": {
+    "src": "./audio/course-478d0f1e3aefa3e2.webm",
+    "text": "モックアップ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "モックアップ",
+        "file": "aier-8da6aeb56d6ea498.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:design comp": {
+    "src": "./audio/course-b22b0ee51a1ae505.webm",
+    "text": "デザイン カンプ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "デザイン カンプ",
+        "file": "aier-aada7ab3845be255.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:handoff": {
+    "src": "./audio/course-8ed00b7391b1ee90.webm",
+    "text": "ハンドオフ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハンドオフ",
+        "file": "aier-72450b2a58257536.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:typography": {
+    "src": "./audio/course-0234a25884940a3c.webm",
+    "text": "タイポグラフィー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "タイポグラフィー",
+        "file": "aier-7d752951342c3d24.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:visual hierarchy": {
+    "src": "./audio/course-878e05395ffb66b3.webm",
+    "text": "ビジュアル ハイアラーキー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ビジュアル ハイアラーキー",
+        "file": "aier-6a2df782d9665f01.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:white space": {
+    "src": "./audio/course-576822c98ecd485f.webm",
+    "text": "ホワイト スペース",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ホワイト スペース",
+        "file": "aier-c06393cd3cfc6d8d.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:grid system": {
+    "src": "./audio/course-01c47afbb2f35e2c.webm",
+    "text": "グリッド システム",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "グリッド システム",
+        "file": "aier-6d4c2db886eaf13b.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:color palette": {
+    "src": "./audio/course-19c68433275515a5.webm",
+    "text": "カラー パレット",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "カラー パレット",
+        "file": "aier-8ce3b2f60d2d1342.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:contrast ratio": {
+    "src": "./audio/course-0b4842bb56b93b9e.webm",
+    "text": "コントラスト レシオ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "コントラスト レシオ",
+        "file": "aier-704dfc77f2f97162.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:design system": {
+    "src": "./audio/course-4432925eb9818022.webm",
+    "text": "デザイン システム",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "デザイン システム",
+        "file": "aier-daa14e5dbe4c606a.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:style guide": {
+    "src": "./audio/course-f0bdca4808b49338.webm",
+    "text": "スタイル ガイド",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "スタイル ガイド",
+        "file": "aier-efacc4fc83d5ab4c.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:user flow": {
+    "src": "./audio/course-19479e8e3c423c23.webm",
+    "text": "ユーザー フロー",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ユーザー フロー",
+        "file": "aier-0940d5c85515c505.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:sitemap": {
+    "src": "./audio/course-da62e70b45f04eaa.webm",
+    "text": "サイトマップ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "サイトマップ",
+        "file": "aier-6c694d000328fa36.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:information architecture": {
+    "src": "./audio/course-1cd30ab7f164f9ba.webm",
+    "text": "インフォメーション アーキテクチャ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "インフォメーション アーキテクチャ",
+        "file": "aier-731c3e2ee7676870.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:user persona": {
+    "src": "./audio/course-6c25c56d8c03ba8d.webm",
+    "text": "ユーザー ペルソナ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ユーザー ペルソナ",
+        "file": "aier-ae8a7512b45b4cbc.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:mood board": {
+    "src": "./audio/course-dd5b0be862f29755.webm",
+    "text": "ムード ボード",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ムード ボード",
+        "file": "aier-87e0ec1caadd1452.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:responsive layout": {
+    "src": "./audio/course-ca95e0bb2e8febe3.webm",
+    "text": "レスポンシブ レイアウト",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "レスポンシブ レイアウト",
+        "file": "aier-1dd8d032c6c70c7b.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:design breakpoint": {
+    "src": "./audio/course-300102a857fe8ec2.webm",
+    "text": "デザイン ブレイクポイント",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "デザイン ブレイクポイント",
+        "file": "aier-6c0ecec7381ed0cb.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "words:design accessibility": {
+    "src": "./audio/course-d8f2556cb53d9b41.webm",
+    "text": "デザイン アクセシビリティ",
+    "parts": [
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "デザイン アクセシビリティ",
+        "file": "aier-8145ed9e72b551f9.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:box-sizing": {
+    "src": "./audio/course-77bf0d087246c48f.webm",
+    "text": "box、ハイフン、sizing",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "box",
+        "file": "zira-26f8567f25691822.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "sizing",
+        "file": "zira-ca3eb1da136dc1f5.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:min-width": {
+    "src": "./audio/course-dfb23b47ec55acf7.webm",
+    "text": "min、ハイフン、width",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "min",
+        "file": "zira-1f6fa6f69d185e60.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "width",
+        "file": "zira-dec0f004eaa07c2a.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:max-height": {
+    "src": "./audio/course-cf93177ebc5fa7f8.webm",
+    "text": "max、ハイフン、height",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "max",
+        "file": "zira-9baf3a40312f3984.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "height",
+        "file": "zira-39e0f5efdc39ec10.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:font-family": {
+    "src": "./audio/course-7960b15e734f4c97.webm",
+    "text": "font、ハイフン、family",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "font",
+        "file": "zira-795ea3efa43d0872.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "family",
+        "file": "zira-d34a569ab7aaa54d.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:font-style": {
+    "src": "./audio/course-3d84ea65eb9a5adc.webm",
+    "text": "font、ハイフン、style",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "font",
+        "file": "zira-795ea3efa43d0872.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "style",
+        "file": "zira-cb86eb2d914d37df.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:letter-spacing": {
+    "src": "./audio/course-5eca68f9a85a94a3.webm",
+    "text": "letter、ハイフン、spacing",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "letter",
+        "file": "zira-f80105efab6d863f.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "spacing",
+        "file": "zira-59a560ce1bd2c714.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:text-decoration": {
+    "src": "./audio/course-becab4252ff62a1d.webm",
+    "text": "text、ハイフン、decoration",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "text",
+        "file": "zira-982d9e3eb996f559.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "decoration",
+        "file": "zira-a6ebfb432bfd40c5.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:text-transform": {
+    "src": "./audio/course-9b761097f66046cf.webm",
+    "text": "text、ハイフン、transform",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "text",
+        "file": "zira-982d9e3eb996f559.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "transform",
+        "file": "zira-aa214ea38326805d.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:white-space": {
+    "src": "./audio/course-671f621f3985d255.webm",
+    "text": "white、ハイフン、space",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "white",
+        "file": "zira-018fa96a44715c90.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "space",
+        "file": "zira-3f49dbbfe051cb20.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:word-break": {
+    "src": "./audio/course-0332dcad7764a188.webm",
+    "text": "word、ハイフン、break",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "word",
+        "file": "zira-98c1eb4ee9347674.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "break",
+        "file": "zira-14ebe56a5008e7c2.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:list-style": {
+    "src": "./audio/course-8fc7e76f19cf1ff9.webm",
+    "text": "list、ハイフン、style",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "list",
+        "file": "zira-a330395cc0a53ad1.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "style",
+        "file": "zira-cb86eb2d914d37df.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:background-color": {
+    "src": "./audio/course-9c1d1b6ca1eb5c12.webm",
+    "text": "background、ハイフン、color",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "background",
+        "file": "zira-89b91df19d9d75d4.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "color",
+        "file": "zira-74284d9dcbcc0992.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:background-image": {
+    "src": "./audio/course-014bba2cdc7e4129.webm",
+    "text": "background、ハイフン、image",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "background",
+        "file": "zira-89b91df19d9d75d4.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "image",
+        "file": "zira-6105d6cc76af4003.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:background-size": {
+    "src": "./audio/course-16f389ce932227e2.webm",
+    "text": "background、ハイフン、size",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "background",
+        "file": "zira-89b91df19d9d75d4.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "size",
+        "file": "zira-ccdcbe846f3da4eb.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:background-position": {
+    "src": "./audio/course-e791d97477ffa44c.webm",
+    "text": "background、ハイフン、position",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "background",
+        "file": "zira-89b91df19d9d75d4.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "position",
+        "file": "zira-5a452459503be70d.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:background-repeat": {
+    "src": "./audio/course-8add8e19631f7aee.webm",
+    "text": "background、ハイフン、repeat",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "background",
+        "file": "zira-89b91df19d9d75d4.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "repeat",
+        "file": "zira-25e2b6b106523880.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:border-width": {
+    "src": "./audio/course-ad624b5d37e3e169.webm",
+    "text": "border、ハイフン、width",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "border",
+        "file": "zira-4f1a55de40bce901.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "width",
+        "file": "zira-dec0f004eaa07c2a.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:border-style": {
+    "src": "./audio/course-7f189f00dff00f31.webm",
+    "text": "border、ハイフン、style",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "border",
+        "file": "zira-4f1a55de40bce901.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "style",
+        "file": "zira-cb86eb2d914d37df.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:border-color": {
+    "src": "./audio/course-5d30c1c66db142c5.webm",
+    "text": "border、ハイフン、color",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "border",
+        "file": "zira-4f1a55de40bce901.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "color",
+        "file": "zira-74284d9dcbcc0992.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:outline": {
+    "src": "./audio/course-7adfe7f716f7b017.webm",
+    "text": "outline",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "outline",
+        "file": "zira-318678825324247b.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:border-collapse": {
+    "src": "./audio/course-22bdc1a0c3536740.webm",
+    "text": "border、ハイフン、collapse",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "border",
+        "file": "zira-4f1a55de40bce901.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "collapse",
+        "file": "zira-93bc5d02dc2a24b5.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:flex-direction": {
+    "src": "./audio/course-c124902d648541b9.webm",
+    "text": "flex、ハイフン、direction",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "flex",
+        "file": "zira-222f930b87524636.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "direction",
+        "file": "zira-93c4abe27cf16961.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:flex-grow": {
+    "src": "./audio/course-c4a35cab1c288a11.webm",
+    "text": "flex、ハイフン、grow",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "flex",
+        "file": "zira-222f930b87524636.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "grow",
+        "file": "zira-adca5146416ee419.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:flex-shrink": {
+    "src": "./audio/course-d1799d09365da91e.webm",
+    "text": "flex、ハイフン、shrink",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "flex",
+        "file": "zira-222f930b87524636.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "shrink",
+        "file": "zira-66b490dd60054469.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:flex-basis": {
+    "src": "./audio/course-a7bb2c7823fc2238.webm",
+    "text": "flex、ハイフン、basis",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "flex",
+        "file": "zira-222f930b87524636.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "basis",
+        "file": "zira-a7a3c8f654761303.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:align-content": {
+    "src": "./audio/course-3b7aff44cc1b0cbe.webm",
+    "text": "align、ハイフン、content",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "align",
+        "file": "zira-adcbf60c01c985ee.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "content",
+        "file": "zira-ed7002b439e9ac84.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:justify-items": {
+    "src": "./audio/course-5b75566150ca79c5.webm",
+    "text": "justify、ハイフン、items",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "justify",
+        "file": "zira-2b578cbff1f54fa9.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "items",
+        "file": "zira-5f3c4f8580d392e4.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:grid-template-rows": {
+    "src": "./audio/course-b9f64c172e64ceaf.webm",
+    "text": "grid、ハイフン、template、ハイフン、rows",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "grid",
+        "file": "zira-0f2a693e93e2ed70.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "template",
+        "file": "zira-5cde0f1298f41f7d.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "rows",
+        "file": "zira-bc51e9e65d79e1c9.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:grid-auto-flow": {
+    "src": "./audio/course-5d8fdaf6c25bb482.webm",
+    "text": "grid、ハイフン、auto、ハイフン、flow",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "grid",
+        "file": "zira-0f2a693e93e2ed70.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "auto",
+        "file": "zira-929260ad9b9ea9fe.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "flow",
+        "file": "zira-3b21278178ed3463.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:order": {
+    "src": "./audio/course-a2989613f005f262.webm",
+    "text": "order",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "order",
+        "file": "zira-3eeb7e96e59ce40f.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:z-index": {
+    "src": "./audio/course-9ad11c306eef4864.webm",
+    "text": "z、ハイフン、index",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "z",
+        "file": "zira-594e519ae499312b.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "index",
+        "file": "zira-1bc04b5291c26a46.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:top": {
+    "src": "./audio/course-6c29428e9261aee9.webm",
+    "text": "top",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "top",
+        "file": "zira-28720365c5e7476a.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:right": {
+    "src": "./audio/course-305b01bc01aebaca.webm",
+    "text": "right",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "right",
+        "file": "zira-27042f4e6eca7d0b.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:bottom": {
+    "src": "./audio/course-4b771cd9641c67ed.webm",
+    "text": "bottom",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "bottom",
+        "file": "zira-be9b7607e070383c.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:left": {
+    "src": "./audio/course-88116e0f4ef89be5.webm",
+    "text": "left",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "left",
+        "file": "zira-360f84035942243c.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:visibility": {
+    "src": "./audio/course-cfe36e0e0022b7cb.webm",
+    "text": "visibility",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "visibility",
+        "file": "zira-7d2fb3da93a013ce.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:cursor": {
+    "src": "./audio/course-a172b351f142012a.webm",
+    "text": "cursor",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "cursor",
+        "file": "zira-46a4eebd20d881ec.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "css:pointer-events": {
+    "src": "./audio/course-90c71bb173bfe6da.webm",
+    "text": "pointer、ハイフン、events",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "pointer",
+        "file": "zira-1cdf95bd12e993d5.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "events",
+        "file": "zira-862417b9e7c3720b.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:user-select": {
+    "src": "./audio/course-8b917bab50279b55.webm",
+    "text": "user、ハイフン、select",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "user",
+        "file": "zira-04f8996da763b7a9.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "select",
+        "file": "zira-b1a36d25d9633ed2.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "css:object-position": {
+    "src": "./audio/course-6840f28b7405fa1e.webm",
+    "text": "object、ハイフン、position",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "object",
+        "file": "zira-2958d416d08aa5a4.wav"
+      },
+      {
+        "voice": "VOICEVOX:あいえるたん",
+        "text": "ハイフン",
+        "file": "aier-925e982575e7e203.wav"
+      },
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "position",
+        "file": "zira-5a452459503be70d.wav"
+      }
+    ],
+    "japaneseStyleId": 68
+  },
+  "sentences:Create a responsive header with a clear navigation menu.": {
+    "src": "./audio/course-cbaed693bdfa9a6e.webm",
+    "text": "Create a responsive header with a clear navigation menu.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Create a responsive header with a clear navigation menu.",
+        "file": "zira-cb887ebcb2919938.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Use semantic HTML elements and explain each choice.": {
+    "src": "./audio/course-2188690a8e58eea2.webm",
+    "text": "Use semantic HTML elements and explain each choice.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Use semantic HTML elements and explain each choice.",
+        "file": "zira-a02c8126b8a66600.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Write CSS without changing the existing HTML structure.": {
+    "src": "./audio/course-ef7c1df2577dbaf8.webm",
+    "text": "Write CSS without changing the existing HTML structure.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Write CSS without changing the existing HTML structure.",
+        "file": "zira-d3712b75aba7733e.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Make the layout work from 320 pixels to desktop width.": {
+    "src": "./audio/course-e585225f14359d45.webm",
+    "text": "Make the layout work from 320 pixels to desktop width.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Make the layout work from 320 pixels to desktop width.",
+        "file": "zira-28fcf321fe2c26ca.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Keep the current colors and improve only the spacing.": {
+    "src": "./audio/course-f5d6952b2724ddc2.webm",
+    "text": "Keep the current colors and improve only the spacing.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Keep the current colors and improve only the spacing.",
+        "file": "zira-9f3487490558e638.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Add accessible labels to every form control.": {
+    "src": "./audio/course-779a9f3c8ec17ea3.webm",
+    "text": "Add accessible labels to every form control.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Add accessible labels to every form control.",
+        "file": "zira-893da1c277bf7154.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Use the provided image as the hero background.": {
+    "src": "./audio/course-977978d585bb37e9.webm",
+    "text": "Use the provided image as the hero background.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Use the provided image as the hero background.",
+        "file": "zira-a19fb26f082883f1.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Do not edit files outside the requested folder.": {
+    "src": "./audio/course-9f74da90d32a5b5b.webm",
+    "text": "Do not edit files outside the requested folder.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Do not edit files outside the requested folder.",
+        "file": "zira-8ba96d11aeb05e17.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:List the files you changed and summarize each change.": {
+    "src": "./audio/course-d0f78040b7777d8e.webm",
+    "text": "List the files you changed and summarize each change.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "List the files you changed and summarize each change.",
+        "file": "zira-321e2455170aa493.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Check the browser console and fix the first error.": {
+    "src": "./audio/course-270cd68809dee313.webm",
+    "text": "Check the browser console and fix the first error.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Check the browser console and fix the first error.",
+        "file": "zira-16abf3b252d1cee0.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Compare the result with the reference screenshot.": {
+    "src": "./audio/course-b4431aefb9312f16.webm",
+    "text": "Compare the result with the reference screenshot.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Compare the result with the reference screenshot.",
+        "file": "zira-7140de63437b3f08.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Explain the cause before making any code changes.": {
+    "src": "./audio/course-78da5d1f260770cb.webm",
+    "text": "Explain the cause before making any code changes.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Explain the cause before making any code changes.",
+        "file": "zira-11faddec13ad18d5.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Show three design options with different layouts.": {
+    "src": "./audio/course-cd72fdd21c191e37.webm",
+    "text": "Show three design options with different layouts.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Show three design options with different layouts.",
+        "file": "zira-64dc1c40cbdbb7e3.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Use plain Japanese that high school students can understand.": {
+    "src": "./audio/course-67af7c8950a46f16.webm",
+    "text": "Use plain Japanese that high school students can understand.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Use plain Japanese that high school students can understand.",
+        "file": "zira-27b4a936ee709798.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Keep the design simple and avoid unnecessary animation.": {
+    "src": "./audio/course-43ae09ede4bf1192.webm",
+    "text": "Keep the design simple and avoid unnecessary animation.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Keep the design simple and avoid unnecessary animation.",
+        "file": "zira-f35d5b8b11db4435.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Optimize the images without reducing visible quality.": {
+    "src": "./audio/course-284054b8e3f617f0.webm",
+    "text": "Optimize the images without reducing visible quality.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Optimize the images without reducing visible quality.",
+        "file": "zira-2b894620cb182d94.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Test keyboard navigation and visible focus styles.": {
+    "src": "./audio/course-0855a12174a2501f.webm",
+    "text": "Test keyboard navigation and visible focus styles.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Test keyboard navigation and visible focus styles.",
+        "file": "zira-e2ed9efbeafa03bd.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Use CSS Grid and include a fallback for narrow screens.": {
+    "src": "./audio/course-806e37efe49563fc.webm",
+    "text": "Use CSS Grid and include a fallback for narrow screens.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Use CSS Grid and include a fallback for narrow screens.",
+        "file": "zira-042ea5c388dab625.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Ask questions if the client request is ambiguous.": {
+    "src": "./audio/course-48122b02a4869c99.webm",
+    "text": "Ask questions if the client request is ambiguous.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Ask questions if the client request is ambiguous.",
+        "file": "zira-eb7cbbbe3931e254.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  },
+  "sentences:Run the relevant tests and report the results.": {
+    "src": "./audio/course-3d1aeea832b08cf7.webm",
+    "text": "Run the relevant tests and report the results.",
+    "parts": [
+      {
+        "voice": "Microsoft Zira Desktop",
+        "text": "Run the relevant tests and report the results.",
+        "file": "zira-fcb60233cc9bfe67.wav"
+      }
+    ],
+    "japaneseStyleId": null
+  }
+}

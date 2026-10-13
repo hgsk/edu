@@ -97,17 +97,20 @@ let readerPlaying = false;
 let selectedContent = "assignment";
 
 function loadSpeed() {
-  const saved = Number(localStorage.getItem(SPEED_KEY));
+  const saved = Number(window.CourseStorage.getItem(SPEED_KEY));
   return Number.isFinite(saved) && saved >= 120 ? Math.min(saved, 600) : DEFAULT_SPEED;
 }
 
 function loadCalibration() {
   try {
-    const saved = JSON.parse(localStorage.getItem(CALIBRATION_KEY));
+    const saved = JSON.parse(window.CourseStorage.getItem(CALIBRATION_KEY));
     if (!saved || saved.completed !== true) return;
     calibrated = true;
     calibrationResults = Array.isArray(saved.results) ? saved.results : [];
-    if (Number.isFinite(saved.speed)) speed = Math.min(Math.max(saved.speed, 120), 600);
+    const currentSpeed = Number(window.CourseStorage.getItem(SPEED_KEY));
+    if (!(Number.isFinite(currentSpeed) && currentSpeed >= 120) && Number.isFinite(saved.speed)) {
+      speed = Math.min(Math.max(saved.speed, 120), 600);
+    }
   } catch {
     calibrated = false;
   }
@@ -383,7 +386,7 @@ function finishReader() {
   if (selectedContent !== "custom") {
     const key = "code-type-rsvp-completed-v1";
     let completed = {};
-    try { completed = JSON.parse(localStorage.getItem(key)) || {}; } catch {}
+    try { completed = JSON.parse(window.CourseStorage.getItem(key)) || {}; } catch {}
     completed[selectedContent] = new Date().toISOString();
     window.CourseStorage.setItem(key, JSON.stringify(completed));
   }
@@ -469,7 +472,7 @@ function loadSelectedContent() {
   updateContentSummary(content);
   if (selectedContent !== "custom") {
     try {
-      const completed = JSON.parse(localStorage.getItem("code-type-rsvp-completed-v1")) || {};
+      const completed = JSON.parse(window.CourseStorage.getItem("code-type-rsvp-completed-v1")) || {};
       if (completed[selectedContent]) els.contentSummary.textContent += "（読了済み）";
     } catch { /* A damaged local record does not block reading. */ }
   }

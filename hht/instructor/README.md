@@ -13,6 +13,7 @@
 
 - 進行: [授業パック](../lessons/README.md)・[講師ガイド](../docs/instructor-guide.md)・[講師トークガイド](../docs/instructor-talk-guide.md)・[演習運営手順](../docs/exercise-operations.md)
 - 評価: [完成条件](../student/assignment-checks.md)・[評価ルーブリック](../docs/rubric.md)
+- 付属アプリ: [受講者向けの解説と遊び方](../docs/app-play-guide.md)（授業前の10分練習・操作早見表付き）
 - 追加演習: [夏祭りサイト](../hands-on/summer-festival-annual-update/README.md)・[講師用進行ガイド](../hands-on/summer-festival-annual-update/instructor/guide.md)
 
 ## 資料の取り扱い

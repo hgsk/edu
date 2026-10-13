@@ -14,6 +14,7 @@
 
 | 目的 | 資料 |
 |---|---|
+| 付属アプリで練習する | [アプリの解説と遊び方](./docs/app-play-guide.md) |
 | 各回の課題を読む | [学生ワークブック](./docs/student-workbook.md) |
 | 授業の予定を知る | [シラバス](./docs/syllabus.md) |
 | 制作を始める | [カフェサイト](./starter-site/) |

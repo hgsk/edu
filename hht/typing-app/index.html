@@ -34,15 +34,14 @@
 
   <main>
     <section class="arcade-intro" aria-labelledby="arcadeTitle">
-      <div><p class="eyebrow">PLAY. LEARN. LEVEL UP.</p>
-        <h1 id="arcadeTitle">学びを、プレイしよう。</h1>
-        <p>好きなコースで、今日の自己ベストに挑戦！</p></div>
-      <div class="arcade-sticker" aria-hidden="true"><span>✦</span>LET’S PLAY</div>
+      <div>
+        <h1 id="arcadeTitle">Web制作のタイピング練習</h1>
+        <p>コースを選び、表示された英単語やコードを入力します。</p>
+      </div>
     </section>
     <section class="game-shell" aria-label="タイピングゲーム">
       <aside class="mission-panel">
         <div>
-          <p class="panel-label">COURSE</p>
           <h2>コースを選ぶ</h2>
         </div>
         <div class="course-list" id="courseList" role="radiogroup" aria-label="出題コース"></div>
@@ -84,9 +83,9 @@
             <span class="keyboard-symbol">⌨</span>
             <span class="code-card">{ color: }</span>
           </div>
-          <h2>準備はいい？</h2>
-          <p>表示された文字をそのまま入力しよう。<br>正解すると自動で次へ進むよ。</p>
-          <button class="primary-button" id="startButton" type="button">▶ プレイ！</button>
+          <h2>入力方法</h2>
+          <p>表示された文字をそのまま入力します。<br>正解すると自動で次の問題へ進みます。</p>
+          <button class="primary-button" id="startButton" type="button">▶ 練習を始める</button>
           <p class="key-help"><kbd>Enter</kbd> スタート　<kbd>Esc</kbd> やり直し</p>
           <a class="reader-cta" href="./reader.html">
             <span aria-hidden="true">◉</span>
@@ -143,8 +142,7 @@
 
         <div class="result-view" id="resultView" hidden>
           <p class="result-icon" aria-hidden="true">★</p>
-          <p class="panel-label">COURSE CLEAR!</p>
-          <h2 id="resultTitle">おつかれさま！</h2>
+          <h2 id="resultTitle">練習結果</h2>
           <div class="result-score"><strong id="finalScore">0</strong><span>pt</span></div>
           <div class="score-reel" id="scoreReel" role="group" aria-label="スコアの内訳">
             <div><span>基本点</span><strong id="baseScoreResult">0</strong></div>
@@ -173,7 +171,7 @@
             <div><dt>クリアタイム</dt><dd id="clearTime">0:00</dd></div>
           </dl>
           <p id="resultMessage"></p>
-          <button class="primary-button" id="retryButton" type="button">もう一度チャレンジ</button>
+          <button class="primary-button" id="retryButton" type="button">もう一度練習する</button>
           <button class="secondary-button" id="reviewButton" type="button">まちがえた問題を復習</button>
         </div>
       </section>
@@ -182,8 +180,7 @@
     <section class="achievements" aria-labelledby="achievementTitle">
       <div class="achievement-heading">
         <div>
-          <p class="eyebrow">ACHIEVEMENTS</p>
-          <h2 id="achievementTitle">トロフィーコレクション</h2>
+          <h2 id="achievementTitle">達成記録</h2>
         </div>
         <strong><span id="achievementCount">0</span> / 10</strong>
       </div>
@@ -191,19 +188,18 @@
     </section>
 
     <section class="how-to" aria-labelledby="howToTitle">
-      <p class="eyebrow">LEVEL UP</p>
-      <h2 id="howToTitle">うまくなるコツ</h2>
+      <h2 id="howToTitle">練習の進め方</h2>
       <div class="tip-grid">
-        <article><span>01</span><h3>まず意味を見る</h3><p>文字だけでなく「何をする言葉か」も声に出そう。</p></article>
-        <article><span>02</span><h3>記号も正確に</h3><p>半角・大文字・スペースまで、画面と同じように打とう。</p></article>
-        <article><span>03</span><h3>ミスを味方に</h3><p>まちがえた問題だけを復習すると、ぐんぐん定着するよ。</p></article>
+        <article><span>01</span><h3>意味を確認する</h3><p>補足欄で、単語の意味やコードの働きを確認します。</p></article>
+        <article><span>02</span><h3>記号も正確に入力する</h3><p>半角・大文字・空白も、画面の表示に合わせます。</p></article>
+        <article><span>03</span><h3>間違えた問題を復習する</h3><p>結果画面の復習ボタンから、間違えた問題を入力し直します。</p></article>
       </div>
     </section>
   </main>
 
   <div class="achievement-toast" id="achievementToast" role="status" aria-live="polite">
     <span aria-hidden="true">🏆</span>
-    <div><small>ACHIEVEMENT UNLOCKED!</small><strong id="toastTitle"></strong></div>
+    <div><small>達成記録を追加しました</small><strong id="toastTitle"></strong></div>
   </div>
 
   <footer>

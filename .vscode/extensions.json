@@ -1,6 +1,8 @@
 {
   "recommendations": [
     "vsls-contrib.codetour",
-    "ritwickdey.LiveServer"
+    "ritwickdey.LiveServer",
+    "ms-vscode.live-server",
+    "MS-CEINTL.vscode-language-pack-ja"
   ]
 }

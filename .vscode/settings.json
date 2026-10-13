@@ -1,0 +1,8 @@
+{
+  "livePreview.hostIP": "127.0.0.1",
+  "livePreview.portNumber": 5500,
+  "livePreview.serverRoot": "",
+  "livePreview.defaultPreviewPath": "/hht/typing-app/index.html",
+  "livePreview.openPreviewTarget": "External Browser",
+  "livePreview.autoRefreshPreview": "On Changes to Saved Files"
+}

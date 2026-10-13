@@ -133,16 +133,16 @@ const WORD_PROCESSING_RANKS = [
 
 const PROGRESS_KEY = "code-type-quest-progress-v1";
 const ACHIEVEMENTS = [
-  { id: "first", icon: "🌱", title: "はじめの一歩", detail: "はじめて正解する", test: p => p.totalCorrect >= 1 },
-  { id: "ten", icon: "✋", title: "ウォームアップ完了", detail: "合計10問正解する", test: p => p.totalCorrect >= 10 },
-  { id: "twenty-five", icon: "⚡", title: "コードスプリンター", detail: "合計25問正解する", test: p => p.totalCorrect >= 25 },
-  { id: "combo-five", icon: "🔥", title: "コンボマスター", detail: "5コンボを達成する", test: p => p.maxCombo >= 5 },
+  { id: "first", icon: "🌱", title: "初めての正解", detail: "はじめて正解する", test: p => p.totalCorrect >= 1 },
+  { id: "ten", icon: "✋", title: "累計10問正解", detail: "合計10問正解する", test: p => p.totalCorrect >= 10 },
+  { id: "twenty-five", icon: "⚡", title: "累計25問正解", detail: "合計25問正解する", test: p => p.totalCorrect >= 25 },
+  { id: "combo-five", icon: "🔥", title: "5問連続正解", detail: "5コンボを達成する", test: p => p.maxCombo >= 5 },
   { id: "perfect", icon: "💯", title: "ノーミスクリア", detail: "1コースを全問正解", test: p => p.perfectRuns >= 1 },
-  { id: "words", icon: "Aa", title: "英単語ハンター", detail: "英単語コースを全問制覇", test: p => courseComplete(p, "words") },
-  { id: "html", icon: "🏷️", title: "HTMLビルダー", detail: "HTMLコースを全問制覇", test: p => courseComplete(p, "html") },
-  { id: "css", icon: "🎨", title: "CSSスタイリスト", detail: "CSSコースを全問制覇", test: p => courseComplete(p, "css") },
-  { id: "symbols", icon: "#", title: "記号の達人", detail: "記号コースを全問制覇", test: p => courseComplete(p, "symbols") },
-  { id: "complete", icon: "👑", title: "コードタイプ・キング", detail: "全問題をコンプリート", test: p => p.mastered.length === ITEMS.length }
+  { id: "words", icon: "Aa", title: "英単語の全問正解", detail: "英単語コースを全問に正解", test: p => courseComplete(p, "words") },
+  { id: "html", icon: "🏷️", title: "HTMLの全問正解", detail: "HTMLコースを全問に正解", test: p => courseComplete(p, "html") },
+  { id: "css", icon: "🎨", title: "CSSの全問正解", detail: "CSSコースを全問に正解", test: p => courseComplete(p, "css") },
+  { id: "symbols", icon: "#", title: "記号の全問正解", detail: "記号コースを全問に正解", test: p => courseComplete(p, "symbols") },
+  { id: "complete", icon: "👑", title: "全問題の正解", detail: "全問題に一度以上正解", test: p => p.mastered.length === ITEMS.length }
 ];
 
 let progress = loadProgress();
@@ -653,10 +653,10 @@ function finishGame() {
     saveProgress();
     renderProgress();
   }
-  els.resultTitle.textContent = ratio === 1 ? "パーフェクト！" : ratio >= .7 ? "すごい、レベルアップ！" : "ナイスチャレンジ！";
+  els.resultTitle.textContent = ratio === 1 ? "全問正解" : "練習結果";
   els.resultMessage.textContent = ratio === 1
-    ? "意味も思い出せたら、今日のコースは完全クリア！"
-    : "速さより正確さ。まちがえた言葉をもう一度打ってみよう。";
+    ? "全問を正しく入力しました。補足欄で意味や使い方も確認できます。"
+    : "「まちがえた問題を復習」から、間違えた問題を入力し直せます。";
   els.reviewButton.hidden = mistakes.length === 0;
   playScoreReel();
   launchConfetti(ratio === 1 ? 90 : 50);

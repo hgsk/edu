@@ -1,0 +1,10 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "付属アプリのサーバーを起動",
+      "type": "Live Preview",
+      "problemMatcher": []
+    }
+  ]
+}

@@ -6,6 +6,7 @@ import unittest
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from grade_student_pr import grade_submission
+from classify_student_pr import requires_grading
 
 
 BASE_INDEX = '''<!DOCTYPE html>\n<html lang="ja"><body><main><h1>一杯から、街の日常をあたためる。</h1><p>創業10年。</p></main></body></html>\n'''
@@ -60,6 +61,40 @@ class GraderTests(unittest.TestCase):
         changed.append("hht/starter-site/index.html")
         result = grade_submission(self.base, self.student, changed)
         self.assertTrue(result.passed, result.render_text())
+
+    def test_author_routing(self):
+        docs = ["hht/submissions/README.md", "hht/submissions/local-submission.md",
+                "hht/docs/student-workbook.md", "hht/scripts/validate-course.py"]
+        self.assertFalse(requires_grading("hgsk", "hgsk/edu", docs))
+        self.assertTrue(requires_grading("student", "hgsk/edu", docs))
+        self.assertTrue(requires_grading("hgsk", "hgsk/fork", docs))
+        self.assertTrue(requires_grading("hgsk", "hgsk/edu", []))
+        for path in ("hht/submissions/day-01/WORKLOG.md",
+                     "hht/submissions/day-01/evidence/report.md",
+                     "hht/submissions/day-01/README.md",
+                     "hht/starter-site/index.html", "hht/portfolio/index.html",
+                     "hht/practice-server/staging/index.html"):
+            with self.subTest(path=path):
+                self.assertTrue(requires_grading("hgsk", "hgsk/edu", docs + [path]))
+
+    def test_routing_does_not_bypass_valid_or_invalid_submissions(self):
+        changed = self.add_submission(1, worklog(1))
+        write(self.student / "hht/starter-site/index.html", BASE_INDEX.replace(
+            "<h1>一杯から、街の日常をあたためる。</h1>",
+            "<h1>DAY1練習：一杯から、街の日常をあたためる。</h1>",
+        ))
+        changed.append("hht/starter-site/index.html")
+        for author in ("hgsk", "student"):
+            self.assertTrue(requires_grading(author, "hgsk/edu", changed))
+            self.assertTrue(grade_submission(self.base, self.student, changed).passed)
+        for invalid in (["hht/starter-site/index.html"],
+                        [".github/workflows/student-assignment.yml"],
+                        ["hht/scripts/classify_student_pr.py"]):
+            self.assertTrue(requires_grading("student", "hgsk/edu", invalid))
+            self.assertFalse(grade_submission(self.base, self.student, invalid).passed)
+        write(self.student / "hht/submissions/day-01/WORKLOG.md", worklog(1) + "\npassword: hunter2\n")
+        self.assertTrue(requires_grading("student", "hgsk/edu", changed))
+        self.assertFalse(grade_submission(self.base, self.student, changed).passed)
 
     def test_day1_rejects_scope_creep(self):
         changed = self.add_submission(1, worklog(1))

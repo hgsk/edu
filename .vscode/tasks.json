@@ -1,0 +1,44 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "HHT: 提出先を設定",
+      "type": "process",
+      "command": "node",
+      "args": ["${workspaceFolder}/hht/scripts/submit.mjs", "setup", "--student", "${input:student}", "--destination", "${input:destination}"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "HHT: 作業開始を記録",
+      "type": "process",
+      "command": "node",
+      "args": ["${workspaceFolder}/hht/scripts/submit.mjs", "begin", "--day", "${input:day}"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    },
+    {
+      "label": "HHT: 提出",
+      "type": "process",
+      "command": "node",
+      "args": ["${workspaceFolder}/hht/scripts/submit.mjs", "submit"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "dedicated", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "HHT: 前回の提出を再送",
+      "type": "process",
+      "command": "node",
+      "args": ["${workspaceFolder}/hht/scripts/submit.mjs", "send"],
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    { "id": "student", "type": "promptString", "description": "講師が配布した匿名の提出番号（例: s001）" },
+    { "id": "destination", "type": "promptString", "description": "配布された既存の共有フォルダー（UNCパス、ネットワークドライブ、P2P同期先、USB）" },
+    { "id": "day", "type": "pickString", "description": "編集前に今日のDAYを選択", "options": ["01", "02", "03", "04", "05", "06", "07", "08", "09", "10", "11", "12", "13", "14", "15"] }
+  ]
+}

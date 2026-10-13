@@ -21,6 +21,8 @@ DAY 1は、[ワークブックのDAY 1](../docs/student-workbook.md#day-1-はじ
 
 標準は[ZIP提出](../submissions/local-submission.md)。Git/GitHubアカウントもPRも不要です。毎回、作業前後のソース、WORKLOG、画面と証拠を残し、講師の指摘を直して再提出します。[提出方法](../submissions/README.md)で任意のPR提出も選べます。完成条件と評価基準は共通です。
 
+Gitで履歴を残す場合は[LAN／P2P共有へのワンタッチ提出](../submissions/git-lan-submission.md)も使えます。初回設定と編集前の開始記録後は、VS CodeでCtrl+Shift+Bを押すと提出用コミットと転送を実行します。GitHubアカウントは不要です。
+
 ## 15日分のお仕事
 
 | 回 | 今日の仕事 |

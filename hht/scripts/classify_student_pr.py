@@ -9,6 +9,7 @@ REPOSITORY = "hgsk/edu"
 SUBMISSION_DOCS = {
     "hht/submissions/README.md",
     "hht/submissions/local-submission.md",
+    "hht/submissions/git-lan-submission.md",
 }
 STUDENT_PREFIXES = (
     "hht/submissions/", "hht/starter-site/", "hht/portfolio/",

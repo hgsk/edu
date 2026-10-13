@@ -10,9 +10,10 @@ import { removeTree } from './submit.mjs';
 
 const script = fileURLToPath(new URL('./submit.mjs', import.meta.url));
 const fields = ['依頼', '質問', '変更した場所', '変更しなかった場所', '確認したこと', '未確認', 'バージョン', '確認URL'];
+const trace = value => { if (process.env.HHT_SUBMIT_TRACE) fs.writeSync(1, `TRACE ${value}\n`); };
 function fixture(t) {
   const temp = fs.mkdtempSync(path.join(os.tmpdir(), 'hht-submit-'));
-  t.after(() => removeTree(temp));
+  t.after(() => { trace('cleanup start'); removeTree(temp); trace('cleanup done'); });
   const root = path.join(temp, '教材 with spaces');
   const share = path.join(temp, 'LAN share');
   fs.mkdirSync(root); fs.mkdirSync(share);
@@ -20,7 +21,12 @@ function fixture(t) {
     const file = path.join(root, relative);
     fs.mkdirSync(path.dirname(file), { recursive: true }); fs.writeFileSync(file, text);
   };
-  const call = (...args) => spawnSync(process.execPath, [script, ...args, '--root', root], { encoding: 'utf8' });
+  const call = (...args) => {
+    trace(`CLI ${args[0]} start`);
+    const result = spawnSync(process.execPath, [script, ...args, '--root', root], { encoding: 'utf8' });
+    trace(`CLI ${args[0]} done status=${result.status}`);
+    return result;
+  };
   const ok = (...args) => {
     const result = call(...args);
     assert.equal(result.status, 0, result.stderr); return result.stdout;

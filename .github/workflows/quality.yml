@@ -19,6 +19,8 @@ jobs:
         with:
           node-version: "22.20.0"
       - run: node --test hht/scripts/test_submit.mjs
+        env:
+          HHT_SUBMIT_TRACE: "1"
 
   validate:
     runs-on: ubuntu-latest

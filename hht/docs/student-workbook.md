@@ -25,7 +25,7 @@
 3. パソコンとスマートフォンの両方で確認できる
 4. 修正前と修正後の違いを説明できる
 5. 分からないことを質問できる
-6. GitHubに作業を残せる
+6. 作業前後のソースと作業記録を残し、提出できる（Git/GitHubは任意）
 7. 自分の制作物をポートフォリオとして紹介できる
 
 ---
@@ -47,7 +47,7 @@ CodespacesまたはVS Codeで、このリポジトリのルートを開きます
 
 ### STEP 2　自分の作業場所を確認する
 
-ソース管理画面で、自分のブランチまたは自分用のコピーを使っていることを確認します。
+教材フォルダーの保存場所を見て、自分用のコピーを使っていることを確認します。Gitを使う人だけソース管理画面で自分のブランチを確認します。
 
 他の人の作業場所をそのまま編集しないようにします。
 
@@ -66,6 +66,10 @@ CodespacesまたはVS Codeで、このリポジトリのルートを開きます
 - 分からないことはないか
 
 ---
+
+## 全15回で共通の保存・提出
+
+標準環境はVS Code＋ローカルファイルです。Git/GitHubを使わずに全15回を進められます。[ZIP提出の手順](../submissions/local-submission.md)に従い、毎回、編集前に作業前ソースを保存し、編集後に作業後ソースを保存します。WORKLOGの8項目、画面、各DAYの証拠をそろえて提出し、講師の指摘を直して再提出します。Git/GitHubを使う場合のPRは[任意の提出経路](../submissions/README.md#任意のprで提出してci判定を受ける)です。
 
 ## 毎回のお仕事ルート
 
@@ -128,7 +132,7 @@ DAY 1では、まだこの文章修正を完了させません。まず **安全
 
 CodespacesまたはVS Codeで **リポジトリのルート** を開きます。左側に README.md と hht が見えることを確認してください。
 
-次に、ソース管理画面で **自分用のコピーまたは自分の作業ブランチ** を使っていることを確認します。共有教材のmainを直接編集しません。
+次に、教材フォルダーの保存場所が **自分用のコピー** であることを確認します。Gitを使う人だけ自分の作業ブランチを確認します。共有教材のmainを直接編集しません。
 
 依頼から次をメモします。
 
@@ -191,6 +195,12 @@ DevTools: h1確認 / CSS確認 / 375px確認 / Console: エラーなし
 
 ## STEP 4　開始時点を記録し、復元用コピーを作る
 
+### 標準: Gitなし
+
+[作業前と作業後を保存する](../submissions/local-submission.md#作業前と作業後を保存する)の手順で、現在のstarter-siteとportfolioを教材フォルダーの外へコピーします。作業前フォルダー名を開始バージョンIDとしてWORKLOGへ記録します。模擬公開側の復元用には、エクスプローラーで `hht/practice-server/backups/day-01-<開始ID>` を作り、現在のstarter-site/index.htmlをそこへコピーします。<開始ID>は自分の保存したフォルダー名に置き換えます。
+
+### 任意: Gitを使う人
+
 別のターミナルを開き、次を実行します。
 
 ~~~bash
@@ -235,6 +245,12 @@ hht/starter-site/index.html を開き、h1を次のように **DAY 1の練習用
 
 ## STEP 6　変更後のバージョンを残す
 
+### 標準: Gitなし
+
+保存したstarter-siteとportfolioを、[ZIP提出の作業後フォルダー](../submissions/local-submission.md#作業前と作業後を保存する)へコピーします。作業前のコピーは上書きしません。作業後フォルダー名を変更後バージョンIDとしてWORKLOGへ記録します。
+
+### 任意: Gitを使う人
+
 変更したHTMLだけをコミットします。
 
 ~~~bash
@@ -259,6 +275,8 @@ git commitで「nothing to commit」と出た場合は、index.htmlを保存で�
 
 practice-server/staging を **模擬公開先** にします。最初だけ、ページ表示に必要なファイルを明示して配置します。
 
+PC上のVS Codeではエクスプローラーでstaging内にcssとimagesフォルダーを作り、index.html、menu.html、about.html、css/style.css、images/hero-cafe.webpを同じ相対位置へコピーすれば、以下のmkdir/cpコマンドは不要です。
+
 ~~~bash
 mkdir -p hht/practice-server/staging/css hht/practice-server/staging/images
 cp hht/starter-site/index.html hht/starter-site/menu.html hht/starter-site/about.html hht/practice-server/staging/
@@ -280,6 +298,17 @@ CodespacesではPORTSの8001から **Open in Browser** を押し、表示され�
 
 ## STEP 8　ソースを開始時点へ戻し、変更後へ戻す
 
+### 標準: Gitなし
+
+1. STEP 4の作業前コピーからstarter-site/index.htmlだけを、作業中のhht/starter-site/index.htmlへコピーして置き換える。
+2. ローカルページを再読み込みし、「DAY1練習：」が消えたことを確認する。
+3. STEP 6の作業後コピーから同じindex.htmlだけをコピーして置き換える。
+4. 再読み込みし、「DAY1練習：」が戻ったことを確認する。
+
+作業前・作業後の保存フォルダー自体は編集しません。復元結果と画面を提出記録に残します。
+
+### 任意: Gitを使う人
+
 STEP 4で記録した開始バージョンIDを使います。<開始ID> を実際のIDへ置き換えてください。
 
 ~~~bash
@@ -300,7 +329,7 @@ git restore --source=HEAD -- hht/starter-site/index.html
 
 ## STEP 9　模擬公開先も一度戻す
 
-STEP 7でBの模擬公開を使った人だけ行います。
+STEP 7でBの模擬公開を使った人だけ行います。PC上のVS Codeではエクスプローラーで、バックアップのindex.htmlをstaging/index.htmlへコピーして置き換え、確認後に作業中のstarter-site/index.htmlで置き換え直します。以下は同じ操作のコマンド例です。
 
 <開始ID> を実際の開始バージョンIDへ置き換えます。
 
@@ -322,7 +351,7 @@ cp hht/starter-site/index.html hht/practice-server/staging/index.html
 
 ## STEP 10　WORKLOGと受領返信を完成させる
 
-[提出フォルダーの使い方](../submissions/README.md)に従い、hht/submissions/day-01/WORKLOG.md を作ります。
+[提出フォルダーの使い方](../submissions/README.md)に従い、hht/submissions/day-01/WORKLOG.md を作ります。Gitなしの人は[ZIP提出](../submissions/local-submission.md)で提出します。質問や未確認がないときは「なし（理由）」と書き、空欄や例のままにしません。
 
 最低限、次を埋めます。
 

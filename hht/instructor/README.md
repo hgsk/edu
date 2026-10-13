@@ -12,7 +12,8 @@
 ## 必要な資料
 
 - 進行: [授業パック](../lessons/README.md)・[講師ガイド](../docs/instructor-guide.md)・[講師トークガイド](../docs/instructor-talk-guide.md)・[演習運営手順](../docs/exercise-operations.md)
-- 評価: [完成条件](../student/assignment-checks.md)・[評価ルーブリック](../docs/rubric.md)
+- 評価: [完成条件](../student/assignment-checks.md)・[評価ルーブリック](../docs/rubric.md)・[ZIP回収／講師レビュー](../submissions/local-submission.md)
+- Git方針の確認: [履歴照合記録](../docs/submission-policy-history.md)
 - 追加演習: [夏祭りサイト](../hands-on/summer-festival-annual-update/README.md)・[講師用進行ガイド](../hands-on/summer-festival-annual-update/instructor/guide.md)
 
 ## 取り扱いに注意する資料

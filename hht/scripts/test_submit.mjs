@@ -158,7 +158,13 @@ test('receiver rejects a forged Git bundle with files outside the submission sco
 test('two students sharing a destination do not overwrite each other', t => {
   const f = fixture(t); f.init(); f.prepare(); f.ok('submit');
   const other = path.join(f.temp, 'other'); fs.mkdirSync(other);
-  fs.cpSync(path.join(f.root, 'hht'), path.join(other, 'hht'), { recursive: true });
+  // Build the second fixture with the same copy primitive used by the command.
+  // Native recursive cpSync can terminate old Windows Node builds on Unicode paths.
+  for (const relative of ['hht/starter-site/index.html', 'hht/starter-site/css/style.css', 'hht/instructor/answer.md']) {
+    const output = path.join(other, relative);
+    fs.mkdirSync(path.dirname(output), { recursive: true });
+    fs.copyFileSync(path.join(f.root, relative), output);
+  }
   for (const args of [['setup', '--student', 's002', '--destination', f.share], ['begin', '--day', '15']]) {
     const result = spawnSync(process.execPath, [script, ...args, '--root', other], { encoding: 'utf8' });
     assert.equal(result.status, 0, result.stderr);

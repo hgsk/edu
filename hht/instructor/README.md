@@ -12,6 +12,9 @@
 ## 必要な資料
 
 - 進行: [授業パック](../lessons/README.md)・[講師ガイド](../docs/instructor-guide.md)・[講師トークガイド](../docs/instructor-talk-guide.md)・[演習運営手順](../docs/exercise-operations.md)
+- DAY 3・4: [内容点検と120分／各90分の進行](./day34-guide.md)（開始ZIP、実画面、図、提出メモ付き）
+- DAY 5以降: [DAY 3・4改訂の影響と引き継ぎ](./day5-onward-impact.md)
+- Markdown: [記号と表示の比較・GFMの便利な書式](../docs/markdown-format-guide.md)（実画面、チェックリスト、折りたたみの例）
 - 評価: [完成条件](../student/assignment-checks.md)・[評価ルーブリック](../docs/rubric.md)
 - 付属アプリ: [受講者向けの解説と遊び方](../docs/app-play-guide.md)（授業前の10分練習・操作早見表付き）
 - 追加演習: [夏祭りサイト](../hands-on/summer-festival-annual-update/README.md)・[講師用進行ガイド](../hands-on/summer-festival-annual-update/instructor/guide.md)

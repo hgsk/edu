@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="440" viewBox="0 0 1000 440" role="img" aria-labelledby="title desc">
+<title id="title">同じボタンに違うCSSが届いたら</title>
+<desc id="desc">店舗案内ではID指定がclass指定に優先する。メニューでは同じclassへの後の指定が優先する。この練習の通常のCSSを比較した説明図。</desc>
+<rect width="1000" height="440" rx="18" fill="#fffdf7"/>
+<g font-family="system-ui, sans-serif" fill="#20201d">
+<text x="35" y="45" font-size="27" font-weight="700">同じボタンに、違うCSSが届いている</text>
+<rect x="30" y="70" width="455" height="280" rx="16" fill="#eef4ef"/>
+<rect x="515" y="70" width="455" height="280" rx="16" fill="#fff0e4"/>
+<text x="50" y="108" font-size="23" font-weight="700">店舗案内：指定する名前の違い</text>
+<rect x="50" y="130" width="410" height="65" rx="10" fill="#245746"/>
+<text x="70" y="170" font-size="22" fill="white">.menu-button → 緑</text>
+<text x="235" y="225" font-size="26">↓</text>
+<rect x="50" y="240" width="410" height="65" rx="10" fill="#384a9b"/>
+<text x="70" y="280" font-size="22" fill="white">#shop-menu → 青（採用）</text>
+<text x="50" y="332" font-size="18">この競合では、IDの指定が優先</text>
+<text x="535" y="108" font-size="23" font-weight="700">メニュー：指定する順番の違い</text>
+<rect x="535" y="130" width="410" height="65" rx="10" fill="#245746"/>
+<text x="555" y="158" font-size="20" fill="white">先の .menu-button → 緑</text>
+<text x="555" y="183" font-size="17" fill="white">css/style.css（外部CSS）</text>
+<text x="720" y="225" font-size="26">↓</text>
+<rect x="535" y="240" width="410" height="65" rx="10" fill="#8a3b16"/>
+<text x="555" y="267" font-size="20" fill="white">後の .menu-button → 茶（採用）</text>
+<text x="555" y="292" font-size="17" fill="white">menu.html の style</text>
+<text x="535" y="332" font-size="18">同じ強さなら、後の指定が優先</text>
+<text x="35" y="391" font-size="19">残す共通ルールはどれ？　不要な指定はどこ？　DevToolsで確かめよう。</text>
+<text x="35" y="420" font-size="15">説明図：この練習の通常のCSSでの比較。外部CSSがいつも勝つ、という意味ではありません。</text>
+</g></svg>

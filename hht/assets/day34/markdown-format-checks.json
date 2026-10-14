@@ -1,0 +1,49 @@
+{
+  "checks": [
+    {
+      "name": "Rendered strong",
+      "status": "PASS"
+    },
+    {
+      "name": "Rendered em",
+      "status": "PASS"
+    },
+    {
+      "name": "Rendered del",
+      "status": "PASS"
+    },
+    {
+      "name": "Rendered ins",
+      "status": "PASS"
+    },
+    {
+      "name": "Rendered table",
+      "status": "PASS"
+    },
+    {
+      "name": "Rendered code",
+      "status": "PASS"
+    },
+    {
+      "name": "GFM task inputs",
+      "status": "PASS"
+    },
+    {
+      "name": "Checked and unchecked tasks",
+      "status": "PASS"
+    },
+    {
+      "name": "Fold opens",
+      "status": "PASS"
+    },
+    {
+      "name": "Folded Markdown rendered",
+      "status": "PASS"
+    }
+  ],
+  "cleanup": {
+    "pid": 31708,
+    "status": "PASS"
+  },
+  "scope": "Local marked GFM preview; GitHub platform-only alerts, footnotes and Mermaid checked against official documentation, not live UI"
+}

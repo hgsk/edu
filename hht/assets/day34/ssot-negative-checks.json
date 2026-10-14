@@ -1,0 +1,12 @@
+[
+  {
+    "case": "missing canonical criteria",
+    "status": "PASS",
+    "expected_rejection": true
+  },
+  {
+    "case": "duplicated index criteria",
+    "status": "PASS",
+    "expected_rejection": true
+  }
+]

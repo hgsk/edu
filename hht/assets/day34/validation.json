@@ -1,0 +1,427 @@
+{
+  "automated_checks": [
+    {
+      "check": "DAY 3 ZIP integrity",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 ZIP readback",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 index.html body values retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 index.html link destinations retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 index.html example main/h1",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 index.html no duplicate IDs",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 menu.html body values retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 menu.html link destinations retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 menu.html example main/h1",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 menu.html no duplicate IDs",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 about.html body values retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 about.html link destinations retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 about.html example main/h1",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 about.html no duplicate IDs",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 ZIP integrity",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 ZIP readback",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 index.html body values retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 index.html link destinations retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 index.html example main/h1",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 index.html no duplicate IDs",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 menu.html body values retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 menu.html link destinations retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 menu.html example main/h1",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 menu.html no duplicate IDs",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 about.html body values retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 about.html link destinations retained",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 about.html example main/h1",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 about.html no duplicate IDs",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 CSS unchanged",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 other pages unchanged",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4 heading order",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ../../assets/day34/day3-start-index-button.png",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ../../assets/day34/day3-start-menu-button.png",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ../../assets/day34/day3-start-about-button.png",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ./day3-start.zip",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ./start/",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ../../assets/day34/day3-devtools.png",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ../../assets/day34/day3-css-map.svg",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ../../assets/day34/day3-result-index-button.png",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ../../assets/day34/day3-result-menu-button.png",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ../../assets/day34/day3-result-about-button.png",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ./submission.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ../../docs/student-workbook.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\03\\README.md -> ../../instructor/day34-guide.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\04\\README.md -> ../../assets/day34/day4-start.png",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\04\\README.md -> ./day4-start.zip",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\04\\README.md -> ./start/",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\04\\README.md -> ../../assets/day34/day4-regions.svg",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\04\\README.md -> ../../assets/day34/day4-result.png",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\04\\README.md -> ./submission.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\04\\README.md -> ../../docs/student-workbook.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\lessons\\04\\README.md -> ../../instructor/day34-guide.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ../student/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ../assets/workbook/01-request-arrives.webp",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ../assets/workbook/01-request-arrives.webp",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ./devtools-first-lesson.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ../lessons/03/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ../assets/day34/day3-css-map.svg",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ../lessons/04/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ../assets/day34/day4-regions.svg",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ../assets/workbook/02-build-and-check.webp",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ../assets/workbook/02-build-and-check.webp",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\student-workbook.md -> ../assets/workbook/03-client-approval.webp",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\curriculum.md -> ../instructor/day34-guide.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\curriculum.md -> ../lessons/03/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\curriculum.md -> ../instructor/day34-guide.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\curriculum.md -> ../lessons/04/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\curriculum.md -> ../hands-on/summer-festival-annual-update/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\instructor-talk-guide.md -> ../lessons/03/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\instructor-talk-guide.md -> ../instructor/day34-guide.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\instructor-talk-guide.md -> ../lessons/04/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\docs\\instructor-talk-guide.md -> ../instructor/day34-guide.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\student\\assignment-checks.md -> ../lessons/03/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\student\\assignment-checks.md -> ../lessons/04/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\student\\assignment-checks.md -> ./requests/day13-release-approval.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\student\\assignment-checks.md -> ../docs/portfolio-project.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\instructor\\day34-guide.md -> ../docs/course-design.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\instructor\\day34-guide.md -> ../docs/project-brief.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\instructor\\day34-guide.md -> ../lessons/03/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\instructor\\day34-guide.md -> ../lessons/04/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\instructor\\day34-guide.md -> ./day34-examples/day3/",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\instructor\\day34-guide.md -> ./day34-examples/day4/",
+      "status": "PASS"
+    },
+    {
+      "check": "Link exists hht\\instructor\\day34-guide.md -> ../assets/day34/README.md",
+      "status": "PASS"
+    },
+    {
+      "check": "SVG valid day3-css-map.svg",
+      "status": "PASS"
+    },
+    {
+      "check": "SVG valid day4-regions.svg",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3 browser styles match across three pages",
+      "status": "PASS"
+    }
+  ],
+  "learner_duration": "NOT RUN",
+  "native_devtools_control": "BLOCKED; user supplied actual screenshot",
+  "visual_review": "PASS: diagrams and lesson previews reviewed; all 11 embedded images loaded with alt text",
+  "cleanup": [
+    {
+      "pid": 10792,
+      "method": "already exited",
+      "status": "PASS"
+    },
+    {
+      "pid": 40732,
+      "method": "verified process stop",
+      "status": "PASS"
+    }
+  ],
+  "wireframe_update": {
+    "status": "PASS",
+    "documents": 7,
+    "checks": [
+      "terminology consistency",
+      "local links",
+      "SVG XML",
+      "SVG render and visual review",
+      "git diff --check"
+    ],
+    "note": "Diagram now shows page placement with HTML roles as annotations. Previous render-checks.json records the earlier diagram."
+  },
+  "tag_comparison_update": {
+    "status": "PASS",
+    "checks": [
+      "6 browser checks",
+      "screenshot visual review",
+      "local links and added workbook heading anchor",
+      "capture PID 26216 absent"
+    ],
+    "evidence": "tag-comparison-checks.json"
+  },
+  "markup_preface_update": {
+    "status": "PASS",
+    "checks": [
+      "local links and new workbook heading anchor",
+      "SVG XML",
+      "diagram render and visual review",
+      "git diff --check"
+    ],
+    "scope": [
+      "DAY 4 preface",
+      "workbook preface",
+      "instructor introduction and timing"
+    ],
+    "learner_duration": "NOT RUN"
+  },
+  "markdown_format_update": {
+    "status": "PASS",
+    "local_links": 72,
+    "all_15_workbook_checks": "GFM task lists",
+    "browser_evidence": "markdown-format-checks.json",
+    "course_validator_exit": 0,
+    "github_platform_live_UI": "NOT RUN; syntax verified against official docs"
+  },
+  "table_policy_update": {
+    "status": "PASS",
+    "non_comparison_tables_converted": 20,
+    "definition_entries_retained": 145,
+    "local_links": 68,
+    "course_validation_exit": 0,
+    "visual_review": "PASS",
+    "process_cleanup": "PASS",
+    "evidence": "table-policy-checks.json"
+  },
+  "ssot_update": {
+    "status": "PASS",
+    "canonical": "hht/docs/student-workbook.md",
+    "day_blocks": 15,
+    "images_loaded": 18,
+    "acceptance_blocks": 15,
+    "evidence": "ssot-checks.json",
+    "course_validation_exit": 0
+  }
+}

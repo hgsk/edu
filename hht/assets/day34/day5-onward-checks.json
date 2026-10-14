@@ -1,0 +1,159 @@
+{
+  "checks": [
+    {
+      "check": "Original unchanged: hht/starter-site/about.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Original unchanged: hht/starter-site/index.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Original unchanged: hht/starter-site/menu.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Original unchanged: hht/starter-site/css/style.css",
+      "status": "PASS"
+    },
+    {
+      "check": "Original unchanged: hht/starter-site/images/hero-cafe.webp",
+      "status": "PASS"
+    },
+    {
+      "check": "Body facts retained: index.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Single main: index.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Navigation retained: index.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Body facts retained: menu.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Single main: menu.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Navigation retained: menu.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Body facts retained: about.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Single main: about.html",
+      "status": "PASS"
+    },
+    {
+      "check": "Navigation retained: about.html",
+      "status": "PASS"
+    },
+    {
+      "check": "D6 product cards and anchor retained",
+      "status": "PASS"
+    },
+    {
+      "check": "D11 JSON-LD retained",
+      "status": "PASS"
+    },
+    {
+      "check": "D9 image integration boundary",
+      "status": "PASS"
+    },
+    {
+      "check": "D6/D9/D12 selectors retained",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D5",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D6",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D7",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D8",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D9",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D10",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D11",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D12",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D13",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D14",
+      "status": "PASS"
+    },
+    {
+      "check": "Continuation clarified: D15",
+      "status": "PASS"
+    },
+    {
+      "check": "Scoped local links exist",
+      "status": "PASS"
+    },
+    {
+      "check": "Course validator passes",
+      "status": "PASS"
+    }
+  ],
+  "original_files": [
+    {
+      "file": "hht/starter-site/about.html",
+      "sha256": "f621ac1cbcb37b30379a3e94675e13b08c3f55025fe5837efbbdcea643d7b506"
+    },
+    {
+      "file": "hht/starter-site/index.html",
+      "sha256": "d8147ff4ebb9f8cf161e89ed22985f897a60b50abf083c212c250c1c67f93cbc"
+    },
+    {
+      "file": "hht/starter-site/menu.html",
+      "sha256": "368439dd0d44c0291b15d5f63829918e9bb8f93057684a4f04adfaadb03807d7"
+    },
+    {
+      "file": "hht/starter-site/css/style.css",
+      "sha256": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1"
+    },
+    {
+      "file": "hht/starter-site/images/hero-cafe.webp",
+      "sha256": "421d7a4ab41a3764e1b46520379f2124ad17a294139ac298e31d4ac107644e31"
+    }
+  ],
+  "links_checked": 177,
+  "course_validator_exit": 0,
+  "learner_files_integration": "NOT RUN",
+  "D5_to_D15_runtime_and_release": "NOT RUN",
+  "notes": [
+    "Original starter-site unchanged",
+    "D5/D6 partial completion and missing sanitize.css predate this change",
+    "Practice inputs require scoped transfer to personal continuation site"
+  ]
+}

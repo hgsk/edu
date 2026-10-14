@@ -4,6 +4,8 @@
 
 ## 今日の授業へ
 
+**課題の正本は[学生ワークブック](./docs/student-workbook.md)です。** 学生向け入口や授業パックは、その該当DAYへの案内です。
+
 - **学生:** [学生向け入口](./student/README.md)から今日のDAYを開く。
 - **講師:** [講師向け入口](./instructor/README.md)から今日の授業パックを開く。
 - **初めてCodespacesを使う人:** [はじめてツアー](./tour/README.md)から始める。
@@ -12,15 +14,13 @@
 
 ## 資料を探す
 
-| 目的 | 資料 |
-|---|---|
-| 付属アプリで練習する | [アプリの解説と遊び方](./docs/app-play-guide.md) |
-| 各回の課題を読む | [学生ワークブック](./docs/student-workbook.md) |
-| 授業の予定を知る | [シラバス](./docs/syllabus.md) |
-| 制作を始める | [カフェサイト](./starter-site/) |
-| 提出方法を確認する | [提出フォルダーの使い方](./submissions/README.md) |
-| 講師が授業を準備する | [15回分の授業パック](./lessons/README.md)・[演習運営手順](./docs/exercise-operations.md) |
-| 追加の実務演習をする | [夏祭りサイトの更新](./hands-on/summer-festival-annual-update/README.md) |
+- 各回の課題を読む：[学生ワークブック](./docs/student-workbook.md)
+- 付属アプリで練習する：[アプリの解説と遊び方](./docs/app-play-guide.md)
+- 授業の予定を知る：[シラバス](./docs/syllabus.md)
+- 制作を始める：[カフェサイト](./starter-site/)
+- 提出方法を確認する：[提出フォルダーの使い方](./submissions/README.md)
+- 講師が授業を準備する：[15回分の授業パック](./lessons/README.md)・[演習運営手順](./docs/exercise-operations.md)
+- 追加の実務演習をする：[夏祭りサイトの更新](./hands-on/summer-festival-annual-update/README.md)
 
 授業設計や発展講座などの詳細資料は[docs](./docs/)にあります。
 

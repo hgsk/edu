@@ -285,7 +285,10 @@ def grade_day2(result: Result, student: Path, worklog: str, fields: dict[str, st
 
 
 def grade_day3(result: Result, student: Path, changed: list[str], worklog: str, fields: dict[str, str]) -> None:
-    result.add(count_class(student, "button") >= 2, "共通.button classを複数箇所で利用")
+    result.add(
+        any(count_class(student, name) >= 2 for name in ("button", "menu-button")),
+        "共通のbuttonまたはmenu-button classを複数箇所で利用",
+    )
     inline = re.compile(r"\sstyle\s*=", re.I)
     result.add(not any(inline.search(read_text(p)) for p in site_html_files(student)), "インラインstyleを追加していない")
     result.add(bool(changed_under(changed, "hht/starter-site/css/")), "CSSファイルを変更")

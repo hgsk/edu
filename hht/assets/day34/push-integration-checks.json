@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "base": "c03b2300e8ac49f204bf494474c2d61a527ffa44",
+  "source_commit": "ba99bda",
+  "zip_readback": "PASS",
+  "local_links": 62,
+  "latest_main_lesson_procedures": "retained except superseded D3/D4",
+  "latest_main_day1_acceptance": "retained",
+  "submission_policy": "ZIP standard / PR optional; original WORKLOG keys retained",
+  "course_validation": "PASS",
+  "grader_tests": 8,
+  "canonical_sha256": "f9a88d5b7ee19987b2c337dd6473797305ca84fdbd74135bef070eac96b74ea9",
+  "independent_review": "PASS; canonical continuation links verified"
+}

@@ -1,0 +1,33 @@
+{
+  "checks": [
+    {
+      "name": "class-based styles match",
+      "status": "PASS"
+    },
+    {
+      "name": "named section exposed as region",
+      "status": "PASS"
+    },
+    {
+      "name": "div does not add a second region",
+      "status": "PASS"
+    },
+    {
+      "name": "tag selector gives different backgrounds",
+      "status": "PASS"
+    },
+    {
+      "name": "section to div retains class-based appearance",
+      "status": "PASS"
+    },
+    {
+      "name": "section to div stops tag-based CSS",
+      "status": "PASS"
+    }
+  ],
+  "accessibility": "- paragraph:\n  - code: <section class=\"info-card\">\n- region \"営業時間\":\n  - heading \"営業時間\" [level=3]\n  - paragraph: 10:00〜19:00\n- paragraph: 役目：1つの話題のまとまり\n- paragraph:\n  - code: <div class=\"info-card\">\n- heading \"営業時間\" [level=3]\n- paragraph: 10:00〜19:00\n- paragraph: 役目：特定の意味を持たないまとまり",
+  "cleanup": {
+    "pid": 26216,
+    "status": "PASS"
+  }
+}

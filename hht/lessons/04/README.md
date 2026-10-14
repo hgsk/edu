@@ -1,16 +1,14 @@
-# 第4回 情報を見つけやすい構造へ
+# DAY 4 お店の情報が見つけにくい
+
+**学習内容・課題条件の正本：** [学生ワークブック DAY 4](../../docs/student-workbook.md#day-4-お店の情報が見つけにくい)。実画面・説明・作業・完成条件・提出するものは、正本にまとめています。このページは資料への入口です。
 
 ## 今日使う資料
 
-- **生徒:** [ワークブック DAY 4](../../docs/student-workbook.md#day-4-お店の情報が見つけにくい)
-- **講師:** [第4回の導入・振り返りトーク](../../docs/instructor-talk-guide.md#第4回-お店の情報が見つけにくい)
-- **進行:** [カリキュラム 第4回](../../docs/curriculum.md#第4回-ブロック分けとセマンティックhtml)
-- **制作:** [トップページ](../../starter-site/index.html)／[店舗紹介](../../starter-site/about.html)
-
-## 今日確認するもの
-
-`header`、`nav`、`main`、`section`、`article`、`aside`、`footer`、見出しの順番
+- **生徒:** [正本のDAY 4](../../docs/student-workbook.md#day-4-お店の情報が見つけにくい)・[提出メモ](./submission.md)
+- **講師:** [DAY 3・4の進行](../../instructor/day34-guide.md)
+- **進行:** [カリキュラム](../../docs/curriculum.md)
+- **配布:** [開始ZIP](./day4-start.zip)・[開始データの実体](./start/)
 
 ## 今日できるもの
 
-領域分解図、再構成したHTML、構造変更の報告
+[正本のDAY 4](../../docs/student-workbook.md#day-4-お店の情報が見つけにくい)の提出欄と完成条件を参照してください。ここでは条件を複製しません。

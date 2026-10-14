@@ -1,0 +1,115 @@
+{
+  "converted": [
+    {
+      "file": "hht/lessons/03/README.md",
+      "header": "| 依頼の確認 | 今回の約束 |",
+      "entries": 5
+    },
+    {
+      "file": "hht/lessons/03/README.md",
+      "header": "| 言葉 | この仕事での意味 |",
+      "entries": 5
+    },
+    {
+      "file": "hht/lessons/04/README.md",
+      "header": "| 整理されていない例（架空のお店の情報） | 読む人が困ること |",
+      "entries": 3
+    },
+    {
+      "file": "hht/lessons/04/README.md",
+      "header": "| 依頼の確認 | 今回の約束 |",
+      "entries": 5
+    },
+    {
+      "file": "hht/lessons/04/README.md",
+      "header": "| 役目 | HTML | 今回の使い方 |",
+      "entries": 4
+    },
+    {
+      "file": "hht/lessons/04/README.md",
+      "header": "| 言葉 | 意味 |",
+      "entries": 5
+    },
+    {
+      "file": "hht/docs/student-workbook.md",
+      "header": "| 見つけること | メモ |",
+      "entries": 6
+    },
+    {
+      "file": "hht/docs/markdown-format-guide.md",
+      "header": "| 伝えたいこと | 便利な書き方 |",
+      "entries": 5
+    },
+    {
+      "file": "hht/docs/glossary.md",
+      "header": "| 用語 | 意味 | AIへの指示例・注意 |",
+      "entries": 23
+    },
+    {
+      "file": "hht/docs/glossary.md",
+      "header": "| 用語 | 意味 | AIへの指示例・注意 |",
+      "entries": 22
+    },
+    {
+      "file": "hht/docs/glossary.md",
+      "header": "| 用語 | 意味 | AIへの指示例・注意 |",
+      "entries": 20
+    },
+    {
+      "file": "hht/docs/glossary.md",
+      "header": "| 用語 | 意味 | AIへの指示例・注意 |",
+      "entries": 15
+    },
+    {
+      "file": "hht/docs/glossary.md",
+      "header": "| 用語 | 意味 | AIへの指示例・注意 |",
+      "entries": 20
+    },
+    {
+      "file": "hht/docs/glossary.md",
+      "header": "| 用語 | 意味 | AIへの指示例・注意 |",
+      "entries": 16
+    },
+    {
+      "file": "hht/docs/glossary.md",
+      "header": "| 用語 | 意味 | AIへの指示例・注意 |",
+      "entries": 17
+    },
+    {
+      "file": "hht/docs/glossary.md",
+      "header": "| 用語 | 意味 | AIへの指示例・注意 |",
+      "entries": 12
+    },
+    {
+      "file": "hht/instructor/day34-guide.md",
+      "header": "| 時刻 | 内容 | その時間の成果 |",
+      "entries": 13
+    },
+    {
+      "file": "hht/instructor/day5-onward-impact.md",
+      "header": "| 対象 | 保持／確認すること |",
+      "entries": 7
+    },
+    {
+      "file": "hht/instructor/day5-onward-impact.md",
+      "header": "| 回 | 判定・影響 | 後続で守ること |",
+      "entries": 11
+    },
+    {
+      "file": "hht/lessons/04/submission.md",
+      "header": "| まとまり | 選んだタグ | このタグにした理由 |",
+      "entries": 3
+    }
+  ],
+  "validation": {
+    "status": "PASS",
+    "definitions_retained": 145,
+    "examples_retained": 145,
+    "converted_tables": 20,
+    "local_links": 68,
+    "course_validation_exit": 0,
+    "visual_review": "PASS: Day 4 definitions and all 145 glossary definitions rendered as lists",
+    "render_evidence": "table-policy-render-checks.json",
+    "render_note": "An initial direct-child selector missed paragraph-wrapped list entries; descendant check confirmed all 145 entries."
+  }
+}

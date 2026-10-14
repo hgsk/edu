@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1100" height="620" viewBox="0 0 1100 620" role="img" aria-labelledby="title desc">
+<title id="title">意味を整えると、見せ方を変えやすい</title>
+<desc id="desc">整理されていないメモを時間と場所の話題に分け、HTMLで見出しと段落の役目を示す。同じ構造と情報から、CSSで縦に並べる表現と横に並べる表現を選べる。図は省略した説明例。</desc>
+<rect width="1100" height="620" rx="14" fill="#fffdf7"/>
+<g font-family="sans-serif" fill="#20201d">
+<text x="30" y="42" font-size="28" font-weight="700">まず「何の情報か」を整える。次に「どう見せるか」を選ぶ。</text>
+<rect x="30" y="74" width="300" height="188" rx="12" fill="#fff0e4" stroke="#a56a38"/>
+<text x="48" y="111" font-size="23" font-weight="700">① 情報を整理</text>
+<text x="48" y="149" font-size="19">メモ：水曜／住所／10〜19時…</text>
+<text x="48" y="183" font-size="21">↓ 意味ごとに分ける</text>
+<text x="48" y="221" font-size="20">時間の話 ／ 場所の話</text>
+<text x="344" y="180" font-size="32">→</text>
+<rect x="395" y="74" width="300" height="188" rx="12" fill="#eef4ef" stroke="#245746"/>
+<text x="413" y="111" font-size="23" font-weight="700">② HTMLで役目を示す</text>
+<text x="413" y="154" font-size="20">h2：営業時間 ／ アクセス</text>
+<text x="413" y="189" font-size="20">p：それぞれの本文</text>
+<text x="413" y="228" font-size="19">人にも、コンピューターにも</text>
+<text x="708" y="180" font-size="32">→</text>
+<rect x="760" y="74" width="310" height="188" rx="12" fill="#e6edf8" stroke="#536f99"/>
+<text x="778" y="111" font-size="23" font-weight="700">③ CSSで見せ方を選ぶ</text>
+<text x="778" y="154" font-size="20">色 ／ 文字 ／ 余白 ／ 配置</text>
+<text x="778" y="196" font-size="20">意味や構造を保ちながら</text>
+<text x="778" y="231" font-size="20">表現を変えられる</text>
+<text x="30" y="304" font-size="24" font-weight="700">同じHTML・同じ情報でも、CSSで表現を変えられる</text>
+<rect x="30" y="326" width="495" height="242" rx="12" fill="#eef4ef" stroke="#245746"/>
+<text x="50" y="359" font-size="20">見せ方A：上から順に</text>
+<rect x="50" y="374" width="455" height="78" fill="white" stroke="#a5bcae"/>
+<text x="68" y="405" font-size="23" font-weight="700">営業時間</text>
+<text x="68" y="434" font-size="20">10:00〜19:00</text>
+<rect x="50" y="464" width="455" height="78" fill="white" stroke="#a5bcae"/>
+<text x="68" y="495" font-size="23" font-weight="700">アクセス</text>
+<text x="68" y="524" font-size="20">北海道札幌市…（架空）</text>
+<rect x="555" y="326" width="515" height="242" rx="12" fill="#e6edf8" stroke="#536f99"/>
+<text x="575" y="359" font-size="20">見せ方B：横に並べる</text>
+<rect x="575" y="388" width="221" height="145" fill="white" stroke="#9aaac0"/>
+<rect x="811" y="388" width="239" height="145" fill="white" stroke="#9aaac0"/>
+<text x="591" y="428" font-size="23" font-weight="700">営業時間</text>
+<text x="591" y="468" font-size="20">10:00〜19:00</text>
+<text x="827" y="428" font-size="23" font-weight="700">アクセス</text>
+<text x="827" y="468" font-size="18">北海道札幌市…（架空）</text>
+<text x="30" y="601" font-size="17">説明図の省略例。今回の実習ではCSSを変えず、意味・順番・HTMLの構造を整える。</text>
+</g></svg>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>sectionとdiv：見た目と役目の比較</title>
+  <link rel="stylesheet" href="tag-comparison.css">
+</head>
+<body>
+  <main>
+    <h1>同じ見た目でも、タグの役目は違う</h1>
+    <p class="intro">HTMLは「何の情報か」。CSSは「どう見せるか」。</p>
+    <h2>① 同じclassのCSSなら、同じデザインにできる</h2>
+    <div class="comparison">
+      <div>
+        <p class="label"><code>&lt;section class="info-card"&gt;</code></p>
+        <section class="info-card" aria-labelledby="section-hours">
+          <h3 id="section-hours">営業時間</h3>
+          <p>10:00〜19:00</p>
+        </section>
+        <p>役目：1つの話題のまとまり</p>
+      </div>
+      <div>
+        <p class="label"><code>&lt;div class="info-card"&gt;</code></p>
+        <div class="info-card">
+          <h3>営業時間</h3>
+          <p>10:00〜19:00</p>
+        </div>
+        <p>役目：特定の意味を持たないまとまり</p>
+      </div>
+    </div>
+    <p class="takeaway">色・枠・余白が同じでも、HTMLの意味は同じになりません。</p>
+    <h2>② CSSがタグ名を指定していると、置き換えで見た目が変わる</h2>
+    <p><code>.tag-selector-study section { background: #e6edf8; }</code></p>
+    <div class="comparison tag-selector-study">
+      <section class="plain-card" aria-labelledby="tag-section">
+        <h3 id="tag-section">section</h3>
+        <p>タグ名の指定が当たる → 背景が青い</p>
+      </section>
+      <div class="plain-card">
+        <h3>div</h3>
+        <p>タグ名の指定が当たらない → 背景は白い</p>
+      </div>
+    </div>
+    <p>タグは内容の役目で選ぶ。置き換えたら、CSSの当たり方と表示も確認する。</p>
+  </main>
+</body>
+</html>

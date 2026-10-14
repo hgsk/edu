@@ -1,0 +1,62 @@
+[
+  {
+    "stage": "start",
+    "page": "index",
+    "style": {
+      "background": "rgb(36, 87, 70)",
+      "padding": "12px 17.6px",
+      "radius": "5.6px",
+      "href": "menu.html"
+    }
+  },
+  {
+    "stage": "start",
+    "page": "menu",
+    "style": {
+      "background": "rgb(138, 59, 22)",
+      "padding": "12px 17.6px",
+      "radius": "32px",
+      "href": "#menu-list"
+    }
+  },
+  {
+    "stage": "start",
+    "page": "about",
+    "style": {
+      "background": "rgb(56, 74, 155)",
+      "padding": "6.4px 32px",
+      "radius": "5.6px",
+      "href": "menu.html"
+    }
+  },
+  {
+    "stage": "result",
+    "page": "index",
+    "style": {
+      "background": "rgb(36, 87, 70)",
+      "padding": "12px 17.6px",
+      "radius": "5.6px",
+      "href": "menu.html"
+    }
+  },
+  {
+    "stage": "result",
+    "page": "menu",
+    "style": {
+      "background": "rgb(36, 87, 70)",
+      "padding": "12px 17.6px",
+      "radius": "5.6px",
+      "href": "#menu-list"
+    }
+  },
+  {
+    "stage": "result",
+    "page": "about",
+    "style": {
+      "background": "rgb(36, 87, 70)",
+      "padding": "12px 17.6px",
+      "radius": "5.6px",
+      "href": "menu.html"
+    }
+  }
+]

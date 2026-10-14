@@ -1,0 +1,26 @@
+{
+  "checks": [
+    {
+      "name": "All workbook images load with alt text",
+      "status": "PASS"
+    },
+    {
+      "name": "15 canonical acceptance folds",
+      "status": "PASS"
+    },
+    {
+      "name": "Acceptance fold opens",
+      "status": "PASS"
+    },
+    {
+      "name": "DAY 4 acceptance content visible",
+      "status": "PASS"
+    }
+  ],
+  "images": 18,
+  "local_preview": "PASS",
+  "cleanup": {
+    "pid": 22508,
+    "status": "PASS"
+  }
+}

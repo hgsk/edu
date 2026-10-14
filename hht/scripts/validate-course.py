@@ -24,6 +24,7 @@ def require(condition: bool, message: str) -> None:
 
 
 curriculum = (ROOT / "docs/curriculum.md").read_text(encoding="utf-8")
+workbook = (ROOT / "docs/student-workbook.md").read_text(encoding="utf-8")
 lesson_count = len(re.findall(r"^## 第\d+回 ", curriculum, flags=re.MULTILINE))
 require(lesson_count == 15, f"Expected 15 lessons; found {lesson_count}")
 
@@ -67,7 +68,10 @@ requirements = {
 }
 for group, terms in requirements.items():
     for term in terms:
-        require(term in curriculum, f"Curriculum missing [{group}] term: {term}")
+        require(
+            term in workbook or term in curriculum,
+            f"Canonical course content missing [{group}] term: {term}",
+        )
 
 textbook_coverage = {
     "HTMLメタ情報": ("meta description", "OGP"),
@@ -84,25 +88,24 @@ for group, terms in textbook_coverage.items():
     for term in terms:
         require(term in coverage_source, f"Textbook coverage missing [{group}] term: {term}")
 
-workbook = (ROOT / "docs/student-workbook.md").read_text(encoding="utf-8")
-workbook_days = re.split(r"(?=^# DAY \d+ )", workbook, flags=re.MULTILINE)
-workbook_days = [block for block in workbook_days if re.match(r"^# DAY \d+ ", block)]
+workbook_days = re.split(r"(?=^## DAY \d+ )", workbook, flags=re.MULTILINE)
+workbook_days = [block for block in workbook_days if re.match(r"^## DAY \d+ ", block)]
 require(len(workbook_days) == 15, f"Expected 15 workbook days; found {len(workbook_days)}")
 for block in workbook_days:
     title = block.splitlines()[0]
     require("からの" in block, f"{title} missing client/request context")
-    require("## 今日の目的" in block, f"{title} missing learning purpose")
-    require("## 今日のゴール" in block, f"{title} missing completion goal")
-    require("## STEP 1" in block, f"{title} missing step-by-step procedure")
+    require("## 今日の目的" in block or "**今日のミッション:**" in block, f"{title} missing learning purpose")
+    require("## 今日のゴール" in block or "**完成条件:**" in block, f"{title} missing completion goal")
+    require("## STEP 1" in block or "### ① " in block, f"{title} missing step-by-step procedure")
     require(
-        "## 完了チェック" in block or "## 最終チェック" in block,
+        "## 完了チェック" in block or "## 最終チェック" in block or "**星チェック:**" in block,
         f"{title} missing completion checklist",
     )
     require(
         any(term in block for term in ("報告", "返信", "確認を依頼", "発表")),
         f"{title} missing communication/reporting task",
     )
-for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/workbook/[^)]+)\)", workbook):
+for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/[^)]+)\)", workbook):
     relative = match.group(1)
     require(
         (ROOT / "docs" / relative).resolve().exists(),
@@ -132,12 +135,26 @@ assignment_checks = (ROOT / "student/assignment-checks.md").read_text(encoding="
 assignment_blocks = re.split(r"(?=^## DAY \d+ )", assignment_checks, flags=re.MULTILINE)
 assignment_blocks = [block for block in assignment_blocks if re.match(r"^## DAY \d+ ", block)]
 require(len(assignment_blocks) == 15, f"Expected 15 assignment quality blocks; found {len(assignment_blocks)}")
-for block in assignment_blocks:
+for number, block in enumerate(workbook_days, start=1):
     title = block.splitlines()[0]
     for marker in ("**入力:**", "**完成物:**", "**完成条件:**", "**証拠:**", "**追加チャレンジ:**"):
         require(marker in block, f"{title} missing quality marker {marker}")
+    require(
+        block.count("**完成条件:**") == 1,
+        f"{title} must have exactly one canonical acceptance block",
+    )
     condition_count = len(re.findall(r"^- ", block, flags=re.MULTILINE))
     require(condition_count >= 4, f"{title} needs at least four acceptance conditions")
+    if number <= len(assignment_blocks):
+        index_block = assignment_blocks[number - 1]
+        require(
+            f"../docs/student-workbook.md#day-{number}-" in index_block,
+            f"Assignment index DAY {number} must link to the canonical workbook",
+        )
+        require(
+            "**完成条件:**" not in index_block,
+            f"Assignment index DAY {number} must not duplicate acceptance conditions",
+        )
 
 talk_guide = (ROOT / "docs/instructor-talk-guide.md").read_text(encoding="utf-8")
 talk_lessons = re.split(r"(?=^## 第\d+回 )", talk_guide, flags=re.MULTILINE)
@@ -166,6 +183,10 @@ for group, terms in advanced_requirements.items():
 
 readme = (ROOT / "README.md").read_text(encoding="utf-8")
 repository_readme = (ROOT.parent / "README.md").read_text(encoding="utf-8")
+require(
+    "./hht/docs/student-workbook.md" in repository_readme,
+    "Repository README must link directly to the canonical student workbook",
+)
 for term in ("リポジトリのルート", "Visual Studio Code", "作業ブランチ"):
     require(term in repository_readme, f"Repository README missing VS Code workflow term: {term}")
 for document_name, document in {
@@ -256,8 +277,12 @@ for number, path in enumerate(lesson_pack_files, start=1):
         )
 
 glossary = (ROOT / "docs/glossary.md").read_text(encoding="utf-8")
-glossary_rows = len(re.findall(r"^\| [^|-].* \|$", glossary, flags=re.MULTILINE))
-require(glossary_rows >= 100, f"Expected at least 100 glossary table rows; found {glossary_rows}")
+glossary_terms = len(re.findall(r"^- \*\*[^*\n]+\*\*: ", glossary, flags=re.MULTILINE))
+require(glossary_terms >= 100, f"Expected at least 100 glossary definition entries; found {glossary_terms}")
+require(
+    not re.search(r"^\| 用語 \|", glossary, flags=re.MULTILINE),
+    "Glossary definitions must use lists instead of tables",
+)
 for match in re.finditer(r"!\[[^\]]*\]\((\.\./[^)]+)\)", glossary):
     relative = match.group(1)
     require(
@@ -344,7 +369,7 @@ print("FOUNDATION HOURS: 15 x 120 minutes = 30 hours")
 print(f"ADVANCED LESSONS: {advanced_lesson_count}")
 print(f"REQUIREMENT GROUPS: {len(requirements)}")
 print(f"ADVANCED REQUIREMENT GROUPS: {len(advanced_requirements)}")
-print(f"GLOSSARY TABLE ROWS: {glossary_rows}")
+print(f"GLOSSARY DEFINITION ENTRIES: {glossary_terms}")
 print(f"FIXTURES: {len(required_fixtures)}")
 print(f"OPEN DECISIONS: {open_issues}")
 

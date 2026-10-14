@@ -1,0 +1,28 @@
+IMAGE PNG 1774x887: fixtures/photographer-delivery/hero-ai-master.png
+IMAGE JPEG 1774x887: fixtures/photographer-delivery/simulated-shoot-001.jpg
+IMAGE WEBP 1774x887: starter-site/images/hero-cafe.webp
+IMAGE WEBP 1672x941: assets/glossary/workflow.webp
+IMAGE WEBP 1672x941: assets/glossary/website-layers.webp
+IMAGE WEBP 1672x941: assets/glossary/ec-cycle.webp
+IMAGE WEBP 1672x941: assets/workbook/01-request-arrives.webp
+IMAGE WEBP 1672x941: assets/workbook/02-build-and-check.webp
+IMAGE WEBP 1672x941: assets/workbook/03-client-approval.webp
+HTTP 200: index.html
+HTTP 200: menu.html
+HTTP 200: about.html
+HTTP 200: css/style.css
+HTTP 200: images/hero-cafe.webp
+LESSONS: 15
+FOUNDATION HOURS: 15 x 120 minutes = 30 hours
+ADVANCED LESSONS: 16
+REQUIREMENT GROUPS: 13
+ADVANCED REQUIREMENT GROUPS: 7
+GLOSSARY DEFINITION ENTRIES: 145
+FIXTURES: 22
+OPEN DECISIONS: 0
+COURSE VALIDATION: PASS
+127.0.0.1 - - [14/Oct/2026 13:45:44] "GET /index.html HTTP/1.1" 200 -
+127.0.0.1 - - [14/Oct/2026 13:45:44] "GET /menu.html HTTP/1.1" 200 -
+127.0.0.1 - - [14/Oct/2026 13:45:44] "GET /about.html HTTP/1.1" 200 -
+127.0.0.1 - - [14/Oct/2026 13:45:44] "GET /css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [14/Oct/2026 13:45:44] "GET /images/hero-cafe.webp HTTP/1.1" 200 -

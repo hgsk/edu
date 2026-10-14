@@ -51,6 +51,26 @@ class GraderTests(unittest.TestCase):
             f"{prefix}/evidence/report.md",
         ]
 
+    def test_day3_accepts_legacy_and_course_button_classes(self):
+        for class_name in ("button", "menu-button"):
+            with self.subTest(class_name=class_name):
+                changed = self.add_submission(3, worklog(3).replace("DevTools", "DevTools / Styles / 上書き"))
+                links = f'<a class="{class_name}" href="menu.html">メニューを見る</a>' * 2
+                write(self.student / "hht/starter-site/index.html", BASE_INDEX.replace("</main>", links + "</main>"))
+                write(self.student / "hht/starter-site/css/style.css", f".{class_name}{{display:inline-block;background:#245746}}")
+                changed += ["hht/starter-site/index.html", "hht/starter-site/css/style.css"]
+                result = grade_submission(self.base, self.student, changed)
+                self.assertTrue(result.passed, result.render_text())
+
+    def test_day3_rejects_different_button_classes(self):
+        changed = self.add_submission(3, worklog(3).replace("DevTools", "DevTools / Styles"))
+        links = '<a class="button" href="menu.html">メニューを見る</a><a class="menu-button" href="menu.html">メニューを見る</a>'
+        write(self.student / "hht/starter-site/index.html", BASE_INDEX.replace("</main>", links + "</main>"))
+        changed += ["hht/starter-site/index.html", "hht/starter-site/css/style.css"]
+        result = grade_submission(self.base, self.student, changed)
+        self.assertFalse(result.passed)
+        self.assertTrue(any(not check.ok and "共通のbutton" in check.name for check in result.checks))
+
     def test_day1_pass(self):
         changed = self.add_submission(1, worklog(1))
         text = BASE_INDEX.replace(

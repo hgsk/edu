@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "canonical": "hht/docs/student-workbook.md",
+  "day_blocks": 15,
+  "acceptance_blocks": 15,
+  "conditions_preserved": true,
+  "links_and_workbook_anchors": 257,
+  "readme_direct_link": true,
+  "secondary_criteria_duplication": false,
+  "visual_review": "PASS: D3/D4 rendered; 18 workbook images and 15 acceptance folds",
+  "course_validation_exit": 0,
+  "canonical_sha256": "05872a0b6f7d6cf74c3e5ec385cdb44c2ca225bda74df6f95404ffe2b0a6f109",
+  "render_evidence": "ssot-render-checks.json"
+}

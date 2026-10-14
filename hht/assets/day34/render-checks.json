@@ -1,0 +1,84 @@
+[
+  {
+    "artifact": "day3-css-map",
+    "status": "PASS",
+    "kind": "diagram render"
+  },
+  {
+    "artifact": "day4-regions",
+    "status": "PASS",
+    "kind": "diagram render"
+  },
+  {
+    "artifact": "lesson3",
+    "status": "PASS",
+    "images": [
+      {
+        "alt": "ホームの緑色のメニューを見るリンク",
+        "width": 300,
+        "height": 120
+      },
+      {
+        "alt": "メニューの茶色で角が丸い対象リンク",
+        "width": 300,
+        "height": 120
+      },
+      {
+        "alt": "店舗案内の青色で横の余白が広い対象リンク",
+        "width": 300,
+        "height": 120
+      },
+      {
+        "alt": "実際のChromeのDevTools。対象リンクのHTML、採用されたshop-menuの背景色と余白、打ち消し線のあるmenu-buttonの指定が見える",
+        "width": 2232,
+        "height": 1491
+      },
+      {
+        "alt": "この練習でのCSS競合の図。IDとclassではIDが優先され、同じclassの通常の指定では後の指定が優先される",
+        "width": 1000,
+        "height": 440
+      },
+      {
+        "alt": "改善例のホーム。緑色の対象リンク",
+        "width": 300,
+        "height": 120
+      },
+      {
+        "alt": "改善例のメニュー。共通の色と角丸になった対象リンク",
+        "width": 300,
+        "height": 120
+      },
+      {
+        "alt": "改善例の店舗案内。共通の色と内側の余白になった対象リンク",
+        "width": 300,
+        "height": 120
+      }
+    ]
+  },
+  {
+    "artifact": "lesson4",
+    "status": "PASS",
+    "images": [
+      {
+        "alt": "開始時点の店舗案内。店舗紹介と仮文章の後に、営業時間・水曜日・住所が続いている",
+        "width": 1200,
+        "height": 900
+      },
+      {
+        "alt": "店舗案内の領域図の例。headerとnav、1つのmainの中に営業時間・アクセス・私たちについてのsection、最後にfooterが並ぶ",
+        "width": 960,
+        "height": 700
+      },
+      {
+        "alt": "改善例の店舗案内。営業時間、アクセス、私たちについての順で見出しが並び、時間・定休日・住所の項目名がある",
+        "width": 1185,
+        "height": 966
+      }
+    ]
+  },
+  {
+    "artifact": "render browser cleanup",
+    "pid": 45172,
+    "status": "PASS"
+  }
+]

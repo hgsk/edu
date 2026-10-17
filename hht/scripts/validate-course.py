@@ -150,8 +150,8 @@ for number, block in enumerate(workbook_days, start=1):
     if number <= len(assignment_blocks):
         index_block = assignment_blocks[number - 1]
         require(
-            f"../docs/student-workbook.md#day-{number})" in index_block,
-            f"Assignment index DAY {number} must link to the canonical workbook",
+            f"../docs/student-workbook.md#day-{number}-done)" in index_block,
+            f"Assignment index DAY {number} must link to its canonical completion section",
         )
         require(
             "**完成条件:**" not in index_block,

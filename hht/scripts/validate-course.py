@@ -13,6 +13,8 @@ import urllib.request
 
 from PIL import Image
 
+from workbook_navigation import workbook_day_link_errors
+
 
 ROOT = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
@@ -284,6 +286,9 @@ for number in range(1, 16):
 # All entry pages and lesson packs use real destinations in the canonical workbook.
 for entry in [ROOT.parent / "README.md", *ROOT.rglob("*.md")]:
     document = entry.read_text(encoding="utf-8")
+    relative_entry = entry.relative_to(ROOT) if entry.is_relative_to(ROOT) else Path(entry.name)
+    for error in workbook_day_link_errors(relative_entry, document):
+        require(False, f"{entry.relative_to(ROOT.parent)}: {error}")
     for match in re.finditer(r'\]\(([^)\s]*student-workbook\.md)#([^)]+)\)', document):
         require(match.group(2) in workbook_anchors, f"Broken workbook entry in {entry.relative_to(ROOT.parent)}: {match.group(2)}")
 

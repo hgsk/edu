@@ -1,0 +1,11 @@
+{
+  "source_asset": "existing local course asset hht/assets/vscode/04-workspace-root.jpg",
+  "reused_on": "2026-10-17",
+  "sha256": "49bcd6a93f7727b9c5bf9432ed28ccef4c103be89e1e804049c3b5adb6516919",
+  "screen": "VS Code Japanese UI with repository root open, before Search",
+  "verification": "Visually inspected original screenshot; copied unchanged. No new UI session started.",
+  "remaining_screens": [
+    "Search query and include glob entered",
+    "Search result opened with surrounding HTML"
+  ]
+}

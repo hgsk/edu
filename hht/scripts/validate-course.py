@@ -13,6 +13,8 @@ import urllib.request
 
 from PIL import Image
 
+from workbook_navigation import workbook_day_link_errors
+
 
 ROOT = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
@@ -148,8 +150,8 @@ for number, block in enumerate(workbook_days, start=1):
     if number <= len(assignment_blocks):
         index_block = assignment_blocks[number - 1]
         require(
-            f"../docs/student-workbook.md#day-{number}-" in index_block,
-            f"Assignment index DAY {number} must link to the canonical workbook",
+            f"../docs/student-workbook.md#day-{number}-done)" in index_block,
+            f"Assignment index DAY {number} must link to its canonical completion section",
         )
         require(
             "**完成条件:**" not in index_block,
@@ -256,9 +258,39 @@ for path in submission_documents:
         target = (path.parent / match.group(1)).resolve()
         require(target.exists(), f"Broken submission link in {path.name}: {match.group(1)}")
         if target.is_file() and target.suffix == ".md" and match.group(2):
-            headings = re.findall(r"^#+ (.+)$", target.read_text(encoding="utf-8"), re.MULTILINE)
+            target_text = target.read_text(encoding="utf-8")
+            headings = re.findall(r"^#+ (.+)$", target_text, re.MULTILINE)
             anchors = {re.sub(r"[^\w\- ]", "", heading.lower()).replace(" ", "-") for heading in headings}
+            anchors.update(re.findall(r'<a id="([^"]+)"></a>', target_text))
             require(match.group(2) in anchors, f"Broken submission anchor in {path.name}: {match.group(0)}")
+
+# DAY links must land on the matching lesson, not only a similarly named heading.
+# Check the actual document IDs and local fragment links, including the top TOC.
+explicit_ids = re.findall(r'^<a id="([^"]+)"></a>$', workbook, re.MULTILINE)
+require(len(explicit_ids) == len(set(explicit_ids)), "Workbook has duplicate navigation IDs")
+workbook_headings = re.findall(r'^#+ (.+)$', workbook, re.MULTILINE)
+workbook_anchors = set(explicit_ids) | {
+    re.sub(r'[^\w\- ]', '', heading.lower()).replace(' ', '-')
+    for heading in workbook_headings
+}
+for fragment in re.findall(r'\]\(#([^)]+)\)', workbook):
+    require(fragment in workbook_anchors, f"Broken workbook local fragment: #{fragment}")
+for number in range(1, 16):
+    require(
+        re.search(rf'<a id="day-{number}"></a>\s+## DAY {number} ', workbook) is not None,
+        f"DAY {number} ID must be immediately before the matching DAY heading",
+    )
+    for suffix in ("concepts", "actions", "done"):
+        require(f"day-{number}-{suffix}" in explicit_ids, f"DAY {number} missing {suffix} destination")
+
+# All entry pages and lesson packs use real destinations in the canonical workbook.
+for entry in [ROOT.parent / "README.md", *ROOT.rglob("*.md")]:
+    document = entry.read_text(encoding="utf-8")
+    relative_entry = entry.relative_to(ROOT) if entry.is_relative_to(ROOT) else Path(entry.name)
+    for error in workbook_day_link_errors(relative_entry, document):
+        require(False, f"{entry.relative_to(ROOT.parent)}: {error}")
+    for match in re.finditer(r'\]\(([^)\s]*student-workbook\.md)#([^)]+)\)', document):
+        require(match.group(2) in workbook_anchors, f"Broken workbook entry in {entry.relative_to(ROOT.parent)}: {match.group(2)}")
 
 lesson_pack_root = ROOT / "lessons"
 lesson_pack_files = [lesson_pack_root / f"{number:02d}" / "README.md" for number in range(1, 16)]

@@ -1,10 +1,10 @@
 # 第5回 ヘッダーとフッターの統一
 
-**課題条件の正本：** [学生ワークブック DAY 5](../../docs/student-workbook.md#day-5-全ページの上と下をそろえて)。開始データ・引き継ぎ・完成条件・提出は正本を確認します。下の制作リンクはファイル配置の参考です。
+**課題条件の正本：** [学生ワークブック DAY 5](../../docs/student-workbook.md#day-5)。開始データ・引き継ぎ・完成条件・提出は正本を確認します。下の制作リンクはファイル配置の参考です。
 
 ## 今日使う資料
 
-- **生徒:** [ワークブック DAY 5](../../docs/student-workbook.md#day-5-全ページの上と下をそろえて)
+- **生徒:** [ワークブック DAY 5](../../docs/student-workbook.md#day-5)
 - **講師:** [第5回の導入・振り返りトーク](../../docs/instructor-talk-guide.md#第5回-全ページの上と下をそろえて)
 - **進行:** [カリキュラム 第5回](../../docs/curriculum.md#第5回-ヘッダーフッターとボックスモデル)
 - **制作:** [トップ](../../starter-site/index.html)／[メニュー](../../starter-site/menu.html)／[店舗紹介](../../starter-site/about.html)／[CSS](../../starter-site/css/style.css)

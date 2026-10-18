@@ -1,0 +1,309 @@
+{
+  "scope": "Local rendered GFM Markdown in Chromium; actual link clicks and scroll targets. Not a claim of VS Code UI or GitHub live UI verification.",
+  "checks": [
+    {
+      "check": "DAY 1: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 1: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 1: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 1: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 2: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 2: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 2: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 2: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 3: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 4: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 5: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 5: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 5: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 5: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 6: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 6: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 6: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 6: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 7: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 7: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 7: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 7: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 8: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 8: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 8: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 8: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 9: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 9: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 9: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 9: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 10: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 10: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 10: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 10: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 11: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 11: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 11: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 11: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 12: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 12: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 12: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 12: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 13: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 13: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 13: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 13: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 14: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 14: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 14: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 14: done",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 15: click top link and reach matching heading",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 15: concepts",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 15: actions",
+      "status": "PASS"
+    },
+    {
+      "check": "DAY 15: done",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 1: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 2: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 3: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 4: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 5: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 6: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 7: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 8: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 9: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 10: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 11: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 12: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 13: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 14: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "Lesson 15: cross-file entry",
+      "status": "PASS"
+    },
+    {
+      "check": "390px: DAY 3 concept link and no horizontal overflow",
+      "status": "PASS"
+    }
+  ]
+}

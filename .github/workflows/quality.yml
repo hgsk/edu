@@ -23,6 +23,9 @@ jobs:
         with:
           node-version: "22.20.0"
 
+      - name: Install locked validation tools
+        run: npm ci
+
       - name: Install Python validation dependency
         run: python -m pip install --disable-pip-version-check pillow
 
@@ -33,6 +36,9 @@ jobs:
         run: bash -n hht/scripts/setup-azure-practice.sh
       - name: Test student PR grader
         run: python hht/scripts/test_grade_student_pr.py
+
+      - name: Test workbook DAY link validation
+        run: python -m unittest discover -s hht/scripts -p "test_workbook_navigation.py"
 
       - name: Check JavaScript syntax
         run: |
@@ -46,7 +52,7 @@ jobs:
 
       - name: Validate HTML
         run: >-
-          npx --yes html-validate
+          npx --no-install html-validate
           "hht/tour/index.html"
           "hht/typing-app/index.html"
           "hht/typing-app/reader.html"
@@ -56,7 +62,7 @@ jobs:
 
       - name: Validate CSS
         run: >-
-          npx --yes stylelint
+          npx --no-install stylelint
           hht/tour/style.css
           hht/typing-app/style.css
           hht/typing-app/reader.css
@@ -68,7 +74,7 @@ jobs:
 
       - name: Check summer-festival links and fragments
         run: >-
-          npx --yes linkinator
+          npx --no-install linkinator
           hht/hands-on/summer-festival-annual-update/starter
           --recurse
           --check-fragments

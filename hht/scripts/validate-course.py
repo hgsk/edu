@@ -26,7 +26,72 @@ def require(condition: bool, message: str) -> None:
 
 
 curriculum = (ROOT / "docs/curriculum.md").read_text(encoding="utf-8")
-workbook = (ROOT / "docs/student-workbook.md").read_text(encoding="utf-8")
+workbook_index_path = ROOT / "docs/student-workbook.md"
+workbook_root = ROOT / "docs/workbook"
+workbook_day_paths = [workbook_root / f"day-{number:02d}.md" for number in range(1, 16)]
+workbook_paths = [workbook_index_path, workbook_root / "overview.md", *workbook_day_paths]
+workbook_documents = {}
+for path in workbook_paths:
+    require(path.is_file(), f"Missing workbook document: {path.relative_to(ROOT)}")
+    workbook_documents[path] = path.read_text(encoding="utf-8") if path.is_file() else ""
+workbook_index = workbook_documents[workbook_index_path]
+workbook = "\n".join(workbook_documents.values())
+require(set(workbook_root.glob("day-*.md")) == set(workbook_day_paths),
+        "Workbook must have DAY 01-15 files exactly once")
+require(not re.search(r"^## DAY \d+ ", workbook_index, re.MULTILINE),
+        "Workbook index must not duplicate DAY content")
+require("**完成条件:**" not in workbook_index,
+        "Workbook index must not duplicate acceptance conditions")
+require("**完成条件:**" not in workbook_documents[workbook_root / "overview.md"],
+        "Workbook common instructions must not duplicate DAY acceptance conditions")
+require("./workbook/overview.md" in workbook_index,
+        "Workbook index must link to the common instructions")
+
+
+def markdown_prose(document: str) -> str:
+    """Ignore examples inside fenced code when checking Markdown destinations."""
+    lines = []
+    fence = None
+    for line in document.splitlines():
+        match = re.match(r"^\s*(`{3,}|~{3,})", line)
+        if match:
+            marker = match.group(1)
+            if fence is None:
+                fence = marker
+            elif marker[0] == fence[0] and len(marker) >= len(fence):
+                fence = None
+            continue
+        if fence is None:
+            lines.append(line)
+    return "\n".join(lines)
+
+
+def markdown_anchors(document: str) -> set[str]:
+    prose = markdown_prose(document)
+    anchors = set(re.findall(r'<a id="([^"]+)"></a>', prose))
+    counts = {}
+    for heading in re.findall(r"^#+ (.+)$", prose, re.MULTILINE):
+        heading = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", heading)
+        base = re.sub(r"[^\w\- ]", "", heading.lower()).replace(" ", "-")
+        count = counts.get(base, 0)
+        counts[base] = count + 1
+        anchors.add(base if count == 0 else f"{base}-{count}")
+    return anchors
+
+
+def validate_markdown_links(path: Path, document: str) -> None:
+    for match in re.finditer(r"\]\(([^)\s]+)\)", markdown_prose(document)):
+        url = match.group(1)
+        if re.match(r"[\w+.-]+:", url) or url.startswith("//"):
+            continue
+        relative, _, fragment = url.partition("#")
+        target = (path.parent / relative).resolve() if relative else path.resolve()
+        require(target.exists(), f"Broken link in {path.relative_to(ROOT.parent)}: {url}")
+        if target.is_file() and target.suffix == ".md" and fragment:
+            require(fragment in markdown_anchors(target.read_text(encoding="utf-8")),
+                    f"Broken anchor in {path.relative_to(ROOT.parent)}: {url}")
+
+
 lesson_count = len(re.findall(r"^## 第\d+回 ", curriculum, flags=re.MULTILINE))
 require(lesson_count == 15, f"Expected 15 lessons; found {lesson_count}")
 
@@ -90,11 +155,16 @@ for group, terms in textbook_coverage.items():
     for term in terms:
         require(term in coverage_source, f"Textbook coverage missing [{group}] term: {term}")
 
-workbook_days = re.split(r"(?=^## DAY \d+ )", workbook, flags=re.MULTILINE)
-workbook_days = [block for block in workbook_days if re.match(r"^## DAY \d+ ", block)]
+workbook_days = []
+for number, path in enumerate(workbook_day_paths, 1):
+    document = workbook_documents[path]
+    headings = re.findall(r"^## DAY (\d+) ", markdown_prose(document), re.MULTILINE)
+    require(headings == [str(number)], f"{path.name} must contain only DAY {number}")
+    match = re.search(r"^## DAY \d+ ", document, re.MULTILINE)
+    workbook_days.append(document[match.start():] if match else "")
 require(len(workbook_days) == 15, f"Expected 15 workbook days; found {len(workbook_days)}")
 for block in workbook_days:
-    title = block.splitlines()[0]
+    title = block.splitlines()[0] if block else "Missing DAY"
     require("からの" in block, f"{title} missing client/request context")
     require("## 今日の目的" in block or "**今日のミッション:**" in block, f"{title} missing learning purpose")
     require("## 今日のゴール" in block or "**完成条件:**" in block, f"{title} missing completion goal")
@@ -107,12 +177,8 @@ for block in workbook_days:
         any(term in block for term in ("報告", "返信", "確認を依頼", "発表")),
         f"{title} missing communication/reporting task",
     )
-for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/[^)]+)\)", workbook):
-    relative = match.group(1)
-    require(
-        (ROOT / "docs" / relative).resolve().exists(),
-        f"Broken workbook image: {relative}",
-    )
+for path, document in workbook_documents.items():
+    validate_markdown_links(path, document)
 
 portfolio_brief = (ROOT / "docs/portfolio-project.md").read_text(encoding="utf-8")
 for term in ("見てほしい", "制作実績", "個人情報", "portfolio/index.html", "portfolio/css/style.css", "2分間"):
@@ -138,7 +204,7 @@ assignment_blocks = re.split(r"(?=^## DAY \d+ )", assignment_checks, flags=re.MU
 assignment_blocks = [block for block in assignment_blocks if re.match(r"^## DAY \d+ ", block)]
 require(len(assignment_blocks) == 15, f"Expected 15 assignment quality blocks; found {len(assignment_blocks)}")
 for number, block in enumerate(workbook_days, start=1):
-    title = block.splitlines()[0]
+    title = block.splitlines()[0] if block else "Missing DAY"
     for marker in ("**入力:**", "**完成物:**", "**完成条件:**", "**証拠:**", "**追加チャレンジ:**"):
         require(marker in block, f"{title} missing quality marker {marker}")
     require(
@@ -150,7 +216,7 @@ for number, block in enumerate(workbook_days, start=1):
     if number <= len(assignment_blocks):
         index_block = assignment_blocks[number - 1]
         require(
-            f"../docs/student-workbook.md#day-{number}-done)" in index_block,
+            f"../docs/workbook/day-{number:02d}.md#day-{number}-done)" in index_block,
             f"Assignment index DAY {number} must link to its canonical completion section",
         )
         require(
@@ -251,46 +317,60 @@ submission_documents = [ROOT.parent / "README.md", ROOT / "README.md", ROOT / "I
                         ROOT / "submissions/README.md", local_submission_path,
                         ROOT / "student/assignment-checks.md", ROOT / "docs/student-workbook.md",
                         ROOT / "docs/rubric.md", ROOT / "docs/exercise-operations.md",
-                        ROOT / "docs/submission-policy-history.md"]
+                        ROOT / "docs/submission-policy-history.md", *workbook_paths[1:]]
 for path in submission_documents:
-    document = path.read_text(encoding="utf-8")
+    document = path.read_text(encoding="utf-8") if path.is_file() else ""
     for match in re.finditer(r"\]\((\.{1,2}/[^)#]+)(?:#([^)]*))?\)", document):
         target = (path.parent / match.group(1)).resolve()
         require(target.exists(), f"Broken submission link in {path.name}: {match.group(1)}")
         if target.is_file() and target.suffix == ".md" and match.group(2):
             target_text = target.read_text(encoding="utf-8")
-            headings = re.findall(r"^#+ (.+)$", target_text, re.MULTILINE)
-            anchors = {re.sub(r"[^\w\- ]", "", heading.lower()).replace(" ", "-") for heading in headings}
-            anchors.update(re.findall(r'<a id="([^"]+)"></a>', target_text))
+            anchors = markdown_anchors(target_text)
             require(match.group(2) in anchors, f"Broken submission anchor in {path.name}: {match.group(0)}")
 
 # DAY links must land on the matching lesson, not only a similarly named heading.
 # Check the actual document IDs and local fragment links, including the top TOC.
-explicit_ids = re.findall(r'^<a id="([^"]+)"></a>$', workbook, re.MULTILINE)
-require(len(explicit_ids) == len(set(explicit_ids)), "Workbook has duplicate navigation IDs")
-workbook_headings = re.findall(r'^#+ (.+)$', workbook, re.MULTILINE)
-workbook_anchors = set(explicit_ids) | {
-    re.sub(r'[^\w\- ]', '', heading.lower()).replace(' ', '-')
-    for heading in workbook_headings
-}
-for fragment in re.findall(r'\]\(#([^)]+)\)', workbook):
-    require(fragment in workbook_anchors, f"Broken workbook local fragment: #{fragment}")
+for path, document in workbook_documents.items():
+    explicit_ids = re.findall(r'<a id="([^"]+)"></a>', markdown_prose(document))
+    require(len(explicit_ids) == len(set(explicit_ids)), f"{path.name} has duplicate navigation IDs")
+workbook_anchors = markdown_anchors(workbook_index)
 for number in range(1, 16):
+    document = workbook_documents[workbook_day_paths[number - 1]]
+    explicit_ids = re.findall(r'<a id="([^"]+)"></a>', markdown_prose(document))
     require(
-        re.search(rf'<a id="day-{number}"></a>\s+## DAY {number} ', workbook) is not None,
+        re.search(rf'<a id="day-{number}"></a>\s+## DAY {number} ', document) is not None,
         f"DAY {number} ID must be immediately before the matching DAY heading",
     )
     for suffix in ("concepts", "actions", "done"):
         require(f"day-{number}-{suffix}" in explicit_ids, f"DAY {number} missing {suffix} destination")
+        require(f"day-{number}-{suffix}" in workbook_anchors,
+                f"Workbook index missing legacy DAY {number} {suffix} anchor")
+        require(f"./workbook/day-{number:02d}.md#day-{number}-{suffix})" in workbook_index,
+                f"Workbook index must link to DAY {number} {suffix}")
+    require(f"day-{number}" in workbook_anchors, f"Workbook index missing legacy DAY {number} anchor")
+    require(f"./workbook/day-{number:02d}.md#day-{number})" in workbook_index,
+            f"Workbook index must link directly to DAY {number}")
+    require("../student-workbook.md#workbook-days" in document, f"DAY {number} missing index navigation")
+    for adjacent in (number - 1, number + 1):
+        if 1 <= adjacent <= 15:
+            require(f"day-{adjacent:02d}.md#day-{adjacent})" in document,
+                    f"DAY {number} missing navigation to DAY {adjacent}")
 
 # All entry pages and lesson packs use real destinations in the canonical workbook.
 for entry in [ROOT.parent / "README.md", *ROOT.rglob("*.md")]:
     document = entry.read_text(encoding="utf-8")
     relative_entry = entry.relative_to(ROOT) if entry.is_relative_to(ROOT) else Path(entry.name)
-    for error in workbook_day_link_errors(relative_entry, document):
+    for error in workbook_day_link_errors(relative_entry, markdown_prose(document)):
         require(False, f"{entry.relative_to(ROOT.parent)}: {error}")
     for match in re.finditer(r'\]\(([^)\s]*student-workbook\.md)#([^)]+)\)', document):
         require(match.group(2) in workbook_anchors, f"Broken workbook entry in {entry.relative_to(ROOT.parent)}: {match.group(2)}")
+    for match in re.finditer(r'\]\(([^)\s]*(?:workbook/)?(?:day-\d{2}|overview)\.md)(?:#([^)]*))?\)', markdown_prose(document)):
+        target = (entry.parent / match.group(1)).resolve()
+        if target.parent == workbook_root.resolve():
+            require(target.is_file(), f"Missing split workbook entry in {entry.relative_to(ROOT.parent)}: {match.group(1)}")
+            if target.is_file() and match.group(2):
+                require(match.group(2) in markdown_anchors(target.read_text(encoding="utf-8")),
+                        f"Broken split workbook entry in {entry.relative_to(ROOT.parent)}: {match.group(2)}")
 
 lesson_pack_root = ROOT / "lessons"
 lesson_pack_files = [lesson_pack_root / f"{number:02d}" / "README.md" for number in range(1, 16)]
@@ -299,6 +379,8 @@ for number, path in enumerate(lesson_pack_files, start=1):
     if not path.exists():
         continue
     pack = path.read_text(encoding="utf-8")
+    require(f"../../docs/workbook/day-{number:02d}.md#day-{number})" in pack,
+            f"Lesson pack {number:02d} must link to its matching DAY")
     for marker in ("## 今日使う資料", "**生徒:**", "**講師:**", "**進行:**", "## 今日できるもの"):
         require(marker in pack, f"Lesson pack {number:02d} missing {marker}")
     for match in re.finditer(r"\]\((\.\./\.\./[^)#]+)(?:#[^)]+)?\)", pack):

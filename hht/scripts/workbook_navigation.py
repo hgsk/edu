@@ -13,11 +13,15 @@ def workbook_day_link_errors(relative_path: PurePath, document: str) -> list[str
         pack_day = int(parts[1])
 
     for match in re.finditer(
-        r"\[([^\]\n]*)\]\(([^)\s]*student-workbook\.md)#([^)]+)\)", document
+        r"\[([^\]\n]*)\]\(([^)\s]*(?:student-workbook|day-\d{2})\.md)(?:#([^)]*))?\)", document
     ):
-        label, _, fragment = match.groups()
-        destination = re.fullmatch(r"day-(\d+)(?:-.+)?", fragment)
-        actual_day = int(destination.group(1)) if destination else None
+        label, target, fragment = match.groups()
+        file_day = re.search(r"(?:^|/)day-(\d{2})\.md$", target)
+        destination = re.fullmatch(r"day-(\d+)(?:-.+)?", fragment or "")
+        fragment_day = int(destination.group(1)) if destination else None
+        actual_day = int(file_day.group(1)) if file_day else fragment_day
+        if file_day and fragment_day is not None and actual_day != fragment_day:
+            errors.append(f"Workbook file {target} disagrees with #{fragment}")
         if pack_day is not None and actual_day != pack_day:
             errors.append(
                 f"Lesson pack {pack_day:02d} must link to DAY {pack_day}; found #{fragment}"

@@ -1,0 +1,582 @@
+{
+  "baseline": "8ddb7540c20c97cdff93d961a6b77c8f0dcbafb6",
+  "renderer": "Local marked GFM preview in owned headless Chromium; not GitHub or VS Code UI",
+  "chromiumSandbox": true,
+  "status": "PASS",
+  "clicks": 134,
+  "legacyIds": 60,
+  "mobileWidth": 390,
+  "allWorkbookImagesLoaded": true,
+  "navigation": [
+    {
+      "path": "/hht/docs/workbook/day-01.md",
+      "fragment": "day-1"
+    },
+    {
+      "path": "/hht/docs/workbook/day-01.md",
+      "fragment": "day-1-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-01.md",
+      "fragment": "day-1-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-01.md",
+      "fragment": "day-1-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-02.md",
+      "fragment": "day-2"
+    },
+    {
+      "path": "/hht/docs/workbook/day-01.md",
+      "fragment": "day-1"
+    },
+    {
+      "path": "/hht/docs/workbook/day-02.md",
+      "fragment": "day-2"
+    },
+    {
+      "path": "/hht/docs/workbook/day-02.md",
+      "fragment": "day-2-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-02.md",
+      "fragment": "day-2-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-02.md",
+      "fragment": "day-2-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-01.md",
+      "fragment": "day-1"
+    },
+    {
+      "path": "/hht/docs/workbook/day-03.md",
+      "fragment": "day-3"
+    },
+    {
+      "path": "/hht/docs/workbook/day-02.md",
+      "fragment": "day-2"
+    },
+    {
+      "path": "/hht/docs/workbook/day-03.md",
+      "fragment": "day-3"
+    },
+    {
+      "path": "/hht/docs/workbook/day-03.md",
+      "fragment": "day-3-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-03.md",
+      "fragment": "day-3-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-03.md",
+      "fragment": "day-3-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-02.md",
+      "fragment": "day-2"
+    },
+    {
+      "path": "/hht/docs/workbook/day-04.md",
+      "fragment": "day-4"
+    },
+    {
+      "path": "/hht/docs/workbook/day-03.md",
+      "fragment": "day-3"
+    },
+    {
+      "path": "/hht/docs/workbook/day-04.md",
+      "fragment": "day-4"
+    },
+    {
+      "path": "/hht/docs/workbook/day-04.md",
+      "fragment": "day-4-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-04.md",
+      "fragment": "day-4-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-04.md",
+      "fragment": "day-4-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-03.md",
+      "fragment": "day-3"
+    },
+    {
+      "path": "/hht/docs/workbook/day-05.md",
+      "fragment": "day-5"
+    },
+    {
+      "path": "/hht/docs/workbook/day-04.md",
+      "fragment": "day-4"
+    },
+    {
+      "path": "/hht/docs/workbook/day-05.md",
+      "fragment": "day-5"
+    },
+    {
+      "path": "/hht/docs/workbook/day-05.md",
+      "fragment": "day-5-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-05.md",
+      "fragment": "day-5-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-05.md",
+      "fragment": "day-5-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-04.md",
+      "fragment": "day-4"
+    },
+    {
+      "path": "/hht/docs/workbook/day-06.md",
+      "fragment": "day-6"
+    },
+    {
+      "path": "/hht/docs/workbook/day-05.md",
+      "fragment": "day-5"
+    },
+    {
+      "path": "/hht/docs/workbook/day-06.md",
+      "fragment": "day-6"
+    },
+    {
+      "path": "/hht/docs/workbook/day-06.md",
+      "fragment": "day-6-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-06.md",
+      "fragment": "day-6-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-06.md",
+      "fragment": "day-6-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-05.md",
+      "fragment": "day-5"
+    },
+    {
+      "path": "/hht/docs/workbook/day-07.md",
+      "fragment": "day-7"
+    },
+    {
+      "path": "/hht/docs/workbook/day-06.md",
+      "fragment": "day-6"
+    },
+    {
+      "path": "/hht/docs/workbook/day-07.md",
+      "fragment": "day-7"
+    },
+    {
+      "path": "/hht/docs/workbook/day-07.md",
+      "fragment": "day-7-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-07.md",
+      "fragment": "day-7-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-07.md",
+      "fragment": "day-7-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-06.md",
+      "fragment": "day-6"
+    },
+    {
+      "path": "/hht/docs/workbook/day-08.md",
+      "fragment": "day-8"
+    },
+    {
+      "path": "/hht/docs/workbook/day-07.md",
+      "fragment": "day-7"
+    },
+    {
+      "path": "/hht/docs/workbook/day-08.md",
+      "fragment": "day-8"
+    },
+    {
+      "path": "/hht/docs/workbook/day-08.md",
+      "fragment": "day-8-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-08.md",
+      "fragment": "day-8-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-08.md",
+      "fragment": "day-8-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-07.md",
+      "fragment": "day-7"
+    },
+    {
+      "path": "/hht/docs/workbook/day-09.md",
+      "fragment": "day-9"
+    },
+    {
+      "path": "/hht/docs/workbook/day-08.md",
+      "fragment": "day-8"
+    },
+    {
+      "path": "/hht/docs/workbook/day-09.md",
+      "fragment": "day-9"
+    },
+    {
+      "path": "/hht/docs/workbook/day-09.md",
+      "fragment": "day-9-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-09.md",
+      "fragment": "day-9-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-09.md",
+      "fragment": "day-9-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-08.md",
+      "fragment": "day-8"
+    },
+    {
+      "path": "/hht/docs/workbook/day-10.md",
+      "fragment": "day-10"
+    },
+    {
+      "path": "/hht/docs/workbook/day-09.md",
+      "fragment": "day-9"
+    },
+    {
+      "path": "/hht/docs/workbook/day-10.md",
+      "fragment": "day-10"
+    },
+    {
+      "path": "/hht/docs/workbook/day-10.md",
+      "fragment": "day-10-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-10.md",
+      "fragment": "day-10-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-10.md",
+      "fragment": "day-10-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-09.md",
+      "fragment": "day-9"
+    },
+    {
+      "path": "/hht/docs/workbook/day-11.md",
+      "fragment": "day-11"
+    },
+    {
+      "path": "/hht/docs/workbook/day-10.md",
+      "fragment": "day-10"
+    },
+    {
+      "path": "/hht/docs/workbook/day-11.md",
+      "fragment": "day-11"
+    },
+    {
+      "path": "/hht/docs/workbook/day-11.md",
+      "fragment": "day-11-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-11.md",
+      "fragment": "day-11-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-11.md",
+      "fragment": "day-11-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-10.md",
+      "fragment": "day-10"
+    },
+    {
+      "path": "/hht/docs/workbook/day-12.md",
+      "fragment": "day-12"
+    },
+    {
+      "path": "/hht/docs/workbook/day-11.md",
+      "fragment": "day-11"
+    },
+    {
+      "path": "/hht/docs/workbook/day-12.md",
+      "fragment": "day-12"
+    },
+    {
+      "path": "/hht/docs/workbook/day-12.md",
+      "fragment": "day-12-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-12.md",
+      "fragment": "day-12-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-12.md",
+      "fragment": "day-12-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-11.md",
+      "fragment": "day-11"
+    },
+    {
+      "path": "/hht/docs/workbook/day-13.md",
+      "fragment": "day-13"
+    },
+    {
+      "path": "/hht/docs/workbook/day-12.md",
+      "fragment": "day-12"
+    },
+    {
+      "path": "/hht/docs/workbook/day-13.md",
+      "fragment": "day-13"
+    },
+    {
+      "path": "/hht/docs/workbook/day-13.md",
+      "fragment": "day-13-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-13.md",
+      "fragment": "day-13-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-13.md",
+      "fragment": "day-13-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-12.md",
+      "fragment": "day-12"
+    },
+    {
+      "path": "/hht/docs/workbook/day-14.md",
+      "fragment": "day-14"
+    },
+    {
+      "path": "/hht/docs/workbook/day-13.md",
+      "fragment": "day-13"
+    },
+    {
+      "path": "/hht/docs/workbook/day-14.md",
+      "fragment": "day-14"
+    },
+    {
+      "path": "/hht/docs/workbook/day-14.md",
+      "fragment": "day-14-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-14.md",
+      "fragment": "day-14-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-14.md",
+      "fragment": "day-14-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-13.md",
+      "fragment": "day-13"
+    },
+    {
+      "path": "/hht/docs/workbook/day-15.md",
+      "fragment": "day-15"
+    },
+    {
+      "path": "/hht/docs/workbook/day-14.md",
+      "fragment": "day-14"
+    },
+    {
+      "path": "/hht/docs/workbook/day-15.md",
+      "fragment": "day-15"
+    },
+    {
+      "path": "/hht/docs/workbook/day-15.md",
+      "fragment": "day-15-concepts"
+    },
+    {
+      "path": "/hht/docs/workbook/day-15.md",
+      "fragment": "day-15-actions"
+    },
+    {
+      "path": "/hht/docs/workbook/day-15.md",
+      "fragment": "day-15-done"
+    },
+    {
+      "path": "/hht/docs/student-workbook.md",
+      "fragment": "workbook-days"
+    },
+    {
+      "path": "/hht/docs/workbook/day-14.md",
+      "fragment": "day-14"
+    },
+    {
+      "path": "/hht/docs/workbook/day-15.md",
+      "fragment": "day-15"
+    },
+    {
+      "path": "/hht/docs/workbook/day-01.md",
+      "fragment": "day-1-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-02.md",
+      "fragment": "day-2-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-03.md",
+      "fragment": "day-3-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-04.md",
+      "fragment": "day-4-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-05.md",
+      "fragment": "day-5-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-06.md",
+      "fragment": "day-6-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-07.md",
+      "fragment": "day-7-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-08.md",
+      "fragment": "day-8-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-09.md",
+      "fragment": "day-9-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-10.md",
+      "fragment": "day-10-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-11.md",
+      "fragment": "day-11-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-12.md",
+      "fragment": "day-12-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-13.md",
+      "fragment": "day-13-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-14.md",
+      "fragment": "day-14-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-15.md",
+      "fragment": "day-15-done"
+    },
+    {
+      "path": "/hht/docs/workbook/day-15.md",
+      "fragment": "day-15"
+    }
+  ],
+  "cleanup": {
+    "browser": "PASS",
+    "httpServer": "PASS",
+    "mode": "graceful"
+  },
+  "capturedUtc": "2026-10-18T01:11:04.945Z",
+  "screenshots": [
+    {
+      "file": "day-03-done.png",
+      "sha256": "f8654ba4fb9b56b5be152ecbe0905fc65d56721207f42fa06ffe7317da2b9b08"
+    },
+    {
+      "file": "day-03.png",
+      "sha256": "3eb45b3ce3a14f55f1e22ab310eefe4553a02a4d98befc75b447620d3a2e4681"
+    },
+    {
+      "file": "index.png",
+      "sha256": "30b6326cdeba498c1c02f79ac5f15853e696b3a45651d5811145744b8abbcbe6"
+    },
+    {
+      "file": "mobile-day-15.png",
+      "sha256": "e6f8a454e43e809e905bbd4073b8111b04064743bff621a992a39d1688cbd86d"
+    }
+  ],
+  "sourceRecovery": {
+    "archiveSha256": "f350ba33d4c3ad5a46a72c9b6222ccaf26343d6a61ca9d88ea8cf4ffcd3acbc3",
+    "head": "44588b1eca524c76f7092484fe038d265dfeb326",
+    "verifiedSourceFiles": 221
+  },
+  "preservation": {
+    "days": 15,
+    "matchesLatestMainAfterLinkRelocation": true,
+    "ignoredTrailingBlankLines": true
+  }
+}

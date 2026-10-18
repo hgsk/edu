@@ -1,10 +1,10 @@
 # 第6回 人気メニューのカード
 
-**課題条件の正本：** [学生ワークブック DAY 6](../../docs/student-workbook.md#day-6)。開始データ・引き継ぎ・完成条件・提出は正本を確認します。下の制作リンクはファイル配置の参考です。
+**課題条件の正本：** [学生ワークブック DAY 6](../../docs/workbook/day-06.md#day-6)。開始データ・引き継ぎ・完成条件・提出は正本を確認します。下の制作リンクはファイル配置の参考です。
 
 ## 今日使う資料
 
-- **生徒:** [ワークブック DAY 6](../../docs/student-workbook.md#day-6)
+- **生徒:** [ワークブック DAY 6](../../docs/workbook/day-06.md#day-6)
 - **講師:** [第6回の導入・振り返りトーク](../../docs/instructor-talk-guide.md#第6回-人気メニューを見つけやすくして)
 - **進行:** [カリキュラム 第6回](../../docs/curriculum.md#第6回-レイアウトを作る)
 - **制作:** [メニューページ](../../starter-site/menu.html)／[CSS](../../starter-site/css/style.css)

@@ -2,7 +2,7 @@
 
 ## 今日使う資料
 
-- **生徒:** [ワークブック DAY 1](../../docs/student-workbook.md#day-1)
+- **生徒:** [ワークブック DAY 1](../../docs/workbook/day-01.md#day-1)
 - **講師:** [第1回の導入・振り返りトーク](../../docs/instructor-talk-guide.md#第1回-はじめての依頼メール)
 - **進行:** [カリキュラム 第1回](../../docs/curriculum.md#第1回-オリエンテーションブラウザエディター)
 - **依頼:** [最初の依頼メール](../../fixtures/emails/01-initial-request.md)

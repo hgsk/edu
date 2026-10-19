@@ -47,6 +47,30 @@ class WorkbookNavigationTests(unittest.TestCase):
         self.assertEqual([], self.check_links("lessons/02/README.md",
                                              "[DAY 1](../../docs/curriculum.md#day-1)"))
 
+    def test_split_lesson_links_for_all_fifteen_days(self):
+        for day in range(1, 16):
+            with self.subTest(day=day):
+                self.assertEqual([], self.check_links(
+                    f"lessons/{day:02d}/README.md",
+                    f"[正本](../../docs/workbook/day-{day:02d}.md#day-{day})",
+                ))
+
+    def test_wrong_split_file_is_rejected_without_day_in_label(self):
+        self.assertTrue(self.check_links("lessons/02/README.md",
+            "[正本](../../docs/workbook/day-01.md#day-1)"))
+
+    def test_split_filename_and_fragment_must_agree(self):
+        self.assertTrue(self.check_links("lessons/02/README.md",
+            "[DAY 2](../../docs/workbook/day-02.md#day-1)"))
+
+    def test_split_portal_label_must_agree_with_filename(self):
+        self.assertTrue(self.check_links("student/README.md",
+            "[DAY 2](../docs/workbook/day-01.md#day-1)"))
+
+    def test_matching_split_file_without_fragment_is_allowed(self):
+        self.assertEqual([], self.check_links("lessons/02/README.md",
+            "[DAY 2](../../docs/workbook/day-02.md)"))
+
 
 if __name__ == "__main__":
     unittest.main()

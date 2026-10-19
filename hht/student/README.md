@@ -10,7 +10,7 @@
 
 ### DAY 1を始める人
 
-DAY 1は、[ワークブックのDAY 1](../docs/student-workbook.md#day-1)を上から順に進めれば、講師から接続先を聞かなくても完了できます。
+DAY 1は、[ワークブックのDAY 1](../docs/workbook/day-01.md#day-1)を上から順に進めれば、講師から接続先を聞かなくても完了できます。
 
 - 学校から練習用URL・接続方法が配布されている → 配布された情報だけを使う
 - 配布されていない → [practice-server/staging](../practice-server/)を模擬公開先として使う
@@ -23,27 +23,27 @@ DAY 1は、[ワークブックのDAY 1](../docs/student-workbook.md#day-1)を上
 
 ## 15日分のお仕事
 
-- [DAY 1](../docs/student-workbook.md#day-1)：はじめての依頼、デプロイ、バックアップ
-- [DAY 2](../docs/student-workbook.md#day-2)：「創業10年」の文章修正
-- [DAY 3](../docs/student-workbook.md#day-3)：ボタンのデザイン統一
-- [DAY 4](../docs/student-workbook.md#day-4)：情報を見つけやすい構造へ
-- [DAY 5](../docs/student-workbook.md#day-5)：ヘッダーとフッターの統一
-- [DAY 6](../docs/student-workbook.md#day-6)：人気メニューのカード
-- [DAY 7](../docs/student-workbook.md#day-7)：お問い合わせフォーム
-- [DAY 8](../docs/student-workbook.md#day-8)：営業時間を見逃さない配置
-- [DAY 9](../docs/student-workbook.md#day-9)：ファーストビュー画像
-- [DAY 10](../docs/student-workbook.md#day-10)：スマートフォン対応
-- [DAY 11](../docs/student-workbook.md#day-11)：5つの更新依頼とクライアント確認
-- [DAY 12](../docs/student-workbook.md#day-12)：transitionと差し戻し対応
-- [DAY 13](../docs/student-workbook.md#day-13)：keyframes・最終承認・公開
-- [DAY 14](../docs/student-workbook.md#day-14)：自分のポートフォリオ企画
-- [DAY 15](../docs/student-workbook.md#day-15)：ポートフォリオの完成・公開・発表
+- [DAY 1](../docs/workbook/day-01.md#day-1)：はじめての依頼、デプロイ、バックアップ
+- [DAY 2](../docs/workbook/day-02.md#day-2)：「創業10年」の文章修正
+- [DAY 3](../docs/workbook/day-03.md#day-3)：ボタンのデザイン統一
+- [DAY 4](../docs/workbook/day-04.md#day-4)：情報を見つけやすい構造へ
+- [DAY 5](../docs/workbook/day-05.md#day-5)：ヘッダーとフッターの統一
+- [DAY 6](../docs/workbook/day-06.md#day-6)：人気メニューのカード
+- [DAY 7](../docs/workbook/day-07.md#day-7)：お問い合わせフォーム
+- [DAY 8](../docs/workbook/day-08.md#day-8)：営業時間を見逃さない配置
+- [DAY 9](../docs/workbook/day-09.md#day-9)：ファーストビュー画像
+- [DAY 10](../docs/workbook/day-10.md#day-10)：スマートフォン対応
+- [DAY 11](../docs/workbook/day-11.md#day-11)：5つの更新依頼とクライアント確認
+- [DAY 12](../docs/workbook/day-12.md#day-12)：transitionと差し戻し対応
+- [DAY 13](../docs/workbook/day-13.md#day-13)：keyframes・最終承認・公開
+- [DAY 14](../docs/workbook/day-14.md#day-14)：自分のポートフォリオ企画
+- [DAY 15](../docs/workbook/day-15.md#day-15)：ポートフォリオの完成・公開・発表
 
 ## 作業に使うもの
 
 - [制作するカフェサイト](../starter-site/)・[模擬公開領域](../practice-server/)・[提出方法](../submissions/README.md)・[完成条件](./assignment-checks.md)
 
-DAY 3・4は各回の開始ZIPで練習します。DAY 5以降は自分の継続サイトを使い、原本へ戻しません。[引き継ぎの確認](../docs/student-workbook.md#引き継ぐ範囲)を講師と行い、以前の本文や画像を保持します。上の制作リンクは教材原本の場所を示す参考です。
+DAY 3・4は各回の開始ZIPで練習します。DAY 5以降は自分の継続サイトを使い、原本へ戻しません。[引き継ぎの確認](../docs/workbook/day-05.md#引き継ぐ範囲)を講師と行い、以前の本文や画像を保持します。上の制作リンクは教材原本の場所を示す参考です。
 - [用語集](../docs/glossary.md)・[メールと変更記録のテンプレート](../docs/templates.md)
 - DAY 14〜15: [ポートフォリオ制作ガイド](../docs/portfolio-project.md)・[制作フォルダー](../portfolio/)
 - 追加演習: [夏祭りサイトの更新](../hands-on/summer-festival-annual-update/README.md)

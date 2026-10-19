@@ -1,10 +1,10 @@
 # 第7回 お問い合わせフォーム
 
-**課題条件の正本：** [学生ワークブック DAY 7](../../docs/student-workbook.md#day-7)。開始データ・引き継ぎ・完成条件・提出は正本を確認します。下の制作リンクはファイル配置の参考です。
+**課題条件の正本：** [学生ワークブック DAY 7](../../docs/workbook/day-07.md#day-7)。開始データ・引き継ぎ・完成条件・提出は正本を確認します。下の制作リンクはファイル配置の参考です。
 
 ## 今日使う資料
 
-- **生徒:** [ワークブック DAY 7](../../docs/student-workbook.md#day-7)
+- **生徒:** [ワークブック DAY 7](../../docs/workbook/day-07.md#day-7)
 - **講師:** [第7回の導入・振り返りトーク](../../docs/instructor-talk-guide.md#第7回-お問い合わせフォームがほしい)
 - **進行:** [カリキュラム 第7回](../../docs/curriculum.md#第7回-お問い合わせフォーム)
 - **制作:** [フォームを追加するページ](../../starter-site/about.html)／[CSS](../../starter-site/css/style.css)

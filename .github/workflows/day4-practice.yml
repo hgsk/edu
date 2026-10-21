@@ -27,6 +27,9 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install playwright==1.56.0
       - run: python -m playwright install --with-deps chromium
+        if: runner.os == 'Linux'
+      - run: python -m playwright install chromium
+        if: runner.os == 'Windows'
       - name: Extract, edit, compare, package, reopen and browse
         run: python hht/scripts/check_day4_practice.py --browser --output test-results/day4
       - name: Install official portable VS Code for real diff capture

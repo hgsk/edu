@@ -92,7 +92,8 @@ def rehearse(out):
         actual = {n.removeprefix('day4-start/') for n in z.namelist() if not n.endswith('/')}
         assert actual == expected
         for n in actual:
-            assert z.read('day4-start/'+n) == (ROOT/'hht/lessons/04/start'/n).read_bytes()
+            # Windows Git may check out CRLF; the distributed ZIP keeps LF.
+            assert z.read('day4-start/'+n).replace(b'\r\n', b'\n') == (ROOT/'hht/lessons/04/start'/n).read_bytes().replace(b'\r\n', b'\n')
         z.extractall(out/'download')
     pack = out/'day4-s000'
     shutil.copytree(out/'download/day4-start', pack/'before')

@@ -25,3 +25,9 @@
 画面共有には[学生向け入口](../student/README.md)か制作ファイルを表示します。講師トークガイド、`fixtures/emails/`の回答情報、講師用メモなどは学生へそのまま提示しません。
 
 接続先、認証情報、個人別の評価記録はリポジトリへコミットしません。画像の出自と用途は[素材一覧](../fixtures/photographer-delivery/ASSET-MANIFEST.md)で確認します。
+
+## Pythonの選択追加課題
+
+[学生向け正本](../docs/workbook/day-11.md#python-template)・[講師用進行と正解例](../hands-on/python-store-guide/instructor/guide.md)
+
+フォームの続き：[学生向け正本](../docs/workbook/day-11.md#python-form)・[講師用進行と正解例](../hands-on/python-form-notes/instructor/guide.md)

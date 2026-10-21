@@ -61,3 +61,9 @@
 ## DAY 15 ポートフォリオ完成・公開
 
 [DAY 15の完成条件・提出するもの](../docs/workbook/day-15.md#day-15-done)
+
+## 選択追加課題：Pythonテンプレート
+
+[DAY 11追加課題の完成条件・提出](../docs/workbook/day-11.md#python-template-done)
+
+[フォーム受信・保存の完成条件・提出](../docs/workbook/day-11.md#python-form-done)

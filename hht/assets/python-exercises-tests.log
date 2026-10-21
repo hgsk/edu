@@ -1,0 +1,32 @@
+test_assignment_data_and_output (__main__.ExerciseChecks.test_assignment_data_and_output) ... ok
+test_changed_data_and_both_conditions (__main__.ExerciseChecks.test_changed_data_and_both_conditions) ... ok
+test_empty_branch_list (__main__.ExerciseChecks.test_empty_branch_list) ... ok
+test_generation_overwrites_manual_output_edits (__main__.ExerciseChecks.test_generation_overwrites_manual_output_edits) ... ok
+test_html_is_text_not_executable_markup (__main__.ExerciseChecks.test_html_is_text_not_executable_markup) ... ok
+test_missing_template_fails (__main__.ExerciseChecks.test_missing_template_fails) ... ok
+test_typo_fails_without_overwriting_last_output (__main__.ExerciseChecks.test_typo_fails_without_overwriting_last_output) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.977s
+
+OK
+Generated: output/index.html
+python-store-guide: solution PASS; unfinished starter correctly rejected
+test_boundaries_trim_and_optional_note (__main__.FormChecks.test_boundaries_trim_and_optional_note) ... ok
+test_error_redisplay_is_escaped (__main__.FormChecks.test_error_redisplay_is_escaped) ... ok
+test_get_does_not_save_and_external_origin_rejected (__main__.FormChecks.test_get_does_not_save_and_external_origin_rejected) ... ok
+test_get_form_and_empty_list (__main__.FormChecks.test_get_form_and_empty_list) ... ok
+test_invalid_inputs_are_not_saved (__main__.FormChecks.test_invalid_inputs_are_not_saved) ... ok
+test_json_multipart_and_oversize_rejected (__main__.FormChecks.test_json_multipart_and_oversize_rejected) ... ok
+test_newest_twenty (__main__.FormChecks.test_newest_twenty) ... ok
+HTTP test PID 48356: cleanup PASS
+HTTP test PID 2728: cleanup PASS
+test_real_http_process_restart_keeps_database (__main__.FormChecks.test_real_http_process_restart_keeps_database) ... ok
+test_save_redirect_display_and_refresh (__main__.FormChecks.test_save_redirect_display_and_refresh) ... ok
+test_sql_parameters_and_html_escaping (__main__.FormChecks.test_sql_parameters_and_html_escaping) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 2.222s
+
+OK
+python-form-notes: solution PASS; unfinished starter correctly rejected

@@ -124,3 +124,11 @@
 <a id="引き継ぐ範囲"></a>
 
 [引き継ぐ範囲](./workbook/day-05.md#引き継ぐ範囲)
+
+## 選択追加課題
+
+基本15回の順番とは別に、DAY 11の後で取り組めます。
+
+- [Pythonで店舗案内を生成する](./workbook/day-11.md#python-template)・[構文](./workbook/day-11.md#python-template-concepts)・[実習](./workbook/day-11.md#python-template-actions)・[完成条件と提出](./workbook/day-11.md#python-template-done)
+
+- [フォームをPythonで受け取りSQLiteへ保存する](./workbook/day-11.md#python-form)・[実習](./workbook/day-11.md#python-form-actions)・[完成条件と提出](./workbook/day-11.md#python-form-done)

@@ -212,6 +212,8 @@ No.1を変更して確認したらNo.2へ進みます。
 
 <a id="python-template"></a>
 
+**追加課題の選び方：** [Python/Jinja2で静的HTML生成](#python-template) → [PHP CLIコンテナで同じ生成を比較](#php-cli-template) → [フォーム受信・保存](#python-form)の順で比べられます。PHPはDockerが学校で利用可能な場合だけ行う選択実習です。使えない場合もPythonとフォーム課題はそのまま進められます。
+
 ### 選択追加課題：Pythonで店舗案内を生成する
 
 [追加課題の構文](#python-template-concepts) · [実習](#python-template-actions) · [完成条件・提出](#python-template-done)
@@ -529,6 +531,349 @@ ZIPを別フォルダーへ再展開し、`after/`でSTEP 1と同様に環境を
 **評価：** この欄が追加課題の合格条件です。機械検査とは別に画面・説明・停止を確認します。基本15回の[授業全体の合格ルート](../rubric.md#合格ルート)へ必須条件は追加しません。未完成工程は正直に記録し、修正後に再確認します。
 
 [テンプレート課題へ](#python-template) · [DAY 11へ戻る](#day-11) · [DAY一覧へ](../student-workbook.md#workbook-days) · [DAY 12へ](day-12.md#day-12)
+
+<a id="php-cli-template"></a>
+
+### 選択追加課題：公式PHP CLIコンテナでHTMLを生成する
+
+[用語・構文](#php-cli-concepts) · [実習](#php-cli-actions) · [完成条件・提出](#php-cli-done)
+
+**依頼者：** NORTH LIGHT COFFEEの佐藤さん。**見る人：** 来店前に店舗の営業状況を知りたい人。
+
+> Pythonで作った店舗案内と同じ内容を、PHPでもデータから作れるか比べたいです。PCへPHP本体を追加せず、学校で用意済みのコンテナで試してください。今回は完成したHTMLだけを手元で確認します。
+
+**目的：** 配列データとPHPテンプレートを分離し、PHP CLIでHTMLを生成する。変数・繰り返し・条件分岐を、Python/Jinja2版と対応させます。Webサーバー・PHPの開発サーバー・PHP-FPM・Composer・外部テンプレートライブラリは使いません。
+
+**対象：** 本人の作業コピーの`hello.php`、`data.php`、`templates/index.php`。用意済みの`render.php`と`build.php`を読んで使います。**対象外：** 継続サイト、Python・フォーム課題のファイル、DockerやOSの導入・設定変更、外部公開・実サイトへの送信。データは架空の店舗だけです。
+
+**実行前の注意：2026-10-21時点では実測待ちです。** T770iはDockerエンジンへ接続できず、選定した修正版公式タグも確認時に未公開でした。この教材は実行可能・検証済みとは扱いません。下の準備確認で止まった場合はBLOCKEDと記録し、環境を勝手に導入・切替せず講師へ報告します。[公式情報・確認結果・再開条件](../../hands-on/php-cli-template/instructor/verification-20261021.md)は講師用です。
+
+#### 前の課題と何が違う？
+
+| 観点 | Python/Jinja2 | PHP CLIコンテナ | Flaskフォーム |
+|---|---|---|---|
+| データ | Pythonの辞書・リスト | PHPの配列 | POSTした値をSQLiteへ保存 |
+| テンプレート | Jinja2の印 | PHP自体の構文 | Jinja2の印 |
+| 実行時期 | 生成コマンドを打つとき | CLIコンテナを1回動かすとき | HTTP要求を受けるとき |
+| ブラウザへ渡すもの | 生成HTMLファイル | 生成HTMLファイル | Flaskが返すHTML |
+| Webサーバー | 不要 | 不要 | ローカル受信用に必要 |
+
+<a id="php-cli-concepts"></a>
+
+#### 用語と最小限の構文
+
+- **PHP（ピーエイチピー）：** HTMLに処理を埋め込めるプログラミング言語。Webサーバー以外にCLIでも実行できます。
+- **CLI：** ターミナルのコマンドで動かす方式。`php hello.php`は「PHPでこのファイルを実行する」。`.php`をブラウザへ直接開く操作とは違います。
+- **コンテナ：** 用意された実行環境でプログラムを動かす仕組み。**イメージ**はその環境の元、**タグ**はバージョン等の名前、**digest**は特定のイメージ内容を識別する値です。
+- **ホスト：** 自分のPC。**コンテナ内：** 実行環境側。同じフォルダーでもパス表記が違います。
+- **バインドマウント：** ホストの指定フォルダーをコンテナから見える場所へ対応させること。今回の作業コピーだけを`/work`へ対応させます。PC全体、ホーム全体、Dockerソケットは渡しません。
+- **標準出力：** 実行結果が通常ターミナルへ流れる経路。画面へ出すこととファイルへ保存することは別です。
+
+```php
+<?php
+$title = '架空イベント';
+echo $title;
+echo "\n";
+```
+
+`<?php`はPHP処理の開始。`$title`は変数で、先頭に`$`を付けます。`=`は代入、`echo`は標準出力へ文字を出す命令、`;`は文の終わりです。`"\n"`は改行。PHPだけのファイルは末尾の`?>`を省き、意図しない空白を出さないようにします。
+
+```php
+<h1><?= e($event['title']) ?></h1>
+<?php foreach ($sessions as $session): ?>
+  <p><?= e($session['name']) ?></p>
+  <?php if ($session['cancelled']): ?>
+    <p>中止</p>
+  <?php else: ?>
+    <p><?= e($session['start']) ?></p>
+  <?php endif; ?>
+<?php endforeach; ?>
+```
+
+- **`<?= ... ?>`：** `<?php echo ...; ?>`の短い書き方。PHPと固定HTMLを混ぜるときに使います。
+- **配列：** `['name' => '駅前店']`はキーと値の組。`$shop['name']`で読む。`[$branch1, $branch2]`のように並べることもできます。PHPは両方を配列で表せます。Pythonの辞書の`:`と違い、対応には`=>`を使います。
+- **`foreach ($sessions as $session):`〜`endforeach;`：** 配列から1件ずつ取り出して、間のHTMLを繰り返す構文です。
+- **`if (...) :`〜`else:`〜`endif;`：** 真なら前半、偽なら後半を出す。PHPの真偽値は`true`と`false`。文字列`'false'`にはしません。
+- **`include`：** 別のPHPファイルをこの場所で実行する。`render.php`が固定した`templates/index.php`を読み込みます。`$shop`と`$branches`を用意してからincludeするため、テンプレート内で読めます。入力値からincludeのパスを組み立てません。
+- **`require`と`return`：** `require`は必須ファイルを読み込み、欠落時は止まります。`data.php`の`return [...]`で返された配列を、生成側が受け取ります。
+- **`__DIR__`と`.`：** `__DIR__`はそのPHPファイルのある場所、`.`は文字列の連結。`__DIR__ . '/data.php'`なので、コマンドの実行場所に依存せず同じデータを読めます。
+- **`e(...)`：** 配布済みの関数です。中で`htmlspecialchars($value, ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8')`を呼び、`<`・`>`・`&`・両方の引用符をHTML用にエスケープします。不正なUTF-8は置換します。PHPのecho自体は自動エスケープしないため、データをHTMLへ出す箇所は必ず`e`を通します。
+
+`render.php`は出力バッファ（`ob_start`）へテンプレートの出力を集め、文字列として返します。`build.php`はそのUTF-8文字列をファイルへ保存します。今回はデータをHTMLの本文だけへ入れ、URL・JavaScript・CSSには埋め込みません。
+
+<a id="php-cli-actions"></a>
+
+#### STEP 1　Dockerと修正版イメージを確認する
+
+先に学校が用意したDocker環境であることを確認します。ターミナルで`docker version`を実行し、**ClientとServerの両方**が出ることを確かめます。Clientだけ、パイプがない、接続拒否、権限エラーなら停止です。インストール、サービスの起動設定、WSL・仮想化・OS・ネットワーク設定、規約承諾を自分で進めません。講師へエラーとBLOCKEDを報告します。
+
+教材の`hht/hands-on/php-cli-template/starter`をルート直下の`php-template-work`へコピーし、さらに開始ソースを`before/`へ保存します。同名の既存作業へ重ねません。ファイルは**UTF-8、BOMなし**で保存します。
+
+**採用予定は`php:8.4.27-cli-bookworm`です。** [PHP公式の2026-10-21告知](https://www.php.net/archive/2026.php)で修正版8.4.27を確認しています。ただしPHP本体の公開とコンテナタグの公開は別です。[公式イメージ](https://hub.docker.com/_/php)で修正版CLIを確認し、次が成功してから使います。古いキャッシュや`latest`を安全と仮定しません。
+
+Windows PowerShellで、教材ルートから次を1行ずつ実行します。
+
+```powershell
+cd php-template-work
+$image = 'php:8.4.27-cli-bookworm'
+docker pull $image
+```
+
+**`manifest unknown`／`no such manifest`なら停止し、公開待ちです。** 8.4.26、RC、可変タグへ変更しません。pull成功後だけ次へ進みます。
+
+```powershell
+docker run --rm --network none $image php --version
+docker image inspect $image --format '{{json .RepoDigests}}'
+```
+
+期待値は`PHP 8.4.27 (cli)`を含む表示と`sha256:...`のdigestです。WORKLOGに実測値を書きます。PHP_VERSIONの検査でも8.4.27以上の安定8.4系を要求し、旧版・RCを拒否します。タグも再ビルドで内容が変わる場合があるので、授業の再現記録にはdigestも残します。未取得のdigestを教材の実測値として書きません。
+
+#### STEP 2　マウントして短いechoを実行する
+
+作業フォルダーの`hello.php`を開き、TODO 0を`echo "PHPでHTMLを作る\n";`へ変更して保存します。次の変数は以後も同じPowerShellターミナルで使います。
+
+```powershell
+$taskPath = (Get-Location).Path
+docker run --rm --network none --mount "type=bind,source=$taskPath,target=/work" --workdir /work $image php hello.php
+```
+
+期待値はターミナルの`PHPでHTMLを作る`と改行です。
+
+- `--mount`は、ホストの`$taskPath`をコンテナの`/work`へ対応させる指定。ホストが`C:\...\php-template-work`でも、コンテナでは`/work`です。Linux用CLIイメージの中へ`C:\...`というパスを渡しません。
+- `--workdir /work`は、コンテナ内で相対パスを読む開始位置を指定します。`hello.php`は`/work/hello.php`を指します。
+- 引用符でマウント指定全体を囲むので、ホストのパスに空白があっても1引数です。この演習の作業フォルダー名にはカンマを使いません。
+- `--network none`は実行中のネットワークを使わない指定。イメージのpullはその前に必要です。
+- `--rm`は処理終了後のコンテナを自動で除去します。マウントしたホストの作業ファイルは残ります。ポート公開・ホストネットワーク・特権指定は不要です。
+
+macOS/Linuxのシェルでは`image=php:8.4.27-cli-bookworm`、`taskPath="$PWD"`とし、`--mount "type=bind,source=$taskPath,target=/work"`を使います。Linuxで生成ファイルの所有権を本人にそろえる学校環境では`--user "$(id -u):$(id -g)"`を講師確認のうえ追加できます。OSごとのマウント権限やファイル共有が未準備なら設定を変更せず停止します。
+
+#### STEP 3　データとテンプレートを完成させる
+
+まず`data.php`だけを編集します。店名は保持し、お知らせを`'<臨時案内> & 週末'`、駅前店の営業時間を`'09:00〜19:00'`へ変更します。公園店は`closed => true`と元の営業時間を保持します。最後に`name => '港店'`、`hours => '12:00〜17:00'`、`closed => false`の配列を追加します。キーも文字列なので引用符で囲み、項目間・店舗間のカンマを保持します。
+
+次に`templates/index.php`のTODOを編集します。
+
+1. **TODO 1：** h1に`$shop['name']`、お知らせ段落に`$shop['notice']`を、短縮echoと`e`を使って埋め込む。
+2. **TODO 2：** `$branches`から`$branch`を取り出すforeachでli全体を囲む。h3に`$branch['name']`をエスケープして埋め込む。終了の`endforeach;`はliの後、ulの前。
+3. **TODO 3：** `$branch['closed']`でifを分け、真なら`<p>本日休業</p>`、偽なら`<p>営業時間：…</p>`の`…`に`e($branch['hours'])`を出す。`endif;`で閉じる。
+
+固定HTMLのmain、見出しの順番、ul/liは保持します。`render.php`の`e`を削除したり、データをそのままechoしたりしません。
+
+#### STEP 4　ファイルへ生成しブラウザで確認する
+
+```powershell
+docker run --rm --network none --mount "type=bind,source=$taskPath,target=/work" --workdir /work $image php build.php
+```
+
+期待値は`Generated: output/index.html (UTF-8)`です。コンテナ内の`/work/output/index.html`は、ホストの`php-template-work/output/index.html`に対応します。PHPが`file_put_contents`で直接書くので、保存データはPowerShellのテキスト変換を通りません。
+
+**`docker run ... > output/index.html`や`Out-File`でHTMLを保存しません。** Windows PowerShell等では標準出力をテキストとして変換し、UTF-16等になる場合があります。今回の保存経路は常にPHPの`build.php`です。標準出力を観察する場合だけ、同じコマンドの末尾を`php build.php --stdout`にします。これはHTMLをターミナルへ出すモードで、ファイル保存とは別です。
+
+ホストの`output/index.html`をエクスプローラーからブラウザで開きます。Webサーバーは起動しません。店舗名、`<臨時案内> & 週末`という文字、駅前店09:00〜19:00、公園店「本日休業」、港店12:00〜17:00が読めることを確認します。テンプレートの`.php`を直接開いても生成されません。
+
+VS Codeで生成HTMLも開き、お知らせのソースが`&lt;臨時案内&gt; &amp; 週末`、文字コードがUTF-8であることを確認します。`<?php`や`<?=`が残っていれば生成HTMLを開いているかを確認します。`view-source:`は使いません。PHPの実行画面・生成結果の画像は実測再開後にここへ追加する必要があり、現在は未撮影です。
+
+#### STEP 5　条件・特殊文字・再生成を確かめる
+
+1. 公園店を一時的に`false`へ変えて保存→再生成→ブラウザ再読込し、営業時間11:00〜18:00へ切り替わることを確認。`true`へ戻して再生成する。
+2. お知らせに一時的に`'<b>試作</b> & 確認'`を入れる。太字タグにはならず、そのまま文字として読めることと、生成ソースのエスケープを確認。指定のお知らせへ戻す。
+3. 生成HTMLだけを直接変更してから再生成し、変更がデータとテンプレートから作り直されることを確認する。
+4. 自分の作業コピーだけを次の共通テストで確認する。正解例は見ずに行う。
+
+```powershell
+$testsPath = (Resolve-Path '..\hht\hands-on\php-cli-template\tests').Path
+docker run --rm --network none --mount "type=bind,source=$taskPath,target=/work" --mount "type=bind,source=$testsPath,target=/tests,readonly" --workdir /work $image php /tests/check.php /work
+```
+
+期待値は`Checks: 29; failures: 0`と`Temporary copy cleanup PASS`、終了コード0です。別データ4店舗、0店舗、両方の条件、特殊文字・両方の引用符・不正UTF-8の置換、ファイルとstdoutのバイト一致、別の実行場所、再生成を検査します。本人のソースは変更せず、コンテナの一時フォルダーへ複製して試します。開始データのままならFAILが正しい結果です。実行できていない検査をPASSと記録しません。
+
+最後に`docker ps`で実習の実行中コンテナが残っていないことを確認します。ほかの人や別用途のコンテナを停止・削除しません。
+
+#### 止まったとき
+
+- **Docker Serverへ接続できない：** Clientがあるだけでは実行できません。エラーを保存し、講師へBLOCKEDを報告。無断導入・設定変更・別環境への切替はしません。
+- **修正版タグがない：** 公開待ちで停止。古い`latest`・8.4.26・RCでは実行しません。
+- **`BLOCKED: patched stable PHP...`：** 実際のPHPが修正条件を満たしていません。イメージ名・pull結果・`php --version`を照合し、古いキャッシュを使い回しません。
+- **マウントのパス・権限エラー：** `$taskPath`が作業コピーの絶対パスか、指定全体を引用符で囲んだか確認。PC全体やDockerソケットのマウントで解決しません。
+- **`Could not open input file`：** `/work`に作業コピーが見えるか、`--workdir /work`とファイル名を確認する。
+- **`Parse error`：** 表示の行と直前を読む。`$`、`;`、`=>`、引用符、`endif;`・`endforeach;`を確認する。
+- **`Undefined array key`：** `name`・`notice`・`hours`・`closed`のつづり、配列とループ変数を確認する。
+- **日本語が文字化け：** ソースと生成HTMLのUTF-8、meta charset、PHP直接保存の経路を確認。`>`や`Out-File`で作ったファイルを検証結果へ使わない。文字化けしたデータをさらにエスケープして直そうとしない。
+- **タグが動いたり文字が消える：** echoへ渡す値に`e(...)`があるか、`htmlspecialchars`の引数が配布時どおりか確認する。
+- **表示が古い：** 保存→生成コマンドの成功→ホストの正しいHTMLを再読込の順で確認する。
+
+<a id="php-cli-done"></a>
+
+#### 完成条件・提出・自己確認
+
+**完成条件：** 次をすべて満たせばこの追加課題の完成です。環境またはタグが未準備なら、完成ではなくBLOCKEDとして記録します。
+
+- [ ] 依頼と対象・対象外を記録し、PHP・Python/Jinja2・フォーム課題の実行時期の違いを説明した。
+- [ ] 公式修正版情報、pullした固定タグ、実行したPHPバージョン、digestを記録した。旧版・RC・latestで代用していない。
+- [ ] 作業コピーだけをマウントし、ホストのパスと`/work`の対応を説明した。Webサーバー、特権・ホストネットワークは使っていない。
+- [ ] echoの短い実行から始め、配列とテンプレートを分離し、変数・foreach・条件分岐・includeを使って指定3店舗を生成した。
+- [ ] すべてのデータ出力を`htmlspecialchars`経由でエスケープし、UTF-8の生成HTMLをPHPから直接保存した。
+- [ ] 通常表示、休業切替、特殊文字をブラウザと生成ファイルで照合した。29チェックが成功し、コンテナが残っていない。
+- [ ] 生成物だけの編集が消える理由、stdoutとファイル保存、PowerShellのリダイレクトを使わない理由を説明した。
+
+**提出：** `php-template-匿名番号.zip`に`before/`、`after/`（`hello.php`・`data.php`・`render.php`・`build.php`・`templates/`・`output/index.html`）、`WORKLOG.md`、`evidence/`（実行バージョン・digest・29チェックのテキスト、通常・切替・特殊文字の画面）を入れます。Dockerイメージ自体・認証情報・PC設定は含めません。ZIPを別フォルダーへ再展開し、生成HTMLを開いて確認します。学校の回収先が未配布なら保存して確認待ちと記録します。
+
+基本15回の合格ルートへPHPの必須条件は追加しません。未準備の環境で止まった記録と、課題完成を区別します。
+
+[Python/Jinja2と比べる](#python-template) · [次はフォーム受信・保存](#python-form) · [DAY一覧へ](../student-workbook.md#workbook-days) · [DAY 12へ](day-12.md#day-12)
+
+<a id="python-path-escaping"></a>
+
+### 選択追加課題：URLのパスで画面を変え、エスケープを比較する
+
+[用語と仕組み](#path-concepts) · [実習](#path-actions) · [完成条件・提出](#path-done)
+
+**依頼者：** NORTH LIGHT COFFEEの佐藤さん。**見る人：** 来店前のお知らせを読む人。
+
+> URLごとにお知らせの文面を変えたいです。ただし、URLに入った文字が勝手に見出しになったり、色を変えたりしないようにしてください。手元の比較画面で、その違いも説明してください。
+
+**目的：** パスパラメータをルートで受け、固定テンプレートへ渡して表示する。同じ入力を文字として表示する場合とHTMLとして解釈する場合を比較し、表示改変を防ぐ理由を理解します。[フォーム課題](#python-form)を終えてから、別枠60〜90分を目安に進めます。所要時間は初学者未実測です。
+
+**対象：** 本人の作業コピーの`app.py`のTODO A・Bと、`templates/notice.html`のTODO C。**対象外：** 継続サイト、他の追加課題、外部サイト、Cookie・認証情報、JavaScript、外部送信、永続保存。PHP CLIはファイルを生成する仕組みで、HTTPルーティングを自動提供しません。この課題は既存のFlaskで行います。
+
+<a id="path-concepts"></a>
+
+#### 用語・データの流れ
+
+- **ルーティング：** 要求されたURLのパスを、処理するPython関数へ対応させること。
+- **パスパラメータ：** `/notice/週末メニュー`の`週末メニュー`に当たる、パスの一部として受け取る値。Flaskでは`@app.get("/notice/<path:message>")`の印に一致した値が`def notice(message):`へ渡ります。`path:`は値の中のスラッシュも扱えるコンバーターです。
+- **クエリパラメータ：** URLの`?`以降の名前と値。`/notice/週末メニュー?view=compact`では、本文の値はパス、`view=compact`はクエリです。`request.args.get("view", "full")`で別に読みます。フォームPOSTの`request.form`とも別です。
+- **URLエンコード：** `<`・空白・日本語などをURLで運ぶための表現へ変えること。たとえば`<`は`%3C`、`>`は`%3E`、`/`は`%2F`。Flaskが復号した文字列を渡すので、この課題でさらに`unquote`を重ねません。
+- **HTMLエスケープとの違い：** URLエンコードはURLで運ぶため、HTMLエスケープはHTMLの構文と文字を区別するためです。`%3C`を使って運んでも、復号後の`<`をHTMLへそのまま出せばタグになり得ます。
+- **テンプレートへの受渡し：** `render_template("notice.html", message=message, view=view)`は、固定したテンプレートへ名前付きで値を渡します。受け取ったパスをテンプレート名、ファイル名、includeのパスに連結しません。
+- **自動エスケープ：** 通常のJinja2 HTMLテンプレートの`{{ message }}`はデータを文字として出します。`|safe`や`Markup`で解除すると、文字がHTMLとして解釈される可能性があります。
+- **HTML注入とXSS：** 文字列がHTMLとして解釈され、見出し等が増えるのが今回のHTML注入です。XSSはスクリプト等の実行に関わる問題であり、見出しが増えたことだけでXSS実行を証明したとは言いません。今回JavaScriptは使いません。
+
+例：`GET /notice/週末メニュー?view=compact` → Flaskのルート → Pythonの`message`と`request.args` → 固定テンプレート → HTML返答 → ブラウザ。URLによって返答が変わっても、サーバーのソースファイルが書き換わったわけではありません。
+
+<a id="path-actions"></a>
+
+#### STEP 1　安全な通常アプリを用意する
+
+`hht/hands-on/python-path-escaping/starter`をルート直下へ`python-path-work`としてコピーし、開始ソースの別コピーを`before/`へ保存します。既存作業を上書きしません。教材ルートで新しいPowerShellターミナルを開き、次を実行します。
+
+```powershell
+cd python-path-work
+python -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe app.py
+```
+
+前の課題と同じPython 3.11以上とFlaskです。macOS/Linuxでは仮想環境を`python3`で作り、以後を`./.venv/bin/python`へ読み替えます。導入済み環境を使い、取得や起動が許可されない場合は設定変更せず停止して講師へ報告します。
+
+`http://127.0.0.1:5002/`をブラウザで開きます。入口には「週末メニュー」「営業時間の案内（compact）」の2リンクがあります。開始時はリンク先の本文が未実装です。
+
+![実際の通常アプリ入口。2種類のお知らせへのリンクが並ぶ](../../assets/python-path-escaping/index.png)
+
+#### STEP 2　パスを表示し、クエリを別に扱う
+
+1. **TODO A：** `displayed_message(message)`の返り値を、受け取った`message`にする。HTML文字列を組み立てたり、`Markup`を付けたりしない。
+2. **TODO B：** `selected_view(arguments)`で`arguments.get("view", "full")`を`view`に代入する。`view`が`{"full", "compact"}`に含まれなければ`abort(400)`、含まれればその値を返す。受信値をファイルパスへ使わない。
+3. **TODO C：** `templates/notice.html`の`id="message"`内の仮文を、通常の変数埋め込み`{{ message }}`へ置き換える。`|safe`は付けない。テンプレート名とほかの部分は保持する。
+
+保存→通常アプリのターミナルでCtrl+C→同じ起動コマンド→ブラウザ再読込の順で反映します。入口の「週末メニュー」を押すと本文と`表示モード：full`、2つ目では別本文と`表示モード：compact`が見えます。compactでは補足文が省かれます。
+
+アドレスの本文だけを別の架空の短文へ変えて、再表示を確認します。`?view=unknown`へ変えた場合は400、`/notice?message=週末メニュー`はパス部分がないので404です。意図した拒否とサーバー故障を区別します。
+
+#### STEP 3　同じ無害なHTML入力を通常版へ渡す
+
+比較に使う入力は、次の1つだけです。
+
+```html
+<h2 class="demo-red">臨時休業（架空）</h2>
+```
+
+サーバーが動くターミナルとは別のPowerShellを開き、次を実行します。出たURLをコピーしてブラウザへ貼ります。
+
+```powershell
+$demoInput = '<h2 class="demo-red">臨時休業（架空）</h2>'
+$encoded = [uri]::EscapeDataString($demoInput)
+"http://127.0.0.1:5002/notice/$encoded"
+```
+
+macOS/Linuxではブラウザのアドレスへ元の文字列を貼る方法ではなく、Pythonの`urllib.parse.quote(入力, safe="")`等で値の部分だけをURLエンコードします。URL全体をエンコードすると`http://`やルートの区切りまで変わります。
+
+**通常版の期待結果：** `<h2 class="demo-red">...`というタグ自体が文字として読めます。新しい見出しや赤い本文にはなりません。
+
+![通常ページでは同じ入力がタグの文字列として表示され、見出しにならない実画面](../../assets/python-path-escaping/safe.png)
+
+#### STEP 4　隔離した教育専用アプリで表示改変を比較する
+
+通常アプリはそのままにし、別ターミナルを`python-path-work`で開いて次を実行します。
+
+```powershell
+.\.venv\Scripts\python.exe ..\hht\hands-on\python-path-escaping\comparison\demo.py --allow-unsafe-comparison
+```
+
+これは通常アプリとは別の教育用プロセスです。明示フラグなしでは起動しません。`http://127.0.0.1:5001/`を開き、「同じ入力を安全・危険の2通りで比べる」を押します。このリンクはSTEP 3と同じ固定入力を含みます。
+
+**期待結果：** 上の安全版はタグの文字列のまま。下の危険版の教育用再現では、`臨時休業（架空）`が大きな赤い見出しになります。テンプレートに元からある`demo-red`用のCSSが、挿入されたh2へ適用されます。単なるお知らせ入力がページの構造・見た目を変えることを確認します。
+
+![同じ入力を比較した実画面。安全版はタグ文字列、教育用危険版は赤い見出しとして表示される](../../assets/python-path-escaping/comparison.png)
+
+比較アプリは**この無害な入力と完全一致する場合だけ**受理し、そのほかは400です。任意の入力へ`Markup`を付ける実装ではありません。CSPでスクリプト・外部リソース・フォーム送信も禁止しています。この再現は任意HTML・JavaScript・外部送信を試す入口ではありません。比較用ファイル・設定・エスケープ解除を通常アプリや提出正解へコピーしません。
+
+**何が書き換わった？** 生成された返答HTMLの解釈が変わり、ブラウザの画面が改変されました。サーバーの`app.py`・テンプレート・DBを書き換えたわけではなく、永続化する例でもありません。実在サイトの内容変更や攻撃は行いません。
+
+#### STEP 5　考察して安全な修正を説明する
+
+次の架空の不適切なコードを、WORKLOGに安全な形へ直して書きます。通常アプリへ危険な行を入れて実行する作業ではありません。
+
+```jinja
+<div>{{ message | safe }}</div>
+```
+
+解除を取り除いた`{{ message }}`を使い、同じ入力がタグの文字になる理由を説明してください。長さチェックが通ってもエスケープが必要な理由、URLエンコードだけではHTML注入を防げない理由も書きます。
+
+考察すること：
+
+- ルートのパス値と`view`のクエリ値は、どこでどう読まれたか。
+- 安全・危険の表示で入力は同じか。生成された要素と見た目はどう違うか。
+- 今回の表示改変だけで、JavaScript実行やサーバーファイルの書換えまで証明できるか。
+- HTML本文以外の属性・URL・JavaScript・CSSへ入れる場合も、同じ処理だけでよいか。
+
+最後の問いでは、**表示する場所に合う対策が必要**と整理します。HTML属性は引用符を保つ、URLは許可する方式・宛先を検証する、JavaScript/CSSへ入力を直接埋め込まない等、本文の自動エスケープだけで全用途を安全にできるとは考えません。今回の実装はHTML本文だけです。
+
+#### STEP 6　自動検査し、比較用プロセスを終了する
+
+両サーバーをそれぞれCtrl+Cで停止し、作業コピーのターミナルで実行します。
+
+```powershell
+.\.venv\Scripts\python.exe ..\hht\hands-on\python-path-escaping\tests\check.py .
+```
+
+期待値は`Ran 8 tests`と`OK`です。UTF-8とスラッシュを含むパス、クエリの分離、長さ・不正view、通常版のタグ非生成、同じ固定入力での見出し生成、比較の既定無効・任意入力拒否、ソースファイルのハッシュ不変を検査します。本人のソースへ危険版を上書きしません。元からのアプリやほかの人のプロセスは止めません。
+
+#### 止まったとき
+
+- **5001/5002へ接続できない：** 対応するターミナルの起動結果とURLを確認。ファイルを直接開く方法やLive PreviewはFlaskルートを動かしません。
+- **フラグなしで比較が起動しない：** 正しい既定動作です。教育用の明示フラグ付きコマンドだけを使います。
+- **比較ページが400：** 固定入力と異なります。比較入口のリンクを使い、任意のタグを試さないでください。
+- **404：** `/notice/値`の形か確認。クエリだけではパスの値を代用できません。スラッシュを含む入力を扱う`<path:message>`も保持します。
+- **500：** ターミナルの例外と、`message`・`view`、`notice.html`のつづりを照合します。未保存や未再起動も確認します。
+- **通常版でタグが見出しになる：** `|safe`・`Markup`・HTML文字列への連結が混ざっていないかを確認し、通常のJinja2埋め込みへ戻す。
+- **文字化け・入力が違う：** UTF-8保存とURLエンコードを確認。値を二重に復号せず、比較リンクの入力と照合します。
+
+<a id="path-done"></a>
+
+#### 完成条件・提出・自己確認
+
+- [ ] 異なるパス値で本文が変わり、クエリ`view`は別に扱われる。固定テンプレートを使い、パス値をファイル名へ連結していない。
+- [ ] 通常版の自動エスケープを維持し、同じ無害HTML入力が文字として表示される。
+- [ ] 明示モードの独立比較ページで、同じ入力だけが赤い見出しになる違いを実画面とテストで確認した。
+- [ ] エスケープ解除を取り除く修正案と、URLエンコード／HTMLエスケープ、HTML注入／XSS、表示改変／ソース書換えの違いを説明した。
+- [ ] 8テストがOK。localhostと架空データだけで実施し、両プロセスを終了した。
+
+以上すべてをこの追加課題の合格条件とします。基本15回の合格ルートへ必須化しません。
+
+**提出：** `path-匿名番号.zip`へ`before/`、`after/`（安全な`app.py`・`requirements.txt`・`templates/`）、`WORKLOG.md`、`evidence/`（通常表示・同じ入力の安全／危険比較・テスト結果）を入れます。**`comparison/`・危険版コード・仮想環境・キャッシュは入れません。** 比較は画面と考察だけを証拠として提出します。ZIP再展開後も通常版だけが起動することを確認します。学校の回収先が未配布なら保存して確認待ちと記録します。
+
+[フォーム課題へ](#python-form) · [PHP CLIとの違い](#php-cli-template) · [DAY一覧へ](../student-workbook.md#workbook-days) · [DAY 12へ](day-12.md#day-12)
 
 
 [← DAY 10](day-10.md#day-10) · [DAY一覧へ](../student-workbook.md#workbook-days) · [DAY 12 →](day-12.md#day-12)

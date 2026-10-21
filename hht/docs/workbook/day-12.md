@@ -308,3 +308,5 @@
 [← DAY 11](day-11.md#day-11) · [DAY一覧へ](../student-workbook.md#workbook-days) · [DAY 13 →](day-13.md#day-13)
 
 ---
+
+追加実習へ戻る：[PHP CLI](day-11.md#php-cli-template)・[パスとエスケープ](day-11.md#python-path-escaping)。

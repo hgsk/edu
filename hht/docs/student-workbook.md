@@ -132,3 +132,6 @@
 - [Pythonで店舗案内を生成する](./workbook/day-11.md#python-template)・[構文](./workbook/day-11.md#python-template-concepts)・[実習](./workbook/day-11.md#python-template-actions)・[完成条件と提出](./workbook/day-11.md#python-template-done)
 
 - [フォームをPythonで受け取りSQLiteへ保存する](./workbook/day-11.md#python-form)・[実習](./workbook/day-11.md#python-form-actions)・[完成条件と提出](./workbook/day-11.md#python-form-done)
+
+- [PHP CLIコンテナで同じHTML生成を比較](./workbook/day-11.md#php-cli-template)・[完成条件](./workbook/day-11.md#php-cli-done)（環境・修正版タグの準備が必要）
+- [パスで表示を変え、エスケープを比較](./workbook/day-11.md#python-path-escaping)・[完成条件](./workbook/day-11.md#path-done)

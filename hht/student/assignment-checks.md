@@ -67,3 +67,5 @@
 [DAY 11追加課題の完成条件・提出](../docs/workbook/day-11.md#python-template-done)
 
 [フォーム受信・保存の完成条件・提出](../docs/workbook/day-11.md#python-form-done)
+
+[PHP CLIの完成条件](../docs/workbook/day-11.md#php-cli-done)・[パスとエスケープの完成条件](../docs/workbook/day-11.md#path-done)

@@ -31,3 +31,5 @@
 [学生向け正本](../docs/workbook/day-11.md#python-template)・[講師用進行と正解例](../hands-on/python-store-guide/instructor/guide.md)
 
 フォームの続き：[学生向け正本](../docs/workbook/day-11.md#python-form)・[講師用進行と正解例](../hands-on/python-form-notes/instructor/guide.md)
+
+追加比較：[PHP CLI進行・ブロッカー](../hands-on/php-cli-template/instructor/guide.md)・[パスとエスケープ進行・実測](../hands-on/python-path-escaping/instructor/guide.md)。条件の正本はいずれもDAY11です。

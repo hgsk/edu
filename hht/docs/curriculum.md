@@ -292,3 +292,5 @@ HTMLとCSSを少しずつ学びながら、架空のカフェサイトを育て�
 基本15回のHTML/CSSとは別枠で、DAY 11終了後に[店舗案内の生成](./workbook/day-11.md#python-template)へ進めます。Pythonの導入済み環境とJinja2をこの課題だけに用意します。課題条件・提出・完成判定はDAY 11の正本を参照します。
 
 続いて[フォーム受信・SQLite保存](./workbook/day-11.md#python-form)で、GET/POST・入力検査・永続化・一覧表示を体験できます。公開や基本DAY7のフォーム送信を必須にしません。
+
+比較実習：[PHP CLIによる静的HTML生成](./workbook/day-11.md#php-cli-template)と、フォーム後の[パス・HTMLエスケープ](./workbook/day-11.md#python-path-escaping)。PHPの実行準備がない場合も既存のPython・フォーム課題は継続できます。

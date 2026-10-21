@@ -13,7 +13,7 @@ profile = Path(os.environ['RUNNER_TEMP'])/'day4-code-profile'
 settings = profile/'User/settings.json'
 settings.parent.mkdir(parents=True, exist_ok=True)
 settings.write_text(json.dumps({'security.workspace.trust.enabled': False, 'workbench.startupEditor': 'none',
-    'window.title': 'DAY4 rehearsal - ${activeEditorShort}', 'editor.fontSize': 16, 'window.zoomLevel': 0,
+    'window.title': 'DAY4 rehearsal - ${activeEditorShort}', 'editor.fontSize': 16, 'editor.experimentalEditContextEnabled': False, 'window.zoomLevel': 0,
     'telemetry.telemetryLevel': 'off', 'update.mode': 'none'}), encoding='utf-8')
 expected_source = (pack/'after/about.html').read_text(encoding='utf-8')
 (pack/'after/about.html').write_bytes((pack/'before/about.html').read_bytes())
@@ -35,8 +35,10 @@ try:
         try:
             page = browser.contexts[0].pages[0]
             expect(page.locator('.monaco-diff-editor').first).to_be_visible(timeout=60000)
-            editor = page.locator('.monaco-diff-editor .modified .inputarea').first
-            editor.focus()
+            (out/'vscode-before-edit.html').write_text(page.content(), encoding='utf-8')
+            page.screenshot(path=str(out/'vscode-before-edit.png'), full_page=True)
+            editor = page.locator('.monaco-diff-editor .monaco-editor .view-lines').last
+            editor.click(position={'x': 50, 'y': 10})
             page.keyboard.press('Control+A')
             page.keyboard.insert_text(expected_source)
             page.keyboard.press('Control+S')

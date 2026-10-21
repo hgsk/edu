@@ -15,6 +15,8 @@ settings.parent.mkdir(parents=True, exist_ok=True)
 settings.write_text(json.dumps({'security.workspace.trust.enabled': False, 'workbench.startupEditor': 'none',
     'window.title': 'DAY4 rehearsal - ${activeEditorShort}', 'editor.fontSize': 16, 'window.zoomLevel': 0,
     'telemetry.telemetryLevel': 'off', 'update.mode': 'none'}), encoding='utf-8')
+expected_source = (pack/'after/about.html').read_text(encoding='utf-8')
+(pack/'after/about.html').write_bytes((pack/'before/about.html').read_bytes())
 exe = Path(os.environ['RUNNER_TEMP'])/'day4-vscode/Code.exe'
 process = subprocess.Popen([str(exe), '--user-data-dir', str(profile), '--disable-extensions',
     '--disable-workspace-trust', '--skip-welcome', '--skip-release-notes', '--new-window',
@@ -33,10 +35,22 @@ try:
         try:
             page = browser.contexts[0].pages[0]
             expect(page.locator('.monaco-diff-editor').first).to_be_visible(timeout=60000)
+            editor = page.locator('.monaco-diff-editor .modified .inputarea').first
+            editor.focus()
+            page.keyboard.press('Control+A')
+            page.keyboard.insert_text(expected_source)
+            page.keyboard.press('Control+S')
+            for _ in range(40):
+                if (pack/'after/about.html').read_text(encoding='utf-8') == expected_source:
+                    break
+                time.sleep(.25)
+            else:
+                raise AssertionError('VS Code edit/save did not reach the file')
+            expect(page.locator('.monaco-diff-editor').first).to_contain_text('営業時間')
             page.screenshot(path=str(out/'vscode-diff.png'), full_page=True)
             (out/'vscode-renderer.txt').write_text(page.locator('body').inner_text(), encoding='utf-8')
             (out/'vscode-result.json').write_text(json.dumps({'result':'PASS', 'app':'Microsoft VS Code 1.105.1',
-                'verified':'actual diff editor visible with before/after opened',
+                'verified':'real modified editor typed and saved; disk equals expected HTML; before/after diff visible',
                 'context_menu_clicks':'NOT RUN', 'human_comprehension':'NOT RUN'}), encoding='utf-8')
         finally:
             browser.close()

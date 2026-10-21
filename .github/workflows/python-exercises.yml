@@ -1,0 +1,38 @@
+name: Python Exercises
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  exercises:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.11", "3.14"]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Install exercise dependencies
+        run: python -m pip install -r hht/hands-on/python-form-notes/starter/requirements.txt
+      - name: Verify solutions, unfinished starters, and HTTP persistence
+        run: python hht/scripts/verify_python_exercises.py
+      - uses: actions/setup-node@v5
+        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.11'
+        with:
+          node-version: "22.20.0"
+      - name: Install locked HTML validator
+        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.11'
+        run: npm ci
+      - name: Validate generated HTML, including form error and saved states
+        if: matrix.os == 'ubuntu-latest' && matrix.python == '3.11'
+        run: npx --no-install html-validate "test-results/python-exercises/*.html"

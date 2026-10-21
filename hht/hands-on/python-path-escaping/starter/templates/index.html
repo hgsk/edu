@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>パスから架空のお知らせ</title>
+</head>
+<body>
+  <main>
+    <h1>パスから架空のお知らせ</h1>
+    <p>安全な通常アプリ。URLのパスをHTML本文の文字として表示します。</p>
+    <ul>
+      <li><a href="{{ url_for('notice', message='週末メニュー') }}">週末メニュー</a></li>
+      <li><a href="{{ url_for('notice', message='営業時間の案内', view='compact') }}">営業時間の案内（compact）</a></li>
+    </ul>
+  </main>
+</body>
+</html>

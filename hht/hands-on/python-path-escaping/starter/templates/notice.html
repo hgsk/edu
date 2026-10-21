@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>架空のお知らせ</title>
+</head>
+<body>
+  <main>
+    <h1>架空のお知らせ</h1>
+    <p>安全な通常ページ</p>
+    <!-- TODO C: messageをJinja2の通常の変数埋め込みで表示する -->
+    <div id="message">表示は未実装です</div>
+    <p id="view">表示モード：{{ view }}</p>
+    {% if view == 'full' %}
+    <p id="explanation">URLから受け取った文字はHTMLの本文へエスケープして表示します。</p>
+    {% endif %}
+    <p><a href="{{ url_for('index') }}">入口へ</a></p>
+  </main>
+</body>
+</html>

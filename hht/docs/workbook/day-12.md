@@ -2,6 +2,8 @@
 
 ## DAY 12 動きを整えて差し戻しに対応しよう
 
+前回の選択追加課題：[Pythonテンプレート](day-11.md#python-template)・[フォーム受信と保存](day-11.md#python-form)。追加課題を実施しなくても、このDAYは本人の継続サイトで進められます。
+
 [← DAY 11](day-11.md#day-11) · [DAY一覧へ](../student-workbook.md#workbook-days) · [DAY 13 →](day-13.md#day-13)
 
 [言葉・構文を読む](#day-12-concepts) · [実習へ進む](#day-12-actions) · [完成条件・提出へ](#day-12-done)
@@ -306,3 +308,5 @@
 [← DAY 11](day-11.md#day-11) · [DAY一覧へ](../student-workbook.md#workbook-days) · [DAY 13 →](day-13.md#day-13)
 
 ---
+
+追加実習へ戻る：[PHP CLI](day-11.md#php-cli-template)・[パスとエスケープ](day-11.md#python-path-escaping)。

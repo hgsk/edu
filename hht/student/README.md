@@ -50,3 +50,11 @@ DAY 3・4は各回の開始ZIPで練習します。DAY 5以降は自分の継続
 - 練習: [CODE TYPE QUEST](../typing-app/index.html)・[RSVP教材リーダー](../typing-app/reader.html)
 - アプリの使い方: [付属アプリの解説と遊び方](../docs/app-play-guide.md)
 - アプリの起動: [Python不要の起動手順](../docs/app-start-guide.md)
+
+## 選択追加課題
+
+DAY 11の後に[Pythonで店舗案内を生成する](../docs/workbook/day-11.md#python-template)へ進めます。
+
+テンプレート課題の後は、[フォーム受信・SQLite保存](../docs/workbook/day-11.md#python-form)へ進めます。
+
+比較する追加課題：[PHP CLIテンプレート](../docs/workbook/day-11.md#php-cli-template)・[パスとエスケープ](../docs/workbook/day-11.md#python-path-escaping)。準備未完了のPHP実習はBLOCKEDとして記録します。

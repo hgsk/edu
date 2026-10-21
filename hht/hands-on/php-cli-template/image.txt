@@ -1,0 +1,1 @@
+docker.io/library/php:8.4.27-cli-bookworm

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>店舗案内</title>
+</head>
+<body>
+  <main>
+    <h1>{{ shop.name }}</h1>
+    <p id="notice">{{ shop.notice }}</p>
+    <h2>店舗一覧</h2>
+    <ul id="branches">
+      {% for branch in branches %}
+      <li>
+        <h3>{{ branch.name }}</h3>
+        {% if branch.closed %}
+        <p>本日休業</p>
+        {% else %}
+        <p>営業時間：{{ branch.hours }}</p>
+        {% endif %}
+      </li>
+      {% endfor %}
+    </ul>
+  </main>
+</body>
+</html>

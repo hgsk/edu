@@ -173,8 +173,9 @@ if __name__ == '__main__':
                 assert page.locator('main').evaluate('(el) => getComputedStyle(el).paddingTop') != '0px'
                 page.goto((out/'diff.html').as_uri())
                 page.screenshot(path=str(shots/'html-diff.png'), full_page=True)
-                page.goto((pack/'wireframe.svg').as_uri())
-                page.screenshot(path=str(pack/'wireframe.png'), full_page=True)
+                (out/'wireframe.html').write_text('<!doctype html><meta charset="utf-8"><img alt="Verification wireframe" src="day4-s000/wireframe.svg">', encoding='utf-8')
+                page.goto((out/'wireframe.html').as_uri())
+                page.locator('img').screenshot(path=str(pack/'wireframe.png'))
                 (pack/'wireframe.svg').unlink()
                 with (pack/'submission.md').open('a', encoding='utf-8') as f:
                     f.write('ブラウザ確認: ChromiumでCSS表示と構造を確認。PNGを実画面から保存。\n')

@@ -12,7 +12,6 @@ hht/submissions/
    └─ evidence/
 ```
 
-
 > **DAY 4の標準ZIP提出は例外です。** [DAY 4正本の作業・提出手順](../docs/workbook/day-04.md#day-4-actions)を使います。独立した開始ZIPを使うため、このページの継続サイト・WORKLOG・格納位置の手順には進みません。提出内容・記録・保存先はDAY 4正本を参照してください。任意の学生PR採点は別経路で、DAY 4の標準ZIPがCIで採点されるわけではありません。
 
 ## 必ず提出するもの

@@ -7,4 +7,6 @@
 - `instructor/`：講師用正解例と検証記録。
 - `image.txt`：採用予定の修正版CLIタグ。公開待ちで、実行確認済みを意味しません。
 
-**2026-10-21の状態：実行検証はBLOCKED。** T770iではDockerエンジンへ接続できず、修正版の公式タグも確認時に未公開でした。旧版・RC・`latest`へ置き換えて進めません。詳細は[検証記録](./instructor/verification-20261021.md)を参照してください。
+実行環境は**WSL2内のネイティブDocker Engine、またはrootless Podman**です。WSL自体はコンテナランタイムではなく、Docker Desktop／Rancher Desktopの連携CLIを前提にしません。
+
+**2026-10-21の状態：実行検証はBLOCKED。** T770iの既存WSLではネイティブランタイムが見つからず、修正版4系列の公式CLI全24タグもレジストリ確認時に404でした。旧版・RC・`latest`へ置き換えて進めません。詳細は[検証記録](./instructor/verification-20261021.md)を参照してください。

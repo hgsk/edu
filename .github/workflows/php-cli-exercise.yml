@@ -18,8 +18,8 @@ jobs:
       - uses: actions/setup-python@v6
         with:
           python-version: "3.14"
-      - name: Pull patched official CLI and verify PHP, templates, UTF-8, and container cleanup
-        run: python hht/scripts/verify_php_cli.py
+      - name: Use native Linux Engine, pull patched CLI, and verify templates and UTF-8
+        run: python hht/scripts/verify_php_cli.py --runtime docker
       - uses: actions/setup-node@v5
         with:
           node-version: "22.20.0"

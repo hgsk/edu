@@ -546,7 +546,7 @@ ZIPを別フォルダーへ再展開し、`after/`でSTEP 1と同様に環境を
 
 **対象：** 本人の作業コピーの`hello.php`、`data.php`、`templates/index.php`。用意済みの`render.php`と`build.php`を読んで使います。**対象外：** 継続サイト、Python・フォーム課題のファイル、DockerやOSの導入・設定変更、外部公開・実サイトへの送信。データは架空の店舗だけです。
 
-**実行前の注意：2026-10-21時点では実測待ちです。** T770iはDockerエンジンへ接続できず、選定した修正版公式タグも確認時に未公開でした。この教材は実行可能・検証済みとは扱いません。下の準備確認で止まった場合はBLOCKEDと記録し、環境を勝手に導入・切替せず講師へ報告します。[公式情報・確認結果・再開条件](../../hands-on/php-cli-template/instructor/verification-20261021.md)は講師用です。
+**実行前の注意：2026-10-21時点では実測待ちです。** T770iの既存WSLには使用可能なネイティブDocker Engine／Podmanが見つからず、選定した修正版公式タグも確認時に未公開でした。この教材は実行可能・検証済みとは扱いません。下の準備確認で止まった場合はBLOCKEDと記録し、環境を勝手に導入・切替せず講師へ報告します。[公式情報・確認結果・再開条件](../../hands-on/php-cli-template/instructor/verification-20261021.md)は講師用です。
 
 #### 前の課題と何が違う？
 
@@ -603,49 +603,90 @@ echo "\n";
 
 <a id="php-cli-actions"></a>
 
-#### STEP 1　Dockerと修正版イメージを確認する
+#### STEP 1　WSL内の既存ランタイムと修正版を確認する
 
-先に学校が用意したDocker環境であることを確認します。ターミナルで`docker version`を実行し、**ClientとServerの両方**が出ることを確かめます。Clientだけ、パイプがない、接続拒否、権限エラーなら停止です。インストール、サービスの起動設定、WSL・仮想化・OS・ネットワーク設定、規約承諾を自分で進めません。講師へエラーとBLOCKEDを報告します。
+**WSL2はLinuxを動かす環境であり、コンテナランタイムそのものではありません。** この実習はWSL内に学校が準備済みのネイティブDocker Engine、またはrootless Podmanを使います。Docker DesktopやRancher DesktopのWindows連携CLIを前提にしません。WindowsへPHP本体を追加する必要もありません。
 
-教材の`hht/hands-on/php-cli-template/starter`をルート直下の`php-template-work`へコピーし、さらに開始ソースを`before/`へ保存します。同名の既存作業へ重ねません。ファイルは**UTF-8、BOMなし**で保存します。
-
-**採用予定は`php:8.4.27-cli-bookworm`です。** [PHP公式の2026-10-21告知](https://www.php.net/archive/2026.php)で修正版8.4.27を確認しています。ただしPHP本体の公開とコンテナタグの公開は別です。[公式イメージ](https://hub.docker.com/_/php)で修正版CLIを確認し、次が成功してから使います。古いキャッシュや`latest`を安全と仮定しません。
-
-Windows PowerShellで、教材ルートから次を1行ずつ実行します。
+Windows PowerShellで教材ルートを開き、次を実行します。`Ubuntu`は`wsl --list --verbose`に実在する学校指定のディストリビューション名です。別名の場合は読み替えます。
 
 ```powershell
-cd php-template-work
-$image = 'php:8.4.27-cli-bookworm'
-docker pull $image
+wsl --list --verbose
+wsl -d Ubuntu --cd (Get-Location).Path
 ```
 
-**`manifest unknown`／`no such manifest`なら停止し、公開待ちです。** 8.4.26、RC、可変タグへ変更しません。pull成功後だけ次へ進みます。
+ここから先は**WSL内のBash**です。`pwd`で`/mnt/c/.../edu`等のLinuxパスになり、`ls README.md hht`で教材ルートを確認します。`C:\...`というWindowsパスをLinuxコンテナへ渡しません。
 
-```powershell
-docker run --rm --network none $image php --version
-docker image inspect $image --format '{{json .RepoDigests}}'
+```bash
+id
+command -v docker
+command -v podman
 ```
 
-期待値は`PHP 8.4.27 (cli)`を含む表示と`sha256:...`のdigestです。WORKLOGに実測値を書きます。PHP_VERSIONの検査でも8.4.27以上の安定8.4系を要求し、旧版・RCを拒否します。タグも再ビルドで内容が変わる場合があるので、授業の再現記録にはdigestも残します。未取得のdigestを教材の実測値として書きません。
+学校でネイティブDocker Engineが準備済みなら、以下を使います。
 
-#### STEP 2　マウントして短いechoを実行する
-
-作業フォルダーの`hello.php`を開き、TODO 0を`echo "PHPでHTMLを作る\n";`へ変更して保存します。次の変数は以後も同じPowerShellターミナルで使います。
-
-```powershell
-$taskPath = (Get-Location).Path
-docker run --rm --network none --mount "type=bind,source=$taskPath,target=/work" --workdir /work $image php hello.php
+```bash
+engine=(docker --host unix:///var/run/docker.sock)
+readlink -f "$(command -v docker)"
+"${engine[@]}" info
 ```
 
-期待値はターミナルの`PHPでHTMLを作る`と改行です。
+`engine`はコマンドと引数をまとめたBash配列です。`"${engine[@]}"`は、その引数の区切りを保って実行します。実体が`/mnt/c/Program Files/...`や`/mnt/wsl/docker-desktop/...`なら、選んだネイティブ環境ではありません。ローカルの`/var/run/docker.sock`が存在し、現在のユーザーのままで`info`が成功することが必要です。
 
-- `--mount`は、ホストの`$taskPath`をコンテナの`/work`へ対応させる指定。ホストが`C:\...\php-template-work`でも、コンテナでは`/work`です。Linux用CLIイメージの中へ`C:\...`というパスを渡しません。
-- `--workdir /work`は、コンテナ内で相対パスを読む開始位置を指定します。`hello.php`は`/work/hello.php`を指します。
-- 引用符でマウント指定全体を囲むので、ホストのパスに空白があっても1引数です。この演習の作業フォルダー名にはカンマを使いません。
-- `--network none`は実行中のネットワークを使わない指定。イメージのpullはその前に必要です。
-- `--rm`は処理終了後のコンテナを自動で除去します。マウントしたホストの作業ファイルは残ります。ポート公開・ホストネットワーク・特権指定は不要です。
+学校で**rootless Podman**が準備済みなら、代わりに次を使います。通常ユーザーで実行し、以後の`engine`をこちらに揃えます。
 
-macOS/Linuxのシェルでは`image=php:8.4.27-cli-bookworm`、`taskPath="$PWD"`とし、`--mount "type=bind,source=$taskPath,target=/work"`を使います。Linuxで生成ファイルの所有権を本人にそろえる学校環境では`--user "$(id -u):$(id -g)"`を講師確認のうえ追加できます。OSごとのマウント権限やファイル共有が未準備なら設定を変更せず停止します。
+```bash
+engine=(podman --remote=false)
+readlink -f "$(command -v podman)"
+"${engine[@]}" info
+```
+
+**ランタイムがない、ソケットがない、権限エラーなら停止です。** 無断インストール、sudo実行、グループ追加、デーモンの公開、ファイアウォール・仮想化・セキュリティ設定変更はしません。WSLへ入れたことだけでコンテナ実行可と判断せず、表示を保存して講師へBLOCKEDを報告します。
+
+実行環境の確認後、教材の開始データをWSLの本人用フォルダーへコピーします。以下は現在の教材ルートを`repoPath`へ記録する例です。同名の作業フォルダーが既にあれば、そこで止めて別名を選び、以後も読み替えます。
+
+```bash
+repoPath="$(pwd -P)"
+mkdir -p "$HOME/hht"
+test ! -e "$HOME/hht/php-template-work" && cp -R "$repoPath/hht/hands-on/php-cli-template/starter" "$HOME/hht/php-template-work"
+```
+
+コピーが成功した場合だけ進み、開始ソースを別の`before/`へ保存します。Linux側の`$HOME/hht/php-template-work`が今回の本人用作業場所です。既存フォルダーへ重ねません。UTF-8・BOMなしで編集します。
+
+```bash
+cd "$HOME/hht/php-template-work"
+image='docker.io/library/php:8.4.27-cli-bookworm'
+"${engine[@]}" pull "$image"
+```
+
+**採用予定は修正版8.4.27です。** [PHP公式の2026-10-21告知](https://www.php.net/archive/2026.php)で確認していますが、本体公開とコンテナの公開は別です。[公式イメージ](https://hub.docker.com/_/php)の修正版CLIを使い、`manifest unknown`／`no such manifest`なら公開待ちで停止します。旧版・RC・可変タグのキャッシュへ切り替えません。`docker.io/library/`まで指定することで、Podmanでも別レジストリの同名イメージを選びません。
+
+pull成功後だけ、実際のCLIバージョンとdigestを確認します。
+
+```bash
+"${engine[@]}" run --rm --network none "$image" php --version
+"${engine[@]}" image inspect "$image" --format '{{json .RepoDigests}}'
+```
+
+期待値は`PHP 8.4.27 (cli)`を含む表示と`sha256:...`です。実測値をWORKLOGへ記録します。タグも再ビルドでdigestが変わる場合があるので、厳密な再現記録にはdigestも残します。未取得の値を教材の実測値として書きません。
+
+#### STEP 2　Linuxパスでマウントし、短いechoを実行する
+
+`hello.php`のTODO 0を`echo "PHPでHTMLを作る\n";`へ変更して保存します。同じWSL Bashで次を実行します。
+
+```bash
+taskPath="$(pwd -P)"
+userArgs=(--user "$(id -u):$(id -g)")
+if [ "${engine[0]}" = podman ]; then userArgs+=(--userns=keep-id); fi
+"${engine[@]}" run --rm --network none "${userArgs[@]}" --mount "type=bind,source=$taskPath,target=/work" --workdir /work "$image" php hello.php
+```
+
+期待値は`PHPでHTMLを作る`と改行です。
+
+- **ホスト側**はWSL内の`$HOME/hht/php-template-work`、**コンテナ側**は`/work`。バインドマウントでこの作業コピーだけを対応させます。WSL全体、Windows全体、ホーム全体、Dockerソケットは渡しません。
+- `--workdir /work`により`hello.php`は`/work/hello.php`です。Linuxパスを使い、空白がある場合もマウント指定全体の引用符を保ちます。フォルダー名にカンマは使いません。
+- `--user`で生成物の所有者を本人のUID/GIDへ合わせます。rootless Podmanでは`--userns=keep-id`で本人のID対応を維持します。これはこのコンテナの指定で、OSのユーザー・権限設定を変更する操作ではありません。
+- `--network none`は実行中のネットワークを使わない指定。pullはその前に必要です。`--rm`は終了したコンテナを除去し、マウントした作業ファイルは残します。
+- Webサーバー、ポート公開、特権、ホストネットワークは使いません。権限エラーをsudoや権限緩和で回避せず停止します。
 
 #### STEP 3　データとテンプレートを完成させる
 
@@ -661,15 +702,15 @@ macOS/Linuxのシェルでは`image=php:8.4.27-cli-bookworm`、`taskPath="$PWD"`
 
 #### STEP 4　ファイルへ生成しブラウザで確認する
 
-```powershell
-docker run --rm --network none --mount "type=bind,source=$taskPath,target=/work" --workdir /work $image php build.php
+```bash
+"${engine[@]}" run --rm --network none "${userArgs[@]}" --mount "type=bind,source=$taskPath,target=/work" --workdir /work "$image" php build.php
 ```
 
-期待値は`Generated: output/index.html (UTF-8)`です。コンテナ内の`/work/output/index.html`は、ホストの`php-template-work/output/index.html`に対応します。PHPが`file_put_contents`で直接書くので、保存データはPowerShellのテキスト変換を通りません。
+期待値は`Generated: output/index.html (UTF-8)`です。コンテナ内の`/work/output/index.html`は、WSLの`$HOME/hht/php-template-work/output/index.html`に対応します。PHPが`file_put_contents`で直接書くので、保存データはWindows PowerShellのテキスト変換を通りません。
 
 **`docker run ... > output/index.html`や`Out-File`でHTMLを保存しません。** Windows PowerShell等では標準出力をテキストとして変換し、UTF-16等になる場合があります。今回の保存経路は常にPHPの`build.php`です。標準出力を観察する場合だけ、同じコマンドの末尾を`php build.php --stdout`にします。これはHTMLをターミナルへ出すモードで、ファイル保存とは別です。
 
-ホストの`output/index.html`をエクスプローラーからブラウザで開きます。Webサーバーは起動しません。店舗名、`<臨時案内> & 週末`という文字、駅前店09:00〜19:00、公園店「本日休業」、港店12:00〜17:00が読めることを確認します。テンプレートの`.php`を直接開いても生成されません。
+WSL Bashで`explorer.exe .`を実行し、開いた本人の作業フォルダーの`output/index.html`をWindowsブラウザで開きます。これはファイルを開くためのWSL相互運用で、コンテナランタイムやHTTPサーバーをWindows側で動かす操作ではありません。Webサーバーは起動しません。店舗名、`<臨時案内> & 週末`という文字、駅前店09:00〜19:00、公園店「本日休業」、港店12:00〜17:00が読めることを確認します。テンプレートの`.php`を直接開いても生成されません。
 
 VS Codeで生成HTMLも開き、お知らせのソースが`&lt;臨時案内&gt; &amp; 週末`、文字コードがUTF-8であることを確認します。`<?php`や`<?=`が残っていれば生成HTMLを開いているかを確認します。`view-source:`は使いません。PHPの実行画面・生成結果の画像は実測再開後にここへ追加する必要があり、現在は未撮影です。
 
@@ -680,21 +721,21 @@ VS Codeで生成HTMLも開き、お知らせのソースが`&lt;臨時案内&gt;
 3. 生成HTMLだけを直接変更してから再生成し、変更がデータとテンプレートから作り直されることを確認する。
 4. 自分の作業コピーだけを次の共通テストで確認する。正解例は見ずに行う。
 
-```powershell
-$testsPath = (Resolve-Path '..\hht\hands-on\php-cli-template\tests').Path
-docker run --rm --network none --mount "type=bind,source=$taskPath,target=/work" --mount "type=bind,source=$testsPath,target=/tests,readonly" --workdir /work $image php /tests/check.php /work
+```bash
+testsPath="$repoPath/hht/hands-on/php-cli-template/tests"
+"${engine[@]}" run --rm --network none "${userArgs[@]}" --mount "type=bind,source=$taskPath,target=/work" --mount "type=bind,source=$testsPath,target=/tests,readonly" --workdir /work "$image" php /tests/check.php /work
 ```
 
 期待値は`Checks: 29; failures: 0`と`Temporary copy cleanup PASS`、終了コード0です。別データ4店舗、0店舗、両方の条件、特殊文字・両方の引用符・不正UTF-8の置換、ファイルとstdoutのバイト一致、別の実行場所、再生成を検査します。本人のソースは変更せず、コンテナの一時フォルダーへ複製して試します。開始データのままならFAILが正しい結果です。実行できていない検査をPASSと記録しません。
 
-最後に`docker ps`で実習の実行中コンテナが残っていないことを確認します。ほかの人や別用途のコンテナを停止・削除しません。
+最後に`"${engine[@]}" ps`で実習の実行中コンテナが残っていないことを確認します。ほかの人や別用途のコンテナを停止・削除しません。
 
 #### 止まったとき
 
-- **Docker Serverへ接続できない：** Clientがあるだけでは実行できません。エラーを保存し、講師へBLOCKEDを報告。無断導入・設定変更・別環境への切替はしません。
+- **WSL内のランタイムが動かない：** WSLやDesktop由来のCLIがあるだけでは実行できません。エラーを保存し、講師へBLOCKEDを報告。無断導入・設定変更・別環境への切替はしません。
 - **修正版タグがない：** 公開待ちで停止。古い`latest`・8.4.26・RCでは実行しません。
 - **`BLOCKED: patched stable PHP...`：** 実際のPHPが修正条件を満たしていません。イメージ名・pull結果・`php --version`を照合し、古いキャッシュを使い回しません。
-- **マウントのパス・権限エラー：** `$taskPath`が作業コピーの絶対パスか、指定全体を引用符で囲んだか確認。PC全体やDockerソケットのマウントで解決しません。
+- **マウントのパス・権限エラー：** `$taskPath`がWSL内の作業コピーのLinux絶対パスか、指定全体を引用符で囲んだか確認。PC全体やDockerソケットのマウントで解決しません。
 - **`Could not open input file`：** `/work`に作業コピーが見えるか、`--workdir /work`とファイル名を確認する。
 - **`Parse error`：** 表示の行と直前を読む。`$`、`;`、`=>`、引用符、`endif;`・`endforeach;`を確認する。
 - **`Undefined array key`：** `name`・`notice`・`hours`・`closed`のつづり、配列とループ変数を確認する。

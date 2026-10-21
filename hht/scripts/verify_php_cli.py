@@ -1,9 +1,11 @@
 """Official PHP CLI checks. Fail closed when the local engine or patched image is unavailable."""
 
 from pathlib import Path
+import argparse
 import os
 import shutil
 import subprocess
+import sys
 import tempfile
 import uuid
 
@@ -14,24 +16,38 @@ IMAGE = (EXERCISE / "image.txt").read_text(encoding="utf-8").strip()
 
 
 def main():
-    if IMAGE != "php:8.4.27-cli-bookworm":
+    parser = argparse.ArgumentParser(description="Use a native Linux Docker Engine or rootless Podman; run inside WSL on Windows")
+    parser.add_argument("--runtime", choices=["docker", "podman"], default="docker")
+    runtime = parser.parse_args().runtime
+    if sys.platform != "linux":
+        raise SystemExit("BLOCKED: run this checker inside WSL/Linux with a native container runtime, not Windows/Desktop CLI")
+    executable = shutil.which(runtime)
+    if executable is None:
+        raise SystemExit(f"BLOCKED: native {runtime} is not installed; do not install or change permissions without approval")
+    resolved = str(Path(executable).resolve())
+    if resolved.startswith(("/mnt/c/", "/mnt/wsl/docker-desktop/", "/mnt/wsl/rancher-desktop/")):
+        raise SystemExit(f"BLOCKED: {runtime} resolves to a Desktop-provided CLI, not the selected native Linux runtime")
+    engine = [executable, "--host", "unix:///var/run/docker.sock"] if runtime == "docker" else [executable, "--remote=false"]
+    if IMAGE != "docker.io/library/php:8.4.27-cli-bookworm":
         raise SystemExit("Review and verify the patched image/version before changing this pin")
     try:
-        subprocess.run(["docker", "version"], check=True, timeout=20)
-        subprocess.run(["docker", "pull", IMAGE], check=True, timeout=180)
+        subprocess.run([*engine, "info"], check=True, timeout=20)
+        subprocess.run([*engine, "pull", IMAGE], check=True, timeout=180)
     except (OSError, subprocess.SubprocessError) as error:
-        raise SystemExit(f"BLOCKED: Docker engine or patched official image unavailable: {error}")
+        raise SystemExit(f"BLOCKED: native runtime or patched official image unavailable: {error}")
 
     result_dir = ROOT.parent / "test-results/php-cli"
     result_dir.mkdir(parents=True, exist_ok=True)
 
     def run(work, *command, expected=0):
         name = "hht-php-" + uuid.uuid4().hex
-        args = ["docker", "run", "--rm", "--name", name, "--network", "none",
+        args = [*engine, "run", "--rm", "--name", name, "--network", "none",
                 "--cap-drop", "ALL", "--security-opt", "no-new-privileges",
                 "--mount", f"type=bind,source={work},target=/work", "--workdir", "/work"]
         if os.name != "nt":
             args.extend(["--user", f"{os.getuid()}:{os.getgid()}"])
+        if runtime == "podman":
+            args.append("--userns=keep-id")
         args.extend([IMAGE, *command])
         try:
             result = subprocess.run(args, capture_output=True, timeout=45)
@@ -43,14 +59,14 @@ def main():
             return result.stdout
         finally:
             # --rm handles normal exits. Clean up only this unique test container after interruption.
-            exists = subprocess.run(["docker", "container", "inspect", name], capture_output=True, timeout=10)
+            exists = subprocess.run([*engine, "container", "inspect", name], capture_output=True, timeout=10)
             if exists.returncode == 0:
-                subprocess.run(["docker", "rm", "--force", name], check=True, capture_output=True, timeout=15)
-                if subprocess.run(["docker", "container", "inspect", name], capture_output=True, timeout=10).returncode == 0:
+                subprocess.run([*engine, "rm", "--force", name], check=True, capture_output=True, timeout=15)
+                if subprocess.run([*engine, "container", "inspect", name], capture_output=True, timeout=10).returncode == 0:
                     raise RuntimeError(f"Container cleanup failed: {name}")
             print(f"Container {name}: absent; cleanup PASS")
 
-    subprocess.run(["docker", "image", "inspect", IMAGE, "--format", "{{json .RepoDigests}}"], check=True, timeout=15)
+    subprocess.run([*engine, "image", "inspect", IMAGE, "--format", "{{json .RepoDigests}}"], check=True, timeout=15)
     with tempfile.TemporaryDirectory(dir=result_dir) as directory:
         work = Path(directory)
         solution = work / "solution"

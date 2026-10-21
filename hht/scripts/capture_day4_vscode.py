@@ -16,6 +16,9 @@ settings = profile/'User/settings.json'
 settings.parent.mkdir(parents=True, exist_ok=True)
 settings.write_text(json.dumps({'security.workspace.trust.enabled': False, 'workbench.startupEditor': 'none',
     'window.title': 'DAY4 rehearsal - ${activeEditorShort}', 'editor.fontSize': 16, 'editor.experimentalEditContextEnabled': False, 'window.zoomLevel': 0,
+    'editor.autoIndent': 'none', 'editor.autoClosingBrackets': 'never', 'editor.autoClosingQuotes': 'never',
+    'editor.autoSurround': 'never', 'editor.formatOnType': False, 'html.autoClosingTags': False,
+    'chat.disableAIFeatures': True, 'diffEditor.useInlineViewWhenSpaceIsLimited': False,
     'telemetry.telemetryLevel': 'off', 'update.mode': 'none'}), encoding='utf-8')
 expected_source = (pack/'after/about.html').read_text(encoding='utf-8')
 (pack/'after/about.html').write_bytes((pack/'before/about.html').read_bytes())
@@ -36,6 +39,7 @@ try:
             raise RuntimeError('VS Code debug renderer did not start')
         try:
             page = browser.contexts[0].pages[0]
+            page.set_viewport_size({'width': 1600, 'height': 1100})
             expect(page.locator('.monaco-diff-editor').first).to_be_visible(timeout=60000)
             (out/'vscode-before-edit.html').write_text(page.content(), encoding='utf-8')
             page.screenshot(path=str(out/'vscode-before-edit.png'), full_page=True)
@@ -50,6 +54,7 @@ try:
                 time.sleep(.25)
             else:
                 raise AssertionError('VS Code edit/save did not reach the file')
+            page.keyboard.press('Control+Home')
             expect(page.locator('.monaco-diff-editor').first).to_contain_text('営業時間')
             page.screenshot(path=str(out/'vscode-diff.png'), full_page=True)
             shutil.copy2(out/'vscode-diff.png', pack/'screenshots/html-diff.png')

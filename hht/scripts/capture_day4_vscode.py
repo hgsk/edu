@@ -3,6 +3,8 @@ import json
 import os
 from pathlib import Path
 import subprocess
+import shutil
+from check_day4_practice import package
 import time
 from playwright.sync_api import sync_playwright, expect
 
@@ -50,6 +52,8 @@ try:
                 raise AssertionError('VS Code edit/save did not reach the file')
             expect(page.locator('.monaco-diff-editor').first).to_contain_text('営業時間')
             page.screenshot(path=str(out/'vscode-diff.png'), full_page=True)
+            shutil.copy2(out/'vscode-diff.png', pack/'screenshots/html-diff.png')
+            package(out, pack)  # Final ZIP includes the real VS Code screenshot and saved file.
             (out/'vscode-renderer.txt').write_text(page.locator('body').inner_text(), encoding='utf-8')
             (out/'vscode-result.json').write_text(json.dumps({'result':'PASS', 'app':'Microsoft VS Code 1.105.1',
                 'verified':'real modified editor typed and saved; disk equals expected HTML; before/after diff visible',

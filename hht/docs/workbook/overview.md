@@ -73,9 +73,9 @@ Markdownは、文章の構造を読み書きしやすい記号で示す方法で
 
 ## 全15回で共通の保存・提出
 
-標準環境はVS Code＋ローカルファイルです。Git/GitHubを使わずに全15回を進められます。[ZIP提出の手順](../../submissions/local-submission.md)に従い、毎回、編集前に作業前ソースを保存し、編集後に作業後ソースを保存します。WORKLOGの8項目、画面、各DAYの証拠をそろえて提出し、講師の指摘を直して再提出します。Git/GitHubを使う場合のPRは[任意の提出経路](../../submissions/README.md#任意のprで提出してci判定を受ける)です。
+標準環境はVS Code＋ローカルファイルです。Git/GitHubを使わずに全15回を進められます。各DAY正本の提出欄を先に確認し、編集前後のソース、作業記録、画面と証拠を残して提出します。講師の指摘を直して再提出します。通常は[共通ZIP提出の手順](../../submissions/local-submission.md)とWORKLOGの8項目を使いますが、**DAY 4の標準ZIPは[DAY 4正本の提出手順](day-04.md#day-4-submission)を使い、WORKLOGは不要です。** Git/GitHubを使う場合のPRは[任意の提出経路](../../submissions/README.md#任意のprで提出してci判定を受ける)です。
 
-**任意のPR提出でDAY 3・4に取り組む場合：** 演習ZIPの変更した部分を、本人のリポジトリの`hht/starter-site`へ反映して提出します。以前の本文・画像は保持し、WORKLOGと画面・証拠は該当DAYの提出フォルダーに入れます。Gitを使わない標準のZIP提出では、各DAYの案内どおりに作業します。
+**任意のPR提出でDAY 3に取り組む場合：** 演習ZIPの変更した部分を、本人のリポジトリの`hht/starter-site`へ反映して提出します。以前の本文・画像は保持し、WORKLOGと画面・証拠は該当DAYの提出フォルダーに入れます。**DAY 4の任意PRは[DAY 4正本のPR案内](day-04.md#day-4-pr)に従います。** 標準ZIPとの記録形式・保存先の違いも、そこで確認します。
 
 ## 毎回のお仕事ルート
 

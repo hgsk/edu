@@ -1,6 +1,6 @@
 # 全15回のZIP提出と講師レビュー
 
-標準環境はVS Code＋ローカルファイルです。Git/GitHubアカウント、コミット、PR、CIは不要です。DAY 01〜15で同じ手順を繰り返します。完成条件は[15日分のチェックシート](../student/assignment-checks.md)、評価は[ルーブリック](../docs/rubric.md)を使います。
+標準環境はVS Code＋ローカルファイルです。Git/GitHubアカウント、コミット、PR、CIは不要です。各DAYの正本を先に確認し、共通形式を使う回では以下の手順を繰り返します。完成条件は[15日分のチェックシート](../student/assignment-checks.md)、評価は[ルーブリック](../docs/rubric.md)を使います。
 
 > **DAY 4の標準ZIP提出は例外です。** [DAY 4正本の作業・提出手順](../docs/workbook/day-04.md#day-4-actions)を使います。独立した開始ZIPを使うため、このページの継続サイト・WORKLOG・格納位置の手順には進みません。提出内容・記録・保存先はDAY 4正本を参照してください。任意の学生PR採点は別経路で、DAY 4の標準ZIPがCIで採点されるわけではありません。
 
@@ -56,14 +56,14 @@
 
 ## 全15回の確認対象
 
-下表はZIPに添える証拠の案内です。詳しい完成条件と必要な画面は[課題の完成条件](../student/assignment-checks.md)で確認します。全回にWORKLOG、before／after、changes.md、画面を付けます。
+下表はZIPに添える証拠の案内です。詳しい完成条件と必要な画面は[課題の完成条件](../student/assignment-checks.md)で確認します。共通形式を使う回にはWORKLOG、before／after、changes.md、画面を付けます。DAY 4の標準ZIPは[正本の提出欄](../docs/workbook/day-04.md#day-4-submission)を参照し、以下の共通形式を適用しません。
 
 | DAY | 対象ソース | その回の主な証拠・公開記録 |
 |---:|---|---|
 | 01 | starter-site | DevTools、375px、開始・変更後ID、ソースとstagingの復元、受領返信 |
 | 02 | starter-site | 検索結果、対象／対象外、メタ情報、確認依頼 |
 | 03 | starter-site | 3ページのボタン、CSS競合、返信 |
-| 04 | starter-site | 領域分解図、見出し一覧、HTML比較 |
+| 04 | [DAY 4正本を参照](../docs/workbook/day-04.md#day-4-submission) | 標準ZIPは共通形式の対象外 |
 | 05 | starter-site | 3ページ、Tab順、200%拡大 |
 | 06 | starter-site | 1件・4件・7件、スマホ画面、レイアウトの理由 |
 | 07 | starter-site | 架空データの入力、Tab順、実送信しない旨 |
@@ -79,11 +79,11 @@
 ## 講師レビューと再提出
 
 1. 講師は元ZIPを提出番号／DAY／版ごとに保持し、作業用コピーへ展開する。学生提出のプログラムやスクリプトは実行せず、HTML・CSS・画像と記録を確認する。
-2. WORKLOGの8項目、画面、証拠、before／afterがそろうかを確認する。作業前は初回配布物または前回の受領版と照合し、changes.mdに書かれていない変更も比較する。
+2. DAY 4の標準ZIPは[正本の提出欄](../docs/workbook/day-04.md#day-4-submission)に沿って確認する。それ以外の共通形式ではWORKLOGの8項目、画面、証拠、before／afterがそろうかを確認する。作業前は初回配布物または前回の受領版と照合し、作業記録に書かれていない変更も比較する。
 3. [完成条件](../student/assignment-checks.md)の各項目を同じ順序で確認する。ZIPを自分の環境で表示し、幅・200%拡大・Tab・画像・リンクなど人が判断する項目も確認する。模擬公開と復元は記録・ファイルを照合し、必要なら授業内で学生に再現してもらう。
 4. 学校の非公開評価記録に、下の形式でレビューを残して返す。CI欄は `NOT APPLICABLE（ZIP提出）`。それによって課題の完成条件を省略しない。
-5. 学生は指摘をevidenceの対応表に写し、修正、再確認する。修正版はr2、r3と版を増やし、新しい作業後IDで保存する。元の開始時点beforeと以前のZIPは保持する。
-6. 同じDAYの新しいZIPを再提出し、WORKLOGへ前版名・指摘・変更・再確認を追記する。講師は指摘と修正を対応させ、最終のレビュー結果を返す。
+5. 学生は指摘をその回の作業記録に写し、修正、再確認する（共通形式はevidenceの対応表、DAY 4の標準ZIPはsubmission.md）。修正版はr2、r3と版を増やし、新しい作業後IDで保存する。元の開始時点beforeと以前のZIPは保持する。
+6. 同じDAYの新しいZIPを再提出し、その回の作業記録（DAY 4の標準ZIPはsubmission.md、共通形式はWORKLOG）へ前版名・指摘・変更・再確認を追記する。講師は指摘と修正を対応させ、最終のレビュー結果を返す。
 
 | レビュー記録の項目 | 記録する内容 |
 |---|---|

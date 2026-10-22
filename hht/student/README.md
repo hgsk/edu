@@ -19,7 +19,7 @@ DAY 1は、[ワークブックのDAY 1](../docs/workbook/day-01.md#day-1)を上�
 
 ## 全15回の提出とレビュー
 
-標準は[ZIP提出](../submissions/local-submission.md)。Git/GitHubアカウントもPRも不要です。毎回、作業前後のソース、WORKLOG、画面と証拠を残し、講師の指摘を直して再提出します。[提出方法](../submissions/README.md)で任意のPR提出も選べます。完成条件と評価基準は共通です。
+標準は[ZIP提出](../submissions/local-submission.md)。Git/GitHubアカウントもPRも不要です。各DAY正本の提出欄を確認して、作業前後のソース、作業記録、画面と証拠を残し、講師の指摘を直して再提出します。**DAY 4の標準ZIPは[DAY 4正本の提出手順](../docs/workbook/day-04.md#day-4-submission)を使い、共通のWORKLOGは不要です。**[提出方法](../submissions/README.md)で任意のPR提出も選べます。完成条件と評価基準は共通です。
 
 ## 15日分のお仕事
 

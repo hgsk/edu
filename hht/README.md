@@ -10,7 +10,7 @@
 - **講師:** [講師向け入口](./instructor/README.md)から今日の授業パックを開く。
 - **初めてCodespacesを使う人:** [はじめてツアー](./tour/README.md)から始める。
 
-標準環境は**VS Code＋ローカルファイル**です。Git/GitHubなしで全15回の提出と講師レビューを受けられます。自分用の教材コピーを使い、毎回**VS Codeでリポジトリのルート**に相当する教材フォルダーを開きます。依頼を読む → 計画する → 編集する → 確認する → 報告する、の順に進めます。Git/GitHub・[Codespaces](https://codespaces.new/hgsk/edu)は任意です。
+標準環境は**VS Code＋ローカルファイル**です。全15回をGitHubのPRで提出し、CIと講師レビューを確認します。自分用の教材コピーを使い、毎回**VS Codeでリポジトリのルート**に相当する教材フォルダーを開きます。依頼を読む → 計画する → 編集する → 確認する → 報告する、の順に進めます。Git/GitHubを提出に使い、[Codespaces](https://codespaces.new/hgsk/edu)の利用は任意です。
 
 ## 資料を探す
 

@@ -288,29 +288,26 @@ for match in re.finditer(r"\]\((\./[^)]+)\)", readme):
     relative = match.group(1)
     require((ROOT / relative).exists(), f"Broken README link: {relative}")
 
-# Keep the local submission route usable for all fifteen lessons.
+# All fifteen lessons use PR submissions; ZIP is only a practice-data format.
 submissions = (ROOT / "submissions/README.md").read_text(encoding="utf-8")
 local_submission_path = ROOT / "submissions/local-submission.md"
 local_submission = local_submission_path.read_text(encoding="utf-8")
-local_days = [int(value) for value in re.findall(r"^\| (\d{2}) \|", local_submission, re.MULTILINE)]
-require(local_days == list(range(1, 16)), "ZIP submission must cover DAY 01-15 exactly once in order")
 for field in ("依頼", "質問", "変更した場所", "変更しなかった場所", "確認したこと", "未確認", "バージョン", "確認URL"):
     require(field in submissions, f"Submission instructions missing WORKLOG field: {field}")
-for term in ("before/starter-site", "before/portfolio", "after/starter-site", "after/portfolio",
-             "WORKLOG.md", "screenshots", "evidence", "changes.md", "受領", "再提出", "NOT APPLICABLE（ZIP提出）"):
-    require(term in local_submission, f"ZIP route missing source/evidence/review requirement: {term}")
+for term in ("WORKLOG.md", "screenshots", "evidence", "Files changed", "再提出"):
+    require(term in submissions, f"PR route missing source/evidence/review requirement: {term}")
+require("## PRで提出してCI判定を受ける" in submissions, "PR must be the submission route")
+require("ZIP提出は廃止" in local_submission, "Old ZIP page must redirect to PR submission")
 for name, document in {"student portal": student_portal, "workbook": workbook,
-                       "submissions": submissions, "instructor portal": instructor_portal}.items():
-    require("local-submission.md" in document, f"{name} must link to the non-Git route")
-require("## 標準のZIPで提出する" in submissions, "ZIP must be the standard submission route")
-require("## 任意のPRで提出してCI判定を受ける" in submissions, "PR submission must remain optional")
+                       "instructor portal": instructor_portal}.items():
+    require("submissions/README.md" in document, f"{name} must link to PR submission instructions")
 rubric = (ROOT / "docs/rubric.md").read_text(encoding="utf-8")
 require("加点・減点はしません" in rubric and "授業の合否を意味しません" in rubric,
         "Rubric must separate submission tools/CI from course grading")
 decision_text = (ROOT / "ISSUES.md").read_text(encoding="utf-8")
 issue_02 = decision_text.split("## ISSUE-02 ", 1)[1].split("## ISSUE-03 ", 1)[0]
-require("- 選択: A" in issue_02 and "Gitは必須から除外" in issue_02,
-        "ISSUE-02 local-file policy must remain explicit")
+require("- 選択: B" in issue_02 and "PR提出" in issue_02,
+        "ISSUE-02 PR submission policy must remain explicit")
 
 submission_documents = [ROOT.parent / "README.md", ROOT / "README.md", ROOT / "ISSUES.md",
                         ROOT / "GitHub.md", ROOT / "student/README.md", ROOT / "instructor/README.md",

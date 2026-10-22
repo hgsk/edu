@@ -32,14 +32,13 @@ ISSUE-10: 自由記述
 ## ISSUE-02 コーディング環境
 
 - 状態: DONE
-- 判断理由: セットアップ手順と公開方法に影響します。
+- 判断理由: セットアップ手順と提出方法に影響します。
 - A: Visual Studio Code + ローカルファイル
 - B: Visual Studio Code + Git/GitHub
 - C: ブラウザ完結型エディター
-- 暫定: B。ただし第1〜5回はGitなしでも進行可能
-- 選択: A
-- 反映: Visual Studio Codeとローカルファイルを必須環境とし、Gitは必須から除外
-- 整合確認（2026-10-07）: 後続履歴にこの選択を必須Gitへ上書きする明示的決定は確認できない。[履歴照合記録](./docs/submission-policy-history.md)を参照。全15回で[ZIP提出・講師レビュー](./submissions/local-submission.md)を標準経路として使用し、PR＋CI／Codespacesは任意とする。完成条件と評価基準は共通。
+- 暫定: B
+- 選択: B
+- 反映（2026-10-22）: ユーザーの「Zip提出は廃止だよ」という訂正に基づき、全15回を[PR提出・CI・講師レビュー](./submissions/README.md)に統一。以前のGit非必須・ZIP標準・任意PRの案内を置き換える。Codespacesは任意。開始データのZIPは練習素材として残す。
 
 ## ISSUE-03 公開演習の方式
 

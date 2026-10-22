@@ -1,52 +1,37 @@
 # 提出フォルダーの使い方
 
-標準は**VS Code＋ローカルファイル**です。Git/GitHubなしでも全15回の提出と講師レビューを受けられます。各DAY正本の提出欄を先に確認してください。次のフォルダーは共通形式を使う回と任意PR用です。DAY 4の標準ZIPは[DAY 4正本](../docs/workbook/day-04.md#day-4-submission)の形式で作ります。Gitを使う人は自分のブランチで作業します。
-
-共通形式でGitを使わない場合は、本人の継続サイト一式とその回の作業記録・証拠をZIPで提出できます。DAY 3・4は各回の提出メモ、DAY 5以降は下のWORKLOGと確認資料を使います。開始時点のバックアップを残し、提出ZIPを展開してHTML・CSS・画像・リンクを確認します。ブランチやコミットはZIP提出の必須条件ではありません。
-
-```text
-hht/submissions/
-└─ day-01/
-   ├─ WORKLOG.md
-   ├─ screenshots/
-   └─ evidence/
-```
-
-> **DAY 4の標準ZIP提出は例外です。** [DAY 4正本の作業・提出手順](../docs/workbook/day-04.md#day-4-actions)を使います。独立した開始ZIPを使うため、このページの継続サイト・WORKLOG・格納位置の手順には進みません。提出内容・記録・保存先はDAY 4正本を参照してください。任意の学生PR採点は別経路で、DAY 4の標準ZIPがCIで採点されるわけではありません。
+全15回とも**GitHubのPRで提出**します。ZIP・USB・LMSへのファイル提出は使いません。開始データのZIPは練習素材です。VS CodeまたはCodespacesで本人の作業ブランチを開き、共有のmainを直接編集しません。
 
 ## 必ず提出するもの
 
-以下は共通形式の要件です。DAY 4の標準ZIPには適用せず、[DAY 4正本の提出欄](../docs/workbook/day-04.md#day-4-submission)を参照します。
-
-- `WORKLOG.md`: 依頼、質問、変更、対象外、確認、未確認、URL、バージョン
-- `screenshots/`: 指定された画面幅や操作結果。**実画像を1枚以上**入れる
-- `evidence/`: 比較表、校正表、確認メール案、復元記録など。**1ファイル以上**入れる
-
-HTML・CSS本体は`hht/starter-site`または`hht/portfolio`を直接更新します。PR提出では本体を提出フォルダーへ重複コピーしません。ZIP提出では、講師が表示・比較できるよう作業前後のソースをbefore／afterへ同梱します。講師はソースの比較またはコミット差分とWORKLOGを対応させて確認します。
-
-WORKLOGの必須8項目は「依頼／質問／変更した場所／変更しなかった場所／確認したこと／未確認／バージョン／確認URL」です。[完成条件の書式](../student/assignment-checks.md)を使い、空欄にせず自分の結果を書きます。バージョンは日時付き保存フォルダー名でも構いません。
-
-ファイル名に氏名、メールアドレス、パスワード、接続先を入れません。
-
-## 標準のZIPで提出する
-
-DAY 4は[正本の提出手順](../docs/workbook/day-04.md#day-4-submission)に従います。それ以外は[全15回のZIP提出と講師レビュー](./local-submission.md)と各DAY正本を確認します。共通形式では、作業前後のソース、上記の記録、各DAYの証拠をZIPにし、学校の回収先へ提出します。回収先の配布がない場合は授業内でUSBから講師が回収し、受領を確認します。講師が完成条件を確認し、指摘を返し、版を増やして再提出します。
-
-## 任意のPRで提出してCI判定を受ける
-
-DAY 4でこの経路を選ぶ場合は、まず[DAY 4正本のPR案内](../docs/workbook/day-04.md#day-4-pr)を読みます。標準ZIPをそのままコミットする経路ではありません。
-
-1回のPRには**1日分だけ**を入れます。たとえばDAY 1なら、少なくとも次を含めます。
+各DAYの完成条件は[学生ワークブック](../docs/student-workbook.md)の該当DAYが正本です。作業記録と証拠は次の場所へ保存します。
 
 ```text
-hht/submissions/day-01/WORKLOG.md
-hht/submissions/day-01/screenshots/<確認画面>.png
-hht/submissions/day-01/evidence/<確認記録>.md
+hht/submissions/day-01/
+├─ WORKLOG.md
+├─ screenshots/
+└─ evidence/
 ```
 
-加えて、その日の課題で変更した`hht/starter-site`、`hht/portfolio`、必要な模擬公開ファイルをコミットします。
+DAY 01〜15に合わせてday-01を変えます。DAY 4もWORKLOGが必要です。
 
-PRを`main`向けに作成すると、`Student Assignment / Grade student submission`が実行されます。判定結果はGitHub ActionsのJob Summaryに、各チェックの**PASS / FAIL**として表示されます。
+- `WORKLOG.md`: 必須8項目「依頼／質問／変更した場所／変更しなかった場所／確認したこと／未確認／バージョン／確認URL」を自分の結果で埋める。質問・未確認がないときも理由を書く。
+- `screenshots/`: 実際の確認画面を1枚以上。各DAYで指定された画面を省略しない。
+- `evidence/`: 各DAYで指定された図、比較記録、返信案、復元記録などを1ファイル以上。
+
+HTML・CSS本体は`hht/starter-site`または`hht/portfolio`を直接更新します。提出フォルダーへサイト一式を複製せず、変更前後はPRのFiles changedで比較します。バージョンには実在する開始・変更後のコミットを記録し、確認URLには確認時刻と表示対象パスも添えます。認証情報・個人情報はコミットしません。
+
+<a id="任意のprで提出してci判定を受ける"></a>
+
+## PRで提出してCI判定を受ける
+
+旧リンクから来た場合も、PRは全員の提出経路です。
+
+1. 本人のリポジトリまたは作業ブランチで、1回のPRに**1日分だけ**の変更をまとめます。Git/GitHubの基本操作は[VS Codeハンズオン](../docs/vscode-hands-on.md)を参照します。
+2. 課題対象のソース、該当DAYのWORKLOG、screenshots、evidenceを保存し、変更対象を確認してコミット・pushします。教材・CI・採点コードは学生の課題対象ではありません。
+3. `main`向けにPRを作成します。DAYと変更内容をタイトルへ書き、PR本文に確認結果・未確認事項を記載します。DAY 4は[正本の提出手順](../docs/workbook/day-04.md#day-4-submission)を確認します。
+4. `Student Assignment / Grade student submission`のJob Summaryを開き、各チェックのPASS / FAILを確認します。
+5. FAILの項目と講師の指摘を修正し、WORKLOGへ対応と再確認結果を追記して、**同じPR**へ追加コミット・pushして再提出します。講師の指示があるまでmergeしません。
 
 ### CIが確認すること
 
@@ -67,4 +52,4 @@ CIがFAILになったら、Job Summaryで赤い項目だけを直し、同じPR�
 
 ## 完成条件・レビュー・成績
 
-提出経路が変わっても各DAYの完成条件と必要な証拠は共通です。CIのFAILは修正箇所を示す機械検査で、授業の不合格ではありません。PASSも講師レビューや公開承認の代用にはなりません。成績は[評価ルーブリック](../docs/rubric.md)の参加ルート／制作ルートに従います。Git/GitHubの利用やCIの有無では加点・減点しません。
+各DAY正本の完成条件と必要な証拠を確認します。CIのFAILは修正箇所を示す機械検査で、授業の不合格ではありません。PASSも講師レビューや公開承認の代用にはなりません。成績は[評価ルーブリック](../docs/rubric.md)の参加ルート／制作ルートに従います。コミット数やCIの実行回数では加点・減点しません。

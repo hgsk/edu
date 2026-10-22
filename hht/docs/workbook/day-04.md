@@ -448,32 +448,24 @@ mainはこのページの中心、sectionはその中の話題です。mainを3�
 
 ### 提出：ワイヤーフレーム＋修正HTML＋構造の変更報告
 
-標準ZIPで提出する人は、ここから完了まで進めます。任意PRを選ぶ人は、上の制作・確認後に[PR提出の案内](#day-4-pr)へ進みます。共通の継続サイト用手順へ移る必要はありません。`WORKLOG.md`の代わりに、この回の提出メモを使います。
+DAY 4も[共通のPR提出手順](../../submissions/README.md#prで提出してci判定を受ける)を使います。ZIP提出は行いません。上のbefore／afterは練習と比較のために手元に残します。
 
-1. `after/about.html`を保存（Windowsは`Ctrl+S`、Macは`Cmd+S`）し、ブラウザで再読み込み（`Ctrl+R`／`Cmd+R`）します。画面を`screenshots/after.png`へ保存します。
-2. VS Codeの左側の一覧で`before/about.html`を右クリック→「比較対象として選択」（Select for Compare）、続いて`after/about.html`を右クリック→「選択項目と比較」（Compare with Selected）を押します。左右のパスを確認し、行の移動・タグ・見出し・項目名以外で本文が変わっていないか見ます。差分の実画面を`screenshots/html-diff.png`へ保存します。Gitは不要です。
+1. `after/about.html`を保存してブラウザで再読み込みし、結果の実画面を撮ります。
+2. VS Codeで`before/about.html`を右クリック→「比較対象として選択」、`after/about.html`を右クリック→「選択項目と比較」を選びます。左右のパスを確認し、行の移動・タグ・見出し・項目名以外で本文が変わっていないか調べます。
 
-   ![Windowsの実際のVS Codeで変更前後のabout.htmlを比較した画面。左が変更前、右が変更後で、時間・場所・紹介の順に構造を変更している](../../assets/day4-rehearsal/vscode-diff.png)
+   ![Windowsの実際のVS Codeで変更前後のabout.htmlを比較した画面。左が変更前、右が変更後](../../assets/day4-rehearsal/vscode-diff.png)
 
-   比較表示の例です。赤・緑は削除・追加を示し、移動した本文も差分として出ます。左右のファイル名と本文を合わせて確認します。
-3. 同じ方法で`index.html`、`menu.html`、`css/style.css`もbeforeとafterを比較し、差分がないことを確かめます。`about.html`の`href`の値とheader・footerも変わっていないか確認します。移動した行は赤と緑の両方に出るので、色だけで誤変更と判断しません。
-4. [提出メモ](../../lessons/04/submission.md)を開き、本文をコピーします。VS Codeの「ファイル」→「新しいテキストファイル」に貼り付け、「名前を付けて保存」で作業用フォルダー直下の`submission.md`にします。教材原本は編集しません。空欄を自分の結果で埋め、**見出し一覧・比較したファイル・確認結果・未確認事項**を書きます。佐藤さんへの変更報告は「何を先にしたか」「誰が何を探しやすくなったか」「本文を変えていないことをどう確かめたか」を各1文で書きます。
-5. 自分で描いたワイヤーフレームを`wireframe.png`として同じ作業用フォルダーへ保存します。紙なら撮影します。メモアプリなら画像として保存するか実画面を撮ります。教材の図を自分の設計図として提出しません。
-6. 下の完成条件を確認し、`day4-s001`内に`before`、`after`、`screenshots`、`wireframe.png`、`submission.md`があるか確認します。before／afterのどちらにも3つのHTMLと`css/style.css`を含めます。教材一式・講師用回答・認証情報は入れません。
-7. VS Codeで全ファイルを保存し、エクスプローラー／Finderで作業用フォルダーを右クリックします。Windowsは「ZIPファイルに圧縮」（Windows 10は「送る」→「圧縮（zip形式）フォルダー」）、Macは「圧縮」を選びます。作成したZIPを`day4-s001-r1.zip`にします。拡張子を表示し、`.zip.zip`になっていないか確認します。
-8. ZIPを**別の確認用フォルダー**へ展開します。その中の`after/about.html`をブラウザで開き、営業時間→アクセス→店舗紹介の順、CSSの表示、ホーム・メニュー・店舗案内への移動を確認します。提出メモと図と3枚の画面も開けるか確認し、結果を作業用の`submission.md`へ記録します。記録を更新したらZIPを作り直し、最終ZIPを再展開してその記録も含まれたか確かめます。
-9. 学校から案内された回収先へ最終ZIPを提出します。案内がない場合はUSBへコピーし、授業内で講師へ渡します。ZIP名・提出日時・受領結果を手元に残します。再提出は`r2`にして、`before`と前版のZIPを残します。
+   これは練習用before／afterの比較画面です。PR作成や提出完了の画面ではありません。
+3. `index.html`、`menu.html`、`css/style.css`も比較し、差分がないことを確認します。`about.html`のリンク先とheader・footerも照合します。
+4. 開始ZIPから作った構造変更を、本人の作業ブランチの`hht/starter-site/about.html`へ反映します。以前の本文・画像は保持し、他のページやCSSを開始ZIPで上書きしません。
+5. `hht/submissions/day-04/WORKLOG.md`を作り、共通の8項目を自分の結果で埋めます。変更報告・見出し一覧・比較結果・未確認事項も記録します。[提出メモ](../../lessons/04/submission.md)は記録内容の補助です。メモだけでWORKLOGを省略しません。
+6. 自分で描いたワイヤーフレームと比較記録を`hht/submissions/day-04/evidence/`へ、開始画面・結果画面・HTML差分の実画像を同じDAYの`screenshots/`へ保存します。教材の図を自分の設計図として提出しません。
+7. ソースと記録を保存し、Gitの変更一覧で課題対象だけが含まれることを確認してコミット・pushします。練習用のbefore／after一式やZIPはコミットしません。
+8. `main`向けのPRを作り、Files changedで本文・対象外ファイルの保持と証拠を確認します。CIのJob Summaryと講師レビューを読み、修正は同じPRへの追加コミットで提出します。教材保守PRのStudent Assignment SUCCESSは学生課題の合格を意味しません。
 
 <a id="day-4-pr"></a>
 
-#### 任意：ZIPの代わりに学生PRで提出する場合
-
-標準は上のZIP提出です。Git/GitHubを使う人だけ、[共通のPR提出手順](../../submissions/README.md#任意のprで提出してci判定を受ける)へ進みます。学習内容と完成条件は変わりません。
-
-- 開始ZIPから作った`after/about.html`の構造変更を、本人の`hht/starter-site/about.html`へ反映します。以前の本文・画像を保持し、他のページやCSSを開始ZIPで上書きしません。
-- `hht/submissions/day-04/WORKLOG.md`に共通の8項目を記入します。標準ZIPの`submission.md`だけではCIはDAYを判定できません。変更報告・見出し一覧・比較結果・未確認事項も記録します。
-- 自分のワイヤーフレームと比較記録を`hht/submissions/day-04/evidence/`、開始・結果・差分の実画像を同じDAYの`screenshots/`に入れます。標準ZIPそのものはコミットしません。
-- 学生PRのCI結果と講師レビューを確認します。教材保守PRのStudent Assignment SUCCESSは、学生課題の合格を意味しません。
+**PRの操作で困ったら：** [共通提出手順](../../submissions/README.md#prで提出してci判定を受ける)と[VS Codeハンズオン](../vscode-hands-on.md)を参照します。接続・認証で止まった場合は表示されたエラーを講師へ伝え、架空のPR URLや成功結果を記録しません。
 
 ### 用語のヒント（必要なときだけ）
 
@@ -506,7 +498,7 @@ mainはこのページの中心、sectionはその中の話題です。mainを3�
 
 **完成物:** ワイヤーフレーム、セマンティックHTML、構造変更の報告
 
-**提出:** 標準は上の提出手順で作るZIP。変更前後のサイト一式（`before`／`after`）、自分のワイヤーフレーム、記入済み`submission.md`、開始画面・結果画面・HTML差分の実画像を含めます。Git必須ではありません。任意PRは[PR提出の案内](#day-4-pr)に従います。
+**提出:** `hht/starter-site/about.html`の構造変更と、`hht/submissions/day-04/`のWORKLOG・自分のワイヤーフレーム・比較記録・開始／結果／HTML差分の実画像を含むPR。ZIPにはまとめません。
 
 **完成条件:**
 
@@ -516,7 +508,7 @@ mainはこのページの中心、sectionはその中の話題です。mainを3�
 - 依頼されていない文章内容を変更していない
 - 本文の言葉・値は保持し、見出しと項目名の追加・変更だけを許可範囲で行っている
 
-**証拠:** ワイヤーフレーム、提出メモ内の見出し一覧・比較結果、HTML差分画面とbefore／afterのソース。ほかの2ページ・CSS・リンク先は保持し、最終ZIPの再展開確認結果も記録します。
+**証拠:** ワイヤーフレーム、提出メモ内の見出し一覧・比較結果、HTML差分画面とbefore／afterのソース。ほかの2ページ・CSS・リンク先は保持し、PRの差分とCI・講師レビューの結果も記録します。
 
 **追加チャレンジ:** CSSを無効にしても、内容を自然な順番で読めるか試そう。
 

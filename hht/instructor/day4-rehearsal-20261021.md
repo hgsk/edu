@@ -1,3 +1,5 @@
+> **現行方針の訂正（2026-10-22）:** ZIP提出は廃止。以下のZIP提出リハーサルとWORKLOG例外は過去の検証記録です。学生の提出指示には使わず、[DAY 4正本](../docs/workbook/day-04.md#day-4-submission)に従ってPR・WORKLOGで提出します。OS圧縮画面は現在の提出手順から削除しました。開始ZIPの保存・展開など現行の準備画面に関するP1の未確認範囲は残ります。
+
 # DAY 4 実習の再現検証（2026-10-21）
 
 対象はPR #18マージ後のmain `1d8f0f3`。修正PRは[#20](https://github.com/hgsk/edu/pull/20)。DAY別分割やPR #15の説明増量は再実装していません。条件の正本は[DAY 4](../docs/workbook/day-04.md)、本書は検証記録です。

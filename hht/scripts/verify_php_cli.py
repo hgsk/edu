@@ -1,13 +1,14 @@
-"""Official PHP CLI checks. Fail closed when the local engine or patched image is unavailable."""
+"""Verify official PHP CLI with wslc (Windows student) or native Docker (Linux CI)."""
 
-from pathlib import Path
 import argparse
-import os
+from datetime import datetime, timezone
+import json
+from pathlib import Path
+import re
 import shutil
-import subprocess
-import sys
 import tempfile
-import uuid
+
+from php_container_runtime import Blocked, ContainerRuntime, SECURITY_PROBE, check_process_security
 
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -16,65 +17,50 @@ IMAGE = (EXERCISE / "image.txt").read_text(encoding="utf-8").strip()
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Use a native Linux Docker Engine or rootless Podman; run inside WSL on Windows")
-    parser.add_argument("--runtime", choices=["docker", "podman"], default="docker")
-    runtime = parser.parse_args().runtime
-    if sys.platform != "linux":
-        raise SystemExit("BLOCKED: run this checker inside WSL/Linux with a native container runtime, not Windows/Desktop CLI")
-    executable = shutil.which(runtime)
-    if executable is None:
-        raise SystemExit(f"BLOCKED: native {runtime} is not installed; do not install or change permissions without approval")
-    resolved = str(Path(executable).resolve())
-    if resolved.startswith(("/mnt/c/", "/mnt/wsl/docker-desktop/", "/mnt/wsl/rancher-desktop/")):
-        raise SystemExit(f"BLOCKED: {runtime} resolves to a Desktop-provided CLI, not the selected native Linux runtime")
-    engine = [executable, "--host", "unix:///var/run/docker.sock"] if runtime == "docker" else [executable, "--remote=false"]
-    if IMAGE != "docker.io/library/php:8.4.27-cli-bookworm":
-        raise SystemExit("Review and verify the patched image/version before changing this pin")
-    try:
-        subprocess.run([*engine, "info"], check=True, timeout=20)
-        subprocess.run([*engine, "pull", IMAGE], check=True, timeout=180)
-    except (OSError, subprocess.SubprocessError) as error:
-        raise SystemExit(f"BLOCKED: native runtime or patched official image unavailable: {error}")
-
+    parser = argparse.ArgumentParser(description="wslc student runtime; fail closed on missing isolation features")
+    parser.add_argument("--runtime", choices=["wslc", "docker"], default="wslc")
+    parser.add_argument("--check-runtime", action="store_true", help="Read version/help only; never pull/start containers")
+    args = parser.parse_args()
+    if not re.fullmatch(r"docker\.io/library/php:8\.4\.27-cli-bookworm@sha256:[0-9a-f]{64}", IMAGE):
+        raise SystemExit("Review and pin the patched official PHP 8.4.27 image by digest")
     result_dir = ROOT.parent / "test-results/php-cli"
     result_dir.mkdir(parents=True, exist_ok=True)
+    runtime = ContainerRuntime(args.runtime)
+    try:
+        runtime.probe()
+    except Blocked as error:
+        runtime.report["blocker"] = str(error)
+    runtime.report["checked_at_utc"] = datetime.now(timezone.utc).isoformat()
+    (result_dir / "runtime-report.json").write_bytes((json.dumps(runtime.report, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+    print(json.dumps(runtime.report, ensure_ascii=False, indent=2))
+    if not runtime.report["ready"]:
+        raise SystemExit("BLOCKED: " + runtime.report["blocker"])
+    if args.check_runtime:
+        return
+    runtime.pull(IMAGE)
+    digests = runtime.image_digests(IMAGE)
+    locked_digest = IMAGE.split("@", 1)[1]
+    if not any(digest.endswith("@" + locked_digest) for digest in digests):
+        raise Blocked("Pulled image RepoDigests do not match the locked official digest")
+    print("IMAGE: " + IMAGE)
+    print("RepoDigests: " + json.dumps(digests))
 
     def run(work, *command, expected=0):
-        name = "hht-php-" + uuid.uuid4().hex
-        args = [*engine, "run", "--rm", "--name", name, "--network", "none",
-                "--cap-drop", "ALL", "--security-opt", "no-new-privileges",
-                "--mount", f"type=bind,source={work},target=/work", "--workdir", "/work"]
-        if os.name != "nt":
-            args.extend(["--user", f"{os.getuid()}:{os.getgid()}"])
-        if runtime == "podman":
-            args.append("--userns=keep-id")
-        args.extend([IMAGE, *command])
-        try:
-            result = subprocess.run(args, capture_output=True, timeout=45)
-            print(result.stdout.decode("utf-8", errors="replace"), end="")
-            if result.stderr:
-                print(result.stderr.decode("utf-8", errors="replace"), end="")
-            if result.returncode != expected:
-                raise RuntimeError(f"Container command exit {result.returncode}, expected {expected}")
-            return result.stdout
-        finally:
-            # --rm handles normal exits. Clean up only this unique test container after interruption.
-            exists = subprocess.run([*engine, "container", "inspect", name], capture_output=True, timeout=10)
-            if exists.returncode == 0:
-                subprocess.run([*engine, "rm", "--force", name], check=True, capture_output=True, timeout=15)
-                if subprocess.run([*engine, "container", "inspect", name], capture_output=True, timeout=10).returncode == 0:
-                    raise RuntimeError(f"Container cleanup failed: {name}")
-            print(f"Container {name}: absent; cleanup PASS")
+        output = runtime.run(work, IMAGE, *command, expected=expected)
+        print(output.decode("utf-8"), end="")
+        return output
 
-    subprocess.run([*engine, "image", "inspect", IMAGE, "--format", "{{json .RepoDigests}}"], check=True, timeout=15)
     with tempfile.TemporaryDirectory(dir=result_dir) as directory:
         work = Path(directory)
-        solution = work / "solution"
-        starter = work / "starter"
+        solution, starter = work / "solution", work / "starter"
         for target in (solution, starter):
             shutil.copytree(EXERCISE / "starter", target, ignore=shutil.ignore_patterns("output"))
         shutil.copytree(EXERCISE / "instructor/solution", solution, dirs_exist_ok=True)
         shutil.copytree(EXERCISE / "tests", work / "tests")
+        security = runtime.run(work, IMAGE, "php", "-r", SECURITY_PROBE)
+        check_process_security(security)
+        (result_dir / "process-security.json").write_bytes(security)
+        print("PROCESS SECURITY: non-root, CapEff=0, CapBnd=0, NoNewPrivs=1, loopback only: PASS")
         version = run(work, "php", "-r", "echo PHP_VERSION;")
         if version != b"8.4.27":
             raise RuntimeError(f"Expected pinned PHP 8.4.27, got {version!r}")
@@ -88,11 +74,14 @@ def main():
         saved = (solution / "output/index.html").read_bytes()
         stdout = run(work, "php", "/work/solution/build.php", "--stdout")
         if saved != stdout or saved.startswith((b"\xff\xfe", b"\xef\xbb\xbf")):
-            raise RuntimeError("UTF-8 file bytes and Docker stdout differ")
+            raise RuntimeError("UTF-8 file bytes and container stdout differ")
         saved.decode("utf-8")
         (result_dir / "index.html").write_bytes(saved)
     print("PHP CLI EXERCISE: PASS")
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Blocked as error:
+        raise SystemExit("BLOCKED: " + str(error)) from error

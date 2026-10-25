@@ -1,0 +1,80 @@
+{
+  "checked_at_utc": "2026-10-25T03:35:35.719252+00:00",
+  "image": "docker.io/library/php:8.4.27-cli-bookworm",
+  "digest": "sha256:496b5e02fe9fe44fcfb715023b931048111dc4e0bc719789d83c906be9f04b05",
+  "media_type": "application/vnd.oci.image.index.v1+json",
+  "platforms": [
+    {
+      "platform": {
+        "architecture": "amd64",
+        "os": "linux"
+      },
+      "digest": "sha256:a2d10c137d6ec9a41331e8e03e9d5468c85bfa8b1971436ffb2ad4f19d890e27"
+    },
+    {
+      "platform": {
+        "architecture": "unknown",
+        "os": "unknown"
+      },
+      "digest": "sha256:6daf9ab22a1ef277397982212a3d3c8270021410fe24ce4d436cab92f185c391"
+    },
+    {
+      "platform": {
+        "architecture": "arm",
+        "os": "linux",
+        "variant": "v7"
+      },
+      "digest": "sha256:0cfa9c10e5054678a2e4018a5bea4c44bd9937e7269dd25cc0ff8e9736448c97"
+    },
+    {
+      "platform": {
+        "architecture": "unknown",
+        "os": "unknown"
+      },
+      "digest": "sha256:24461580de672dd4cbba27d75097055c0f196b5b756c013aaa52c601de1e14c5"
+    },
+    {
+      "platform": {
+        "architecture": "arm64",
+        "os": "linux",
+        "variant": "v8"
+      },
+      "digest": "sha256:30af9613e4528b1c6cde04b966483766e80805d9218117b4e1ef9091d5632412"
+    },
+    {
+      "platform": {
+        "architecture": "unknown",
+        "os": "unknown"
+      },
+      "digest": "sha256:9aaf1bf213cb50d2eee5fc146c081002de551769791adc3b3663b892f2cce3b8"
+    },
+    {
+      "platform": {
+        "architecture": "386",
+        "os": "linux"
+      },
+      "digest": "sha256:091cf7fe57d0c1f96ae39e0b85a7d0451c97b3cf92efd97d53077a9001f7f170"
+    },
+    {
+      "platform": {
+        "architecture": "unknown",
+        "os": "unknown"
+      },
+      "digest": "sha256:4e7162b388268a85c68b54b6361d50d402b64b128bf959b724dfbf00e713373c"
+    },
+    {
+      "platform": {
+        "architecture": "ppc64le",
+        "os": "linux"
+      },
+      "digest": "sha256:b1ad7c12dde0815be91bc54c692ff603db694dfe2e69e805344301a476c5ef5b"
+    },
+    {
+      "platform": {
+        "architecture": "unknown",
+        "os": "unknown"
+      },
+      "digest": "sha256:ac4e39d67c0d5b93c472dc942d3541b776b7bf4bf684e60e48d41f74363757fc"
+    }
+  ]
+}

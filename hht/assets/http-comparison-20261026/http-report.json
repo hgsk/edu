@@ -1,0 +1,355 @@
+{
+  "checked_at_utc": "2026-10-26T23:39:38.562879+00:00",
+  "runtime": "wslc",
+  "image": "docker.io/library/php:8.4.27-cli-bookworm@sha256:496b5e02fe9fe44fcfb715023b931048111dc4e0bc719789d83c906be9f04b05",
+  "requests": [
+    {
+      "url": "http://localhost:56484/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "20a6b481ebfc1db951183235dff74535321c3fb5949318fb2561b98e3f1aaad7",
+      "bytes": 827
+    },
+    {
+      "url": "http://localhost:56484/style.css",
+      "status": 200,
+      "content_type": "text/css; charset=UTF-8",
+      "sha256": "2a6d713325535b0dcd10b7948a28f99cb9e3ebf9922894c194b4ffdcf61c672e",
+      "bytes": 216
+    },
+    {
+      "url": "http://localhost:56485/",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "c324e075eca38bb963507d9e0b707c7fdbac4e4ef4c0058228ccb21cf97673d4",
+      "bytes": 828
+    },
+    {
+      "url": "http://localhost:56485/style.css",
+      "status": 200,
+      "content_type": "text/css",
+      "sha256": "2a6d713325535b0dcd10b7948a28f99cb9e3ebf9922894c194b4ffdcf61c672e",
+      "bytes": 216
+    },
+    {
+      "url": "http://localhost:56484/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "32b538fb40bb5033a6a2fe234762f9e2f0ab5b651f1cbef0ed0960767265e494",
+      "bytes": 827
+    },
+    {
+      "url": "http://localhost:56484/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "b6598529b96e16d15f3b221d10de347ca9ce3a0d09d15319090a2a75a083fda6",
+      "bytes": 827
+    },
+    {
+      "url": "http://localhost:56485/",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "c324e075eca38bb963507d9e0b707c7fdbac4e4ef4c0058228ccb21cf97673d4",
+      "bytes": 828
+    },
+    {
+      "url": "http://localhost:56485/",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "c324e075eca38bb963507d9e0b707c7fdbac4e4ef4c0058228ccb21cf97673d4",
+      "bytes": 828
+    },
+    {
+      "url": "http://localhost:56484/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "77d737fdc1c275de00c192f52b383d14d606e449be14277d5df32830bfda49ae",
+      "bytes": 843
+    },
+    {
+      "url": "http://localhost:56485/",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "c324e075eca38bb963507d9e0b707c7fdbac4e4ef4c0058228ccb21cf97673d4",
+      "bytes": 828
+    },
+    {
+      "url": "http://localhost:56484/style.css",
+      "status": 200,
+      "content_type": "text/css; charset=UTF-8",
+      "sha256": "e0795c38713055a35f9bb3e9e7ffde41eaf73902170012b78e5bacc5782619ee",
+      "bytes": 235
+    },
+    {
+      "url": "http://localhost:56485/style.css",
+      "status": 200,
+      "content_type": "text/css",
+      "sha256": "2a6d713325535b0dcd10b7948a28f99cb9e3ebf9922894c194b4ffdcf61c672e",
+      "bytes": 216
+    },
+    {
+      "url": "http://localhost:56485/",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "6847563d34bf6bf58aac49e507ae8b84ea1fe3384faec91faf782c8ef1fc0be3",
+      "bytes": 844
+    },
+    {
+      "url": "http://localhost:56485/style.css",
+      "status": 200,
+      "content_type": "text/css",
+      "sha256": "e0795c38713055a35f9bb3e9e7ffde41eaf73902170012b78e5bacc5782619ee",
+      "bytes": 235
+    },
+    {
+      "url": "http://localhost:56484/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "93f3ed72b2120141b62a916546d8155a12b5dc8183369eda72e533ba92ec5def",
+      "bytes": 843
+    },
+    {
+      "url": "http://localhost:56484/style.css",
+      "status": 200,
+      "content_type": "text/css; charset=UTF-8",
+      "sha256": "e0795c38713055a35f9bb3e9e7ffde41eaf73902170012b78e5bacc5782619ee",
+      "bytes": 235
+    },
+    {
+      "url": "http://localhost:56485/",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "6847563d34bf6bf58aac49e507ae8b84ea1fe3384faec91faf782c8ef1fc0be3",
+      "bytes": 844
+    },
+    {
+      "url": "http://localhost:56485/style.css",
+      "status": 200,
+      "content_type": "text/css",
+      "sha256": "e0795c38713055a35f9bb3e9e7ffde41eaf73902170012b78e5bacc5782619ee",
+      "bytes": 235
+    },
+    {
+      "url": "http://localhost:56484/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "4dcc781316aadf1f5684c38855bf88cbe906225a8ab6ad32b103dc296f287635",
+      "bytes": 844
+    },
+    {
+      "url": "http://localhost:56485/",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "aca967415262c07a50b4a0f1cbc47d0c67c9afe594316bb280b4d06c9cf2d7d3",
+      "bytes": 845
+    },
+    {
+      "url": "http://localhost:56484/",
+      "status": 200,
+      "content_type": "text/html; charset=UTF-8",
+      "sha256": "8ef64d7697ac451a2284b4a554ec47dada4b7ae55194b901a22a5a9c1a67ee3c",
+      "bytes": 844
+    },
+    {
+      "url": "http://localhost:56484/style.css",
+      "status": 200,
+      "content_type": "text/css; charset=UTF-8",
+      "sha256": "e0795c38713055a35f9bb3e9e7ffde41eaf73902170012b78e5bacc5782619ee",
+      "bytes": 235
+    },
+    {
+      "url": "http://localhost:56485/",
+      "status": 200,
+      "content_type": "text/html",
+      "sha256": "aca967415262c07a50b4a0f1cbc47d0c67c9afe594316bb280b4d06c9cf2d7d3",
+      "bytes": 845
+    },
+    {
+      "url": "http://localhost:56485/style.css",
+      "status": 200,
+      "content_type": "text/css",
+      "sha256": "e0795c38713055a35f9bb3e9e7ffde41eaf73902170012b78e5bacc5782619ee",
+      "bytes": 235
+    }
+  ],
+  "browser": [
+    {
+      "pid": 44004,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "started_epoch": 1793057990.257633,
+      "url": "http://localhost:56484/",
+      "screenshot": "php-normal.png",
+      "exit_code": 0,
+      "cleanup": "PASS: recorded process exited"
+    },
+    {
+      "pid": 40904,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "started_epoch": 1793057994.8839562,
+      "url": "http://localhost:56485/",
+      "screenshot": "static-normal.png",
+      "exit_code": 0,
+      "cleanup": "PASS: recorded process exited"
+    },
+    {
+      "pid": 33596,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "started_epoch": 1793058022.4330297,
+      "url": "http://localhost:56484/",
+      "screenshot": "php-condition.png",
+      "exit_code": 0,
+      "cleanup": "PASS: recorded process exited"
+    },
+    {
+      "pid": 52144,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "started_epoch": 1793058027.035355,
+      "url": "http://localhost:56485/",
+      "screenshot": "static-condition.png",
+      "exit_code": 0,
+      "cleanup": "PASS: recorded process exited"
+    },
+    {
+      "pid": 28884,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "started_epoch": 1793058040.3567317,
+      "url": "http://localhost:56484/",
+      "screenshot": "php-special.png",
+      "exit_code": 0,
+      "cleanup": "PASS: recorded process exited"
+    },
+    {
+      "pid": 34464,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "started_epoch": 1793058045.148513,
+      "url": "http://localhost:56485/",
+      "screenshot": "static-special.png",
+      "exit_code": 0,
+      "cleanup": "PASS: recorded process exited"
+    }
+  ],
+  "assertions": [
+    "both HTTP listeners are host loopback only",
+    "normal: HTTP HTML/CSS and Japanese UTF-8",
+    "PHP executes per request; Python serves unchanged saved HTML bytes",
+    "data/CSS saves update PHP immediately; static remains old until build",
+    "condition: HTTP HTML/CSS and Japanese UTF-8",
+    "rebuild updates static HTML/CSS and render ID",
+    "special: HTTP HTML/CSS and Japanese UTF-8",
+    "special characters escaped and private PHP data not exposed",
+    "both server ports closed and owned container absent after cleanup"
+  ],
+  "php_server": {
+    "name": "hht-http-661a837240f5446d85c6469530ec4da5",
+    "url": "http://localhost:56484/",
+    "runtime": "wslc",
+    "command": [
+      "C:\\Program Files\\WSL\\wslc.exe",
+      "run",
+      "--rm",
+      "--name",
+      "hht-http-661a837240f5446d85c6469530ec4da5",
+      "--network",
+      "bridge",
+      "--user",
+      "65534:65534",
+      "--mount",
+      "type=bind,source=C:\\Users\\hgsk8\\Documents\\Codex\\2026-10-21\\task-4\\edu\\test-results\\http-comparison\\tmpxs50bmv0\\HTTP 実測 作業,target=/work",
+      "--workdir",
+      "/work",
+      "--publish",
+      "127.0.0.1:56484:8000",
+      "docker.io/library/php:8.4.27-cli-bookworm@sha256:496b5e02fe9fe44fcfb715023b931048111dc4e0bc719789d83c906be9f04b05",
+      "php",
+      "-S",
+      "0.0.0.0:8000",
+      "-t",
+      "/work/public"
+    ],
+    "cli_pid": 31416,
+    "started_epoch": 1793057983.132101,
+    "executable": "C:\\Program Files\\WSL\\wslc.exe",
+    "host_listeners": [
+      "127.0.0.1"
+    ],
+    "container_cleanup": "PASS",
+    "cli_exit_code": 137
+  },
+  "static_server": {
+    "url": "http://localhost:56485/",
+    "host_listeners": [
+      "127.0.0.1"
+    ],
+    "directory": "C:\\Users\\hgsk8\\Documents\\Codex\\2026-10-21\\task-4\\edu\\test-results\\http-comparison\\tmpxs50bmv0\\HTTP 実測 作業\\output",
+    "pid": 15848,
+    "executable": "C:\\Users\\hgsk8\\actions-runner\\_work\\_tool\\Python\\3.14.6\\x64\\python.exe",
+    "started_epoch": 1793057986.1982915,
+    "server_cleanup": "PASS"
+  },
+  "runtime_report": {
+    "runtime": "wslc",
+    "ready": true,
+    "wsl_version": "WSL バージョン: 3.0.3.0",
+    "cli_version": "wslc 3.0.3.0",
+    "executable": "C:\\Program Files\\WSL\\wslc.exe",
+    "run_options": [
+      "--cidfile",
+      "--cpus",
+      "--detach",
+      "--dns",
+      "--dns-option",
+      "--dns-search",
+      "--domainname",
+      "--entrypoint",
+      "--env",
+      "--env-file",
+      "--gpus",
+      "--health-cmd",
+      "--health-interval",
+      "--health-retries",
+      "--health-start-period",
+      "--health-timeout",
+      "--help",
+      "--hostname",
+      "--interactive",
+      "--ip",
+      "--label",
+      "--memory",
+      "--mount",
+      "--name",
+      "--network",
+      "--network-alias",
+      "--no-healthcheck",
+      "--publish",
+      "--publish-all",
+      "--pull",
+      "--rm",
+      "--session",
+      "--shm-size",
+      "--stop-signal",
+      "--stop-timeout",
+      "--tmpfs",
+      "--tty",
+      "--ulimit",
+      "--user",
+      "--volume",
+      "--workdir"
+    ],
+    "missing_options": [],
+    "privilege_reductions": false,
+    "omitted_options": [
+      "--cap-drop",
+      "--security-opt"
+    ],
+    "process_security_cli": {
+      "Uid": "65534\t65534\t65534\t65534",
+      "CapEff": "0000000000000000",
+      "CapBnd": "00000000a80425fb",
+      "NoNewPrivs": "0",
+      "interfaces": [
+        "lo"
+      ]
+    }
+  },
+  "result": "PASS"
+}

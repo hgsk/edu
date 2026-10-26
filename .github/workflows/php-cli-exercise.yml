@@ -25,6 +25,8 @@ jobs:
           python-version: ${{ matrix.python }}
       - name: Test wslc safety gates, byte handling, student-copy isolation, and cleanup
         run: python -m unittest discover -s hht/scripts -p test_php_container_runtime.py -v
+      - name: Test HTTP loopback and source exposure guards (simulated CLI)
+        run: python -m unittest discover -s hht/scripts -p test_http_comparison.py -v
 
   official-cli:
     name: PHP integration (native Linux Docker, not a wslc hardware test)
@@ -52,3 +54,28 @@ jobs:
             test-results/php-cli/index.html
             test-results/php-cli/process-security.json
             test-results/php-cli/runtime-report.json
+
+  http-comparison:
+    name: HTTP comparison (Linux Docker and Python, not a Windows browser test)
+    needs: adapter-contracts
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.14"
+      - name: Verify real localhost HTTP, update behavior, CSS, escaping, and cleanup
+        run: python hht/scripts/verify_http_comparison.py --runtime docker
+      - uses: actions/setup-node@v5
+        with:
+          node-version: "22.20.0"
+      - run: npm ci
+      - run: npx --no-install html-validate 'test-results/http-comparison/*.html'
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: http-comparison-results
+          path: |
+            test-results/http-comparison/*.html
+            test-results/http-comparison/http-report.json

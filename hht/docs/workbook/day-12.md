@@ -309,4 +309,4 @@
 
 ---
 
-追加実習へ戻る：[PHP CLI](day-11.md#php-cli-template)・[パスとエスケープ](day-11.md#python-path-escaping)。
+追加実習へ戻る：[localhost HTTP比較](day-11.md#php-http-comparison)・[PHP CLI](day-11.md#php-cli-template)・[パスとエスケープ](day-11.md#python-path-escaping)。

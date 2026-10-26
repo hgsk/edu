@@ -212,7 +212,7 @@ No.1を変更して確認したらNo.2へ進みます。
 
 <a id="python-template"></a>
 
-**追加課題の選び方：** [Python/Jinja2で静的HTML生成](#python-template) → [PHP CLIコンテナで同じ生成を比較](#php-cli-template) → [フォーム受信・保存](#python-form)の順で比べられます。PHPはDockerが学校で利用可能な場合だけ行う選択実習です。使えない場合もPythonとフォーム課題はそのまま進められます。
+**追加課題の選び方：** [Python/Jinja2で静的HTML生成](#python-template) → [PHP CLIコンテナで同じ生成を比較](#php-cli-template) → [フォーム受信・保存](#python-form)の順で比べられます。PHPはWSL Containers（wslc）が学校で利用可能な場合だけ行う選択実習です。PHP CLIの後に[localhost HTTPの2方式を比較](#php-http-comparison)できます。使えない場合もPythonとフォーム課題はそのまま進められます。
 
 ### 選択追加課題：Pythonで店舗案内を生成する
 
@@ -735,6 +735,115 @@ python hht/scripts/run_php_cli.py --source .\php-template-work --action check
 基本15回の合格ルートへPHPの必須条件は追加しません。未準備の環境で止まった記録と、課題完成を区別します。
 
 [Python/Jinja2と比べる](#python-template) · [次はフォーム受信・保存](#python-form) · [DAY一覧へ](../student-workbook.md#workbook-days) · [DAY 12へ](day-12.md#day-12)
+
+<a id="php-http-comparison"></a>
+
+### 選択追加課題：localhostでPHP実行とPython静的配信を比べる
+
+**依頼者：** NORTH LIGHT COFFEEの佐藤さん。**見る人：** 店舗情報を確認する担当者。
+
+> 同じ店舗案内をHTTPで開き、お知らせを保存してから画面に反映されるまでの違いを説明してください。PHPで毎回作る方式と、作ったファイルをPythonで配信する方式の両方を比べます。
+
+**目的：** PHPがリクエストに応じて実行されること、静的配信は生成済みファイルを返すことを、HTTPの結果と画面で確認します。[PHP CLI課題](#php-cli-template)の後に別枠60〜90分を目安に取り組みます。初学者の所要時間は未実測です。
+
+**対象：** 本人の`php-http-work`内の`data.php`、`public/style.css`、生成した`output/`。**対象外：** 継続サイト、外部サイト、実データ、学校PCの設定、公開運用・認証・フォーム送信。架空データだけで進めます。
+
+#### まず、実行の違いを整理する
+
+- **PHPビルトインサーバー：** WindowsブラウザのHTTPリクエストを受け、コンテナ内の`public/index.php`が毎回`data.php`と固定テンプレートを読み、HTMLを返します。`public/`だけが配信対象です。`生成ID`はリクエストごとに変わります。CSSは`public/style.css`を返します。
+- **Python静的HTTPサーバー：** PHP CLIの`build.php`で作った`output/index.html`と`output/style.css`を、Windows上のPythonで配信します。PythonはPHPを実行しません。`data.php`を保存しただけでは変わらず、再生成した後に変わります。生成IDも再生成まで同じです。
+- **HTTPとファイル表示：** 今回のURLは`http://localhost:ポート/`です。前の`file:///.../index.html`表示ではありません。HTMLを返すリクエストとCSSを返すリクエストは別々に発生します。
+- **公開範囲：** ホストは`127.0.0.1`だけで待ち受けます。PHPのコンテナ内`0.0.0.0:8000`は、Windowsの全アドレスで公開する指定ではありません。`127.0.0.1:18765:8000`でホスト側を限定し、実際の待受も検査します。
+- **ネットワークの違い：** PHP CLI生成は引き続き`--network none`です。HTTP配信用だけは`bridge`とループバックへのポート公開を使います。コンテナの`lo`はWindowsのlocalhostとは別です。bridgeは外向き通信まで遮断する構成ではありません。コードは外部通信せず、外部素材・秘密情報も扱いません。
+
+PHPビルトインサーバーとPythonの簡易サーバーは授業用です。公開運用向けの認証済みシステムではありません。OS・VPN・ファイアウォール・アカウント権限・wslc設定を変えず、`--privileged`・ホストネットワーク・LAN公開を使いません。拒否されたら停止して講師へ報告します。
+
+#### STEP 1　開始コピーと生成ファイルを準備する
+
+Windows PowerShellで教材ルートを開きます。前課題と同じPython 3.11以上・WSL 2.9.3以上・wslcを使います。新たなライブラリ導入はありません。
+
+```powershell
+if (Test-Path .\php-http-work) { throw '既存の作業があるため別名を選んでください。' }
+Copy-Item .\hht\hands-on\php-http-comparison\starter .\php-http-work -Recurse
+python hht/scripts/serve_http_comparison.py --source .\php-http-work --mode build
+```
+
+期待結果は`Generated: output/index.html + style.css (UTF-8)`です。`data.php`はデータ、`templates/page.php`はHTMLテンプレート、`public/index.php`はHTTP用PHP入口、`build.php`はファイル生成です。入力をincludeのファイル名へつなぎません。テンプレートの`e`は`htmlspecialchars`で引用符も含めてエスケープします。
+
+#### STEP 2　PHPをHTTPで開く
+
+```powershell
+python hht/scripts/serve_http_comparison.py --source .\php-http-work --mode php --port 18765
+```
+
+表示された`http://localhost:18765/`をWindowsのブラウザで開きます。このターミナルは実行中のままです。`NORTH LIGHT COFFEE`、日本語のお知らせ、公園店だけ「本日休業」、PHPの実行方式と生成IDを確認します。再読込すると生成IDが変わります。ページ自体を`output/`へ保存する動作ではありません。保存直後の変更を読むため、実習サーバーのプロセスだけPHPのコードキャッシュを無効にしています。PC全体の設定変更はしません。
+
+![Windowsのlocalhost HTTPからPHP方式を開いた実描画](../../assets/http-comparison-20261026/php-normal.png)
+
+wslcで動くPHPへHTTP接続した実描画です。画像はヘッドレスChromeの描画結果で、PowerShellの操作画面ではありません。
+
+#### STEP 3　Pythonの静的HTTP配信を開く
+
+別のPowerShellターミナルを教材ルートで開きます。
+
+```powershell
+python hht/scripts/serve_http_comparison.py --source .\php-http-work --mode static --port 18766
+```
+
+`http://localhost:18766/`をWindowsブラウザの別タブで開きます。こちらは「Python：生成済みHTMLを配信」と表示されます。何度再読込しても生成IDは変わりません。配信対象は`output/`だけで、PHPのソースやデータを置いたフォルダー全体は配信しません。
+
+![Windowsのlocalhost HTTPからPython静的配信を開いた実描画](../../assets/http-comparison-20261026/static-normal.png)
+
+ブラウザの開発者ツール「Network」で再読込し、文書と`style.css`が200で返ること、文書がUTF-8で日本語を読めることを確認します。`file://`表示をHTTP成功の証拠にしません。
+
+#### STEP 4　保存・再生成・再読込を比べる
+
+1. `data.php`の公園店だけ`'closed' => true`を`false`へ変更して保存します。
+2. 両ページを再読込。PHPは公園店も11:00〜18:00へ変わり、Pythonはまだ「本日休業」のままです。生成IDも比較します。
+3. `public/style.css`の本文の色`#183544`を`#6b2133`へ変更して保存。PHPのCSSは変わりますが、Pythonは生成時のCSSのままです。Networkで各`style.css`のResponseも比べます。
+4. 3つ目のターミナルでSTEP 1の`--mode build`を再実行し、両ページを再読込。Pythonも営業時間と色が変わり、生成IDが新しくなります。
+
+![公園店を営業へ変更した後のPHP HTTP実描画](../../assets/http-comparison-20261026/php-condition.png)
+
+![再生成後に同じ営業時間が反映されたPython HTTP実描画](../../assets/http-comparison-20261026/static-condition.png)
+
+#### STEP 5　特殊文字・関連ファイル・終了を確認する
+
+お知らせを`'<b>試作</b> & 確認'`へ変えて保存します。PHPを再読込し、Pythonは再生成後に再読込します。両方ともタグは文字として見え、試作だけを太字にするHTMLにはなりません。NetworkのHTMLには`&lt;b&gt;`・`&amp;`があり、CSSも200で返ることを確認します。
+
+![PHP HTTPで特殊文字がそのまま文字として表示された実描画](../../assets/http-comparison-20261026/php-special.png)
+
+![再生成した特殊文字をPython HTTPで配信した実描画](../../assets/http-comparison-20261026/static-special.png)
+
+`http://localhost:18765/data.php`と`http://localhost:18766/data.php`は404であり、データのソースを配信しません。PHPの入口は決まったページ以外のURLを拒否します。任意のファイル名を入力して探索する課題ではありません。
+
+終わったら**両方のサーバーを動かした各ターミナルでCtrl+C**を押します。PHPは固有名のコンテナを停止・除去し、Pythonは自身のHTTPサーバーを閉じます。両URLへ再接続して表示できなくなったことと、`wslc container list`に実習コンテナが残っていないことを確認します。他の人のコンテナ・プロセスは止めません。
+
+#### 止まったとき
+
+- **ポート使用中：** 既存プロセスを止めず、未使用の別ポートを`--port`に指定しURLも読み替える。管理者権限やファイアウォール変更で解決しない。
+- **BLOCKED・接続拒否：** エラーとモード・ポートを記録して講師へ報告。LAN向け公開・設定変更・別環境への切替はしない。
+- **Pythonだけ古い：** `data.php`／`public/style.css`の保存→`--mode build`成功→HTTP再読込の順を確認。
+- **CSSが404：** `output/style.css`の生成と`public/style.css`を確認。PHPはpublic、Pythonはoutputを配信している違いを確認。
+- **PHPソースが見える：** 誤ってソース全体を静的配信していないか確認し、直ちに自分のサーバーを止める。配布ランチャーのstaticはoutputだけを使う。
+- **文字化け：** ソース・HTTP文書・生成ファイルのUTF-8を確認。`Out-File`でHTMLを書き換えない。
+
+<a id="php-http-done"></a>
+
+#### 完成条件・提出・自己確認
+
+- [ ] 2つのlocalhost HTTP URLをWindowsブラウザで開き、文書・CSSの200と日本語UTF-8を確認した。
+- [ ] PHPの生成IDは再読込ごと、Pythonの生成IDは再生成後だけ変わることを記録した。
+- [ ] データとCSSを保存し、再生成前後の反映を両方式で比較した。
+- [ ] 条件切替と特殊文字を両方式で確認し、エスケープと配信対象の違いを説明した。
+- [ ] ホストの待受がループバック限定であり、ネットワークなしのCLI生成とHTTP起動の違いを説明した。
+- [ ] 両サーバーと自分のコンテナを終了し、両ポートに再接続できないことを確認した。
+
+以上すべてがこの追加課題の合格条件です。基本15回の合格ルートへ必須化しません。`http-comparison-匿名番号.zip`に変更前後のソース、生成HTML/CSS、制作記録、6状態のHTTP画面、文書・CSSのHTTP結果、再生成前後の生成ID、終了確認を入れます。コンテナイメージ・ブラウザプロファイル・秘密情報は提出しません。未実行は未確認として記録します。
+
+**考察：** PHPは何をいつ実行したか。Pythonで再生成が必要な理由は何か。localhost限定と外向き通信の遮断は同じか。`file://`確認だけでHTTPの200やCSS取得を証明できるか。保存したHTMLとPHPのソースを配信することの違いは何か。
+
+[PHP CLIへ](#php-cli-template) · [フォーム受信・保存へ](#python-form) · [DAY一覧](../student-workbook.md#workbook-days) · [DAY12](day-12.md#day-12)
 
 <a id="python-path-escaping"></a>
 

@@ -12,8 +12,8 @@ PHPはコンテナ内の`php -d opcache.enable=0 -d opcache.enable_cli=0 -S 0.0.
 
 Windowsの`Get-NetTCPConnection`で実際のPHP待受が['127.0.0.1']のみと確認しました。wslc3.0.3のinspectにはポート欄がなかったため、Dockerのinspect構造があると仮定せず実際のWindows待受を読み取りました。ホストのLAN／インターネット向け公開は行っていません。
 
-- PHP URL：`http://localhost:56484/`
-- Python URL：`http://localhost:56485/`
+- PHP URL：`http://localhost:60138/`
+- Python URL：`http://localhost:60139/`
 - Pythonはホストの`ThreadingHTTPServer(('127.0.0.1', port), ...)`で`output/`だけを配信。PHPを実行しません。
 
 固定ポートの学生手順はPHP18765／Python18766です。自動実測は衝突を避けるため未使用のループバックポートを選び、同じサーバー起動関数を使いました。
@@ -34,11 +34,11 @@ Windowsの`Get-NetTCPConnection`で実際のPHP待受が['127.0.0.1']のみと�
 
 Windows上のChromeで、`file://`ではなく上記の`http://localhost:.../`へ接続して6枚を撮影しました。PHP／Pythonそれぞれの通常・条件切替・特殊文字の画面です。[DAY11の各操作の近く](../../docs/workbook/day-11.md#php-http-comparison)に掲載し、全画像の日本語・表示状態・リンクを目視確認しました。ヘッドレスChromeの実描画であり、アドレスバーやPowerShell／VS Codeの操作画面ではありません。
 
-PHP起動CLI PIDは31416、Pythonの検証プロセスPIDは15848。Chrome PIDは44004, 40904, 33596, 52144, 28884, 34464。記録したChromeプロセスは全て終了し、専用プロファイルを使う子プロセスの不在も確認しました。PHPは対象コンテナstopによって終了（CLI終了コード137）し、不在を確認しました。Pythonはshutdown・スレッド終了・server_closeが成功しました。cleanupはいずれもPASSです。既存プロセスや他のコンテナは停止していません。
+PHP起動CLI PIDは20812、Pythonの検証プロセスPIDは37408。Chrome PIDは42440, 19572, 20208, 10408, 44220, 37924。記録したChromeプロセスは全て終了し、専用プロファイルを使う子プロセスの不在も確認しました。PHPは対象コンテナstopによって終了（CLI終了コード137）し、不在を確認しました。Pythonはshutdown・スレッド終了・server_closeが成功しました。cleanupはいずれもPASSです。既存プロセスや他のコンテナは停止していません。
 
 ## CIで判明した更新間隔の修正
 
-最初のLinux HTTP CIでは、短い間隔でdata.phpを更新した直後に古い内容が返り、更新確認が失敗しました。PHPのコードキャッシュ再検査間隔に依存させないため、実習サーバーの起動引数だけに`-d opcache.enable=0 -d opcache.enable_cli=0`を追加しました。グローバルなPHP設定・OS・wslc設定は変更しません。この修正後のコードでT770iの両HTTP方式を再実測し、CIでも同じ即時更新条件を再確認します。
+最初のLinux HTTP CIでは、短い間隔でdata.phpを更新した直後に古い内容が返り、更新確認が失敗しました。PHPのコードキャッシュ再検査間隔に依存させないため、実習サーバーの起動引数だけに`-d opcache.enable=0 -d opcache.enable_cli=0`を追加しました。グローバルなPHP設定・OS・wslc設定は変更しません。この修正後のコードでT770iの両HTTP方式を再実測し、Linux CIでも同じ即時更新条件の成功を確認しました。
 
 ## CIとの区別・残る範囲
 

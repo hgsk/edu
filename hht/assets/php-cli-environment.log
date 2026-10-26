@@ -1,0 +1,10 @@
+failed to connect to the docker API at npipe:////./pipe/docker_engine; check if the path is correct and if the daemon is running: open //./pipe/docker_engine: The system cannot find the file specified.
+Client:
+ Version:           29.5.3-rd
+ API version:       1.54
+ Go version:        go1.26.4
+ Git commit:        5d9ffe3
+ Built:             Thu Jun  4 07:35:42 2026
+ OS/Arch:           windows/amd64
+ Context:           default
+BLOCKED: Docker engine or patched official image unavailable: Command '['docker', 'version']' returned non-zero exit status 1.

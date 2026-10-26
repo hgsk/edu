@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>教育専用：エスケープ比較</title>
+  <style>.demo-red { color: crimson; }</style>
+</head>
+<body>
+  <main>
+    <h1>教育専用：エスケープ比較</h1>
+    <p>同じ固定入力を2か所へ表示します。JavaScript・外部送信・ファイル変更は行いません。</p>
+    <section>
+      <h2>安全版：文字として表示</h2>
+      <div id="safe-output">{{ message }}</div>
+    </section>
+    <section>
+      <h2>危険版の教育用再現：HTMLとして解釈</h2>
+      <p>この処理は通常アプリへコピー禁止です。固定の無害入力だけを許可しています。</p>
+      <div id="unsafe-output">{{ demo_html }}</div>
+    </section>
+    <p>変わったのは返答HTMLの解釈と画面表示です。サーバーファイルを書き換えた例ではありません。</p>
+    <p><a href="{{ url_for('index') }}">比較入口へ</a></p>
+  </main>
+</body>
+</html>

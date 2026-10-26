@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>架空の商品メモ</title>
+</head>
+<body>
+  <main>
+    <h1>架空の商品メモ</h1>
+    <p>ローカル実習用。架空の商品だけを入力し、個人情報や秘密情報は書きません。</p>
+    {% if errors %}
+    <ul id="errors" role="alert">
+      {% for error in errors %}
+      <li>{{ error }}</li>
+      {% endfor %}
+    </ul>
+    {% endif %}
+    <form method="post" action="/">
+      <p>
+        <label for="item">商品名（必須、40文字以内）</label>
+        <input type="text" id="item" name="item" value="{{ item }}" required maxlength="40">
+      </p>
+      <p>
+        <label for="note">メモ（120文字以内）</label>
+        <textarea id="note" name="note" maxlength="120">{{ note }}</textarea>
+      </p>
+      <button type="submit">保存する</button>
+    </form>
+    <h2>保存済み一覧（新しい順、最大20件）</h2>
+    <ul id="entries">
+      <!-- TODO E: entriesを繰り返し、商品名とメモを表示する -->
+      <li>一覧表示は未実装です</li>
+    </ul>
+  </main>
+</body>
+</html>

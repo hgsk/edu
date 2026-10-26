@@ -1,0 +1,102 @@
+{
+  "checked_at_utc": "2026-10-21T15:34:47.878909+00:00",
+  "registry": "registry-1.docker.io/library/php",
+  "results": [
+    {
+      "tag": "8.2.35-cli",
+      "status": 404
+    },
+    {
+      "tag": "8.2.35-cli-alpine",
+      "status": 404
+    },
+    {
+      "tag": "8.2.35-cli-alpine3.23",
+      "status": 404
+    },
+    {
+      "tag": "8.2.35-cli-alpine3.24",
+      "status": 404
+    },
+    {
+      "tag": "8.2.35-cli-bookworm",
+      "status": 404
+    },
+    {
+      "tag": "8.2.35-cli-trixie",
+      "status": 404
+    },
+    {
+      "tag": "8.3.36-cli",
+      "status": 404
+    },
+    {
+      "tag": "8.3.36-cli-alpine",
+      "status": 404
+    },
+    {
+      "tag": "8.3.36-cli-alpine3.23",
+      "status": 404
+    },
+    {
+      "tag": "8.3.36-cli-alpine3.24",
+      "status": 404
+    },
+    {
+      "tag": "8.3.36-cli-bookworm",
+      "status": 404
+    },
+    {
+      "tag": "8.3.36-cli-trixie",
+      "status": 404
+    },
+    {
+      "tag": "8.4.27-cli",
+      "status": 404
+    },
+    {
+      "tag": "8.4.27-cli-alpine",
+      "status": 404
+    },
+    {
+      "tag": "8.4.27-cli-alpine3.23",
+      "status": 404
+    },
+    {
+      "tag": "8.4.27-cli-alpine3.24",
+      "status": 404
+    },
+    {
+      "tag": "8.4.27-cli-bookworm",
+      "status": 404
+    },
+    {
+      "tag": "8.4.27-cli-trixie",
+      "status": 404
+    },
+    {
+      "tag": "8.5.12-cli",
+      "status": 404
+    },
+    {
+      "tag": "8.5.12-cli-alpine",
+      "status": 404
+    },
+    {
+      "tag": "8.5.12-cli-alpine3.23",
+      "status": 404
+    },
+    {
+      "tag": "8.5.12-cli-alpine3.24",
+      "status": 404
+    },
+    {
+      "tag": "8.5.12-cli-bookworm",
+      "status": 404
+    },
+    {
+      "tag": "8.5.12-cli-trixie",
+      "status": 404
+    }
+  ]
+}

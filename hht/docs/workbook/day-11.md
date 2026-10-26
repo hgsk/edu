@@ -672,7 +672,7 @@ python hht/scripts/run_php_cli.py --source .\php-template-work --action build
 
 **`wslc run ... > output/index.html`や`Out-File`でHTMLを保存しません。** Windows PowerShell等では標準出力をテキストとして変換し、UTF-16等になる場合があります。今回の保存経路は常にPHPの`build.php`です。標準出力を観察する場合だけ、ランチャーの`--action stdout`を使います。これはHTMLをターミナルへ出すモードで、ファイル保存とは別です。
 
-本人の`php-template-work/output/index.html`をエクスプローラーからブラウザで開きます。Webサーバーは起動しません。店舗名、`<臨時案内> & 週末`という文字、駅前店09:00〜19:00、公園店「本日休業」、港店12:00〜17:00が読めることを確認します。テンプレートの`.php`を直接開いても生成されません。
+本人の`php-template-work/output/index.html`をエクスプローラーからブラウザで開きます。Webサーバーは起動しません。URLは`file:///.../output/index.html`で、`http://localhost:...`ではありません。コンテナの`lo`はコンテナ自身のループバックで、Windowsのlocalhostとは別です。`--network none`は「外部だけを遮断してホストからは接続できる」という意味ではありません。この課題ではHTTPサーバーもポート公開も用意せず、バインドマウントで保存したファイルをWindows側から読みます。店舗名、`<臨時案内> & 週末`という文字、駅前店09:00〜19:00、公園店「本日休業」、港店12:00〜17:00が読めることを確認します。テンプレートの`.php`を直接開いても生成されません。
 
 VS Codeで生成HTMLも開き、お知らせのソースが`&lt;臨時案内&gt; &amp; 週末`、文字コードがUTF-8であることを確認します。`<?php`や`<?=`が残っていれば生成HTMLを開いているかを確認します。`view-source:`は使いません。以下はT770iのwslc 3.0.3で生成したHTMLを、Chromeで実際に描画した画像です。ヘッドレスChromeによる描画結果で、VS CodeやPowerShellの操作画面ではありません。エディター・ターミナルの操作画面は未撮影です。
 

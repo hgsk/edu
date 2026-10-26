@@ -776,7 +776,7 @@ python hht/scripts/serve_http_comparison.py --source .\php-http-work --mode buil
 python hht/scripts/serve_http_comparison.py --source .\php-http-work --mode php --port 18765
 ```
 
-表示された`http://localhost:18765/`をWindowsのブラウザで開きます。このターミナルは実行中のままです。`NORTH LIGHT COFFEE`、日本語のお知らせ、公園店だけ「本日休業」、PHPの実行方式と生成IDを確認します。再読込すると生成IDが変わります。ページ自体を`output/`へ保存する動作ではありません。
+表示された`http://localhost:18765/`をWindowsのブラウザで開きます。このターミナルは実行中のままです。`NORTH LIGHT COFFEE`、日本語のお知らせ、公園店だけ「本日休業」、PHPの実行方式と生成IDを確認します。再読込すると生成IDが変わります。ページ自体を`output/`へ保存する動作ではありません。保存直後の変更を読むため、実習サーバーのプロセスだけPHPのコードキャッシュを無効にしています。PC全体の設定変更はしません。
 
 ![Windowsのlocalhost HTTPからPHP方式を開いた実描画](../../assets/http-comparison-20261026/php-normal.png)
 

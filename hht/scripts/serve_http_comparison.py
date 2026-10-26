@@ -80,7 +80,9 @@ def php_server(source, port, runtime, result_dir):
     if '--publish' not in runtime.report['run_options']:
         raise Blocked('Runtime does not support loopback port publishing')
     name = 'hht-http-' + uuid.uuid4().hex
-    args = runtime.run_args(source, IMAGE, ['php', '-S', '0.0.0.0:8000', '-t', '/work/public'], name)
+    # Teaching hot edits must not wait for OPcache's timestamp revalidation interval.
+    args = runtime.run_args(source, IMAGE, ['php', '-d', 'opcache.enable=0', '-d', 'opcache.enable_cli=0',
+                                          '-S', '0.0.0.0:8000', '-t', '/work/public'], name)
     # HTTP is an explicit separate profile; offline CLI generation stays network none.
     args[args.index('--network') + 1] = 'bridge'
     args[args.index(IMAGE):args.index(IMAGE)] = ['--publish', f'127.0.0.1:{port}:8000']

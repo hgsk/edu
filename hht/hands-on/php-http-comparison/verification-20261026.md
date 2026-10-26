@@ -8,7 +8,7 @@ PR #21は2026-10-26 23:29:11 UTCにマージ済みです。その後に届いた
 
 ## 実機で確認したHTTP構成
 
-PHPはコンテナ内の`php -S 0.0.0.0:8000 -t /work/public`です。HTTP用のbridgeと`--publish 127.0.0.1:ホストポート:8000`を明示し、非root UID65534、限定bind、固有名、終了後除去を維持しました。CLI生成のnetwork noneは変更していません。外向き通信まで遮断する構成ではないことも教材に明記しました。
+PHPはコンテナ内の`php -d opcache.enable=0 -d opcache.enable_cli=0 -S 0.0.0.0:8000 -t /work/public`です。HTTP用のbridgeと`--publish 127.0.0.1:ホストポート:8000`を明示し、非root UID65534、限定bind、固有名、終了後除去を維持しました。CLI生成のnetwork noneは変更していません。外向き通信まで遮断する構成ではないことも教材に明記しました。
 
 Windowsの`Get-NetTCPConnection`で実際のPHP待受が['127.0.0.1']のみと確認しました。wslc3.0.3のinspectにはポート欄がなかったため、Dockerのinspect構造があると仮定せず実際のWindows待受を読み取りました。ホストのLAN／インターネット向け公開は行っていません。
 
@@ -35,6 +35,10 @@ Windowsの`Get-NetTCPConnection`で実際のPHP待受が['127.0.0.1']のみと�
 Windows上のChromeで、`file://`ではなく上記の`http://localhost:.../`へ接続して6枚を撮影しました。PHP／Pythonそれぞれの通常・条件切替・特殊文字の画面です。[DAY11の各操作の近く](../../docs/workbook/day-11.md#php-http-comparison)に掲載し、全画像の日本語・表示状態・リンクを目視確認しました。ヘッドレスChromeの実描画であり、アドレスバーやPowerShell／VS Codeの操作画面ではありません。
 
 PHP起動CLI PIDは31416、Pythonの検証プロセスPIDは15848。Chrome PIDは44004, 40904, 33596, 52144, 28884, 34464。記録したChromeプロセスは全て終了し、専用プロファイルを使う子プロセスの不在も確認しました。PHPは対象コンテナstopによって終了（CLI終了コード137）し、不在を確認しました。Pythonはshutdown・スレッド終了・server_closeが成功しました。cleanupはいずれもPASSです。既存プロセスや他のコンテナは停止していません。
+
+## CIで判明した更新間隔の修正
+
+最初のLinux HTTP CIでは、短い間隔でdata.phpを更新した直後に古い内容が返り、更新確認が失敗しました。PHPのコードキャッシュ再検査間隔に依存させないため、実習サーバーの起動引数だけに`-d opcache.enable=0 -d opcache.enable_cli=0`を追加しました。グローバルなPHP設定・OS・wslc設定は変更しません。この修正後のコードでT770iの両HTTP方式を再実測し、CIでも同じ即時更新条件を再確認します。
 
 ## CIとの区別・残る範囲
 

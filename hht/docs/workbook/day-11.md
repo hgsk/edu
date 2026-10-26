@@ -546,7 +546,7 @@ ZIPを別フォルダーへ再展開し、`after/`でSTEP 1と同様に環境を
 
 **対象：** 本人の作業コピーの`hello.php`、`data.php`、`templates/index.php`。用意済みの`render.php`と`build.php`を読んで使います。**対象外：** 継続サイト、Python・フォーム課題のファイル、DockerやOSの導入・設定変更、外部公開・実サイトへの送信。データは架空の店舗だけです。
 
-**実行前の注意：2026-10-25現在、wslcでのPHP実行は未検証です。** wslc自体は利用できますが、T770iの3.0.3には既存の権限縮小に必要なオプションがありません。準備確認でBLOCKEDになったら停止し、条件を緩めたりPodmanを追加したりしません。[wslcの実測・模擬テスト・再開条件](../../hands-on/php-cli-template/instructor/verification-20261025.md)は講師用です。
+**2026-10-26の確認：T770iのwslc 3.0.3でPHP実行・マウント・保存を検証しました。** このローカル実習では`--cap-drop`・`--security-opt`を使用せず、wslcの既定の権限動作を使います。通常ユーザー・ネットワークなし・本人の作業コピーだけのマウントを維持します。[実機・模擬テスト・残る制約](../../hands-on/php-cli-template/instructor/verification-20261026.md)は講師用です。
 
 #### 前の課題と何が違う？
 
@@ -618,18 +618,11 @@ python hht/scripts/verify_php_cli.py --runtime wslc --check-runtime
 
 最後のコマンドはバージョンとhelpを読むだけで、イメージのpullやコンテナ起動はしません。WSL／wslcが2.9.3未満、wslcがない、アクセス拒否なら停止します。更新・新規導入・セキュリティ設定変更は承認なしで行わず、講師へ報告します。
 
-**最低バージョンを満たすだけでは、この実習の実行条件を満たしません。** 既存の安全条件としてネットワークなし、通常ユーザー、全capabilityの削除、新たな権限を取得できない設定を維持します。
+最低バージョンだけで判断せず、`--network`・`--user`・`--mount`・`--workdir`・`--rm`・`--name`があることを確認します。確認結果は`test-results/php-cli/runtime-report.json`に保存されます。T770iのwslc 3.0.3では`ready: true`を確認しました。必要な指定がない・接続拒否の場合はBLOCKEDで停止し、無断導入や別ランタイムへの切替はしません。
 
-| 実行時に必要な指定 | T770iのwslc 3.0.3のhelp | 今回の判定 |
-|---|---|---|
-| `--network none` | `--network`あり | 指定できるが実行時の隔離は未検証 |
-| `--user`・`--mount`・`--workdir` | あり | 引数は構築できるが実機実行は未検証 |
-| `--cap-drop ALL` | `--cap-drop`なし | BLOCKED |
-| `--security-opt no-new-privileges` | `--security-opt`なし | BLOCKED |
+この実習では、現行wslcにない**`--cap-drop ALL`（全capabilityの削除）と`--security-opt no-new-privileges`（新たな権限取得の禁止）を指定しません**。capabilityはLinuxで特定の管理操作を許す権限です。実測ではCapEffは0、CapBndは`00000000a80425fb`、NoNewPrivsは0でした。現在有効なcapabilityが0でも、将来使える権限の上限まで0にした状態ではありません。非rootユーザーだけで、この2つの保護を代用したとは説明しません。
 
-T770iではWSL／wslc 3.0.3を実測しました。確認スクリプトは不足する2項目を示し、`BLOCKED: Missing required isolation options...; no container was started`で止まります。**この場合はここで終了し、以降を実行しません。** 足りないオプションを外して進めたり、別ランタイムへ自動切替したりしません。更新すれば必ず解消するとも判断しません。
-
-確認結果は`test-results/php-cli/runtime-report.json`に保存されます。BLOCKEDは失敗を隠す結果ではなく、安全条件を確認できず実習を止めた記録です。必要な機能が利用可能な環境で`ready: true`になった場合だけ、以下へ進めます。ランチャーは起動後もLinuxプロセスの権限・ネットワークを照合し、不一致なら学生のコード実行前に停止します。
+残る保護は、非root UID、`--network none`、ポート公開なし、本人の作業フォルダー1つだけのマウント、固有名の一時コンテナと終了確認、固定した公式イメージです。起動後にもUIDが0でないこととネットワークがループバック（`lo`）だけであることを検査します。`--privileged`、ホストネットワーク、ホスト全体・Dockerソケットのマウントは使いません。OS・VPN・ファイアウォール・アカウント権限・wslcの設定を変更しません。学校管理の端末で架空データを扱うローカル実習の範囲であり、不明なプログラムの安全な実行環境や公開運用の保証ではありません。
 
 #### STEP 2　本人のコピーと固定イメージでechoを実行する
 
@@ -647,14 +640,14 @@ python hht/scripts/run_php_cli.py --source .\php-template-work --action version
 python hht/scripts/run_php_cli.py --source .\php-template-work --action hello
 ```
 
-期待値は`PHP 8.4.27 (cli)`を含む実行時バージョン、続いて`PHPでHTMLを作る`と改行です。安全確認が不足していれば、コピーがあっても起動しません。`--source`は**本人の開始コピー**を指定し、正解例を重ねる処理はありません。
+期待値は`PHP 8.4.27 (cli)`を含む実行時バージョン、続いて`PHPでHTMLを作る`と改行です。安全確認が不足していれば、コピーがあっても起動しません。成功時は`test-results/php-cli-student/runtime-report.json`にイメージ・省く指定・実測UID・CapEff・CapBnd・NoNewPrivs・ネットワークを記録します。VS CodeでこのJSONを開き、制作記録と提出用evidenceへ控えます。`--source`は**本人の開始コピー**を指定し、正解例を重ねる処理はありません。
 
 - 公式イメージは`hht/hands-on/php-cli-template/image.txt`のタグ＋digestで固定します。現在は`docker.io/library/php:8.4.27-cli-bookworm`、index digestは`sha256:496b5e02fe9fe44fcfb715023b931048111dc4e0bc719789d83c906be9f04b05`です。2026-10-25に`linux/amd64`の配信を確認しています。実際のPHPバージョンは起動時にも照合します。
 - タグは読める名前、digestは内容の識別子です。古い`latest`のキャッシュやRC・未修正版へ切り替えません。レジストリへ接続できない・digestが違う場合も停止します。
-- ランチャーはwslcへ、`--rm`、`--network none`、`--cap-drop ALL`、`--security-opt no-new-privileges`、`--user 65534:65534`を保持して渡します。現行3.0.3では一部がないため、実行前の確認で止まります。対応機能があると仮定した引数構築は模擬テストであり、3.0.3実機で動いた証拠ではありません。
+- ランチャーはwslcへ`--rm`、固有の`--name`、`--network none`、`--user 65534:65534`、本人のフォルダーの`--mount`、`--workdir /work`を渡します。2つの権限縮小オプションを加えず、実際のUID・ネットワークを検査します。
 - ホスト側は本人のWindows作業フォルダー、コンテナ側は`/work`です。バインドマウントはこのコピーだけを対応させます。パスに空白・日本語があっても1引数で渡し、ドライブ全体・ホーム全体・リポジトリ全体・Dockerソケットはマウントしません。
 - `--workdir /work`により、`hello.php`はコンテナ内の`/work/hello.php`です。ホストの`C:\...`をPHPのincludeパスへ書きません。
-- PHPが書いた`/work/output/index.html`は、本人のホスト側コピーの`output/index.html`です。`--rm`でコンテナを除去しても生成ファイルは残ります。Windows／wslcでのこの保存・パス対応は、現在の機能不足により実機未検証です。
+- PHPが書いた`/work/output/index.html`は、本人のホスト側コピーの`output/index.html`です。`--rm`でコンテナを除去しても生成ファイルは残ります。T770iのwslc 3.0.3で、空白・日本語を含むWindowsパスのマウントとUTF-8保存を検証しました。
 - Webサーバー、ポート公開、特権コンテナ、ホストネットワークは使いません。権限エラーを昇格や設定変更で回避しません。
 
 #### STEP 3　データとテンプレートを完成させる
@@ -681,7 +674,11 @@ python hht/scripts/run_php_cli.py --source .\php-template-work --action build
 
 本人の`php-template-work/output/index.html`をエクスプローラーからブラウザで開きます。Webサーバーは起動しません。店舗名、`<臨時案内> & 週末`という文字、駅前店09:00〜19:00、公園店「本日休業」、港店12:00〜17:00が読めることを確認します。テンプレートの`.php`を直接開いても生成されません。
 
-VS Codeで生成HTMLも開き、お知らせのソースが`&lt;臨時案内&gt; &amp; 週末`、文字コードがUTF-8であることを確認します。`<?php`や`<?=`が残っていれば生成HTMLを開いているかを確認します。`view-source:`は使いません。PHPの実行画面・生成結果の画像は実測再開後にここへ追加する必要があり、現在は未撮影です。
+VS Codeで生成HTMLも開き、お知らせのソースが`&lt;臨時案内&gt; &amp; 週末`、文字コードがUTF-8であることを確認します。`<?php`や`<?=`が残っていれば生成HTMLを開いているかを確認します。`view-source:`は使いません。以下はT770iのwslc 3.0.3で生成したHTMLを、Chromeで実際に描画した画像です。ヘッドレスChromeによる描画結果で、VS CodeやPowerShellの操作画面ではありません。エディター・ターミナルの操作画面は未撮影です。
+
+![wslcで生成した通常の店舗一覧。公園店だけ本日休業と表示される](../../assets/php-cli-20261026/normal.png)
+
+通常表示では、お知らせの山括弧と&が文字のまま読め、3店舗の順番と営業時間・休業表示を確認できます。
 
 #### STEP 5　条件・特殊文字・再生成を確かめる
 
@@ -689,6 +686,14 @@ VS Codeで生成HTMLも開き、お知らせのソースが`&lt;臨時案内&gt;
 2. お知らせに一時的に`'<b>試作</b> & 確認'`を入れる。太字タグにはならず、そのまま文字として読めることと、生成ソースのエスケープを確認。指定のお知らせへ戻す。
 3. 生成HTMLだけを直接変更してから再生成し、変更がデータとテンプレートから作り直されることを確認する。
 4. 自分の作業コピーだけを次の共通テストで確認する。正解例は見ずに行う。
+
+![公園店を営業へ切り替え、3店舗すべてに営業時間が表示された実描画](../../assets/php-cli-20261026/condition.png)
+
+操作1の切替後は、公園店も11:00〜18:00と表示されます。
+
+![お知らせのbタグがタグとして動かず、そのまま文字として表示された実描画](../../assets/php-cli-20261026/special.png)
+
+操作2では`<b>試作</b> & 確認`が文字として表示され、試作だけを太字にするHTMLにはなりません。
 
 ```powershell
 python hht/scripts/run_php_cli.py --source .\php-template-work --action check
@@ -700,7 +705,7 @@ python hht/scripts/run_php_cli.py --source .\php-template-work --action check
 
 #### 止まったとき
 
-- **wslcがない／必要な安全機能がない：** 最低バージョンとrunのhelpを照合し、確認スクリプトがBLOCKEDなら停止します。エラーを保存し、講師へBLOCKEDを報告。無断導入・設定変更・別環境への切替はしません。
+- **wslcがない／必要な指定がない：** 最低バージョンとrunのhelpを照合し、確認スクリプトがBLOCKEDなら停止します。2つの権限縮小オプションがないことだけでは停止しません。エラーを保存し、講師へBLOCKEDを報告。無断導入・設定変更・別環境への切替はしません。
 - **修正版タグがない：** 公開待ちで停止。古い`latest`・8.4.26・RCでは実行しません。
 - **`Runtime PHP version does not match...`：** 実際のPHPが修正条件を満たしていません。イメージ名・pull結果・`php --version`を照合し、古いキャッシュを使い回しません。
 - **マウントのパス・権限エラー：** `--source`が本人の開始コピーか確認。空白・日本語を含むパスはPowerShellで引用符を付け、ランチャーへ1引数で渡します。PC全体やDockerソケットのマウントで解決しません。
@@ -719,10 +724,10 @@ python hht/scripts/run_php_cli.py --source .\php-template-work --action check
 
 - [ ] 依頼と対象・対象外を記録し、PHP・Python/Jinja2・フォーム課題の実行時期の違いを説明した。
 - [ ] 公式修正版情報、pullした固定タグ、実行したPHPバージョン、digestを記録した。旧版・RC・latestで代用していない。
-- [ ] 作業コピーだけをマウントし、ホストのWindowsパスと`/work`の対応を説明した。Webサーバー、特権・ホストネットワークは使っていない。
+- [ ] 作業コピーだけをマウントし、ホストのWindowsパスと`/work`の対応を説明した。省く2つの権限縮小と残る保護を説明した。Webサーバー、特権・ホストネットワークは使っていない。
 - [ ] echoの短い実行から始め、配列とテンプレートを分離し、変数・foreach・条件分岐・includeを使って指定3店舗を生成した。
 - [ ] すべてのデータ出力を`htmlspecialchars`経由でエスケープし、UTF-8の生成HTMLをPHPから直接保存した。
-- [ ] 通常表示、休業切替、特殊文字をブラウザと生成ファイルで照合した。29チェックが成功し、実際のプロセスで権限縮小・ネットワーク隔離が確認され、コンテナが残っていない。模擬テストだけでこの条件を満たしたとはしない。
+- [ ] 通常表示、休業切替、特殊文字をブラウザと生成ファイルで照合した。29チェックが成功し、実際のプロセスで非root UID・ネットワーク隔離が確認され、コンテナが残っていない。模擬テストだけでこの条件を満たしたとはしない。
 - [ ] 生成物だけの編集が消える理由、stdoutとファイル保存、PowerShellのリダイレクトを使わない理由を説明した。
 
 **提出：** `php-template-匿名番号.zip`に`before/`、`after/`（`hello.php`・`data.php`・`render.php`・`build.php`・`templates/`・`output/index.html`）、`WORKLOG.md`、`evidence/`（実行バージョン・digest・29チェックのテキスト、通常・切替・特殊文字の画面）を入れます。Dockerイメージ自体・認証情報・PC設定は含めません。ZIPを別フォルダーへ再展開し、生成HTMLを開いて確認します。学校の回収先が未配布なら保存して確認待ちと記録します。

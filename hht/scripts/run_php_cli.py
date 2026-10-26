@@ -1,6 +1,8 @@
 """Student wslc launcher. Never reads or overlays instructor solutions."""
 
 import argparse
+from datetime import datetime, timezone
+import json
 from pathlib import Path
 import re
 import shutil
@@ -30,7 +32,7 @@ def execute(source, action, runtime, image):
     runtime.pull(image)
     if not any(value.endswith("@" + image.split("@", 1)[1]) for value in runtime.image_digests(image)):
         raise Blocked("Image digest does not match the pinned official image")
-    check_process_security(runtime.run(source, image, "php", "-r", SECURITY_PROBE))
+    runtime.report["process_security"] = check_process_security(runtime.run(source, image, "php", "-r", SECURITY_PROBE))
     if runtime.run(source, image, "php", "-r", "echo PHP_VERSION;") != b"8.4.27":
         raise Blocked("Runtime PHP version does not match the pinned PHP 8.4.27")
     if action == "version":
@@ -50,7 +52,7 @@ def execute(source, action, runtime, image):
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Run only your exercise copy through safety-checked wslc")
+    parser = argparse.ArgumentParser(description="Run only your exercise copy through wslc with non-root and network-none checks")
     parser.add_argument("--source", required=True, help="Your php-template-work folder")
     parser.add_argument("--action", choices=["version", "hello", "build", "stdout", "check"], required=True)
     args = parser.parse_args()
@@ -58,7 +60,13 @@ def main():
     image = (EXERCISE / "image.txt").read_text(encoding="utf-8").strip()
     if not re.fullmatch(r"docker\.io/library/php:8\.4\.27-cli-bookworm@sha256:[0-9a-f]{64}", image):
         raise Blocked("Use the reviewed official PHP image pinned by digest")
-    output = execute(source, args.action, ContainerRuntime("wslc"), image)
+    runtime = ContainerRuntime("wslc")
+    output = execute(source, args.action, runtime, image)
+    runtime.report.update(image=image, checked_at_utc=datetime.now(timezone.utc).isoformat())
+    record = ROOT.parent / "test-results/php-cli-student/runtime-report.json"
+    record.parent.mkdir(parents=True, exist_ok=True)
+    record.write_bytes((json.dumps(runtime.report, ensure_ascii=False, indent=2) + "\n").encode("utf-8"))
+    print("Runtime evidence: " + str(record), file=sys.stderr)
     sys.stdout.buffer.write(output)  # Do not re-encode HTML using Windows shell defaults.
 
 

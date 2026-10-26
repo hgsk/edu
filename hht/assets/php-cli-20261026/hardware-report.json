@@ -1,0 +1,122 @@
+{
+  "kind": "actual T770i wslc execution; instructor solution used in separate test copy",
+  "states": {
+    "normal": {
+      "sha256": "ba195b35ab0a0661e7d0c94bb10c4e77d119913f9374d76096a2614728469dd2",
+      "bytes": 699,
+      "utf8": "PASS",
+      "stdout_file_equal": true,
+      "screenshot": "normal.png"
+    },
+    "condition": {
+      "sha256": "d6bedb76394a840c90b1d94f64b1da0cecef8a94cff8104898dd2f53d1c22666",
+      "bytes": 715,
+      "utf8": "PASS",
+      "stdout_file_equal": true,
+      "screenshot": "condition.png"
+    },
+    "special": {
+      "sha256": "71feb280c792eb666a0c0badf8317fdff78f864a7fbd2c4187e631c37e8e3f57",
+      "bytes": 704,
+      "utf8": "PASS",
+      "stdout_file_equal": true,
+      "screenshot": "special.png"
+    }
+  },
+  "browser": [
+    {
+      "pid": 28524,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "started_epoch": 1793055240.5666924,
+      "state": "normal",
+      "exit_code": 0,
+      "cleanup": "PASS: launched browser process exited"
+    },
+    {
+      "pid": 41068,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "started_epoch": 1793055253.646434,
+      "state": "condition",
+      "exit_code": 0,
+      "cleanup": "PASS: launched browser process exited"
+    },
+    {
+      "pid": 44136,
+      "executable": "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      "started_epoch": 1793055262.2800922,
+      "state": "special",
+      "exit_code": 0,
+      "cleanup": "PASS: launched browser process exited"
+    }
+  ],
+  "version": "PHP 8.4.27 (cli) (built: Oct 21 2026 15:53:39) (NTS)\nCopyright (c) The PHP Group\nBuilt by https://github.com/docker-library/php\nZend Engine v4.4.27, Copyright (c) Zend Technologies\n    with Zend OPcache v8.4.27, Copyright (c), by Zend Technologies\n",
+  "hello": "PHPでHTMLを作る\n",
+  "check": "PASS assignment data\nPASS normal: shop\nPASS normal: notice\nPASS normal: rows/order/conditions\nPASS normal: UTF-8\nPASS normal: no PHP markers\nPASS changed data: shop\nPASS changed data: notice\nPASS changed data: rows/order/conditions\nPASS changed data: UTF-8\nPASS changed data: no PHP markers\nPASS empty list: shop\nPASS empty list: notice\nPASS empty list: rows/order/conditions\nPASS empty list: UTF-8\nPASS empty list: no PHP markers\nPASS special characters: shop\nPASS special characters: notice\nPASS special characters: rows/order/conditions\nPASS special characters: UTF-8\nPASS special characters: no PHP markers\nPASS no injected tags\nPASS escape both quotes and HTML metacharacters\nPASS invalid UTF-8 substitution\nPASS echo warmup\nPASS file generation from another cwd\nPASS saved file bytes match rendered HTML\nPASS stdout equals file bytes\nPASS regeneration overwrites manual HTML edits\nTemporary copy cleanup PASS\nChecks: 29; failures: 0\n",
+  "runtime": {
+    "runtime": "wslc",
+    "ready": true,
+    "wsl_version": "WSL バージョン: 3.0.3.0",
+    "cli_version": "wslc 3.0.3.0",
+    "executable": "C:\\Program Files\\WSL\\wslc.exe",
+    "run_options": [
+      "--cidfile",
+      "--cpus",
+      "--detach",
+      "--dns",
+      "--dns-option",
+      "--dns-search",
+      "--domainname",
+      "--entrypoint",
+      "--env",
+      "--env-file",
+      "--gpus",
+      "--health-cmd",
+      "--health-interval",
+      "--health-retries",
+      "--health-start-period",
+      "--health-timeout",
+      "--help",
+      "--hostname",
+      "--interactive",
+      "--ip",
+      "--label",
+      "--memory",
+      "--mount",
+      "--name",
+      "--network",
+      "--network-alias",
+      "--no-healthcheck",
+      "--publish",
+      "--publish-all",
+      "--pull",
+      "--rm",
+      "--session",
+      "--shm-size",
+      "--stop-signal",
+      "--stop-timeout",
+      "--tmpfs",
+      "--tty",
+      "--ulimit",
+      "--user",
+      "--volume",
+      "--workdir"
+    ],
+    "missing_options": [],
+    "privilege_reductions": false,
+    "omitted_options": [
+      "--cap-drop",
+      "--security-opt"
+    ]
+  },
+  "recorded_at_utc": "2026-10-26T22:55:09.116535+00:00",
+  "process_security": {
+    "Uid": "65534\t65534\t65534\t65534",
+    "CapEff": "0000000000000000",
+    "CapBnd": "00000000a80425fb",
+    "NoNewPrivs": "0",
+    "interfaces": [
+      "lo"
+    ]
+  },
+  "image": "docker.io/library/php:8.4.27-cli-bookworm@sha256:496b5e02fe9fe44fcfb715023b931048111dc4e0bc719789d83c906be9f04b05"
+}

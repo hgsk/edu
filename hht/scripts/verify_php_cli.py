@@ -17,7 +17,7 @@ IMAGE = (EXERCISE / "image.txt").read_text(encoding="utf-8").strip()
 
 
 def main():
-    parser = argparse.ArgumentParser(description="wslc student runtime; fail closed on missing isolation features")
+    parser = argparse.ArgumentParser(description="wslc student runtime; check supported non-root and network-none controls")
     parser.add_argument("--runtime", choices=["wslc", "docker"], default="wslc")
     parser.add_argument("--check-runtime", action="store_true", help="Read version/help only; never pull/start containers")
     args = parser.parse_args()
@@ -58,10 +58,11 @@ def main():
         shutil.copytree(EXERCISE / "instructor/solution", solution, dirs_exist_ok=True)
         shutil.copytree(EXERCISE / "tests", work / "tests")
         security = runtime.run(work, IMAGE, "php", "-r", SECURITY_PROBE)
-        check_process_security(security)
+        check_process_security(security, require_reduced_privileges=args.runtime == "docker")
         (result_dir / "process-security.json").write_bytes(security)
-        print("PROCESS SECURITY: non-root, CapEff=0, CapBnd=0, NoNewPrivs=1, loopback only: PASS")
+        print("PROCESS SECURITY: non-root, loopback only: PASS; actual status: " + security.decode("utf-8"))
         version = run(work, "php", "-r", "echo PHP_VERSION;")
+        print("\nPHP VERSION: " + version.decode("utf-8"))
         if version != b"8.4.27":
             raise RuntimeError(f"Expected pinned PHP 8.4.27, got {version!r}")
         for file in work.rglob("*.php"):

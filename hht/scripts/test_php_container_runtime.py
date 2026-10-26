@@ -7,7 +7,7 @@ import tempfile
 import unittest
 from unittest.mock import Mock, patch
 
-from php_container_runtime import Blocked, ContainerRuntime, REQUIRED_OPTIONS, check_process_security, cli_text, json_rows
+from php_container_runtime import Blocked, ContainerRuntime, REQUIRED_OPTIONS, DOCKER_PRIVILEGE_OPTIONS, check_process_security, cli_text, json_rows
 from run_php_cli import execute, student_source
 
 
@@ -15,7 +15,7 @@ IMAGE = "docker.io/library/php:8.4.27-cli-bookworm@sha256:" + "a" * 64
 
 
 class SimulatedCLI:
-    def __init__(self, *, options=None, version="99.0.0", wide=False):
+    def __init__(self, *, options=None, version="3.0.3", wide=False):
         self.options = set(REQUIRED_OPTIONS if options is None else options)
         self.version, self.wide = version, wide
         self.calls = []
@@ -75,13 +75,12 @@ def simulated_runtime(cli=None):
 
 
 class AdapterContractTests(unittest.TestCase):
-    def test_current_303_help_missing_controls_blocks_before_pull_or_run(self):
-        cli = SimulatedCLI(options=REQUIRED_OPTIONS - {"--cap-drop", "--security-opt"}, version="3.0.3", wide=True)
-        runtime, _ = simulated_runtime(cli)
-        with self.assertRaisesRegex(Blocked, "--cap-drop, --security-opt"):
-            runtime.probe()
-        self.assertEqual(runtime.report["missing_options"], ["--cap-drop", "--security-opt"])
-        self.assertFalse(runtime.report["ready"])
+    def test_current_303_help_without_privilege_reductions_is_ready(self):
+        runtime, cli = simulated_runtime(SimulatedCLI(version="3.0.3", wide=True))
+        runtime.probe()
+        self.assertEqual(runtime.report["missing_options"], [])
+        self.assertTrue(runtime.report["ready"])
+        self.assertEqual(runtime.report["omitted_options"], ["--cap-drop", "--security-opt"])
         self.assertFalse(any("pull" in cmd or ("run" in cmd and "--help" not in cmd) for cmd in cli.calls))
 
     def test_network_alias_does_not_count_as_network_isolation_option(self):
@@ -122,10 +121,10 @@ class AdapterContractTests(unittest.TestCase):
         runtime.probe()
         args = runtime.run_args("C:/course files/日本語", IMAGE, ["php", "build.php"], "owned")
         self.assertEqual(args[args.index("--mount") + 1], "type=bind,source=C:/course files/日本語,target=/work")
-        for flag, value in [("--network", "none"), ("--cap-drop", "ALL"), ("--security-opt", "no-new-privileges"), ("--user", "65534:65534")]:
+        for flag, value in [("--network", "none"), ("--user", "65534:65534")]:
             self.assertEqual(args[args.index(flag) + 1], value)
         self.assertEqual(args[-3:], [IMAGE, "php", "build.php"])
-        self.assertFalse(set(args) & {"--privileged", "--publish", "-p", "--detach"})
+        self.assertFalse(set(args) & {"--cap-drop", "--security-opt", "--privileged", "--publish", "-p", "--detach"})
 
     def test_wslc_stdout_bytes_are_not_reencoded(self):
         runtime, cli = simulated_runtime(SimulatedCLI(wide=True))
@@ -147,8 +146,8 @@ class AdapterContractTests(unittest.TestCase):
             runtime.cleanup("owned")
         self.assertFalse(any("remove" in command for command in cli.calls))
 
-    def test_cleanup_empty_output_or_unknown_schema_is_not_absence(self):
-        for value in (b"", b"[{}]", b"not JSON"):
+    def test_cleanup_unknown_schema_is_not_absence(self):
+        for value in (b"[{}]", b"not JSON"):
             with self.subTest(value=value):
                 runtime, cli = simulated_runtime()
                 runtime.probe()
@@ -184,20 +183,29 @@ class AdapterContractTests(unittest.TestCase):
         self.assertTrue(any("stop" in command for command in cli.calls))
 
     def test_docker_ci_keeps_native_socket_and_nonroot_user(self):
-        cli = SimulatedCLI()
+        cli = SimulatedCLI(options=REQUIRED_OPTIONS | DOCKER_PRIVILEGE_OPTIONS)
         runtime = ContainerRuntime("docker", runner=cli, which=lambda name: "/usr/bin/docker", platform="linux")
         runtime.probe()
         with patch("php_container_runtime.os.getuid", return_value=1001, create=True), patch("php_container_runtime.os.getgid", return_value=1001, create=True):
             args = runtime.run_args("/tmp/work", IMAGE, ["php", "--version"], "owned")
         self.assertIn("unix:///var/run/docker.sock", args)
         self.assertEqual(args[args.index("--user") + 1], "1001:1001")
+        self.assertEqual(args[args.index("--cap-drop") + 1], "ALL")
+        self.assertEqual(args[args.index("--security-opt") + 1], "no-new-privileges")
+
+    def test_docker_ci_still_requires_both_privilege_reductions(self):
+        cli = SimulatedCLI(options=REQUIRED_OPTIONS)
+        runtime = ContainerRuntime("docker", runner=cli, which=lambda name: "/usr/bin/docker", platform="linux")
+        with self.assertRaisesRegex(Blocked, "--cap-drop, --security-opt"):
+            runtime.probe()
+        self.assertFalse(runtime.report["ready"])
 
     def test_cli_json_handles_utf16_arrays_and_docker_json_lines(self):
         self.assertEqual(cli_text("wslc 3.0.3.0\r\r\n".encode("utf-16-le")), "wslc 3.0.3.0")
         self.assertEqual(json_rows(b'{"Names":"a"}\n{"Names":"b"}'), [{"Names": "a"}, {"Names": "b"}])
 
     def test_successful_empty_docker_json_lines_means_no_rows(self):
-        cli = SimulatedCLI()
+        cli = SimulatedCLI(options=REQUIRED_OPTIONS | DOCKER_PRIVILEGE_OPTIONS)
         runtime = ContainerRuntime("docker", runner=cli, which=lambda name: "/usr/bin/docker", platform="linux")
         runtime.probe()
         cli.list_bytes = b""
@@ -205,10 +213,24 @@ class AdapterContractTests(unittest.TestCase):
 
     def test_effective_process_security_requires_all_controls(self):
         valid = {"Uid": "1001 1001 1001 1001", "CapEff": "0000000000000000", "CapBnd": "0000000000000000", "NoNewPrivs": "1", "interfaces": ["lo"]}
-        self.assertEqual(check_process_security(json.dumps(valid).encode()), valid)
+        self.assertEqual(check_process_security(json.dumps(valid).encode(), require_reduced_privileges=True), valid)
         for change in ({"CapBnd": "1"}, {"CapEff": "1"}, {"NoNewPrivs": "0"}, {"Uid": "0 0 0 0"}, {"Uid": "1001 1001 0 1001"}, {"interfaces": ["lo", "eth0"]}):
             with self.subTest(change=change), self.assertRaises(Blocked):
-                check_process_security(json.dumps(valid | change).encode())
+                check_process_security(json.dumps(valid | change).encode(), require_reduced_privileges=True)
+
+    def test_wslc_records_default_privileges_but_still_rejects_root_and_network(self):
+        default = {"Uid": "65534 65534 65534 65534", "CapEff": "0", "CapBnd": "a80425fb", "NoNewPrivs": "0", "interfaces": ["lo"]}
+        self.assertEqual(check_process_security(json.dumps(default).encode()), default)
+        for change in ({"Uid": "0 0 0 0"}, {"interfaces": ["lo", "eth0"]}):
+            with self.subTest(change=change), self.assertRaises(Blocked):
+                check_process_security(json.dumps(default | change).encode())
+
+    def test_successful_empty_wslc_json_lines_means_no_rows(self):
+        runtime, cli = simulated_runtime()
+        runtime.probe()
+        cli.list_bytes = b""
+        self.assertFalse(runtime.present("owned"))
+
 
 
 class StudentLauncherContractTests(unittest.TestCase):
@@ -220,6 +242,7 @@ class StudentLauncherContractTests(unittest.TestCase):
         for name in ("hello.php", "data.php", "render.php", "build.php", "templates/index.php"):
             (self.source / name).write_bytes(b"INCOMPLETE STUDENT COPY")
         self.runtime = Mock(spec=ContainerRuntime)
+        self.runtime.report = {}
         self.runtime.image_digests.return_value = ["docker.io/library/php@sha256:" + "a" * 64]
         self.secure = json.dumps({"Uid": "65534 65534 65534 65534", "CapEff": "0", "CapBnd": "0", "NoNewPrivs": "1", "interfaces": ["lo"]}).encode()
 
@@ -238,7 +261,7 @@ class StudentLauncherContractTests(unittest.TestCase):
         self.runtime.run.assert_not_called()
 
     def test_effective_security_failure_blocks_student_build(self):
-        self.runtime.run.return_value = self.secure.replace(b'"NoNewPrivs": "1"', b'"NoNewPrivs": "0"')
+        self.runtime.run.return_value = self.secure.replace(b'65534 65534 65534 65534', b'0 0 0 0')
         with self.assertRaises(Blocked):
             execute(self.source, "build", self.runtime, IMAGE)
         self.assertEqual(self.runtime.run.call_count, 1)

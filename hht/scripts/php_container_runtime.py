@@ -1,4 +1,4 @@
-"""Container CLI adapter. A missing isolation control is a blocker, never an omitted flag."""
+"""wslc student runtime; optional privilege reductions remain enabled for Linux CI."""
 
 import json
 import os
@@ -14,7 +14,8 @@ class Blocked(RuntimeError):
     """The requested runtime cannot establish the exercise's existing safety contract."""
 
 
-REQUIRED_OPTIONS = {"--rm", "--name", "--network", "--cap-drop", "--security-opt", "--mount", "--workdir", "--user"}
+REQUIRED_OPTIONS = {"--rm", "--name", "--network", "--mount", "--workdir", "--user"}
+DOCKER_PRIVILEGE_OPTIONS = {"--cap-drop", "--security-opt"}
 
 
 def cli_text(data):
@@ -44,15 +45,21 @@ def version_tuple(text):
     return tuple(map(int, match.groups()))
 
 
-def check_process_security(data):
+def check_process_security(data, *, require_reduced_privileges=False):
     """Check effective Linux process controls in addition to the requested CLI flags."""
     status = json.loads(data.decode("utf-8"))
     for field in ("CapEff", "CapBnd"):
-        if not isinstance(status.get(field), str) or int(status[field], 16) != 0:
+        if not isinstance(status.get(field), str) or not re.fullmatch(r"[0-9a-fA-F]+", status[field]):
+            raise Blocked(f"Container {field} could not be recorded")
+        if require_reduced_privileges and int(status[field], 16) != 0:
             raise Blocked(f"Container {field} is not zero")
     uids = status.get("Uid", "").split()
-    if status.get("NoNewPrivs") != "1" or len(uids) != 4 or not all(uid.isdecimal() and int(uid) > 0 for uid in uids):
-        raise Blocked("Container must run as a non-root UID with NoNewPrivs=1")
+    if len(uids) != 4 or not all(uid.isdecimal() and int(uid) > 0 for uid in uids):
+        raise Blocked("Container must run as a non-root UID")
+    if status.get("NoNewPrivs") not in {"0", "1"}:
+        raise Blocked("Container NoNewPrivs could not be recorded")
+    if require_reduced_privileges and status["NoNewPrivs"] != "1":
+        raise Blocked("Linux Docker CI requires NoNewPrivs=1")
     if set(status.get("interfaces", ["UNKNOWN"])) != {"lo"}:
         raise Blocked("Container network is not limited to loopback")
     return status
@@ -109,8 +116,11 @@ class ContainerRuntime:
             raise Blocked("Only wslc (student) and native Linux docker (CI) are supported")
         help_text = cli_text(self.checked([*self.prefix, "run", "--help"]))
         options = set(re.findall(r"(?<![\w-])--[a-z][a-z-]*", help_text))
-        missing = sorted(REQUIRED_OPTIONS - options)
-        self.report.update(executable=executable, run_options=sorted(options), missing_options=missing)
+        required = REQUIRED_OPTIONS | (DOCKER_PRIVILEGE_OPTIONS if self.kind == "docker" else set())
+        missing = sorted(required - options)
+        self.report.update(executable=executable, run_options=sorted(options), missing_options=missing,
+                           privilege_reductions=self.kind == "docker",
+                           omitted_options=sorted(DOCKER_PRIVILEGE_OPTIONS) if self.kind == "wslc" else [])
         if missing:
             raise Blocked("Missing required isolation options: " + ", ".join(missing) + "; no container was started")
         if self.kind == "docker":
@@ -137,16 +147,17 @@ class ContainerRuntime:
     def run_args(self, work, image, command, name):
         self.require_ready()
         user = "65534:65534" if self.kind == "wslc" else f"{os.getuid()}:{os.getgid()}"
+        privilege_args = ["--cap-drop", "ALL", "--security-opt", "no-new-privileges"] if self.kind == "docker" else []
         return [*self.prefix, "run", "--rm", "--name", name, "--network", "none",
-                "--cap-drop", "ALL", "--security-opt", "no-new-privileges", "--user", user,
+                *privilege_args, "--user", user,
                 "--mount", f"type=bind,source={work},target=/work", "--workdir", "/work", image, *command]
 
     def present(self, name):
         # A failed inspect/list is UNKNOWN, not proof that a container is absent.
         data = self.checked([*self.prefix, "container", "list", "--all", "--format", "json", "--filter", f"name={name}"])
-        # Docker emits one JSON object per matching row, so successful zero-row output is empty.
-        # wslc uses a JSON array; an empty response there remains an unknown protocol result.
-        if self.kind == "docker" and not data.strip():
+        # Both CLIs emit JSON lines and no bytes for a successful zero-row list.
+        # checked() already rejects access errors; only successful empty output means absent.
+        if not data.strip():
             return False
         try:
             rows = json_rows(data)

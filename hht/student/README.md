@@ -2,14 +2,16 @@
 
 毎回このページから今日の課題を開きます。
 
-PCのVS Codeで受講する場合は、[VS Codeハンズオン手順](../docs/vscode-hands-on.md)で準備し、毎回同じ教材フォルダーを開きます。  
-DAY課題は共通です。
+初回は[Documentsへクローンする手順](../docs/workbook/common.md#clone-edu)で準備します。  
+毎回、PCのVS Codeで`Documents/edu`全体を開きます。  
+操作の練習には[VS Codeハンズオン](../docs/vscode-hands-on.md)を使います。
 
 ## 毎回の始め方
 
-1. PCのVS Codeで本人用のローカルGitリポジトリのルートを開き、本人のブランチと作業状態を確認する。
+1. PCのVS Codeで`Documents/edu`を開き、ローカルGitの作業状態を確認する。
 2. 下の一覧から今回の課題を開く。
-3. 依頼を読む → 計画する → 制作する → 確認する → 返信する。
+3. [各DAYの開始手順](../docs/workbook/common.md#independent-day-start)に沿って、今回の作業場所を準備する。
+4. 依頼を読む → 計画する → 制作する → 確認する → 返信する。
 
 ## 全15回の授業
 
@@ -31,16 +33,16 @@ DAY課題は共通です。
 
 ## 作業に使うもの
 
-- [制作するカフェサイト](../starter-site/)・[完成条件](./assignment-checks.md)
+- [共通の作業手順と作業メモ](../docs/workbook/common.md)
+- [完成条件への入口](./assignment-checks.md)
 
+全15回の開始データは、それぞれ`hht/lessons/NN/start`にあります。  
+作業場所は`hht/practice/dayNN`です。  
+他のDAYの完成物は必要ありません。  
+具体的な開始データと編集するファイルは、今回のDAY本文を確認します。
 
-DAY 3・4は各回の開始ZIPで練習します。  
-DAY 5・6の開始場所は、それぞれの日別ワークブックを確認します。  
-DAY 7以降は講師が指定する本人の継続サイトを使い、以前の制作物を配布データで上書きしません。  
-[DAY 7以降の開始場所](../docs/workbook/day07.md)を講師と行い、以前の本文や画像を保持します。  
-上のサイトへのリンクは、教材原本の場所を示しています。
 - [用語集](../docs/glossary.md)・[メールと変更記録のテンプレート](../docs/templates.md)
-- DAY 14〜15: [ポートフォリオ制作ガイド](../docs/portfolio-project.md)・[制作フォルダー](../portfolio/)
+- DAY 14〜15: [ポートフォリオ制作ガイド](../docs/portfolio-project.md)
 - 追加演習: [夏祭りサイトの更新](../hands-on/summer-festival-annual-update/README.md)
 - 練習: [CODE TYPE QUEST](../typing-app/index.html)・[RSVP教材リーダー](../typing-app/reader.html)
 - アプリの使い方: [付属アプリの解説と遊び方](../docs/app-play-guide.md)

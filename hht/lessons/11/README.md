@@ -9,7 +9,7 @@
 - **進行:** [カリキュラム 第11回](../../docs/curriculum.md#第11回-複数更新クライアント確認)
 - **依頼:** [添付文章](../../fixtures/emails/03-content-request.md)／[営業時間と価格](../../fixtures/emails/04-hours-and-price.md)／[更新年度](../../fixtures/emails/05-copyright-year.md)
 - **添付:** [店舗紹介原稿](../../fixtures/attachments/about-copy.md)
-- **制作:** [スターターサイト](../../starter-site/)／[練習サーバー](../../practice-server/)
+- **制作:** [スターターサイト](./start/)／[練習サーバー](../../practice-server/)
 
 ## 今日確認するもの
 
@@ -18,3 +18,9 @@
 ## 今日できるもの
 
 変更差分、影響範囲表、ステージングURL、確認依頼
+
+## この回だけで始める
+
+[開始データ](./start/)と[共通の開始手順](../../docs/workbook/common.md#independent-day-start)を使います。  
+作業場所は`hht/practice/day11`です。  
+他のDAYの完成物は必要ありません。

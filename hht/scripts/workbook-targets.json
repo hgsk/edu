@@ -2,7 +2,7 @@
   "figures": [
     {
       "id": "day01",
-      "source": "starter-site/index.html",
+      "source": "lessons/01/start/index.html",
       "output": "assets/workbook/targets/day01.png",
       "points": [
         {
@@ -21,7 +21,7 @@
     },
     {
       "id": "day02",
-      "source": "starter-site/about.html",
+      "source": "lessons/02/start/about.html",
       "output": "assets/workbook/targets/day02.png",
       "points": [
         {
@@ -115,7 +115,7 @@
     },
     {
       "id": "day05",
-      "source": "starter-site/menu.html",
+      "source": "lessons/05/start/menu.html",
       "output": "assets/workbook/targets/day05.png",
       "points": [
         {
@@ -130,7 +130,7 @@
     },
     {
       "id": "day06",
-      "source": "starter-site/menu.html",
+      "source": "lessons/06/start/menu.html",
       "output": "assets/workbook/targets/day06.png",
       "points": [
         {
@@ -149,7 +149,7 @@
     },
     {
       "id": "day07",
-      "source": "starter-site/about.html",
+      "source": "lessons/07/start/about.html",
       "output": "assets/workbook/targets/day07.png",
       "points": [
         {
@@ -165,7 +165,7 @@
     },
     {
       "id": "day08",
-      "source": "starter-site/about.html",
+      "source": "lessons/08/start/about.html",
       "output": "assets/workbook/targets/day08.png",
       "points": [
         {
@@ -181,7 +181,7 @@
     },
     {
       "id": "day09",
-      "source": "starter-site/index.html",
+      "source": "lessons/09/start/index.html",
       "output": "assets/workbook/targets/day09.png",
       "points": [
         {
@@ -197,7 +197,7 @@
     },
     {
       "id": "day10",
-      "source": "starter-site/menu.html",
+      "source": "lessons/10/start/menu.html",
       "output": "assets/workbook/targets/day10.png",
       "points": [
         {
@@ -219,7 +219,7 @@
     },
     {
       "id": "day11-price",
-      "source": "starter-site/menu.html",
+      "source": "lessons/11/start/menu.html",
       "output": "assets/workbook/targets/day11-price.png",
       "points": [
         {
@@ -242,7 +242,7 @@
     },
     {
       "id": "day11-info",
-      "source": "starter-site/index.html",
+      "source": "lessons/11/start/index.html",
       "output": "assets/workbook/targets/day11-info.png",
       "points": [
         {
@@ -261,7 +261,7 @@
     },
     {
       "id": "day12",
-      "source": "starter-site/index.html",
+      "source": "lessons/12/start/index.html",
       "output": "assets/workbook/targets/day12.png",
       "points": [
         {
@@ -277,7 +277,7 @@
     },
     {
       "id": "day13",
-      "source": "starter-site/index.html",
+      "source": "lessons/13/start/index.html",
       "output": "assets/workbook/targets/day13.png",
       "points": [
         {
@@ -296,7 +296,7 @@
     },
     {
       "id": "day14",
-      "source": "portfolio/index.html",
+      "source": "lessons/14/start/index.html",
       "output": "assets/workbook/targets/day14.png",
       "points": [
         {
@@ -304,7 +304,7 @@
           "label": "見出しと短い紹介を書く位置"
         },
         {
-          "selector": "div.line:has-text(\"カフェサイトの制作実績\")",
+          "selector": "div.line:has-text(\"架空のカフェ事例の紹介\")",
           "label": "制作実績を書く位置"
         },
         {
@@ -317,7 +317,7 @@
     },
     {
       "id": "day15",
-      "source": "portfolio/css/style.css",
+      "source": "lessons/15/start/css/style.css",
       "output": "assets/workbook/targets/day15.png",
       "points": [
         {

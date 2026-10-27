@@ -5,10 +5,12 @@
 
 ## 毎回の開始：同じフォルダーを開く
 
-講師から受け取った本人用の教材フォルダーをVS Codeで開きます。  
-講師は、Gitの初期化と開始状態のコミットを済ませた教材を配布します。  
+初回は[Documentsへクローンする手順](./workbook/common.md#clone-edu)で、GitHubの`hgsk/edu`を取得します。  
+毎回、VS Codeで同じ`Documents/edu`を開きます。  
+クローンで履歴も取得されるので、Gitの初期化や初期コミットは不要です。  
 `README.md`と`hht`が見えるフォルダーを使います。  
-次の授業も、このフォルダーを開いて続けます。
+次の授業も、同じ教材リポジトリを開きます。  
+制作ファイルは各DAY専用の作業フォルダーに分けます。
 
 ```powershell
 git status --short
@@ -19,12 +21,12 @@ VS Codeのソース管理で変更一覧を読み、続けている作業を確�
 
 <a id="practice-baseline"></a>
 
-## DAY 3・4：配布状態を記録する
+## 各DAYの開始データを記録する
 
-DAY 3・4の開始データは、本人のリポジトリ内の `hht/practice/dayNN`へ展開します。  
-DAY 3は `hht/practice/day03`、DAY 4は `hht/practice/day04`です。  
-配布状態をコミットしてから、HTML・CSSを直します。  
-これにより、教材の追加と自分の修正を別々に読めます。
+[共通の開始手順](./workbook/common.md#independent-day-start)で、そのDAYの作業フォルダーを準備します。  
+DAY 1なら`hht/practice/day01`、DAY 15なら`hht/practice/day15`です。  
+準備したままの状態をコミットしてから、今回のHTML・CSSを直します。  
+これにより、開始データの追加と自分の修正を別々に読めます。
 
 ## 編集・確認の後：差分を読んでコミットする
 

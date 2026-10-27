@@ -5,6 +5,19 @@
 💾 **Gitでの記録：** [共通の作業手順](common.md#local-git-workflow)で、作業前後の変更を記録します。  
 作業後は `git tag -f day02-end`で、その日の最後のコミットに目印を付けます。
 
+### 📂 このDAYだけで始める
+
+他のDAYの受講や完成物は必要ありません。  
+[共通の開始手順](./common.md#independent-day-start)に沿って、リポジトリのルートで次を実行します。
+
+```powershell
+.\hht\scripts\prepare-day.ps1 -Day 2
+```
+
+作業場所は`hht/practice/day02`です。  
+同じDAYを再開するときは準備コマンドを繰り返さず、このフォルダーを開きます。  
+別のDAYの作業フォルダーや、開始データの原本は変更しません。
+
 ![イラスト：同じ言葉を探す。  
 同じ言葉を見つけても、一件ずつ使われ方を確かめます。  
 名札：あなた（新人）。  
@@ -31,12 +44,12 @@
 
 ### 開くファイル：DAY 2
 
-**VS Codeで開くもの：** 自分の継続サイトの `index.html` と `about.html`（教材内の場所は `hht/starter-site`）。
+**VS Codeで開くもの：** このDAYの作業フォルダーの `index.html` と `about.html`（教材内の場所は `hht/practice/day02`）。
 
 **ブラウザで見るページ：** ホームと店舗案内です。  
 検索で見つかったファイル名をクリックし、そのページの文章を確認します。
 
-![starter-site/about.htmlの実画面（赤い番号は教材用の注釈）。  
+![DAY 2の開始データの店舗案内の実画面（赤い番号は教材用の注釈）。  
 1は紹介文の創業年数、2は反映先を確認する仮文章](../../assets/workbook/targets/day02.png)
 
 **見る場所（画像の番号と対応）:**

@@ -47,7 +47,7 @@ GitHubアカウントの作成やログインは不要です。
   カフェサイトは変更していない。
 - 保存後に同じ教材フォルダーとブランチを開き直し、変更したページから続きを始められる。
 
-日本語化・教材コピー・ローカルGitの準備は、安全に制作と復元を続けるための準備です。  
+日本語化・教材のクローン・ローカルGitの準備は、安全に制作と復元を続けるための準備です。  
 
 ## 1 授業前に用意するもの
 
@@ -86,20 +86,6 @@ CodeTourは任意です。
 `Ctrl + Shift + P` → `Configure Display Language` と入力して選びます。  
 インストール直後に **Change Language and Restart** が表示された場合は、それを押して手順4へ進んでも構いません。
 
-### 3 講師から受け取った教材をローカルGitで開く
-
-講師から配布された教材一式を、本人用フォルダーへコピーします。  
-ZIP配布の場合は展開します。  
-GitHubからのクローンは使いません。
-
-VS Codeの「ファイル → フォルダーを開く」で、`README.md`と`hht`が入ったルートを選びます。
-
-![VS Codeで教材ルートのREADMEとhhtを確認した実画面](../assets/vscode/04-workspace-root.jpg)
-
-[ローカルGitの初期化と作者設定](./local-git.md#day-1だけリポジトリを用意する)を行い、開始状態をコミットします。  
-配布物が既にGitリポジトリなら、初期化を繰り返しません。  
-次回も同じフォルダーを開きます。
-
 ## 4 再起動して表示を確認する
 
 ![日本語へ切り替える再起動確認](../assets/vscode/00d-restart-japanese.jpg)
@@ -114,39 +100,19 @@ Live Serverなど拡張機能固有の名前や `Go Live` は英語のまま表�
 学校PCで拡張機能を入れられない場合は講師へ相談してください。  
 [公式の表示言語の案内](https://code.visualstudio.com/docs/configure/locales)も参照できます。
 
-## 3 画面を見ながら教材をクローンする
+## 3 Documentsへ教材をクローンする
 
-### 1 クローンを選ぶ
+[共通手順の「初回だけ：Documentsへ教材をクローンする」](./workbook/common.md#clone-edu)に沿って進めます。  
+取得元は`https://github.com/hgsk/edu.git`、保存先はWindowsの「ドキュメント」です。  
+クローン後に`Documents/edu`を開き、`README.md`と`hht`が見えることを確認します。  
+次回からは、このフォルダーを開きます。
 
-![コマンドパレットでGit Cloneを選ぶ](../assets/vscode/01-clone-command.jpg)
-
-`Ctrl + Shift + P` → `Git: クローン` を選びます。
-
-### 2 配布済みのURLを貼る
-
-![教材URLを入力する](../assets/vscode/02-clone-url.jpg)
-
-配布済みの教材URLを貼り付け、`Enter`を押します。
-
-### 3 PCの保存先を選ぶ
-
-![クローンの保存先フォルダーを選ぶ](../assets/vscode/03-clone-folder.jpg)
-
-自分が書き込める授業用フォルダーを選び、**リポジトリの宛先として選択** を押します。
-
-### 4 教材を開く
-
-![教材ルートのREADMEとhhtを確認する](../assets/vscode/04-workspace-root.jpg)
-
-完了後に **開く** を選び、左側に `README.md` と `hht` が見えればOKです。  
-信頼の確認が出たら取得元を確認します。  
-次回は同じフォルダーを開き、クローンし直しません。
 
 ## 4 本人用の教材フォルダーを確認する
 
 ![VS Codeで本人用の教材フォルダーを開いた実画面](../assets/workbook/common/01-vscode-clean.jpg)
 
-講師から受け取った本人用のフォルダーを開きます。  
+クローンした`Documents/edu`を開きます。  
 左側のエクスプローラーで `README.md`と`hht`を確認します。  
 次の授業も同じフォルダーを開きます。  
 作業の記録には[共通手順](./workbook/common.md#local-git-workflow)のコミットとタグを使います。

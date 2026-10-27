@@ -7,7 +7,7 @@
 - **生徒:** [ワークブック DAY 13](../../docs/workbook/day13.md#day-13-カフェサイトを承認公開しよう)
 - **講師:** [第13回の導入・振り返りトーク](../../docs/instructor-talk-guide.md#第13回-カフェサイトの最終承認と公開)
 - **進行:** [カリキュラム 第13回](../../docs/curriculum.md#第13回-keyframes最終承認公開)
-- **制作:** [スターターサイト](../../starter-site/)／[練習サーバー](../../practice-server/)
+- **制作:** [スターターサイト](./start/)／[練習サーバー](../../practice-server/)
 - **記録:** [公開・完了報告テンプレート](../../docs/templates.md)
 - **承認依頼:** [最終承認と公開の条件](../../student/requests/day13-approval.md)
 - **公開可:** [採用案の明示承認メール](../../student/requests/day13-release-approval.md)
@@ -19,3 +19,9 @@
 ## 今日できるもの
 
 2案比較、承認記録、バックアップ、公開記録、完了報告
+
+## この回だけで始める
+
+[開始データ](./start/)と[共通の開始手順](../../docs/workbook/common.md#independent-day-start)を使います。  
+作業場所は`hht/practice/day13`です。  
+他のDAYの完成物は必要ありません。

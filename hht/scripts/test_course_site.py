@@ -61,7 +61,7 @@ class CourseSiteTest(unittest.TestCase):
         self.fails_with("ZIP differs")
 
     def test_workbook_premise_drift(self):
-        self.replace("docs/workbook/day05.md", "DAY 5は、今あるサイトをそのまま改修します。", "トップだけを確認。")
+        self.replace("docs/workbook/common.md", "どのDAYも、他のDAYを終えていなくても始められます。", "トップだけを確認。")
         self.fails_with("Workbook premise changed")
 
     def test_missing_asset(self):

@@ -15,6 +15,7 @@ import urllib.request
 from PIL import Image
 
 from workbook_navigation import workbook_day_link_errors
+from day_starts import validate as validate_day_starts
 from course_site import validate as validate_site
 from workbook_targets import validate as validate_targets
 
@@ -22,6 +23,7 @@ from workbook_targets import validate as validate_targets
 ROOT = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
 ERRORS.extend(validate_site(ROOT))
+ERRORS.extend(validate_day_starts(ROOT))
 ERRORS.extend(validate_targets(ROOT))
 
 

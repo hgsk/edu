@@ -10,25 +10,81 @@
 
 Gitは全15回で使います。
 
+<a id="clone-edu"></a>
+
+## 初回だけ：Documentsへ教材をクローンする
+
+GitHubの[教材リポジトリ`hgsk/edu`](https://github.com/hgsk/edu)を、自分のPCのDocumentsへ取得します。  
+**クローン**は、ファイルとGitの履歴をまとめてPCへコピーする操作です。  
+GitとVS CodeがインストールされたPCで進めます。
+
+1. VS Codeを開き、`Ctrl + Shift + P`を押します。
+2. `Git: クローン`を選び、次のURLを入力してEnterキーを押します。
+
+```text
+https://github.com/hgsk/edu.git
+```
+
+![VS Codeのクローン操作でhttps://github.com/hgsk/edu.gitを入力した実画面](../../assets/vscode/02-clone-url.jpg)
+
+**見るところ：** 入力欄のURLが`https://github.com/hgsk/edu.git`になっていることを確認します。
+
+3. 保存先を選ぶ画面で、左側の「ドキュメント」を開き、「リポジトリの宛先として選択」を押します。
+4. クローンが終わったら、「開く」を押します。
+5. VS Codeのエクスプローラーで、`edu`の中に`README.md`と`hht`があることを確認します。
+
+Documentsは、Windowsで「ドキュメント」と表示されるフォルダーです。  
+OneDriveを利用しているPCでは、OneDrive内の「ドキュメント」になることもあります。  
+この中に`edu`が作られ、作業場所は`Documents/edu`になります。
+
+既に`edu`があるときは、削除や上書きをせず、そのフォルダーを開いて講師と確認します。  
+クローン後はGitの履歴があるので、`git init`や初期コミットは行いません。
+
 ## 毎回の進め方
 
 ### 1. 始める：今の状態を確認する
 
-講師から受け取った本人用の教材フォルダーをVS Codeで開きます。  
-初回の準備は[ローカルGitの操作](../local-git.md)を参照します。
+初回にクローンした`Documents/edu`を、VS Codeの「ファイル → フォルダーを開く」で開きます。  
+次回からはクローンし直さず、同じフォルダーを使います。  
+Gitの記録操作は[ローカルGitの操作](../local-git.md)を参照します。
 
-![推奨拡張だけのVS Codeで本人用フォルダーと変更のあるHTMLを開いた実画面](../../assets/workbook/common/01-vscode-clean.jpg)
-
-ソース管理で変更一覧を読み、前回から続けている作業を確認します。  
+ソース管理で変更一覧を読み、現在の未コミット変更を確認します。  
 タグは作業の終わりに付けます。
 
 ```powershell
 git status --short
 ```
 
-DAY 3・4は、各回の開始データを展開してGitに記録します。  
-DAY 5・6は、今使っているサイトをその場所で改修します。  
-カフェサイトの標準配置は `hht/starter-site`、DAY 14・15は `hht/portfolio`です。
+<a id="independent-day-start"></a>
+
+### 📂 初めて取り組むDAYの準備
+
+どのDAYも、他のDAYを終えていなくても始められます。  
+各回の`hht/lessons/NN/start`に、必要なHTML・CSS・画像・企画がそろっています。
+
+1. VS Codeで`Documents/edu`を開きます。
+2. 「ターミナル → 新しいターミナル」を開きます。
+3. リポジトリのルートで、次を実行します。  
+   以下はDAY 6の例です。
+
+```powershell
+.\hht\scripts\prepare-day.ps1 -Day 6
+```
+
+![VS CodeのターミナルでDAY 6の準備コマンドを実行し、作業用フォルダーの作成とファイル一覧を確認した実画面](../../assets/independent-days/prepare-day.png)
+
+**見るところ：** 「DAY 06 の準備ができました」と表示され、`index.html`・`menu.html`・`about.html`・`css`・`images`が作業場所にそろいます。
+
+4. 作成された`hht/practice/day06`を開き、開始状態をGitへ記録します。
+5. そのDAYの本文へ戻り、指定されたファイルを編集します。
+
+DAY番号だけを変えると、別のDAYの作業場所を準備できます。  
+同じDAYの作業フォルダーがあると、コマンドは上書きせず停止します。  
+続きを行うときは、そのフォルダーをそのまま開きます。  
+最初からやり直すときは、既存の成果を残したまま別の名前で練習できるよう講師に相談します。
+
+すべての作業を同じローカルGitリポジトリへ記録します。  
+他のDAYのファイルをコピーしたり、完成まで待ったりする必要はありません。
 
 ### 2. 作る：少し直して、画面で確かめる
 

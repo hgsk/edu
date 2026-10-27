@@ -14,3 +14,9 @@
 
 [DAY 3の完成条件](../../docs/workbook/day03.md)を参照します。
 
+
+## この回だけで始める
+
+[開始データ](./start/)と[共通の開始手順](../../docs/workbook/common.md#independent-day-start)を使います。  
+作業場所は`hht/practice/day03`です。  
+他のDAYの完成物は必要ありません。

@@ -5,6 +5,19 @@
 💾 **Gitでの記録：** [共通の作業手順](common.md#local-git-workflow)で、作業前後の変更を記録します。  
 作業後は `git tag -f day01-end`で、その日の最後のコミットに目印を付けます。
 
+### 📂 このDAYだけで始める
+
+他のDAYの受講や完成物は必要ありません。  
+[共通の開始手順](./common.md#independent-day-start)に沿って、リポジトリのルートで次を実行します。
+
+```powershell
+.\hht\scripts\prepare-day.ps1 -Day 1
+```
+
+作業場所は`hht/practice/day01`です。  
+同じDAYを再開するときは準備コマンドを繰り返さず、このフォルダーを開きます。  
+別のDAYの作業フォルダーや、開始データの原本は変更しません。
+
 ![イラスト：依頼を受け取る。  
 依頼を受け取ったら、まず読み、分からないことをメモします。  
 名札：あなた（新人）、佐藤さん（店舗責任者）。  
@@ -32,13 +45,13 @@
 
 ### 開くファイル：DAY 1
 
-**VS Codeで開くもの：** 自分用にコピーした `hht/starter-site/index.html` と `hht/starter-site/css/style.css`。
+**VS Codeで開くもの：** このDAYで準備した `hht/practice/day01/index.html` と `hht/practice/day01/css/style.css`。
 
 **ブラウザで見るページ：** ホームです。  
 ロゴと大きな見出しが目印です。  
 環境準備だけを練習するときは、別の `hht/tour/index.html` を使います。
 
-![starter-site/index.htmlの実画面（赤い番号は教材用の注釈）。  
+![DAY 1の開始データのホームの実画面（赤い番号は教材用の注釈）。  
 1はページ移動、2は書き換える見出し、3は営業時間の見出し](../../assets/workbook/targets/day01.png)
 
 **見る場所（画像の番号と対応）:**

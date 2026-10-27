@@ -1,0 +1,21 @@
+/*
+ * DAY 15:
+ * だれに何を伝えたいかを考え、自分でCSSを作ろう。
+ * 下の設定は、読みやすく始めるための最小限の土台です。
+ */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, sans-serif;
+  line-height: 1.7;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}

@@ -61,7 +61,7 @@ class WorkbookFilesTest(unittest.TestCase):
         text = read_workbook(self.root)
         self.assertIn("](../assets/workbook/targets/day05.png)", text)
         self.assertIn("](../lessons/03/day3-start.zip)", text)
-        self.assertIn("DAY 5は、今あるサイトをそのまま改修します。", text)
+        self.assertIn("prepare-day.ps1 -Day 5", text)
 
 
 if __name__ == "__main__":

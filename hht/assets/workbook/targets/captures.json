@@ -1,10 +1,10 @@
 {
   "method": "Real page capture with DOM number overlays; source-reference diagrams labelled separately",
-  "config_sha256": "2f3acdead89ff579606afbbe54037da1075a1689a7802a98c4631a4afb0ab988",
+  "config_sha256": "7e73c122d8ca86e4812456880e8332d42f7f2bc4edefbfe30b832e406f109479",
   "figures": [
     {
       "id": "day01",
-      "source": "starter-site/index.html",
+      "source": "lessons/01/start/index.html",
       "mode": "page",
       "output": "assets/workbook/targets/day01.png",
       "sha256": "4dc71614bf3919ec7ea2c09c2444e0a9bb2cc6bad079d46148bf83081388040a",
@@ -50,7 +50,7 @@
     },
     {
       "id": "day02",
-      "source": "starter-site/about.html",
+      "source": "lessons/02/start/about.html",
       "mode": "page",
       "output": "assets/workbook/targets/day02.png",
       "sha256": "d549520b1641bb8541a04d3f07a366725ef4e599be76893ab200c6d1c5f98374",
@@ -258,7 +258,7 @@
     },
     {
       "id": "day05",
-      "source": "starter-site/menu.html",
+      "source": "lessons/05/start/menu.html",
       "mode": "page",
       "output": "assets/workbook/targets/day05.png",
       "sha256": "ce01f7d2e12a410916481631b56b5cdd4778d8516b2efd49b2c78e147e254d91",
@@ -293,7 +293,7 @@
     },
     {
       "id": "day06",
-      "source": "starter-site/menu.html",
+      "source": "lessons/06/start/menu.html",
       "mode": "page",
       "output": "assets/workbook/targets/day06.png",
       "sha256": "86a38677edac24c09ef16e2be93f04d7e031b14320e5adf9a83fafcde4980174",
@@ -328,7 +328,7 @@
     },
     {
       "id": "day07",
-      "source": "starter-site/about.html",
+      "source": "lessons/07/start/about.html",
       "mode": "page",
       "output": "assets/workbook/targets/day07.png",
       "sha256": "8ac7bce3323123d434f38e5fc547ca6708702ed6b062f75c2358f750c1a51d1b",
@@ -363,13 +363,13 @@
     },
     {
       "id": "day08",
-      "source": "starter-site/about.html",
+      "source": "lessons/08/start/about.html",
       "mode": "page",
       "output": "assets/workbook/targets/day08.png",
-      "sha256": "8d81d59c8f57e3cd833f966e0de3f1faad0c67aa90ae4139213a1fe9c8014821",
+      "sha256": "d1ebab9dc28541e1fdf4e7e288240fe57590749d039359bd39647a18b9b59689",
       "size": [
         1100,
-        692
+        1537
       ],
       "targets": [
         {
@@ -389,16 +389,16 @@
           "number": 2,
           "box": {
             "x": 0,
-            "y": 834.5625,
+            "y": 1112.359375,
             "width": 1100,
-            "height": 277.796875
+            "height": 844.859375
           }
         }
       ]
     },
     {
       "id": "day09",
-      "source": "starter-site/index.html",
+      "source": "lessons/09/start/index.html",
       "mode": "page",
       "output": "assets/workbook/targets/day09.png",
       "sha256": "60cabd3a8243d8956487b4580599dfad7066276e8c0b9248b48cb783d18ef639",
@@ -433,10 +433,10 @@
     },
     {
       "id": "day10",
-      "source": "starter-site/menu.html",
+      "source": "lessons/10/start/menu.html",
       "mode": "page",
       "output": "assets/workbook/targets/day10.png",
-      "sha256": "9cedcce34c944987fdacf7094d6ae97f26d66047d946ac5235bae4120f82ef1f",
+      "sha256": "66622d7eef1596f375c8694d08b1923f6d1b33c2d6d1353c5030d7ef3628ff13",
       "size": [
         320,
         840
@@ -471,7 +471,7 @@
           "box": {
             "x": 16,
             "y": 350.015625,
-            "width": 288,
+            "width": 600,
             "height": 189.078125
           }
         }
@@ -479,7 +479,7 @@
     },
     {
       "id": "day11-price",
-      "source": "starter-site/menu.html",
+      "source": "lessons/11/start/menu.html",
       "mode": "page",
       "output": "assets/workbook/targets/day11-price.png",
       "sha256": "5fb0925a15503411b16c3500ac25736ca021a8ef4b6890cba53a558834b25c88",
@@ -525,10 +525,10 @@
     },
     {
       "id": "day11-info",
-      "source": "starter-site/index.html",
+      "source": "lessons/11/start/index.html",
       "mode": "page",
       "output": "assets/workbook/targets/day11-info.png",
-      "sha256": "24accffa962bd5c4220909658ef98216830a820d6036ada5826438ee945c20e8",
+      "sha256": "d68d625f66d981ac903fe731247ab557ccc5b288234cca399e9405feac9f8299",
       "size": [
         1100,
         1231
@@ -571,10 +571,10 @@
     },
     {
       "id": "day12",
-      "source": "starter-site/index.html",
+      "source": "lessons/12/start/index.html",
       "mode": "page",
       "output": "assets/workbook/targets/day12.png",
-      "sha256": "a38aaca75623760982b9ebf5594d269a9e995c6d1dd67f0df2c5927773754838",
+      "sha256": "fec79a846f6a88b62e9284fcfcaf642468bdb7419a3ab7db505a535fcf17ce82",
       "size": [
         1100,
         372
@@ -606,13 +606,13 @@
     },
     {
       "id": "day13",
-      "source": "starter-site/index.html",
+      "source": "lessons/13/start/index.html",
       "mode": "page",
       "output": "assets/workbook/targets/day13.png",
-      "sha256": "87e8ec2f8aaee3c82dfe1104ae964961607ceb70cff9089546b659f4cd9e53d0",
+      "sha256": "e5ca81ca319681e64bb99ffccef8306bc9298a8522f42ac365d4ea1cdba6632a",
       "size": [
         1100,
-        1235
+        1513
       ],
       "targets": [
         {
@@ -632,7 +632,7 @@
           "number": 2,
           "box": {
             "x": 0,
-            "y": 59.1875,
+            "y": 336.984375,
             "width": 1100,
             "height": 465.75
           }
@@ -643,7 +643,7 @@
           "number": 3,
           "box": {
             "x": 0,
-            "y": 1123.71875,
+            "y": 1401.515625,
             "width": 1100,
             "height": 107.1875
           }
@@ -652,10 +652,10 @@
     },
     {
       "id": "day14",
-      "source": "portfolio/index.html",
+      "source": "lessons/14/start/index.html",
       "mode": "source",
       "output": "assets/workbook/targets/day14.png",
-      "sha256": "355939cf680966390cbf5cc24d766b51bc6d81540a25f773a903d86037a2a47e",
+      "sha256": "bcd61132abea3197eaa55fc86e31632cee08785205ea838e49ec5d5a94064a0e",
       "size": [
         1100,
         1022
@@ -673,7 +673,7 @@
           }
         },
         {
-          "selector": "div.line:has-text(\"カフェサイトの制作実績\")",
+          "selector": "div.line:has-text(\"架空のカフェ事例の紹介\")",
           "label": "制作実績を書く位置",
           "number": 2,
           "box": {
@@ -698,10 +698,10 @@
     },
     {
       "id": "day15",
-      "source": "portfolio/css/style.css",
+      "source": "lessons/15/start/css/style.css",
       "mode": "source",
       "output": "assets/workbook/targets/day15.png",
-      "sha256": "aa6735788238edfa3ac9791bb3d95f88cc8aa9ce7e67dec04871f75c0b16b0ff",
+      "sha256": "fed6cd7b10627af488810b6e5103cf2ea390e04f4fd14be082e063ec570347bf",
       "size": [
         1100,
         850
@@ -791,9 +791,10 @@
   ],
   "sources": {
     "scripts/capture-workbook.cjs": "6f6932ce2ef90cd14790449759175c427c9571ec39f0fb0f166181912e20f5b0",
-    "starter-site/index.html": "62b1dbf546328b79f17c4756b959482f02793d657e5e54f01343d0a602016b92",
-    "starter-site/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
-    "starter-site/about.html": "2fcd2bd4b2c1578517f6cff56e3949ad40cc67051b8244d1d9984d3861355531",
+    "lessons/01/start/index.html": "62b1dbf546328b79f17c4756b959482f02793d657e5e54f01343d0a602016b92",
+    "lessons/01/start/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
+    "lessons/02/start/about.html": "2fcd2bd4b2c1578517f6cff56e3949ad40cc67051b8244d1d9984d3861355531",
+    "lessons/02/start/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
     "lessons/03/start/about.html": "160e9b5fed470d3999e05bc87922b0add5b33ffc902c2ae31e82d5d6d4794a7a",
     "lessons/03/start/css/style.css": "a2386d6969180af031e36b040a8fbe8265c3980da5f9ee15e9dfe841c0024184",
     "lessons/04/start/about.html": "76d9fa391862294a0b7549ea680eb853e6fe5186bd553ccae8a42e7598d9811e",
@@ -802,17 +803,35 @@
     "instructor/day34-examples/day4/css/style.css": "4205c42aa5e242790ee747ff248d852908da62faf51e528b6541e473383de2b1",
     "lessons/04/tag-comparison.html": "0b6bed7c3ab87b15cb3f83a3bb955062e5a550033e50f7f34e96d325e6b32346",
     "lessons/04/tag-comparison.css": "647b83068b1c4501018cdec6276025f473e5fb3c38d2f52445d8bb764a552414",
-    "starter-site/menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
-    "portfolio/index.html": "14e4006a9efbea0d5372a891f22940690043071cae02955dcfde8815163e1fde",
-    "portfolio/css/style.css": "68fd72e1b1f5c71cfc30ffdc88893c72d109d06fc3f1b90f7dc71c51c213b528",
+    "lessons/05/start/menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
+    "lessons/05/start/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
+    "lessons/06/start/menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
+    "lessons/06/start/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
+    "lessons/07/start/about.html": "2fcd2bd4b2c1578517f6cff56e3949ad40cc67051b8244d1d9984d3861355531",
+    "lessons/07/start/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
+    "lessons/08/start/about.html": "401b3b2351c94cecadf5c772ddc072c2f96a7fb4877e75d1595cc2bde966a741",
+    "lessons/08/start/css/style.css": "a2491e160a899d672d56a1041e2f1f2ca43968e6a954e1a34d831a570ee483a0",
+    "lessons/09/start/index.html": "62b1dbf546328b79f17c4756b959482f02793d657e5e54f01343d0a602016b92",
+    "lessons/09/start/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
+    "lessons/10/start/menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
+    "lessons/10/start/css/style.css": "f3672cadfa9493e1dbfa01bd483b4773ac7ddf2d28fb4c200548ae10f46d12d5",
+    "lessons/11/start/menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
+    "lessons/11/start/css/style.css": "4bc8c66359a14da508bdceae311a048a2e5f57ee49770606d792ded5084a10a8",
+    "lessons/11/start/index.html": "62b1dbf546328b79f17c4756b959482f02793d657e5e54f01343d0a602016b92",
+    "lessons/12/start/index.html": "e47e5c59a5d53b5d6fce618ec51e10f7380972bb6ba0284bc6715b8f410a7b0b",
+    "lessons/12/start/css/style.css": "4bc8c66359a14da508bdceae311a048a2e5f57ee49770606d792ded5084a10a8",
+    "lessons/13/start/index.html": "fa1f30bd1b6d2f63a06c3a59be92f8cdd68270ff051edd3ac7da124ab6bb0094",
+    "lessons/13/start/css/style.css": "32c0f09f0917dc2bcbc8d952f2482418687010f5ce6dcbc4ec11a70111bc416e",
+    "lessons/14/start/index.html": "80d9bd980891baba1b2fab3102c97f8722f941e385f5bda5796fd17bc5f27c57",
+    "lessons/15/start/css/style.css": "68fd72e1b1f5c71cfc30ffdc88893c72d109d06fc3f1b90f7dc71c51c213b528",
     "references/photo-layout.html": "6a7417738381df6ba980271fa885d2bf8295c7f1c7a5dd69acba2aa4bfc2247e",
     "starter-site/images/hero-cafe.webp": "421d7a4ab41a3764e1b46520379f2124ad17a294139ac298e31d4ac107644e31"
   },
   "cleanup": "PASS",
   "status": "PASS",
   "process": {
-    "pid": 41068,
+    "pid": 39420,
     "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
-    "startedAt": "2026-10-16T12:35:16.149Z"
+    "startedAt": "2026-10-27T13:50:10.033Z"
   }
 }

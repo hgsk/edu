@@ -6,7 +6,7 @@
 - **講師:** [第1回の導入・振り返りトーク](../../docs/instructor-talk-guide.md#第1回-はじめての依頼メール)
 - **進行:** [カリキュラム 第1回](../../docs/curriculum.md#第1回-オリエンテーションブラウザエディター)
 - **依頼:** [最初の依頼メール](../../fixtures/emails/01-initial-request.md)
-- **制作:** [スターターサイト](../../starter-site/)
+- **制作:** [スターターサイト](./start/)
 - **技術演習:** [はじめてのブラウザ開発者ツール](../../docs/devtools-first-lesson.md)
 - **公開:** [練習サーバー](../../practice-server/)／[演習運営手順](../../docs/exercise-operations.md#2-第1回で作る自習環境)
 
@@ -21,3 +21,9 @@
 ## 今日できるもの
 
 最初のHTML、開発者ツール確認メモ、受領返信、公開URL、開始時点のバージョン、バックアップ・復元記録
+
+## この回だけで始める
+
+[開始データ](./start/)と[共通の開始手順](../../docs/workbook/common.md#independent-day-start)を使います。  
+作業場所は`hht/practice/day01`です。  
+他のDAYの完成物は必要ありません。

@@ -19,18 +19,18 @@ class LocalGitWorkflowTest(unittest.TestCase):
                 git("init", "-b", "main")
                 git("config", "user.name", "learner")
                 git("config", "user.email", "learner@example.invalid")
-                site = root / "hht/starter-site"
+                site = root / f"hht/practice/day{day:02d}"
                 site.mkdir(parents=True)
                 html = site / "menu.html"
                 css = site / "style.css"
                 html.write_text("<h1>Menu</h1>", encoding="utf-8")
                 css.write_text("a { padding: 0; }", encoding="utf-8")
-                git("add", "hht/starter-site")
+                git("add", f"hht/practice/day{day:02d}")
                 git("commit", "-m", "Existing site")
                 baseline = git("rev-parse", "HEAD").decode().strip()
                 css.write_text("a { padding: 8px 12px; }", encoding="utf-8")
                 self.assertIn(b"padding", git("diff"))
-                git("add", "hht/starter-site/style.css")
+                git("add", f"hht/practice/day{day:02d}/style.css")
                 git("commit", "-m", f"DAY {day} CSS update")
                 end_tag = f"day{day:02d}-end"
                 git("tag", "-f", end_tag)
@@ -42,16 +42,16 @@ class LocalGitWorkflowTest(unittest.TestCase):
                 css.write_text("a { padding: 12px; }", encoding="utf-8")
                 git("tag", "-f", end_tag)
                 self.assertEqual(git("rev-parse", end_tag), first_end)
-                git("add", "hht/starter-site/style.css")
+                git("add", f"hht/practice/day{day:02d}/style.css")
                 git("commit", "-m", "Adjust padding")
                 git("tag", "-f", end_tag)
                 self.assertEqual(git("rev-parse", end_tag), git("rev-parse", "HEAD"))
                 self.assertNotEqual(git("rev-parse", end_tag), first_end)
-                self.assertIn(b"padding: 8px 12px", git("show", first_end.decode().strip() + ":hht/starter-site/style.css"))
+                self.assertIn(b"padding: 8px 12px", git("show", first_end.decode().strip() + f":hht/practice/day{day:02d}/style.css"))
                 self.assertEqual(html.read_text(encoding="utf-8"), "<h1>Menu</h1>")
                 self.assertEqual(git("status", "--short"), b"")
-                self.assertIn(b"padding: 0", git("show", f"{baseline}:hht/starter-site/style.css"))
-                self.assertFalse((root / "hht/practice").exists())
+                self.assertIn(b"padding: 0", git("show", f"{baseline}:hht/practice/day{day:02d}/style.css"))
+                self.assertFalse((root / f"hht/practice/day{(6 if day == 5 else 5):02d}").exists())
 
 
 if __name__ == "__main__":

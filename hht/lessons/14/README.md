@@ -8,7 +8,7 @@
 - **講師:** [第14回の導入・振り返りトーク](../../docs/instructor-talk-guide.md#第14回-自分のポートフォリオを企画)
 - **進行:** [カリキュラム 第14回](../../docs/curriculum.md#第14回-自分のポートフォリオを企画する)
 - **課題:** [ポートフォリオ制作ガイド](../../docs/portfolio-project.md)
-- **参考実績:** [完成したカフェサイト](../../starter-site/)
+- **参考実績:** [完成したカフェサイト](./start/)
 
 ## 今日確認するもの
 
@@ -17,3 +17,9 @@
 ## 今日できるもの
 
 企画メモ、掲載可否チェック、ワイヤーフレーム、`portfolio/index.html`
+
+## この回だけで始める
+
+[開始データ](./start/)と[共通の開始手順](../../docs/workbook/common.md#independent-day-start)を使います。  
+作業場所は`hht/practice/day14`です。  
+他のDAYの完成物は必要ありません。

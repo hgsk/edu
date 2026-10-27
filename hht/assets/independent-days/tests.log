@@ -1,0 +1,10 @@
+[rtk] /!\ No hook installed — run `rtk init -g` for automatic token savings
+......................Container owned: absent; cleanup PASS
+.......Container hht-php-a208a72d05f140a0926def8a3c3acb0c: absent; cleanup PASS
+.........Container hht-php-285932a9b3a848559f6bc81cbaf94312: absent; cleanup PASS
+...Container hht-php-44eea8b7605e4bec94fbcf6bbc684be4: absent; cleanup PASS
+............................
+----------------------------------------------------------------------
+Ran 69 tests in 25.444s
+
+OK

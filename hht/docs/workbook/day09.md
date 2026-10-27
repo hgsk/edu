@@ -12,10 +12,16 @@
 
 **仕事のイメージ：** 横長と縦長の切り取りで、見せたい被写体が残るか確かめます。
 
-**制作するサイト：** DAY 8終了時の本人の継続サイトを使います。  
-下のサイトへのリンクは、教材原本の場所を示しています。  
-DAY 3・4のZIPにはimagesが含まれないため、本人の画像と支給素材・利用条件を確認します。  
-共通ボタンや本文を保持し、サイト全体を原本へ戻しません。
+**開始データ：** グラデーションのヒーロー領域と画像を含むカフェサイトです。
+候補画像と利用条件は支給素材の台帳で確認します。  
+
+[各回の開始手順](common.md#independent-day-start)を確認し、初回だけ講座フォルダーで `.\hht\scripts\prepare-day.ps1 -Day 9` を実行します。  
+作業場所は `hht/practice/day09/` です。  
+同じ回を再開するときは準備コマンドは不要です。  
+既存の作業は上書きされません。
+
+**この回の支給素材：** [写真の依頼](../../fixtures/emails/02-hero-request.md)、[AI画像案](../../fixtures/photographer-delivery/hero-ai-master.png)、[模擬撮影データ](../../fixtures/photographer-delivery/simulated-shoot-001.jpg)、[素材台帳](../../fixtures/photographer-delivery/ASSET-MANIFEST.md)を使います。  
+素材はこのDAYから直接開けます。
 
 > **佐藤さんからの依頼**  
 > 最初に出る写真を、もっとインパクトのあるものにしてください。
@@ -36,13 +42,13 @@ DAY 3・4のZIPにはimagesが含まれないため、本人の画像と支給�
 
 ### 開くファイル：DAY 9
 
-**VS Codeで開くもの：** 自分の継続サイトの `index.html`・`css/style.css` と `images` フォルダー。
+**VS Codeで開くもの：** 作業場所の `index.html`・`css/style.css` と `images` フォルダー。
 
-**ブラウザで見るページ：** ホーム上部の大きな帯（ヒーロー領域）です。  
-原本の背景はグラデーションです。  
+**ブラウザで見るページ：** `hht/practice/day09/index.html` の上部の大きな帯（ヒーロー領域）です。  
+開始時の背景はグラデーションです。  
 ここへ置く写真を検討し、商品一覧の画像と取り違えないようにします。
 
-![starter-site/index.htmlの実画面（赤い番号は教材用の注釈）。  
+![開始データの参考となる画面（元の教材のindex.htmlの画面、赤い番号は教材用の注釈）。  
 1は画像を検討するヒーロー領域、2は読みやすさを保つ見出し](../../assets/workbook/targets/day09.png)
 
 **見る場所（画像の番号と対応）:**

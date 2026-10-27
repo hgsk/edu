@@ -3,7 +3,7 @@
 [目次](../student-workbook.md) · [共通手順](./common.md#local-git-workflow) · [前の回：DAY 4](./day04.md) · [次の回：DAY 6](./day06.md)
 
 💾 **Gitでの記録：** [共通の作業手順](common.md#local-git-workflow)で、作業前後の変更を記録します。  
-開始タグは `day05-start`、作業後のタグは `day05-end`です。
+作業後は `git tag -f day05-end`で、その日の最後のコミットに目印を付けます。
 
 ![イラスト：3ページの上の案内と下の共通部分を見比べる新人](../../assets/workbook/illustrations/day05.png)
 
@@ -43,7 +43,7 @@ DAY 3・4の受講や完成物は必要ありません。
    別の場所で制作している場合は、現在の作業場所を使います。
 3. Gitの差分を確認し、未コミットの作業があれば内容を確かめて記録します。
    変更がなければ、新しいコミットは不要です。
-   今の状態へ `day05-start`タグを付けます。
+   ソース管理で今の変更一覧を読み、作業を続ける場所を確認します。
 4. 今の `menu.html`をブラウザで開き、同じサイトが使う `css/style.css`を編集します。
 
 見本では、案内に `.nav-list`、フッターに `.site-footer`、商品一覧に `.menu-grid`、1商品に `.menu-card`を使っています。  

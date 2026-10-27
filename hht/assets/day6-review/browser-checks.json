@@ -1,0 +1,32 @@
+{
+  "status": "PASS",
+  "cleanup": "PASS",
+  "checks": [
+    {
+      "width": 1100,
+      "columns": 2,
+      "cards": 4,
+      "overflow": false,
+      "padding": "24px",
+      "gap": "24px",
+      "fontSize": "20px",
+      "anchor": "PASS"
+    },
+    {
+      "width": 390,
+      "columns": 1,
+      "cards": 4,
+      "overflow": false,
+      "padding": "24px",
+      "gap": "24px",
+      "fontSize": "20px",
+      "anchor": "PASS"
+    }
+  ],
+  "process": {
+    "pid": 28964,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-27T11:38:57.521Z"
+  },
+  "source": "hht/instructor/day56-basic/day6/menu.html"
+}

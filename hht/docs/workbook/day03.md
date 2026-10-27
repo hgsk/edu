@@ -3,11 +3,11 @@
 [目次](../student-workbook.md) · [共通手順](./common.md#local-git-workflow) · [前の回：DAY 2](./day02.md) · [次の回：DAY 4](./day04.md)
 
 💾 **Gitでの記録：** [共通の作業手順](common.md#local-git-workflow)で、作業前後の変更を記録します。  
-開始タグは `day03-start`、作業後のタグは `day03-end`です。
+作業後は `git tag -f day03-end`で、その日の最後のコミットに目印を付けます。
 
 **この回の開始データ：** ZIPの中のHTMLとCSSを `hht/practice/day03`の直下へ入れます。  
 二重のフォルダーになったら、`about.html`と`css`がこの直下にあるか確かめます。  
-まだ修正せず、配布状態をGitへコミットしてから `day03-start`を付けます。  
+まだ修正せず、配布状態をGitへコミットします。  
 手順は[ローカルGitの開始データの記録](../local-git.md#practice-baseline)を参照します。
 
 ![イラスト：ボタンの見た目をそろえる。  

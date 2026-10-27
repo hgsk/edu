@@ -1,11 +1,3 @@
-/* DAY 5 基本編：共通部分の余白 */
-.nav-list a {
-  display: block;
-  padding: 8px 12px;
-}
-.site-footer {
-  padding: 32px 16px;
-}
 /* DAY 6 基本編：カードの内側と外側の余白 */
 .menu-card {
   padding: 24px;

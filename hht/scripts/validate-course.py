@@ -219,7 +219,7 @@ require('id="local-git-workflow"' in workbook, "Workbook missing canonical Git w
 require("Gitは全15回で使います" in workbook, "Workbook must require Git throughout the course")
 for block in workbook_days:
     number = int(re.match(r"# DAY (\d+)", block).group(1))
-    for term in ("#local-git-workflow", f"day{number:02d}-start", f"day{number:02d}-end"):
+    for term in ("#local-git-workflow", f"git tag -f day{number:02d}-end"):
         require(term in block, f"DAY {number} missing Git workflow continuation: {term}")
 policy_paths = (
     "docs/student-workbook.md", *(f"docs/workbook/{name}" for name in PART_NAMES), "docs/local-git.md", "submissions/README.md",
@@ -230,7 +230,7 @@ for relative in policy_paths:
     for forbidden in ("Gitは必須ではありません", "Git必須ではない", "Gitを使わない場合", "ZIP提出", "GitHubアカウントができた人から"):
         require(forbidden not in policy, f"Obsolete submission policy in {relative}: {forbidden}")
 git_guide = (ROOT / "docs/local-git.md").read_text(encoding="utf-8")
-for command in ("git commit", "git status --short", "git diff"):
+for command in ("git tag -f day01-end", "git status --short", "差分", "コミット"):
     require(command in git_guide, f"Git reference missing operation: {command}")
 for name in ("common.md", "introduction.md", *DAY_NAMES):
     text = (ROOT / "docs/workbook" / name).read_text(encoding="utf-8")

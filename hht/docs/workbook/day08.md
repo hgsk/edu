@@ -3,7 +3,7 @@
 [目次](../student-workbook.md) · [共通手順](./common.md#local-git-workflow) · [前の回：DAY 7](./day07.md) · [次の回：DAY 9](./day09.md)
 
 💾 **Gitでの記録：** [共通の作業手順](common.md#local-git-workflow)で、作業前後の変更を記録します。  
-開始タグは `day08-start`、作業後のタグは `day08-end`です。
+作業後は `git tag -f day08-end`で、その日の最後のコミットに目印を付けます。
 
 ![イラスト：大切な案内を邪魔せず残す。  
 大切な案内を残すときも、本文や入力欄を隠さないようにします。  

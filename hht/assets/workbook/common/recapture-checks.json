@@ -1,0 +1,28 @@
+{
+  "extensions": [
+    "ms-ceintl.vscode-language-pack-ja@1.131.2026090407",
+    "ms-vscode.live-server@0.4.20"
+  ],
+  "matchesWorkspaceRecommendations": true,
+  "builtinExtensions": "VS Code standard bundled extensions remain available",
+  "profileIsolated": true,
+  "existingUserWindowPreserved": true,
+  "checkedAt": "2026-10-27T10:44:16.785649+00:00",
+  "missingImages": [],
+  "screenshots": [
+    "01-vscode-clean.jpg",
+    "02-diff-clean.jpg",
+    "03-staged-clean.jpg"
+  ],
+  "cleanup": {
+    "status": "PASS",
+    "mainPids": [
+      29808,
+      24508
+    ],
+    "remainingProcesses": 0,
+    "method": "graceful window close",
+    "preexistingWindowsPreserved": true
+  },
+  "visualReview": "PASS: Japanese UI, enlarged labels, matching diff and staged state; no personal paths in published screenshots"
+}

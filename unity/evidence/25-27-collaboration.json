@@ -1,0 +1,48 @@
+{
+  "status": "PASS",
+  "git": {
+    "status": "PASS",
+    "root": "test-results/unity-team-229fd8f8ca",
+    "transport": "LOCAL FILESYSTEM",
+    "checks": [
+      "real merge conflict",
+      "agreed resolution",
+      "both changes retained",
+      "meta GUID unchanged",
+      "LFS binary round trip",
+      "fresh clone recovery"
+    ],
+    "metaSha256": "94807270f6b84057399f37e8609c3d94fb5df2679a6df0c1fc6ed7daf80d58e1",
+    "head": "41e6de20f74b9d7a9020a92f30be3281e4a6a554"
+  },
+  "refusedRepeatResolve": "PASS",
+  "refusedOutsideRoot": "PASS",
+  "unitypackage": {
+    "status": "PASS",
+    "prefabs": 2,
+    "guidAndMaterialReferences": "PASS"
+  },
+  "upm": {
+    "status": "PASS",
+    "prefabs": 2,
+    "guidAndMaterialReferences": "PASS"
+  },
+  "upmSha256": "907fa169195e88cadf64d1b39e31757f54dcac1d016f2ad9e8842d893be2deab",
+  "cloudUvcsLocks": "NOT RUN",
+  "hostedPullRequest": "NOT RUN",
+  "smartMerge": "NOT RUN",
+  "nativeUpmPreview": "PASS: actual Scene rendering, blue A and pale-purple D with names",
+  "packageManagerManualTarballInstall": "NOT RUN: package installed via project manifest",
+  "packageListUI": "LIMITATION: this environment showed an empty list; Course/Inspect shared prefabs selected and rendered the actual package assets",
+  "finalGenerator": {
+    "status": "PASS",
+    "archiveBytes": "PASS",
+    "upm": {
+      "status": "PASS",
+      "prefabs": 2,
+      "guidAndMaterialReferences": "PASS"
+    },
+    "packageSha256": "5286d3b3cfb74b27e2692c5737a1aa995328a7881e23d76ee2f214eb7a9bbdba",
+    "missingSourceRefusal": "PASS"
+  }
+}

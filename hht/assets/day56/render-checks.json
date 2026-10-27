@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "cleanup": "PASS",
+  "figures": [
+    {
+      "day": 5,
+      "images": 6,
+      "heading": "DAY 5 全ページの上と下をそろえて",
+      "screenshot": "workbook-day5-opening.png"
+    },
+    {
+      "day": 6,
+      "images": 7,
+      "heading": "DAY 6 人気メニューを見つけやすくして",
+      "screenshot": "workbook-day6-opening.png"
+    }
+  ],
+  "process": {
+    "pid": 2444,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-21T03:01:46.479Z"
+  }
+}

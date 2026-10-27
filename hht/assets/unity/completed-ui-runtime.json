@@ -1,0 +1,8 @@
+{
+  "status": "PASS",
+  "scene": "18-UIToolkit",
+  "title": "STUDENT EXHIBIT",
+  "interaction": "actual mouse click on Start",
+  "labelAfterClick": "Welcome!",
+  "screenshot": "18-complete-play.jpg"
+}

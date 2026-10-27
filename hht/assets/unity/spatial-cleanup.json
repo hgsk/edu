@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-10-18T03:42:23.6905192+09:00",
+  "processes": [
+    {
+      "pid": 33944,
+      "running": false
+    },
+    {
+      "pid": 68552,
+      "running": false
+    },
+    {
+      "pid": 43936,
+      "running": false
+    },
+    {
+      "pid": 48268,
+      "running": false
+    },
+    {
+      "pid": 50060,
+      "running": false
+    }
+  ],
+  "ownedLogWindows": [
+    {
+      "closed": true,
+      "id": 8521990
+    },
+    {
+      "closed": true,
+      "id": 9900202
+    }
+  ],
+  "existingVSCodeWindow": 1444442,
+  "httpListenerClosed": true,
+  "editorShutdown": "Graceful"
+}

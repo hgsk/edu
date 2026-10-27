@@ -1,0 +1,60 @@
+{
+  "screenshots": [
+    {
+      "source": "hht/starter-site/about.html",
+      "image": "guide-about.png"
+    },
+    {
+      "source": "hht/portfolio/index.html",
+      "image": "guide-portfolio.png"
+    }
+  ],
+  "diagrams": [
+    {
+      "source": "../assets/day34/markup-purpose.svg",
+      "image": "day34-markup-purpose.png"
+    },
+    {
+      "source": "../assets/day34/day3-css-map.svg",
+      "image": "day34-day3-css-map.png"
+    },
+    {
+      "source": "../assets/day34/day4-regions.svg",
+      "image": "day34-day4-regions.png"
+    },
+    {
+      "source": "../assets/workbook/photo-crop.svg",
+      "image": "photo-crop.png"
+    },
+    {
+      "source": "../assets/workbook/price-scope.svg",
+      "image": "price-scope.png"
+    },
+    {
+      "source": "../assets/workbook/release-route.svg",
+      "image": "release-route.png"
+    },
+    {
+      "source": "../assets/workbook/portfolio-plan.svg",
+      "image": "portfolio-plan.png"
+    }
+  ],
+  "pid": 17496,
+  "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+  "startedAt": "2026-10-16T09:30:20.135Z",
+  "cleanup": "PASS",
+  "markdownImages": 42,
+  "missingLinks": [],
+  "openFileGuides": 15,
+  "acceptanceConditions": "unchanged",
+  "courseValidation": "PASS",
+  "nativeMarkdownPane": "PASS: actual chat-sidebar preview displayed open-workbook-reading.png and open-cafe-html.png",
+  "nativePaneScreenshot": "markdown-pane-verified.png",
+  "testCodeWindowClosed": 69218,
+  "codeCleanup": {
+    "pid": 16700,
+    "mode": "normal close, no discard or save action on restored files",
+    "processAbsent": true,
+    "testWindowAbsent": true
+  }
+}

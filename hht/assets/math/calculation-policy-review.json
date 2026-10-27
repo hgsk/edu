@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-18",
+  "timezone": "Asia/Tokyo",
+  "scope": "Mathematics chapter and math interactive course only. No push, PR creation, merge, or Git index changes.",
+  "exercises": {
+    "units": 14,
+    "questions": 16,
+    "topics": [
+      "equivalence, domains, nonzero divisors, lost solutions and extra candidates",
+      "concrete calculations, conjecture, proof and counterexamples",
+      "estimates, units, omitted corrections, residuals, error bounds and tolerances"
+    ]
+  },
+  "assessment": "Choice matching is checked; written explanations are not auto-graded. Canonical rubrics guide learner and instructor review.",
+  "independentReview": {
+    "reviewer": "math_quality_review",
+    "status": "PASS",
+    "resolved": "Distinguished the squared residual u^2/4 from the omitted correction -E(u) in the square-root approximation."
+  },
+  "validation": {
+    "generatorTests": 10,
+    "modelCases": 2605,
+    "browserUnits": 28,
+    "browserScenes": 47,
+    "browserPresets": 85,
+    "reasoningChecks": 16,
+    "browserReport": "verification.json",
+    "cleanup": {
+      "browser": "PASS",
+      "server": "PASS"
+    }
+  },
+  "recoveredIssues": [
+    {
+      "raw": "apply_patch verification failed: Failed to find expected lines in C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\math\\style.css:\n.middle-route{border:1px solid var(--line);border-radius:6px;padding:10px;margin:0 0 18px;background:#ebf0e4}",
+      "impact": "The patch was rejected atomically before file changes. Reapplied the content changes and added scoped reasoning.css instead of matching part of a minified CSS line.",
+      "status": "RESOLVED"
+    },
+    {
+      "observed": "厳密な式の数値 1.01 ／ 近似 1.01",
+      "impact": "The calculation was correct, but locale formatting rounded the reference value to too few decimal places. Added explicit maximumFractionDigits and verified the display 1.00995049 versus 1.01.",
+      "status": "RESOLVED"
+    }
+  ],
+  "unresolvedErrors": [],
+  "nextSteps": [
+    "Open math/index.html and use the calculation policy, reasoning forms and rubrics.",
+    "Use B18 approximation, A06 time step and A10 absolute-error controls to compare requirements.",
+    "Copy written reasons into the submission memo and have them checked against the canonical rubric."
+  ],
+  "changedFiles": [
+    "hht/docs/student-workbook.md (mathematics chapter only)",
+    "math/docs/course-design.md",
+    "math/README.md",
+    "math/index.html",
+    "math/app.js",
+    "math/reasoning.css",
+    "math/models.js",
+    "math/teaching.js",
+    "math/lessons.js (generated)",
+    "math/guide.html",
+    "math/scripts/build_lessons.py",
+    "math/scripts/test_build_lessons.py",
+    "math/scripts/test_models.cjs",
+    "math/scripts/verify_browser.cjs",
+    "hht/assets/math/ (real screenshots and verification records)"
+  ]
+}

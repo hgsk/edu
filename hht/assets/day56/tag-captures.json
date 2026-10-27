@@ -1,0 +1,172 @@
+{
+  "method": "Real page capture with DOM number overlays; source-reference diagrams labelled separately",
+  "config_sha256": "888d1781cb5d841f4d54af1e0c349d349cbca98afe60bdc13357ced07fa0873a",
+  "figures": [
+    {
+      "id": "day5-landmarks",
+      "source": "instructor/day56-examples/day5/menu.html",
+      "mode": "page",
+      "output": "assets/day56/day5-html-landmarks.png",
+      "sha256": "2bc28a7dc39b54638dc5d711489ae33c21a67bab1c64e3feadb4151d0c3d4ce3",
+      "size": [
+        1100,
+        910
+      ],
+      "targets": [
+        {
+          "selector": "header",
+          "label": "header：上の共通案内",
+          "number": 1,
+          "box": {
+            "x": 0,
+            "y": 0,
+            "width": 1100,
+            "height": 75.1875
+          }
+        },
+        {
+          "selector": "main",
+          "label": "main：このページの中心",
+          "number": 2,
+          "box": {
+            "x": 0,
+            "y": 75.1875,
+            "width": 1100,
+            "height": 755.796875
+          }
+        },
+        {
+          "selector": "footer",
+          "label": "footer：下の共通情報",
+          "number": 3,
+          "box": {
+            "x": 0,
+            "y": 830.984375,
+            "width": 1100,
+            "height": 75.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day5-nav",
+      "source": "instructor/day56-examples/day5/menu.html",
+      "mode": "page",
+      "output": "assets/day56/day5-html-nav.png",
+      "sha256": "7016461d7125b4f8b0944e3438997c7db8f3d883f93f92fd71736b5254f1fba0",
+      "size": [
+        1100,
+        124
+      ],
+      "targets": [
+        {
+          "selector": "nav",
+          "label": "nav：ページ移動のまとまり",
+          "number": 1,
+          "box": {
+            "x": 844.9375,
+            "y": 16,
+            "width": 233.0625,
+            "height": 43.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day6-container",
+      "source": "instructor/day56-examples/day6/menu.html",
+      "mode": "page",
+      "output": "assets/day56/day6-html-container.png",
+      "sha256": "56a84f41d7062d532ab99f176c24b5db72a815461d7d6083b4cb7f35bda262b7",
+      "size": [
+        1100,
+        800
+      ],
+      "targets": [
+        {
+          "selector": ".menu-grid",
+          "label": "div：カードを並べる親",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 551.359375,
+            "width": 1056,
+            "height": 703.5625
+          }
+        },
+        {
+          "selector": ".menu-card:first-child",
+          "label": "article：1商品",
+          "number": 2,
+          "box": {
+            "x": 22,
+            "y": 551.359375,
+            "width": 520,
+            "height": 471.28125
+          }
+        }
+      ]
+    },
+    {
+      "id": "day6-parts",
+      "source": "instructor/day56-examples/day6/menu.html",
+      "mode": "page",
+      "output": "assets/day56/day6-html-parts.png",
+      "sha256": "8d53c976edf91dae0fa06e46f778857199e7a969155e1d2b46e5a067f08ad325",
+      "size": [
+        1100,
+        568
+      ],
+      "targets": [
+        {
+          "selector": ".menu-card:nth-child(2) img",
+          "label": "img：画像",
+          "number": 1,
+          "box": {
+            "x": 579,
+            "y": 572.359375,
+            "width": 478,
+            "height": 239
+          }
+        },
+        {
+          "selector": ".menu-card:nth-child(2) h2",
+          "label": "h2：商品名の見出し",
+          "number": 2,
+          "box": {
+            "x": 579,
+            "y": 827.359375,
+            "width": 478,
+            "height": 36
+          }
+        },
+        {
+          "selector": ".menu-card:nth-child(2) .price",
+          "label": "p：価格の段落",
+          "number": 3,
+          "box": {
+            "x": 579,
+            "y": 942.453125,
+            "width": 478,
+            "height": 43.1875
+          }
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "scripts/capture-workbook.cjs": "6f6932ce2ef90cd14790449759175c427c9571ec39f0fb0f166181912e20f5b0",
+    "instructor/day56-examples/day5/menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
+    "instructor/day56-examples/day5/css/style.css": "c107406fc05a9be048f93b9527291043fa80c429fab48d5a8ee8dcc3cdc4c19a",
+    "instructor/day56-examples/day6/menu.html": "05ce2f83544757303db4eaf92a71e16178b338e09624bb099d14937de7177ac4",
+    "instructor/day56-examples/day6/css/style.css": "b59aecf4d732ce02028942e6bf1f5d1febc1639644c78a58bf4dacb429300d0c",
+    "starter-site/images/hero-cafe.webp": "421d7a4ab41a3764e1b46520379f2124ad17a294139ac298e31d4ac107644e31"
+  },
+  "cleanup": "PASS",
+  "status": "PASS",
+  "process": {
+    "pid": 47168,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-21T03:00:35.441Z"
+  }
+}

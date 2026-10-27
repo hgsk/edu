@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "standalone_days": [
+    5,
+    6
+  ],
+  "required_prior_lessons": [],
+  "Git_and_bundle": "required; baseline import committed before day start tag",
+  "bundle_tests": 7,
+  "standalone_git_cases": "DAY 5 and DAY 6 each cloned from a repo without DAY 3/4 tags",
+  "browser_check": "PASS; independent source only; basic CSS; three-page links; 390/1100px",
+  "browser_cleanup": "PASS",
+  "course_validation": "PASS",
+  "independent_review": "PASS after common-path and portal-link corrections",
+  "source_files": [
+    {
+      "day": "05",
+      "files": {
+        "about.html": "2fcd2bd4b2c1578517f6cff56e3949ad40cc67051b8244d1d9984d3861355531",
+        "index.html": "62b1dbf546328b79f17c4756b959482f02793d657e5e54f01343d0a602016b92",
+        "menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
+        "css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
+        "images/hero-cafe.webp": "421d7a4ab41a3764e1b46520379f2124ad17a294139ac298e31d4ac107644e31"
+      },
+      "canonical_sha256": "262a4388527ea729d70b7f5b2f11277f709d303d446136c654fca3abe1e1d596"
+    },
+    {
+      "day": "06",
+      "files": {
+        "about.html": "2fcd2bd4b2c1578517f6cff56e3949ad40cc67051b8244d1d9984d3861355531",
+        "index.html": "62b1dbf546328b79f17c4756b959482f02793d657e5e54f01343d0a602016b92",
+        "menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
+        "css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
+        "images/hero-cafe.webp": "421d7a4ab41a3764e1b46520379f2124ad17a294139ac298e31d4ac107644e31"
+      },
+      "canonical_sha256": "3aee67f05f3250407ea61396a7d7cb7884eeac7e416f4fbf78455b8eef657cd0"
+    }
+  ]
+}

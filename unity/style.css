@@ -1,0 +1,33 @@
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #233344; background: #f4f6f8; line-height: 1.85; }
+* { box-sizing: border-box; }
+body { margin: 0; }
+a { color: #12605c; text-underline-offset: .2em; }
+a:focus-visible, summary:focus-visible { outline: 3px solid #b04716; outline-offset: 3px; }
+header { display: flex; gap: 1.5rem; align-items: center; padding: .9rem 2rem; background: #153e3b; color: white; }
+header a { color: white; }
+header span { flex: 1; font-weight: 700; }
+.layout { display: grid; grid-template-columns: 275px minmax(0, 1fr); max-width: 1500px; margin: auto; }
+aside { padding: 1.5rem; align-self: start; position: sticky; top: 0; max-height: 100vh; overflow: auto; }
+summary { cursor: pointer; font-weight: 700; }
+nav { display: grid; gap: .2rem; margin: 1rem 0; }
+nav a { padding: .25rem .4rem; text-decoration: none; border-radius: 4px; }
+nav a:hover { background: #dceae6; }
+main { min-width: 0; background: white; padding: 2rem 3rem 5rem; }
+h1 { font-size: clamp(1.5rem, 3vw, 2.2rem); line-height: 1.5; }
+h2 { margin-top: 2.5rem; }
+h3 { padding: 1rem 0; border-top: 4px solid #278077; font-size: 1.5rem; margin: 4rem 0 1rem; }
+p, li { overflow-wrap: anywhere; }
+li { margin-bottom: .65rem; }
+code { padding: .1rem .3rem; background: #edf1f3; border-radius: 3px; font-size: .95em; }
+figure { margin: 1.5rem 0; }
+img { display: block; width: 100%; height: auto; border: 1px solid #b7c6cb; border-radius: 6px; }
+figcaption { font-size: .9rem; color: #4c626b; margin-top: .4rem; }
+.anchor { scroll-margin-top: 1rem; }
+.skip { position: absolute; left: 1rem; top: -100px; background: white; padding: .5rem; }
+.skip:focus { top: .5rem; }
+footer { margin-top: 4rem; border-top: 1px solid #c9d5d9; }
+@media (max-width: 850px) { .layout { display: block; } aside { position: static; max-height: none; } main { padding: 1rem 1.25rem 3rem; } header { padding: .8rem 1rem; gap: .8rem; flex-wrap: wrap; } nav { grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); } }
+@media print { header, aside, .skip { display: none; } .layout { display: block; } main { padding: 0; } h3 { break-before: page; } figure { break-inside: avoid; } }
+
+pre { overflow-x:auto; padding:1rem; border:1px solid #b7c4cf; border-radius:.4rem; }
+pre code { padding:0; white-space:pre; }

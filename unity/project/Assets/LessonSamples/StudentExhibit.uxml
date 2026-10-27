@@ -1,0 +1,8 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+    <Style src="../UI/Exhibit.uss" />
+    <ui:VisualElement name="panel" class="panel">
+        <ui:Label text="受講者の展示サンプル" class="heading" />
+        <ui:Label name="status" text="準備完了" />
+        <ui:Button name="start-button" text="開始" />
+    </ui:VisualElement>
+</ui:UXML>

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>基礎数学｜ゲーム・プログラミング</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="reasoning.css">
+  <script defer src="lessons.js"></script>
+  <script defer src="game-life.js"></script>
+  <script defer src="models.js"></script>
+  <script defer src="teaching.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <a class="skip" href="#main">教材本文へ</a>
+  <header class="topbar"><a class="brand" href="#B01"><span class="brand-mark">∑</span><span>edu <span class="brand-sub">/ 数学</span></span></a><span class="top-note">ゲーム・プログラミングのための基礎数学</span><a href="guide.html">使い方</a></header>
+  <div class="layout">
+    <aside class="sidebar">
+      <details id="navigation" open>
+        <summary>単元を選ぶ <span>18 基礎 / 10 応用</span></summary>
+        <label class="search-label" for="search">単元を検索</label>
+        <input id="search" type="search" placeholder="例：ベクトル、回転" autocomplete="off">
+        <div class="middle-route"><p>中学の入口から進む</p><nav id="middle-route" aria-label="中学数学のおすすめ順"></nav></div>
+        <nav id="lesson-nav" aria-label="数学の単元"></nav>
+        <p id="search-count" class="small" role="status"></p>
+      </details>
+      <p class="sidebar-foot">数式 → 図 → 入力を変えて確認<br><a href="../hht/docs/workbook/math.md#math-course">学習内容・課題条件の正本 ↗</a></p>
+    </aside>
+    <main id="main" tabindex="-1">
+      <div class="breadcrumb"><span id="category">基礎</span><span id="unit-id">B01</span><span class="pill">動かして確かめる</span></div>
+      <h1 id="lesson-title">数学を読み込んでいます</h1>
+      <div id="request" class="request"></div>
+      <details class="calculation-policy"><summary>計算の進め方と評価の観点</summary><div id="calculation-policy-body"></div></details>
+      <section class="learning-support" aria-label="この単元の準備"><p><span id="learning-level" class="level-label"></span><span id="prerequisites"></span></p><details open><summary>式の前に知っておく言葉</summary><dl id="glossary"></dl></details></section>
+      <section class="lab" aria-labelledby="lab-title">
+        <div class="lab-heading"><div><p class="eyebrow">INTERACTIVE</p><h2 id="lab-title">式と動きをつなげる</h2></div><button id="reset" type="button">初期値に戻す</button></div>
+        <div class="experiment-bar"><label for="experiment">図で確かめる内容</label><select id="experiment"></select><div id="presets" class="presets" role="group" aria-label="比較する操作例"></div><p class="small">各図は選択した内容を扱います。単元全体の課題は下の本文で確認してください。</p></div>
+        <div class="lab-body">
+          <div class="visual"><canvas id="scene" width="1000" height="600" role="img" aria-label="選択した単元の計算結果を表す図。数値と説明は図の下に表示されます。"></canvas><p id="visual-caption" class="visual-caption"></p></div>
+          <div class="parameters"><h3>値を変える</h3><div id="parameters"></div><div class="result"><span>現在の結果</span><output id="result"></output></div><p id="model-note" class="small"></p></div>
+        </div>
+        <div class="transport"><button id="play" class="primary" type="button" aria-pressed="false">▶ 解説を再生</button><button id="step" type="button">10%進める</button><label class="timeline" for="progress">再生位置 <input id="progress" type="range" min="0" max="100" step="1" value="100"><output id="progress-value">100%</output></label><label class="speed-label" for="speed">速さ <select id="speed"><option value="0.5">0.5倍</option><option value="1" selected>1倍</option><option value="2">2倍</option></select></label></div>
+        <div class="explanation"><div class="stage-list" aria-label="観察の手順"><span>01 入力を変える</span><span>02 図と式を照合</span><span>03 課題で確認</span></div><p id="formula" class="formula"></p><p id="explanation"></p></div>
+      </section>
+      <section class="reading" aria-labelledby="reading-title"><p class="eyebrow">READ & TRY</p><h2 id="reading-title">意味を読み、課題で確かめる</h2><div id="lesson-content"></div></section>
+      <section class="reading-check" aria-labelledby="check-title"><p class="eyebrow">CHECK YOUR UNDERSTANDING</p><h2 id="check-title">図と式を読み取れましたか</h2><form id="check-form"><label id="check-question" for="check-answer"></label><div class="answer-row"><input id="check-answer" type="number" step="any" required inputmode="decimal" placeholder="数値で入力"><button type="submit">答えを確かめる</button></div></form><p class="small">この欄の問題文の条件で答えてください。図の現在の入力とは異なる場合があります。許容絶対誤差は10⁻⁶。確認結果は提出・単元の合否を表しません。</p><p id="check-feedback" role="status"></p></section>
+      <section id="reasoning-section" class="reasoning-section" aria-labelledby="reasoning-title" hidden><p class="eyebrow">EXPLAIN & VERIFY</p><h2 id="reasoning-title">計算の条件と結果を確かめる</h2><p>問題文の条件で判断し、理由を自分の言葉で書いてから解説と比べます。選択肢の照合は、記述の採点や単元全体の合否を表しません。</p><div id="reasoning-cases"></div></section>
+      <section class="memo" aria-labelledby="memo-title"><h2 id="memo-title">自分の言葉で残す</h2><label for="memo">変えた入力・予想・確認結果・残った疑問</label><textarea id="memo" rows="3" placeholder="例：速度を2倍にすると、同じ時間の移動距離も2倍になった。"></textarea><p id="memo-status" class="small" role="status">メモはこのブラウザに保存されます。提出・採点は行いません。</p></section>
+      <div class="pager"><button id="previous" type="button">← 前の単元</button><span id="position"></span><button id="next" type="button">次の単元 →</button></div>
+      <footer>座標系・単位・近似の条件も確認してください。<a href="references/conventions.md">記法と参考資料</a> · <a href="guide.html">操作ガイド</a><br>課題条件はワークブックから生成しています。図は理解を助ける数値モデルです。</footer>
+    </main>
+  </div>
+  <noscript>この教材のアニメーションにはJavaScriptが必要です。<a href="../hht/docs/workbook/math.md#math-course">文章版の教材</a>はJavaScriptなしで読めます。</noscript>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "retryScore": 0,
+  "saved": {
+    "version": 2,
+    "bestScore": 3,
+    "completedRuns": 1
+  },
+  "roots": 1,
+  "method": "Actual Unity UI clicks and Editor stop/start",
+  "status": "PASS",
+  "viewAfterRestart": 40436,
+  "restartedScore": 0,
+  "scope": "New lesson save only; retained after verification",
+  "viewAfterReload": 40346,
+  "viewBeforeReload": 40226,
+  "directory": "Application.persistentDataPath/EduCourseLoop",
+  "scoreAcrossReload": 2,
+  "backup": {
+    "version": 2,
+    "bestScore": 3,
+    "completedRuns": 1
+  }
+}

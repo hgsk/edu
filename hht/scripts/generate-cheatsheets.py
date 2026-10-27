@@ -218,7 +218,7 @@ def make_ui_sheet() -> Path:
             text(draw, (x + 75, 2634 + j * 55), line, 27, INK)
 
     # Checklist.
-    section_title(draw, 120, 2922, 5, "提出前チェック")
+    section_title(draw, 120, 2922, 5, "仕上げの確認")
     checks = [
         "□ 一番大切な内容が3秒で分かる",
         "□ ボタン・リンク・入力欄を見分けられる",

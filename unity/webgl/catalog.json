@@ -1,0 +1,292 @@
+{
+    "scenes": [
+        {
+            "key": "01-start",
+            "path": "Assets/Scenes/01-Editor.unity"
+        },
+        {
+            "key": "01-complete",
+            "path": "Assets/Scenes/Completed/01-Editor.unity"
+        },
+        {
+            "key": "02-start",
+            "path": "Assets/Scenes/02-Scene.unity"
+        },
+        {
+            "key": "02-complete",
+            "path": "Assets/Scenes/Completed/02-Scene.unity"
+        },
+        {
+            "key": "03-start",
+            "path": "Assets/Scenes/03-Transform.unity"
+        },
+        {
+            "key": "03-complete",
+            "path": "Assets/Scenes/Completed/03-Transform.unity"
+        },
+        {
+            "key": "04-start",
+            "path": "Assets/Scenes/04-MonoBehaviour.unity"
+        },
+        {
+            "key": "04-complete",
+            "path": "Assets/Scenes/Completed/04-MonoBehaviour.unity"
+        },
+        {
+            "key": "05-start",
+            "path": "Assets/Scenes/05-2D.unity"
+        },
+        {
+            "key": "05-complete",
+            "path": "Assets/Scenes/Completed/05-2D.unity"
+        },
+        {
+            "key": "06-start",
+            "path": "Assets/Scenes/06-Input.unity"
+        },
+        {
+            "key": "06-complete",
+            "path": "Assets/Scenes/Completed/06-Input.unity"
+        },
+        {
+            "key": "07-start",
+            "path": "Assets/Scenes/07-Prefab.unity"
+        },
+        {
+            "key": "07-complete",
+            "path": "Assets/Scenes/Completed/07-Prefab.unity"
+        },
+        {
+            "key": "08-start",
+            "path": "Assets/Scenes/08-Physics.unity"
+        },
+        {
+            "key": "08-complete",
+            "path": "Assets/Scenes/Completed/08-Physics.unity"
+        },
+        {
+            "key": "09-start",
+            "path": "Assets/Scenes/09-3D.unity"
+        },
+        {
+            "key": "09-complete",
+            "path": "Assets/Scenes/Completed/09-3D.unity"
+        },
+        {
+            "key": "10-start",
+            "path": "Assets/Scenes/10-Material.unity"
+        },
+        {
+            "key": "10-complete",
+            "path": "Assets/Scenes/Completed/10-Material.unity"
+        },
+        {
+            "key": "11-start",
+            "path": "Assets/Scenes/11-Camera.unity"
+        },
+        {
+            "key": "11-complete",
+            "path": "Assets/Scenes/Completed/11-Camera.unity"
+        },
+        {
+            "key": "12-start",
+            "path": "Assets/Scenes/12-Lighting.unity"
+        },
+        {
+            "key": "12-complete",
+            "path": "Assets/Scenes/Completed/12-Lighting.unity"
+        },
+        {
+            "key": "13-start",
+            "path": "Assets/Scenes/13-Animator.unity"
+        },
+        {
+            "key": "13-complete",
+            "path": "Assets/Scenes/Completed/13-Animator.unity"
+        },
+        {
+            "key": "14-start",
+            "path": "Assets/Scenes/14-Timeline.unity"
+        },
+        {
+            "key": "14-complete",
+            "path": "Assets/Scenes/Completed/14-Timeline.unity"
+        },
+        {
+            "key": "15-start",
+            "path": "Assets/Scenes/15-Audio.unity"
+        },
+        {
+            "key": "15-complete",
+            "path": "Assets/Scenes/Completed/15-Audio.unity"
+        },
+        {
+            "key": "16-start",
+            "path": "Assets/Scenes/16-uGUI.unity"
+        },
+        {
+            "key": "16-complete",
+            "path": "Assets/Scenes/Completed/16-uGUI.unity"
+        },
+        {
+            "key": "17-start",
+            "path": "Assets/Scenes/17-Gizmo.unity"
+        },
+        {
+            "key": "17-complete",
+            "path": "Assets/Scenes/Completed/17-Gizmo.unity"
+        },
+        {
+            "key": "18-start",
+            "path": "Assets/Scenes/18-UIToolkit.unity"
+        },
+        {
+            "key": "18-complete",
+            "path": "Assets/Scenes/Completed/18-UIToolkit.unity"
+        },
+        {
+            "key": "19-start",
+            "path": "Assets/Scenes/19-VFXGraph.unity"
+        },
+        {
+            "key": "19-complete",
+            "path": "Assets/Scenes/Completed/19-VFXGraph.unity"
+        },
+        {
+            "key": "20-start",
+            "path": "Assets/Scenes/20-Debug.unity"
+        },
+        {
+            "key": "20-complete",
+            "path": "Assets/Scenes/Completed/20-Debug.unity"
+        },
+        {
+            "key": "21-start",
+            "path": "Assets/Scenes/21-Build.unity"
+        },
+        {
+            "key": "21-complete",
+            "path": "Assets/Scenes/Completed/21-Build.unity"
+        },
+        {
+            "key": "22-start",
+            "path": "Assets/Scenes/22-UnityCLI.unity"
+        },
+        {
+            "key": "22-complete",
+            "path": "Assets/Scenes/Completed/22-UnityCLI.unity"
+        },
+        {
+            "key": "23-start",
+            "path": "Assets/Scenes/23-ShaderGraph.unity"
+        },
+        {
+            "key": "23-complete",
+            "path": "Assets/Scenes/Completed/23-ShaderGraph.unity"
+        },
+        {
+            "key": "24-start",
+            "path": "Assets/Scenes/24-GameLoop.unity"
+        },
+        {
+            "key": "24-complete",
+            "path": "Assets/Scenes/Completed/24-GameLoop.unity"
+        },
+        {
+            "key": "25-start",
+            "path": "Assets/Scenes/25-VersionControl.unity"
+        },
+        {
+            "key": "25-complete",
+            "path": "Assets/Scenes/Completed/25-VersionControl.unity"
+        },
+        {
+            "key": "26-start",
+            "path": "Assets/Scenes/26-DataSharing.unity"
+        },
+        {
+            "key": "26-complete",
+            "path": "Assets/Scenes/Completed/26-DataSharing.unity"
+        },
+        {
+            "key": "27-start",
+            "path": "Assets/Scenes/27-TeamDevelopment.unity"
+        },
+        {
+            "key": "27-complete",
+            "path": "Assets/Scenes/Completed/27-TeamDevelopment.unity"
+        },
+        {
+            "key": "28-start",
+            "path": "Assets/Scenes/28-ComponentSafety.unity"
+        },
+        {
+            "key": "28-complete",
+            "path": "Assets/Scenes/Completed/28-ComponentSafety.unity"
+        },
+        {
+            "key": "29-start",
+            "path": "Assets/Scenes/29-PhysicsSandbox.unity"
+        },
+        {
+            "key": "29-complete",
+            "path": "Assets/Scenes/Completed/29-PhysicsSandbox.unity"
+        },
+        {
+            "key": "30-start",
+            "path": "Assets/Scenes/30-Graybox.unity"
+        },
+        {
+            "key": "30-complete",
+            "path": "Assets/Scenes/Completed/30-Graybox.unity"
+        },
+        {
+            "key": "31-start",
+            "path": "Assets/Scenes/31-Kitbash.unity"
+        },
+        {
+            "key": "31-complete",
+            "path": "Assets/Scenes/Completed/31-Kitbash.unity"
+        },
+        {
+            "key": "32-start",
+            "path": "Assets/Scenes/32-VrmBones.unity"
+        },
+        {
+            "key": "32-complete",
+            "path": "Assets/Scenes/Completed/32-VrmBones.unity"
+        },
+        {
+            "key": "33-start",
+            "path": "Assets/Scenes/33-Sound.unity"
+        },
+        {
+            "key": "33-complete",
+            "path": "Assets/Scenes/Completed/33-Sound.unity"
+        },
+        {
+            "key": "34-start",
+            "path": "Assets/Scenes/34-Foley.unity"
+        },
+        {
+            "key": "34-complete",
+            "path": "Assets/Scenes/Completed/34-Foley.unity"
+        },
+        {
+            "key": "35-start",
+            "path": "Assets/Scenes/35-ProceduralMap.unity"
+        },
+        {
+            "key": "35-complete",
+            "path": "Assets/Scenes/Completed/35-ProceduralMap.unity"
+        },
+        {
+            "key": "36-start",
+            "path": "Assets/Scenes/36-Collision.unity"
+        },
+        {
+            "key": "36-complete",
+            "path": "Assets/Scenes/Completed/36-Collision.unity"
+        }
+    ]
+}

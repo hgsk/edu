@@ -1,0 +1,17 @@
+{
+  "status": "PASS",
+  "canonical": "hht/docs/student-workbook.md",
+  "canonical_sha256": "38d9fd1d939cc6927cac4234b450cb26d0046f15ff37a7ab84c0d35b245a7f6e",
+  "original_day5_day6_acceptance_unchanged": true,
+  "local_links": 13,
+  "png_references_decoded": 7,
+  "course_validation": "PASS",
+  "independent_review": "PASS; D4 continuation structure corrected and re-reviewed",
+  "render_verification": "PASS; refreshed after sentence formatting and tag screenshot additions",
+  "classroom_timing": "120 minutes planned for each day; live teaching time not measured",
+  "continuity_verification": "PASS; both examples retain D4 main and groups",
+  "other_days_changes": "sentence line breaks only",
+  "tag_screenshots": 4,
+  "tag_screenshot_cleanup": "PASS",
+  "sentence_formatting": "PASS; prose content unchanged by formatting"
+}

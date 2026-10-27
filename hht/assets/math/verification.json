@@ -1,0 +1,519 @@
+{
+  "status": "PASS",
+  "errors": [],
+  "checks": [
+    "39 reasoning exercises: whitespace rejected, wrong/correct choice feedback, explanation not auto-graded, rubric and local persistence",
+    "28 lesson bodies/glossaries/presets/reading checks; every scene animated; every input changes observable content",
+    "28 real scene screenshots and 7 visual review sheets captured",
+    "canonical HP/equation/expectation/conditional-probability examples reproduced through visible controls",
+    "zero vector boundary and native keyboard slider control",
+    "search, play, pause, and manual stepping",
+    "per-unit local memo and reduced-motion initial pause",
+    "new game/life scenes: visible controls reproduce damage, recipe, unit price, draw/e, return, mahjong, bitrate; probability/cost/score boundaries",
+    "320/390/768/1440px responsive layout with no horizontal overflow",
+    "operation guide: 17 loaded real screenshots with alt text",
+    "offline file:// launch",
+    "new game/life module also runs offline via file://",
+    "delivered source and canonical mathematics hashes unchanged throughout verification"
+  ],
+  "screenshots": [
+    "overview-desktop.png",
+    "middle-signed.png",
+    "middle-equation.png",
+    "middle-triangle.png",
+    "middle-tree.png",
+    "gimbal-lock.png",
+    "rotation-interpolation.png",
+    "integration.png",
+    "reasoning-start.png",
+    "reasoning-feedback.png",
+    "approximation-error.png",
+    "game-damage.png",
+    "life-recipe.png",
+    "life-shopping.png",
+    "lottery-e.png",
+    "lottery-return.png",
+    "mahjong-score.png",
+    "life-video.png",
+    "overview-mobile.png",
+    "middle-mobile.png"
+  ],
+  "cleanup": {
+    "browser": "PASS",
+    "server": "PASS"
+  },
+  "sourceSha256": {
+    "math/index.html": "1243e1f9329a79fd5efd0609d18bdf38276e3d377aa5aa22e88d9035efe23c2d",
+    "math/style.css": "29bbd4aaaffb015bf3dfa4df27f5295dff160fd8ff04b0969b9f51c12a499bf3",
+    "math/reasoning.css": "f41a2712eaede0c2b0d6cc3bfc29aa8391ca8d7c40db086a939b14042ee0d197",
+    "math/app.js": "1120c8cd561698609b2b43a979eeeb32c979e06795c5f8a962b3c4821c41a110",
+    "math/models.js": "51fa98825f89535446ece1f666d24757a03cb277c43e4b672c0051ce9af335f7",
+    "math/game-life.js": "f479f404c63f81d666f71b264d3e6c74f5b58abc92a27a2d46d84c092876e0f4",
+    "math/references/game-life.md": "39fd2a6dd29effa00a7beb0f2de73a029b28eda2c4a3f85101b23723638378ba",
+    "math/teaching.js": "bdccd2de936aab681b273af53b83c9508a4b2798414a0277d53afa882c8e40c2",
+    "math/lessons.js": "cb1f9233b0dbf00c6134b371859f72c652dda691149147b4c50bbdbae2474fa7",
+    "math/guide.html": "af89180d149c33136245d349f5f1bf601fc0699004b02570ef722a103d442f0c"
+  },
+  "canonicalMathSha256": "58aa5379b6b445ea4af701cc4f7df676dbbeb90b206717dd898d99806ef83cc8",
+  "workbookScope": "Mathematics chapter only; unrelated HTML/CSS course edits are excluded.",
+  "server": {
+    "pid": 65760,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\Volta\\tools\\image\\node\\22.18.0\\node.exe",
+    "startedAt": "2026-10-19T10:13:32.366Z",
+    "port": 59347
+  },
+  "browser": {
+    "pid": 59412,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-19T10:13:32.517Z"
+  },
+  "units": [
+    {
+      "id": "B01",
+      "scenes": [
+        "signed",
+        "fraction",
+        "root",
+        "default",
+        "damage"
+      ],
+      "presets": 8,
+      "readingCheck": "PASS",
+      "reasoningChecks": 2,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B02",
+      "scenes": [
+        "ratio",
+        "default",
+        "recipe",
+        "shopping"
+      ],
+      "presets": 8,
+      "readingCheck": "PASS",
+      "reasoningChecks": 3,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B03",
+      "scenes": [
+        "equation",
+        "simultaneous",
+        "quadratic",
+        "default"
+      ],
+      "presets": 6,
+      "readingCheck": "PASS",
+      "reasoningChecks": 3,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B04",
+      "scenes": [
+        "default",
+        "or",
+        "not"
+      ],
+      "presets": 5,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B05",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B06",
+      "scenes": [
+        "proportional",
+        "inverse",
+        "linear",
+        "default"
+      ],
+      "presets": 5,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B07",
+      "scenes": [
+        "triangle",
+        "similar",
+        "default"
+      ],
+      "presets": 4,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B08",
+      "scenes": [
+        "default"
+      ],
+      "presets": 3,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B09",
+      "scenes": [
+        "default"
+      ],
+      "presets": 3,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B10",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B11",
+      "scenes": [
+        "tree",
+        "default"
+      ],
+      "presets": 3,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B12",
+      "scenes": [
+        "dice",
+        "expectation",
+        "conditional",
+        "default",
+        "waiting",
+        "return"
+      ],
+      "presets": 13,
+      "readingCheck": "PASS",
+      "reasoningChecks": 4,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B13",
+      "scenes": [
+        "default"
+      ],
+      "presets": 3,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B14",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B15",
+      "scenes": [
+        "default",
+        "mahjong",
+        "yakuman"
+      ],
+      "presets": 10,
+      "readingCheck": "PASS",
+      "reasoningChecks": 3,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B16",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B17",
+      "scenes": [
+        "default",
+        "video"
+      ],
+      "presets": 4,
+      "readingCheck": "PASS",
+      "reasoningChecks": 2,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "B18",
+      "scenes": [
+        "default",
+        "approximation"
+      ],
+      "presets": 4,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "A01",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "A02",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "A03",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "A04",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "A05",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "A06",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "A07",
+      "scenes": [
+        "default"
+      ],
+      "presets": 3,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "A08",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "A09",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    },
+    {
+      "id": "A10",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320,
+        390,
+        768,
+        1440
+      ]
+    }
+  ]
+}

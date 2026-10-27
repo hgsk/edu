@@ -1,0 +1,478 @@
+[
+  {
+    "file": "palette-3d-play.png",
+    "source": "test-results\\japanese-ui\\09-complete.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "23-complete-play.png",
+    "source": "test-results\\japanese-ui\\23-webgl-complete.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "24-title.png",
+    "source": "test-results\\japanese-ui\\24-title.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "24-reload.png",
+    "source": "test-results\\japanese-ui\\24-reload.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "24-result.png",
+    "source": "test-results\\japanese-ui\\24-webgl-result.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "24-retry.png",
+    "source": "test-results\\japanese-ui\\24-retry.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "24-restart.png",
+    "source": "test-results\\japanese-ui\\24-restart.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "28-blocked.png",
+    "source": "test-results\\japanese-ui\\28-blocked.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "28-ready.png",
+    "source": "test-results\\japanese-ui\\28-webgl-ready.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "29-ready.png",
+    "source": "test-results\\japanese-ui\\29-ready.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "29-result.png",
+    "source": "test-results\\japanese-ui\\29-webgl-result.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "30-blocked.png",
+    "source": "test-results\\japanese-ui\\30-blocked.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "30-goal.png",
+    "source": "test-results\\japanese-ui\\30-webgl-goal.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "31-play.png",
+    "source": "test-results\\japanese-ui\\31-webgl-kit.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "31-off.png",
+    "source": "test-results\\japanese-ui\\31-off.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "32-ik.png",
+    "source": "test-results\\japanese-ui\\32-ik.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "32-target.png",
+    "source": "test-results\\japanese-ui\\32-target.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "32-fk.png",
+    "source": "test-results\\japanese-ui\\32-fk.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "32-mesh.png",
+    "source": "test-results\\japanese-ui\\32-mesh.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "33-play.png",
+    "source": "test-results\\japanese-ui\\33-play.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "34-contact.png",
+    "source": "test-results\\japanese-ui\\34-contact.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "34-wood.png",
+    "source": "test-results\\japanese-ui\\34-webgl.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "35-play.png",
+    "source": "test-results\\japanese-ui\\35-webgl.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "35-top.png",
+    "source": "test-results\\japanese-ui\\35-top-webgl.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-modal.png",
+    "source": "test-results\\japanese-ui\\18-gallery-modal.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-01.png",
+    "source": "test-results\\japanese-ui\\18-gallery-01.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-02.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-02.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-03.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-03.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-04.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-04.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-05.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-05.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-06.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-06.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-07.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-07.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-08.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-08.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-09.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-09.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-10.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-10.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-11.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-11.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-12.png",
+    "source": "test-results\\japanese-ui\\18-gallery-webgl-12.png",
+    "crop": [
+      0,
+      135,
+      1000,
+      698
+    ],
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-13.png",
+    "source": "test-results\\japanese-ui\\18-gallery-13.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  },
+  {
+    "file": "18-gallery-14.png",
+    "source": "test-results\\japanese-ui\\18-gallery-14.png",
+    "crop": null,
+    "size": [
+      1000,
+      563
+    ]
+  }
+]

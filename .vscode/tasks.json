@@ -2,9 +2,33 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "教材と配布サイトの整合性を確認",
+      "type": "shell",
+      "command": "python hht/scripts/validate-course.py",
+      "problemMatcher": [],
+      "group": "test"
+    },
+    {
       "label": "付属アプリのサーバーを起動",
       "type": "Live Preview",
       "problemMatcher": []
+    },
+    {
+      "label": "Unity教材をWebGL付きで更新",
+      "type": "shell",
+      "command": "python unity/scripts/build_course.py",
+      "problemMatcher": [],
+      "group": "build"
+    },
+    {
+      "label": "Unity教材の保存を監視してWebGL更新",
+      "type": "shell",
+      "command": "pwsh -NoProfile -File unity/scripts/Update-Course.ps1 -Watch",
+      "problemMatcher": [],
+      "isBackground": true,
+      "runOptions": {
+        "runOn": "folderOpen"
+      }
     }
   ]
 }

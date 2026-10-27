@@ -1,0 +1,28 @@
+{
+  "figures": 19,
+  "targets": 49,
+  "cropped_figures": 9,
+  "visual_review": "PASS - all figures reviewed; crop truncation repaired and affected figures rechecked",
+  "image_decode": "PASS (49 workbook image references)",
+  "local_links": "PASS (90 workbook + 18 gallery references)",
+  "course_validation": "PASS",
+  "site_regression": "PASS (11 tests)",
+  "source_drift_detection": "PASS - changed source fixture detected",
+  "numbered_legend_detection": "PASS - removed explanation detected",
+  "failed_capture_cleanup": "PASS - missing target stops with exit 1 and browser closed",
+  "native_screenshots": [
+    "open-workbook-reading.jpg",
+    "open-cafe-html.jpg"
+  ],
+  "native_markdown": "PASS - numbered image and nearby explanation rendered in VS Code",
+  "native_process": {
+    "pid": 33392,
+    "cleanup": "PASS - graceful close and process absence verified"
+  },
+  "browser_process": {
+    "pid": 41068,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-16T12:35:16.149Z"
+  },
+  "browser_cleanup": "PASS"
+}

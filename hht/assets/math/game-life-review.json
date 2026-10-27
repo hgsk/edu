@@ -1,0 +1,170 @@
+{
+  "status": "PASS",
+  "scope": "Local implementation and validation only; no commit, push, PR, merge or publication",
+  "baseline": {
+    "units": 28,
+    "scenes": 47,
+    "presets": 85,
+    "reasoning": 30
+  },
+  "delivered": {
+    "units": 28,
+    "scenes": 55,
+    "presets": 108,
+    "reasoning": 39
+  },
+  "added": {
+    "scenes": 8,
+    "presets": 23,
+    "reasoning": 9
+  },
+  "topics": [
+    {
+      "name": "攻撃・防御のダメージ",
+      "unit": "B01",
+      "canonical": "hht/docs/student-workbook.md#math-b01",
+      "html": "math/index.html#B01",
+      "mode": "damage"
+    },
+    {
+      "name": "料理の比例",
+      "unit": "B02",
+      "canonical": "hht/docs/student-workbook.md#math-b02",
+      "html": "math/index.html#B02",
+      "mode": "recipe"
+    },
+    {
+      "name": "単価・割引",
+      "unit": "B02",
+      "canonical": "hht/docs/student-workbook.md#math-b02",
+      "html": "math/index.html#B02",
+      "mode": "shopping"
+    },
+    {
+      "name": "ドロップ率・架空抽選・e・平均待ち",
+      "unit": "B12",
+      "canonical": "hht/docs/student-workbook.md#math-b12",
+      "html": "math/index.html#B12",
+      "mode": "waiting"
+    },
+    {
+      "name": "期待収支・理論還元率・控除率",
+      "unit": "B12",
+      "canonical": "hht/docs/student-workbook.md#math-b12",
+      "html": "math/index.html#B12",
+      "mode": "return"
+    },
+    {
+      "name": "麻雀の符・翻・支払配分",
+      "unit": "B15",
+      "canonical": "hht/docs/student-workbook.md#math-b15",
+      "html": "math/index.html#B15",
+      "modes": [
+        "mahjong",
+        "yakuman"
+      ]
+    },
+    {
+      "name": "動画のビットレートと保存容量",
+      "unit": "B17",
+      "canonical": "hht/docs/student-workbook.md#math-b17",
+      "html": "math/index.html#B17",
+      "mode": "video"
+    }
+  ],
+  "files": [
+    "hht/docs/student-workbook.md",
+    "math/game-life.js",
+    "math/models.js",
+    "math/app.js",
+    "math/index.html",
+    "math/style.css",
+    "math/teaching.js",
+    "math/lessons.js",
+    "math/guide.html",
+    "math/README.md",
+    "math/references/game-life.md",
+    "math/scripts/test_game_life.cjs",
+    "math/scripts/test_build_lessons.py",
+    "math/scripts/verify_browser.cjs",
+    "hht/assets/math/verification.json",
+    "hht/assets/math/game-life-first-failure.json",
+    "hht/assets/math/game-damage.png",
+    "hht/assets/math/life-recipe.png",
+    "hht/assets/math/life-shopping.png",
+    "hht/assets/math/lottery-e.png",
+    "hht/assets/math/lottery-return.png",
+    "hht/assets/math/mahjong-score.png",
+    "hht/assets/math/life-video.png"
+  ],
+  "officialSources": [
+    "https://m-league.jp/about/",
+    "https://www.itl.nist.gov/div898/handbook/eda/section3/eda366i.htm",
+    "https://dlmf.nist.gov/4.2",
+    "https://www.jra.go.jp/kouza/yougo/w174.html",
+    "https://physics.nist.gov/cuu/Units/binary.html"
+  ],
+  "tests": {
+    "dedicated": {
+      "command": "node math/scripts/test_game_life.cjs",
+      "status": "PASS",
+      "checks": 1400,
+      "exitCode": 0
+    },
+    "allModels": {
+      "command": "node math/scripts/test_models.cjs",
+      "status": "PASS",
+      "boundaryCases": 3435,
+      "exitCode": 0
+    },
+    "generation": {
+      "status": "PASS",
+      "tests": 10,
+      "exitCode": 0
+    },
+    "browser": {
+      "status": "PASS",
+      "report": "hht/assets/math/verification.json",
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "guideScreenshots": 17,
+      "exitCode": 0
+    }
+  },
+  "independentReview": {
+    "agent": "math_quality_review",
+    "status": "PASS",
+    "notes": "公式表の場ゾロ込み列と教材h+2を再照合。基本点の二重加算という一時的な指摘は取り下げ。数式・数値例・前提は整合。"
+  },
+  "errors": [
+    {
+      "original": "AssertionError [ERR_ASSERTION]: B17: horizontal overflow at 320px\n\ntrue !== false\n\n    at main (C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\math\\scripts\\verify_browser.cjs:176:16)",
+      "impact": "幅320pxでB17本文の長い英数字列が横にはみ出した。数値計算には影響なし。",
+      "fix": "math/style.cssで教材本文・説明・入力欄のoverflow-wrap:anywhereとmin-width:0を適用。全単元・全シーンで再検証。",
+      "resolved": true
+    }
+  ],
+  "cleanup": {
+    "browser": "PASS",
+    "server": "PASS"
+  },
+  "processes": {
+    "browser": {
+      "pid": 59412,
+      "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+      "startedAt": "2026-10-19T10:13:32.517Z"
+    },
+    "server": {
+      "pid": 65760,
+      "executable": "C:\\Users\\hgsk8\\AppData\\Local\\Volta\\tools\\image\\node\\22.18.0\\node.exe",
+      "startedAt": "2026-10-19T10:13:32.366Z",
+      "port": 59347
+    }
+  },
+  "uncompleted": [],
+  "excluded": "実機のパチンコ再現・攻略、実在機の固定控除率の断定、全手牌の役/符/合法性判定、複合役満・包・本場・供託・順位点は扱わない。"
+}

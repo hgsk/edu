@@ -1,0 +1,180 @@
+{
+  "method": "Real page capture with DOM number overlays; source-reference diagrams labelled separately",
+  "config_sha256": "a4ca03ae910c78978609dbd735704f82713effb715b635ba93f8cf4cac613fbd",
+  "figures": [
+    {
+      "id": "start",
+      "source": "starter-site/menu.html",
+      "mode": "page",
+      "output": "assets/day56-basic/start.png",
+      "sha256": "b0f4711086e07d907446cfc11623b49244436dbabb4f361ac36e77992114dbb7",
+      "size": [
+        1100,
+        922
+      ],
+      "targets": [
+        {
+          "selector": "nav",
+          "label": "上の案内",
+          "number": 1,
+          "box": {
+            "x": 892.9375,
+            "y": 16,
+            "width": 185.0625,
+            "height": 27.1875
+          }
+        },
+        {
+          "selector": ".menu-card:first-child",
+          "label": "商品カード",
+          "number": 2,
+          "box": {
+            "x": 22,
+            "y": 343.828125,
+            "width": 520,
+            "height": 189.078125
+          }
+        }
+      ]
+    },
+    {
+      "id": "day5",
+      "source": "instructor/day56-basic/day5/menu.html",
+      "mode": "page",
+      "output": "assets/day56-basic/day5.png",
+      "sha256": "9291b6bbc65842515a73fadad44ef5924970738c5ef811575270d6cb7b6dc853",
+      "size": [
+        1100,
+        958
+      ],
+      "targets": [
+        {
+          "selector": "nav",
+          "label": "リンクの余白",
+          "number": 1,
+          "box": {
+            "x": 820.9375,
+            "y": 16,
+            "width": 257.0625,
+            "height": 43.1875
+          }
+        },
+        {
+          "selector": "footer",
+          "label": "下の余白",
+          "number": 2,
+          "box": {
+            "x": 0,
+            "y": 830.984375,
+            "width": 1100,
+            "height": 123.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day6",
+      "source": "instructor/day56-basic/day6/menu.html",
+      "mode": "page",
+      "output": "assets/day56-basic/day6.png",
+      "sha256": "819f74ed7f8598f107d66acdd7766c1bd8474883606dfe1f674fabccee36e891",
+      "size": [
+        1100,
+        1008
+      ],
+      "targets": [
+        {
+          "selector": ".menu-grid",
+          "label": "カード同士の間隔",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 359.828125,
+            "width": 1056,
+            "height": 447.78125
+          }
+        },
+        {
+          "selector": ".menu-card:first-child",
+          "label": "カードの内側",
+          "number": 2,
+          "box": {
+            "x": 22,
+            "y": 359.828125,
+            "width": 516,
+            "height": 211.890625
+          }
+        }
+      ]
+    },
+    {
+      "id": "day5-advanced",
+      "source": "instructor/day56-examples/day5/menu.html",
+      "mode": "page",
+      "output": "assets/day56-basic/day5-advanced.png",
+      "sha256": "adf13118866f4eec9fc2dc501a54206275728c60130fc7e2f13aa8ee37943069",
+      "size": [
+        390,
+        1286
+      ],
+      "targets": [
+        {
+          "selector": "nav",
+          "label": "狭い画面の案内",
+          "number": 1,
+          "box": {
+            "x": 16,
+            "y": 59.1875,
+            "width": 233.0625,
+            "height": 43.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day6-advanced",
+      "source": "instructor/day56-examples/day6/menu.html",
+      "mode": "page",
+      "output": "assets/day56-basic/day6-advanced.png",
+      "sha256": "33508fd65facf505dec0dce6ae03241c12958d48807c6bf4a4b2d89163ff3cf9",
+      "size": [
+        1100,
+        1407
+      ],
+      "targets": [
+        {
+          "selector": ".menu-grid",
+          "label": "写真付きカード",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 551.359375,
+            "width": 1056,
+            "height": 703.5625
+          }
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "scripts/capture-workbook.cjs": "6f6932ce2ef90cd14790449759175c427c9571ec39f0fb0f166181912e20f5b0",
+    "starter-site/menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
+    "starter-site/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
+    "instructor/day56-basic/day5/menu.html": "0bb4aceca0155c7968a2bc4311efb59f645a86d40c28ac596a2c2ad69f9fa2fa",
+    "instructor/day56-basic/day5/css/basic.css": "5e5a5085882210d8b1f01e5c356f75dc0fac084cd7edcc09bafd4a668524b10f",
+    "instructor/day56-basic/day6/menu.html": "0bb4aceca0155c7968a2bc4311efb59f645a86d40c28ac596a2c2ad69f9fa2fa",
+    "instructor/day56-basic/day6/css/basic.css": "50c4e959148ceaabe61166f9e219eb8294d47339feced8b33bb86059795fbbee",
+    "instructor/day56-examples/day5/menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
+    "instructor/day56-examples/day5/css/style.css": "c107406fc05a9be048f93b9527291043fa80c429fab48d5a8ee8dcc3cdc4c19a",
+    "instructor/day56-examples/day6/menu.html": "05ce2f83544757303db4eaf92a71e16178b338e09624bb099d14937de7177ac4",
+    "instructor/day56-examples/day6/css/style.css": "b59aecf4d732ce02028942e6bf1f5d1febc1639644c78a58bf4dacb429300d0c",
+    "starter-site/images/hero-cafe.webp": "421d7a4ab41a3764e1b46520379f2124ad17a294139ac298e31d4ac107644e31"
+  },
+  "cleanup": "PASS",
+  "status": "PASS",
+  "process": {
+    "pid": 26108,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-27T08:34:06.406Z"
+  }
+}

@@ -1,0 +1,215 @@
+{
+  "date": "2026-10-16",
+  "screenshots": [
+    {
+      "file": "guide-home.png",
+      "source": "hht/starter-site/index.html",
+      "width": 1200,
+      "height": 800,
+      "type": "actual-browser-render"
+    },
+    {
+      "file": "guide-menu-pc.png",
+      "source": "hht/starter-site/menu.html",
+      "width": 1200,
+      "height": 800,
+      "type": "actual-browser-render"
+    },
+    {
+      "file": "guide-menu-mobile.png",
+      "source": "hht/starter-site/menu.html",
+      "width": 320,
+      "height": 850,
+      "type": "actual-browser-render"
+    }
+  ],
+  "checks": {
+    "images": [
+      {
+        "source": "../assets/day34/markup-purpose.svg",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/01-request-arrives.webp",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/01-request-arrives.webp",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/guide-home.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day3-start-index-button.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day3-start-menu-button.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day3-start-about-button.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day3-devtools.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day3-css-map.svg",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day3-result-index-button.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day3-result-menu-button.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day3-result-about-button.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day4-start.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day4-regions.svg",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day4-tag-comparison.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/day34/day4-result.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/guide-menu-pc.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/02-build-and-check.webp",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/photo-crop.svg",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/guide-menu-mobile.png",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/02-build-and-check.webp",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/price-scope.svg",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/release-route.svg",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/portfolio-plan.svg",
+        "loaded": true,
+        "alt": true
+      },
+      {
+        "source": "../assets/workbook/03-client-approval.webp",
+        "loaded": true,
+        "alt": true
+      }
+    ],
+    "guides": 15,
+    "brokenAnchors": [],
+    "overflow": false,
+    "mobileOverflow": false,
+    "mobileImagesFit": true
+  },
+  "process": {
+    "pid": 23344,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-16T07:20:35.378Z"
+  },
+  "cleanup": "PASS",
+  "finalPreviewProcess": {
+    "pid": 48552,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-16T07:23:05.465Z"
+  },
+  "finalChecks": {
+    "guides": 15,
+    "missingImages": [],
+    "brokenAnchors": [],
+    "overflow": false,
+    "mobileOverflow": false
+  },
+  "finalPreviewCleanup": "PASS",
+  "vscodeCapture": {
+    "result": "NOT RUN",
+    "reason": "No targetable window was returned; no VS Code screenshot added",
+    "Remaining": 0,
+    "Cleanup": "PASS",
+    "Mode": "forced (no targetable window)",
+    "RootPid": 29504,
+    "OwnedPids": [
+      29504,
+      5340,
+      11768,
+      35104,
+      5008,
+      35704,
+      21736,
+      45612,
+      10000,
+      22644,
+      4036,
+      47964,
+      43180
+    ]
+  },
+  "documentChecks": {
+    "localLinks": 41,
+    "missingLinks": [],
+    "canonicalAcceptanceConditions": "unchanged (15 days)",
+    "gitDiffCheck": "PASS",
+    "courseValidation": "PASS",
+    "courseValidationExitCode": 0,
+    "processAbsenceConfirmed": [
+      23344,
+      48552,
+      29504
+    ]
+  }
+}

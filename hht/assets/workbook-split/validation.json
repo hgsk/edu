@@ -1,0 +1,22 @@
+{
+  "status": "PASS",
+  "index_lines": 29,
+  "index_sha256": "626fcc0f754a8a79b7a56301e60c67555ca72b37a7e51c014126d587768f6f05",
+  "canonical_days": 15,
+  "shared_and_supplement_files": 4,
+  "day_content_and_acceptance_preserved": true,
+  "shared_and_supplement_content_preserved": true,
+  "local_links_and_anchors": 585,
+  "unique_images": 215,
+  "course_validation": "PASS",
+  "course_site_tests": 11,
+  "split_loader_tests": 6,
+  "math_generation_tests": "PASS",
+  "unity_reader_tests": 5,
+  "unity_artifact_tests": 8,
+  "reader_navigation": "PASS",
+  "browser_cleanup": "PASS",
+  "runtime_artifacts_rebuilt": false,
+  "runtime_artifact_file_hashes": "unchanged",
+  "independent_review": "PASS; all findings resolved"
+}

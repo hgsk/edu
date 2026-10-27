@@ -1,0 +1,49 @@
+{
+  "status": "PASS",
+  "editor": {
+    "exe": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+    "pid": 57492,
+    "start": "2026-10-17T16:04:45.231673Z"
+  },
+  "controls": "REMOVED",
+  "date": "2026-10-18T01:23:51.5476756+09:00",
+  "exitedProcessIds": [
+    57492,
+    15904,
+    33552,
+    54468,
+    56292,
+    4904,
+    37376,
+    38132,
+    60528
+  ],
+  "captureLauncher": "Owned pwsh 54468 stopped after Editor exit",
+  "build": [
+    {
+      "exe": "C:\\Users\\hgsk8\\AppData\\Local\\Unity\\bin\\unity.exe",
+      "pid": 38132,
+      "command": "\"C:\\Users\\hgsk8\\AppData\\Local\\Unity\\bin\\unity.exe\" run \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\" --timeout 1800 -- -buildTarget WebGL -executeMethod WebCourseBuild.Build -logFile \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\test-results\\unity-webgl-build.log\"",
+      "start": "2026-10-17T16:18:05.9592142Z"
+    },
+    {
+      "exe": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+      "pid": 60528,
+      "command": "\"C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe\" -batchmode -quit -projectPath \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\" -buildTarget WebGL -executeMethod WebCourseBuild.Build -logFile \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\test-results\\unity-webgl-build.log\" -hubSessionId eec2dd5a-de94-494e-9267-8fce11199bc0",
+      "start": "2026-10-17T16:18:06.6971832Z"
+    }
+  ],
+  "hiddenPlayer": {
+    "start": "2026-10-17T16:14:21.5675993Z",
+    "exe": "C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\\Builds\\Windows\\Exhibit.exe",
+    "method": "Stopped verified initially hidden player",
+    "pid": 33552
+  },
+  "existingApplications": "PRESERVED",
+  "player": {
+    "start": "2026-10-17T16:16:36.7256542Z",
+    "pid": 15904,
+    "exe": "C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\\Builds\\Windows\\Exhibit.exe"
+  },
+  "browserAndServers": "PASS: three tests finally closed their own browser/server"
+}

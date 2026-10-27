@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unity単元サンプル</title>
+<style>
+body{margin:0;background:#111c2b;color:white;font:16px system-ui}header{padding:10px;display:flex;gap:8px;flex-wrap:wrap;align-items:center}select,button{font:inherit;padding:8px}canvas{display:block;width:100%;aspect-ratio:16/9;max-height:75vh;outline-offset:-3px}#status,#note{padding:8px;margin:0}#note{background:#263849}a{color:#91e6d9}
+</style></head><body>
+<header><label>単元 <select id="unit"></select></label><label>状態 <select id="variant"><option value="start">開始</option><option value="complete">完成</option></select></label><button id="load" disabled>この状態で再開</button><button id="fullscreen">全画面</button></header>
+<p id="status" role="status">読み込み中…</p><p id="note"></p>
+<canvas id="unity-canvas" width="960" height="540" tabindex="0" aria-label="Unityサンプルの実行画面"></canvas>
+<script src="Build/WebGL.loader.js"></script>
+<script>
+const params=new URLSearchParams(location.search),unit=document.querySelector('#unit'),variant=document.querySelector('#variant'),status=document.querySelector('#status'),note=document.querySelector('#note');
+for(let i=1;i<=36;i++){let value=String(i).padStart(2,'0');unit.add(new Option('U'+value,value));}
+const requested=params.get('unit');
+unit.value=Array.from(unit.options).some(option=>option.value===requested)?requested:'01';
+variant.value=params.get('variant')==='complete'?'complete':'start';
+let instance;
+function select(){
+ const key=unit.value+'-'+variant.value;
+ note.textContent=unit.value==='19'?'VFX GraphはWebGL2では非対応です。このシーンでは展示の配置を確認し、粒子とGraphの編集はUnity Editorで確認してください。':unit.value==='17'?'GizmoはEditor専用です。ブラウザでは展示のみ表示されます。':["01","02","03","07","10","11","12","21","22","23"].includes(unit.value)?'ブラウザは実行結果の確認用です。Inspector・Graph編集・保存・ビルド・CLIの操作は教材の画面とUnity Editorで確認します。':'画面をクリックしてから操作します。U06はA・Dキー、U16・U18は「開始」ボタンを使います。音はブラウザの再生許可が必要です。';
+ status.textContent='U'+unit.value+' '+(variant.value==='complete'?'完成':'開始')+'を読み込み中…';
+ instance.SendMessage('WebCoursePlayer','LoadSample',key);
+ history.replaceState(null,'','?unit='+unit.value+'&variant='+variant.value);
+}
+document.querySelector('#load').onclick=select;
+document.querySelector('#fullscreen').onclick=()=>instance?.SetFullscreen(1);
+window.addEventListener('course-snapshot',event=>{let s=event.detail;if(s.key===unit.value+'-'+variant.value)status.textContent='U'+unit.value+' '+(variant.value==='complete'?'完成':'開始')+'：実行中';});
+if(location.protocol==='file:'){
+ status.textContent='HTTPで教材を開いてください。講座案内の「WebGL付き教材の更新」に起動方法があります。';
+} else createUnityInstance(document.querySelector('canvas'),{
+ dataUrl:'Build/WebGL.data',frameworkUrl:'Build/WebGL.framework.js',codeUrl:'Build/WebGL.wasm',
+ streamingAssetsUrl:'StreamingAssets',companyName:'edu',productName:'Unity Course',productVersion:'1',
+},progress=>status.textContent='読み込み '+Math.round(progress*100)+'%').then(value=>{
+ instance=value;window.courseInstance=value;
+ // Wait until the C# bridge exists, rather than racing the first frame.
+ const ready=()=>{if(!window.courseSnapshot?.ready){setTimeout(ready,50);return;}document.querySelector('#load').disabled=false;select();};ready();
+}).catch(error=>{status.textContent='起動できません：'+error.message;console.error(error);});
+</script></body></html>

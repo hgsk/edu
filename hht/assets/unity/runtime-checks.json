@@ -1,0 +1,211 @@
+{
+  "editor": "6000.3.25f1",
+  "samples": [
+    {
+      "scene": "04-MonoBehaviour",
+      "time": 0,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "04-MonoBehaviour",
+      "time": 4.498785018920898,
+      "position": {
+        "x": 0,
+        "y": 0.6657325029373169,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "06-Input",
+      "time": 0,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "06-Input",
+      "time": 13.525437355041504,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "06-Input",
+      "time": 24.544065475463867,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "08-Physics",
+      "time": 0,
+      "position": {
+        "x": 0,
+        "y": 2.9960761070251465,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "08-Physics",
+      "time": 1.4963427782058716,
+      "position": {
+        "x": -2.9339588536458905e-7,
+        "y": -5.344769959947371e-8,
+        "z": -5.487152634486847e-7
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "16-uGUI",
+      "time": 0,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "Start",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "16-uGUI",
+      "time": 7.00627326965332,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "Welcome!",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "18-UIToolkit",
+      "time": 0,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "Ready",
+      "particles": 0
+    },
+    {
+      "scene": "18-UIToolkit",
+      "time": 7.004049777984619,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "Welcome!",
+      "particles": 0
+    },
+    {
+      "scene": "19-VFXGraph",
+      "time": 0,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": -1
+    },
+    {
+      "scene": "19-VFXGraph",
+      "time": 1.483091950416565,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 62
+    },
+    {
+      "scene": "13-Animator",
+      "time": 0,
+      "position": {
+        "x": -1,
+        "y": 0,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "13-Animator",
+      "time": 0.49702930450439453,
+      "position": {
+        "x": -0.6908354759216309,
+        "y": 0,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "14-Timeline",
+      "time": 0,
+      "position": {
+        "x": 0,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    },
+    {
+      "scene": "14-Timeline",
+      "time": 0.48921579122543335,
+      "position": {
+        "x": 0.3004556894302368,
+        "y": 0.5,
+        "z": 0
+      },
+      "ugui": "",
+      "uitoolkit": "",
+      "particles": 0
+    }
+  ],
+  "input": "NOT RUN: sustained key hold; two short injected taps produced no displacement",
+  "audio": "NOT RUN: human listening"
+}

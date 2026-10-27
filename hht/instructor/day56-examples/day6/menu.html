@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>メニュー | NORTH LIGHT COFFEE</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="logo" href="index.html">NORTH LIGHT COFFEE</a>
+      <nav aria-label="メインナビゲーション">
+        <ul class="nav-list">
+          <li><a href="index.html">ホーム</a></li>
+          <li><a href="menu.html" aria-current="page">メニュー</a></li>
+          <li><a href="about.html">店舗案内</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main class="section">
+      <h1>メニュー</h1>
+      <aside class="lab-tools" aria-label="教材の試験操作">
+        <strong>練習用の表示試験</strong>
+        <p>この操作は見本内だけの変更です。販売商品は増えません。</p>
+        <label>商品数 <select id="count"><option>1</option><option selected>4</option><option>7</option></select></label>
+        <label><input type="checkbox" id="long"> 長い名前・説明で試す</label>
+        <button type="button" id="restore">4商品に戻す</button>
+        <p>画像はラテアートの教材用生成画像。実商品の写真ではありません。他の写真は確認待ちです。</p>
+      </aside>
+      <a class="button menu-button" href="#menu-list">メニューを見る</a>
+      <p>価格はすべて税込です。</p>
+      <div class="menu-grid" id="menu-list">
+        <article class="menu-card">
+          <h2>ドリップコーヒー</h2>
+          <p>香りと甘みのバランスがよい定番です。</p>
+          <p class="price">480円</p>
+        </article>
+        <article class="menu-card">
+          <img src="../../../starter-site/images/hero-cafe.webp" width="1774" height="887" alt="ラテアートを作る手元（教材用の生成画像）">
+          <h2>ホットカフェラテ</h2>
+          <p>きめ細かなミルクで仕上げます。</p>
+          <p class="price">520円</p>
+        </article>
+        <article class="menu-card">
+          <h2>アイスカフェラテ</h2>
+          <p>深煎りの豆と冷たいミルクの組み合わせ。</p>
+          <p class="price">520円</p>
+        </article>
+        <article class="menu-card">
+          <h2>ラテ＆スコーンセット</h2>
+          <p>ホットまたはアイスのラテを選べます。</p>
+          <p class="price">850円</p>
+        </article>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <p><small>&copy; 2024 NORTH LIGHT COFFEE</small></p>
+    </footer>
+  <script>
+const grid = document.querySelector('.menu-grid');
+const originals = [...grid.children].map(card => card.cloneNode(true));
+const count = document.querySelector('#count');
+const long = document.querySelector('#long');
+function render() {
+  grid.replaceChildren();
+  for (let i = 0; i < Number(count.value); i++) {
+    const card = originals[i % originals.length].cloneNode(true);
+    if (i >= originals.length) card.querySelector('h2').prepend('試験用：');
+    if (long.checked && i === 0) {
+      card.querySelector('h2').textContent = '季節のフルーツを添えた、焼きたてスコーンのセット（試験用）';
+      card.querySelector('p:not(.price)').textContent = 'これは表示確認だけに使う長い説明です。商品ごとに文章の量が違っても、隣の商品と区別でき、価格を読み取れるかを確かめます。'.repeat(2);
+    }
+    grid.append(card);
+  }
+}
+count.addEventListener('change', render); long.addEventListener('change', render);
+document.querySelector('#restore').addEventListener('click', () => { count.value = '4'; long.checked = false; render(); });
+render();
+</script>
+  </body>
+</html>

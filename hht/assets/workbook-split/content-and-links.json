@@ -1,0 +1,24 @@
+{
+  "content_preserved_days": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15
+  ],
+  "shared_and_supplement_content_preserved": true,
+  "changes_excluded_from_comparison": "navigation, heading levels, relocated link targets; introduction reading guidance updated",
+  "links_checked": 585,
+  "unique_image_files": 215,
+  "failures": []
+}

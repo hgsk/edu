@@ -1,0 +1,108 @@
+{
+  "status": "PASS",
+  "checks": [
+    "day5 current: index",
+    "nav route: index to index",
+    "nav route: index to menu",
+    "nav route: index to about",
+    "day5 current: menu",
+    "nav route: menu to index",
+    "nav route: menu to menu",
+    "nav route: menu to about",
+    "day5 current: about",
+    "nav route: about to index",
+    "nav route: about to menu",
+    "nav route: about to about",
+    "Tab focuses about",
+    "focus outline visible",
+    "nav order",
+    "day5 no horizontal overflow 320",
+    "day5 no horizontal overflow 390",
+    "day5 no horizontal overflow 640",
+    "day5 no horizontal overflow 1100",
+    "card count 1",
+    "day6 no overflow 1 cards 320",
+    "card content stays inside 1 cards 320",
+    "single column 1 320",
+    "day6 no overflow 1 cards 390",
+    "card content stays inside 1 cards 390",
+    "single column 1 390",
+    "day6 no overflow 1 cards 660",
+    "card content stays inside 1 cards 660",
+    "single column 1 660",
+    "day6 no overflow 1 cards 680",
+    "card content stays inside 1 cards 680",
+    "day6 no overflow 1 cards 1100",
+    "card content stays inside 1 cards 1100",
+    "card count 4",
+    "day6 no overflow 4 cards 320",
+    "card content stays inside 4 cards 320",
+    "single column 4 320",
+    "day6 no overflow 4 cards 390",
+    "card content stays inside 4 cards 390",
+    "single column 4 390",
+    "day6 no overflow 4 cards 660",
+    "card content stays inside 4 cards 660",
+    "single column 4 660",
+    "day6 no overflow 4 cards 680",
+    "card content stays inside 4 cards 680",
+    "day6 no overflow 4 cards 1100",
+    "card content stays inside 4 cards 1100",
+    "card count 7",
+    "day6 no overflow 7 cards 320",
+    "card content stays inside 7 cards 320",
+    "single column 7 320",
+    "day6 no overflow 7 cards 390",
+    "card content stays inside 7 cards 390",
+    "single column 7 390",
+    "day6 no overflow 7 cards 660",
+    "card content stays inside 7 cards 660",
+    "single column 7 660",
+    "day6 no overflow 7 cards 680",
+    "card content stays inside 7 cards 680",
+    "day6 no overflow 7 cards 1100",
+    "card content stays inside 7 cards 1100",
+    "restore exact original four cards",
+    "all sample images load",
+    "Day3 anchor retained",
+    "no page errors",
+    "starter source files unchanged"
+  ],
+  "screenshots": [
+    {
+      "file": "day5-start.png",
+      "sha256": "e39968901d4f35718dacce04a88bcb35cf9ae7a0cefe23e1f8a02600c918eeef"
+    },
+    {
+      "file": "day6-start.png",
+      "sha256": "e39968901d4f35718dacce04a88bcb35cf9ae7a0cefe23e1f8a02600c918eeef"
+    },
+    {
+      "file": "day5-focus-mobile.png",
+      "sha256": "b20330c07ea052fd316fd0175c94f18256a3a53451989eb695e2b6b39b39f51b"
+    },
+    {
+      "file": "day6-stress.png",
+      "sha256": "08407f76c1b65a0cdddad675c132930690a08b25be2114472375dd9d7eb5a94d"
+    },
+    {
+      "file": "day6-mobile.png",
+      "sha256": "92d8c0fd19c0d7793732686a51a35b3194650e4757cf7a4d6db7430dbdccee29"
+    },
+    {
+      "file": "day6-one.png",
+      "sha256": "97fbf934ffad6bd079699956a70b5b1872a61937ceda86ca6965494a180eb6b2"
+    },
+    {
+      "file": "day6-result.png",
+      "sha256": "7701a9cb7fd9eeb5097b818b6eecfc20a9e5bcc6e0648ef27b9525cfcc98be90"
+    }
+  ],
+  "cleanup": "PASS",
+  "native_browser_200_percent": "NOT RUN; learner manual verification described separately",
+  "process": {
+    "pid": 27680,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-21T02:52:42.071Z"
+  }
+}

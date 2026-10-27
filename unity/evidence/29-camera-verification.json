@@ -1,0 +1,15 @@
+{
+  "status": "PASS",
+  "drop": {
+    "scene": "29-PhysicsSandbox",
+    "time": 33.59749221801758,
+    "position": {
+      "x": 1.8414866924285889,
+      "y": 0.4000000059604645,
+      "z": 0
+    },
+    "ugui": "",
+    "uitoolkit": "SIMULATING | angle 15 | bounce LOW | blocks moved 3/3",
+    "particles": 0
+  }
+}

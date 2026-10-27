@@ -1,0 +1,68 @@
+.gallery { position:absolute; left:0; top:0; right:0; bottom:0; background-color:rgb(14,22,33); padding:12px; }
+.gallery-shell { flex-grow:1; min-height:0; }
+.gallery Label { color:rgb(244,247,250); white-space:normal; }
+.gallery-title { font-size:22px; -unity-font-style:bold; margin-bottom:3px; }
+.gallery-note { font-size:12px; margin-bottom:5px; }
+.gallery-toolbar { flex-direction:row; flex-wrap:wrap; margin-bottom:7px; }
+.gallery Button { color:rgb(17,29,40); background-color:rgb(244,232,161); min-height:30px; margin:3px; padding:5px 10px; border-radius:4px; border-width:2px; border-color:rgb(244,232,161); font-size:14px; white-space:normal; }
+.gallery Button:focus { border-width:3px; border-color:white; }
+.gallery Button:hover { background-color:rgb(255,247,205); }
+.gallery Button:disabled { opacity:1; background-color:rgb(65,79,98); border-color:rgb(140,160,180); color:white; }
+.gallery-body { flex-grow:1; flex-direction:row; min-height:0; }
+.gallery-catalog { width:186px; max-width:34%; margin-right:10px; background-color:rgb(24,36,52); }
+.gallery-catalog Button { min-height:31px; font-size:12px; -unity-text-align:middle-left; }
+.gallery-catalog Button.selected { background-color:rgb(166,220,242); border-color:rgb(166,220,242); }
+.gallery-content { flex-grow:1; min-width:0; }
+.gallery-heading { font-size:20px; -unity-font-style:bold; margin-bottom:7px; }
+.gallery-description { font-size:14px; margin-bottom:10px; }
+.gallery-preview { min-height:260px; padding:14px; background-color:rgb(27,42,58); border-radius:6px; margin-bottom:9px; }
+.gallery-feedback { font-size:15px; background-color:rgb(38,66,79); padding:9px; margin-bottom:9px; }
+.demo-row { flex-direction:row; flex-wrap:wrap; align-items:center; }
+.demo-card { background-color:rgb(45,64,84); padding:12px; margin:5px; border-radius:6px; min-width:100px; }
+.demo-title { font-size:24px; -unity-font-style:bold; margin-bottom:12px; }
+.demo-value { font-size:20px; margin:5px; }
+.demo-small { font-size:13px; margin:4px; }
+.demo-bar { height:29px; margin:6px 0; }
+.demo-bar .unity-progress-bar__background { background-color:rgb(74,88,103); }
+.demo-bar .unity-progress-bar__progress { background-color:rgb(166,220,242); }
+.demo-bar .unity-progress-bar__title { color:rgb(12,26,38); font-size:15px; -unity-text-align:middle-center; }
+.stamina .unity-progress-bar__progress { background-color:rgb(244,232,161); }
+.demo-modal-backdrop { position:absolute; left:0; top:0; right:0; bottom:0; background-color:rgba(0,0,0,0.88); align-items:center; justify-content:center; }
+.demo-modal { background-color:rgb(35,51,70); padding:22px; width:420px; max-width:90%; border-width:2px; border-color:rgb(166,220,242); }
+.gallery SliderInt { margin:8px 0; }
+.gallery Toggle { margin:8px 0; }
+.gallery Toggle Label, .gallery SliderInt Label { color:rgb(244,247,250); }
+
+.hud-watermark { display:none; position:absolute; left:28%; top:43%; font-size:16px; color:rgb(171,187,201); }
+.hud-vitals { position:absolute; left:12px; bottom:12px; width:245px; padding:10px; background-color:rgb(39,57,76); }
+.hud-actions { position:absolute; right:12px; top:12px; }
+.hud-ammo { position:absolute; right:12px; bottom:12px; width:230px; background-color:rgb(39,57,76); padding:10px; }
+.hud-controls { position:absolute; left:12px; bottom:12px; }
+.hud-crosshair { position:absolute; left:46%; top:42%; font-size:26px; }
+.hud-map { position:absolute; left:12px; top:12px; background-color:rgb(39,57,76); padding:10px; }
+.hud-objective { position:absolute; right:12px; top:12px; width:230px; background-color:rgb(39,57,76); padding:10px; }
+.hud-hotbar { position:absolute; bottom:14px; left:8%; right:8%; flex-direction:row; justify-content:center; flex-wrap:wrap; }
+.inventory-grid { width:52%; flex-direction:row; flex-wrap:wrap; }
+.inventory-grid Button { width:30%; min-width:76px; min-height:52px; }
+.inventory-detail { width:44%; padding:10px; background-color:rgb(39,57,76); }
+
+.hud-map { width:45%; max-width:180px; }
+.hud-objective { width:45%; max-width:230px; }
+.compact .gallery-title { font-size:16px; }
+.compact .gallery-note { font-size:11px; }
+.compact .gallery-heading { font-size:17px; }
+.compact .gallery-toolbar Button { font-size:11px; min-height:27px; padding:4px 6px; margin:2px; }
+.compact .gallery-description { font-size:12px; }
+.compact .demo-value { font-size:16px; }
+.compact .hud-map Label { font-size:11px; }
+.compact .hud-objective Label { font-size:12px; }
+.compact .hud-objective Button { font-size:11px; }
+.compact .hud-ammo { width:170px; }
+.compact .hud-controls { width:100px; }
+.compact .hud-controls Button { font-size:12px; }
+.compact .hud-watermark { font-size:11px; left:25%; }
+
+.demo-modal Label { color:rgb(244,247,250); white-space:normal; font-size:14px; margin-bottom:10px; }
+.demo-modal .demo-title { font-size:20px; -unity-font-style:bold; }
+.demo-modal Button { color:rgb(17,29,40); background-color:rgb(244,232,161); min-height:34px; margin:3px; padding:5px 10px; border-width:2px; border-color:rgb(244,232,161); font-size:14px; }
+.demo-modal Button:focus { border-width:3px; border-color:white; }

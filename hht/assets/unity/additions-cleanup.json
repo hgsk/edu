@@ -1,0 +1,25 @@
+{
+  "localServerStarted": false,
+  "code": {
+    "sharedProcessPreserved": true,
+    "closedWindowId": 9243862,
+    "preservedWindowId": 1444442
+  },
+  "browser": {
+    "absent": true,
+    "pid": 45228
+  },
+  "unityProcessesRemaining": 0,
+  "launcher": {
+    "method": "stop after exact path and start time recheck",
+    "absent": true,
+    "pid": 39896
+  },
+  "status": "PASS",
+  "captureControlFilesRemoved": true,
+  "editor": {
+    "method": "normal window close",
+    "absent": true,
+    "pid": 12532
+  }
+}

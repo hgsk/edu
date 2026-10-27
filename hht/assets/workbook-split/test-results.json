@@ -1,0 +1,26 @@
+[
+  {
+    "check": "course-validation",
+    "exit_code": 0
+  },
+  {
+    "check": "split-loader-tests",
+    "exit_code": 0
+  },
+  {
+    "check": "unity-reader-tests",
+    "exit_code": 0
+  },
+  {
+    "check": "unity-artifact-tests",
+    "exit_code": 0
+  },
+  {
+    "check": "unity-current-inputs",
+    "exit_code": 0
+  },
+  {
+    "check": "math-current-inputs",
+    "exit_code": 0
+  }
+]

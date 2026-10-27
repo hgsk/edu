@@ -1,0 +1,54 @@
+$ git init -b main
+Initialized empty Git repository in C:/Users/hgsk8/AppData/Local/Temp/course-bundle-demo-6snkrxma/learner/.git/
+
+$ git config user.name s001
+
+$ git config user.email s001@example.invalid
+
+$ git add .
+
+$ git commit -m Initial teaching files
+[main (root-commit) 9c27189] Initial teaching files
+ 6 files changed, 304 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 hht/starter-site/about.html
+ create mode 100644 hht/starter-site/css/style.css
+ create mode 100644 hht/starter-site/images/hero-cafe.webp
+ create mode 100644 hht/starter-site/index.html
+ create mode 100644 hht/starter-site/menu.html
+
+$ git switch -c student/s001
+Switched to a new branch 'student/s001'
+
+$ git tag day01-start
+
+$ git add hht/submissions/day-01
+
+$ git commit -m DAY 01 record and display check
+[student/s001 09bd7a4] DAY 01 record and display check
+ 1 file changed, 4 insertions(+)
+ create mode 100644 hht/submissions/day-01/WORKLOG.md
+
+$ git tag day01-end
+
+$ git rev-parse HEAD
+09bd7a47f9cb12aa073e8a594699860ca97b40d6
+
+$ git bundle create C:\Users\hgsk8\AppData\Local\Temp\course-bundle-demo-6snkrxma\s001-day01.bundle --all
+
+$ git bundle verify C:\Users\hgsk8\AppData\Local\Temp\course-bundle-demo-6snkrxma\s001-day01.bundle
+The bundle contains these 5 refs:
+9c27189614ba857b246b7b2cdf32b0c17903bbe0 refs/heads/main
+09bd7a47f9cb12aa073e8a594699860ca97b40d6 refs/heads/student/s001
+09bd7a47f9cb12aa073e8a594699860ca97b40d6 refs/tags/day01-end
+9c27189614ba857b246b7b2cdf32b0c17903bbe0 refs/tags/day01-start
+09bd7a47f9cb12aa073e8a594699860ca97b40d6 HEAD
+The bundle records a complete history.
+The bundle uses this hash algorithm: sha1
+C:/Users/hgsk8/AppData/Local/Temp/course-bundle-demo-6snkrxma/s001-day01.bundle is okay
+
+$ git clone -b student/s001 C:\Users\hgsk8\AppData\Local\Temp\course-bundle-demo-6snkrxma\s001-day01.bundle C:\Users\hgsk8\AppData\Local\Temp\course-bundle-demo-6snkrxma\check-s001-day01
+Cloning into 'C:\Users\hgsk8\AppData\Local\Temp\course-bundle-demo-6snkrxma\check-s001-day01'...
+
+$ git rev-parse HEAD
+09bd7a47f9cb12aa073e8a594699860ca97b40d6

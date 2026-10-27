@@ -8,3 +8,11 @@ hht/output/pdf/rendered-cheatsheet-*.png
 node_modules/
 test-results/
 coverage/
+
+# Local Git archives.
+*.bundle
+
+# Temporary recording profiles, installed tools, and disposable practice checkout.
+hht/assets/day56-edge-vscode-20261027/*profile*/
+hht/assets/day56-edge-vscode-20261027/recording-extensions/
+hht/assets/day56-edge-vscode-20261027/learner-repo/

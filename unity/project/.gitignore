@@ -1,0 +1,16 @@
+/Library/
+/Temp/
+/Obj/
+/Logs/
+/UserSettings/
+/Builds/
+/.vs/
+/*.csproj
+/*.sln
+/*.slnx
+/capture-command.json
+/capture-status.json
+/setup-status.json
+/runtime-status.json
+/build-result.json
+/lesson-samples-report.json

@@ -1,0 +1,40 @@
+{
+  "exitedProcessIds": [
+    56404,
+    11988,
+    47544,
+    62820,
+    12828,
+    62912,
+    35856
+  ],
+  "nativeLessonSave": "New EduCourseLoop slot retained, bestScore 3 / completedRuns 1",
+  "controls": "REMOVED",
+  "ownedCodeWindowClosed": true,
+  "build": [
+    {
+      "start": "2026-10-17T16:55:10.7818664Z",
+      "exe": "C:\\Users\\hgsk8\\AppData\\Local\\Unity\\bin\\unity.exe",
+      "pid": 62912,
+      "command": "\"C:\\Users\\hgsk8\\AppData\\Local\\Unity\\bin\\unity.exe\" run \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\" --timeout 1800 -- -buildTarget WebGL -executeMethod WebCourseBuild.Build -logFile \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\test-results\\unity-webgl-build.log\""
+    },
+    {
+      "start": "2026-10-17T16:55:11.523602Z",
+      "exe": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+      "pid": 35856,
+      "command": "\"C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe\" -batchmode -quit -projectPath \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\" -buildTarget WebGL -executeMethod WebCourseBuild.Build -logFile \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\test-results\\unity-webgl-build.log\" -hubSessionId 9366ecc9-9107-4b00-affc-1e1cb084b481"
+    }
+  ],
+  "saveTestFolders": "Removed by test finally",
+  "servers": "Test finally blocks closed servers; no listener on WebGL port",
+  "existingCodeWindowPreserved": true,
+  "captureLauncher": "Owned pwsh 11988 stopped after Editor exit",
+  "status": "PASS",
+  "editor": {
+    "exe": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+    "start": "2026-10-17T16:48:00.1969439Z",
+    "command": "\"C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe\" -projectpath \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\" -acceptSoftwareTermsForThisRunOnly -logFile test-results/unity-loop-editor.log -cloudEnvironment production -hubSessionId f31f207e-fb06-467d-8423-1cda871304aa",
+    "pid": 56404
+  },
+  "date": "2026-10-18T02:02:37.3154791+09:00"
+}

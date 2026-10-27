@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-10-18T03:18:46.5350527+09:00",
+  "processes": [
+    {
+      "pid": 60904,
+      "running": false
+    },
+    {
+      "pid": 41052,
+      "running": false
+    },
+    {
+      "pid": 14064,
+      "running": false
+    },
+    {
+      "pid": 59524,
+      "running": false
+    },
+    {
+      "pid": 56688,
+      "running": false
+    },
+    {
+      "pid": 49896,
+      "running": false
+    },
+    {
+      "pid": 61956,
+      "running": false
+    },
+    {
+      "pid": 27064,
+      "running": false
+    }
+  ],
+  "ownedLogWindows": [
+    {
+      "closed": true,
+      "id": 13306144
+    },
+    {
+      "closed": true,
+      "id": 2364326
+    }
+  ],
+  "existingVSCodeWindow": 1444442,
+  "httpListenerClosed": true,
+  "editorShutdown": "Graceful; second Editor exit confirmed after initial 15 second wait"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "cases": [
+    {
+      "case": "optional-git",
+      "expected_rejection": "PASS"
+    },
+    {
+      "case": "missing-day15-bundle",
+      "expected_rejection": "PASS"
+    }
+  ],
+  "method": "in-memory read substitution; source files unchanged"
+}

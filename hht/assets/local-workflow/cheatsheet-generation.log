@@ -1,0 +1,5 @@
+WROTE C:\Users\hgsk8\OneDrive\ドキュメント\北ハイテク HTML+CSS講座\hht\assets\cheatsheets\ui-cheatsheet-a4.png
+WROTE C:\Users\hgsk8\OneDrive\ドキュメント\北ハイテク HTML+CSS講座\hht\assets\cheatsheets\css-layout-cheatsheet-a4.png
+WROTE C:\Users\hgsk8\OneDrive\ドキュメント\北ハイテク HTML+CSS講座\hht\output\pdf\web-design-cheatsheets-a4.pdf
+C:\Users\hgsk8\.cache\codex-runtimes\codex-primary-runtime\dependencies\python\Lib\site-packages\PIL\Image.py:1136: UserWarning: Palette images with Transparency expressed in bytes should be converted to RGBA images
+  warnings.warn(

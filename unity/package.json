@@ -1,0 +1,12 @@
+{
+  "name": "edu-unity-course",
+  "private": true,
+  "scripts": {
+    "update": "python scripts/build_course.py",
+    "check": "python scripts/build_course.py --check",
+    "test:webgl": "node scripts/verify_webgl.cjs"
+  },
+  "devDependencies": {
+    "playwright": "1.62.1"
+  }
+}

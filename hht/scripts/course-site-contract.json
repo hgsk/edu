@@ -1,0 +1,157 @@
+{
+  "workbook_phrases": [
+    "3ページの対象リンクには、すでに `class=\"menu-button\"` が付いています。",
+    "メニューページのリンク先は `#menu-list`",
+    "DAY 5は、今あるサイトをそのまま改修します。",
+    "DAY 6は、今あるサイトをそのまま改修します。"
+  ],
+  "pages": [
+    "index.html",
+    "menu.html",
+    "about.html"
+  ],
+  "navigation": [
+    [
+      "ホーム",
+      "index.html"
+    ],
+    [
+      "メニュー",
+      "menu.html"
+    ],
+    [
+      "店舗案内",
+      "about.html"
+    ]
+  ],
+  "products": [
+    [
+      "ドリップコーヒー",
+      "480円"
+    ],
+    [
+      "ホットカフェラテ",
+      "520円"
+    ],
+    [
+      "アイスカフェラテ",
+      "520円"
+    ],
+    [
+      "ラテ＆スコーンセット",
+      "850円"
+    ]
+  ],
+  "openingHours": "Mo-Tu,Th-Su 10:00-19:00",
+  "about_text": [
+    "10:00〜19:00（ラストオーダー 18:30）",
+    "水曜日",
+    "北海道札幌市北区北00条西0丁目（架空）"
+  ],
+  "checks": [
+    {
+      "label": "one footer",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "about.html"
+      ],
+      "match": {
+        "tag": "footer",
+        "cls": "site-footer"
+      },
+      "count": 1
+    },
+    {
+      "label": "starting footer year",
+      "pages": [
+        "index.html",
+        "menu.html",
+        "about.html"
+      ],
+      "match": {
+        "tag": "small",
+        "text": "2024 NORTH LIGHT COFFEE"
+      },
+      "count": 1
+    },
+    {
+      "label": "starting founding text",
+      "pages": [
+        "index.html",
+        "about.html"
+      ],
+      "match": {
+        "tag": "p",
+        "text": "創業10年"
+      },
+      "count": 1
+    },
+    {
+      "label": "menu target",
+      "pages": [
+        "menu.html"
+      ],
+      "match": {
+        "cls": "menu-grid",
+        "attrs": {
+          "id": "menu-list"
+        }
+      },
+      "count": 1
+    },
+    {
+      "label": "dummy home paragraph",
+      "pages": [
+        "index.html"
+      ],
+      "match": {
+        "tag": "p",
+        "text": "ここに文章が入ります。"
+      },
+      "count": 1
+    },
+    {
+      "label": "dummy about paragraph",
+      "pages": [
+        "about.html"
+      ],
+      "match": {
+        "tag": "p",
+        "text": "ダミーテキストです。"
+      },
+      "count": 1
+    }
+  ],
+  "sites": [
+    {
+      "directory": "starter-site"
+    },
+    {
+      "directory": "lessons/03/start",
+      "zip": "lessons/03/day3-start.zip",
+      "zip_prefix": "day3-start",
+      "source_contains": [
+        {
+          "file": "css/style.css",
+          "text": "#shop-menu {"
+        },
+        {
+          "file": "menu.html",
+          "text": ".menu-button { background: #8a3b16;"
+        }
+      ]
+    },
+    {
+      "directory": "lessons/04/start",
+      "zip": "lessons/04/day4-start.zip",
+      "zip_prefix": "day4-start",
+      "source_contains": [
+        {
+          "file": "about.html",
+          "text": "<div class=\"section\">"
+        }
+      ]
+    }
+  ]
+}

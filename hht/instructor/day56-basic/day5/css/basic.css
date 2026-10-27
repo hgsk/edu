@@ -1,0 +1,8 @@
+/* DAY 5 基本編：共通部分の余白 */
+.nav-list a {
+  display: block;
+  padding: 8px 12px;
+}
+.site-footer {
+  padding: 32px 16px;
+}

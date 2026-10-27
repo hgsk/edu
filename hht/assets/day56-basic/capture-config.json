@@ -1,0 +1,81 @@
+{
+  "figures": [
+    {
+      "id": "start",
+      "source": "starter-site/menu.html",
+      "width": 1100,
+      "height": 850,
+      "points": [
+        {
+          "selector": "nav",
+          "label": "上の案内"
+        },
+        {
+          "selector": ".menu-card:first-child",
+          "label": "商品カード"
+        }
+      ],
+      "output": "assets/day56-basic/start.png"
+    },
+    {
+      "id": "day5",
+      "source": "instructor/day56-basic/day5/menu.html",
+      "width": 1100,
+      "height": 850,
+      "points": [
+        {
+          "selector": "nav",
+          "label": "リンクの余白"
+        },
+        {
+          "selector": "footer",
+          "label": "下の余白"
+        }
+      ],
+      "output": "assets/day56-basic/day5.png"
+    },
+    {
+      "id": "day6",
+      "source": "instructor/day56-basic/day6/menu.html",
+      "width": 1100,
+      "height": 850,
+      "points": [
+        {
+          "selector": ".menu-grid",
+          "label": "カード同士の間隔"
+        },
+        {
+          "selector": ".menu-card:first-child",
+          "label": "カードの内側"
+        }
+      ],
+      "output": "assets/day56-basic/day6.png"
+    },
+    {
+      "id": "day5-advanced",
+      "source": "instructor/day56-examples/day5/menu.html",
+      "width": 390,
+      "height": 850,
+      "points": [
+        {
+          "selector": "nav",
+          "label": "狭い画面の案内"
+        }
+      ],
+      "output": "assets/day56-basic/day5-advanced.png"
+    },
+    {
+      "id": "day6-advanced",
+      "source": "instructor/day56-examples/day6/menu.html",
+      "width": 1100,
+      "height": 850,
+      "points": [
+        {
+          "selector": ".menu-grid",
+          "label": "写真付きカード"
+        }
+      ],
+      "output": "assets/day56-basic/day6-advanced.png"
+    }
+  ]
+}

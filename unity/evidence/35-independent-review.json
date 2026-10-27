@@ -1,0 +1,13 @@
+{
+  "status": "PASS",
+  "mode": "independent read-only review",
+  "rounds": 2,
+  "resolved": [
+    "Moved or copied owned markers outside output rejected",
+    "Interactive scene setup forbidden; setup and tests CLI-only",
+    "Shared TerrainData references including project assets, colliders and recipes rejected",
+    "Interactive generation creates no project assets"
+  ],
+  "runtimeTesting": "Performed separately through CLI and GUI; reviewer did not duplicate it",
+  "limitation": "CLI setup can retain newly created teaching assets after process failure; existing assets are preserved and incomplete outputs fail verification"
+}

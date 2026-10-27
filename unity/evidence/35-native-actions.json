@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "ownedEditorPid": 68792,
+  "sameSettingsGeneratedTwice": "CA9467BB",
+  "changedSettings": {
+    "seed": 73,
+    "blocks": 3,
+    "roadWidth": 3,
+    "buildingHeight": 8,
+    "relief": 4,
+    "hash": "C398198B"
+  },
+  "undoObserved": {
+    "seed": 35,
+    "blocks": 2,
+    "hash": "CA9467BB",
+    "flatTerrain": true
+  },
+  "redoGeometryObserved": true,
+  "redoSignatureCorrection": "CLI regression asserts restored layoutHash as well as actual geometry; 18 checks PASS",
+  "terrainAndColliderObserved": true,
+  "builtinModules": [
+    "com.unity.modules.terrain",
+    "com.unity.modules.terrainphysics"
+  ],
+  "viewToggleObserved": true,
+  "photos": [
+    "35-before.jpg",
+    "35-window.jpg",
+    "35-generated.jpg",
+    "35-undo.jpg",
+    "35-terrain.jpg",
+    "35-play.jpg",
+    "35-top.jpg"
+  ],
+  "ownedEditorPids": [
+    68792,
+    37944
+  ],
+  "worldIdentifiersObserved": 13
+}

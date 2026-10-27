@@ -1,0 +1,9 @@
+{
+  "status": "PASS",
+  "course_validation": "PASS",
+  "local_tests": 19,
+  "ci_test_discovery": "all hht/scripts/test_*.py; configuration updated, remote run not executed",
+  "images_and_pdfs": "regenerated",
+  "browser_cleanup": "PASS",
+  "independent_review": "findings corrected"
+}

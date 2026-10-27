@@ -1,0 +1,48 @@
+Unity course / actual CLI session
+
+> unity --version
+1.0.0-beta.8
+
+> unity editors --installed --format json
+{
+  "success": true,
+  "command": "editors",
+  "data": [
+    {
+      "version": "6000.6.3f1",
+      "alias": "6.6.3f1",
+      "architecture": "x86_64",
+      "location": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.6.3f1\\Editor\\Unity.exe",
+      "modules": "Windows",
+      "default": false
+    },
+    {
+      "version": "6000.5.4f1",
+      "alias": "6.5.4f1",
+      "architecture": "x86_64",
+      "location": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.5.4f1\\Editor\\Unity.exe",
+      "modules": "Android, Android SDK & NDK Tools, OpenJDK, Web, Windows",
+      "default": false
+    },
+    {
+      "version": "6000.4.0f1",
+      "alias": "6.4.0f1",
+      "architecture": "x86_64",
+      "location": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.4.0f1\\Editor\\Unity.exe",
+      "modules": "",
+      "default": false
+    },
+    {
+      "version": "6000.3.25f1",
+      "alias": "6.3.25f1",
+      "architecture": "x86_64",
+      "location": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+      "modules": "Windows",
+      "default": false
+    }
+  ],
+  "errors": [],
+  "warnings": []
+}
+
+RESULT: PASS

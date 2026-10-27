@@ -1,0 +1,4 @@
+.panel { width: 360px; margin-top: 40px; margin-left: 40px; padding: 24px; background-color: rgb(22, 36, 52); color: white; }
+.heading { font-size: 28px; margin-bottom: 18px; color: rgb(108, 224, 206); }
+#status { font-size: 22px; margin-bottom: 14px; }
+#start-button { height: 48px; font-size: 20px; color: rgb(16,24,32); background-color: rgb(244,232,161); border-top-color: rgb(16,24,32); border-bottom-color: rgb(16,24,32); border-left-color: rgb(16,24,32); border-right-color: rgb(16,24,32); }

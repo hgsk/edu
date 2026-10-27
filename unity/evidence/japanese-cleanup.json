@@ -1,0 +1,35 @@
+{
+  "status": "PASS",
+  "remaining": [],
+  "existingVSCodeWindow": 1444442,
+  "existingVSCodePreserved": true,
+  "checkedPids": [
+    49888,
+    67284,
+    33392,
+    62256,
+    60712,
+    30940,
+    6376,
+    17552
+  ],
+  "existingChromeWindows": [
+    788790,
+    8588918
+  ],
+  "existingChromePreserved": true,
+  "controlFiles": [
+    {
+      "exists": false,
+      "file": "capture-command.json"
+    },
+    {
+      "exists": false,
+      "file": "capture-status.json"
+    },
+    {
+      "exists": false,
+      "file": "runtime-status.json"
+    }
+  ]
+}

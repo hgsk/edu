@@ -1,0 +1,26 @@
+{
+  "status": "PASS",
+  "nativeEditorPids": [
+    62840,
+    64620
+  ],
+  "browserPids": [
+    55772,
+    67708,
+    31588,
+    51212
+  ],
+  "remainingOwnedProcesses": [],
+  "remainingHeadlessProcesses": [],
+  "nativeShutdown": "graceful",
+  "closedNativeWindows": [
+    14356360,
+    14487690,
+    8458606,
+    24775810
+  ],
+  "preservedUserWindow": 1444442,
+  "userWindowPreserved": true,
+  "webglServerClosed": true,
+  "workbookServerClosed": true
+}

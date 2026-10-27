@@ -1,0 +1,57 @@
+{
+  "status": "PASS",
+  "editors": [
+    {
+      "pid": 3952,
+      "executable": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+      "startupLogUtc": "2026-10-17T17:10:02Z",
+      "log": "test-results/unity-team-editor.log"
+    },
+    {
+      "pid": 53416,
+      "executable": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+      "startupLogUtc": "2026-10-17T17:12:36Z",
+      "log": "test-results/unity-sharing-import-editor.log"
+    },
+    {
+      "pid": 42724,
+      "executable": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+      "startupLogUtc": "2026-10-17T17:15:05Z",
+      "log": "test-results/unity-sharing-upm-editor.log"
+    },
+    {
+      "pid": 58536,
+      "executable": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+      "startupLogUtc": "2026-10-17T17:16:53Z",
+      "log": "test-results/unity-sharing-upm-editor-final.log"
+    },
+    {
+      "pid": 60352,
+      "executable": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+      "startupLogUtc": "2026-10-17T17:18:30Z",
+      "log": "test-results/unity-sharing-upm-visible.log"
+    }
+  ],
+  "editorPidsRemaining": [
+    null
+  ],
+  "browserPids": [
+    49712,
+    61324,
+    56300
+  ],
+  "browserPidsRemaining": [],
+  "webglServerPort": 51734,
+  "webglListenerRemaining": 0,
+  "browserCleanup": "PASS",
+  "readerCleanup": "PASS",
+  "workbookCleanup": "PASS: browser and HTTP server closed in finally",
+  "ownedWindowsRemaining": 0,
+  "userVSCodePreserved": true,
+  "generatorEditor": {
+    "ProcessId": 61428,
+    "ExecutablePath": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+    "CreationDate": "2026-10-18T02:37:14.60452+09:00"
+  },
+  "generatorEditorCleanup": "PASS"
+}

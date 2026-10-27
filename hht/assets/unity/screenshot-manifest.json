@@ -1,0 +1,951 @@
+{
+  "date": "2026-10-18",
+  "editor": "6000.3.25f1",
+  "cli": "1.0.0-beta.8",
+  "capture": "Actual Unity Editor/player via Computer Use and actual WebGL Chromium; cropped WebGL canvas provenance in unity/evidence/japanese-capture-provenance.json",
+  "courseScreenshots": 157,
+  "files": [
+    {
+      "file": "01-after.png",
+      "bytes": 127864,
+      "sha256": "c152db9f0d68997d2b9b2a9ee74cc33b83b74d0b36d47d7a8f382352d528f87b",
+      "savedAt": "2026-10-17T21:38:52.031834+00:00"
+    },
+    {
+      "file": "01-before.png",
+      "bytes": 127840,
+      "sha256": "4c2351eb84620969c72be926880f1ccb9f763986a0efcdcaaff037f82a77e689",
+      "savedAt": "2026-10-17T21:38:50.987763+00:00"
+    },
+    {
+      "file": "01-complete.png",
+      "bytes": 127861,
+      "sha256": "11950508c8439802369cfdeca6e273b1ffba8cbaa70e768aa7bfa0d612f82152",
+      "savedAt": "2026-10-17T21:38:53.066778+00:00"
+    },
+    {
+      "file": "02-after.png",
+      "bytes": 128372,
+      "sha256": "89ec730593d045600c9465b3afaae5fdc6c0f9584a115c144ce83aacd3a265de",
+      "savedAt": "2026-10-17T21:39:03.674120+00:00"
+    },
+    {
+      "file": "02-before.png",
+      "bytes": 127773,
+      "sha256": "cb35dfca89b568452e3d877a6b92a73e3268453ee251c160112564aea3733238",
+      "savedAt": "2026-10-17T21:39:02.639411+00:00"
+    },
+    {
+      "file": "02-complete.png",
+      "bytes": 128372,
+      "sha256": "89ec730593d045600c9465b3afaae5fdc6c0f9584a115c144ce83aacd3a265de",
+      "savedAt": "2026-10-17T21:39:04.710487+00:00"
+    },
+    {
+      "file": "03-after.png",
+      "bytes": 129378,
+      "sha256": "17dbe16dc119e54ac46e536be8f7bb3b2c6623c5c3dcf12aea28e642f6712c3f",
+      "savedAt": "2026-10-17T21:39:06.807615+00:00"
+    },
+    {
+      "file": "03-before.png",
+      "bytes": 128730,
+      "sha256": "15d4149bd04985554ab13d523d8cb1c5ed980d0c4f88786ed54517a9f3b38692",
+      "savedAt": "2026-10-17T21:39:05.737474+00:00"
+    },
+    {
+      "file": "03-complete.png",
+      "bytes": 129378,
+      "sha256": "17dbe16dc119e54ac46e536be8f7bb3b2c6623c5c3dcf12aea28e642f6712c3f",
+      "savedAt": "2026-10-17T21:39:07.843861+00:00"
+    },
+    {
+      "file": "04-after.png",
+      "bytes": 132410,
+      "sha256": "6608f3747c99c1687ed2e77b73e714de07ef1dbc91e2220ae66b36d0b0a9615a",
+      "savedAt": "2026-10-17T21:39:22.311499+00:00"
+    },
+    {
+      "file": "04-before.png",
+      "bytes": 132410,
+      "sha256": "6608f3747c99c1687ed2e77b73e714de07ef1dbc91e2220ae66b36d0b0a9615a",
+      "savedAt": "2026-10-17T21:39:21.279659+00:00"
+    },
+    {
+      "file": "04-complete.png",
+      "bytes": 132416,
+      "sha256": "5943902c83af9be916709ed2078cb69513e32acafb12a6ea511bf87c1b110cfd",
+      "savedAt": "2026-10-17T21:39:23.580210+00:00"
+    },
+    {
+      "file": "04-play.png",
+      "bytes": 113994,
+      "sha256": "c354d0f2970028a4be0afbca747c27b341d0906f2d574ac36b4bac18e0cd4720",
+      "savedAt": "2026-10-17T21:43:39.937796+00:00"
+    },
+    {
+      "file": "05-after.png",
+      "bytes": 121370,
+      "sha256": "0e186928c24359c8dbd3db05785de5d620bbe742d288253f340155e96b5a2d6f",
+      "savedAt": "2026-10-17T21:39:25.875427+00:00"
+    },
+    {
+      "file": "05-before.png",
+      "bytes": 121443,
+      "sha256": "371d0c0accacc5465ccc7bfc4c1734b2616050e7432ce8e38cf9e2eb6bbaa86f",
+      "savedAt": "2026-10-17T21:39:24.835915+00:00"
+    },
+    {
+      "file": "05-complete.png",
+      "bytes": 121377,
+      "sha256": "23db89a8d257bd6982eef3ebe1fddf3e2b21f77ee65c25e71dc09992d1fad454",
+      "savedAt": "2026-10-17T21:39:26.921771+00:00"
+    },
+    {
+      "file": "06-after.jpg",
+      "bytes": 128881,
+      "sha256": "195bbd56a85543c8f9de29cd71fa67181cd9756e67dda90770db7ea4655afc74",
+      "savedAt": "2026-10-17T16:08:23.902757+00:00"
+    },
+    {
+      "file": "06-before.png",
+      "bytes": 131711,
+      "sha256": "eefe1f512407e4bc4fbc6a14ae1b383ce971692a96fe971983a535ca39afa29c",
+      "savedAt": "2026-10-17T21:39:28.003066+00:00"
+    },
+    {
+      "file": "06-complete.png",
+      "bytes": 131711,
+      "sha256": "eefe1f512407e4bc4fbc6a14ae1b383ce971692a96fe971983a535ca39afa29c",
+      "savedAt": "2026-10-17T21:39:29.027430+00:00"
+    },
+    {
+      "file": "07-after.png",
+      "bytes": 132543,
+      "sha256": "341c7c1c6b9812bbbba316f14845da43fb085d139a263462dc783764f8febd4a",
+      "savedAt": "2026-10-17T21:39:49.789630+00:00"
+    },
+    {
+      "file": "07-before.png",
+      "bytes": 130585,
+      "sha256": "5b2fd5346b88be7b3303fdf0c4d64130c34f54cc70e7dfbd447677477644d698",
+      "savedAt": "2026-10-17T21:39:48.787290+00:00"
+    },
+    {
+      "file": "07-complete.png",
+      "bytes": 132371,
+      "sha256": "ce8b5a869591581d07d15395d984803103ca7f948480c38a7224a0d3468ee2fa",
+      "savedAt": "2026-10-17T21:39:50.792413+00:00"
+    },
+    {
+      "file": "08-after.png",
+      "bytes": 138454,
+      "sha256": "bba838bbe56b6d5514a70d0e56739ca89fa14a0e1718370de6733e52b2f12cf1",
+      "savedAt": "2026-10-17T21:39:52.789108+00:00"
+    },
+    {
+      "file": "08-before.png",
+      "bytes": 138454,
+      "sha256": "bba838bbe56b6d5514a70d0e56739ca89fa14a0e1718370de6733e52b2f12cf1",
+      "savedAt": "2026-10-17T21:39:51.794909+00:00"
+    },
+    {
+      "file": "08-complete.png",
+      "bytes": 138454,
+      "sha256": "bba838bbe56b6d5514a70d0e56739ca89fa14a0e1718370de6733e52b2f12cf1",
+      "savedAt": "2026-10-17T21:39:53.790876+00:00"
+    },
+    {
+      "file": "08-play.png",
+      "bytes": 119997,
+      "sha256": "ee378ba0bd765d164d4d562e7785fca43b8566c1ace8fc4ae456be3236e5c10d",
+      "savedAt": "2026-10-17T21:47:01.425485+00:00"
+    },
+    {
+      "file": "09-after.jpg",
+      "bytes": 151108,
+      "sha256": "f906daa8bb389056aa2ed74e168bb18c370a560d5d6e3ff691496f4c2e4fd411",
+      "savedAt": "2026-10-17T16:08:51.678839+00:00"
+    },
+    {
+      "file": "09-before.png",
+      "bytes": 128741,
+      "sha256": "6a73e101effe3246d50b58395e7e3602d7ab5fec187637e7fa173aabcfbe4578",
+      "savedAt": "2026-10-17T21:39:54.823340+00:00"
+    },
+    {
+      "file": "09-complete.png",
+      "bytes": 130480,
+      "sha256": "115b5ceef0494426da788326cd9443772570b2979d8e7404fe7b4eff6def5526",
+      "savedAt": "2026-10-17T21:39:55.822758+00:00"
+    },
+    {
+      "file": "10-after.png",
+      "bytes": 136913,
+      "sha256": "fb9abb4fc9fb5e7f43087c4d062a0a452dd694c8ac1e0a0d9c317e0489755c55",
+      "savedAt": "2026-10-17T21:40:23.725765+00:00"
+    },
+    {
+      "file": "10-before.png",
+      "bytes": 128002,
+      "sha256": "a15900606d9ab6367fc3055697571bfeac6044481981213db552e971b31d20a7",
+      "savedAt": "2026-10-17T21:40:22.725321+00:00"
+    },
+    {
+      "file": "10-complete.png",
+      "bytes": 127980,
+      "sha256": "f9fcafa42dfd95fbb9ae791f9cd703b957ef6de5b1ff8188087691617ee40388",
+      "savedAt": "2026-10-17T21:40:24.725684+00:00"
+    },
+    {
+      "file": "11-after.png",
+      "bytes": 155080,
+      "sha256": "bd29adde692836eec0366c765edadd1acfa1abe954b07c3355d5f29afe95eec8",
+      "savedAt": "2026-10-17T21:40:26.723398+00:00"
+    },
+    {
+      "file": "11-before.png",
+      "bytes": 127841,
+      "sha256": "b5bcb5824cf7f9d468a05f38774aa3719b16b35fc322fce28552608ae00c2a4a",
+      "savedAt": "2026-10-17T21:40:25.722584+00:00"
+    },
+    {
+      "file": "11-complete.png",
+      "bytes": 127813,
+      "sha256": "1c17fc030ac010f3b032de3ccb46cfca031945ad89ce72ad763a64e5632ac682",
+      "savedAt": "2026-10-17T21:40:27.722047+00:00"
+    },
+    {
+      "file": "12-after.png",
+      "bytes": 137700,
+      "sha256": "81844193558f85dfc4d47ab2993558be597ad4f727f1598754ce5c115bcfd9b7",
+      "savedAt": "2026-10-17T21:40:48.829377+00:00"
+    },
+    {
+      "file": "12-before.png",
+      "bytes": 127806,
+      "sha256": "fce8991d71cede1e313c39329a86334df563908a98e11fb6a93b71cfa4c6a514",
+      "savedAt": "2026-10-17T21:40:47.822193+00:00"
+    },
+    {
+      "file": "12-complete.png",
+      "bytes": 127915,
+      "sha256": "9f24595995619dab7984ab0638ec7f2125802281062b5888579e8e24908832de",
+      "savedAt": "2026-10-17T21:40:49.826495+00:00"
+    },
+    {
+      "file": "13-after.jpg",
+      "bytes": 159760,
+      "sha256": "bc6762fb7393d77f72c95eaffc37954ee29d1579fb6b42cba21d6fb4cebec69a",
+      "savedAt": "2026-10-17T16:09:05.405327+00:00"
+    },
+    {
+      "file": "13-before.png",
+      "bytes": 142799,
+      "sha256": "457fa8e638e33f3ef55ecf3e993654befcb2779b10dd0f9cdc5dca2b328f2a2b",
+      "savedAt": "2026-10-17T21:40:50.823878+00:00"
+    },
+    {
+      "file": "13-complete.png",
+      "bytes": 142965,
+      "sha256": "646da8dd0b9851c8b5e46dd7eac1df7c32da88882d4a1918dae9a33e4a6445ce",
+      "savedAt": "2026-10-17T21:40:51.824881+00:00"
+    },
+    {
+      "file": "13-play.png",
+      "bytes": 122456,
+      "sha256": "a2acf2e46b3293e334eeef9095d32a993d494d2144b1a615f5052bf6ff9d75d1",
+      "savedAt": "2026-10-17T21:45:03.582955+00:00"
+    },
+    {
+      "file": "14-after.jpg",
+      "bytes": 134870,
+      "sha256": "e6ee27ebf737c161b7d84964ca419b67b8e117533b14019250f6d23902389d22",
+      "savedAt": "2026-10-17T16:09:09.107470+00:00"
+    },
+    {
+      "file": "14-before.png",
+      "bytes": 148254,
+      "sha256": "e9a56b23d4ae2b598089b5ab66914e9f1f2c8d9059fec354cc23daca10435c84",
+      "savedAt": "2026-10-17T21:40:52.826540+00:00"
+    },
+    {
+      "file": "14-complete.png",
+      "bytes": 148272,
+      "sha256": "7a55f4726e28c51aaac3c5571f5dc5f1b426783e23e5731cfdeb9e5a23ef63e9",
+      "savedAt": "2026-10-17T21:40:53.820470+00:00"
+    },
+    {
+      "file": "14-play.png",
+      "bytes": 131859,
+      "sha256": "b89e8791ffd642e37a6ab0ff450a2942ae1c1dac30431a38699c9af8f2c398aa",
+      "savedAt": "2026-10-17T21:45:07.871076+00:00"
+    },
+    {
+      "file": "15-after.jpg",
+      "bytes": 161916,
+      "sha256": "e8f6377ae700b27ffbe867014e9d33f6f08ce144fec8b9bf57496dbab74f4a2c",
+      "savedAt": "2026-10-17T16:09:12.873489+00:00"
+    },
+    {
+      "file": "15-before.png",
+      "bytes": 143653,
+      "sha256": "d229571097428ce33cccec70463e90da468b92fe7d63dea8397f20c30323a76d",
+      "savedAt": "2026-10-17T21:40:54.825201+00:00"
+    },
+    {
+      "file": "15-complete.png",
+      "bytes": 143653,
+      "sha256": "d229571097428ce33cccec70463e90da468b92fe7d63dea8397f20c30323a76d",
+      "savedAt": "2026-10-17T21:40:55.828780+00:00"
+    },
+    {
+      "file": "16-after.png",
+      "bytes": 156329,
+      "sha256": "bc50735bd4b59190ab8f960c0c9a5f73b61f923a2cfd5b6ce638c017136b615d",
+      "savedAt": "2026-10-17T21:22:23.173294+00:00"
+    },
+    {
+      "file": "16-before.png",
+      "bytes": 134264,
+      "sha256": "18ae0837220ee29ed3d628f0449c39bf6b96dac4d6b5635583eac4c2c51adf79",
+      "savedAt": "2026-10-17T21:41:09.256540+00:00"
+    },
+    {
+      "file": "16-complete.png",
+      "bytes": 134264,
+      "sha256": "18ae0837220ee29ed3d628f0449c39bf6b96dac4d6b5635583eac4c2c51adf79",
+      "savedAt": "2026-10-17T21:41:10.259386+00:00"
+    },
+    {
+      "file": "16-japanese-font.png",
+      "bytes": 166642,
+      "sha256": "16a6ca616e39ac02f31ce541be43a7bc8b1501f573a43aea1fe093204856b796",
+      "savedAt": "2026-10-17T21:22:35.132573+00:00"
+    },
+    {
+      "file": "16-play.png",
+      "bytes": 145840,
+      "sha256": "844de08b936a596df31c6339462525f95c6305b79181de8d542d55261691d549",
+      "savedAt": "2026-10-17T21:22:49.439056+00:00"
+    },
+    {
+      "file": "17-after.png",
+      "bytes": 140296,
+      "sha256": "c4f20999cfab7e9715b826cc4d00de6c39804df4be0849edf5c44498c4f3f53a",
+      "savedAt": "2026-10-17T21:57:20.759090+00:00"
+    },
+    {
+      "file": "17-before.png",
+      "bytes": 136891,
+      "sha256": "3b389a999626cab78ec2dfd5001a1b5686986bd658750aaf4ff7f8978f875872",
+      "savedAt": "2026-10-17T21:41:11.491885+00:00"
+    },
+    {
+      "file": "17-complete.png",
+      "bytes": 140296,
+      "sha256": "c4f20999cfab7e9715b826cc4d00de6c39804df4be0849edf5c44498c4f3f53a",
+      "savedAt": "2026-10-17T21:41:13.490793+00:00"
+    },
+    {
+      "file": "18-after.png",
+      "bytes": 131651,
+      "sha256": "dc952798d7f13d13a44c7632f3f51b501897c04e39efed1ac2f94168c03065da",
+      "savedAt": "2026-10-17T21:23:28.035981+00:00"
+    },
+    {
+      "file": "18-before.png",
+      "bytes": 132371,
+      "sha256": "26f9a690034c25687fe28541e8c5442d05f3f6b7adf7bad88ba577d3fe4b6d0b",
+      "savedAt": "2026-10-17T21:41:14.493335+00:00"
+    },
+    {
+      "file": "18-complete-play.png",
+      "bytes": 129734,
+      "sha256": "76ba67ca8cc8e57fbd254dea2189cfc35c8b33ad4601208393f0f05ef1a1cf58",
+      "savedAt": "2026-10-17T21:47:33.460262+00:00"
+    },
+    {
+      "file": "18-complete.png",
+      "bytes": 132377,
+      "sha256": "bba1f883097234006eb9184b7630fabf748a9bc03fe41dcef8611a8bbdcf81fa",
+      "savedAt": "2026-10-17T21:41:15.492743+00:00"
+    },
+    {
+      "file": "18-gallery-01.png",
+      "bytes": 71106,
+      "sha256": "87db19767bd7df0b60bd34fecf1f90361051b11ef2459b9bdc9be280d452f7ba",
+      "savedAt": "2026-10-17T21:55:16.290033+00:00"
+    },
+    {
+      "file": "18-gallery-02.png",
+      "bytes": 62556,
+      "sha256": "703a2bbe3fd3d9f0b5df48140b9171026357382f9ff38e572b7981c2b0bf9cd4",
+      "savedAt": "2026-10-17T21:55:16.299725+00:00"
+    },
+    {
+      "file": "18-gallery-03.png",
+      "bytes": 64883,
+      "sha256": "e1007352b5a13aef81426362d931e7f9e52ab48af65d5dbb8f3c19279539647e",
+      "savedAt": "2026-10-17T21:55:16.311462+00:00"
+    },
+    {
+      "file": "18-gallery-04.png",
+      "bytes": 68309,
+      "sha256": "1d483d9a99fbbe1aaa47566ef3f8718a6b8f955dd8e4cbfbb8edef0372d91413",
+      "savedAt": "2026-10-17T21:55:16.322173+00:00"
+    },
+    {
+      "file": "18-gallery-05.png",
+      "bytes": 66926,
+      "sha256": "53bc3d8458ab9ab3b4dbd0144afb1d43ef619f05724b8bc9a358781c87193368",
+      "savedAt": "2026-10-17T21:55:16.333376+00:00"
+    },
+    {
+      "file": "18-gallery-06.png",
+      "bytes": 66627,
+      "sha256": "a8ce33f0687f3a857d5e394e58466146cb2384cc2d9190aa7fb0ffda6eb3f8e9",
+      "savedAt": "2026-10-17T21:55:16.343744+00:00"
+    },
+    {
+      "file": "18-gallery-07.png",
+      "bytes": 64764,
+      "sha256": "9609d23b96f1bedf262bccee4abb971b5dfc5a6c299728f5f2eb6ad2a08065c3",
+      "savedAt": "2026-10-17T21:55:16.352972+00:00"
+    },
+    {
+      "file": "18-gallery-08.png",
+      "bytes": 71675,
+      "sha256": "eb7f68929f6495cf242dadcadb561e2ff6fcfa38f58ca1b5f1c80354ef8d7c15",
+      "savedAt": "2026-10-17T21:55:16.362851+00:00"
+    },
+    {
+      "file": "18-gallery-09.png",
+      "bytes": 70771,
+      "sha256": "c0312f565abca70acc6e8cc5379afa7c05c1096080b705fb07925001b17c1940",
+      "savedAt": "2026-10-17T21:55:16.376797+00:00"
+    },
+    {
+      "file": "18-gallery-10.png",
+      "bytes": 68075,
+      "sha256": "af905b484c5d195109067d418787bdc452fdca39b0331b27f0fab68aad8ae5da",
+      "savedAt": "2026-10-17T21:55:16.388586+00:00"
+    },
+    {
+      "file": "18-gallery-11.png",
+      "bytes": 67581,
+      "sha256": "936e685dd599b7705458b6e3ab4600904423bd14c64b7ea5f586e471477b3b07",
+      "savedAt": "2026-10-17T21:55:16.397571+00:00"
+    },
+    {
+      "file": "18-gallery-12.png",
+      "bytes": 66510,
+      "sha256": "e11d801e2563cf841425a9d93364f477931ac27a912066bc5fb3b0a1a4804cfd",
+      "savedAt": "2026-10-17T21:55:16.410224+00:00"
+    },
+    {
+      "file": "18-gallery-13.png",
+      "bytes": 67036,
+      "sha256": "af54a784c888e4b3af0056a710b051e41f688e055d3ce716715e8166d0bd0e90",
+      "savedAt": "2026-10-17T21:55:16.421352+00:00"
+    },
+    {
+      "file": "18-gallery-14.png",
+      "bytes": 77294,
+      "sha256": "a6daf99ae74e6ba61e9ac62d47ad10c0b1e0b476beb0eeaf0a268a055ee37032",
+      "savedAt": "2026-10-17T21:55:16.431113+00:00"
+    },
+    {
+      "file": "18-gallery-modal.png",
+      "bytes": 52747,
+      "sha256": "9f7eb785240372165752034bb63efc338187b1144d327ad43d23fbfeb5b8fe6c",
+      "savedAt": "2026-10-17T21:55:16.280302+00:00"
+    },
+    {
+      "file": "18-japanese-font.png",
+      "bytes": 149750,
+      "sha256": "30f29c43b0cfc91e3dcef7b299476374ae6f8da91367bc34855af0b6ef1a4173",
+      "savedAt": "2026-10-17T21:23:48.104387+00:00"
+    },
+    {
+      "file": "18-japanese-panel.png",
+      "bytes": 140805,
+      "sha256": "3fd954a093b2f8879ecd6b430a5ebeed5ce1405806ae91e893a06914ef58f1a9",
+      "savedAt": "2026-10-17T21:23:42.671423+00:00"
+    },
+    {
+      "file": "18-play.png",
+      "bytes": 143711,
+      "sha256": "f46ed151af85dfcf8d466ab30120146d9b569b4272a45f2587b5d536be3d1b5e",
+      "savedAt": "2026-10-17T21:24:01.807151+00:00"
+    },
+    {
+      "file": "19-after.jpg",
+      "bytes": 71219,
+      "sha256": "6dcf6deccefdfaa5de9ecce00099c0bbf7d9ab78825fe729db01beb32380c692",
+      "savedAt": "2026-10-17T16:09:35.338070+00:00"
+    },
+    {
+      "file": "19-before.png",
+      "bytes": 143560,
+      "sha256": "ffca26a49ded991361f33d54fda94d1d9d6ccc27afd7c8948edd2fc73f778c3a",
+      "savedAt": "2026-10-17T21:41:43.315646+00:00"
+    },
+    {
+      "file": "19-complete-play.png",
+      "bytes": 123536,
+      "sha256": "6133deedef2e359e15ddfdbf95e3498735bd300289b0cbeeb14c7305a52aa056",
+      "savedAt": "2026-10-17T21:45:12.164516+00:00"
+    },
+    {
+      "file": "19-complete.png",
+      "bytes": 143985,
+      "sha256": "1d01fe874656851e659e06e09f2be1a45070d318a05547b4af0480b6b359e734",
+      "savedAt": "2026-10-17T21:41:44.584811+00:00"
+    },
+    {
+      "file": "19-play.png",
+      "bytes": 123536,
+      "sha256": "6133deedef2e359e15ddfdbf95e3498735bd300289b0cbeeb14c7305a52aa056",
+      "savedAt": "2026-10-17T21:45:12.164516+00:00"
+    },
+    {
+      "file": "19-spawn.jpg",
+      "bytes": 72417,
+      "sha256": "6ec83c46c6f543b822b15c21a7042a05b989e5a1a68c8785ed5858eff2b10299",
+      "savedAt": "2026-10-17T16:09:44.741131+00:00"
+    },
+    {
+      "file": "20-after.jpg",
+      "bytes": 114627,
+      "sha256": "92323cb539b9217daa2f566adb39e96d5a02938fb7cd74b8e99ad7cc74959ca3",
+      "savedAt": "2026-10-17T16:09:39.335626+00:00"
+    },
+    {
+      "file": "20-before.png",
+      "bytes": 131179,
+      "sha256": "e515f3fbdf2c9d72a03c54b3e1f6375b48750f81a77b512b87b4c95f4d03dded",
+      "savedAt": "2026-10-17T21:41:45.611245+00:00"
+    },
+    {
+      "file": "20-complete.png",
+      "bytes": 131179,
+      "sha256": "e515f3fbdf2c9d72a03c54b3e1f6375b48750f81a77b512b87b4c95f4d03dded",
+      "savedAt": "2026-10-17T21:41:46.619246+00:00"
+    },
+    {
+      "file": "21-after.jpg",
+      "bytes": 160093,
+      "sha256": "e4aa796afb28bf771def65917450459a5500c5b527e70b07b513f2760083a5da",
+      "savedAt": "2026-10-17T16:09:43.266865+00:00"
+    },
+    {
+      "file": "21-before.png",
+      "bytes": 127803,
+      "sha256": "efd1f1478cce2b207f92060423fd112e23d4ce78b8e1579ea81e122f9bc590ec",
+      "savedAt": "2026-10-17T21:41:47.624841+00:00"
+    },
+    {
+      "file": "21-complete.png",
+      "bytes": 127803,
+      "sha256": "efd1f1478cce2b207f92060423fd112e23d4ce78b8e1579ea81e122f9bc590ec",
+      "savedAt": "2026-10-17T21:41:48.656075+00:00"
+    },
+    {
+      "file": "21-player.png",
+      "bytes": 19571,
+      "sha256": "bdca44364a520c86a3722fe3907cda44d0d94a283fc2198efcf932de34234230",
+      "savedAt": "2026-10-17T21:55:14.766129+00:00"
+    },
+    {
+      "file": "22-cli-inspect.jpg",
+      "bytes": 91607,
+      "sha256": "b16473cfe46597ef7471b251dadc7a114d82be17103521c720b99feaf0ef4550",
+      "savedAt": "2026-10-17T20:53:23.143093+00:00"
+    },
+    {
+      "file": "22-cli-verify.jpg",
+      "bytes": 87532,
+      "sha256": "19b80c8cd486caecb1ba2eeacae73d158deba42cba6f541c40742e12ecb826c3",
+      "savedAt": "2026-10-17T20:53:34.263606+00:00"
+    },
+    {
+      "file": "22-complete.png",
+      "bytes": 127987,
+      "sha256": "5310541f9b899dd733676480dcf491fd59ba3d30bbb948e5ea2df4f43a7e6c0d",
+      "savedAt": "2026-10-17T21:41:49.654892+00:00"
+    },
+    {
+      "file": "23-before.png",
+      "bytes": 128412,
+      "sha256": "8ef6e026005307d9349a30f9e041e72125d3bb2632a70192edeb5a39956da251",
+      "savedAt": "2026-10-17T21:41:50.658017+00:00"
+    },
+    {
+      "file": "23-complete-play.png",
+      "bytes": 11031,
+      "sha256": "b310b94e79819fe8afcfc024d2a1d873401b16ac0aa9f4073bbe3620495fbcdd",
+      "savedAt": "2026-10-17T21:55:16.042648+00:00"
+    },
+    {
+      "file": "23-graph.jpg",
+      "bytes": 85662,
+      "sha256": "c314ed13f4596715f343bf3508331e7675d300ef243728a5e2af4541575b0b50",
+      "savedAt": "2026-10-17T16:28:12.455199+00:00"
+    },
+    {
+      "file": "24-before.png",
+      "bytes": 129063,
+      "sha256": "2f493add62072dcdf013d16331b24bd05c5eb28b9692f82a408a4da9f831d366",
+      "savedAt": "2026-10-17T21:41:51.659318+00:00"
+    },
+    {
+      "file": "24-reload.png",
+      "bytes": 57673,
+      "sha256": "837808cc115c8b5b9a50de02f29154651e2eef8b513ca2c0288af84040069e4a",
+      "savedAt": "2026-10-17T21:55:16.064070+00:00"
+    },
+    {
+      "file": "24-restart.png",
+      "bytes": 56735,
+      "sha256": "856fa1092ee60a18e8c0b4c76a99ca35c1b7ff116e908ac0c3e0ea1e9f4379be",
+      "savedAt": "2026-10-17T21:55:16.094825+00:00"
+    },
+    {
+      "file": "24-result.png",
+      "bytes": 55036,
+      "sha256": "577ff039af67a278e7ea646be0d246b6bf22938ffae02f0c45d4f51a8dacfd3d",
+      "savedAt": "2026-10-17T21:55:16.075432+00:00"
+    },
+    {
+      "file": "24-retry.png",
+      "bytes": 55356,
+      "sha256": "58bbe6515454c908892913926fd49b5d303ccebbf9ee3d1c651c30c644d30376",
+      "savedAt": "2026-10-17T21:55:16.085085+00:00"
+    },
+    {
+      "file": "24-title.png",
+      "bytes": 58067,
+      "sha256": "0de4882d57082b66756a5295631860af0043b145d2254814b3e6ad90eec57cbd",
+      "savedAt": "2026-10-17T21:55:16.050571+00:00"
+    },
+    {
+      "file": "25-complete.png",
+      "bytes": 133113,
+      "sha256": "6b9af9d9b8bdf8d8aa9581e1931baabb5db081cf2a079e386fd6c52656532d2f",
+      "savedAt": "2026-10-17T21:42:30.124304+00:00"
+    },
+    {
+      "file": "25-git.jpg",
+      "bytes": 114921,
+      "sha256": "40d696663c7cd8d0d463e5fc6908250c01dbd004074c8e5464424a70c07ce67c",
+      "savedAt": "2026-10-17T17:08:23.834889+00:00"
+    },
+    {
+      "file": "26-sharing.jpg",
+      "bytes": 158377,
+      "sha256": "f0002be73b38afae2aaa83ca1f3edf8d6a151e50db1545e243346ba1874517c8",
+      "savedAt": "2026-10-17T17:14:05.492959+00:00"
+    },
+    {
+      "file": "26-upm.jpg",
+      "bytes": 163213,
+      "sha256": "84c330475bb65afebbacabb73cc4d23760e587bdde2a117d99cfbd1761fbe0d7",
+      "savedAt": "2026-10-17T17:22:40.889577+00:00"
+    },
+    {
+      "file": "27-before.png",
+      "bytes": 132652,
+      "sha256": "ddfff3c66b867649a5fecedb7d421e31945255e5f7a0966ef00670d2704db587",
+      "savedAt": "2026-10-17T21:42:31.125458+00:00"
+    },
+    {
+      "file": "27-complete.png",
+      "bytes": 133315,
+      "sha256": "b1b439ec206ba37503b4bf6183e8f4b8b3a654d04f009f8192f6277001f966a6",
+      "savedAt": "2026-10-17T21:42:32.126189+00:00"
+    },
+    {
+      "file": "27-conflict.jpg",
+      "bytes": 106091,
+      "sha256": "ac521085688ab0785abf314973329365ce7e8f5c11998924c43e3c4e28083a93",
+      "savedAt": "2026-10-17T17:08:16.121584+00:00"
+    },
+    {
+      "file": "27-resolved.jpg",
+      "bytes": 94808,
+      "sha256": "f95d137134352d4711b4cd143fa3c7106b5f901a379f4c8daeb60c2632d25771",
+      "savedAt": "2026-10-17T17:08:56.234790+00:00"
+    },
+    {
+      "file": "28-before.png",
+      "bytes": 140642,
+      "sha256": "d9820a3c3d698733d4faaa5e6cf95c1b3a40efac066eb5c3752bfe17e78afc8f",
+      "savedAt": "2026-10-17T21:42:33.166737+00:00"
+    },
+    {
+      "file": "28-blocked.png",
+      "bytes": 34609,
+      "sha256": "d446bd805b90b33dc8c8dd9773309bebde02b0c25cac5a5dc9b3925a0c029428",
+      "savedAt": "2026-10-17T21:55:16.102973+00:00"
+    },
+    {
+      "file": "28-ready.png",
+      "bytes": 33596,
+      "sha256": "70840a20cf424d771c396fdebbc0ef383c92600028f8691bedfae0e8cb003a30",
+      "savedAt": "2026-10-17T21:55:16.111065+00:00"
+    },
+    {
+      "file": "28-verify.jpg",
+      "bytes": 167157,
+      "sha256": "57854dddbbc992f80e6d8caf262f6fc94cf24108df14704d66726b0be2b3fdb4",
+      "savedAt": "2026-10-17T20:54:06.148220+00:00"
+    },
+    {
+      "file": "29-before.png",
+      "bytes": 138329,
+      "sha256": "aae2b3dc5e40a4a835ccc33e7bd3b0c7a5b21c3ad67fe180d76a8ecf4931e31d",
+      "savedAt": "2026-10-17T21:42:34.189191+00:00"
+    },
+    {
+      "file": "29-material.jpg",
+      "bytes": 159712,
+      "sha256": "87c66837989fd7a2b3aa31dbd7b086b9c3833c673e5e9db4c28b9dffadca4a8d",
+      "savedAt": "2026-10-17T18:05:51.948181+00:00"
+    },
+    {
+      "file": "29-ready.png",
+      "bytes": 42145,
+      "sha256": "75f2cd9190d62e32b538bc2d5f38d641b683aaa8f02a7bff985a789b2071a91b",
+      "savedAt": "2026-10-17T21:55:16.123789+00:00"
+    },
+    {
+      "file": "29-result.png",
+      "bytes": 43452,
+      "sha256": "8a1f87b3ab2e5cdff0109184c100d4c3168474492c1de5ec501ca26d87f66a5b",
+      "savedAt": "2026-10-17T21:55:16.134087+00:00"
+    },
+    {
+      "file": "30-before.png",
+      "bytes": 130364,
+      "sha256": "433df28fdd9d24a24a8681899f1dc82794a1088ee4721c63fc394faa2a99ff9f",
+      "savedAt": "2026-10-17T21:42:35.178710+00:00"
+    },
+    {
+      "file": "30-blocked.png",
+      "bytes": 34991,
+      "sha256": "333664b67e62539a0c3fe3fa7110a0309a0f3f75ce5b69bfdb0b70ee5dae5434",
+      "savedAt": "2026-10-17T21:55:16.143802+00:00"
+    },
+    {
+      "file": "30-goal.png",
+      "bytes": 34467,
+      "sha256": "94df691cf66076d295776c282d70cd9c1b3401668b171342172cf10b3d6bf9cd",
+      "savedAt": "2026-10-17T21:55:16.155409+00:00"
+    },
+    {
+      "file": "31-before.png",
+      "bytes": 130552,
+      "sha256": "f2d4ecaf3e856ee741b39150a5557a0ac8dfcef0c4c65191cc3e59700d2bd338",
+      "savedAt": "2026-10-17T21:42:36.175708+00:00"
+    },
+    {
+      "file": "31-complete.png",
+      "bytes": 132974,
+      "sha256": "912e01c102f6929b1ae82cfcf2739351793f1051b0e9a65e29f1b40a476b4e8d",
+      "savedAt": "2026-10-17T21:42:37.192122+00:00"
+    },
+    {
+      "file": "31-off.png",
+      "bytes": 44347,
+      "sha256": "05b3976e3f20be3227c47615ea05477d77e30e440143db4472bff26bd4bf8270",
+      "savedAt": "2026-10-17T21:55:16.176652+00:00"
+    },
+    {
+      "file": "31-play.png",
+      "bytes": 45378,
+      "sha256": "fc2df2d97fbfd138442875115ca2103eb3046f8e88a6e9f70b81995f76ebd5ad",
+      "savedAt": "2026-10-17T21:55:16.166806+00:00"
+    },
+    {
+      "file": "32-before.png",
+      "bytes": 167881,
+      "sha256": "1b725e121d7f13b807857fdda699ad8cb2d2abfaee1770d3775d129fb171cb68",
+      "savedAt": "2026-10-17T21:51:25.602479+00:00"
+    },
+    {
+      "file": "32-export.jpg",
+      "bytes": 108781,
+      "sha256": "f2b3c2828061eb7a81e21490926fff4c3dba33d00e645e098994cf7ce82a14c2",
+      "savedAt": "2026-10-17T18:48:30.054342+00:00"
+    },
+    {
+      "file": "32-fk.png",
+      "bytes": 35063,
+      "sha256": "6232f4eb3f0acebeb7c0be7c7c9410797df8919863577a04445098de635fd2cf",
+      "savedAt": "2026-10-17T21:55:16.201781+00:00"
+    },
+    {
+      "file": "32-ik.png",
+      "bytes": 35199,
+      "sha256": "b5151c1fddd32161e94a623bdf3bc5bcfefebefde545ba4b76f6eabb57c8fbbf",
+      "savedAt": "2026-10-17T21:55:16.185330+00:00"
+    },
+    {
+      "file": "32-license.jpg",
+      "bytes": 102040,
+      "sha256": "1632fd9311b91e4a95d84959cf1a09e47cfd854bfef9df6ea64f87cf0286a9eb",
+      "savedAt": "2026-10-17T18:50:25.419980+00:00"
+    },
+    {
+      "file": "32-mesh.png",
+      "bytes": 34958,
+      "sha256": "80e2618ddfa979bbf97a4e39b0404fbba35994016cf84da83e3a587ceba6d4a1",
+      "savedAt": "2026-10-17T21:55:16.208431+00:00"
+    },
+    {
+      "file": "32-skin.jpg",
+      "bytes": 189897,
+      "sha256": "8d984ace302f7c44d683b2bf7b3eef6f46eb3488b766f6189f73e1006babce23",
+      "savedAt": "2026-10-17T19:04:25.991291+00:00"
+    },
+    {
+      "file": "32-target.png",
+      "bytes": 35067,
+      "sha256": "ac55100e0fdc68d7875fa26da0b703b1ff88e2b7ce4969ebbd7fc0c5ad7b910f",
+      "savedAt": "2026-10-17T21:55:16.193524+00:00"
+    },
+    {
+      "file": "32-vroid.jpg",
+      "bytes": 168691,
+      "sha256": "8fa4c17bc7f9558b52e259e381d891a9a7bd7199c070db39a1bb0a21cc060179",
+      "savedAt": "2026-10-17T18:47:26.941473+00:00"
+    },
+    {
+      "file": "33-before.png",
+      "bytes": 147761,
+      "sha256": "22db6888f42fe4a2298296f0414dee2f1552997940c8fbc2026f8ed3ca36da6d",
+      "savedAt": "2026-10-17T21:43:34.075157+00:00"
+    },
+    {
+      "file": "33-mixer.jpg",
+      "bytes": 134755,
+      "sha256": "6b6d1d5134a623f149abbdbd03c65788a2e78851b123c583b795749263a18d6a",
+      "savedAt": "2026-10-17T19:31:22.066617+00:00"
+    },
+    {
+      "file": "33-play.png",
+      "bytes": 32867,
+      "sha256": "2d7c168f6f7cf63ba12986e146699b5abc32e342f41d0d935e4289f57f98439b",
+      "savedAt": "2026-10-17T21:55:16.217548+00:00"
+    },
+    {
+      "file": "34-before.png",
+      "bytes": 159531,
+      "sha256": "12e334330d12c79429aade65e06866cfc916ed3d4c76ac65c0b2b3f86b8ce4f3",
+      "savedAt": "2026-10-17T21:51:35.029644+00:00"
+    },
+    {
+      "file": "34-contact.png",
+      "bytes": 41107,
+      "sha256": "27aafc296c6f5c5c4547b335c926176af39d7c697d29f3bce6d2fab8050da6ae",
+      "savedAt": "2026-10-17T21:55:16.226809+00:00"
+    },
+    {
+      "file": "34-events.jpg",
+      "bytes": 134753,
+      "sha256": "b9412efb62a76835bef85b80ce8c28434d1ec9d8e2bea19c2af41a611a1988ed",
+      "savedAt": "2026-10-17T19:32:57.536235+00:00"
+    },
+    {
+      "file": "34-wood.png",
+      "bytes": 40614,
+      "sha256": "568e676b2c851e7dbfc3925657d1701ef983e40ab3e9b2eda0190d7020ad5ce0",
+      "savedAt": "2026-10-17T21:55:16.236687+00:00"
+    },
+    {
+      "file": "35-before.png",
+      "bytes": 134515,
+      "sha256": "ff3a8429821bb568bf6f251638b2dbbca81b69b758669c72a82c78843484ca65",
+      "savedAt": "2026-10-17T21:43:36.075897+00:00"
+    },
+    {
+      "file": "35-generated.png",
+      "bytes": 140181,
+      "sha256": "fae35e94bf013c7d97809ee57c939fbf80f272569fed7bad48ee20065be9194f",
+      "savedAt": "2026-10-17T21:55:49.131016+00:00"
+    },
+    {
+      "file": "35-play.png",
+      "bytes": 88920,
+      "sha256": "2678c7617b4272494e9ca922ee912c4a9c787f856c6266a537a4e1254e982779",
+      "savedAt": "2026-10-17T21:55:16.250927+00:00"
+    },
+    {
+      "file": "35-terrain.jpg",
+      "bytes": 160812,
+      "sha256": "6311abc96548d273165178a730b3334c08518288a99a3f5eede249cf6f3e6c2a",
+      "savedAt": "2026-10-17T20:49:58.949215+00:00"
+    },
+    {
+      "file": "35-top.png",
+      "bytes": 91175,
+      "sha256": "662dcf007fbdfcfb54dfd6f09a42f9ec2c0387d07cac0f9d73fb3b27d6462d20",
+      "savedAt": "2026-10-17T21:55:16.269573+00:00"
+    },
+    {
+      "file": "35-undo.png",
+      "bytes": 134515,
+      "sha256": "ff3a8429821bb568bf6f251638b2dbbca81b69b758669c72a82c78843484ca65",
+      "savedAt": "2026-10-17T21:43:36.075897+00:00"
+    },
+    {
+      "file": "35-window.png",
+      "bytes": 126394,
+      "sha256": "f423dd526dbe817d7fcc3a78e9f976f1a7f4827fbf0b7cefb9d96ee5c72fa590",
+      "savedAt": "2026-10-17T21:27:02.351045+00:00"
+    },
+    {
+      "file": "36-before.png",
+      "bytes": 139302,
+      "sha256": "166a4c44a13638b2e6da01fc8feb6778457a46d00272d6104c0551083305e3f9",
+      "savedAt": "2026-10-17T22:11:27.017325+00:00"
+    },
+    {
+      "file": "36-collision.png",
+      "bytes": 167041,
+      "sha256": "031bf38f2e885e80cdd23e96d3de83aa0c5cdf3e599c670bd9fe3c0283d53d0f",
+      "savedAt": "2026-10-17T22:24:45.088802+00:00"
+    },
+    {
+      "file": "36-layers.png",
+      "bytes": 164056,
+      "sha256": "56686e40c3963d50ec64a860c18cd9bd910f2bb39341e31765012fc1ff6894e9",
+      "savedAt": "2026-10-17T22:25:40.072061+00:00"
+    },
+    {
+      "file": "36-raycast.png",
+      "bytes": 164939,
+      "sha256": "b302d184acdd33b43c3dc4ba238a05c19b19458c832f079039847f5c0b95363b",
+      "savedAt": "2026-10-17T22:26:07.585260+00:00"
+    },
+    {
+      "file": "36-trigger.png",
+      "bytes": 168125,
+      "sha256": "c7968b8112dee6c6d322552002e69954f3604f9758108b73b807ae4ac62d033d",
+      "savedAt": "2026-10-17T22:25:05.614684+00:00"
+    },
+    {
+      "file": "palette-3d-play.png",
+      "bytes": 20679,
+      "sha256": "6611e1a7bc0a8f60009873794d9ed17f9948d4234733d78a2a484399e1eb115d",
+      "savedAt": "2026-10-17T21:55:16.031405+00:00"
+    },
+    {
+      "file": "webgl-runtime.png",
+      "bytes": 43425,
+      "sha256": "1a692f1b18004d09f296e97c206bd54b4af1b23c817cdbbc60524f38147e589a",
+      "savedAt": "2026-10-17T22:32:01.334257+00:00"
+    }
+  ]
+}

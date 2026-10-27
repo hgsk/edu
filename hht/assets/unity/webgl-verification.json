@@ -1,0 +1,731 @@
+{
+  "status": "PASS",
+  "scenes": [
+    {
+      "key": "01-start",
+      "scene": "01-Editor",
+      "status": "PASS"
+    },
+    {
+      "key": "01-complete",
+      "scene": "01-Editor",
+      "status": "PASS"
+    },
+    {
+      "key": "02-start",
+      "scene": "02-Scene",
+      "status": "PASS"
+    },
+    {
+      "key": "02-complete",
+      "scene": "02-Scene",
+      "status": "PASS"
+    },
+    {
+      "key": "03-start",
+      "scene": "03-Transform",
+      "status": "PASS"
+    },
+    {
+      "key": "03-complete",
+      "scene": "03-Transform",
+      "status": "PASS"
+    },
+    {
+      "key": "04-start",
+      "scene": "04-MonoBehaviour",
+      "status": "PASS"
+    },
+    {
+      "key": "04-complete",
+      "scene": "04-MonoBehaviour",
+      "status": "PASS"
+    },
+    {
+      "key": "05-start",
+      "scene": "05-2D",
+      "status": "PASS"
+    },
+    {
+      "key": "05-complete",
+      "scene": "05-2D",
+      "status": "PASS"
+    },
+    {
+      "key": "06-start",
+      "scene": "06-Input",
+      "status": "PASS"
+    },
+    {
+      "key": "06-complete",
+      "scene": "06-Input",
+      "status": "PASS"
+    },
+    {
+      "key": "07-start",
+      "scene": "07-Prefab",
+      "status": "PASS"
+    },
+    {
+      "key": "07-complete",
+      "scene": "07-Prefab",
+      "status": "PASS"
+    },
+    {
+      "key": "08-start",
+      "scene": "08-Physics",
+      "status": "PASS"
+    },
+    {
+      "key": "08-complete",
+      "scene": "08-Physics",
+      "status": "PASS"
+    },
+    {
+      "key": "09-start",
+      "scene": "09-3D",
+      "status": "PASS"
+    },
+    {
+      "key": "09-complete",
+      "scene": "09-3D",
+      "status": "PASS"
+    },
+    {
+      "key": "10-start",
+      "scene": "10-Material",
+      "status": "PASS"
+    },
+    {
+      "key": "10-complete",
+      "scene": "10-Material",
+      "status": "PASS"
+    },
+    {
+      "key": "11-start",
+      "scene": "11-Camera",
+      "status": "PASS"
+    },
+    {
+      "key": "11-complete",
+      "scene": "11-Camera",
+      "status": "PASS"
+    },
+    {
+      "key": "12-start",
+      "scene": "12-Lighting",
+      "status": "PASS"
+    },
+    {
+      "key": "12-complete",
+      "scene": "12-Lighting",
+      "status": "PASS"
+    },
+    {
+      "key": "13-start",
+      "scene": "13-Animator",
+      "status": "PASS"
+    },
+    {
+      "key": "13-complete",
+      "scene": "13-Animator",
+      "status": "PASS"
+    },
+    {
+      "key": "14-start",
+      "scene": "14-Timeline",
+      "status": "PASS"
+    },
+    {
+      "key": "14-complete",
+      "scene": "14-Timeline",
+      "status": "PASS"
+    },
+    {
+      "key": "15-start",
+      "scene": "15-Audio",
+      "status": "PASS"
+    },
+    {
+      "key": "15-complete",
+      "scene": "15-Audio",
+      "status": "PASS"
+    },
+    {
+      "key": "16-start",
+      "scene": "16-uGUI",
+      "status": "PASS"
+    },
+    {
+      "key": "16-complete",
+      "scene": "16-uGUI",
+      "status": "PASS"
+    },
+    {
+      "key": "17-start",
+      "scene": "17-Gizmo",
+      "status": "PASS"
+    },
+    {
+      "key": "17-complete",
+      "scene": "17-Gizmo",
+      "status": "PASS"
+    },
+    {
+      "key": "18-start",
+      "scene": "18-UIToolkit",
+      "status": "PASS"
+    },
+    {
+      "key": "18-complete",
+      "scene": "18-UIToolkit",
+      "status": "PASS"
+    },
+    {
+      "key": "19-start",
+      "scene": "19-VFXGraph",
+      "status": "PASS"
+    },
+    {
+      "key": "19-complete",
+      "scene": "19-VFXGraph",
+      "status": "PASS"
+    },
+    {
+      "key": "20-start",
+      "scene": "20-Debug",
+      "status": "PASS"
+    },
+    {
+      "key": "20-complete",
+      "scene": "20-Debug",
+      "status": "PASS"
+    },
+    {
+      "key": "21-start",
+      "scene": "21-Build",
+      "status": "PASS"
+    },
+    {
+      "key": "21-complete",
+      "scene": "21-Build",
+      "status": "PASS"
+    },
+    {
+      "key": "22-start",
+      "scene": "22-UnityCLI",
+      "status": "PASS"
+    },
+    {
+      "key": "22-complete",
+      "scene": "22-UnityCLI",
+      "status": "PASS"
+    },
+    {
+      "key": "23-start",
+      "scene": "23-ShaderGraph",
+      "status": "PASS"
+    },
+    {
+      "key": "23-complete",
+      "scene": "23-ShaderGraph",
+      "status": "PASS"
+    },
+    {
+      "key": "24-start",
+      "scene": "24-GameLoop",
+      "status": "PASS"
+    },
+    {
+      "key": "24-complete",
+      "scene": "24-GameLoop",
+      "status": "PASS"
+    },
+    {
+      "key": "25-start",
+      "scene": "25-VersionControl",
+      "status": "PASS"
+    },
+    {
+      "key": "25-complete",
+      "scene": "25-VersionControl",
+      "status": "PASS"
+    },
+    {
+      "key": "26-start",
+      "scene": "26-DataSharing",
+      "status": "PASS"
+    },
+    {
+      "key": "26-complete",
+      "scene": "26-DataSharing",
+      "status": "PASS"
+    },
+    {
+      "key": "27-start",
+      "scene": "27-TeamDevelopment",
+      "status": "PASS"
+    },
+    {
+      "key": "27-complete",
+      "scene": "27-TeamDevelopment",
+      "status": "PASS"
+    },
+    {
+      "key": "28-start",
+      "scene": "28-ComponentSafety",
+      "status": "PASS"
+    },
+    {
+      "key": "28-complete",
+      "scene": "28-ComponentSafety",
+      "status": "PASS"
+    },
+    {
+      "key": "29-start",
+      "scene": "29-PhysicsSandbox",
+      "status": "PASS"
+    },
+    {
+      "key": "29-complete",
+      "scene": "29-PhysicsSandbox",
+      "status": "PASS"
+    },
+    {
+      "key": "30-start",
+      "scene": "30-Graybox",
+      "status": "PASS"
+    },
+    {
+      "key": "30-complete",
+      "scene": "30-Graybox",
+      "status": "PASS"
+    },
+    {
+      "key": "31-start",
+      "scene": "31-Kitbash",
+      "status": "PASS"
+    },
+    {
+      "key": "31-complete",
+      "scene": "31-Kitbash",
+      "status": "PASS"
+    },
+    {
+      "key": "32-start",
+      "scene": "32-VrmBones",
+      "status": "PASS"
+    },
+    {
+      "key": "32-complete",
+      "scene": "32-VrmBones",
+      "status": "PASS"
+    },
+    {
+      "key": "33-start",
+      "scene": "33-Sound",
+      "status": "PASS"
+    },
+    {
+      "key": "33-complete",
+      "scene": "33-Sound",
+      "status": "PASS"
+    },
+    {
+      "key": "34-start",
+      "scene": "34-Foley",
+      "status": "PASS"
+    },
+    {
+      "key": "34-complete",
+      "scene": "34-Foley",
+      "status": "PASS"
+    },
+    {
+      "key": "35-start",
+      "scene": "35-ProceduralMap",
+      "status": "PASS"
+    },
+    {
+      "key": "35-complete",
+      "scene": "35-ProceduralMap",
+      "status": "PASS"
+    },
+    {
+      "key": "36-start",
+      "scene": "36-Collision",
+      "status": "PASS"
+    },
+    {
+      "key": "36-complete",
+      "scene": "36-Collision",
+      "status": "PASS"
+    }
+  ],
+  "interactions": [
+    {
+      "name": "D hold and release",
+      "status": "PASS"
+    },
+    {
+      "name": "16-complete real Start click",
+      "status": "PASS"
+    },
+    {
+      "name": "18-complete real Start click",
+      "status": "PASS"
+    },
+    {
+      "name": "VRoid Humanoid: FK/IK, moving target, bones and motion controls",
+      "status": "PASS",
+      "fkDistance": 0.3151533901691437,
+      "ikDistance": 2.811545414260763e-7
+    },
+    {
+      "name": "Sound: destination PCM, 2D/3D attenuation, mixer mute and UI cue",
+      "status": "PASS"
+    },
+    {
+      "name": "Foley: Animation Events, contact height, material, pace and stop",
+      "status": "PASS"
+    },
+    {
+      "name": "14 HUD/UI patterns: states, modal, focus, retry and narrow view",
+      "status": "PASS"
+    },
+    {
+      "name": "Procedural city and Terrain: saved geometry, density, relief, view and legend",
+      "status": "PASS"
+    },
+    {
+      "name": "Collision / Trigger callbacks, layer pair, ray mask, trigger query and scene cleanup",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "fontWarnings": [],
+  "cleanup": "PASS",
+  "server": {
+    "port": 53250,
+    "host": "127.0.0.1"
+  },
+  "browserPid": 31108,
+  "loop": {
+    "startReset": "PASS",
+    "sceneReloadRetainsScore": "PASS",
+    "singleOwner": "PASS",
+    "retryReset": "PASS",
+    "duplicateSave": "PASS",
+    "indexedDBAfterGameRestart": "PASS"
+  },
+  "dependencies": {
+    "missingReferenceBlocks": "PASS",
+    "explicitRestore": "PASS",
+    "clearStopsMovement": "PASS",
+    "completedWiring": "PASS"
+  },
+  "sandbox": {
+    "gravityAndCollision": "PASS",
+    "blocksMoved": 1,
+    "resetPositionsAndMotion": "PASS",
+    "boundedRepeatedDrop": "PASS",
+    "tiltAndBounceControls": "PASS",
+    "editBlockedDuringSimulation": "PASS"
+  },
+  "spatial": {
+    "narrowOpeningBlocks": "PASS",
+    "wideOpeningPasses": "PASS",
+    "reset": "PASS",
+    "kitStartEmpty": "PASS",
+    "fourKitMeshes": "PASS",
+    "kitVisibleAndHiddenPassage": "PASS"
+  },
+  "shaderGraph": [
+    {
+      "variant": "start",
+      "hex": "#246C96",
+      "status": "PASS (runtime data); render captured for visual review"
+    },
+    {
+      "variant": "complete",
+      "hex": "#C67B00",
+      "status": "PASS (runtime data); render captured for visual review"
+    }
+  ],
+  "visionChecks": [
+    {
+      "type": "none",
+      "status": "CAPTURED",
+      "scene": "09-complete"
+    },
+    {
+      "type": "achromatopsia",
+      "status": "CAPTURED",
+      "scene": "09-complete"
+    },
+    {
+      "type": "deuteranopia",
+      "status": "CAPTURED",
+      "scene": "09-complete"
+    },
+    {
+      "type": "protanopia",
+      "status": "CAPTURED",
+      "scene": "09-complete"
+    },
+    {
+      "type": "achromatopsia",
+      "status": "CAPTURED",
+      "scene": "29-complete"
+    },
+    {
+      "type": "deuteranopia",
+      "status": "CAPTURED",
+      "scene": "29-complete"
+    },
+    {
+      "type": "protanopia",
+      "status": "CAPTURED",
+      "scene": "29-complete"
+    },
+    {
+      "type": "achromatopsia",
+      "status": "CAPTURED",
+      "scene": "31-complete"
+    },
+    {
+      "type": "deuteranopia",
+      "status": "CAPTURED",
+      "scene": "31-complete"
+    },
+    {
+      "type": "protanopia",
+      "status": "CAPTURED",
+      "scene": "31-complete"
+    }
+  ],
+  "sound": {
+    "status": "PASS",
+    "measurement": "Web Audio destination PCM RMS",
+    "flatNear": {
+      "mean": 0.035518371322359375,
+      "peak": 0.0360095580182141
+    },
+    "flatFar": {
+      "mean": 0.03472702476293138,
+      "peak": 0.03586433252226444
+    },
+    "spatialNear": {
+      "mean": 0.016945568355622453,
+      "peak": 0.01729357524512263
+    },
+    "spatialFar": {
+      "mean": 0.003837943854196897,
+      "peak": 0.0039799596208468
+    },
+    "muted": {
+      "mean": 0,
+      "peak": 0
+    },
+    "cueOutput": {
+      "mean": 0.007764830813502005,
+      "peak": 0.009081379424055767
+    },
+    "musicGainDb": -12
+  },
+  "foley": {
+    "status": "PASS",
+    "earlyHeight": 0.17753946781158447,
+    "contactHeight": 0.0013586506247520447,
+    "footOutput": {
+      "mean": 0.00059745425923649,
+      "peak": 0.003344595562655772
+    },
+    "surfaceAndSpeed": "PASS",
+    "stop": "PASS",
+    "previousUnitMuteReset": "PASS"
+  },
+  "gallery": {
+    "status": "PASS",
+    "patterns": 14,
+    "startAndComplete": true,
+    "modalBackgroundBlocked": true,
+    "cancelPreservesCount": true,
+    "focusRestored": true,
+    "narrowViewport": 390
+  },
+  "procedural": {
+    "status": "PASS",
+    "flatMap": {
+      "seed": 35,
+      "blocks": 2,
+      "buildings": 4,
+      "roads": 2,
+      "worldLabels": 6,
+      "roadWidth": 2,
+      "relief": 0,
+      "minHeight": 0.11988036334514618,
+      "maxHeight": 0.11988036334514618,
+      "top": false,
+      "labels": true,
+      "terrainHit": true,
+      "colliderHeight": 0.11988067626953125,
+      "hash": "CA9467BB",
+      "buttons": [
+        {
+          "action": "view",
+          "x": 0.1014999970793724,
+          "y": 0.2628774344921112
+        },
+        {
+          "action": "labels",
+          "x": 0.2574999928474426,
+          "y": 0.2628774344921112
+        }
+      ]
+    },
+    "hills": {
+      "seed": 73,
+      "blocks": 3,
+      "buildings": 9,
+      "roads": 4,
+      "worldLabels": 13,
+      "roadWidth": 3,
+      "relief": 4,
+      "minHeight": 0.11988036334514618,
+      "maxHeight": 3.4333150386810303,
+      "top": false,
+      "labels": true,
+      "terrainHit": true,
+      "colliderHeight": 0.7773914337158203,
+      "hash": "C398198B",
+      "buttons": [
+        {
+          "action": "view",
+          "x": 0.1014999970793724,
+          "y": 0.2628774344921112
+        },
+        {
+          "action": "labels",
+          "x": 0.2574999928474426,
+          "y": 0.2628774344921112
+        }
+      ]
+    },
+    "viewToggle": true,
+    "legendToggle": true,
+    "scope": "Saved Editor output; no browser generation"
+  },
+  "collision": {
+    "status": "PASS",
+    "startTrigger": {
+      "running": true,
+      "wallTrigger": true,
+      "ignoreWall": false,
+      "wallOnly": true,
+      "includeTriggers": false,
+      "collisionEnters": 0,
+      "collisionExits": 0,
+      "sensorEnters": 1,
+      "sensorExits": 1,
+      "wallTriggerEnters": 1,
+      "x": 3.6799943447113037,
+      "speed": 3,
+      "rayHit": "未検査",
+      "buttons": [
+        {
+          "action": "launch",
+          "x": 0.125,
+          "y": 0.3428063988685608
+        },
+        {
+          "action": "reset",
+          "x": 0.2919999957084656,
+          "y": 0.3428063988685608
+        },
+        {
+          "action": "wall",
+          "x": 0.45899999141693115,
+          "y": 0.3428063988685608
+        },
+        {
+          "action": "layers",
+          "x": 0.6259999871253967,
+          "y": 0.3428063988685608
+        },
+        {
+          "action": "mask",
+          "x": 0.1354999989271164,
+          "y": 0.41385436058044434
+        },
+        {
+          "action": "triggers",
+          "x": 0.3199999928474426,
+          "y": 0.41385436058044434
+        },
+        {
+          "action": "ray",
+          "x": 0.49399998784065247,
+          "y": 0.41385436058044434
+        }
+      ]
+    },
+    "completedStop": {
+      "running": true,
+      "wallTrigger": false,
+      "ignoreWall": false,
+      "wallOnly": true,
+      "includeTriggers": false,
+      "collisionEnters": 1,
+      "collisionExits": 0,
+      "sensorEnters": 1,
+      "sensorExits": 1,
+      "wallTriggerEnters": 0,
+      "x": 1.349984049797058,
+      "speed": 0.0031983861699700356,
+      "rayHit": "未検査",
+      "buttons": [
+        {
+          "action": "launch",
+          "x": 0.125,
+          "y": 0.3428063988685608
+        },
+        {
+          "action": "reset",
+          "x": 0.2919999957084656,
+          "y": 0.3428063988685608
+        },
+        {
+          "action": "wall",
+          "x": 0.45899999141693115,
+          "y": 0.3428063988685608
+        },
+        {
+          "action": "layers",
+          "x": 0.6259999871253967,
+          "y": 0.3428063988685608
+        },
+        {
+          "action": "mask",
+          "x": 0.1354999989271164,
+          "y": 0.41385436058044434
+        },
+        {
+          "action": "triggers",
+          "x": 0.3199999928474426,
+          "y": 0.41385436058044434
+        },
+        {
+          "action": "ray",
+          "x": 0.49399998784065247,
+          "y": 0.41385436058044434
+        }
+      ]
+    },
+    "layerPairBypass": true,
+    "queryIndependentOfPair": true,
+    "queryMaskAndTriggers": true,
+    "layerPairRestored": true
+  },
+  "vfxGraph": "EDITOR_ONLY (explicitly labelled; no substituted effect)"
+}

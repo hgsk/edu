@@ -1,0 +1,17 @@
+{
+  "day5_main_pid": 22504,
+  "day5_absent": true,
+  "day6_pids": [
+    24368,
+    18828,
+    21804,
+    6496,
+    25536,
+    10828,
+    14260,
+    9432
+  ],
+  "owned_profile_processes_remaining": 0,
+  "cleanup": "PASS",
+  "method": "Browser context graceful close; verify owned profile command lines and recorded PID absence"
+}

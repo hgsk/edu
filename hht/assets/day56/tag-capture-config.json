@@ -1,0 +1,77 @@
+{
+  "figures": [
+    {
+      "id": "day5-landmarks",
+      "source": "instructor/day56-examples/day5/menu.html",
+      "output": "assets/day56/day5-html-landmarks.png",
+      "points": [
+        {
+          "selector": "header",
+          "label": "header：上の共通案内"
+        },
+        {
+          "selector": "main",
+          "label": "main：このページの中心"
+        },
+        {
+          "selector": "footer",
+          "label": "footer：下の共通情報"
+        }
+      ]
+    },
+    {
+      "id": "day5-nav",
+      "source": "instructor/day56-examples/day5/menu.html",
+      "output": "assets/day56/day5-html-nav.png",
+      "cropTargets": true,
+      "cropSelectors": [
+        "header"
+      ],
+      "points": [
+        {
+          "selector": "nav",
+          "label": "nav：ページ移動のまとまり"
+        }
+      ]
+    },
+    {
+      "id": "day6-container",
+      "source": "instructor/day56-examples/day6/menu.html",
+      "output": "assets/day56/day6-html-container.png",
+      "cropTargets": true,
+      "points": [
+        {
+          "selector": ".menu-grid",
+          "label": "div：カードを並べる親"
+        },
+        {
+          "selector": ".menu-card:first-child",
+          "label": "article：1商品"
+        }
+      ]
+    },
+    {
+      "id": "day6-parts",
+      "source": "instructor/day56-examples/day6/menu.html",
+      "output": "assets/day56/day6-html-parts.png",
+      "cropTargets": true,
+      "cropSelectors": [
+        ".menu-card:nth-child(2)"
+      ],
+      "points": [
+        {
+          "selector": ".menu-card:nth-child(2) img",
+          "label": "img：画像"
+        },
+        {
+          "selector": ".menu-card:nth-child(2) h2",
+          "label": "h2：商品名の見出し"
+        },
+        {
+          "selector": ".menu-card:nth-child(2) .price",
+          "label": "p：価格の段落"
+        }
+      ]
+    }
+  ]
+}

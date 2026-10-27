@@ -1,12 +1,12 @@
 # PHP CLI・wslc実習 進行と検証
 
-課題条件は[DAY 11の正本](../../../docs/workbook/day-11.md#php-cli-template)を参照します。ユーザー指定のWSL Containers（wslc.exe）を標準とし、Podman導入やUbuntu内のDocker Engine準備は求めません。WSLは基盤、wslcは同梱コンテナCLIです。[Microsoft公式手順](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers)はWSL 2.9.3以上を要件にしています。
+課題条件は[DAY 11の正本](../../../docs/workbook/day11.md#php-cli-template)を参照します。ユーザー指定のWSL Containers（wslc.exe）を標準とし、Podman導入やUbuntu内のDocker Engine準備は求めません。WSLは基盤、wslcは同梱コンテナCLIです。[Microsoft公式手順](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers)はWSL 2.9.3以上を要件にしています。
 
 ## 学生の作業と正解例を分ける
 
 `starter/`を本人の`php-template-work`へコピーします。学生は`run_php_cli.py --source <本人のコピー> --action version|hello|build|stdout|check`を使います。このランチャーは正解例を読み込まず、checkでは本人の必要な5ファイルだけを一時コピーして検査します。ドライブ・ホーム・リポジトリ全体をマウント元にはしません。
 
-`instructor/solution/`は講師用です。`verify_php_cli.py`が別の一時コピーへstarterと正解例を重ね、通常・条件分岐・特殊文字・29チェックと開始データの不合格を検証します。学生へこの正解検証コマンドを課題提出の確認として使わせません。
+`instructor/solution/`は講師用です。`verify_php_cli.py`が別の一時コピーへstarterと正解例を重ね、通常・条件分岐・特殊文字・29チェックと開始データの不合格を検証します。学生へこの正解検証コマンドを実習結果の確認として使わせません。
 
 ## 起動前と実行中の安全条件
 

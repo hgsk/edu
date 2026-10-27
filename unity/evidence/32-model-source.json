@@ -1,0 +1,24 @@
+{
+  "status": "PASS",
+  "format": "VRM 1.0",
+  "sourceEqualsImportedFile": true,
+  "sha256": "1dbf0f86472b199e595aa91bba4ababe9177f306013986080cce8c0e89b6c11b",
+  "metadata": {
+    "name": "CourseAvatar",
+    "authors": [
+      "Unity Course"
+    ],
+    "thumbnailImage": 17,
+    "licenseUrl": "https://vrm.dev/licenses/1.0/",
+    "avatarPermission": "everyone",
+    "allowExcessivelyViolentUsage": false,
+    "allowExcessivelySexualUsage": false,
+    "commercialUsage": "personalNonProfit",
+    "allowPoliticalOrReligiousUsage": false,
+    "allowAntisocialOrHateUsage": false,
+    "creditNotation": "required",
+    "allowRedistribution": true,
+    "modification": "allowModificationRedistribution"
+  },
+  "vroidBytes": 4513953
+}

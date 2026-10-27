@@ -32,16 +32,24 @@ jobs:
       - name: Validate course structure and local assets
         run: python hht/scripts/validate-course.py
 
+      - name: Require current Unity WebGL samples and workbook listing
+        run: python unity/scripts/build_course.py --check
+
+      - name: Test Unity workbook and WebGL stale-build detection
+        run: python -m unittest discover -s unity/scripts -p "test_*.py"
+
+      - name: Test course consistency regression detection
+        run: python -m unittest discover -s hht/scripts -p "test_*.py"
+
       - name: Check Azure setup script syntax
         run: bash -n hht/scripts/setup-azure-practice.sh
-      - name: Test student PR grader
-        run: python hht/scripts/test_grade_student_pr.py
 
       - name: Test workbook DAY link validation
         run: python -m unittest discover -s hht/scripts -p "test_workbook_navigation.py"
 
       - name: Check JavaScript syntax
         run: |
+          node --check hht/scripts/capture-workbook.cjs
           node --check hht/typing-app/app.js
           node --check hht/typing-app/extra-items.js
           node --check hht/typing-app/reader.js

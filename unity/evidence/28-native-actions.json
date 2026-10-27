@@ -1,0 +1,39 @@
+{
+  "status": "PASS",
+  "restored": {
+    "scene": "28-ComponentSafety",
+    "time": 28.21784210205078,
+    "position": {
+      "x": 0,
+      "y": 0.5,
+      "z": 0
+    },
+    "ugui": "",
+    "uitoolkit": "READY: local components + typed destination",
+    "particles": 0
+  },
+  "cleared": {
+    "scene": "28-ComponentSafety",
+    "time": 33.75273895263672,
+    "position": {
+      "x": 0,
+      "y": 0.5,
+      "z": 0
+    },
+    "ugui": "",
+    "uitoolkit": "BLOCKED: Destination missing: assign D",
+    "particles": 0
+  },
+  "completed": {
+    "scene": "28-ComponentSafety",
+    "time": 7.021878242492676,
+    "position": {
+      "x": 0,
+      "y": 0.5,
+      "z": 0
+    },
+    "ugui": "",
+    "uitoolkit": "READY: local components + typed destination",
+    "particles": 0
+  }
+}

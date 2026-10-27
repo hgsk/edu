@@ -1,0 +1,25 @@
+{
+  "status": "PASS",
+  "ownedProcessIds": [
+    45100,
+    44632,
+    60180,
+    40484,
+    32900,
+    67748,
+    65532
+  ],
+  "remainingProcessIds": [],
+  "webglServerPort": 55799,
+  "remainingServerPorts": [],
+  "closedWindows": [
+    856964,
+    1971142,
+    17565996,
+    2298778,
+    33492458,
+    1643312,
+    12914488
+  ],
+  "preservedUserVSCodeWindow": 1444442
+}

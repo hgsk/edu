@@ -1,0 +1,405 @@
+{
+  "status": "FAIL",
+  "errors": [],
+  "checks": [
+    "39 reasoning exercises: whitespace rejected, wrong/correct choice feedback, explanation not auto-graded, rubric and local persistence",
+    "28 lesson bodies/glossaries/presets/reading checks; every scene animated; every input changes observable content",
+    "28 real scene screenshots and 7 visual review sheets captured",
+    "canonical HP/equation/expectation/conditional-probability examples reproduced through visible controls",
+    "zero vector boundary and native keyboard slider control",
+    "search, play, pause, and manual stepping",
+    "per-unit local memo and reduced-motion initial pause",
+    "new game/life scenes: visible controls reproduce damage, recipe, unit price, draw/e, return, mahjong, bitrate; probability/cost/score boundaries"
+  ],
+  "screenshots": [
+    "overview-desktop.png",
+    "middle-signed.png",
+    "middle-equation.png",
+    "middle-triangle.png",
+    "middle-tree.png",
+    "gimbal-lock.png",
+    "rotation-interpolation.png",
+    "integration.png",
+    "reasoning-start.png",
+    "reasoning-feedback.png",
+    "approximation-error.png",
+    "game-damage.png",
+    "life-recipe.png",
+    "life-shopping.png",
+    "lottery-e.png",
+    "lottery-return.png",
+    "mahjong-score.png",
+    "life-video.png"
+  ],
+  "cleanup": {
+    "browser": "PASS",
+    "server": "PASS"
+  },
+  "sourceSha256": {
+    "math/index.html": "1243e1f9329a79fd5efd0609d18bdf38276e3d377aa5aa22e88d9035efe23c2d",
+    "math/style.css": "1b362c301a211952151081491a2b447f5332e911dc341b57afc55d365655538d",
+    "math/reasoning.css": "f41a2712eaede0c2b0d6cc3bfc29aa8391ca8d7c40db086a939b14042ee0d197",
+    "math/app.js": "1120c8cd561698609b2b43a979eeeb32c979e06795c5f8a962b3c4821c41a110",
+    "math/models.js": "51fa98825f89535446ece1f666d24757a03cb277c43e4b672c0051ce9af335f7",
+    "math/game-life.js": "94cea99bb823d23d20d428e6cc1e993c102506c9bf25baf3ef581dd32b1e7feb",
+    "math/references/game-life.md": "9b92d2a144795e06943ee1ea33cdd8776a9e5cb4583c09610f42cc2daa51a5ab",
+    "math/teaching.js": "b60788597d67b1417d5286d13eb035a16dcb805a8a52c657f4ee04948a97bb9f",
+    "math/lessons.js": "2fbe19d850c5cef55d49cbd75726284850659aeaf4eaf3e56f863bbf3716e36f",
+    "math/guide.html": "af89180d149c33136245d349f5f1bf601fc0699004b02570ef722a103d442f0c"
+  },
+  "canonicalMathSha256": "730baa5ab4281f82c2fda6b358bd4b0f24de1a9f671e16678264badab369cd7a",
+  "workbookScope": "Mathematics chapter only; unrelated HTML/CSS course edits are excluded.",
+  "server": {
+    "pid": 69536,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\Volta\\tools\\image\\node\\22.18.0\\node.exe",
+    "startedAt": "2026-10-19T10:08:03.166Z",
+    "port": 51101
+  },
+  "browser": {
+    "pid": 26384,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-19T10:08:03.460Z"
+  },
+  "units": [
+    {
+      "id": "B01",
+      "scenes": [
+        "signed",
+        "fraction",
+        "root",
+        "default",
+        "damage"
+      ],
+      "presets": 7,
+      "readingCheck": "PASS",
+      "reasoningChecks": 2,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B02",
+      "scenes": [
+        "ratio",
+        "default",
+        "recipe",
+        "shopping"
+      ],
+      "presets": 8,
+      "readingCheck": "PASS",
+      "reasoningChecks": 3,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B03",
+      "scenes": [
+        "equation",
+        "simultaneous",
+        "quadratic",
+        "default"
+      ],
+      "presets": 6,
+      "readingCheck": "PASS",
+      "reasoningChecks": 3,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B04",
+      "scenes": [
+        "default",
+        "or",
+        "not"
+      ],
+      "presets": 5,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B05",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B06",
+      "scenes": [
+        "proportional",
+        "inverse",
+        "linear",
+        "default"
+      ],
+      "presets": 5,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B07",
+      "scenes": [
+        "triangle",
+        "similar",
+        "default"
+      ],
+      "presets": 4,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B08",
+      "scenes": [
+        "default"
+      ],
+      "presets": 3,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B09",
+      "scenes": [
+        "default"
+      ],
+      "presets": 3,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B10",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B11",
+      "scenes": [
+        "tree",
+        "default"
+      ],
+      "presets": 3,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B12",
+      "scenes": [
+        "dice",
+        "expectation",
+        "conditional",
+        "default",
+        "waiting",
+        "return"
+      ],
+      "presets": 13,
+      "readingCheck": "PASS",
+      "reasoningChecks": 4,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B13",
+      "scenes": [
+        "default"
+      ],
+      "presets": 3,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B14",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B15",
+      "scenes": [
+        "default",
+        "mahjong",
+        "yakuman"
+      ],
+      "presets": 10,
+      "readingCheck": "PASS",
+      "reasoningChecks": 3,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B16",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": [
+        320
+      ]
+    },
+    {
+      "id": "B17",
+      "scenes": [
+        "default",
+        "video"
+      ],
+      "presets": 4,
+      "readingCheck": "PASS",
+      "reasoningChecks": 2,
+      "responsive": []
+    },
+    {
+      "id": "B18",
+      "scenes": [
+        "default",
+        "approximation"
+      ],
+      "presets": 4,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    },
+    {
+      "id": "A01",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    },
+    {
+      "id": "A02",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    },
+    {
+      "id": "A03",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    },
+    {
+      "id": "A04",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    },
+    {
+      "id": "A05",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    },
+    {
+      "id": "A06",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    },
+    {
+      "id": "A07",
+      "scenes": [
+        "default"
+      ],
+      "presets": 3,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    },
+    {
+      "id": "A08",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    },
+    {
+      "id": "A09",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    },
+    {
+      "id": "A10",
+      "scenes": [
+        "default"
+      ],
+      "presets": 2,
+      "readingCheck": "PASS",
+      "reasoningChecks": 1,
+      "responsive": []
+    }
+  ],
+  "failure": "AssertionError [ERR_ASSERTION]: B17: horizontal overflow at 320px\n\ntrue !== false\n\n    at main (C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\math\\scripts\\verify_browser.cjs:176:16)"
+}

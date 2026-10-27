@@ -1,0 +1,205 @@
+{
+  "revision": "young-neutral-protagonist-v3",
+  "method": "built-in image_gen edits",
+  "revised_images": 15,
+  "total_image_references": 49,
+  "local_image_links": "PASS",
+  "png_decode": "PASS",
+  "course_validation": "PASS",
+  "visual_review": "PASS - all 15 updated images inspected; names and original scene intent retained",
+  "nativeMarkdownPreview": "NOT RUN - previous native preview belongs to an older revision",
+  "testProcesses": "No browser or server started for this revision",
+  "files": [
+    {
+      "file": "day01.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "4662bb968c9d467a3da4de86ef490599d9152dfe10c490b48fea27451f923477",
+      "badges": [
+        "あなた（新人）",
+        "佐藤さん（店舗責任者）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day02.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "82bc408899dc432b1f0d30eab0768c6d5b2bb8041a5a59088f55b06cd14b3f3a",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day03.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "a2eeca477fde44d1bda7ec6d23d58a7061edd992753b9962aaed37220e5c01b4",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day04.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "3c36af5ca0870337897eebd1fd754444287ff614b883f1dea0fc56f410d7b90e",
+      "badges": [
+        "あなた（新人）",
+        "お客さま"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day05.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "cc37abcf70de1b0de11008273808ff24adc052a5fb3c5eb21663814f10682f68",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day06.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "cde45adff8df2693f28d0144514ad48816454c9ced9746ea72c54fc23a5e55e5",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day07.png",
+      "size": [
+        1671,
+        941
+      ],
+      "sha256": "962b9d6712881963d9bf43b9693624add04d35aff09c25013abe86282509bd8b",
+      "badges": [
+        "あなた（新人）",
+        "山本さん（先輩）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day08.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "d5d3a6f9a3f48a70dbf726c22c83c45185c1b11733456150f90a04310bce4943",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day09.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "385821e428f3938357e89b75d9e1be653013943622faa561161e18fcb6c6babf",
+      "badges": [
+        "あなた（新人）",
+        "撮影担当"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day10.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "ba895c148f84f62f9994c02cac0ab3e17bc415f254fafc8b3beea0ab0da50ccc",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day11.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "90cf7f5b7159212815d01772a76dfbe2ed4709e19b5b29142c7c5a438385705f",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day12.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "d204456cce08ebd772f5e41453ec1fc83841cb9193bd70fc3b19a9767bc605ea",
+      "badges": [
+        "あなた（新人）",
+        "山本さん（先輩）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day13.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "445a745c5d9a0654d6ffc0f97f755378e4e2b62a494b426687adf779c5440645",
+      "badges": [
+        "あなた（新人）",
+        "高橋さん（最終承認）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day14.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "e139c91e2f2fdf55710ddc5d1f79aba372064686e3addc4bfcdaa14dc8f7a415",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "visual_review": "PASS"
+    },
+    {
+      "file": "day15.png",
+      "size": [
+        1672,
+        941
+      ],
+      "sha256": "f748522b9a712d8cfcdaa8f85b1dd4c03cb8375ec7882780eab25aaf15ede253",
+      "badges": [
+        "あなた（新人）",
+        "山本さん（先輩）"
+      ],
+      "visual_review": "PASS"
+    }
+  ],
+  "workbookLinks": "PASS (90 references)",
+  "galleryLinks": "PASS (18 references)",
+  "completion_conditions": "PASS - all 15 unchanged",
+  "changed_entry_links": "PASS"
+}

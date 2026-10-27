@@ -1,0 +1,22 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements">
+ <ui:VisualElement name="gallery-root" class="gallery">
+  <ui:VisualElement name="gallery-shell" class="gallery-shell">
+   <ui:Label text="HUD・UIパターンギャラリー" class="gallery-title" />
+   <ui:Label text="14種類の見本 ／ Tab：移動 ／ Enter：選択 ／ Esc：戻る" class="gallery-note" />
+   <ui:VisualElement class="gallery-toolbar">
+    <ui:Button name="gallery-prev" text="前へ" /><ui:Button name="gallery-next" text="次へ" />
+    <ui:Button name="gallery-reset" text="見本を初期化" /><ui:Button name="gallery-close" text="教材に戻る" />
+   </ui:VisualElement>
+   <ui:VisualElement class="gallery-body">
+    <ui:ScrollView name="gallery-catalog" class="gallery-catalog" />
+    <ui:ScrollView name="gallery-content" class="gallery-content">
+     <ui:Label name="gallery-pattern" class="gallery-heading" />
+     <ui:Label name="gallery-purpose" class="gallery-description" />
+     <ui:VisualElement name="gallery-preview" class="gallery-preview" />
+     <ui:Label name="gallery-feedback" class="gallery-feedback" />
+     <ui:Label name="gallery-guidance" class="gallery-description" />
+    </ui:ScrollView>
+   </ui:VisualElement>
+  </ui:VisualElement>
+ </ui:VisualElement>
+</ui:UXML>

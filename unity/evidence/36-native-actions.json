@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "source": "Actual Unity 6000.3.25f1 Editor, Computer Use window captures",
+  "captures": ["36-before.png", "36-trigger.png", "36-collision.png", "36-layers.png", "36-raycast.png"],
+  "inspector": {"scene": "Assets/Scenes/36-Collision.unity", "wallIsTrigger": true, "wallLayer": "CourseWall"},
+  "runtimeScene": "Assets/Scenes/Completed/36-Collision.unity",
+  "observed": {
+    "collision": {"sphereX": 1.35, "collisionEnters": 1, "sensorEnters": 1, "sensorExits": 1},
+    "triggerComparison": {"changedWallAtRuntime": true, "sphereX": 4.22, "collisionEnters": 0, "wallTriggerEnters": 1},
+    "layerComparison": {"wallTrigger": false, "wallCollisionIgnored": true, "sphereX": 4.22, "rayHit": "W 壁"},
+    "queryComparison": {"maskIncludesSensor": true, "queryIncludesTriggers": true, "rayHit": "G センサー"}
+  },
+  "note": "Runtime screenshots were retaken after moving the camera target to keep objects below the explanation panel. The Trigger comparison is a runtime setting change in the completed scene. Inspector capture uses the saved start scene."
+}

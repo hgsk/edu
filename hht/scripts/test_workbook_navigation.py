@@ -72,5 +72,16 @@ class WorkbookNavigationTests(unittest.TestCase):
             "[DAY 2](../../docs/workbook/day-02.md)"))
 
 
+    def test_current_canonical_files_are_checked(self):
+        for day in range(1, 16):
+            with self.subTest(day=day):
+                self.assertEqual([], self.check_links(
+                    f"lessons/{day:02d}/README.md",
+                    f"[DAY {day}](../../docs/workbook/day{day:02d}.md)",
+                ))
+        self.assertTrue(self.check_links("lessons/02/README.md",
+            "[DAY 2](../../docs/workbook/day01.md)"))
+
+
 if __name__ == "__main__":
     unittest.main()

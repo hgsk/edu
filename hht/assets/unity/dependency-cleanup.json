@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-10-18T02:59:12.9489042+09:00",
+  "processes": [
+    {
+      "pid": 59916,
+      "running": false
+    },
+    {
+      "pid": 26844,
+      "running": false
+    },
+    {
+      "pid": 67500,
+      "running": false
+    },
+    {
+      "pid": 69488,
+      "running": false
+    }
+  ],
+  "ownedLogWindows": [
+    {
+      "id": 43258232,
+      "closed": true
+    },
+    {
+      "id": 3936512,
+      "closed": true
+    }
+  ],
+  "existingVSCodeWindow": 1444442,
+  "browserAndServerCleanup": "PASS"
+}

@@ -1,0 +1,52 @@
+{
+  "editor": {
+    "command": "\"C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe\" -projectpath \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\" -acceptSoftwareTermsForThisRunOnly -logFile Logs/shadergraph-editor.log -cloudEnvironment production -hubSessionId 52d24487-2379-47ce-8fcd-290306b864bf",
+    "pid": 58736,
+    "exe": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+    "start": "2026-10-17T16:27:32.417944Z"
+  },
+  "status": "PASS",
+  "existingCodeWindowPreserved": true,
+  "ownedCodeWindowClosed": true,
+  "launcher": "Owned pwsh 28348 stopped after Editor exit",
+  "date": "2026-10-18T01:41:03.0315343+09:00",
+  "build": [
+    {
+      "command": "\"C:\\Users\\hgsk8\\AppData\\Local\\Unity\\bin\\unity.exe\" run \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\" --timeout 1800 -- -buildTarget WebGL -executeMethod WebCourseBuild.Build -logFile \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\test-results\\unity-webgl-build.log\"",
+      "exe": "C:\\Users\\hgsk8\\AppData\\Local\\Unity\\bin\\unity.exe",
+      "start": "2026-10-17T16:30:38.7345589Z",
+      "pid": 20700
+    },
+    {
+      "command": "\"C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe\" -batchmode -quit -projectPath \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\" -buildTarget WebGL -executeMethod WebCourseBuild.Build -logFile \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\test-results\\unity-webgl-build.log\" -hubSessionId aa806edd-a402-473c-b618-4f8797c2dab4",
+      "exe": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+      "start": "2026-10-17T16:30:39.4087895Z",
+      "pid": 46616
+    },
+    {
+      "pid": 52276,
+      "start": "2026-10-17T16:39:10.5048634Z",
+      "exe": "C:\\Users\\hgsk8\\AppData\\Local\\Unity\\bin\\unity.exe",
+      "command": "\"C:\\Users\\hgsk8\\AppData\\Local\\Unity\\bin\\unity.exe\" run \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\" --timeout 1800 -- -buildTarget WebGL -executeMethod WebCourseBuild.Build -logFile \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\test-results\\unity-webgl-build.log\""
+    },
+    {
+      "pid": 14372,
+      "start": "2026-10-17T16:39:11.2012375Z",
+      "exe": "C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe",
+      "command": "\"C:\\Program Files\\Unity\\Hub\\Editor\\6000.3.25f1\\Editor\\Unity.exe\" -batchmode -quit -projectPath \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\unity\\project\" -buildTarget WebGL -executeMethod WebCourseBuild.Build -logFile \"C:\\Users\\hgsk8\\OneDrive\\ドキュメント\\北ハイテク HTML+CSS講座\\test-results\\unity-webgl-build.log\" -hubSessionId cd4a98dd-c36d-4277-8779-f6870cde563f"
+    }
+  ],
+  "servers": "Test finally blocks closed; no remaining runner or WebGL listener",
+  "exitedProcessIds": [
+    58736,
+    28348,
+    61112,
+    55308,
+    55104,
+    20700,
+    46616,
+    52276,
+    14372
+  ],
+  "captureControls": "REMOVED"
+}

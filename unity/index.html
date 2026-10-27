@@ -1,0 +1,2307 @@
+<!doctype html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Unity操作基礎講座 | edu</title><link rel="stylesheet" href="style.css"></head>
+<body><a class="skip" href="#main">本文へ</a><header><a href="../README.md">edu</a><span>Unity操作基礎講座</span><a href="README.md">講座案内</a></header>
+<div class="layout"><aside><details open><summary>36単元の目次</summary><nav aria-label="単元"><a href="#unity-01">U01 導入・Editorの画面構成</a><a href="#unity-02">U02 Scene：展示の場面を保存する</a><a href="#unity-03">U03 GameObjectとTransform：展示物を配置する</a><a href="#unity-04">U04 MonoBehaviour：コンポーネントで動きを付ける</a><a href="#unity-05">U05 2D：Spriteを平面に配置する</a><a href="#unity-06">U06 Input：キーボードの入力を動きへつなぐ</a><a href="#unity-07">U07 Prefab：同じ展示物を再利用する</a><a href="#unity-08">U08 物理と衝突：展示物を床へ落とす</a><a href="#unity-09">U09 3D：立体を見ながら配置する</a><a href="#unity-10">U10 マテリアル：展示物の表面を変える</a><a href="#unity-11">U11 カメラ：来場者に見せる範囲を決める</a><a href="#unity-12">U12 ライティング：立体の形を見やすくする</a><a href="#unity-13">U13 Animator：状態からアニメーションを再生する</a><a href="#unity-14">U14 Timeline：時間に沿って展示を演出する</a><a href="#unity-15">U15 音：開始の合図を鳴らす</a><a href="#unity-16">U16 uGUI：Canvasにボタンを置く</a><a href="#unity-17">U17 Gizmo：編集用に範囲を可視化する</a><a href="#unity-18">U18 UI Elements／UI Toolkit：画面制作とHUD・UIパターンギャラリー</a><a href="#unity-19">U19 VFX Graph：粒子の流れを編集する</a><a href="#unity-20">U20 デバッグ：Consoleから原因を調べる</a><a href="#unity-21">U21 ビルド：Editorの外で展示を起動する</a><a href="#unity-22">U22 Unity CLI：同じ手順で教材を検査する</a><a href="#unity-23">U23 Shader Graph：ノードで展示物の色を指定する</a><a href="#unity-24">U24 ゲームループ・共有プレイデータ・セーブ管理</a><a href="#unity-25">U25 複数のバージョン管理手法</a><a href="#unity-26">U26 複数のデータ共有手法</a><a href="#unity-27">U27 複数人での開発と統合</a><a href="#unity-28">U28 コンポーネントの依存管理と設定漏れの防止</a><a href="#unity-29">U29 物理演算で作るローコード・サンドボックス</a><a href="#unity-30">U30 グレイボックスで空間と導線を検証する</a><a href="#unity-31">U31 キットバッシュで既存部品から外観を組む</a><a href="#unity-32">U32 VRoid・VRMのボーン、メッシュ、アニメーションとIK</a><a href="#unity-33">U33 サウンド：BGM・操作音・3D音とAudio Mixer</a><a href="#unity-34">U34 フォーリー：素材別の足音と接地の同期</a><a href="#unity-35">U35 エディタ拡張：市街・Terrainのプロシージャル生成</a><a href="#unity-36">U36 当たり判定：衝突・Trigger・Layer・Raycast</a></nav></details><a href="../hht/docs/workbook/unity.md#unity-course">学生ワークブック（正本）</a></aside>
+<main id="main"><h1>Unity編：Unity操作基礎講座</h1>
+<p><a href="./README.md">Unity講座の入口</a> · <a href="./docs/course-design.md">講座設計</a> · <a href="./references.md">用語と公式資料</a></p>
+<h2>依頼と進め方</h2>
+<p><strong>依頼者：</strong> 学内展示の担当者。  </p>
+<p><strong>見る人：</strong> ゲームに不慣れな来場者。  </p>
+<p><strong>解決したいこと：</strong> 説明がなくても操作と反応が分かる、小さな展示サンプルを作りたい。</p>
+<p><strong>変更対象：</strong> 配布する専用Unityプロジェクト内の各単元のシーンと指定アセット。  </p>
+<p><strong>対象外：</strong> 他のゲーム、本番データ、外部配信、有料素材。  </p>
+<p>分からない点は「どの場面で、誰が、何をするか」に分けて作業前に確認します。</p>
+<p><strong>環境：</strong> Windows、Unity 6000.3.25f1（Unity 6.3）、URP 17.3.0。  </p>
+<p>Editorは英語表示の画面を使用します。  </p>
+<p>Input System 1.20.0、Timeline 1.8.13、uGUI 2.0.0、VFX Graph 17.3.0をプロジェクトに指定しています。  </p>
+<p>他のバージョンでは名称・配置が異なる場合があります。  </p>
+<p>VFX Graphには対応GPUとCompute Shader対応環境が必要です。</p>
+<p><strong>教材を開く：</strong> リポジトリを自分のPCへコピーし、Unity HubのProjectsで <strong>Add → Add project from disk</strong> を選び、<code>unity/project</code> を指定します。  </p>
+<p>初回インポートが終わるまで待ちます。  </p>
+<p>Projectウィンドウで <code>Assets/Scenes</code> を開き、その日のシーンをダブルクリックします。  </p>
+<p>配布シーンは操作例が入った開始データです。  </p>
+<p>見本が既にある場合も、指定した数値や接続を一度変更し、元との差を確かめます。</p>
+<p><strong>共通の確認と提出：</strong> 各単元の完成条件を確認した後、Playを停止し、Ctrl+Sで保存します。  </p>
+<p>シーンを開き直して保存を確かめます。  </p>
+<p>自分の変更を含む <code>.unity</code>、変更したスクリプト・アセットと対応する <code>.meta</code>、確認画面1枚、「変更点／確認方法／残件」の3行メモを提出します。  </p>
+<p>Library・Temp・認証情報は提出しません。  </p>
+<p>講座全体は22単元です。  </p>
+<p>番号は授業回数ではありません。</p>
+<p><strong>サンプル：</strong> <a href="./samples.md">単元別シーン一覧</a>に開始22・完成22シーンがあります。  </p>
+<p>開始シーンを別名で保存して作業し、<code>Assets/Scenes/Completed</code> の完成サンプルと見比べます。  </p>
+<p>完成サンプル専用の素材は <code>Assets/LessonSamples</code> に分けています。</p>
+<p><strong>ブラウザで試す：</strong> 各単元の「開始を実行」「完成を実行」からWebGLサンプルを開きます。  </p>
+<p>HTTPで開いた実画面付き教材では本文内に表示されます。  </p>
+<p>一度に動くプレイヤーは1つです。  </p>
+<p>Editorの操作画面はスクリーンショットを見て確認します。  </p>
+<p>U17のGizmoとU19のVFX GraphはWebGLでは再現できないためEditorで確認します。</p>
+<p>![ブラウザで完成サンプルを実行し、UI Toolkitの「開始」を押してようこそ！  </p>
+<p>を表示した画面](../../assets/unity/webgl-runtime.png)</p>
+<h2>色と名前で対象を見分ける</h2>
+<p>画面の物体は、次の配色と識別名で照合します。  </p>
+<p>操作するときは色だけで決めず、形、ラベル、Hierarchyの名前を確認します。  </p>
+<p>右下の凡例と物体の名前ラベルは教材の補助表示です。</p>
+<ul>
+<li><strong>A Exhibit：青 <code>#246C96</code> の立方体。</strong>  </li>
+</ul>
+<p>  U02で名前を変えた後は A WelcomeExhibit と表示します。  </p>
+<p>  U10・U23の完成例では、材質変更の結果として橙になります。</p>
+<ul>
+<li><strong>B Sphere：橙 <code>#C67B00</code> の球。</strong>  </li>
+</ul>
+<p>  U09でAの立方体と区別します。</p>
+<ul>
+<li><strong>C Capsule：淡い黄 <code>#F4E8A1</code> のカプセル。</strong>  </li>
+</ul>
+<p>  U09の完成サンプルにあります。</p>
+<ul>
+<li><strong>D ExhibitRight：淡い紫 <code>#E6DBF5</code> の立方体。</strong>  </li>
+</ul>
+<p>  U07で追加する2個目です。  </p>
+<p>  Aより明るくしています。</p>
+<ul>
+<li><strong>F DisplayFloor：黒に近い紺 <code>#080C11</code> の床。</strong>  </li>
+</ul>
+<p>  展示物の色と分けています。</p>
+<ul>
+<li><strong>M Marker：赤紫 <code>#9D4C7A</code> の四角いSprite。</strong>  </li>
+</ul>
+<p>  U05で使用します。</p>
+<ul>
+<li><strong>V WelcomeParticles：明るい青緑 <code>#81D8D0</code> の粒子。</strong>  </li>
+</ul>
+<p>  U19のEditorで確認します。  </p>
+<p>  WebGL2では粒子を表示しません。</p>
+<p>物体には暗い背景の白文字ラベルを付け、色を見分けにくい場合も識別できるようにしています。  </p>
+<p>材質の設定色では床とのコントラストを3:1以上、同じ形のAとDは約4.3:1にしています。  </p>
+<p>照明・反射で実際の画面の色や明るさは変わるため、この数値を全ての描画ピクセルの保証にはしません。  </p>
+<p>U10・U12ではラベルを基準に色や照明の変化を観察します。</p>
+<figure><a href="../hht/assets/unity/palette-3d-play.png"><img loading="lazy" src="../hht/assets/unity/palette-3d-play.png" alt="異なる色と明るさ、A・B・Cの名前ラベルで3つの立体を識別するGame画面"></a><figcaption>異なる色と明るさ、A・B・Cの名前ラベルで3つの立体を識別するGame画面（クリックで拡大）</figcaption></figure>
+<h2>単元一覧</h2>
+<ol>
+<li><a href="unity.md#unity-01">導入・Editorの画面構成</a></li>
+<li><a href="unity.md#unity-02">Scene</a></li>
+<li><a href="unity.md#unity-03">GameObjectとTransform</a></li>
+<li><a href="unity.md#unity-04">MonoBehaviour</a></li>
+<li><a href="unity.md#unity-05">2D</a></li>
+<li><a href="unity.md#unity-06">Input</a></li>
+<li><a href="unity.md#unity-07">Prefab</a></li>
+<li><a href="unity.md#unity-08">物理と衝突</a></li>
+<li><a href="unity.md#unity-09">3D</a></li>
+<li><a href="unity.md#unity-10">マテリアル</a></li>
+<li><a href="unity.md#unity-11">カメラ</a></li>
+<li><a href="unity.md#unity-12">ライティング</a></li>
+<li><a href="unity.md#unity-13">Animator</a></li>
+<li><a href="unity.md#unity-14">Timeline</a></li>
+<li><a href="unity.md#unity-15">音</a></li>
+<li><a href="unity.md#unity-16">uGUI</a></li>
+<li><a href="unity.md#unity-17">Gizmo</a></li>
+<li><a href="unity.md#unity-18">UI Elements／UI Toolkit</a></li>
+<li><a href="unity.md#unity-19">VFX Graph</a></li>
+<li><a href="unity.md#unity-20">デバッグ</a></li>
+<li><a href="unity.md#unity-21">ビルド</a></li>
+<li><a href="unity.md#unity-22">Unity CLI</a></li>
+<li><a href="unity.md#unity-23">Shader Graph：ノードで展示物の色を指定する</a></li>
+<li><a href="unity.md#unity-24">ゲームループ・共有プレイデータ・セーブ管理</a></li>
+<li><a href="unity.md#unity-25">複数のバージョン管理手法</a></li>
+<li><a href="unity.md#unity-26">複数のデータ共有手法</a></li>
+<li><a href="unity.md#unity-27">複数人での開発と統合</a></li>
+<li><a href="unity.md#unity-28">コンポーネントの依存管理と設定漏れの防止</a></li>
+<li><a href="unity.md#unity-29">物理演算で作るローコード・サンドボックス</a></li>
+<li><a href="unity.md#unity-30">グレイボックスで空間と導線を検証する</a></li>
+<li><a href="unity.md#unity-31">キットバッシュで既存部品から外観を組む</a></li>
+<li><a href="unity.md#unity-32">VRoid・VRMのボーン、メッシュ、アニメーションとIK</a></li>
+<li><a href="unity.md#unity-33">サウンド：BGM・操作音・3D音とAudio Mixer</a></li>
+<li><a href="unity.md#unity-34">フォーリー：素材別の足音と接地の同期</a></li>
+<li><a href="unity.md#unity-35">エディタ拡張：市街・Terrainのプロシージャル生成</a></li>
+<li><a href="unity.md#unity-36">当たり判定：衝突・Trigger・Layer・Raycast</a></li>
+</ol>
+<h2>追加する主要機能（制作予定）</h2>
+<p>以下を含めて全50単元の構成とします。  </p>
+<p>U01〜U36は本文・実画面・開始／完成シーンを収録し、U37〜U50は今後の制作対象です。  </p>
+<p>アセット導入・2D制作はU41の環境制作へまとめ、市街・Terrainの生成をU35で扱います。  </p>
+<p>予定単元を教材化済みとは扱いません。  </p>
+<p>U50は引き続き保留します。</p>
+<ol>
+<li><strong>U37 シリアライズと保存・読込の発展：複数スロット、データ移行、設定値。</strong></li>
+<li><strong>U38 シーン・イベント・時間と非同期処理：Additive、Bootstrap、UnityEvent、C#イベント、Coroutine、Awaitable、Time、キャンセル。</strong></li>
+<li><strong>U39 Cinemachine：追従、注視、カメラ切替。</strong></li>
+<li><strong>U40 AI Navigation：NavMesh、Agent、障害物、経路探索。</strong></li>
+<li><strong>U41 アセット・2D・環境制作の発展：Package Manager、Import Settings、Sprite Atlas、Tilemap、Sorting Layer、2D Animation、Rigidbody2D、Collider2D、2DのTrigger・Joint・Raycast、Terrainの樹木・草、LOD、Volume、Bloom、色調補正、URP設定、Lightmap、Light Probe、Reflection Probe、Render Texture。</strong></li>
+<li><strong>U42 Particle System：放出、寿命、形状、衝突。</strong></li>
+<li>**U43 文字と多言語の発展：文字組み、言語切替、Localization。  </li>
+</ol>
+<p>    日本語TMPの導入はU16で扱います。  </p>
+<p>    **</p>
+<ol>
+<li><strong>U44 Addressables：非同期アセット読込、解放、配信構成。</strong></li>
+<li><strong>U45 性能計測と自動テスト：Profiler、Memory Profiler、Frame Debugger、Unity Test Framework、Edit Mode、Play Mode。</strong></li>
+<li><strong>U46 Editor拡張：Custom Inspector、Property Drawer、EditorWindow、asmdef。</strong></li>
+<li><strong>U47 ネットワーク：Netcode、同期、所有権、接続・切断。</strong></li>
+<li><strong>U48 XR：XR Interaction Toolkit、入力、移動、実機確認。</strong></li>
+<li><strong>U49 DOTS：Entities／ECS、Jobs、Burst、大量オブジェクト。</strong></li>
+<li><strong>U50 GitHub Copilot Agent：依頼、変更レビュー、テスト、結果の確認（依頼により保留）。</strong></li>
+</ol>
+<div id="unity-01" class="anchor"></div>
+<h3>U01 導入・Editorの画面構成</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=01&amp;variant=start">U01 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=01&amp;variant=complete">U01 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・制作メンバー。  </p>
+<p><strong>困りごと：</strong> どこで配置し、どこで実行結果を見るか共有できていません。  </p>
+<p><strong>変更：</strong> 専用プロジェクトを開き、選択と再生の操作を確かめます。  </p>
+<p>アセットの削除はしません。  </p>
+<p><strong>完成条件：</strong> 同じExhibitをHierarchyから選び、Inspectorの値とScene上の位置を対応づけ、Playを開始・停止できること。</p>
+<p><strong>準備：</strong> <code>01-Editor.unity</code> を開きます。  </p>
+<p>パネルが見つからない場合はWindow → GeneralからHierarchy、Project、Inspector、Scene、Gameを開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/01-before.png"><img loading="lazy" src="../hht/assets/unity/01-before.png" alt="Hierarchy、Scene、InspectorとProjectが並ぶUnity Editorの開始画面"></a><figcaption>Hierarchy、Scene、InspectorとProjectが並ぶUnity Editorの開始画面（クリックで拡大）</figcaption></figure>
+<ol>
+<li>左のHierarchyで <code>Exhibit</code> をクリックします。  </li>
+</ol>
+<p>   中央Sceneで立方体に枠が付き、右のInspectorへTransformが表示されることを確認します。</p>
+<ol>
+<li>下のProjectでAssets → Scenesを開きます。  </li>
+</ol>
+<p>   Hierarchyは現在のシーンの中身、Projectは保存されたファイルの一覧です。</p>
+<ol>
+<li>上の三角のPlayボタンを押します。  </li>
+</ol>
+<p>   Gameタブでカメラが映している展示を見ます。  </p>
+<p>   もう一度Playを押して停止します。</p>
+<ol>
+<li>Sceneへ戻り、Exhibitを選び直します。  </li>
+</ol>
+<p>   Sceneの視点を動かしてもMain CameraのTransformが変わらないことを確かめます。</p>
+<p>![Exhibitを選択したEditor。  </p>
+<p>選択対象とInspectorのTransformを照合する](../../assets/unity/01-after.png)</p>
+<p><strong>ヒント・用語：</strong> Sceneは編集用の作業場所、Gameは実行用カメラの表示です。  </p>
+<p>再生中の変更は停止時に戻るものがあるため、課題の保存は停止後に行います。</p>
+<p><strong>確認して報告：</strong> 5つのパネルの役割と、Playを止めた証拠をメモします。  </p>
+<p>画面が見つからない時は閉じたパネル名を記録します。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/01-Editor.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/01-Editor.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/01-complete.png"><img loading="lazy" src="../hht/assets/unity/01-complete.png" alt="U01の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U01の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-02" class="anchor"></div>
+<h3>U02 Scene：展示の場面を保存する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=02&amp;variant=start">U02 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=02&amp;variant=complete">U02 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・次の制作者。  </p>
+<p><strong>困りごと：</strong> 編集した展示の場面を翌日再開できません。  </p>
+<p><strong>変更：</strong> シーン内の名前を変え、別名で保存します。  </p>
+<p>他のシーンは変更しません。  </p>
+<p><strong>完成条件：</strong> <code>02-Scene-Student.unity</code> を開き直すと <code>WelcomeExhibit</code> が存在すること。</p>
+<p><strong>準備：</strong> U01の選択と再生停止を確認してから <code>02-Scene.unity</code> を開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。  </p>
+<p>名前変更後はA WelcomeExhibitになります。</p>
+<p>![Scene単元の開始状態。  </p>
+<p>HierarchyにExhibitがある](../../assets/unity/02-before.png)</p>
+<ol>
+<li>Hierarchyの <code>Exhibit</code> を選び、F2で <code>WelcomeExhibit</code> に変更します。</li>
+<li>File → Save AsでAssets/Scenesへ <code>02-Scene-Student.unity</code> として保存します。</li>
+<li>別のシーンを開いた後、Projectから保存したシーンをダブルクリックします。</li>
+<li>名前と配置が保存されていること、現在のシーン名を確認します。  </li>
+</ol>
+<p>   シーンは「ステージ」「タイトル」などの場面を保存するファイルです。</p>
+<figure><a href="../hht/assets/unity/02-after.png"><img loading="lazy" src="../hht/assets/unity/02-after.png" alt="名前をWelcomeExhibitへ変更したSceneの確認画面"></a><figcaption>名前をWelcomeExhibitへ変更したSceneの確認画面（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Sceneタブの視点と、シーンファイルは別のものです。  </p>
+<p>シーン名の横に付くアスタリスクは未保存の変更を示します。</p>
+<p><strong>確認して報告：</strong> 保存先と開き直したシーン名を書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/02-Scene.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/02-Scene.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/02-complete.png"><img loading="lazy" src="../hht/assets/unity/02-complete.png" alt="U02の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U02の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-03" class="anchor"></div>
+<h3>U03 GameObjectとTransform：展示物を配置する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=03&amp;variant=start">U03 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=03&amp;variant=complete">U03 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 展示物が中央に重なっています。  </p>
+<p><strong>変更：</strong> 子オブジェクトExhibitの位置と向きを調整します。  </p>
+<p>親の大きさは変えません。  </p>
+<p><strong>完成条件：</strong> ExhibitのPositionが <code>(2,1,0)</code>、Rotationが <code>(0,30,0)</code>、Scaleが <code>(1,1,1)</code> になり、親を動かすと一緒に動くこと。</p>
+<p><strong>準備：</strong> <code>03-Transform.unity</code> を開き、HierarchyのDisplayRootを展開します。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/03-before.png"><img loading="lazy" src="../hht/assets/unity/03-before.png" alt="親DisplayRootと子Exhibitを含む開始シーン"></a><figcaption>親DisplayRootと子Exhibitを含む開始シーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Exhibitを選び、InspectorのTransformで上記の値を入力します。  </li>
+</ol>
+<p>   親を持つ場合、Inspectorは親から見たローカル座標です。</p>
+<ol>
+<li>Wで移動、Eで回転、Rで拡縮ツールを選び、軸の矢印・円・ハンドルを確認します。  </li>
+</ol>
+<p>   操作後はCtrl+Zで指定値へ戻します。</p>
+<ol>
+<li>DisplayRootのPosition Xを1にし、親子が一緒に移動することを見ます。  </li>
+</ol>
+<p>   確認後は親Xを0へ戻します。</p>
+<ol>
+<li>Fキーで選択対象をSceneの中心へ寄せ、完成値を確認して保存します。</li>
+</ol>
+<figure><a href="../hht/assets/unity/03-after.png"><img loading="lazy" src="../hht/assets/unity/03-after.png" alt="Exhibitの位置と回転を変更したSceneとInspector"></a><figcaption>Exhibitの位置と回転を変更したSceneとInspector（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> GameObjectは部品を付ける器です。  </p>
+<p>Transformは位置・回転・大きさを持つ部品で、すべてのGameObjectにあります。</p>
+<p><strong>確認して報告：</strong> 親と子のどちらを変えたか、位置の基準は何かを書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/03-Transform.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/03-Transform.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/03-complete.png"><img loading="lazy" src="../hht/assets/unity/03-complete.png" alt="U03の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U03の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-04" class="anchor"></div>
+<h3>U04 MonoBehaviour：コンポーネントで動きを付ける</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=04&amp;variant=start">U04 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=04&amp;variant=complete">U04 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 静止した展示に気づいてもらえません。  </p>
+<p><strong>変更：</strong> ExhibitMoverの速度を調整し、上下に動かします。  </p>
+<p>入力による移動は次の単元へ分けます。  </p>
+<p><strong>完成条件：</strong> Play中に上下へ繰り返し移動し、移動速度を2から1へ変えると周期が長くなること。</p>
+<p><strong>準備：</strong> <code>04-MonoBehaviour.unity</code> と <code>Assets/Scripts/ExhibitMover.cs</code> を開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/04-before.png"><img loading="lazy" src="../hht/assets/unity/04-before.png" alt="ExhibitにExhibitMoverコンポーネントが付いた開始画面"></a><figcaption>ExhibitにExhibitMoverコンポーネントが付いた開始画面（クリックで拡大）</figcaption></figure>
+<ol>
+<li>HierarchyでExhibitを選び、InspectorのExhibit Moverを探します。  </li>
+</ol>
+<p>   見つからなければAdd Componentで <code>ExhibitMover</code> を追加します。</p>
+<ol>
+<li>スクリプトで <code>Start</code> と <code>Update</code> を探します。  </li>
+</ol>
+<p>   Startは開始時の位置を保存し、Updateは毎フレーム位置を更新しています。</p>
+<ol>
+<li>Playを押して上下の動きを確認します。  </li>
+</ol>
+<p>   停止し、移動速度を1へ変更して、もう一度Playします。</p>
+<ol>
+<li>動きが遅くなったことを確認し、停止して保存します。  </li>
+</ol>
+<p>   クラス名とファイル名を変更する場合は一致させます。</p>
+<figure><a href="../hht/assets/unity/04-after.png"><img loading="lazy" src="../hht/assets/unity/04-after.png" alt="ExhibitMoverの設定をInspectorで確認する画面"></a><figcaption>ExhibitMoverの設定をInspectorで確認する画面（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/04-play.png"><img loading="lazy" src="../hht/assets/unity/04-play.png" alt="Play ModeのGameに展示が表示され、InspectorのY座標が変化している"></a><figcaption>Play ModeのGameに展示が表示され、InspectorのY座標が変化している（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> MonoBehaviourを継承したクラスをGameObjectへ付けると、UnityからStartやUpdateが呼ばれます。  </p>
+<p><code>[SerializeField]</code> はprivateフィールドをInspectorで編集・保存できるようにします。</p>
+<p><strong>確認して報告：</strong> 編集時の値と再生中の値を区別し、変更前後の速さを言葉で比較します。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/04-MonoBehaviour.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/04-MonoBehaviour.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/04-complete.png"><img loading="lazy" src="../hht/assets/unity/04-complete.png" alt="U04の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U04の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-05" class="anchor"></div>
+<h3>U05 2D：Spriteを平面に配置する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=05&amp;variant=start">U05 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=05&amp;variant=complete">U05 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 平面の案内マークを置きたいのに奥行きで見え方が変わります。  </p>
+<p><strong>変更：</strong> SpriteをXY平面に置きます。  </p>
+<p>3D展示シーンは変更しません。  </p>
+<p><strong>完成条件：</strong> OrthographicカメラでMarkerが表示され、Position <code>(2,1,0)</code> へ移動できること。</p>
+<p><strong>準備：</strong> <code>05-2D.unity</code> を開きます。  </p>
+<p>Scene上部の2Dを有効にします。  </p>
+<p>対象はM Marker（赤紫の四角）とF DisplayFloor（暗い床）です。</p>
+<figure><a href="../hht/assets/unity/05-before.png"><img loading="lazy" src="../hht/assets/unity/05-before.png" alt="2DシーンのMarkerとSprite Renderer"></a><figcaption>2DシーンのMarkerとSprite Renderer（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Projectの <code>Assets/Art/Marker.png</code> を選び、Texture TypeがSprite (2D and UI)であることを確認します。</li>
+<li>HierarchyでMarkerを選び、Sprite RendererのSprite欄にMarkerが入っていることを確認します。</li>
+<li>TransformのPositionを <code>(2,1,0)</code> にします。  </li>
+</ol>
+<p>   Main Cameraを選び、ProjectionがOrthographicであること、Zが-10であることを確認します。</p>
+<ol>
+<li>Gameでマークの位置を確認します。  </li>
+</ol>
+<p>   Sprite RendererのColorを変え、表示が変わることも試します。</p>
+<figure><a href="../hht/assets/unity/05-after.png"><img loading="lazy" src="../hht/assets/unity/05-after.png" alt="Markerを右上へ移動した2Dの結果"></a><figcaption>Markerを右上へ移動した2Dの結果（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Spriteは2D用の画像です。  </p>
+<p>2DボタンはSceneの編集視点を変える操作で、カメラ設定そのものは変えません。  </p>
+<p>2D物理にはRigidbody2DとCollider2Dを使います。</p>
+<p><strong>確認して報告：</strong> 編集視点の2DとカメラのOrthographicの違いを書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/05-2D.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/05-2D.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/05-complete.png"><img loading="lazy" src="../hht/assets/unity/05-complete.png" alt="U05の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U05の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-06" class="anchor"></div>
+<h3>U06 Input：キーボードの入力を動きへつなぐ</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=06&amp;variant=start">U06 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=06&amp;variant=complete">U06 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> A・Dキーで展示物を左右に動かせません。  </p>
+<p><strong>変更：</strong> Input Systemでキーを読み取り、移動量へ変換します。  </p>
+<p>旧Input Managerやゲームパッド対応は扱いません。  </p>
+<p><strong>完成条件：</strong> GameにフォーカスしたPlay中、Aで左、Dで右へ動き、離すと止まること。</p>
+<p><strong>準備：</strong> <code>06-Input.unity</code> を開きます。  </p>
+<p>Edit → Project Settings → Player → Active Input HandlingはInput System Package (New)またはBothにします。  </p>
+<p>変更に再起動が必要な場合は保存後に再起動します。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/06-before.png"><img loading="lazy" src="../hht/assets/unity/06-before.png" alt="Input単元のExhibitと「キーボードで操作」設定"></a><figcaption>Input単元のExhibitと「キーボードで操作」設定（クリックで拡大）</figcaption></figure>
+<ol>
+<li>ExhibitのExhibit Moverで「キーボードで操作」が有効であることを確認します。  </li>
+</ol>
+<p>   <code>ExhibitMover.cs</code> の <code>Keyboard.current</code> とA・Dキーの参照を読みます。</p>
+<ol>
+<li>Playし、Gameの中を一度クリックしてからAとDを押します。  </li>
+</ol>
+<p>   移動量は「方向×移動速度×Time.deltaTime」です。</p>
+<ol>
+<li>停止し、 <code>Assets/Exhibit.inputactions</code> をダブルクリックします。  </li>
+</ol>
+<p>   ExhibitマップのMoveアクションと1D AxisのA・D割当を確認します。</p>
+<ol>
+<li>この配布例の実行コードはKeyboardを直接読みます。  </li>
+</ol>
+<p>   Input Actionsは割当を学ぶ別の資料です。  </p>
+<p>   アクションの割当だけを変更しても実行コードのキーは変わりません。  </p>
+<p>   両者を混同せず、それぞれ確認します。</p>
+<figure><a href="../hht/assets/unity/06-after.jpg"><img loading="lazy" src="../hht/assets/unity/06-after.jpg" alt="Input ActionsエディターでMoveとA・Dキー割当を確認する画面"></a><figcaption>Input ActionsエディターでMoveとA・Dキー割当を確認する画面（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> フォーカスは入力を受け取る場所です。  </p>
+<p>反応しない時はConsole、Gameのフォーカス、「キーボードで操作」、入力設定の順に調べます。</p>
+<p><strong>確認して報告：</strong> A・D・キーを離す、の3つの結果を書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/06-Input.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/06-Input.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/06-complete.png"><img loading="lazy" src="../hht/assets/unity/06-complete.png" alt="U06の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U06の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-07" class="anchor"></div>
+<h3>U07 Prefab：同じ展示物を再利用する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=07&amp;variant=start">U07 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=07&amp;variant=complete">U07 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・制作メンバー。  </p>
+<p><strong>困りごと：</strong> 同じ展示物を複製するたび設定がばらつきます。  </p>
+<p><strong>変更：</strong> Prefabのインスタンスを増やし、共通設定と個別設定を区別します。  </p>
+<p>元Prefabの削除はしません。  </p>
+<p><strong>完成条件：</strong> 同じPrefabに接続した2個を置き、片方の位置変更が他方へ影響しないことを確認できること。</p>
+<p><strong>準備：</strong> <code>07-Prefab.unity</code> を開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。  </p>
+<p>追加する方はD ExhibitRight（淡い紫）に分けます。</p>
+<figure><a href="../hht/assets/unity/07-before.png"><img loading="lazy" src="../hht/assets/unity/07-before.png" alt="Prefabへ接続したExhibitが1個ある開始シーン"></a><figcaption>Prefabへ接続したExhibitが1個ある開始シーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Projectの <code>Assets/Prefabs/Exhibit.prefab</code> をHierarchyへドラッグします。</li>
+<li>追加した方を <code>ExhibitRight</code> と名付け、Positionを <code>(2,0.5,0)</code> にします。  </li>
+</ol>
+<p>   <code>Assets/Art/Palette/D-ExhibitRight.mat</code> をその立方体へドラッグして淡い紫に分け、青いA Exhibitの位置が変わらないことを確認します。  </p>
+<p>   色の差はそのインスタンスのOverrideとして残し、元Prefabへ適用しません。</p>
+<ol>
+<li>PrefabアセットをダブルクリックしてPrefab Modeを開き、元の構造を見ます。  </li>
+</ol>
+<p>   左上の戻る矢印でシーンへ戻ります。</p>
+<ol>
+<li>インスタンスのScaleを一度変更し、InspectorのOverridesに現れることを確認します。  </li>
+</ol>
+<p>   Revertする場合は内容を確認してその変更だけ戻します。</p>
+<figure><a href="../hht/assets/unity/07-after.png"><img loading="lazy" src="../hht/assets/unity/07-after.png" alt="同じPrefabから作った2つの展示物"></a><figcaption>同じPrefabから作った2つの展示物（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Prefabは再利用する元データ、インスタンスはシーンへ置いた実体です。  </p>
+<p>適用は元データへ反映する操作で、他の配置にも影響します。</p>
+<p><strong>確認して報告：</strong> 共通化する設定と、配置ごとに変える設定を一つずつ挙げます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/07-Prefab.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/07-Prefab.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/07-complete.png"><img loading="lazy" src="../hht/assets/unity/07-complete.png" alt="U07の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U07の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-08" class="anchor"></div>
+<h3>U08 物理と衝突：展示物を床へ落とす</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=08&amp;variant=start">U08 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=08&amp;variant=complete">U08 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 展示物が空中で静止し、床に置いた感じが出ません。  </p>
+<p><strong>変更：</strong> RigidbodyとColliderを使います。  </p>
+<p>2D物理は混ぜません。  </p>
+<p><strong>完成条件：</strong> 高さ3から落下し、床を通り抜けず止まること。</p>
+<p><strong>準備：</strong> <code>08-Physics.unity</code> を開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/08-before.png"><img loading="lazy" src="../hht/assets/unity/08-before.png" alt="高さ3にあるExhibitとRigidbodyの開始状態"></a><figcaption>高さ3にあるExhibitとRigidbodyの開始状態（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Exhibitを選び、Box ColliderとRigidbodyを確認します。  </li>
+</ol>
+<p>   Use Gravityを有効、Is Kinematicを無効にします。</p>
+<ol>
+<li>DisplayFloorにもBox Colliderが付いていることを確認します。  </li>
+</ol>
+<p>   静止した床へRigidbodyを追加する必要はありません。</p>
+<ol>
+<li>Playし、落下と接触を見ます。  </li>
+</ol>
+<p>   停止すると開始位置へ戻ることを確認します。</p>
+<ol>
+<li>ColliderのIs Triggerを有効にした場合の違いを予想します。  </li>
+</ol>
+<p>   試すなら確認後に無効へ戻し、もう一度床で止まることを確かめます。</p>
+<figure><a href="../hht/assets/unity/08-after.png"><img loading="lazy" src="../hht/assets/unity/08-after.png" alt="Rigidbodyと床の配置を確認する物理単元の画面"></a><figcaption>Rigidbodyと床の配置を確認する物理単元の画面（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/08-play.png"><img loading="lazy" src="../hht/assets/unity/08-play.png" alt="Play Modeで高さ3から落下したExhibitが床上で停止した結果"></a><figcaption>Play Modeで高さ3から落下したExhibitが床上で停止した結果（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Rigidbodyは物理による動きを、Colliderは当たる形を担当します。  </p>
+<p>Triggerは重なりの検出用で、押し返して止める用途とは異なります。</p>
+<p><strong>確認して報告：</strong> 落下前・接触後の高さと、床を通り抜けないための設定を書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/08-Physics.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/08-Physics.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/08-complete.png"><img loading="lazy" src="../hht/assets/unity/08-complete.png" alt="U08の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U08の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-09" class="anchor"></div>
+<h3>U09 3D：立体を見ながら配置する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=09&amp;variant=start">U09 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=09&amp;variant=complete">U09 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 立体同士の前後関係が分かりません。  </p>
+<p><strong>変更：</strong> CubeとSphereを奥行き方向に置き分けます。  </p>
+<p>素材の追加購入はしません。  </p>
+<p><strong>完成条件：</strong> 2つの立体がGameから見え、Sceneを回して前後・高さを説明できること。</p>
+<p><strong>準備：</strong> <code>09-3D.unity</code> を開き、Sceneの2Dを無効にします。  </p>
+<p>対象はA Exhibit（青い立方体）です。  </p>
+<p>B Sphere（橙の球）、完成例のC Capsule（淡い黄）も名前と形で確認します。</p>
+<figure><a href="../hht/assets/unity/09-before.png"><img loading="lazy" src="../hht/assets/unity/09-before.png" alt="CubeとSphereを置いた3Dシーン"></a><figcaption>CubeとSphereを置いた3Dシーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>HierarchyからExhibitとSphereを交互に選び、Fで注目します。</li>
+<li>Scene上でAlt+左ドラッグで回転、中央ドラッグで平行移動、ホイールで拡大縮小します。</li>
+<li>SphereのPosition Zを2へ変え、Gameの見え方とSceneの前後関係を比べます。</li>
+<li>GameObject → 3D ObjectからCapsuleを追加し、Positionを <code>(-2,0.5,0)</code> にして保存します。</li>
+</ol>
+<figure><a href="../hht/assets/unity/09-after.jpg"><img loading="lazy" src="../hht/assets/unity/09-after.jpg" alt="3D展示を斜めから見て配置を確認するScene"></a><figcaption>3D展示を斜めから見て配置を確認するScene（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Unityでは通常Yが上です。  </p>
+<p>移動ツールのGlobal／Localは、世界の軸か対象自身の軸かを切り替えます。</p>
+<p><strong>確認して報告：</strong> Sceneの視点操作とGameの見え方を区別して説明します。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/09-3D.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/09-3D.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/09-complete.png"><img loading="lazy" src="../hht/assets/unity/09-complete.png" alt="U09の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U09の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-10" class="anchor"></div>
+<h3>U10 マテリアル：展示物の表面を変える</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=10&amp;variant=start">U10 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=10&amp;variant=complete">U10 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 注目してほしい展示物を色で区別できません。  </p>
+<p><strong>変更：</strong> 自分用のマテリアルを作り、色と滑らかさを調整します。  </p>
+<p>共有のExhibit.matを一括変更しません。  </p>
+<p><strong>完成条件：</strong> 作成したマテリアルをExhibitへ割り当て、色と反射の変化を確認できること。</p>
+<p><strong>準備：</strong> <code>10-Material.unity</code> を開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。  </p>
+<p>材質変更後はAのラベルを保ち、橙へ変わります。</p>
+<figure><a href="../hht/assets/unity/10-before.png"><img loading="lazy" src="../hht/assets/unity/10-before.png" alt="標準の展示用マテリアルが付いたExhibit"></a><figcaption>標準の展示用マテリアルが付いたExhibit（クリックで拡大）</figcaption></figure>
+<ol>
+<li>ProjectのArtで右クリック → Create → Materialを選び、<code>StudentExhibit</code> と名付けます。</li>
+<li>InspectorでShaderをUniversal Render Pipeline/Litにします。  </li>
+</ol>
+<p>   Base Mapの色をオレンジへ変えます。</p>
+<ol>
+<li>ProjectのマテリアルをSceneのExhibitへドラッグします。  </li>
+</ol>
+<p>   Mesh RendererのMaterials欄でも割当を確認します。</p>
+<ol>
+<li>Smoothnessを0と0.8で比べ、好きな値にします。  </li>
+</ol>
+<p>   光と視点によって反射の見え方が変わることを確かめます。</p>
+<figure><a href="../hht/assets/unity/10-after.png"><img loading="lazy" src="../hht/assets/unity/10-after.png" alt="URP LitマテリアルのBase MapなどをInspectorで確認する画面"></a><figcaption>URP LitマテリアルのBase MapなどをInspectorで確認する画面（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Shaderは表面の描き方、MaterialはShaderへ渡す色や画像などの設定です。  </p>
+<p>ピンク色ならShaderやRender Pipelineの不一致を調べます。</p>
+<p><strong>確認して報告：</strong> 作ったアセット名と、どのオブジェクトに割り当てたかを書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/10-Material.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/10-Material.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/10-complete.png"><img loading="lazy" src="../hht/assets/unity/10-complete.png" alt="U10の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U10の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-11" class="anchor"></div>
+<h3>U11 カメラ：来場者に見せる範囲を決める</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=11&amp;variant=start">U11 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=11&amp;variant=complete">U11 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> Sceneで見える展示物がGameでは切れています。  </p>
+<p><strong>変更：</strong> Main Cameraの位置と画角を調整します。  </p>
+<p>Scene視点だけの調整で終えません。  </p>
+<p><strong>完成条件：</strong> Gameの16:9表示で展示物全体と床の一部が見えること。</p>
+<p><strong>準備：</strong> <code>11-Camera.unity</code> を開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/11-before.png"><img loading="lazy" src="../hht/assets/unity/11-before.png" alt="カメラ単元の開始シーン"></a><figcaption>カメラ単元の開始シーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Gameタブで比率を16:9へ設定します。  </li>
+</ol>
+<p>   HierarchyでMain Cameraを選びます。</p>
+<ol>
+<li>CameraコンポーネントのField of Viewを45から60へ変え、映る範囲を比べます。</li>
+<li>必要ならCameraのPositionを少し後ろへ移動します。  </li>
+</ol>
+<p>   Sceneの視点だけを動かしていないかInspectorで確かめます。</p>
+<ol>
+<li>Near／FarのClipping Planesを確認し、展示物が範囲内にある状態で保存します。</li>
+</ol>
+<figure><a href="../hht/assets/unity/11-after.png"><img loading="lazy" src="../hht/assets/unity/11-after.png" alt="Main Cameraの位置とCameraコンポーネントを確認する画面"></a><figcaption>Main Cameraの位置とCameraコンポーネントを確認する画面（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Field of ViewはPerspectiveの画角です。  </p>
+<p>Orthographicでは主にSizeで表示範囲を調整します。</p>
+<p><strong>確認して報告：</strong> 画角変更前後の表示範囲を比較し、選んだ値を書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/11-Camera.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/11-Camera.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/11-complete.png"><img loading="lazy" src="../hht/assets/unity/11-complete.png" alt="U11の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U11の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-12" class="anchor"></div>
+<h3>U12 ライティング：立体の形を見やすくする</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=12&amp;variant=start">U12 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=12&amp;variant=complete">U12 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 展示物の凹凸と床との関係が読み取りにくいです。  </p>
+<p><strong>変更：</strong> Directional Lightの方向・明るさを調整します。  </p>
+<p>ライトベイクは扱いません。  </p>
+<p><strong>完成条件：</strong> 光の方向を変えると明暗と影の向きが変わり、展示物を見失わない明るさにできること。</p>
+<p><strong>準備：</strong> <code>12-Lighting.unity</code> を開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/12-before.png"><img loading="lazy" src="../hht/assets/unity/12-before.png" alt="ライティング調整前の展示シーン"></a><figcaption>ライティング調整前の展示シーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>HierarchyでDirectional Lightを選び、LightのTypeがDirectionalであることを確認します。</li>
+<li>TransformのRotation Yを変えて、立方体の明るい面と床の影を観察します。</li>
+<li>Intensityを0.5と1で比べ、Colorを少し暖色へ変えます。</li>
+<li>Gameで暗い側の面が見えるか確認します。  </li>
+</ol>
+<p>   Sceneだけ暗い場合はSceneの照明表示の切替も確認します。</p>
+<figure><a href="../hht/assets/unity/12-after.png"><img loading="lazy" src="../hht/assets/unity/12-after.png" alt="Directional LightのTransformとLight設定"></a><figcaption>Directional LightのTransformとLight設定（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Directional Lightは主に向きが効き、点光源のように位置から距離で減衰しません。  </p>
+<p>見え方はマテリアルと環境光にも左右されます。</p>
+<p><strong>確認して報告：</strong> Rotation、Intensity、Colorのうち変えた値と効果を書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/12-Lighting.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/12-Lighting.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/12-complete.png"><img loading="lazy" src="../hht/assets/unity/12-complete.png" alt="U12の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U12の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-13" class="anchor"></div>
+<h3>U13 Animator：状態からアニメーションを再生する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=13&amp;variant=start">U13 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=13&amp;variant=complete">U13 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 展示物に繰り返しの動きを付ける仕組みが分かりません。  </p>
+<p><strong>変更：</strong> Animator Controllerの既定状態とClipの接続を確認します。  </p>
+<p>Timelineの演出制御は次単元です。  </p>
+<p><strong>完成条件：</strong> ExhibitのAnimatorにControllerが入り、既定状態のMotionを追跡してPlay中の動きまで確認できること。</p>
+<p><strong>準備：</strong> <code>13-Animator.unity</code> を開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/13-before.png"><img loading="lazy" src="../hht/assets/unity/13-before.png" alt="Animator付きExhibitの開始シーン"></a><figcaption>Animator付きExhibitの開始シーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Exhibitを選び、AnimatorのControllerが <code>Exhibit</code> であることを確認します。</li>
+<li><code>Assets/Animation/Exhibit.controller</code> をダブルクリックします。  </li>
+</ol>
+<p>   Entryからオレンジ色の既定状態へつながる矢印を探します。</p>
+<ol>
+<li>状態を選び、InspectorのMotionがExhibitMoveであることを確認します。  </li>
+</ol>
+<p>   ProjectのClipを選ぶと時間とカーブを調べられます。</p>
+<ol>
+<li>Playし、Animatorの状態表示とGameの移動を見ます。  </li>
+</ol>
+<p>   停止後、状態のSpeedを0.5にして再生の速さを比較します。</p>
+<figure><a href="../hht/assets/unity/13-after.jpg"><img loading="lazy" src="../hht/assets/unity/13-after.jpg" alt="AnimatorウィンドウのEntryとExhibitMoveの状態"></a><figcaption>AnimatorウィンドウのEntryとExhibitMoveの状態（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/13-play.png"><img loading="lazy" src="../hht/assets/unity/13-play.png" alt="Animatorを再生し、Gameの展示物とInspectorのX座標が変わった結果"></a><figcaption>Animatorを再生し、Gameの展示物とInspectorのX座標が変わった結果（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Clipは動きのデータ、Controllerはどの状態でどのClipを再生するかの定義、AnimatorはGameObjectで再生するコンポーネントです。</p>
+<p><strong>確認して報告：</strong> GameObject → Animator → Controller → State → Motionの接続を順番に書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/13-Animator.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/13-Animator.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/13-complete.png"><img loading="lazy" src="../hht/assets/unity/13-complete.png" alt="U13の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U13の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-14" class="anchor"></div>
+<h3>U14 Timeline：時間に沿って展示を演出する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=14&amp;variant=start">U14 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=14&amp;variant=complete">U14 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 開始から何秒後に展示物が動くのか共有できません。  </p>
+<p><strong>変更：</strong> Timeline上のClip位置と再生位置を調整します。  </p>
+<p>Animatorの状態遷移は追加しません。  </p>
+<p><strong>完成条件：</strong> Playable Director、Timeline Asset、Animation Trackの対象を確認し、再生ヘッドで異なる時刻の位置を比較できること。</p>
+<p><strong>準備：</strong> <code>14-Timeline.unity</code> を開き、Exhibitを選択します。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/14-before.png"><img loading="lazy" src="../hht/assets/unity/14-before.png" alt="Playable Directorを持つ展示物の開始シーン"></a><figcaption>Playable Directorを持つ展示物の開始シーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Window → Sequencing → Timelineを開きます。  </li>
+</ol>
+<p>   ExhibitのPlayable DirectorでPlayableがExhibit、トラックのBindingがExhibitのAnimatorであることを確認します。</p>
+<ol>
+<li>ExhibitへBindingされたAnimation Track（アセット名は <code>Exhibit position</code>）のClipを選び、StartとDurationを確認します。  </li>
+</ol>
+<p>   初期状態は開始0秒、長さ2秒です。  </p>
+<p>   目盛がフレーム表示なら、このTimelineでは60フレームが1秒、120フレームが2秒です。</p>
+<ol>
+<li>Previewを有効にし、上の時間目盛で0秒と1秒をクリックして展示物の位置を比較します。</li>
+<li>Clipを右へ動かして開始を1秒にし、演出の始まりが遅れることを確認します。  </li>
+</ol>
+<p>   Previewを解除して保存し、Playでも確認します。</p>
+<figure><a href="../hht/assets/unity/14-after.jpg"><img loading="lazy" src="../hht/assets/unity/14-after.jpg" alt="Timeline上のAnimation TrackとClip"></a><figcaption>Timeline上のAnimation TrackとClip（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/14-play.png"><img loading="lazy" src="../hht/assets/unity/14-play.png" alt="Playable Directorの再生時刻と展示物の位置をGameで確認する画面"></a><figcaption>Playable Directorの再生時刻と展示物の位置をGameで確認する画面（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Playable DirectorはTimelineを再生し、Bindingはトラックが動かす対象です。  </p>
+<p>対象欄が空なら、Clipがあっても展示物は動きません。</p>
+<p><strong>確認して報告：</strong> 演出の開始時刻、長さ、対象の3点を書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/14-Timeline.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/14-Timeline.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/14-complete.png"><img loading="lazy" src="../hht/assets/unity/14-complete.png" alt="U14の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U14の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-15" class="anchor"></div>
+<h3>U15 音：開始の合図を鳴らす</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=15&amp;variant=start">U15 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=15&amp;variant=complete">U15 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 展示の開始に気づけません。  </p>
+<p><strong>変更：</strong> 短い開始音を小さな音量で鳴らします。  </p>
+<p>外部音源は使用しません。  </p>
+<p><strong>完成条件：</strong> Audio SourceにChimeが入り、Play開始時に1回だけ鳴り、Loopが無効であること。</p>
+<p><strong>準備：</strong> <code>15-Audio.unity</code> を開き、PCの音量を小さくしてから試します。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/15-before.png"><img loading="lazy" src="../hht/assets/unity/15-before.png" alt="音単元のExhibitの開始画面"></a><figcaption>音単元のExhibitの開始画面（クリックで拡大）</figcaption></figure>
+<ol>
+<li>ExhibitのAudio Sourceを確認します。  </li>
+</ol>
+<p>   Audio Generator（以前のバージョンではAudio Resource／AudioClip）に <code>Chime</code>、Volumeに0.15を設定します。</p>
+<ol>
+<li>Play On Awakeを有効、Loopを無効、Spatial Blendを0（2D）にします。</li>
+<li>Main CameraにAudio Listenerがあることを確認してPlayします。  </li>
+</ol>
+<p>   開始時だけ音が鳴るか耳で確かめます。</p>
+<ol>
+<li>無音ならGameのMute Audio、OSの音量・出力先、Audio Listenerの順に確認します。  </li>
+</ol>
+<p>   確認のために過大な音量へ上げません。</p>
+<figure><a href="../hht/assets/unity/15-after.jpg"><img loading="lazy" src="../hht/assets/unity/15-after.jpg" alt="Audio SourceのChime、Volume、Play On Awakeの設定"></a><figcaption>Audio SourceのChime、Volume、Play On Awakeの設定（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Audio Sourceは音を出す場所、Audio Listenerは聞く場所です。  </p>
+<p>画像だけでは音が鳴った証拠になりません。</p>
+<p><strong>確認して報告：</strong> 設定確認と聴取確認を別々に記録します。  </p>
+<p>聴取できなければ未確認と書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/15-Audio.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/15-Audio.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/15-complete.png"><img loading="lazy" src="../hht/assets/unity/15-complete.png" alt="U15の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U15の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-16" class="anchor"></div>
+<h3>U16 uGUI：Canvasにボタンを置く</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=16&amp;variant=start">U16 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=16&amp;variant=complete">U16 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> どこを押せば始まるか分かりません。  </p>
+<p><strong>変更：</strong> Canvas上のボタンとクリック時の表示を確認します。  </p>
+<p>UI ToolkitのUXMLは使いません。  </p>
+<p><strong>完成条件：</strong> Play中に「開始」をクリックするとようこそ！  </p>
+<p>へ変わり、Gameの比率を変えてもボタンが見えること。</p>
+<p><strong>準備：</strong> <code>16-uGUI.unity</code> を開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/16-before.png"><img loading="lazy" src="../hht/assets/unity/16-before.png" alt="Canvasを含む開始シーンと、ExhibitButtonの状態文字への参照"></a><figcaption>Canvasを含む開始シーンと、ExhibitButtonの状態文字への参照（クリックで拡大）</figcaption></figure>
+<ol>
+<li>HierarchyのCanvasを展開してStartButtonを選びます。  </li>
+</ol>
+<p>   CanvasのRender ModeがScreen Space - Overlayであることを確認します。</p>
+<ol>
+<li>StartButtonのRect Transform、Image、Buttonを見ます。  </li>
+</ol>
+<p>   ButtonのOn Click()にExhibitの <code>ExhibitButton.Begin</code> が登録されていることを確認します。</p>
+<ol>
+<li>EventSystemとInput System UI Input Moduleを確認します。  </li>
+</ol>
+<p>   UIの入力イベントを受け取るために必要です。</p>
+<ol>
+<li>Playし、Gameの「開始」をクリックします。  </li>
+</ol>
+<p>   ようこそ！  </p>
+<p>   への変化を確認します。  </p>
+<p>   停止し、Gameの比率を16:9から4:3へ変えて配置を確認します。</p>
+<figure><a href="../hht/assets/unity/16-after.png"><img loading="lazy" src="../hht/assets/unity/16-after.png" alt="StartButtonのRect TransformとButtonのイベント設定"></a><figcaption>StartButtonのRect TransformとButtonのイベント設定（クリックで拡大）</figcaption></figure>
+<p>![uGUIの「開始」をクリックするとようこそ！  </p>
+<p>へ変わったGame画面](../../assets/unity/16-play.png)</p>
+<p><strong>ヒント・用語：</strong> Rect TransformはUIの位置とサイズ、Anchorは親のどこを基準にするかを決めます。  </p>
+<p>文字はTextMeshPro（TMP）を使用し、日本語フォントを割り当てています。  </p>
+<p>Legacy Textは使いません。</p>
+<p><strong>日本語フォントの設定</strong></p>
+<ol>
+<li>StartButtonの子のLabelを選び、TextMeshPro - Text (UI)のFont Assetが <code>NotoSansJP-TMP</code> であることを確認します。  </li>
+</ol>
+<p>   表示文字は「開始」、ExhibitButtonの状態参照はこのTMP文字を指定します。</p>
+<ol>
+<li><code>Assets/Fonts/NotoSansJP-Regular.otf</code> は元フォント、<code>NotoSansJP-TMP.asset</code> はTMP用のSDFフォントです。  </li>
+</ol>
+<p>   新しいTMP文字にも同じFont Assetを指定します。</p>
+<ol>
+<li>U18以降のUI Toolkitは <code>ExhibitPanel.asset</code> のText Settingsに <code>JapanesePanelTextSettings</code> を指定し、そのDefault Font Assetに <code>NotoSansJP-UIToolkit</code> を設定します。  </li>
+</ol>
+<p>   同じ元フォントから作った別形式のアセットで、TMP用と取り違えないでください。</p>
+<ol>
+<li>日本語・英数字・句読点を入力し、□の文字欠け、切れた行、ボタンからのはみ出しがないことをGameとブラウザで確認します。  </li>
+</ol>
+<p>   新しい文字はDynamic方式で元フォントから追加します。  </p>
+<p>   教材の文字は事前にアトラスへ収録済みです。</p>
+<figure><a href="../hht/assets/unity/16-japanese-font.png"><img loading="lazy" src="../hht/assets/unity/16-japanese-font.png" alt="日本語を表示するTMP文字と日本語フォントの割当を確認するUnity画面"></a><figcaption>日本語を表示するTMP文字と日本語フォントの割当を確認するUnity画面（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/18-japanese-panel.png"><img loading="lazy" src="../hht/assets/unity/18-japanese-panel.png" alt="PanelSettingsのPanel Text Settingsに日本語設定を割り当てたInspector"></a><figcaption>PanelSettingsのPanel Text Settingsに日本語設定を割り当てたInspector（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/18-japanese-font.png"><img loading="lazy" src="../hht/assets/unity/18-japanese-font.png" alt="日本語用Panel Text SettingsのDefault Font Assetを確認するInspector"></a><figcaption>日本語用Panel Text SettingsのDefault Font Assetを確認するInspector（クリックで拡大）</figcaption></figure>
+<p>元フォントは <a href="https://github.com/notofonts/noto-cjk/tree/main/Sans/SubsetOTF/JP">Noto Sans JP公式配布</a>、利用条件は同梱の <a href="./project/Assets/Fonts/OFL.txt">OFL</a> を参照します。  </p>
+<p>教材UIと独自ツールは日本語です。  </p>
+<p>Unity標準のコンポーネント名・API名は、検索と画面の照合ができるよう正式名を併記します。</p>
+<p><strong>確認して報告：</strong> クリック前後の表示と、2つの画面比率での結果を書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/16-uGUI.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/16-uGUI.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/16-complete.png"><img loading="lazy" src="../hht/assets/unity/16-complete.png" alt="U16の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U16の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<p>HUD・画面UIの配置例は<a href="unity.md#unity-18">U18の14パターンギャラリー</a>で比較します。  </p>
+<p>ギャラリーの実装はUI Toolkitです。</p>
+<div id="unity-17" class="anchor"></div>
+<h3>U17 Gizmo：編集用に範囲を可視化する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=17&amp;variant=start">U17 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=17&amp;variant=complete">U17 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・制作メンバー。  </p>
+<p><strong>困りごと：</strong> 接近判定を置きたい範囲がSceneで分かりません。  </p>
+<p><strong>変更：</strong> 黄色のワイヤー球で半径を表示します。  </p>
+<p>実際の衝突判定は追加しません。  </p>
+<p><strong>完成条件：</strong> Exhibit選択時に半径2の線が出て、半径を3に変えると広がること。</p>
+<p><strong>準備：</strong> <code>17-Gizmo.unity</code> を開き、SceneのGizmosを有効にします。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/17-before.png"><img loading="lazy" src="../hht/assets/unity/17-before.png" alt="RangeGizmo付きExhibitを選択したScene"></a><figcaption>RangeGizmo付きExhibitを選択したScene（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Exhibitを選び、Range Gizmoコンポーネントの「半径」が2であることを確認します。</li>
+<li>Sceneの黄色いワイヤー球を見ながら半径を3へ変えます。  </li>
+</ol>
+<p>   Inspectorの数値と線の大きさを照合します。</p>
+<ol>
+<li><code>RangeGizmo.cs</code> のOnDrawGizmosSelected、Gizmos.color、DrawWireSphereの順に読みます。</li>
+<li>選択を外すと線が消えることを確認します。  </li>
+</ol>
+<p>   完成した実行ファイルへこの線を表示する用途なら、別の描画方法が必要です。</p>
+<figure><a href="../hht/assets/unity/17-after.png"><img loading="lazy" src="../hht/assets/unity/17-after.png" alt="Scene上でGizmoの範囲を確認する画面"></a><figcaption>Scene上でGizmoの範囲を確認する画面（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Gizmoは開発中の補助表示です。  </p>
+<p>Gizmoを描くだけでは当たり判定や検知処理は動きません。</p>
+<p><strong>確認して報告：</strong> 見える条件と、描画と判定の違いを書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/17-Gizmo.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/17-Gizmo.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/17-complete.png"><img loading="lazy" src="../hht/assets/unity/17-complete.png" alt="U17の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U17の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-18" class="anchor"></div>
+<h3>U18 UI Elements／UI Toolkit：画面制作とHUD・UIパターンギャラリー</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=18&amp;variant=start">U18 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=18&amp;variant=complete">U18 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 見出し、案内、ボタンをまとめて整えたいです。  </p>
+<p><strong>変更：</strong> UI BuilderでUXMLの要素とUSSの見た目を編集します。  </p>
+<p>uGUIのCanvasへ混ぜません。  </p>
+<p><strong>完成条件：</strong> UIDocumentの画面がGameに表示され、「開始」を押すと準備完了がようこそ！  </p>
+<p>になること。</p>
+<p><strong>準備：</strong> <code>18-UIToolkit.unity</code> を開きます。  </p>
+<p>以前のUI Elementsという呼び方に対応する現在の仕組みをUI Toolkitとして学びます。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/18-before.png"><img loading="lazy" src="../hht/assets/unity/18-before.png" alt="UIDocumentを含むUI Toolkit単元の開始画面"></a><figcaption>UIDocumentを含むUI Toolkit単元の開始画面（クリックで拡大）</figcaption></figure>
+<ol>
+<li><code>Assets/UI/Exhibit.uxml</code> をダブルクリックしてUI Builderを開きます。  </li>
+</ol>
+<p>   開かない場合はWindow → UI Toolkit → UI Builderから同ファイルを開きます。</p>
+<ol>
+<li>Hierarchyでpanel、見出しのLabel、status、start-buttonの親子関係を見ます。  </li>
+</ol>
+<p>   見出しのTextを <code>Unity 展示サンプル</code> から自分の展示名へ変更し、保存します。</p>
+<ol>
+<li>StyleSheetsのExhibit.ussを確認します。  </li>
+</ol>
+<p>   <code>.panel</code> はclass、<code>#status</code> はnameに対応する選択です。  </p>
+<p>   USSで余白と文字色を変えます。</p>
+<ol>
+<li>シーンのExhibitUIを選び、UIDocumentのSource AssetとPanel Settingsの参照を確認します。  </li>
+</ol>
+<p>   Playし、「開始」をクリックして状態の文字が変わることを確認します。</p>
+<figure><a href="../hht/assets/unity/18-after.png"><img loading="lazy" src="../hht/assets/unity/18-after.png" alt="UI BuilderでUXMLの要素構造と展示パネルを確認する画面"></a><figcaption>UI BuilderでUXMLの要素構造と展示パネルを確認する画面（クリックで拡大）</figcaption></figure>
+<p>![UI Toolkitの「開始」をクリックすると準備完了がようこそ！  </p>
+<p>へ変わったGame画面](../../assets/unity/18-play.png)</p>
+<p><strong>ヒント・用語：</strong> UXMLは構造、USSは見た目、C#は動作です。  </p>
+<p>ExhibitUI.csは <code>Q&lt;Button&gt;(&quot;start-button&quot;)</code> で要素を探すため、nameを変える場合はコード側も合わせます。</p>
+<p><strong>確認して報告：</strong> 構造・見た目・動作を担当する3つのファイルを挙げます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/18-UIToolkit.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/18-UIToolkit.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/18-complete.png"><img loading="lazy" src="../hht/assets/unity/18-complete.png" alt="U18の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U18の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<p>![U18完成サンプルのPlay結果。  </p>
+<p>「開始」を押すとようこそ！  </p>
+<p>へ変化](../../assets/unity/18-complete-play.png)</p>
+<p><strong>HUD・UIパターンギャラリー</strong></p>
+<p><strong>依頼者・見る人：</strong> ゲームのUI担当者・プレイヤー。  </p>
+<p><strong>困りごと：</strong> 必要な情報と操作を、どこへ置くか判断したいです。  </p>
+<p><strong>変更：</strong> 14種類の定番パターンを比較し、用途に合う配置と状態表示を選びます。  </p>
+<p><strong>完成条件：</strong> HUDと画面UIを1種類ずつ選び、配置の理由を説明でき、片方の余白・文字サイズをUSSで変更して操作を確認できること。</p>
+<ol>
+<li>U18の開始または完成シーンをPlayし、左下の <strong>HUD・UIギャラリー（14種類）</strong> を押します。  </li>
+</ol>
+<p>   ブラウザ版も同じ入口です。</p>
+<ol>
+<li>左の一覧か <strong>前へ / 次へ</strong> で切り替えます。  </li>
+</ol>
+<p>   狭い画面では一覧を隠すため、前へ / 次へを使います。  </p>
+<p>   <strong>見本を初期化</strong> は現在の例を初期化し、<strong>教材に戻る</strong> は展示画面へ戻ります。</p>
+<ol>
+<li>各例のボタンを操作し、表示・数値・無効状態を比較します。  </li>
+</ol>
+<p>   Tabでフォーカスを移し、Enterで実行、Escでダイアログをキャンセル、またはギャラリーを閉じます。  </p>
+<p>   色だけでなく番号・名称・枠・数値で区別します。</p>
+<p><strong>01 体力・スタミナHUD：</strong> 画面端へ寄せ、中央の視界を空けます。  </p>
+<p>25ダメージを受けるでHPが減り、体力を100に戻すで回復します。  </p>
+<p>ゲージと正確な数値を併記します。</p>
+<figure><a href="../hht/assets/unity/18-gallery-01.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-01.png" alt="画面左下の体力・スタミナと、ダメージ後の体力75を示すHUD"></a><figcaption>画面左下の体力・スタミナと、ダメージ後の体力75を示すHUD（クリックで拡大）</figcaption></figure>
+<p><strong>02 照準・弾薬HUD：</strong> 照準を中央、装填数と予備弾を右下に分けます。  </p>
+<p>1発撃つと再装填で装填数の変化を確認します。</p>
+<figure><a href="../hht/assets/unity/18-gallery-02.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-02.png" alt="中央の照準と右下の装填数・予備弾を分離したHUD"></a><figcaption>中央の照準と右下の装填数・予備弾を分離したHUD（クリックで拡大）</figcaption></figure>
+<p><strong>03 目標・マップ：</strong> 左上に位置関係、右上に次の行動を置きます。  </p>
+<p>Pはプレイヤー、Aは端末、Gは出口です。  </p>
+<p>次の目標へで目標が進みます。  </p>
+<p>この例は模式図で、カメラで描くミニマップではありません。</p>
+<figure><a href="../hht/assets/unity/18-gallery-03.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-03.png" alt="左上の模式マップと右上の目標表示"></a><figcaption>左上の模式マップと右上の目標表示（クリックで拡大）</figcaption></figure>
+<p><strong>04 ホットバー：</strong> 下中央に番号付きのスロットを並べます。  </p>
+<p>1・2のボタンを選び、選択中を確認します。  </p>
+<p>3のクールダウン表示と4の未解放は無効状態の固定例です。  </p>
+<p>数字キーの割当や残り時間の計測は行いません。</p>
+<figure><a href="../hht/assets/unity/18-gallery-04.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-04.png" alt="選択中・使用可能・クールダウン・ロックを文字でも区別するホットバー"></a><figcaption>選択中・使用可能・クールダウン・ロックを文字でも区別するホットバー（クリックで拡大）</figcaption></figure>
+<p><strong>05 タイトルメニュー：</strong> はじめからを主な入口にします。  </p>
+<p>セーブがない続けるは理由を添えて無効にします。  </p>
+<p>設定は設定例へ移動します。</p>
+<figure><a href="../hht/assets/unity/18-gallery-05.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-05.png" alt="新規開始とセーブなしの続けるを示すタイトルメニュー"></a><figcaption>新規開始とセーブなしの続けるを示すタイトルメニュー（クリックで拡大）</figcaption></figure>
+<p><strong>06 ポーズメニュー：</strong> 再開、設定、タイトルへ戻るをまとめます。  </p>
+<p>この例は画面構成の確認用です。  </p>
+<p>実際のゲーム停止や再開はU24のゲームループへ接続して実装します。</p>
+<figure><a href="../hht/assets/unity/18-gallery-06.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-06.png" alt="再開・設定・タイトルへ戻るをまとめたポーズ画面"></a><figcaption>再開・設定・タイトルへ戻るをまとめたポーズ画面（クリックで拡大）</figcaption></figure>
+<p><strong>07 設定画面：</strong> スライダーか±10で編集中を変更し、適用で適用済みへ反映します。  </p>
+<p>編集中と適用済みの値を分けます。  </p>
+<p>音量と全画面は例の内部だけを変更し、機器の音量・画面モードには反映しません。  </p>
+<p>実際の音量接続はU33を参照します。</p>
+<figure><a href="../hht/assets/unity/18-gallery-07.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-07.png" alt="編集中と適用済みの音量を区別する設定画面"></a><figcaption>編集中と適用済みの音量を区別する設定画面（クリックで拡大）</figcaption></figure>
+<p><strong>08 所持品：</strong> グリッドで選び、詳細欄を読んで選択した物を使うを押します。  </p>
+<p>Emptyを選ぶと使用を無効にし、何もない理由を示します。</p>
+<figure><a href="../hht/assets/unity/18-gallery-08.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-08.png" alt="所持品グリッドと選択アイテムの詳細・使用ボタン"></a><figcaption>所持品グリッドと選択アイテムの詳細・使用ボタン（クリックで拡大）</figcaption></figure>
+<p><strong>09 会話・選択肢：</strong> 話者、本文、返答の選択肢を分けます。  </p>
+<p>東門について聞くか西の道を選び、STATEの返答を比較します。</p>
+<figure><a href="../hht/assets/unity/18-gallery-09.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-09.png" alt="話者名・会話本文・2つの選択肢を分けた会話UI"></a><figcaption>話者名・会話本文・2つの選択肢を分けた会話UI（クリックで拡大）</figcaption></figure>
+<p><strong>10 クエスト一覧：</strong> ActiveとCompletedを切り替えます。  </p>
+<p>途中の件数とDONEを文字で示し、未完了と完了を区別します。</p>
+<figure><a href="../hht/assets/unity/18-gallery-10.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-10.png" alt="進行中と完了を切り替えるクエスト一覧"></a><figcaption>進行中と完了を切り替えるクエスト一覧（クリックで拡大）</figcaption></figure>
+<p><strong>11 確認ダイアログ：</strong> 1件削除 practice saveを押します。  </p>
+<p>対象と結果を明記し、最初のフォーカスを取消へ置きます。  </p>
+<p>背景のボタンは操作できません。  </p>
+<p>取消またはEscでは件数を保持し、1件削除では1件だけ減らします。  </p>
+<p>閉じると開いたボタンへフォーカスが戻ります。  </p>
+<p>実ファイルは削除しません。</p>
+<figure><a href="../hht/assets/unity/18-gallery-11.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-11.png" alt="確認前のサンプル件数と背景操作の検査ボタン"></a><figcaption>確認前のサンプル件数と背景操作の検査ボタン（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/18-gallery-modal.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-modal.png" alt="取消に初期フォーカスを置き、結果を明示した確認ダイアログ"></a><figcaption>取消に初期フォーカスを置き、結果を明示した確認ダイアログ（クリックで拡大）</figcaption></figure>
+<p><strong>12 リザルト：</strong> 結果、スコア、時間、ボーナスの順に読み、続けるか再試行を選びます。  </p>
+<p>次にできる操作を結果と同じ画面で示します。</p>
+<figure><a href="../hht/assets/unity/18-gallery-12.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-12.png" alt="スコア・時間・ボーナスと次の操作を示すリザルト画面"></a><figcaption>スコア・時間・ボーナスと次の操作を示すリザルト画面（クリックで拡大）</figcaption></figure>
+<p><strong>13 読込・エラー・再試行：</strong> 25%進めるで進捗を増やし、エラーを試すで失敗させます。  </p>
+<p>失敗中は進行操作が無効になり、再試行でやり直せます。  </p>
+<p>実通信ではなく、状態遷移の練習です。</p>
+<figure><a href="../hht/assets/unity/18-gallery-13.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-13.png" alt="失敗理由と再試行を表示し、進行ボタンを無効にした読込UI"></a><figcaption>失敗理由と再試行を表示し、進行ボタンを無効にした読込UI（クリックで拡大）</figcaption></figure>
+<p><strong>14 通知・ツールチップ：</strong> 鍵を拾うで通知を表示し、通知を閉じるで閉じます。  </p>
+<p>通知は他の操作を止めません。  </p>
+<p>Helpはマウスを重ねるかTabでフォーカスして説明を読めます。  </p>
+<p>この例の通知は自動で消えません。</p>
+<figure><a href="../hht/assets/unity/18-gallery-14.png"><img loading="lazy" src="../hht/assets/unity/18-gallery-14.png" alt="取得通知と、フォーカスでも説明できるヘルプボタン"></a><figcaption>取得通知と、フォーカスでも説明できるヘルプボタン（クリックで拡大）</figcaption></figure>
+<p><strong>制作して確認：</strong> HUDと画面UIを1種類ずつ選び、誰が・いつ・何を判断する表示かを記録します。  </p>
+<p><code>Assets/UI/PatternGallery.uss</code> の該当クラスで余白または文字サイズを変更し、変更前後の実画面を撮ります。  </p>
+<p>選択・無効・空・エラーのうち、その画面で起こる状態を操作し、フォーカス枠と戻る経路も確認して提出します。</p>
+<p><strong>ヒント・構造：</strong> <code>PatternGallery.uxml</code> は見出し・一覧・表示領域の枠、<code>PatternGallery.uss</code> は配置と見た目、<code>UIPatternGallery.cs</code> は14例の要素生成と動作です。  </p>
+<p>実行時に生成する例の全体はPlayで確認します。  </p>
+<p>設定・所持品・セーブ件数はサンプル内の一時データで、永続保存しません。  </p>
+<p>uGUIで作り直す場合はU16のAnchor・Layout Group・Slider・Scroll Rect・Navigationと対応を考えます。</p>
+<div id="unity-19" class="anchor"></div>
+<h3>U19 VFX Graph：粒子の流れを編集する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=19&amp;variant=start">U19 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=19&amp;variant=complete">U19 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・来場者。  </p>
+<p><strong>困りごと：</strong> 展示の開始を視覚的にも知らせたいです。  </p>
+<p><strong>変更：</strong> 配布された最小の粒子グラフを確認し、発生量を変えます。  </p>
+<p>Shader Graphや高負荷な演出は扱いません。  </p>
+<p><strong>完成条件：</strong> Visual EffectにGraphが割り当てられ、Spawnの発生量を変えると粒子数の違いをSceneで確認できること。</p>
+<p><strong>準備：</strong> <code>19-VFXGraph.unity</code> を開きます。  </p>
+<p>URPとVFX Graphを含む専用プロジェクトを使います。  </p>
+<p>対応GPUがない場合は無理に進めず、環境と未確認の内容を記録します。  </p>
+<p>対象はA Exhibit（青い立方体）です。  </p>
+<p>V WelcomeParticles（明るい青緑の粒子）をEditorで確認します。</p>
+<figure><a href="../hht/assets/unity/19-before.png"><img loading="lazy" src="../hht/assets/unity/19-before.png" alt="VFX Graph単元の開始シーン"></a><figcaption>VFX Graph単元の開始シーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>HierarchyでWelcomeParticlesを選び、Visual EffectコンポーネントのAsset TemplateにExhibitが設定されていることを確認します。</li>
+<li><code>Assets/Art/Exhibit.vfx</code> をダブルクリックしてVisual Effect Graphを開きます。</li>
+<li>Spawn → Initialize → Update → Outputの接続をたどります。  </li>
+</ol>
+<p>   SpawnのConstant Spawn Rateの値を調べ、元の値をメモして半分へ変えます。</p>
+<ol>
+<li>Saveし、Sceneで粒子の発生を見比べます。  </li>
+</ol>
+<p>   見えない場合はSceneのEffects表示、Visual Effectの有効状態、Bounds、対応GPU・パイプラインを順に確認します。</p>
+<figure><a href="../hht/assets/unity/19-after.jpg"><img loading="lazy" src="../hht/assets/unity/19-after.jpg" alt="Visual Effect GraphのSpawn、Initialize、Update、Outputの接続"></a><figcaption>Visual Effect GraphのSpawn、Initialize、Update、Outputの接続（クリックで拡大）</figcaption></figure>
+<p>Spawnの見出しを選択し、ホイールで拡大すると発生量の入力欄を読めます。  </p>
+<p>配布GraphはRateが64で、半分は32です。</p>
+<figure><a href="../hht/assets/unity/19-spawn.jpg"><img loading="lazy" src="../hht/assets/unity/19-spawn.jpg" alt="Constant Spawn RateのRateが64と表示されたVFX Graphの詳細画面"></a><figcaption>Constant Spawn RateのRateが64と表示されたVFX Graphの詳細画面（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/19-play.png"><img loading="lazy" src="../hht/assets/unity/19-play.png" alt="V WelcomeParticlesの明るい青緑の粒子が実際に発生しているGame画面"></a><figcaption>V WelcomeParticlesの明るい青緑の粒子が実際に発生しているGame画面（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Spawnは発生、Initializeは誕生時の状態、Updateは時間による更新、Outputは描画を扱います。  </p>
+<p>Capacityは保持できる粒子数の上限で、発生数を無制限に増やしません。</p>
+<p><strong>確認して報告：</strong> 発生量の変更前後と、実際に粒子が見えたかを区別して記録します。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/19-VFXGraph.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/19-VFXGraph.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/19-complete.png"><img loading="lazy" src="../hht/assets/unity/19-complete.png" alt="U19の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U19の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<p>![U19完成サンプルのPlay結果。  </p>
+<p>発生レートを32にして粒子を表示](../../assets/unity/19-complete-play.png)</p>
+<div id="unity-20" class="anchor"></div>
+<h3>U20 デバッグ：Consoleから原因を調べる</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=20&amp;variant=start">U20 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=20&amp;variant=complete">U20 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・制作メンバー。  </p>
+<p><strong>困りごと：</strong> 動かない時に何を確認したか伝えられません。  </p>
+<p><strong>変更：</strong> 意図したログと警告を出して原因の場所を探します。  </p>
+<p>無関係なエラーを消すためにコードを削除しません。  </p>
+<p><strong>完成条件：</strong> Consoleからログの発生元を開き、警告を出す設定を戻して、再実行で新たな警告が出ないことを確認できること。</p>
+<p><strong>準備：</strong> <code>20-Debug.unity</code> を開きます。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/20-before.png"><img loading="lazy" src="../hht/assets/unity/20-before.png" alt="DebugProbe付き展示物の開始シーン"></a><figcaption>DebugProbe付き展示物の開始シーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Window → General → Consoleを開き、Log、Warning、Errorのフィルターを確認します。</li>
+<li>ExhibitのDebug ProbeでShow Warningを有効にしてPlayします。  </li>
+</ol>
+<p>   Exhibit readyと確認 the exhibit labelを探します。</p>
+<ol>
+<li>メッセージをクリックして詳細と呼出元を読み、ダブルクリックでDebugProbe.csの場所を開きます。</li>
+<li>停止し、Show Warningを無効にします。  </li>
+</ol>
+<p>   ConsoleのClearで過去ログを消して再実行します。  </p>
+<p>   readyだけが出ることを確認して保存します。</p>
+<figure><a href="../hht/assets/unity/20-after.jpg"><img loading="lazy" src="../hht/assets/unity/20-after.jpg" alt="ConsoleでExhibit readyと発生元を確認する画面"></a><figcaption>ConsoleでExhibit readyと発生元を確認する画面（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> Clearは表示中の履歴を消す操作です。  </p>
+<p>原因の修正とは別です。  </p>
+<p>赤いコンパイルエラーが残る時はPlayの前に先頭のエラーから直します。</p>
+<p><strong>確認して報告：</strong> 再現操作、ログの原文、発生箇所、修正後の結果を短く書きます。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/20-Debug.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/20-Debug.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/20-complete.png"><img loading="lazy" src="../hht/assets/unity/20-complete.png" alt="U20の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U20の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-21" class="anchor"></div>
+<h3>U21 ビルド：Editorの外で展示を起動する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=21&amp;variant=start">U21 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=21&amp;variant=complete">U21 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・別のPCの来場者。  </p>
+<p><strong>困りごと：</strong> Editorを開ける人しか展示を確認できません。  </p>
+<p><strong>変更：</strong> Windows向けの実行ファイルをローカルに作ります。  </p>
+<p>Web公開・ストア提出・アップロードはしません。  </p>
+<p><strong>完成条件：</strong> Build Profilesのシーン一覧を確認し、Windowsビルドを作り、Editorの外で起動して表示を確認し、終了できること。</p>
+<p><strong>準備：</strong> <code>21-Build.unity</code> を開き、保存します。  </p>
+<p>必要なWindows Build SupportがなければUnity Hubの対象EditorのAdd modulesで講師と確認します。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<figure><a href="../hht/assets/unity/21-before.png"><img loading="lazy" src="../hht/assets/unity/21-before.png" alt="ビルド対象となる展示シーン"></a><figcaption>ビルド対象となる展示シーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>File → Build Profilesを開きます。  </li>
+</ol>
+<p>   WindowsのプロファイルまたはWindowsプラットフォームを選びます。</p>
+<ol>
+<li>Scene Listに <code>Assets/Scenes/21-Build.unity</code> が有効な状態で含まれ、先頭にあることを確認します。  </li>
+</ol>
+<p>   違うシーンなら必要なシーンだけを一覧へ追加します。</p>
+<ol>
+<li>Buildを押し、プロジェクト内の <code>Builds/Windows</code> を保存先に指定します。  </li>
+</ol>
+<p>   完了後、生成されたexeと隣のDataフォルダーを一緒に扱います。</p>
+<ol>
+<li>exeを起動し、Gameと同じ展示が見えることを確認してAlt+F4で終了します。  </li>
+</ol>
+<p>   EditorのPlay成功とビルド成功、実行ファイルの起動成功は別々に記録します。</p>
+<figure><a href="../hht/assets/unity/21-after.jpg"><img loading="lazy" src="../hht/assets/unity/21-after.jpg" alt="Build ProfilesのWindows設定とScene Listを確認する画面"></a><figcaption>Build ProfilesのWindows設定とScene Listを確認する画面（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/21-player.png"><img loading="lazy" src="../hht/assets/unity/21-player.png" alt="Editorの外でWindows実行ファイルを起動し、展示物と床が表示された結果"></a><figcaption>Editorの外でWindows実行ファイルを起動し、展示物と床が表示された結果（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> プロジェクトは編集用、ビルドは実行用です。  </p>
+<p>exeだけをコピーすると必要なデータが欠けます。  </p>
+<p>OSごとのビルド支援モジュールも必要です。</p>
+<p><strong>確認して報告：</strong> この単元では共通提出物に加え、ビルド一式、対象OS、実行結果と終了確認を提出します。  </p>
+<p>ビルドや起動を実施できなかった場合は未確認とし、エラーまたは不足モジュールを記録します。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/21-Build.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/21-Build.unity">完成サンプル</a>。  </p>
+<p>Projectで対応するファイルをダブルクリックして開き、手順と見比べます。</p>
+<figure><a href="../hht/assets/unity/21-complete.png"><img loading="lazy" src="../hht/assets/unity/21-complete.png" alt="U21の保存済み完成サンプルをUnity Editorで開いた画面"></a><figcaption>U21の保存済み完成サンプルをUnity Editorで開いた画面（クリックで拡大）</figcaption></figure>
+<div id="unity-22" class="anchor"></div>
+<h3>U22 Unity CLI：同じ手順で教材を検査する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=22&amp;variant=start">U22 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=22&amp;variant=complete">U22 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・教材を配布する制作者。  </p>
+<p><strong>困りごと：</strong> 手作業だけではシーンや参照の欠落を見落とします。  </p>
+<p><strong>変更：</strong> Unity CLIから専用プロジェクトの検査を呼び出し、結果を残します。  </p>
+<p>配信やパッケージ追加は行いません。  </p>
+<p><strong>完成条件：</strong> CLIとEditorのバージョンを区別し、検査の終了コード0、収録した開始・完成シーン全件のPASSを確認して、検査できない項目も説明できること。</p>
+<p><strong>準備：</strong> 専用プロジェクト、Windows上のPowerShell 7、公式Unity CLIを用意します。  </p>
+<p>撮影環境はCLI <code>1.0.0-beta.8</code>、Editor <code>6000.3.25f1</code> です。  </p>
+<p>CLIが見つからない場合は<a href="https://docs.unity.com/en-us/unity-cli/use-unity-cli">公式手順</a>で導入し、新しいPowerShellを開きます。  </p>
+<p>Unity Hubで指定Editorが利用可能な状態にします。  </p>
+<p>対象はA Exhibit（青い立方体）です。</p>
+<ol>
+<li>エクスプローラーで教材リポジトリのルートを開き、右クリックの「ターミナルで開く」でPowerShellを開きます。  </li>
+</ol>
+<p>   <code>unity --version</code> と <code>unity editors --installed --format json</code> を実行します。  </p>
+<p>   前者はCLI、後者はインストール済みEditorの一覧です。  </p>
+<p>   指定Editorがなければ講師へ確認します。</p>
+<ol>
+<li><code>pwsh -NoProfile -File .\unity\scripts\Invoke-CourseCli.ps1 -Action Inspect</code> を実行します。  </li>
+</ol>
+<p>   <code>unity/evidence/22-cli-inspect.txt</code> をVS CodeのFile → Open Fileで開き、バージョンと末尾の <code>RESULT: PASS</code> を確認します。</p>
+<figure><a href="../hht/assets/unity/22-cli-inspect.jpg"><img loading="lazy" src="../hht/assets/unity/22-cli-inspect.jpg" alt="Unity CLIの実出力ログをVS Codeで開き、CLIバージョンとEditor一覧を確認する画面"></a><figcaption>Unity CLIの実出力ログをVS Codeで開き、CLIバージョンとEditor一覧を確認する画面（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Unity Editorでシーンを保存し、教材用Editorを閉じます。  </li>
+</ol>
+<p>   <code>pwsh -NoProfile -File .\unity\scripts\Invoke-CourseCli.ps1 -Action Verify</code> を実行し、検査終了まで待ちます。  </p>
+<p>   開いている教材Editorを検出すると停止するため、保存・終了して再実行します。</p>
+<ol>
+<li>実行直後に <code>$LASTEXITCODE</code> を確認します。  </li>
+</ol>
+<p>   0以外なら表示された理由と <code>unity/evidence/22-cli-editor.log</code> を調べます。  </p>
+<p>   スクリプトは <code>unity run</code> に <code>-executeMethod LessonSamples.Verify</code> を渡します。  </p>
+<p>   <code>-quit</code> と <code>-batchmode</code> はUnity CLIが管理するため追加しません。</p>
+<ol>
+<li><code>unity/evidence/22-cli-verify.txt</code> をVS Codeで開き、<code>CLI exit code: 0</code>、<code>startScenes:28</code>、<code>completedScenes:28</code>、<code>status:PASS</code>、末尾の <code>RESULT: PASS</code> を照合します。  </li>
+</ol>
+<p>   画面は実行済みコマンドの出力ログです。</p>
+<p>![Unity CLIによる実検査の出力ログ。  </p>
+<p>終了コード0と収録した開始・完成シーン全件のPASSをVS Codeで確認する](../../assets/unity/22-cli-verify.jpg)</p>
+<ol>
+<li>Unity Hubから教材を開き直し、<code>Assets/Scenes/22-UnityCLI.unity</code> を開きます。  </li>
+</ol>
+<p>   CLIは、このプロジェクトのEditor処理を呼び出していることを確認します。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/22-UnityCLI.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/22-UnityCLI.unity">完成サンプル</a>。  </p>
+<p>この単元はシーンの見た目を変更せず、検査ログを成果物にします。</p>
+<figure><a href="../hht/assets/unity/22-complete.png"><img loading="lazy" src="../hht/assets/unity/22-complete.png" alt="Unity CLI単元で使う保存済み展示シーン"></a><figcaption>Unity CLI単元で使う保存済み展示シーン（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・用語：</strong> CLIの <code>unity.exe</code> とEditorの <code>Unity.exe</code> は別のプログラムです。  </p>
+<p><code>run</code> はプロジェクトに指定されたEditorを呼び出します。  </p>
+<p>この検査はシーンの存在、Missing Script、Camera、Timelineの接続、UIとVFXの参照を調べます。  </p>
+<p>見た目、キー長押し、音の聴取はPlayで別途確認します。  </p>
+<p>PASSだけで全課題の合格にはしません。  </p>
+<p>CLIはベータ版なので、環境が異なる場合は <code>unity --help</code> と公式資料で構文を照合します。</p>
+<p><strong>確認して報告：</strong> CLIとEditorのバージョン、実行コマンド、終了コード、ログ、実画面1枚、手動確認の残件を共通の3行メモへまとめます。  </p>
+<p>ログは <code>unity/evidence</code>、検査レポートはプロジェクト直下に保存されます。  </p>
+<p>認証情報は提出しません。</p>
+<div id="unity-23" class="anchor"></div>
+<h3>U23 Shader Graph：ノードで展示物の色を指定する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=23&amp;variant=start">U23 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=23&amp;variant=complete">U23 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・展示を調整する制作者。  </p>
+<p><strong>困りごと：</strong> 色を決める仕組みと、物体へ適用する材質の関係が分かりません。  </p>
+<p><strong>変更：</strong> Shader GraphのColorプロパティをFragmentのBase Colorへつなぎ、Materialから展示物を橙へ変更します。  </p>
+<p>位置、床、照明、ほかの単元の材質は変えません。  </p>
+<p><strong>完成条件：</strong> 色プロパティからBase Colorへの接続、Materialへの適用、Gameの橙色の表示を確認し、Shader・Material・Rendererの役割を説明できること。</p>
+<p><strong>準備：</strong> <code>Assets/Scenes/23-ShaderGraph.unity</code> を開き、作業用の別名で保存します。  </p>
+<p>A Exhibitは青い立方体、F DisplayFloorは黒に近い紺の床です。  </p>
+<p>URPとShader Graph 17.3が導入された専用プロジェクトを使います。  </p>
+<p>完成見本は <code>Assets/Scenes/Completed/23-ShaderGraph.unity</code> です。</p>
+<figure><a href="../hht/assets/unity/23-before.png"><img loading="lazy" src="../hht/assets/unity/23-before.png" alt="青いA Exhibitと床があるShader Graph単元の開始シーン"></a><figcaption>青いA Exhibitと床があるShader Graph単元の開始シーン（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Projectの <code>Assets/LessonSamples/ShaderGraph/ExhibitStart.shadergraph</code> を複製して <code>StudentExhibit.shadergraph</code> とし、ダブルクリックでShader Graphを開きます。  </li>
+</ol>
+<p>   元の開始・完成見本は編集しません。</p>
+<ol>
+<li>Blackboardの <strong>Exhibit Color</strong> と、同名のPropertyノードを確認します。  </li>
+</ol>
+<p>   見えないときはBlackboardを表示し、プロパティをグラフ上へドラッグします。  </p>
+<p>   Propertyノード右側の出力から、Fragmentの <strong>Base Color</strong> 左側の入力へドラッグして接続します。  </p>
+<p>   Save Assetで保存します。</p>
+<figure><a href="../hht/assets/unity/23-graph.jpg"><img loading="lazy" src="../hht/assets/unity/23-graph.jpg" alt="Exhibit ColorからFragmentのBase Colorへ接続したShader Graphの実画面"></a><figcaption>Exhibit ColorからFragmentのBase Colorへ接続したShader Graphの実画面（クリックで拡大）</figcaption></figure>
+<ol>
+<li>ProjectでMaterialを作成し、InspectorのShaderへ自分のグラフを設定します。  </li>
+</ol>
+<p>   グラフのShaderメニューは <code>Course/StudentExhibit</code> です。  </p>
+<p>   名前が異なる場合は作成したグラフ名を選びます。</p>
+<ol>
+<li>Materialの <strong>Exhibit Color</strong> を橙 <code>#C67B00</code> に設定し、Hierarchyの <strong>Exhibit</strong> へドラッグして適用します。  </li>
+</ol>
+<p>   床へ適用しないでください。  </p>
+<p>   開始シーンにあった青い表示と比べます。  </p>
+<p>   ExhibitのCourse Object IdentityのColor Hexも <code>#C67B00</code>、Color Nameを <code>橙</code> に更新し、凡例と材質を一致させます。</p>
+<ol>
+<li>Playして、A Exhibitが橙で表示されることを確認します。  </li>
+</ol>
+<p>   物体名のA Exhibitと右下の凡例も照合します。  </p>
+<p>   StopしてシーンとMaterialを保存します。</p>
+<figure><a href="../hht/assets/unity/23-complete-play.png"><img loading="lazy" src="../hht/assets/unity/23-complete-play.png" alt="Shader GraphのMaterialを適用し、橙になったA Exhibitを実行した画面"></a><figcaption>Shader GraphのMaterialを適用し、橙になったA Exhibitを実行した画面（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント：</strong> Shader Graphは描画の計算をノードで組み立てます。  </p>
+<p>MaterialはそのShaderと色などの値を保持し、RendererがMaterialを使って物体を描きます。  </p>
+<p>今回は照明の影響を受けないUnlitなので、U10のLit材質とは陰影が異なります。  </p>
+<p>Graph編集はEditorで行い、WebGLでは実行結果を確認します。  </p>
+<p>Colorの設定値は材質と補助凡例の両方で合わせます。</p>
+<p><strong>確認して報告：</strong> 接続したノード名、適用したMaterial名、設定した色、SceneとGameで確認した結果を記録します。  </p>
+<p>グラフの接続とGame画面を各1枚添え、保存して開き直しても結果が残ることを説明します。  </p>
+<p>WebGLの完成見本を見ただけで、自分のグラフの接続確認を済ませた扱いにはしません。</p>
+<div id="unity-24" class="anchor"></div>
+<h3>U24 ゲームループ・共有プレイデータ・セーブ管理</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=24&amp;variant=start">U24 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=24&amp;variant=complete">U24 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示担当者・繰り返しゲームを遊ぶ来場者。  </p>
+<p><strong>困りごと：</strong> シーンを読み直すと得点が消え、再挑戦とアプリ再起動でも同じデータを残そうとして管理が混乱しています。  </p>
+<p><strong>変更：</strong> タイトル→プレイ→結果→再挑戦の状態遷移を作り、シーンをまたぐ今回のプレイ状態と、次回起動へ残す記録を分けます。  </p>
+<p><strong>完成条件：</strong> 完成例で得点2のままシーンを読み直せること、Rootが1個であること、再挑戦で今回の得点だけ0になること、保存完了後のアプリ再起動で今回得点0・最高得点3以上になること、保存失敗・破損・旧形式・未知の新形式の扱いを説明できること。</p>
+<p><strong>準備：</strong> <code>Assets/Scenes/24-GameLoop.unity</code> を作業用の別名で保存します。  </p>
+<p>完成見本は <code>Assets/Scenes/Completed/24-GameLoop.unity</code> です。  </p>
+<p>A Exhibitは青い立方体、F DisplayFloorは黒に近い紺の床です。  </p>
+<p>UIのボタンは英語表示です。  </p>
+<p>U04・U07・U18・U22を先に確認します。  </p>
+<p>この単元は配布コードの責任と寿命をたどる90〜120分の演習で、全コードの書写は求めません。</p>
+<figure><a href="../hht/assets/unity/24-before.png"><img loading="lazy" src="../hht/assets/unity/24-before.png" alt="開始例のExhibitUIと、シーン再読込後も保持が無効のInspector"></a><figcaption>開始例のExhibitUIと、シーン再読込後も保持が無効のInspector（クリックで拡大）</figcaption></figure>
+<p><strong>先に決めるデータの寿命</strong></p>
+<ul>
+<li><strong>設定：CourseGameRules（SO）。</strong>  </li>
+</ul>
+<p>  <code>Assets/LessonSamples/CourseGameRules.asset</code> は目標点3を保存するScriptableObjectです。  </p>
+<p>  シーン間で同じ設定アセットを参照します。  </p>
+<p>  実行中の得点を書き込む場所にはしません。  </p>
+<p>  SOはGameObjectへ付けるComponentではありません。</p>
+<ul>
+<li><strong>今回のプレイ：CoursePlaySession。</strong>  </li>
+</ul>
+<p>  状態、今回得点、未保存の結果件数を持つ通常のC#オブジェクトです。  </p>
+<p>  再挑戦で今回得点を0にし、アプリを終了すると失われます。</p>
+<ul>
+<li><strong>次回へ残す記録：CourseSaveData。</strong>  </li>
+</ul>
+<p>  <code>version</code>、<code>bestScore</code>、<code>completedRuns</code> だけをJSONへ保存します。  </p>
+<p>  シーン内のGameObject・UI・Transformの参照は含めません。  </p>
+<p>  再挑戦しても保存済み最高得点は消しません。</p>
+<p><strong>Unityの更新ループとゲームの進行を分ける</strong></p>
+<p>UnityがPlayer loopを動かし、MonoBehaviourのAwake、OnEnable、Start、Update、FixedUpdate、LateUpdateなどを呼びます。  </p>
+<p>自分で終了しない <code>while</code> を回してフレームを作らないでください。  </p>
+<p>毎フレームの処理はUpdate、物理更新と歩調を合わせる処理はFixedUpdate、追従カメラなどはLateUpdateへ配置します。  </p>
+<p>FixedUpdateは表示1フレームに0回または複数回の場合もあります。  </p>
+<p>ほかのGameObjectのAwakeとの実行順を当てにして初期化しません。</p>
+<p>これとは別に、ゲームの進行を <strong>Title → Playing → Result → Playing</strong> と定義します。  </p>
+<p>サンプルではボタンのイベントから <code>StartRun</code>、<code>Collect</code>、<code>Finish</code>、<code>Retry</code> を呼びます。  </p>
+<p>Playing以外の加点や、3点未満の結果確定を状態の側で拒否します。  </p>
+<p>ファイル保存をUpdateから毎フレーム呼びません。</p>
+<ol>
+<li>開始シーンをPlayし、<strong>開始 → +1を2回 → シーンを再読込</strong> の順に操作します。  </li>
+</ol>
+<p>   今回得点が0、状態が「タイトル」へ戻ることを確認します。  </p>
+<p>   開始例は <code>keepAcrossSceneReload</code> が無効で、シーンの表示を作るたびに今回のセッションを作り直します。  </p>
+<p>   セーブした記録の消去ではありません。</p>
+<ol>
+<li>Stopし、作業用シーンのHierarchyで <strong>ExhibitUI</strong> を選びます。  </li>
+</ol>
+<p>   Course Game Lessonの <strong>シーン再読込後も保持</strong> を有効にして保存します。  </p>
+<p>   「ゲームルール」には配布のCourseGameRulesアセットを割り当てます。  </p>
+<p>   完成見本でも同じ割当を確認できます。</p>
+<ol>
+<li>Playして、「タイトル」の今回得点0を確認します。  </li>
+</ol>
+<p>   <strong>開始</strong> で「プレイ中」になり、<strong>+1</strong> を2回押すと今回得点2になります。  </p>
+<p>   3点になる前は「結果と保存」ボタンが無効です。</p>
+<p>![完成例のタイトル画面。  </p>
+<p>今回得点、保存済み最高得点、状態を分けて表示する](../../assets/unity/24-title.png)</p>
+<p><strong>シーンをまたぐ保持の組み方</strong></p>
+<p><a href="./project/Assets/Scripts/CourseSessionRoot.cs">CourseSessionRoot.cs</a> の <code>Ensure</code> が実行中の所有者を1個だけ用意します。  </p>
+<p>Awakeで重複を拒否し、ルートGameObjectへ <code>DontDestroyOnLoad</code> を使います。  </p>
+<p><code>Instance</code> は所有者への入口で、得点そのものをどのスクリプトからでも書けるstatic変数にはしません。  </p>
+<p>値は読み取り用プロパティで公開し、変更はStartRunなどの操作を通します。  </p>
+<p>static参照はSubsystemRegistrationで初期化し、OnDestroyでも自身の参照を解除します。  </p>
+<p>Domain Reloadを省略するEditor設定でも、前回Playのstatic値を持ち越さないためです。</p>
+<p><a href="./project/Assets/Scripts/CourseGameLesson.cs">CourseGameLesson.cs</a> はOnEnableで所有者を取得し、変更通知を購読し、OnDisableで解除します。  </p>
+<p>シーンのUIやPlayerへの参照はシーン側が持ちます。  </p>
+<p>永続Rootに破棄済みUIの参照を残さず、読み直したシーンが同じプレイ状態へ接続し直します。  </p>
+<p>これは小規模サンプルの構成例です。  </p>
+<p>Unityが唯一のGameManager構成を指定しているわけではなく、規模に応じてBootstrapシーンや明示的な依存注入も選べます。</p>
+<ol>
+<li>得点2の状態で <strong>シーンを再読込</strong> を押します。  </li>
+</ol>
+<p>   <strong>画面ID</strong> の番号が変わり、今回得点2・「プレイ中」・<strong>管理元：1個</strong> が維持されることを確認します。  </p>
+<p>   番号は表示側のインスタンスIDで、保存データには含めません。  </p>
+<p>   同じシーンを実際に破棄・再生成していることを比べるための補助表示です。</p>
+<ol>
+<li><strong>+1 → 結果と保存</strong> と進めます。  </li>
+</ol>
+<p>   「結果」になり、<strong>保存状態：保存済み（形式2）</strong>、保存済み最高得点3、保存済み完了件数の増加を確認します。  </p>
+<p>   同期中は操作を待ちます。  </p>
+<p>   保存済み記録がすでにある場合、最高得点は既存値と比較した大きい方です。</p>
+<figure><a href="../hht/assets/unity/24-reload.png"><img loading="lazy" src="../hht/assets/unity/24-reload.png" alt="シーンを読み直しても今回得点2が残り、Rootが1個の完成例"></a><figcaption>シーンを読み直しても今回得点2が残り、Rootが1個の完成例（クリックで拡大）</figcaption></figure>
+<p><strong>セーブファイルの責任と失敗時の扱い</strong></p>
+<p><a href="./project/Assets/Scripts/CourseSaveStore.cs">CourseSaveStore.cs</a> は、UIやシーンに依存しない読み書き処理です。  </p>
+<p><code>Application.persistentDataPath</code> の下の <code>EduCourseLoop/save.json</code> を使います。  </p>
+<p>AssetsやResourcesは配布するアセットの場所で、プレイ記録の保存先にはしません。  </p>
+<p>JsonUtilityではSerializableな型の対応するフィールドを保存し、任意のDictionaryなどをそのまま扱えるとは考えません。</p>
+<ul>
+<li><strong>保存：</strong> データを検証し、同じフォルダーの <code>.tmp</code> へ書き、読み直して検証します。  </li>
+</ul>
+<p>  既存の正常な記録を <code>.bak</code> へ残してから本体を置き換えます。  </p>
+<p>  最初の保存には以前の記録がないため、バックアップは次の保存から作られます。  </p>
+<p>  WindowsではFile.Replace、WebGLではメモリー上の仮想ファイルを更新し、その後IndexedDBへ同期します。  </p>
+<p>  全環境・電源断で同じ原子性を保証する実装ではありません。</p>
+<ul>
+<li><strong>読み込み：</strong> ファイルがなければ新規記録にします。  </li>
+</ul>
+<p>  本体が壊れていて正常なバックアップがあれば回復します。  </p>
+<p>  両方が読めない既存記録を、黙って0点で上書きしません。  </p>
+<p>  復元するまで書き込みを止め、画面へ理由を表示します。</p>
+<ul>
+<li><strong>バージョン：</strong> 現行はv2です。  </li>
+</ul>
+<p>  v1の <code>highScore</code> はメモリー上で <code>bestScore</code> へ変換します。  </p>
+<p>  読み込みだけでは旧ファイルを変更せず、次の保存でv2を書きます。  </p>
+<p>  v99など未知の新しい形式は上書き禁止にします。  </p>
+<p>  古いバックアップへ黙って戻して新しい記録を失わせません。</p>
+<ul>
+<li><strong>保存タイミング：</strong> 結果確定をチェックポイントにして保存し、アプリの一時停止時には未保存の結果を保存します。  </li>
+</ul>
+<p>  終了通知だけに依存しません。  </p>
+<p>  再保存しても完了件数が二重に増えないよう、保存成功後に未保存件数を消費します。</p>
+<ul>
+<li><strong>保存完了：</strong> Windowsの書き込み成功と、ブラウザの非同期保存完了を区別します。  </li>
+</ul>
+<p>  WebGLはFS.syncfsの完了コールバック後に「保存済み」を表示します。  </p>
+<p>  再読み込みも確認してください。  </p>
+<p>  ブラウザのサイトデータ削除、プライベートモード、容量制限などで記録が失われる・保存できない場合があります。  </p>
+<p>  PlayerPrefsは小さな設定値向けで、暗号化や改ざん防止の仕組みではありません。  </p>
+<p>  このJSONも改ざん対策やクラウド同期は扱いません。  </p>
+<p>  サンプルの対象は1プロセス・1スロットで、複数起動の排他や複数スロットはU37の発展内容です。</p>
+<figure><a href="../hht/assets/unity/24-result.png"><img loading="lazy" src="../hht/assets/unity/24-result.png" alt="結果画面で今回得点3と保存済み最高得点、保存済み（形式2）を確認する"></a><figcaption>結果画面で今回得点3と保存済み最高得点、保存済み（形式2）を確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li><strong>保存</strong> をもう一度押し、完了件数が二重に増えないことを確認します。  </li>
+</ol>
+<p>   <strong>再試行</strong> でPLAYING・今回得点0になっても、保存済み最高得点は残ります。</p>
+<figure><a href="../hht/assets/unity/24-retry.png"><img loading="lazy" src="../hht/assets/unity/24-retry.png" alt="再試行で今回得点だけ0になり、保存済み最高得点3と完了件数1が残る"></a><figcaption>再試行で今回得点だけ0になり、保存済み最高得点3と完了件数1が残る（クリックで拡大）</figcaption></figure>
+<ol>
+<li>EditorではStopして再びPlay、ブラウザでは同じURLを再読み込みします。  </li>
+</ol>
+<p>   TITLE・今回得点0・保存済み最高得点3以上を確認します。  </p>
+<p>   <strong>新しいセッション</strong> は今回のセッションを捨てて保存済み記録を読み直す操作で、セーブファイル削除ではありません。  </p>
+<p>   未保存の結果がある場合は失われます。</p>
+<ol>
+<li>Editorを保存して閉じ、PowerShellで <code>unity run unity/project --timeout 180 -- -executeMethod GameLoopLesson.SaveTests -logFile &lt;絶対パスの検査ログ&gt;</code> を実行します。  </li>
+</ol>
+<p>   <code>&lt;絶対パスの検査ログ&gt;</code> は自分の保存先へ置き換えます。  </p>
+<p>   終了コード0と <code>unity/evidence/24-loop-save-tests.json</code> のPASSを確認します。  </p>
+<p>   検査は新規作成した一時フォルダーだけを使い、正常往復・破損回復・移行・未来版の保護・書き込み失敗を試します。  </p>
+<p>   自分の実セーブを壊す必要はありません。</p>
+<figure><a href="../hht/assets/unity/24-restart.png"><img loading="lazy" src="../hht/assets/unity/24-restart.png" alt="Playを開始し直すと今回得点は0、保存済み最高得点は3として復元される"></a><figcaption>Playを開始し直すと今回得点は0、保存済み最高得点は3として復元される（クリックで拡大）</figcaption></figure>
+<p><strong>確認して報告：</strong> 状態遷移、設定・今回の状態・永続記録それぞれの所有者と寿命、シーン読み直し前後の得点とRoot数、再起動前後の値、保存成功・失敗の判定、移行とバックアップの検査結果を記録します。  </p>
+<p>画面で確認したことと、機械検査だけで確認したことを区別してください。</p>
+<div id="unity-25" class="anchor"></div>
+<h3>U25 複数のバージョン管理手法</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=25&amp;variant=start">U25 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=25&amp;variant=complete">U25 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示制作の担当者から、プログラマーとアセット制作者が変更を戻せる制作環境を依頼されました。  </p>
+<p><strong>困りごと：</strong> 「完成版2」「最終版」のコピーでは、どの変更を採用したか分かりません。  </p>
+<p><strong>変更：</strong> 管理方式を比較し、ローカルの共有リポジトリと2人分の作業コピーで、履歴・差分・GUID・大きなファイルの受け渡しを確認します。  </p>
+<p><strong>完成条件：</strong> Gitの履歴とLFSの実体を別の作業コピーで確認し、metaを維持できること、チームに選ぶ方式と理由を説明できます。  </p>
+<p>外部アカウント作成・送信・既存リポジトリの変更は対象外です。</p>
+<p><strong>準備：</strong> U07・U22を確認します。  </p>
+<p>Unityの配置演習は <code>Assets/Scenes/25-VersionControl.unity</code> を別名保存して使います。  </p>
+<p>完成見本は <code>Assets/Scenes/Completed/25-VersionControl.unity</code> です。  </p>
+<p>青のAと淡い紫のDは別の共有Prefabです。  </p>
+<p>WebGLは配置見本の比較用で、Gitやクラウドを実行しません。  </p>
+<p>Git演習にはGit、Git LFS、Python、VS Codeが必要です。  </p>
+<p>教材ルートのPowerShellを使います。</p>
+<p><strong>方式を選ぶヒント：</strong> 以下は導入候補の比較です。  </p>
+<p>アカウント・サーバーの設定操作はこの演習では行いません。</p>
+<ul>
+<li><strong>Git：</strong> 各作業コピーが履歴を持ち、ローカルでコミット・分岐できます。  </li>
+</ul>
+<p>  コードやテキスト設定を小さくレビューして統合する制作に向きます。  </p>
+<p>  GitHub・GitLab等は共有先のサービスであり、Gitそのものとは分けます。</p>
+<ul>
+<li><strong>Git＋Git LFS：</strong> PSD・動画等の大きなバイナリはGit内のポインターとLFS側の実体に分けます。  </li>
+</ul>
+<p>  履歴を小さくできますが、複製先にはLFSの実体も必要です。  </p>
+<p>  LFSだけでバイナリをマージ可能にはしません。  </p>
+<p>  ロックは対応するLFSサーバーと運用規則が必要で、今回のローカル演習では未検証です。</p>
+<ul>
+<li><strong>Unity Version Control（UVCS）：</strong> changeset、branch、workspaceで制作を管理します。  </li>
+</ul>
+<p>  アセット中心の制作やロック運用も候補になります。  </p>
+<p>  作業対象を絞るGluonと通常のワークスペースの使い分け、ロック取得・解除の担当、サーバー／プランを導入前に確認します。  </p>
+<p>  この教材の実機演習はGitを使用し、UVCSクラウドの接続・ロックは実行していません。</p>
+<ul>
+<li><strong>Perforce／SVN：</strong> 共有サーバーを中心にする運用の候補です。  </li>
+</ul>
+<p>  Perforceのチェックアウト・排他管理、SVNの履歴・ロック等を、既存チームの資産や必要なツールと比較します。  </p>
+<p>  製品ごとのセットアップは対象外です。</p>
+<ul>
+<li><strong>ZIP・同期ドライブ：</strong> 区切りごとの配布やバックアップに使えます。  </li>
+</ul>
+<p>  誰の変更をどこへ統合したかという履歴や競合解決は別に必要です。  </p>
+<p>  開いたUnityプロジェクトを複数人で同じ同期フォルダーから編集する運用は避け、各自の作業コピーを持ちます。</p>
+<p><strong>作業手順：</strong></p>
+<ol>
+<li>配布プロジェクトの <code>Project Settings &gt; Version Control</code> が <strong>Visible Meta Files</strong>、<code>Editor &gt; Asset Serialization</code> が <strong>Force Text</strong> になっていることを確認します。  </li>
+</ol>
+<p>   Gitへ渡す基本は <code>Assets</code> とmeta、<code>Packages/manifest.json</code>・<code>packages-lock.json</code>、<code>ProjectSettings</code> です。  </p>
+<p>   <code>Library</code>・<code>Temp</code>・<code>Logs</code>・<code>UserSettings</code> は作業環境ごとの生成物として除外します。  </p>
+<p>   公開しない認証情報は含めません。</p>
+<ol>
+<li><code>python unity/scripts/collaboration_lab.py create</code> を実行します。  </li>
+</ol>
+<p>   毎回別名の <code>test-results/unity-team-…</code> が作られます。  </p>
+<p>   表示された <code>root</code> が自分の演習先です。  </p>
+<p>   教材本体のGit履歴・index・remoteには触れません。  </p>
+<p>   <code>origin.git</code> は共有先、<code>alice</code> と <code>bob</code> は独立した作業コピーです。  </p>
+<p>   これはUnityアセットの最小Git演習で、Unityで開く完全なプロジェクトではありません。</p>
+<ol>
+<li>VS Codeの <strong>ファイル &gt; フォルダーを開く</strong> で演習先の <code>alice</code> を開き、左のソース管理を選びます。  </li>
+</ol>
+<p>   グラフにBaseline・Alice・Bobの履歴があること、同じSOを変更したため <strong>Merge Changes</strong> が1件あることを確認します。  </p>
+<p>   U27で解決するため、ここでは保留します。</p>
+<figure><a href="../hht/assets/unity/25-git.jpg"><img loading="lazy" src="../hht/assets/unity/25-git.jpg" alt="VS Codeのソース管理にMerge Changesが1件あり、実際のUnity設定アセットのtargetScoreが4と5で競合している"></a><figcaption>VS Codeのソース管理にMerge Changesが1件あり、実際のUnity設定アセットのtargetScoreが4と5で競合している（クリックで拡大）</figcaption></figure>
+<ol>
+<li><code>alice</code> のターミナルで <code>git log --oneline --graph --all</code>、<code>git diff --name-only --diff-filter=U</code> を実行し、ブランチと競合ファイルを確認します。  </li>
+</ol>
+<p>   <code>git show HEAD:Assets/palette.bin</code> ではLFSのポインター、<code>git lfs ls-files</code> では追跡対象を確認します。  </p>
+<p>   <code>bob/Assets/palette.bin</code> には実データが届いています。  </p>
+<p>   LFSを使う形式は <code>git lfs track</code> で登録し、生成された <code>.gitattributes</code> も共有します。</p>
+<ol>
+<li>Unityへ戻り、完成見本でAとDを選びます。  </li>
+</ol>
+<p>   InspectorのPrefab参照から <code>Assets/LessonSamples/TeamSharing</code> の元Prefabを確認します。  </p>
+<p>   アセット名の変更・移動はProjectウィンドウで行い、対応するmetaも一緒に共有します。  </p>
+<p>   metaを消して作り直すとGUIDが変わり、参照先を失う場合があります。</p>
+<figure><a href="../hht/assets/unity/25-complete.png"><img loading="lazy" src="../hht/assets/unity/25-complete.png" alt="U25の完成シーンで共有PrefabのAとDを分けて配置し、InspectorからPrefab参照を確認する"></a><figcaption>U25の完成シーンで共有PrefabのAとDを分けて配置し、InspectorからPrefab参照を確認する（クリックで拡大）</figcaption></figure>
+<p><strong>確認して報告：</strong> 制作人数、扱うバイナリの量、レビュー担当、ロックの要否を挙げ、Git・Git LFS・UVCS等から選ぶ理由を書きます。  </p>
+<p>ローカルで確認した操作と、接続していないサービスの比較説明を区別してください。  </p>
+<p>Gitの共有先だけでなくLFSの実体も復元できるかはU27で確認します。</p>
+<div id="unity-26" class="anchor"></div>
+<h3>U26 複数のデータ共有手法</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=26&amp;variant=start">U26 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=26&amp;variant=complete">U26 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示制作の担当者から、別チームにも同じ展示Prefabを渡したいと依頼されました。  </p>
+<p><strong>困りごと：</strong> Prefabだけコピーすると材質やスクリプトを失い、各チームで別物になります。  </p>
+<p><strong>変更：</strong> 依存関係と版を含めて共有し、受け取り側で参照を確認します。  </p>
+<p><strong>完成条件：</strong> unitypackageとローカルUPMの違いを説明し、別プロジェクトで共有Prefab・材質・識別子が揃うことを確認できます。  </p>
+<p><strong>準備：</strong> U07・U22・U25を確認します。  </p>
+<p><code>Assets/Scenes/26-DataSharing.unity</code> を別名保存して使い、完成見本は <code>Assets/Scenes/Completed/26-DataSharing.unity</code> です。  </p>
+<p>WebGLでは受け取り後のA・Dの配置を比較します。  </p>
+<p>ブラウザからパッケージはインポートしません。</p>
+<p><strong>共有先によって方式を選ぶ：</strong></p>
+<ul>
+<li><strong>同じゲームのソース共有：</strong> Git／UVCSでプロジェクトの必要なファイルをまとめて渡します。  </li>
+</ul>
+<p>  Editor版、パッケージの版、GUIDを揃えます。  </p>
+<p>  チームメンバーには各自の作業コピーを用意します。</p>
+<ul>
+<li><strong>unitypackage：</strong> 選択したアセットをmeta・依存アセットとまとめて渡す単発の配布に使います。  </li>
+</ul>
+<p>  受け手のAssetsへ取り込まれるため、継続的な版更新・依存パッケージの管理は受け手の確認が必要です。  </p>
+<p>  同じGUIDを持つアセットの上書き対象をImport画面で確認します。</p>
+<ul>
+<li><strong>UPM：</strong> <code>package.json</code> の名前・版・依存関係を持つ再利用単位にします。  </li>
+</ul>
+<p>  ディスク上のフォルダー、tgz、Git URL、scoped registry等から導入できます。  </p>
+<p>  Git URLではcommitやtagを指定して採用版を固定し、依存関係の変更をレビューします。  </p>
+<p>  ローカルの絶対パスは他のPCへそのまま渡せないため、配布先で置き直すか共有可能な供給先を決めます。</p>
+<ul>
+<li><strong>AssetBundle／Addressables：</strong> ビルド済みアセットを実行中のプレイヤーへ届ける用途です。  </li>
+</ul>
+<p>  開発用ソースの共同編集とは別です。  </p>
+<p>  Addressablesはアドレス・依存・カタログ・ロードと解放を管理し、配信先は別に用意します。  </p>
+<p>  遠隔配信と版の互換性は予定単元で扱います。</p>
+<ul>
+<li><strong>共有ストレージ・ZIP：</strong> 編集元のPSD・動画、書き出したビルド等を渡す用途に使えます。  </li>
+</ul>
+<p>  担当者、版、ライセンス、チェックサムを添えます。  </p>
+<p>  Git LFSを使う場合もポインターだけ渡して終了せず、実体の取得を確認します。</p>
+<ul>
+<li><strong>プレイデータの共有：</strong> SO・static・DontDestroyOnLoadは別PCへの同期手段ではありません。  </li>
+</ul>
+<p>  プレイヤー間の同期やクラウドセーブには、サーバー側の認証・保存・競合規則が必要です。  </p>
+<p>  ローカル保存はU24、ネットワーク同期は予定単元で区別します。</p>
+<p><strong>作業手順：</strong></p>
+<ol>
+<li>UnityのProjectで <code>Assets/LessonSamples/TeamSharing</code> を開き、Aの <strong>Exhibit</strong> とDの <strong>ExhibitRight</strong> のPrefab、それぞれのMaterialを確認します。  </li>
+</ol>
+<p>   共通スクリプトは <code>Assets/Scripts/CourseObjectIdentity.cs</code> です。  </p>
+<p>   共有元を複製してから変更し、他単元で使うPrefabを直接書き換えません。</p>
+<figure><a href="../hht/assets/unity/26-sharing.jpg"><img loading="lazy" src="../hht/assets/unity/26-sharing.jpg" alt="UnityのProjectで共有用TeamSharingフォルダーを開き、共有するPrefabとMaterialを確認する"></a><figcaption>UnityのProjectで共有用TeamSharingフォルダーを開き、共有するPrefabとMaterialを確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>共有フォルダーと共通スクリプトを選択し、<strong>Assets &gt; Export Package</strong> を開きます。  </li>
+</ol>
+<p>   依存対象を確認して書き出します。  </p>
+<p>   受け手にも同じURPパッケージが必要です。  </p>
+<p>   自動検査では、Editorを閉じて <code>unity run unity/project --timeout 180 -- -executeMethod CollaborationLesson.ExportShared -logFile &quot;&lt;絶対パスのログ&gt;&quot;</code> を実行すると <code>test-results/TeamSharing.unitypackage</code> を再生成できます。</p>
+<ol>
+<li>教材ルートで <code>python unity/scripts/sharing_lab.py</code> を実行します。  </li>
+</ol>
+<p>   表示された新しい演習先にUPM用tgz、<code>unitypackage</code> と <code>upm</code> の2つの検査用プロジェクトができます。  </p>
+<p>   UPMは <code>Runtime</code> にasmdefとそのmeta、同じPrefab・材質・スクリプトとmetaを収め、<code>package.json</code> に <code>jp.edu.team-sharing</code>、版 <code>1.0.0</code>、URPの依存版を記載しています。  </p>
+<p>   教材では <code>hideInEditor: false</code> としてProjectから部品を選べるようにしています。  </p>
+<p>   アーカイブのバイト照合に失敗したら先へ進まず、再書き出しします。</p>
+<ol>
+<li>受け取り側では <strong>どちらか一方式</strong> を選びます。  </li>
+</ol>
+<p>   unitypackageはURPを入れた別プロジェクトで <strong>Assets &gt; Import Package &gt; Custom Package</strong> から取り込みます。  </p>
+<p>   UPMは別プロジェクトのPackage Managerで <strong>Install package from tarball</strong> から生成tgzを選びます。  </p>
+<p>   サンプルの <code>upm</code> 検査用プロジェクトはmanifestでこのローカルtgzを指定済みです。  </p>
+<p>   同じGUIDの二重配置を避けるため、両方式を同じプロジェクトに同時導入しません。</p>
+<ol>
+<li>受け取り側はURPのプロジェクトを使い、Graphics／QualityでURP Assetが有効かも確認します。  </li>
+</ol>
+<p>   検査用プロジェクトでは <strong>Course &gt; Inspect shared prefabs</strong> でURPを設定し、A・Dを配置して <code>SharedImportPreview</code> を保存し、Prefabを選択できます。  </p>
+<p>   Projectの一覧が空でもこのメニューから参照と描画を確認できます。  </p>
+<p>   新規プロジェクトでAとDをシーンへ配置します。  </p>
+<p>   Missing Scriptやピンクの材質がなく、名前・青／淡い紫・材質の参照が揃うことを確認します。  </p>
+<p>   自動確認は、各検査用プロジェクトを閉じて <code>unity run &quot;&lt;検査用プロジェクト&gt;&quot; --timeout 600 -- -executeMethod SharingImportVerify.Run -logFile &quot;&lt;絶対パスのログ&gt;&quot;</code> を実行し、<code>sharing-import-report.json</code> のPASSを確認します。  </p>
+<p>   unitypackage検査用への初回インポートは手順4のGUIで行います。  </p>
+<p>   自動で開いて取り込む場合は <code>unity open &quot;&lt;検査用プロジェクト&gt;&quot; --args &#x27;-executeMethod SharingImportVerify.Import&#x27;</code> とし、インポートが終わるまでEditorを開いたまま待ちます。</p>
+<figure><a href="../hht/assets/unity/26-upm.jpg"><img loading="lazy" src="../hht/assets/unity/26-upm.jpg" alt="別プロジェクトに導入したUPM由来のAとDをSceneに配置し、色とラベル、Prefab参照を確認する"></a><figcaption>別プロジェクトに導入したUPM由来のAとDをSceneに配置し、色とラベル、Prefab参照を確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>教材の完成シーンで、AとDが共有Prefabのインスタンスであることを確認します。  </li>
+</ol>
+<p>   継続配布では採用版・更新内容・戻す版を記録し、受け手のプロジェクトで再インポート・動作確認してから更新します。</p>
+<p><strong>確認して報告：</strong> 共有物がソース・再利用部品・実行用コンテンツ・プレイデータのどれかを示し、方式、版、依存関係、受け取り側での確認結果を提出します。  </p>
+<p>UPMとunitypackageの新規プロジェクトへの導入は検査済みです。  </p>
+<p>Git URL／registry・遠隔Addressables・クラウドセーブの実接続は本演習の対象外です。</p>
+<div id="unity-27" class="anchor"></div>
+<h3>U27 複数人での開発と統合</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=27&amp;variant=start">U27 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=27&amp;variant=complete">U27 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示制作の担当者から、2人の変更を1つの動く展示にまとめたいと依頼されました。  </p>
+<p><strong>困りごと：</strong> 同じ設定・シーンを同時に変えると、上書きや競合が起きます。  </p>
+<p><strong>変更：</strong> 担当・統合担当・完成条件を決め、小さな変更をレビューして統合し、別の作業コピーから復元します。  </p>
+<p><strong>完成条件：</strong> SOの実競合を合意した値5へ解決し、両者のレビュー記録・metaのGUID・LFS実体を残して新しいcloneで確認できます。  </p>
+<p>UnityではA・DのPrefabを別担当に分けた配置を完成させます。  </p>
+<p><strong>準備：</strong> U07・U24〜U26を確認します。  </p>
+<p>配置演習は <code>Assets/Scenes/27-TeamDevelopment.unity</code> の別名保存、完成見本は <code>Assets/Scenes/Completed/27-TeamDevelopment.unity</code> です。  </p>
+<p>Git演習はU25で作った演習先を使い、単独で始める場合は <code>collaboration_lab.py create</code> で新しいものを作ります。  </p>
+<p>数値設定のGit演習とUnityの配置演習は別の確認です。</p>
+<p><strong>開発フローを選ぶヒント：</strong></p>
+<ul>
+<li><strong>短命のブランチ＋レビュー：</strong> mainから作業ごとに分岐し、差分・確認結果を添えてレビュー後に統合します。  </li>
+</ul>
+<p>  共有サービスではPull Request／Merge Requestを使えます。  </p>
+<p>  教材ではローカルのレビュー記録を使い、実サービスへのPR送信はしません。</p>
+<ul>
+<li><strong>トランクベース開発：</strong> mainへ小さく頻繁に統合します。  </li>
+</ul>
+<p>  テストが速く、未完成機能を隠す仕組みがあるチーム向けです。  </p>
+<p>  長期間別々に作り続けるのを避けます。  </p>
+<p>  コードレビューの有無とは別の選択です。</p>
+<ul>
+<li><strong>Git Flow等の長命ブランチ：</strong> develop・release・hotfix等を分ける運用は、複数の保守版や出荷準備を並行する場合の候補です。  </li>
+</ul>
+<p>  小規模展示では統合・バックポートの負担も比較します。  </p>
+<p>  ブランチを増やすこと自体を目的にしません。</p>
+<ul>
+<li><strong>ロックを使う制作：</strong> マージしにくいPSD・音声・大きなシーン等は、UVCS／Perforce／対応LFSサーバー等で担当とロックを調整します。  </li>
+</ul>
+<p>  取得前の最新版確認、解除担当、不在時の扱いを決めます。  </p>
+<p>  ロックで参照破損や完成品質まで保証されるわけではありません。</p>
+<p><strong>作業手順：</strong></p>
+<ol>
+<li>役割を先に決めます。  </li>
+</ol>
+<p>   AliceはAのPrefab、BobはDのPrefab、統合担当はシーン配置を持ちます。  </p>
+<p>   共通のSO・マテリアル・Input Actions・ProjectSettingsは変更前に相談します。  </p>
+<p>   Prefab、担当別のAdditiveシーン、asmdefやパッケージへの分割で同じファイルを触る範囲を減らせます。  </p>
+<p>   UnityのEditor版とパッケージ版を固定します。</p>
+<ol>
+<li><code>alice</code> をVS Codeで開き、<code>Assets/LessonSamples/CourseGameRules.asset</code> の競合を読みます。  </li>
+</ol>
+<p>   現在側は4、取り込み側は5です。  </p>
+<p>   両方を採用して同じプロパティを2行にせず、依頼者と合意した <strong>5</strong> を1つ残す方針にします。  </p>
+<p>   <code>m_Script</code>、fileID、metaのGUIDは変更しません。  </p>
+<p>   競合マーカーが残ったままUnityで編集・保存しません。</p>
+<figure><a href="../hht/assets/unity/27-conflict.jpg"><img loading="lazy" src="../hht/assets/unity/27-conflict.jpg" alt="実際のSOのYAMLに現在側targetScore 4と取り込み側targetScore 5が競合マーカー付きで表示される"></a><figcaption>実際のSOのYAMLに現在側targetScore 4と取り込み側targetScore 5が競合マーカー付きで表示される（クリックで拡大）</figcaption></figure>
+<ol>
+<li>VS Codeで取り込み側を採用し、保存→差分確認→ステージ→マージコミットの順に進められます。  </li>
+</ol>
+<p>   再現用スクリプトでは <strong>手動操作とどちらか一方</strong> を選び、<code>python unity/scripts/collaboration_lab.py resolve --root &quot;&lt;自分の演習先&gt;&quot;</code> を実行します。  </p>
+<p>   このコマンドは合意した5で解決し、両者の記録を残してローカル共有先へ反映し、新しいcloneも検査します。  </p>
+<p>   既に解決済みの演習へ再実行すると拒否します。</p>
+<figure><a href="../hht/assets/unity/27-resolved.jpg"><img loading="lazy" src="../hht/assets/unity/27-resolved.jpg" alt="競合解決後、targetScoreが5の1行になり、ソース管理に未処理の変更がなくAliceとBobのマージ履歴が残る"></a><figcaption>競合解決後、targetScoreが5の1行になり、ソース管理に未処理の変更がなくAliceとBobのマージ履歴が残る（クリックで拡大）</figcaption></figure>
+<ol>
+<li>出力されたPASSと演習先の <code>report.json</code> を確認します。  </li>
+</ol>
+<p>   別名の <code>restored-…</code> に、設定値5、両者のレビュー記録、元のmeta、LFSの元バイト列が復元されています。  </p>
+<p>   手動で解決した場合はローカル共有先へpushしてから <code>python unity/scripts/collaboration_lab.py check --root &quot;&lt;自分の演習先&gt;&quot;</code> で同じ確認ができます。  </p>
+<p>   <code>git status</code> に未処理の変更がないことを確認します。</p>
+<ol>
+<li>Scene／Prefabの競合は、UnityYAMLMerge（Smart Merge）を使う候補があります。  </li>
+</ol>
+<p>   Unity Editorの同梱ツールをGitのmerge driver等に設定します。  </p>
+<p>   通常のテキスト置換でfileIDを作り直したり、常に片側の全ファイルを採用したりしません。  </p>
+<p>   自動マージ後もEditorで参照・配置・実行結果を確認します。  </p>
+<p>   この演習のSO競合は合意値の手動相当解決で、UnityYAMLMergeの自動成功を検証したものではありません。</p>
+<ol>
+<li>配置演習では、開始シーンの重なったA・Dを確認します。  </li>
+</ol>
+<p>   Prefab内部の変更は各担当、シーンのインスタンス配置は統合担当に分け、AをX=-1.4、DをX=1.4、両方Y=0.5へ置きます。  </p>
+<p>   完成見本のように名前ラベル・色・明るさで別々に識別できることをPlayで確認します。</p>
+<figure><a href="../hht/assets/unity/27-before.png"><img loading="lazy" src="../hht/assets/unity/27-before.png" alt="U27開始のScene画面でAとDが重なり、名前ラベルも重なっている"></a><figcaption>U27開始のScene画面でAとDが重なり、名前ラベルも重なっている（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/27-complete.png"><img loading="lazy" src="../hht/assets/unity/27-complete.png" alt="U27完成のGame画面で、青いAと淡い紫のDが重ならず左右に配置され、識別ラベルと凡例が表示される"></a><figcaption>U27完成のGame画面で、青いAと淡い紫のDが重ならず左右に配置され、識別ラベルと凡例が表示される（クリックで拡大）</figcaption></figure>
+<ol>
+<li>レビューには依頼、変更範囲、動作確認、残件、元へ戻す方法を添えます。  </li>
+</ol>
+<p>   共有済み履歴の取り消しは打ち消しコミットを基本にし、他人が参照する履歴を無断で強制更新しません。  </p>
+<p>   CIではコンパイル・テスト・ビルドを検査し、統合後のUnity上の確認も担当を決めます。  </p>
+<p>   教材自体の更新は既存のWebGL更新タスクで全シーンを再ビルドします。</p>
+<p><strong>確認して報告：</strong> 採用した開発フロー、担当ファイル、統合担当、競合の合意内容、復元した作業コピーと検査結果を提出します。  </p>
+<p>ローカルGitの統合・復元とUnityの配置確認を区別し、クラウドのPR・権限・ロック・CIを実行したと報告しません。</p>
+<div id="unity-28" class="anchor"></div>
+<h3>U28 コンポーネントの依存管理と設定漏れの防止</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=28&amp;variant=start">U28 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=28&amp;variant=complete">U28 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示制作の担当者から、担当者が変わっても展示物の動作設定を落とさず渡したいと依頼されました。  </p>
+<p><strong>困りごと：</strong> スクリプトの付け忘れ、Rigidbodyの不足、移動先の参照漏れによって、動かなかったり実行時に例外が出たりします。  </p>
+<p><strong>変更：</strong> 依存する型・参照・有効状態を明記し、追加時・編集時・実行時・ビルド時に分けて確認します。  </p>
+<p><strong>完成条件：</strong> 開始シーンの参照漏れを特定して修正し、参照を外すと理由を表示して停止、明示的に戻すと再開できることを確認できます。  </p>
+<p>完成シーンの不備を検査で拒否でき、各予防策が保証する範囲を説明できます。</p>
+<p><strong>準備：</strong> U03・U04・U07・U08・U18・U22を確認します。  </p>
+<p><code>Assets/Scenes/28-ComponentSafety.unity</code> を自分用の別名で保存します。  </p>
+<p>完成見本は <code>Assets/Scenes/Completed/28-ComponentSafety.unity</code> です。  </p>
+<p>青い <strong>A Exhibit</strong> が移動する物体、淡い紫の <strong>D ExhibitRight</strong> が移動先の役割です。  </p>
+<p>ブラウザは設定漏れによる停止と復旧を体験する場所です。  </p>
+<p>コンポーネントの追加、Inspectorの参照設定、ビルド検査はEditorで行います。</p>
+<p><strong>予防策の役割を分ける：</strong></p>
+<ul>
+<li><strong>同じGameObjectの必要な型：</strong> <code>SafeExhibitDriver</code> に <code>RequireComponent</code> を付け、追加時にRigidbodyとBoxColliderを補います。  </li>
+</ul>
+<p>  この属性は別オブジェクトの参照やRigidbodyの設定値を保証しません。  </p>
+<p>  後から属性の依存型を増やしても、既存の全インスタンスを自動修復する仕組みにはなりません。</p>
+<ul>
+<li><strong>重複の防止：</strong> <code>DisallowMultipleComponent</code> で同じ動作スクリプトの重複追加を制限します。  </li>
+</ul>
+<p>  別のGameObjectに作られた複数インスタンスまで1個にするものではありません。</p>
+<ul>
+<li><strong>初期値と取得：</strong> <code>Reset</code> はEditorでの追加・Reset時の補助です。  </li>
+</ul>
+<p>  実行時の保証にはせず、<code>Awake</code> でも <code>TryGetComponent</code> で同じGameObjectの依存を確認します。  </p>
+<p>  再有効化ではOnEnableでローカルのキャッシュを取り直します。  </p>
+<p>  存在だけでなく、Kinematic、Gravity OFF、Collider有効もこのサンプルの契約です。</p>
+<ul>
+<li><strong>外部参照：</strong> 移動先は <code>SerializeField</code> の <code>CourseDestination</code> 型で明示します。  </li>
+</ul>
+<p>  任意のTransformより役割を絞れますが、None・自分自身・無効状態・別シーン・違う移動先も検査します。  </p>
+<p>  名前検索で見つかった物体へ黙って結び直しません。</p>
+<ul>
+<li><strong>編集時の値：</strong> <code>OnValidate</code> は速度を有限の正の値へ補正します。  </li>
+</ul>
+<p>  Editorだけの処理で、ロード中などメインスレッド以外から呼ばれることもあります。  </p>
+<p>  ここでは自身の数値だけを扱い、別オブジェクトの変更、AddComponent、アセット生成や保存は行いません。  </p>
+<p>  Inspectorの診断表示は別のCustom Editorで行います。</p>
+<ul>
+<li><strong>欠落したスクリプト自身の検出：</strong> 動作スクリプトが付いていなければ、そのAwakeも検査関数も動きません。  </li>
+</ul>
+<p>  別の <code>CourseDependencyLesson</code> が「AにはSafeExhibitDriverが1つ必要」と検査します。  </p>
+<p>  この検査役自体の存在・有効状態も、シーン一覧を持つEditor側の検査が確認します。</p>
+<ul>
+<li><strong>実行中の停止：</strong> 不備を理由付きで表示し、該当する動作だけ無効にします。  </li>
+</ul>
+<p>  破棄されたUnityオブジェクトも <code>if (!destination)</code> で確認します。  </p>
+<p>  例外が出るまで進めたり、毎フレーム同じエラーを出し続けたりしません。</p>
+<ul>
+<li><strong>初期化順序：</strong> コンポーネントが存在することと、依存先の初期化が完了していることは別です。  </li>
+</ul>
+<p>  本例の移動先は設定だけの役割で、他のAwake完了に依存しません。  </p>
+<p>  準備が必要な別コンポーネントは、生成側から明示的に初期化する等の順序を決めます。</p>
+<p><strong>作業手順：</strong></p>
+<ol>
+<li>開始シーンを開き、Hierarchyで <strong>DependencyRig &gt; Exhibit</strong> を選びます。  </li>
+</ol>
+<p>   InspectorにRigidbody・BoxCollider・Safe Exhibit Driverがあること、<strong>移動先がNone</strong> で診断が出ることを確認します。  </p>
+<p>   ここは「Rigidbodyがない」ではなく「別オブジェクトへの参照がない」ケースです。</p>
+<figure><a href="../hht/assets/unity/28-before.png"><img loading="lazy" src="../hht/assets/unity/28-before.png" alt="U28開始シーンでSafe Exhibit Driverの「移動先」がNoneになり、Inspectorに参照漏れの理由が表示される"></a><figcaption>U28開始シーンでSafe Exhibit Driverの「移動先」がNoneになり、Inspectorに参照漏れの理由が表示される（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Dを選び、<strong>Course Destination</strong> が付いていることを確認します。  </li>
+</ol>
+<p>   Aの「移動先」へDをドラッグします。  </p>
+<p>   AのRigidbodyを <strong>Is Kinematic ON／Use Gravity OFF</strong>、BoxColliderを有効にします。  </p>
+<p>   診断が解消することを確認して、自分用シーンを保存します。</p>
+<ol>
+<li>Playに入り、<strong>確認済み</strong> と表示され、AがDの手前まで移動して止まることを確認します。  </li>
+</ol>
+<p>   名前・色・明るさの異なるAとDを見比べます。  </p>
+<p>   元の開始シーンのままPlayに入ると、**実行停止：移動先が未設定です。  </p>
+<p>   Dを指定してください** でAだけが止まります。  </p>
+<p>   Consoleには対象付きの警告が出ます。</p>
+<figure><a href="../hht/assets/unity/28-blocked.png"><img loading="lazy" src="../hht/assets/unity/28-blocked.png" alt="U28の開始シーンをPlayし、移動先が未設定という実行停止表示と停止したAを確認する"></a><figcaption>U28の開始シーンをPlayし、移動先が未設定という実行停止表示と停止したAを確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>配布サンプルの <strong>Dへの参照を戻す</strong> を押すと、シーン側に登録されたDを明示的に再設定して検査・再開します。  </li>
+</ol>
+<p>   <strong>参照を外す</strong> で参照を外し、実行停止になってAが止まること、再びDへの参照を戻すで戻せることを確認します。  </p>
+<p>   <strong>確認</strong> は現在の状態の再確認です。  </p>
+<p>   Play中の復旧操作は、停止後の保存データを自動修正しません。  </p>
+<p>   停止してInspectorで直し、保存してください。</p>
+<figure><a href="../hht/assets/unity/28-ready.png"><img loading="lazy" src="../hht/assets/unity/28-ready.png" alt="U28完成のPlay画面に確認済みが表示され、復旧操作用の確認・参照を外す・Dへの参照を戻すが並ぶ"></a><figcaption>U28完成のPlay画面に確認済みが表示され、復旧操作用の確認・参照を外す・Dへの参照を戻すが並ぶ（クリックで拡大）</figcaption></figure>
+<ol>
+<li><code>Assets/LessonSamples/DependencyRig.prefab</code> を確認します。  </li>
+</ol>
+<p>   AとDを同じPrefabにまとめ、内部参照を保持しています。  </p>
+<p>   Aのスクリプトだけを別オブジェクトへコピーしても依存一式は揃いません。  </p>
+<p>   PrefabのOverridesに参照の解除が残っていないか確認し、既存データは移行・点検してください。  </p>
+<p>   <code>RequireComponent</code> だけに既存データの修復を任せません。</p>
+<ol>
+<li>保存してPlayを止め、<strong>教材 &gt; 完成サンプルの依存関係を検査</strong> を実行します。  </li>
+</ol>
+<p>   保存前なら先に保存するよう停止します。  </p>
+<p>   配布済みの完成シーンを順に開いて検査するため、作業用の未保存シーンを残さず実行してください。  </p>
+<p>   この検査はMissing Script、U28の必須スクリプト・参照・有効状態等を確認します。  </p>
+<p>   任意の全SerializeFieldを自動で必須判定するものではなく、実際の案件では対象シーンと契約を登録します。</p>
+<ol>
+<li>Editorを閉じ、教材ルートのPowerShellで <code>unity run unity/project --timeout 180 -- -executeMethod DependencyLesson.ValidateCompleted -logFile &quot;&lt;絶対パスの検査ログ&gt;&quot;</code> を実行します。  </li>
+</ol>
+<p>   ログの <strong>COMPLETED DEPENDENCIES: PASS (35 scenes)</strong> と終了コード0を確認します。  </p>
+<p>   自分のログの保存先に置き換えてください。  </p>
+<p>   <code>DependencyLesson.Tests</code> でも、専用の一時シーンで付け忘れ・参照漏れ・設定違い・無効化・Prefab参照の独立性・破棄後の停止等を確認できます。</p>
+<figure><a href="../hht/assets/unity/28-verify.jpg"><img loading="lazy" src="../hht/assets/unity/28-verify.jpg" alt="VS Codeで完成35シーンの依存検査ログを開き、PASSと検査結果を確認する"></a><figcaption>VS Codeで完成35シーンの依存検査ログを開き、PASSと検査結果を確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li><code>DependencyBuildGate</code> は通常のPlayerビルドでも同じシーン検査を呼びます。  </li>
+</ol>
+<p>   不備がある完成データはビルドを拒否します。  </p>
+<p>   この講座は比較用の開始シーンもWebGLへ含めるため、<strong>配布された開始シーンのDestination参照漏れだけ</strong> を例外として扱います。  </p>
+<p>   スクリプト自体の欠落や無効なUIまで許容しません。  </p>
+<p>   実案件ではこの教材用の例外を持ち込まず、完成データを検査対象にします。</p>
+<p><strong>補足：</strong> 検査は警告を消すための作業ではありません。  </p>
+<p>何の型・値・参照・有効状態が必要かを先に決め、任意の設定と区別します。  </p>
+<p>参照名の変更ではシリアライズの移行も検討し、Prefabとシーンの両方を確認します。  </p>
+<p>実行中に不備が見つかった場合も、対象・理由・直し方を表示してから停止します。</p>
+<p><strong>確認して報告：</strong> 付け忘れ・同じGameObjectの不足・外部参照漏れ・初期化順序の違いを説明し、修正箇所、停止／復旧の実画面、完成データの検査結果を提出します。  </p>
+<p>属性だけで全ての依存が保証されるとは報告しません。</p>
+<div id="unity-29" class="anchor"></div>
+<h3>U29 物理演算で作るローコード・サンドボックス</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=29&amp;variant=start">U29 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=29&amp;variant=complete">U29 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 学内展示の担当者から、来場者が坂や跳ね方を変えて試せる物理の遊び場を依頼されました。  </p>
+<p><strong>困りごと：</strong> 全ての動きをコードで指定すると、部品の配置を変えるたびに書き直す必要があります。  </p>
+<p><strong>変更：</strong> ボール・坂・積み木の形状、Collider、Rigidbody、Physics Materialを設定し、重力と接触から動きを生みます。  </p>
+<p>配布する操作用スクリプト1本で、落下開始・復元・比較操作を付けます。  </p>
+<p><strong>完成条件：</strong> ボールを坂で転がして積み木を1個以上動かし、傾斜または反発を変えた結果を比較できます。  </p>
+<p>自分で配置を変えた遊び方を1つ作り、初期状態に戻すで再試行できます。</p>
+<p><strong>準備：</strong> U03・U07・U08・U10・U18・U28を確認します。  </p>
+<p><code>Assets/Scenes/29-PhysicsSandbox.unity</code> を自分用の別名で保存します。  </p>
+<p>完成見本は <code>Assets/Scenes/Completed/29-PhysicsSandbox.unity</code> です。  </p>
+<p><code>Assets/LessonSamples/PhysicsSandbox/</code> に5部品のPrefab、表示用Material、摩擦・反発用Physics Materialが入っています。  </p>
+<p>操作用 <code>PhysicsSandboxLesson.cs</code> は配布済みです。  </p>
+<p>受講者が書くコードは必須にせず、Inspectorで遊びを組むローコード演習にします。  </p>
+<p>無制限の物体生成、ネット対戦、セーブは今回の対象外です。</p>
+<p><strong>部品と動作：</strong></p>
+<ul>
+<li><strong>A Exhibit：青い球。</strong>  </li>
+</ul>
+<p>  質量3のRigidbodyとSphere Colliderがあります。</p>
+<ul>
+<li><strong>R Ramp：橙の坂。</strong>  </li>
+</ul>
+<p>  Box Colliderだけの固定部品です。  </p>
+<p>  Transformで傾斜を作ります。</p>
+<ul>
+<li><strong>B1〜B3 Block：黄色・淡い紫・青緑の積み木。</strong>  </li>
+</ul>
+<p>  各部品にBox ColliderとRigidbodyがあります。  </p>
+<p>  色だけでなく番号・名前・明るさで識別します。</p>
+<ul>
+<li><strong>F DisplayFloor：暗い床。</strong>  </li>
+</ul>
+<p>  固定Colliderで落下物を受け止めます。</p>
+<ul>
+<li><strong>操作用スクリプト：</strong> 落下開始時に4個のRigidbodyのIs Kinematicを解除し、重力で動かします。  </li>
+</ul>
+<p>  球を目標へ自動移動させたり、積み木を演出で倒したりしません。  </p>
+<p>  初期状態に戻す時は速度・角速度を0にして、Play開始時の位置・回転へ戻します。  </p>
+<p>  編集中はKinematicで保持します。</p>
+<p><strong>作業手順：</strong></p>
+<ol>
+<li>開始シーンを開き、AのRigidbody・Sphere Collider、RのBox Collider、B1〜B3のRigidbodyを確認します。  </li>
+</ol>
+<p>   開始のRはZ回転0度で水平です。  </p>
+<p>   まずPlayして落下開始を押し、球が落下しても狙った方向へ進みにくいことを観察します。  </p>
+<p>   停止して編集へ戻ります。</p>
+<figure><a href="../hht/assets/unity/29-before.png"><img loading="lazy" src="../hht/assets/unity/29-before.png" alt="U29開始シーンの球・水平な坂・積み木をUnity Editorで確認する"></a><figcaption>U29開始シーンの球・水平な坂・積み木をUnity Editorで確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>RのZ回転を <strong>−15度</strong> にします。  </li>
+</ol>
+<p>   Aの位置は <strong>(−2.8, 3, 0)</strong>、Rは <strong>(−1, 1, 0)</strong>、B1〜B3はX=2.3の積み重ねを基準にします。  </p>
+<p>   Colliderの形と大きさを確認し、最初から重ならないようにします。  </p>
+<p>   全体を変形する親の非一様スケールは避け、部品自身の寸法で調整します。</p>
+<ol>
+<li>Playし、<strong>編集・待機中</strong> の状態で落下開始を押します。  </li>
+</ol>
+<p>   球が落下・接触・転がり、積み木が移動または回転することを確認します。  </p>
+<p>   <strong>動いた箱</strong> は開始位置から0.2以上、または開始回転から15度以上変わった積み木の数です。  </p>
+<p>   物理的な接触を必ず検出した得点ではなく、配置変化の観察用です。</p>
+<figure><a href="../hht/assets/unity/29-ready.png"><img loading="lazy" src="../hht/assets/unity/29-ready.png" alt="U29完成シーンのPlay画面で、落下前の球・坂・積み木と落下開始・初期化・比較操作を確認する"></a><figcaption>U29完成シーンのPlay画面で、落下前の球・坂・積み木と落下開始・初期化・比較操作を確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li><strong>初期状態に戻す</strong> で球と積み木を元へ戻します。  </li>
+</ol>
+<p>   <strong>傾斜 15° / 30°</strong> で坂を−15／−30度へ切り替え、落下開始を押して比べます。  </p>
+<p>   開始シーンで初めて「傾斜 15° / 30°」を押すと−30度、次に押すと−15度です。  </p>
+<p>   実行中は傾斜と反発の変更を受け付けません。  </p>
+<p>   初期状態に戻すしてから1条件ずつ変えます。  </p>
+<p>   初期状態に戻すは現在の傾斜・反発設定を維持します。</p>
+<figure><a href="../hht/assets/unity/29-result.png"><img loading="lazy" src="../hht/assets/unity/29-result.png" alt="U29で落下開始後、実際の重力・衝突によって積み木が移動した結果を確認する"></a><figcaption>U29で落下開始後、実際の重力・衝突によって積み木が移動した結果を確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Projectで <strong>Soft.physicMaterial</strong> と <strong>Bouncy.physicMaterial</strong> を選びます。  </li>
+</ol>
+<p>   Dynamic／Static Frictionはどちらも0.1、BouncinessはSoft=0.05／Bouncy=0.8です。  </p>
+<p>   本例はFriction Combine=Minimum、Bounce Combine=Maximumで接触する両面の値を組み合わせます。  </p>
+<p>   表示色を決めるRendererのMaterialと、Colliderへ設定するPhysics Materialを区別します。</p>
+<figure><a href="../hht/assets/unity/29-material.jpg"><img loading="lazy" src="../hht/assets/unity/29-material.jpg" alt="U29のBouncy Physics MaterialをInspectorで開き、摩擦・反発・Combine設定を確認する"></a><figcaption>U29のBouncy Physics MaterialをInspectorで開き、摩擦・反発・Combine設定を確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Playして初期状態に戻す後、<strong>反発 弱 / 強</strong> で球のPhysics Materialを切り替え、同じ角度で落下開始を比較します。  </li>
+</ol>
+<p>   反発を大きくすると接触後の動きが変わりますが、摩擦・接触角度・速度にも影響され、必ず積み木が多く倒れるとは限りません。  </p>
+<p>   厳密に同じ軌道・個数の再現を完成条件にはしません。</p>
+<ol>
+<li>Playを停止し、部品Prefabを使って配置を変更します。  </li>
+</ol>
+<p>   たとえば積み木を低い壁として並べる、坂を短くする、球と積み木の質量比を変える、という方法があります。  </p>
+<p>   この配布スクリプトは球1個・積み木3個を対象にするので、複製で数を増やす場合は <code>ExhibitUI &gt; Physics Sandbox Lesson</code> の <strong>Blocks</strong> 配列と検査も見直します。  </p>
+<p>   今回は既存3個を並べ替える方法で完成させて構いません。</p>
+<ol>
+<li>物理用の固定時間刻み、Collision Detection、Constraintsを確認します。  </li>
+</ol>
+<p>   本例は奥行Z方向の移動とX／Y軸回転を固定し、見やすい平面内で遊びます。  </p>
+<p>   Continuous Speculativeを使用しますが、高速・薄いColliderの貫通対策を完全に保証するものではありません。  </p>
+<p>   瞬間移動で動作を作る代わりに、形状・速度・厚さを見直します。  </p>
+<p>   ブラウザは実行と比較用、配置・参照・物理設定の編集はEditorで行います。</p>
+<p><strong>確認して報告：</strong> 変更した配置の意図、角度・質量・摩擦・反発のうち変更した値、落下開始前後と初期状態に戻す後の実画面を提出します。  </p>
+<p>最初は1条件だけ変えて比較し、動きの違いを記録します。  </p>
+<p>Play中の変更は停止すると戻るため、最終配置・設定はEdit Modeで保存します。  </p>
+<p>勝敗を固定するゲームへ広げる場合も、物理の判定と演出を分けて説明してください。</p>
+<div id="unity-30" class="anchor"></div>
+<h3>U30 グレイボックスで空間と導線を検証する</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=30&amp;variant=start">U30 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=30&amp;variant=complete">U30 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示のレベル制作担当者から、入口から出口へ進める小さな空間を確認したいと依頼されました。  </p>
+<p><strong>困りごと：</strong> 見た目を作り込んでから、開口が狭くてプレイヤーが通れないことが分かると、修正範囲が大きくなります。  </p>
+<p><strong>変更：</strong> プリミティブと簡単な当たり判定で空間を作り、寸法・通路・視認性をプレイして確かめます。  </p>
+<p><strong>完成条件：</strong> 開始の狭い開口で中央の前進が止まり、寸法を変更した完成では中央を通って出口へ到達できることを確認できます。  </p>
+<p>外観を作る前に直した理由を寸法と実画面で説明できます。</p>
+<p><strong>準備：</strong> U03・U07・U08・U11・U28を確認します。  </p>
+<p><code>Assets/Scenes/30-Graybox.unity</code> を自分用の別名で保存します。  </p>
+<p>完成見本は <code>Assets/Scenes/Completed/30-Graybox.unity</code> です。  </p>
+<p>グレイボックスは詳細な美術表現を省いて空間を検証する段階です。  </p>
+<p>必ず全てを灰色にする意味ではなく、この教材は識別用に色と明るさ・名前を使います。  </p>
+<p>制作対象は平面の通路と開口で、段差・ジャンプ・落下・敵のAIは今回扱いません。</p>
+<p><strong>見る対象：</strong></p>
+<ul>
+<li><strong>A Exhibit：青いカプセル。</strong>  </li>
+</ul>
+<p>  高さ2、半径0.45のCharacterControllerで接触を検査します。  </p>
+<p>  表示モデルの大きさと当たり判定の寸法を区別します。</p>
+<ul>
+<li><strong>L WallLeft／R WallRight：橙と明るい灰青の壁。</strong>  </li>
+</ul>
+<p>  Box Colliderを持つ固定の壁です。</p>
+<ul>
+<li><strong>S Entrance／G Exit：赤紫の入口と黄色の出口。</strong>  </li>
+</ul>
+<p>  目印です。  </p>
+<p>  Colliderはなく、出口への到達は水平方向の距離0.7未満で表示します。</p>
+<ul>
+<li><strong>F DisplayFloor：暗い床。</strong>  </li>
+</ul>
+<p>  1 Unity unitを1mとして、10×10mの範囲を基準にします。  </p>
+<p>  単位はこの教材の制作上の約束です。</p>
+<p><strong>作業手順：</strong></p>
+<ol>
+<li>開始シーンで壁とAを選び、Transform・Box Collider・CharacterControllerの寸法を確認します。  </li>
+</ol>
+<p>   壁の幅は各3、X座標は左−1.6／右1.6で、中央の隙間は <strong>0.2m</strong> です。  </p>
+<p>   Aの直径0.9mより狭くなっています。</p>
+<figure><a href="../hht/assets/unity/30-before.png"><img loading="lazy" src="../hht/assets/unity/30-before.png" alt="U30開始のグレイボックスで、カプセル・壁・入口・出口と狭い開口を確認する"></a><figcaption>U30開始のグレイボックスで、カプセル・壁・入口・出口と狭い開口を確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Gameを見やすい大きさにし、Playで画面をクリックします。  </li>
+</ol>
+<p>   W／Sで前後、A／Dで左右へ移動します。  </p>
+<p>   画面の <strong>前進 +Z／後退 -Z／左 -X／右 +X</strong> は0.5mずつ試すボタンです。  </p>
+<p>   中央を前進して、壁で止まり <strong>移動できません</strong> と表示されることを確認します。  </p>
+<p>   「初期状態に戻す」で入口へ戻します。  </p>
+<p>   横から壁の外へ迂回することと、中央の開口を通ることは分けて確認します。</p>
+<figure><a href="../hht/assets/unity/30-blocked.png"><img loading="lazy" src="../hht/assets/unity/30-blocked.png" alt="U30開始をPlayし、中央の狭い開口でカプセルが止まる実行画面を確認する"></a><figcaption>U30開始をPlayし、中央の狭い開口でカプセルが止まる実行画面を確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Playを停止します。  </li>
+</ol>
+<p>   Sceneのグリッドとスナップ設定を確認し、左右の壁をX方向へ移動します。  </p>
+<p>   完成見本は左 <strong>−2.5</strong>、右 <strong>2.5</strong>、幅は各3のままで、開口は <strong>2m</strong> です。  </p>
+<p>   移動量・軸を数値で確認し、見た目だけで幅を決めません。  </p>
+<p>   Global／Local、Pivot／Centerの違いも確認します。</p>
+<ol>
+<li>壁のBox ColliderをSceneで見て、表示と一致することを確認します。  </li>
+</ol>
+<p>   完成見本で中央を前進し、黄色い出口付近で <strong>GOAL</strong> が出ることを確認します。  </p>
+<p>   平面内の操作なので、配布スクリプトにジャンプや重力の処理はありません。  </p>
+<p>   標準のCharacterControllerもRigidbodyのように自動で重力を付けるものではありません。</p>
+<figure><a href="../hht/assets/unity/30-goal.png"><img loading="lazy" src="../hht/assets/unity/30-goal.png" alt="U30完成の幅を広げた開口を通り、出口で「目標に到着」と表示された実行画面"></a><figcaption>U30完成の幅を広げた開口を通り、出口で「目標に到着」と表示された実行画面（クリックで拡大）</figcaption></figure>
+<ol>
+<li>自分用シーンで、通路幅を変えた案と壁の位置を変えた案を1つずつ試します。  </li>
+</ol>
+<p>   入口から出口が見えるか、壁に接触するか、曲がるための余白があるかを記録します。  </p>
+<p>   経路を自動で再生せず、実際に操作して確認します。  </p>
+<p>   配布の移動・判定・UIは <code>SpatialPracticeLesson.cs</code> を使用します。</p>
+<ol>
+<li>未確認の部分へ詳細なモデルを置く前に、寸法と遊びの条件を決めて保存します。  </li>
+</ol>
+<p>   必要に応じて別名のシーンやGitの履歴で案を残し、比較が終わってから次の外観制作へ進みます。</p>
+<p><strong>確認して報告：</strong> 狭い状態と広げた状態の開口寸法、止まった位置、通過してGOALに着いた実画面、配置を変えた理由を提出します。  </p>
+<p>見た目の完成度とは分けて、移動・接触・視認性で空間を評価してください。</p>
+<div id="unity-31" class="anchor"></div>
+<h3>U31 キットバッシュで既存部品から外観を組む</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=31&amp;variant=start">U31 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=31&amp;variant=complete">U31 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 同じ展示の美術担当者から、通れることを確認した入口を、柱・梁・看板のある門にしたいと依頼されました。  </p>
+<p><strong>困りごと：</strong> 各部品を別々に作り直すと時間がかかり、装飾で通路を塞ぐ変更も起こります。  </p>
+<p><strong>変更：</strong> 配布された複数のPrefabを組み合わせ、原点・寸法・向きを合わせて門の外観を作ります。  </p>
+<p><strong>完成条件：</strong> 柱2本・梁・看板をネストしたPrefabとして構成し、外観のON／OFFを比べても中央通路を通れることを確認できます。  </p>
+<p>部品の参照元とOverrides、外観と当たり判定の分担を説明できます。</p>
+<p><strong>準備：</strong> U07・U10・U26・U28・U30を確認します。  </p>
+<p><code>Assets/Scenes/31-Kitbash.unity</code> を自分用に保存します。  </p>
+<p>完成見本は <code>Assets/Scenes/Completed/31-Kitbash.unity</code> です。  </p>
+<p><code>Assets/LessonSamples/SpatialPractice/</code> のSideModule・HeaderModule・SignModule・GateAssemblyを使います。  </p>
+<p>これらは本教材用にUnityの標準プリミティブから作成した部品で、外部の有料素材は使っていません。  </p>
+<p>一般のキットバッシュでは、既存のモデルや複数のキットを組み合わせて別の形へ見立てます。  </p>
+<p>この演習は小さな部品セットでその手順を体験します。</p>
+<p><strong>作業手順：</strong></p>
+<ol>
+<li>開始シーンはU30で通過を確認した2mの開口です。  </li>
+</ol>
+<p>   Playして中央を通れることを先に確認します。  </p>
+<p>   ゲーム上の寸法と、外観の作業範囲を記録します。  </p>
+<p>   基礎の壁のRendererとBox Colliderを残し、装飾を加える範囲を選びます。</p>
+<figure><a href="../hht/assets/unity/31-before.png"><img loading="lazy" src="../hht/assets/unity/31-before.png" alt="U31開始シーンで、外観部品を付ける前の通過可能な基礎壁と開口を確認する"></a><figcaption>U31開始シーンで、外観部品を付ける前の通過可能な基礎壁と開口を確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Projectの <strong>SideModule.prefab</strong> を開き、原点が柱の足元にあることを確認します。  </li>
+</ol>
+<p>   HeaderModuleは梁の中央、SignModuleは看板の中央が原点です。  </p>
+<p>   寸法・上方向Y・前後Z・RendererのMaterialを確認します。  </p>
+<p>   外部の部品を使う場合も、導入前に出所・利用条件・再配布可否を確認し、単位と軸を合わせます。  </p>
+<p>   <a href="./spatial-kit-notes.md">配布部品の技術メモ</a>も参照できます。</p>
+<ol>
+<li>空のGameObjectを <strong>GateAssembly</strong> として作り、Scale=(1,1,1)を維持します。  </li>
+</ol>
+<p>   SideModuleを2つ、HeaderModuleとSignModuleを各1つ、その子として配置します。  </p>
+<p>   柱の中心Xは <strong>−1.35／1.35</strong>、柱の幅は0.7なので内側の面が−1／1に揃い、元の2m開口を保ちます。  </p>
+<p>   柱・梁を基礎壁の前にずらし、同じ面を重ねてちらつかせないようにします。</p>
+<ol>
+<li>完成見本のHierarchyでGateAssemblyを展開します。  </li>
+</ol>
+<p>   4部品がPrefabとのつながりを保っていること、全体もPrefabインスタンスであることを確認します。  </p>
+<p>   部品のTransform・Material・識別子の変更はOverridesとして確認し、元の部品を全て書き換える <strong>Apply</strong> と、そのインスタンスだけの変更を区別します。  </p>
+<p>   別の利用箇所への影響を確認せずApply Allしません。</p>
+<figure><a href="../hht/assets/unity/31-complete.png"><img loading="lazy" src="../hht/assets/unity/31-complete.png" alt="U31完成シーンの門を構成する柱・梁・看板と、ネストしたPrefabのHierarchyを確認する"></a><figcaption>U31完成シーンの門を構成する柱・梁・看板と、ネストしたPrefabのHierarchyを確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>門の外観4部品にはColliderを追加せず、基礎壁のBox Colliderで通路を維持します。  </li>
+</ol>
+<p>   基礎壁自体も表示し、見えない壁にぶつかる状態を作りません。  </p>
+<p>   柱は壁の外側、梁は通過するカプセルの上へ置きます。  </p>
+<p>   装飾だけが当たり判定なしでよいかは、用途ごとに判断します。  </p>
+<p>   大きく飛び出す装飾や登れる足場へ変更するなら、当たり判定も設計し直します。</p>
+<ol>
+<li>Gameタブを右クリックして <strong>Maximize</strong> し、操作と凡例が重ならない大きさにします。  </li>
+</ol>
+<p>   Playして <strong>外観 表示 / 非表示</strong> で門の装飾を切り替えます。  </p>
+<p>   「初期状態に戻す」で入口へ戻し、両方の状態で中央を前進して「目標に到着」を確認することを確認します。  </p>
+<p>   開始シーンには装飾がないので、「外観 表示 / 非表示」を押すと <strong>開始シーンには外観部品がありません</strong> と表示します。  </p>
+<p>   ブラウザは組立結果の比較用です。  </p>
+<p>   部品配置とPrefabの保存はEditorで行います。</p>
+<figure><a href="../hht/assets/unity/31-play.png"><img loading="lazy" src="../hht/assets/unity/31-play.png" alt="U31完成のPlay画面で、装飾を付けた門と外観切替の操作を確認する"></a><figcaption>U31完成のPlay画面で、装飾を付けた門と外観切替の操作を確認する（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/31-off.png"><img loading="lazy" src="../hht/assets/unity/31-off.png" alt="U31完成の装飾をOFFにしても、基礎壁の間を通って目標へ到達できる"></a><figcaption>U31完成の装飾をOFFにしても、基礎壁の間を通って目標へ到達できる（クリックで拡大）</figcaption></figure>
+<ol>
+<li>自分用の門を1案作ります。  </li>
+</ol>
+<p>   部品を拡大・縮小する前に通路や柱の厚みへの影響を確認し、離れた位置・近い位置・Gameカメラから見ます。  </p>
+<p>   配色や形状の接続部が不自然でないか、重なり・浮き・ちらつきがないかを確認します。  </p>
+<p>   識別用の色・番号は維持し、教材のどの部品か分かるようにします。</p>
+<p><strong>確認して報告：</strong> 使用した部品と参照元、原点・単位・軸の確認、変更したOverrides、装飾ON／OFFの実画面と通過確認を提出します。  </p>
+<p>単純に複製しただけで終わらず、部品をどう見立てて別の外観を作ったか説明してください。</p>
+<div id="unity-32" class="anchor"></div>
+<h3>U32 VRoid・VRMのボーン、メッシュ、アニメーションとIK</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=32&amp;variant=start">U32 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=32&amp;variant=complete">U32 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> キャラクター展示の担当者・来場者。  </p>
+<p><strong>困りごと：</strong> VRoidのモデルを配置できても、メッシュを変形する仕組みや、手を目標点へ合わせる方法が分かりません。  </p>
+<p><strong>変更：</strong> 教材用に新規作成したVRoidモデルをVRM 1.0で渡し、Humanoid Animatorと右手のIKを組み合わせます。  </p>
+<p><strong>完成条件：</strong> 元モデル・ボーン・スキン・Avatar・Clip・Controllerの役割を説明し、目標Tを動かしてIKの0／1を比較できること。  </p>
+<p>右手からTへの距離を記録し、左腕のアニメーションも確認します。</p>
+<p><strong>準備：</strong> Unity 6000.3.25f1、VRoid Studio 2.7.0、UniVRM 0.131.3を使います。  </p>
+<p><code>Assets/Scenes/32-VrmBones.unity</code>を開きます。  </p>
+<p>最初から入っているパッケージを重複導入しません。  </p>
+<p>サンプルと原本の場所は<a href="./samples.md#u32-vroidvrm">配布一覧</a>を参照します。</p>
+<p><strong>VRoidから書き出す：</strong></p>
+<ol>
+<li>VRoid Studioの「新規作成」からベースを選びます。  </li>
+</ol>
+<p>   この教材は新規の男性ベースを使っています。  </p>
+<p>   既存の個人モデルを上書きしません。</p>
+<ol>
+<li>Ctrl+Shift+Sで<code>CourseAvatar.vroid</code>として保存します。  </li>
+</ol>
+<p>   これはVRoidで再編集する原本です。  </p>
+<p>   <code>.vrm</code>へ拡張子だけ変更しません。</p>
+<ol>
+<li>右上の書き出しアイコン →「VRMエクスポート」を開きます。  </li>
+</ol>
+<p>   ポリゴン・マテリアル・ボーン数を確認し、「エクスポート」を押します。</p>
+<figure><a href="../hht/assets/unity/32-vroid.jpg"><img loading="lazy" src="../hht/assets/unity/32-vroid.jpg" alt="VRoid Studioで教材専用に新規作成して保存したCourseAvatarの編集画面"></a><figcaption>VRoid Studioで教材専用に新規作成して保存したCourseAvatarの編集画面（クリックで拡大）</figcaption></figure>
+<ol>
+<li><strong>VRM 1.0</strong>を選び、アバター名と作者を入力します。  </li>
+</ol>
+<p>   実名や連絡先を入力する必要はありません。  </p>
+<p>   本教材の作者表記は<code>Unity Course</code>です。</p>
+<figure><a href="../hht/assets/unity/32-export.jpg"><img loading="lazy" src="../hht/assets/unity/32-export.jpg" alt="VRM1.0を選び、CourseAvatarとUnity Courseを入力した書き出し設定"></a><figcaption>VRM1.0を選び、CourseAvatarとUnity Courseを入力した書き出し設定（クリックで拡大）</figcaption></figure>
+<ol>
+<li>利用・改変・再配布条件を確認し、<code>.vrm</code>を書き出します。  </li>
+</ol>
+<p>   教材モデルは全ユーザーの利用、再配布、改変版の再配布を許可し、クレジットは必須としています。  </p>
+<p>   商用・表現の制限など残りの条件もVRM内のメタデータを確認します。  </p>
+<p>   他人のモデルや衣装・テクスチャには別の条件があるため、この設定を流用しません。</p>
+<figure><a href="../hht/assets/unity/32-license.jpg"><img loading="lazy" src="../hht/assets/unity/32-license.jpg" alt="教材モデルの再配布OK、改変したモデルの再配布OK、クレジット必須の設定"></a><figcaption>教材モデルの再配布OK、改変したモデルの再配布OK、クレジット必須の設定（クリックで拡大）</figcaption></figure>
+<p><strong>Unityへ取り込んで構造を見る：</strong></p>
+<ol>
+<li>配布プロジェクトのPackage Managerで<code>glTF</code>と<code>VRM-1.0</code>が導入済みか確認します。  </li>
+</ol>
+<p>   VRMのインポーターはUnity本体の標準機能ではありません。  </p>
+<p>   固定した導入元は<code>Packages/manifest.json</code>です。</p>
+<ol>
+<li>書き出したVRMを<code>Assets/LessonSamples/VrmPractice/</code>へ置きます。  </li>
+</ol>
+<p>   配布済みの<code>CourseAvatar.vrm</code>は上書きせず、別の名前で試してください。  </p>
+<p>   Projectで読み込みが終わってからHierarchyへ配置します。</p>
+<ol>
+<li>開始シーンの<code>Exhibit</code>を選び、AnimatorのAvatarとControllerを見ます。  </li>
+</ol>
+<p>   Hierarchyを展開し、<code>J_Bip_R_UpperArm</code>、<code>J_Bip_R_LowerArm</code>、<code>J_Bip_R_Hand</code>を探します。  </p>
+<p>   ボーンはTransformであり、立方体のような表示用メッシュではありません。</p>
+<ol>
+<li>メッシュ側のSkinned Mesh Rendererを選び、Mesh・Root Bone・Materialsを確認します。  </li>
+</ol>
+<p>   ボーン配列はInspectorのDebug表示、または<code>SkinnedMeshRenderer.bones</code>で確認します。  </p>
+<p>   ボーンの親子関係と、頂点に影響を与えるウェイトによって変形します。  </p>
+<p>   VRoidがスキニングを作成済みなので、今回はウェイトを塗り直しません。</p>
+<figure><a href="../hht/assets/unity/32-before.png"><img loading="lazy" src="../hht/assets/unity/32-before.png" alt="Unityの開始シーンでVRoidモデルとAnimator、IK重み0を確認した画面"></a><figcaption>Unityの開始シーンでVRoidモデルとAnimator、IK重み0を確認した画面（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/32-skin.jpg"><img loading="lazy" src="../hht/assets/unity/32-skin.jpg" alt="Bodyを選択しSkinned Mesh RendererのMesh、Root Bone、Materialsを確認したInspector"></a><figcaption>Bodyを選択しSkinned Mesh RendererのMesh、Root Bone、Materialsを確認したInspector（クリックで拡大）</figcaption></figure>
+<p><strong>AnimatorとIKを比較する：</strong></p>
+<ol>
+<li>Playし、Gameタブを右クリック → Maximizeで広く表示します。  </li>
+</ol>
+<p>   <code>動きを再生</code>で左肘の曲げ伸ばしを見ます。  </p>
+<p>   <code>ポーズ 0 / 0.5</code>はClip内の時刻を切り替えて停止し、同じ形を比較するためのボタンです。</p>
+<ol>
+<li><code>Wave.anim</code>はHumanoidの筋肉カーブと体の基準位置・向きを持ち、<code>Wave.controller</code>は再生する状態を持ちます。  </li>
+</ol>
+<p>   AvatarはHumanoidの部位をモデルのボーンへ対応づけます。  </p>
+<p>   VRMを配置するだけで歩行モーションが付くわけではありません。</p>
+<ol>
+<li><code>IK 0 / 1</code>を押します。  </li>
+</ol>
+<p>   重み0ではClipの姿勢、重み1では右手の目標Tへの補正を比較します。  </p>
+<p>   <code>目標を移動</code>でTの高さと前後位置を変え、表示される「手から目標Tまで」の距離を読みます。  </p>
+<p>   到達不能な目標を置くと距離が0になるとは限りません。</p>
+<ol>
+<li>B1は肩、B2は肘、B3は手、Tは目標です。  </li>
+</ol>
+<p>   色と番号を併用します。  </p>
+<p>   <code>ボーン目印を切替</code>で補助球を隠し、球を動かすだけでなく腕の表面も変形していることを確認します。  </p>
+<p>   教材のメッシュM1／M2は識別用の単色表示に変更しています。  </p>
+<p>   原本のVRMには元の外見を残しています。</p>
+<figure><a href="../hht/assets/unity/32-ik.png"><img loading="lazy" src="../hht/assets/unity/32-ik.png" alt="IK重み1で右手が黄色い目標Tへ届き、肩・肘・手の補助球が見える完成シーン"></a><figcaption>IK重み1で右手が黄色い目標Tへ届き、肩・肘・手の補助球が見える完成シーン（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/32-target.png"><img loading="lazy" src="../hht/assets/unity/32-target.png" alt="目標Tを高く移動し、右手が追従して距離0.000mと表示された画面"></a><figcaption>目標Tを高く移動し、右手が追従して距離0.000mと表示された画面（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/32-fk.png"><img loading="lazy" src="../hht/assets/unity/32-fk.png" alt="IKを0へ戻し、右手と目標Tが離れた比較画面"></a><figcaption>IKを0へ戻し、右手と目標Tが離れた比較画面（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/32-mesh.png"><img loading="lazy" src="../hht/assets/unity/32-mesh.png" alt="ボーン補助球を非表示にしても腕の形が変形しているGame画面"></a><figcaption>ボーン補助球を非表示にしても腕の形が変形しているGame画面（クリックで拡大）</figcaption></figure>
+<p><strong>標準IKの組み方：</strong> UnityにはHumanoid向けIKが標準であります。  </p>
+<p>Animator Controllerの対象Layerで<strong>IK Pass</strong>を有効にし、Animatorと<strong>同じGameObject</strong>のスクリプトで<code>OnAnimatorIK</code>を使います。  </p>
+<p>配布の<code>VrmBoneLesson.cs</code>では次の処理を行います。</p>
+<pre><code>
+void OnAnimatorIK(int layerIndex)
+
+{
+
+    animator.SetIKPositionWeight(AvatarIKGoal.RightHand, ikWeight);
+
+    animator.SetIKPosition(AvatarIKGoal.RightHand, target.position);
+
+    animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 0);
+
+}
+
+</code></pre>
+<p><strong>理解のヒント：</strong></p>
+<ul>
+<li><strong>FK：</strong> 肩→肘→手の関節回転から手の位置が決まります。  </li>
+</ul>
+<p>  <strong>IK：</strong> 手などの到達点を指定し、関節側を解きます。  </p>
+<p>  IKはメッシュのウェイトを作る機能ではありません。</p>
+<ul>
+<li><strong>標準Humanoid IK：</strong> 左右の手足、視線などを扱います。  </li>
+</ul>
+<p>  任意の骨格すべてへ自動で使えるわけではありません。  </p>
+<p>  肘・膝の向きにはHint、手の向きには回転と重みを追加します。</p>
+<ul>
+<li><strong>Animation Rigging：</strong> Unity提供の追加パッケージです。  </li>
+</ul>
+<p>  Two Bone IKやMulti-AimなどのConstraintで、Humanoid／Genericのリグを組む選択肢です。  </p>
+<p>  この単元では標準IKを検証し、Animation Riggingの導入は行いません。</p>
+<ul>
+<li><strong>VRM固有の処理：</strong> 表情、視線、Spring Bone、ConstraintにはUniVRMの更新も関係します。  </li>
+</ul>
+<p>  この演習はAnimatorと標準IKの順序を見るため、シーン内のVrm10Instanceを無効にしています。  </p>
+<p>  製品でそのまま無効にするとVRM固有機能は更新されません。  </p>
+<p>  自動更新との併用時は処理順と二重制御を検証します。</p>
+<ul>
+<li><strong>表示：</strong> VRM 1.0にはURP用MToonがあります。  </li>
+</ul>
+<p>  本演習はボーンとスキンの理解を目的に、配布シーンの材質をURP Unlitへ変えています。  </p>
+<p>  元のMToonや表情・揺れものの再現性を確認する演習ではありません。</p>
+<p><strong>動かないとき：</strong> AvatarがValidかつHumanoidか、ControllerとClipが割り当て済みか、LayerのIK Pass、スクリプトの場所、Target参照、Weightを順に見ます。  </p>
+<p>ClipのカーブはVRoidモデルのボーンを直接書き換えるTransformカーブと混在させません。  </p>
+<p>ピンク表示は材質とレンダーパイプラインを確認します。</p>
+<p><strong>確認して報告：</strong> <code>.vroid</code>と<code>.vrm</code>の違い、Skinned Mesh Rendererとボーンの関係、IK重み0／1それぞれの距離、目標移動後の追従、ボーン補助表示を消してもメッシュが変形することを、画面2枚と短文で提出します。  </p>
+<p>完成条件はこの単元を参照します。</p>
+<p><strong>参照：</strong> <a href="https://docs.unity3d.com/6000.3/Documentation/Manual/InverseKinematics.html">Unity 6.3のIK</a>、<a href="https://vrm.dev/univrm1/install/">UniVRMの導入</a>、<a href="https://vrm.dev/univrm1/material/">URPの材質</a>、<a href="https://docs.unity3d.com/Packages/com.unity.animation.rigging@1.4/manual/index.html">Animation Rigging</a>。</p>
+<div id="unity-33" class="anchor"></div>
+<h3>U33 サウンド：BGM・操作音・3D音とAudio Mixer</h3>
+<p><strong>依頼者・見る人：</strong> 展示担当者から、来場者が操作結果と音の出る場所を聞き分けられるようにしてほしいと依頼されました。</p>
+<p><strong>困りごと：</strong> 音源から離れても同じ音量で鳴り、BGMと操作音をまとめて調整できません。</p>
+<p><strong>変更：</strong> U15のAudioSourceの基本を使い、BGM・操作音を2D、物体Aの環境音を3Dにします。  </p>
+<p>Master／Music／SFXのAudio Mixerで役割ごとに音量を管理します。  </p>
+<p>音源の作曲、マイク入力、残響などのエフェクト制作は対象外です。</p>
+<p><strong>完成条件：</strong> AのSpatial Blendを1へ変更し、Lを遠ざけると環境音が小さくなる。  </p>
+<p>2DのBGM・操作音は距離の影響を受けない。  </p>
+<p>Musicだけの−12dB、Master全体の消音、停止を確認し、音源→グループ→Master→AudioListenerの関係を説明できる。</p>
+<p><strong>準備：</strong> U15を確認し、<code>Assets/Scenes/33-Sound.unity</code> を開きます。  </p>
+<p>Game画面が狭い時はGameタブの右クリック → Maximizeで広げます。  </p>
+<p>最初は端末の音量を小さくしてください。  </p>
+<p>WebGLでは画面内のボタンを押して音声を有効にします。  </p>
+<p><a data-webgl href="./webgl/index.html?unit=33&amp;variant=start">開始サンプルを実行</a>・<a data-webgl href="./webgl/index.html?unit=33&amp;variant=complete">完成サンプルを実行</a>。</p>
+<figure><a href="../hht/assets/unity/33-before.png"><img loading="lazy" src="../hht/assets/unity/33-before.png" alt="開始シーンのAを選択し、AudioSourceのSpatial Blendが2Dであることを確認する"></a><figcaption>開始シーンのAを選択し、AudioSourceのSpatial Blendが2Dであることを確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>依頼を読み、A＝青い音源、L＝橙色の聞き手、F＝暗い床を凡例と名前で確認します。  </li>
+</ol>
+<p>   HierarchyでA（Exhibit）を選び、AudioSourceのAudio Generator（AudioClipの参照）、Output、Loop、Spatial Blendを確認します。  </p>
+<p>   AudioListenerはLに1個だけです。  </p>
+<p>   Main Cameraへ重複して追加しません。</p>
+<ol>
+<li>AのSpatial Blendを <strong>1（3D）</strong> にします。  </li>
+</ol>
+<p>   Volume RolloffはLinear、Min Distanceは1、Max Distanceは10です。  </p>
+<p>   Music2DとUICue2DはSpatial Blend 0のままにします。  </p>
+<p>   3Dの減衰は聞き手との距離で変わり、2Dは距離で変わりません。</p>
+<ol>
+<li>Projectの <code>Assets/LessonSamples/AudioPractice/LessonMix.mixer</code> を開きます。  </li>
+</ol>
+<p>   Music2DのOutputはMusic、AとUICue2DのOutputはSFXです。  </p>
+<p>   両グループはMasterへ流れます。  </p>
+<p>   各AudioSourceのPlay On Awakeはオフです。</p>
+<figure><a href="../hht/assets/unity/33-mixer.jpg"><img loading="lazy" src="../hht/assets/unity/33-mixer.jpg" alt="Audio MixerでMaster、Music、SFXのグループと音量フェーダーを確認する"></a><figcaption>Audio MixerでMaster、Music、SFXのグループと音量フェーダーを確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>MixerのExposed Parametersを開き、MasterGainとMusicGainを確認します。  </li>
+</ol>
+<p>   配布スクリプトは <code>AudioMixer.SetFloat</code> で公開した音量を変えます。  </p>
+<p>   自分で公開する場合は対象グループのVolumeを右クリックしてExposeし、公開名をスクリプトと一致させます。  </p>
+<p>   開始シーンでは公開済みなので二重に追加しません。</p>
+<ol>
+<li>Playして <strong>再生 / 停止</strong> を押します。  </li>
+</ol>
+<p>   Musicと環境音はLoop、<strong>UI操作音</strong> はPlayOneShotによる1回の操作音です。  </p>
+<p>   <strong>立体音のみ聞く</strong> でBGMを消してから <strong>聞く位置 近 / 遠</strong> を押し、Lの移動と環境音の変化を確認します。  </p>
+<p>   開始サンプルの2Dと完成サンプルの3Dで比較してください。</p>
+<ol>
+<li>「立体音のみ聞く」を戻し、<strong>音楽 0 / -12dB</strong> でMusicだけを下げます。  </li>
+</ol>
+<p>   −12dBは音の振幅がおよそ0.25倍になる設定で、音量の12%ではありません。  </p>
+<p>   <strong>全体ミュート切替</strong> でBGM・環境音・UI操作音がすべて消音されることを確認し、戻します。  </p>
+<p>   再生 / 停止でループを停止します。</p>
+<figure><a href="../hht/assets/unity/33-play.png"><img loading="lazy" src="../hht/assets/unity/33-play.png" alt="完成シーンを再生し、立体音響の割合1、聞き手の位置、MusicとMasterの音量を表示する"></a><figcaption>完成シーンを再生し、立体音響の割合1、聞き手の位置、MusicとMasterの音量を表示する（クリックで拡大）</figcaption></figure>
+<p><strong>音源と設定の説明：</strong> LessonMusic.wavは教材用の短い合成旋律、LessonAmbience.wavは距離比較用の一定の合成音です。  </p>
+<p>実際の環境録音ではありません。  </p>
+<p>短い音はMono・Decompress On Loadで取り込みます。  </p>
+<p>Music／SFXは用途の分類で、ファイル形式の名前ではありません。  </p>
+<p>読み込み方式・圧縮・ループ継ぎ目は実際の対象端末でも確認します。</p>
+<p><strong>ブラウザーの範囲：</strong> Unity 6.3のWebGLではAudio Mixerのグループ音量を扱えますが、他のエフェクト・プロパティは対応していません。  </p>
+<p>Snapshotによる複数設定の遷移や残響・コンプレッサーを使う場合はEditor／対応ビルドで別途確認します。  </p>
+<p>本演習は公開した2つの音量値だけを操作します。  </p>
+<p>音が出ない時は最初のクリック、タブやOSの消音、AudioListenerの重複、OutputとClipの参照を確認します。</p>
+<p><strong>確認して報告：</strong> 2D／3Dそれぞれで、近距離・遠距離、Music −12dB、Master消音、停止の結果を記録します。  </p>
+<p>画面の「再生中」表示だけで発音の証拠にせず、聞こえ方と設定値を分けて報告してください。</p>
+<div id="unity-34" class="anchor"></div>
+<h3>U34 フォーリー：素材別の足音と接地の同期</h3>
+<p><strong>依頼者・見る人：</strong> 展示のキャラクター担当から、来場者が足の接地と床の材質を音でも感じられるようにしてほしいと依頼されました。</p>
+<p><strong>困りごと：</strong> 足が空中にある間に足音が鳴り、コンクリートと木の床でも同じ音です。</p>
+<p><strong>変更：</strong> 歩行クリップのAnimation Eventを接地付近へ移し、床別の足音を選びます。  </p>
+<p>形状は接地を観察するための簡易模型です。  </p>
+<p>移動・接地判定を含むゲーム用キャラクターコントローラーの実装は対象外です。</p>
+<p><strong>完成条件：</strong> 左右の接地付近で1回ずつ足音が鳴る。  </p>
+<p>Concrete／Woodの切替で音源が変わり、歩行速度を1.6倍にしてもイベントが動作に追従する。  </p>
+<p>停止時には追加の足音が鳴らない。  </p>
+<p>音源の出所と利用条件を示せる。</p>
+<p><strong>準備：</strong> U13とU33を確認し、<code>Assets/Scenes/34-Foley.unity</code> を開きます。  </p>
+<p><a data-webgl href="./webgl/index.html?unit=34&amp;variant=start">開始サンプルを実行</a>・<a data-webgl href="./webgl/index.html?unit=34&amp;variant=complete">完成サンプルを実行</a>。</p>
+<figure><a href="../hht/assets/unity/34-before.png"><img loading="lazy" src="../hht/assets/unity/34-before.png" alt="開始シーンの身体A、左足L、右足RとAnimator・AudioSource・FoleyPracticeLessonを確認する"></a><figcaption>開始シーンの身体A、左足L、右足RとAnimator・AudioSource・FoleyPracticeLessonを確認する（クリックで拡大）</figcaption></figure>
+<p><strong>フォーリーとは：</strong> 映像や動作に合わせて、足音、衣擦れ、道具の触れる音などを演じて録る仕事・音を指します。  </p>
+<p>このサンプルでは録音済みのCC0音源を借り、同期と素材選択を練習します。  </p>
+<p>教材制作者が足音を新しく収録したものではありません。</p>
+<ol>
+<li>A＝青い身体、L＝橙色の左足、R＝淡い黄色の右足、C＝明るい灰青色のコンクリート床、W＝紫の木の床を名前と凡例で確認します。  </li>
+</ol>
+<p>   開始シーンのPlayで <strong>歩行 / 停止</strong> を押し、EARLYと足が上がった状態のcontact heightを確認します。</p>
+<ol>
+<li>Playを止めてExhibitを選択し、Window → Animation → Animationを開きます。  </li>
+</ol>
+<p>   <code>FootEarly.anim</code> は1秒のループで、FootContactイベントが0.27秒と0.77秒にあります。  </p>
+<p>   左足は0秒、右足は0.5秒付近で最も低くなるため、この配置では鳴るのが遅れています。</p>
+<ol>
+<li>FootEarlyクリップのイベントを0.02秒と0.52秒へ移します。  </li>
+</ol>
+<p>   Functionは <strong>FootContact</strong>、Intは左0／右1です。  </p>
+<p>   Animationウィンドウの時間は秒:フレームです。  </p>
+<p>   60fpsでは約1フレームと31フレームの位置になります。  </p>
+<p>   完成例は <code>FootContact.anim</code> とそのControllerです。  </p>
+<p>   イベントを受けるFoleyPracticeLessonはAnimatorと同じExhibitに付けます。  </p>
+<p>   子の足だけへ付けてもAnimatorのイベントは受け取れません。</p>
+<figure><a href="../hht/assets/unity/34-events.jpg"><img loading="lazy" src="../hht/assets/unity/34-events.jpg" alt="Animationウィンドウで左右の足のカーブと接地からずれたイベントの位置を確認する"></a><figcaption>Animationウィンドウで左右の足のカーブと接地からずれたイベントの位置を確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>完成シーンを開いてPlayし、歩行 / 停止を押します。  </li>
+</ol>
+<p>   「接地時」表示、左足／右足、音源名、接地時の高さを確認します。  </p>
+<p>   ここでcontact heightは足のローカル座標から基準値0.1mを引いた測定値です。  </p>
+<p>   地形を調べた値ではありません。  </p>
+<p>   接地付近では0に近く、「早め」では大きくなります。</p>
+<figure><a href="../hht/assets/unity/34-contact.png"><img loading="lazy" src="../hht/assets/unity/34-contact.png" alt="完成シーンの「接地時」表示で足音イベントと足の高さを確認する"></a><figcaption>完成シーンの「接地時」表示で足音イベントと足の高さを確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li><strong>コンクリート / 木</strong> を押します。  </li>
+</ol>
+<p>   模型がCとWの間を移り、次の接地から <code>footstep_concrete_...</code> と <code>footstep_wood_...</code> が切り替わります。  </p>
+<p>   配布例は3種類を順番に選び、Pitchを0.96／1.04と小さく変えます。  </p>
+<p>   無制限に高低を変えると別の素材に聞こえるので、音を確認して調整します。</p>
+<ol>
+<li><strong>歩行速度 1 / 1.6</strong> を押します。  </li>
+</ol>
+<p>   Animatorの速度を変えると、クリップ内のイベントも速くなります。  </p>
+<p>   Updateに別の足音タイマーを足しません。  </p>
+<p>   <strong>接地時 / 早め</strong> で完成・不具合の比較ができますが、これは観察用の切替です。  </p>
+<p>   自分の修正は手順3のクリップで行います。  </p>
+<p>   歩行 / 停止を押して止め、step数が増えず、鳴り続けないことを確認します。</p>
+<figure><a href="../hht/assets/unity/34-wood.png"><img loading="lazy" src="../hht/assets/unity/34-wood.png" alt="木の床へ移動した模型とwood音源・音程を確認する"></a><figcaption>木の床へ移動した模型とwood音源・音程を確認する（クリックで拡大）</figcaption></figure>
+<p><strong>配布音源の利用条件：</strong> 足音は<a href="https://kenney.nl/assets/impact-sounds">Kenney Impact Sounds</a>のコンクリート・木各3ファイルです。  </p>
+<p>CC0で、配布フォルダーの <code>Kenney-License.txt</code> と <code>sources.json</code> に原文・取得先・ファイル照合値を残しています。  </p>
+<p>自分で音を収録する場合は、使う床・靴・動作、周囲の雑音、録る前後の余白、複数テイクを先に決め、無音の切り過ぎやクリッピングを避けて音源を差し替えます。  </p>
+<p>本演習では録音アプリの操作やマイク収録は実施していません。</p>
+<p><strong>判断のヒント：</strong> Animation Eventは見た目と音を合わせやすい方法です。  </p>
+<p>実際の移動では、接地中か、空中か、どの床かを別途Raycastなどで確かめ、着地音・走行音・水面などを選びます。  </p>
+<p>このサンプルの床ボタンは材質選択を観察するための仕組みで、自動の地面判定ではありません。</p>
+<p><strong>確認して報告：</strong> ずれた・正しいイベント位置、コンクリート・木、通常・高速、停止の結果を記録します。  </p>
+<p>クリップのイベント位置と受信コンポーネント、使用音源の利用条件を添えて提出してください。</p>
+<div id="unity-35" class="anchor"></div>
+<h3>U35 エディタ拡張：市街・Terrainのプロシージャル生成</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=35&amp;variant=start">U35 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=35&amp;variant=complete">U35 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示マップの制作担当者・プレイヤー。  </p>
+<p><strong>困りごと：</strong> 道路、建物、周囲の丘を毎回手で並べ直すと、配置の比較に時間がかかります。  </p>
+<p><strong>変更：</strong> EditorWindowで乱数シードと寸法を指定し、市街とTerrainをまとめて生成します。  </p>
+<p><strong>完成条件：</strong> 同じ設定で同じ配置を再生成でき、設定を変えると結果が変わり、Undo／Redoと保存後の再読込で建物・道路・地形・設定の整合を確認できること。  </p>
+<p>実在都市の地図、建物内部、交通、NavMesh、樹木・草は対象外です。</p>
+<p><strong>準備：</strong> <code>35-ProceduralMap.unity</code> を開き、Playを停止します。  </p>
+<p>HierarchyのExhibitは生成設定を持つRecipe、GeneratedMapは出力です。  </p>
+<p>Fは暗い土台、Tは黄緑のTerrain、R番号は明度の異なる道路、B番号はそれぞれ異なる色の建物です。  </p>
+<p>番号・名前・位置でも対象を特定します。</p>
+<figure><a href="../hht/assets/unity/35-before.png"><img loading="lazy" src="../hht/assets/unity/35-before.png" alt="開始シーンのRecipeと、平坦な地形・4棟の市街を確認するUnity Editor"></a><figcaption>開始シーンのRecipeと、平坦な地形・4棟の市街を確認するUnity Editor（クリックで拡大）</figcaption></figure>
+<p><strong>作業用コピーを分ける</strong></p>
+<ol>
+<li>File → Save Asで、シーンを自分の名前を付けて <code>Assets/Scenes</code> に保存します。</li>
+<li>Projectで <code>Assets/LessonSamples/ProceduralMaps/StartTerrain.asset</code> を選び、Ctrl+Dで複製します。  </li>
+</ol>
+<p>   複製は同じフォルダー内に置きます。</p>
+<ol>
+<li>HierarchyのExhibitを選び、Procedural Map Recipeの <strong>専用の地形データ</strong> へ複製したファイルを割り当て、シーンを保存します。  </li>
+</ol>
+<p>   シーンをコピーしてもTerrainDataは共有されたままなので、この手順が必要です。  </p>
+<p>   生成時にTのTerrain／TerrainColliderもこの専用データへ割り当て直します。</p>
+<ol>
+<li>自分で追加する目印や演出はGeneratedMapの外へ置きます。  </li>
+</ol>
+<p>   出力の中に所有していないオブジェクトがある場合、ツールはそれを消さずに停止します。</p>
+<p><strong>生成ツールを使う</strong></p>
+<ol>
+<li>メニュー <strong>教材 → 市街マップ生成</strong> を開き、生成設定欄が現在のシーンのExhibitになっていることを確認します。</li>
+<li>乱数シードを35、一辺の区画数 per sideを2、道幅を2、建物の最高高さを3、地形の起伏を0にします。  </li>
+</ol>
+<p>   寸法の単位はmです。</p>
+<ol>
+<li><strong>入力を確認 / validate</strong> を押します。  </li>
+</ol>
+<p>   建物4個、道路2本、65 x 65 heightmapの確認が表示されます。  </p>
+<p>   このボタンではシーンを変更しません。</p>
+<figure><a href="../hht/assets/unity/35-window.png"><img loading="lazy" src="../hht/assets/unity/35-window.png" alt="EditorWindowで乱数シード・街区数・道路幅・建物高・地形の起伏を指定する"></a><figcaption>EditorWindowで乱数シード・街区数・道路幅・建物高・地形の起伏を指定する（クリックで拡大）</figcaption></figure>
+<ol>
+<li><strong>市街マップと地形を生成 city + Terrain</strong> を押します。  </li>
+</ol>
+<p>   GeneratedMapに道路・建物・Terrainが生成されます。  </p>
+<p>   <strong>Frame generated output</strong> でSceneの表示を合わせ、Hierarchyで生成物の数と名前を確認します。</p>
+<ol>
+<li>同じ設定でもう一度市街マップと地形を生成し、棟数が増殖せず、結果の8桁の識別値が同じになることを記録します。  </li>
+</ol>
+<p>   識別値は設定名だけでなく、実際の配置・寸法・高さ配列から計算します。  </p>
+<p>   同一の教材・Unity版で比較する値で、異なるUnity版での完全一致や暗号学的な同一性は保証しません。</p>
+<ol>
+<li>乱数シードを73、一辺の区画数を3、道幅を3、建物の最高高さを8、地形の起伏を4へ変更し、入力を確認、市街マップと地形を生成の順に押します。  </li>
+</ol>
+<p>   9棟・4本の道路と、外周の丘へ変わることを確認します。</p>
+<figure><a href="../hht/assets/unity/35-generated.png"><img loading="lazy" src="../hht/assets/unity/35-generated.png" alt="9棟の建物と格子状の道路、外周の起伏を生成した結果"></a><figcaption>9棟の建物と格子状の道路、外周の起伏を生成した結果（クリックで拡大）</figcaption></figure>
+<ol>
+<li><strong>Ctrl+Z</strong> で建物・道路・Terrainの高さとRecipeの設定が変更前へ戻ることを確認します。  </li>
+</ol>
+<p>   <strong>Ctrl+Y</strong> でやり直します。  </p>
+<p>   Windowの入力欄は編集途中の値なので、復元した設定はExhibitのInspectorで確認します。  </p>
+<p>   Windowを開き直すとRecipeの現在値を読み直します。</p>
+<p>![Undoで復元する開始設定の例。  </p>
+<p>乱数シード35・2区画・起伏0のInspectorとScene](../../assets/unity/35-undo.png)</p>
+<ol>
+<li>HierarchyのT Terrainを選びます。  </li>
+</ol>
+<p>   TerrainコンポーネントとTerrainColliderが同じTerrainDataを参照すること、中央の市街が平坦で外周に起伏があることを確認します。  </p>
+<p>   共有する材質・TerrainLayerを編集すると別のシーンにも影響するため、見た目を変える場合はそれらも複製します。</p>
+<figure><a href="../hht/assets/unity/35-terrain.jpg"><img loading="lazy" src="../hht/assets/unity/35-terrain.jpg" alt="実際のTerrainとTerrainCollider、専用TerrainDataを確認する"></a><figcaption>実際のTerrainとTerrainCollider、専用TerrainDataを確認する（クリックで拡大）</figcaption></figure>
+<ol>
+<li>シーンを保存し、File → Save ProjectでTerrainDataなどの変更も保存します。  </li>
+</ol>
+<p>   別のシーンへ移ってから作業用シーンを開き直し、配置と識別値を見比べます。  </p>
+<p>   Gameタブを右クリックして <strong>Maximize</strong> で拡大してからPlayし、<strong>真上 / 斜めから見る</strong> で真上と斜め、<strong>凡例 表示 / 非表示</strong> で凡例と図中のB／R番号を切り替えます。  </p>
+<p>   停止後にPlay中のカメラ切替を保存する必要はありません。</p>
+<figure><a href="../hht/assets/unity/35-play.png"><img loading="lazy" src="../hht/assets/unity/35-play.png" alt="完成マップをPlayし、建物・道路・Terrainと識別用凡例を表示する"></a><figcaption>完成マップをPlayし、建物・道路・Terrainと識別用凡例を表示する（クリックで拡大）</figcaption></figure>
+<figure><a href="../hht/assets/unity/35-top.png"><img loading="lazy" src="../hht/assets/unity/35-top.png" alt="真上から道路の接続と建物の間隔を比較するGame画面"></a><figcaption>真上から道路の接続と建物の間隔を比較するGame画面（クリックで拡大）</figcaption></figure>
+<p><strong>ヒント・計算の分け方</strong></p>
+<ul>
+<li><strong>市街：</strong> 街区中心を8m間隔で並べ、街区間へ道路を置きます。  </li>
+</ul>
+<p>  建物の幅は「8 − 道路幅 − 余白1m」で求め、道路へはみ出さないようにします。  </p>
+<p>  高さだけを乱数シード付きの <code>System.Random</code> で変え、他のゲーム処理の乱数へ影響を与えません。</p>
+<ul>
+<li><strong>Terrain：</strong> 65×65の高さ配列を <code>[z, x]</code> で作ります。  </li>
+</ul>
+<p>  TerrainData.SetHeightsへ渡す値は0〜1なので、mの高さをTerrainの高さ8mで割ります。  </p>
+<p>  市街部分のノイズを抑え、外側へ滑らかに増やすことで、道路の下を平坦に保ちます。  </p>
+<p>  道路を傾斜へ追従させる処理は含みません。</p>
+<ul>
+<li><strong>Editorと実行時：</strong> <code>Assets/Editor/ProceduralMapWindow.cs</code> がウィンドウ・入力検証・Undo・生成を担当します。  </li>
+</ul>
+<p>  <code>ProceduralMapRecipe.cs</code> は設定と計算、<code>ProceduralMapLesson.cs</code> は保存済み結果の観察です。  </p>
+<p>  ブラウザからEditorWindowやAssetDatabaseを操作しません。</p>
+<ul>
+<li><strong>再生成の境界：</strong> Recipe直下の所有するGeneratedMapだけを置き換えます。  </li>
+</ul>
+<p>  入力範囲、Play停止、保存済みのアクティブシーン、専用TerrainData、所有権を先に検査します。  </p>
+<p>  共有データや不明な子が見つかった場合は停止の理由を読み、手作業で対象を確認します。</p>
+<ul>
+<li><strong>保存とバージョン管理：</strong> Recipeの値を持つ <code>.unity</code> と、高さを持つTerrainDataの <code>.asset</code>、対応する <code>.meta</code> を一緒に管理します。  </li>
+</ul>
+<p>  乱数シードだけを残す場合も、生成コード・Unity版・他の設定値が必要です。  </p>
+<p>  共同編集ではTerrainDataを担当者ごとに分け、U25〜U27の管理・共有方法と組み合わせます。</p>
+<p><strong>確認して報告：</strong> 同設定の再生成2回、変更後、Undo、Redo、保存後の再読込について、乱数シード・街区数・道路幅・最大建物高・起伏・識別値を記録します。  </p>
+<p>開始・変更後・Undo後の実画面と、編集したシーン／TerrainDataのファイル名を添えます。  </p>
+<p>共有TerrainData、無効な入力、生成領域内の手作業オブジェクトで停止した場合は、理由と解消方法も区別して報告します。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/35-ProceduralMap.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/35-ProceduralMap.unity">完成サンプル</a>。  </p>
+<p>完成は乱数シード73・3×3街区・道路3m・最大建物高8m・起伏4mです。  </p>
+<p>ブラウザは保存済み結果の比較用で、生成・Undo・保存はUnity Editorで行います。</p>
+<div id="unity-36" class="anchor"></div>
+<h3>U36 当たり判定：衝突・Trigger・Layer・Raycast</h3>
+<p><strong>ブラウザで実行：</strong> <a data-webgl href="./webgl/index.html?unit=36&amp;variant=start">U36 開始を実行</a> · <a data-webgl href="./webgl/index.html?unit=36&amp;variant=complete">U36 完成を実行</a></p>
+<p><strong>依頼者・見る人：</strong> 展示の制作担当者・遊ぶ来場者。  </p>
+<p><strong>困りごと：</strong> 入場を数えるセンサーで球が止まり、逆に壁をすり抜けます。  </p>
+<p><strong>変更：</strong> 壁の衝突とセンサーの通過検出を分け、対象レイヤーと照会条件を確かめます。  </p>
+<p>力・摩擦・反発の調整はU08・U29、2D物理はU41の発展内容です。  </p>
+<p><strong>完成条件：</strong> 球がGを通過して入場・退場が各1回、Wで停止して衝突開始1回となる。  </p>
+<p>球と壁の衝突を無効にすると通過する一方、Raycastは壁を検出する。  </p>
+<p>検索対象とTriggerの条件を変えた結果を説明できること。</p>
+<p><strong>準備：</strong> U03・U08・U18・U28を確認し、<code>36-Collision.unity</code> を自分用の別名で保存します。  </p>
+<p>Aは青い球、Gは赤紫の枠で示すセンサー、Wは橙の壁、Fは暗い床です。  </p>
+<p>番号・日本語の凡例・位置も併用し、色だけで判別しません。  </p>
+<p>専用LayerはCourseBall／CourseSensor／CourseWallです。  </p>
+<p>重力を使わずX方向だけに進め、当たり判定の違いに絞ります。</p>
+<figure><a href="../hht/assets/unity/36-before.png"><img loading="lazy" src="../hht/assets/unity/36-before.png" alt="開始シーンの球A、センサーG、壁WとColliderの設定を確認するUnity Editor"></a><figcaption>開始シーンの球A、センサーG、壁WとColliderの設定を確認するUnity Editor（クリックで拡大）</figcaption></figure>
+<p><strong>壁とセンサーを分ける：</strong></p>
+<ol>
+<li>HierarchyでExhibitを選び、Sphere ColliderとRigidbodyを確認します。  </li>
+</ol>
+<p>   Use Gravityは無効、ConstraintsはY・Z位置と全回転を固定しています。  </p>
+<p>   Collision Practice Probeが物理イベントを受け取り、ExhibitUIのCollision Practice Lessonへ通知します。</p>
+<ol>
+<li>TriggerSensorのBox Colliderは <strong>Is Triggerを有効</strong> にします。  </li>
+</ol>
+<p>   枠の内側を通過するとOnTriggerEnter／OnTriggerExitが呼ばれ、物理的に押し戻しません。  </p>
+<p>   枠の線と判定用Colliderは別の役割です。</p>
+<ol>
+<li>CollisionWallのBox Colliderを確認します。  </li>
+</ol>
+<p>   開始サンプルではIs Triggerが有効なので、Playして <strong>球を進める</strong> と壁まで通過します。  </p>
+<p>   衝突開始は0回、壁Trigger入場は1回です。</p>
+<figure><a href="../hht/assets/unity/36-trigger.png"><img loading="lazy" src="../hht/assets/unity/36-trigger.png" alt="壁もTriggerの設定でセンサーと壁を通過し、通知を確認したGame画面"></a><figcaption>壁もTriggerの設定でセンサーと壁を通過し、通知を確認したGame画面（クリックで拡大）</figcaption></figure>
+<ol>
+<li>Playを停止し、CollisionWallの <strong>Is Triggerを無効</strong> にして保存します。  </li>
+</ol>
+<p>   再生して球を進め、Gの入場・退場が各1回、Wの衝突開始が1回になり、球が壁の手前で止まることを確認します。  </p>
+<p>   完成シーンはこの設定です。  </p>
+<p>   <strong>球を初期位置へ</strong> は配置と回数を戻し、壁や照会の比較条件は維持します。</p>
+<figure><a href="../hht/assets/unity/36-collision.png"><img loading="lazy" src="../hht/assets/unity/36-collision.png" alt="完成サンプルで球が壁に停止し、センサーの入退場とCollision通知を表示する"></a><figcaption>完成サンプルで球が壁に停止し、センサーの入退場とCollision通知を表示する（クリックで拡大）</figcaption></figure>
+<p><strong>検出の前提：</strong> Colliderは形状、Rigidbodyは物理ボディ、Rendererは見た目です。  </p>
+<p>3DのCollision通知では、この例のように少なくとも一方を動的なRigidbodyにします。  </p>
+<p>Trigger通知にも少なくとも一方にRigidbodyが必要です。  </p>
+<p>Kinematicを含む組合せは<a href="https://docs.unity3d.com/6000.3/Documentation/Manual/collider-types-interaction.html">公式の組合せ表</a>で確認します。  </p>
+<p>両方が静的Colliderのままでは、この例の通知を再現できません。  </p>
+<p>2DではRigidbody2D／Collider2DとOnCollisionEnter2D／OnTriggerEnter2Dを使い、3D用と混ぜません。</p>
+<pre><code>
+void OnCollisionEnter(Collision hit) { /* 接触点や相手を調べる */ }
+
+void OnTriggerEnter(Collider other) { /* 範囲へ入った相手を調べる */ }
+
+void OnTriggerExit(Collider other) { /* 範囲から出た相手を調べる */ }
+
+</code></pre>
+<p><strong>Layerで衝突する組合せを変える：</strong></p>
+<ol>
+<li>GameObject上部のLayerと、Edit → Project Settings → PhysicsのLayer Collision Matrixを確認します。  </li>
+</ol>
+<p>   球・センサー・壁を専用Layerへ分けます。  </p>
+<p>   Tagは対象の意味を判別するラベルで、Tagを付けただけで物理衝突が除外されることはありません。</p>
+<ol>
+<li>完成シーンをPlayし、<strong>球と壁の衝突を切替</strong> で無効にしてから球を進めます。  </li>
+</ol>
+<p>   Gの入退場は残り、Wをすり抜け、衝突開始は0回になります。  </p>
+<p>   ここでは <code>Physics.IgnoreLayerCollision</code> を使い、Project Settingsの保存内容を書き換えず実行中の専用ペアだけを変えます。  </p>
+<p>   同じLayer同士の全ペアに影響するため、個体間だけを除外する <code>Physics.IgnoreCollision</code> と区別します。  </p>
+<p>   サンプルは終了・シーン切替時に元の組合せへ戻します。</p>
+<figure><a href="../hht/assets/unity/36-layers.png"><img loading="lazy" src="../hht/assets/unity/36-layers.png" alt="壁との衝突が無効でも、Raycastでは壁が見つかる比較画面"></a><figcaption>壁との衝突が無効でも、Raycastでは壁が見つかる比較画面（クリックで拡大）</figcaption></figure>
+<p><strong>Raycastの照会条件を変える：</strong></p>
+<ol>
+<li><strong>Raycastで照会</strong> を押します。  </li>
+</ol>
+<p>   X=-4.8から右向きへ最大10mの線で、最初のColliderを検索します。  </p>
+<p>   結果は <code>W 壁</code> です。  </p>
+<p>   球と壁の衝突を無効にしたままでも、検索用のLayerMaskで壁を含めれば検出します。  </p>
+<p>   衝突する組合せと検索する対象は別の設定です。</p>
+<ol>
+<li><strong>照会：壁 / 壁とセンサー</strong> で両方を対象にします。  </li>
+</ol>
+<p>   Triggerを除外中ならGを飛ばしてWが見つかります。  </p>
+<p>   <strong>照会にTriggerを含める</strong> を有効にすると、手前の <code>G センサー</code> が見つかります。  </p>
+<p>   LayerMaskのビット列、距離、<code>QueryTriggerInteraction.Ignore／Collide</code> をそれぞれ明示しています。  </p>
+<p>   Layer番号をそのままマスクへ渡さず、<code>1 &lt;&lt; layer</code> または <code>LayerMask.GetMask</code> を使います。</p>
+<ol>
+<li><strong>壁：衝突 / 通過</strong> で壁もTriggerへ切り替え、照会を壁のみ・Trigger除外にして検索します。  </li>
+</ol>
+<p>   結果が「該当なし」になることを確認します。  </p>
+<p>   このボタンによる変更はPlay中だけです。  </p>
+<p>   課題の壁の設定は停止後にInspectorで保存します。</p>
+<figure><a href="../hht/assets/unity/36-raycast.png"><img loading="lazy" src="../hht/assets/unity/36-raycast.png" alt="Raycastの対象へセンサーを加え、Triggerも含めると手前のGが見つかる"></a><figcaption>Raycastの対象へセンサーを加え、Triggerも含めると手前のGが見つかる（クリックで拡大）</figcaption></figure>
+<p><strong>判断のヒント：</strong> 見えるMeshとColliderの大きさは一致するとは限りません。  </p>
+<p>SceneのCollider編集表示で形・位置を確認します。  </p>
+<p>動的な複雑形状では複数の基本ColliderやConvex MeshColliderを検討し、非Convex MeshColliderをそのまま動的Rigidbodyへ使いません。  </p>
+<p>高速な小物のすり抜けはCollision Detectionや物理ステップも調べ、コールバック名だけを変えて直したことにしません。  </p>
+<p>無効なCollider、Layerの組合せ、物理ボディの種類、検索マスク、Triggerの条件、Raycastの始点がCollider内にないかを分けて確認します。</p>
+<p><strong>サンプル：</strong> <a href="./project/Assets/Scenes/36-Collision.unity">開始シーン</a> · <a href="./project/Assets/Scenes/Completed/36-Collision.unity">完成サンプル</a> · <a href="./project/Assets/Scripts/CollisionPracticeProbe.cs">通知を受けるコード</a> · <a href="./project/Assets/Scripts/CollisionPracticeLesson.cs">操作と照会のコード</a>。  </p>
+<p>U08の落下・停止やU29の物理サンドボックスへ応用する場合も、相手を確認してから得点や演出へ接続します。  </p>
+<p>OnCollisionStay／OnTriggerStayは接触・滞在中に繰り返す通知なので、1回の入場として加算しません。</p>
+<p><strong>確認して報告：</strong> 壁のIs Trigger有効／無効、球と壁の衝突有効／無効、RaycastのTrigger除外／含むを比較します。  </p>
+<p>球の停止位置、衝突開始、Gの入場・退場、照会結果を実画面とともに示し、Collider・Rigidbody・Layer・Tag・LayerMaskの役割を説明します。  </p>
+<p>Playを停止して開き直した時にも自分の壁の設定が残ることを確認します。</p><footer><p><a href="verification.md">撮影・検証記録</a> · <a href="references.md">用語と公式資料</a></p></footer></main></div><script src="workbook-player.js"></script></body></html>

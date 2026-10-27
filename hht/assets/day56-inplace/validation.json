@@ -1,0 +1,14 @@
+{
+  "status": "PASS",
+  "workflow": "modify the existing site in its current folder",
+  "no_learner_site_copy": true,
+  "day3_day4_results_required": false,
+  "git_and_bundle": "required",
+  "basic_html_preserved": true,
+  "new_practice_day05_day06_created": false,
+  "bundle_tests": 7,
+  "course_validation": "PASS",
+  "course_site_tests": 11,
+  "workbook_tests": 6,
+  "removed_data": "only unchanged start folders generated in the preceding task; SHA-256 matched before removal"
+}

@@ -6,6 +6,7 @@ import contextlib
 import functools
 import http.server
 from pathlib import Path
+from workbook_files import read_workbook, DAY_NAMES, PART_NAMES, hint_format_errors
 import re
 import socketserver
 import threading
@@ -14,10 +15,14 @@ import urllib.request
 from PIL import Image
 
 from workbook_navigation import workbook_day_link_errors
+from course_site import validate as validate_site
+from workbook_targets import validate as validate_targets
 
 
 ROOT = Path(__file__).resolve().parents[1]
 ERRORS: list[str] = []
+ERRORS.extend(validate_site(ROOT))
+ERRORS.extend(validate_targets(ROOT))
 
 
 def require(condition: bool, message: str) -> None:
@@ -26,72 +31,8 @@ def require(condition: bool, message: str) -> None:
 
 
 curriculum = (ROOT / "docs/curriculum.md").read_text(encoding="utf-8")
-workbook_index_path = ROOT / "docs/student-workbook.md"
-workbook_root = ROOT / "docs/workbook"
-workbook_day_paths = [workbook_root / f"day-{number:02d}.md" for number in range(1, 16)]
-workbook_paths = [workbook_index_path, workbook_root / "overview.md", *workbook_day_paths]
-workbook_documents = {}
-for path in workbook_paths:
-    require(path.is_file(), f"Missing workbook document: {path.relative_to(ROOT)}")
-    workbook_documents[path] = path.read_text(encoding="utf-8") if path.is_file() else ""
-workbook_index = workbook_documents[workbook_index_path]
-workbook = "\n".join(workbook_documents.values())
-require(set(workbook_root.glob("day-*.md")) == set(workbook_day_paths),
-        "Workbook must have DAY 01-15 files exactly once")
-require(not re.search(r"^## DAY \d+ ", workbook_index, re.MULTILINE),
-        "Workbook index must not duplicate DAY content")
-require("**完成条件:**" not in workbook_index,
-        "Workbook index must not duplicate acceptance conditions")
-require("**完成条件:**" not in workbook_documents[workbook_root / "overview.md"],
-        "Workbook common instructions must not duplicate DAY acceptance conditions")
-require("./workbook/overview.md" in workbook_index,
-        "Workbook index must link to the common instructions")
-
-
-def markdown_prose(document: str) -> str:
-    """Ignore examples inside fenced code when checking Markdown destinations."""
-    lines = []
-    fence = None
-    for line in document.splitlines():
-        match = re.match(r"^\s*(`{3,}|~{3,})", line)
-        if match:
-            marker = match.group(1)
-            if fence is None:
-                fence = marker
-            elif marker[0] == fence[0] and len(marker) >= len(fence):
-                fence = None
-            continue
-        if fence is None:
-            lines.append(line)
-    return "\n".join(lines)
-
-
-def markdown_anchors(document: str) -> set[str]:
-    prose = markdown_prose(document)
-    anchors = set(re.findall(r'<a id="([^"]+)"></a>', prose))
-    counts = {}
-    for heading in re.findall(r"^#+ (.+)$", prose, re.MULTILINE):
-        heading = re.sub(r"\[([^\]]+)\]\([^)]+\)", r"\1", heading)
-        base = re.sub(r"[^\w\- ]", "", heading.lower()).replace(" ", "-")
-        count = counts.get(base, 0)
-        counts[base] = count + 1
-        anchors.add(base if count == 0 else f"{base}-{count}")
-    return anchors
-
-
-def validate_markdown_links(path: Path, document: str) -> None:
-    for match in re.finditer(r"\]\(([^)\s]+)\)", markdown_prose(document)):
-        url = match.group(1)
-        if re.match(r"[\w+.-]+:", url) or url.startswith("//"):
-            continue
-        relative, _, fragment = url.partition("#")
-        target = (path.parent / relative).resolve() if relative else path.resolve()
-        require(target.exists(), f"Broken link in {path.relative_to(ROOT.parent)}: {url}")
-        if target.is_file() and target.suffix == ".md" and fragment:
-            require(fragment in markdown_anchors(target.read_text(encoding="utf-8")),
-                    f"Broken anchor in {path.relative_to(ROOT.parent)}: {url}")
-
-
+workbook_index = (ROOT / "docs/student-workbook.md").read_text(encoding="utf-8")
+workbook = read_workbook(ROOT)
 lesson_count = len(re.findall(r"^## 第\d+回 ", curriculum, flags=re.MULTILINE))
 require(lesson_count == 15, f"Expected 15 lessons; found {lesson_count}")
 
@@ -100,7 +41,7 @@ lesson_blocks = [block for block in lesson_blocks if re.match(r"^## 第\d+回 ",
 require(len(lesson_blocks) == 15, f"Expected 15 lesson blocks; found {len(lesson_blocks)}")
 for block in lesson_blocks:
     title = block.splitlines()[0]
-    for marker in ("**この回のゴール:**", "**120分:**", "**やってみよう:**", "**提出物:**", "**できたかチェック:**"):
+    for marker in ("**この回のゴール:**", "**120分:**", "**やってみよう:**", "**できたかチェック:**"):
         require(marker in block, f"{title} missing {marker}")
     timing_match = re.search(r"\*\*120分:\*\* ([^\n]+)", block)
     if timing_match:
@@ -155,30 +96,39 @@ for group, terms in textbook_coverage.items():
     for term in terms:
         require(term in coverage_source, f"Textbook coverage missing [{group}] term: {term}")
 
-workbook_days = []
-for number, path in enumerate(workbook_day_paths, 1):
-    document = workbook_documents[path]
-    headings = re.findall(r"^## DAY (\d+) ", markdown_prose(document), re.MULTILINE)
-    require(headings == [str(number)], f"{path.name} must contain only DAY {number}")
-    match = re.search(r"^## DAY \d+ ", document, re.MULTILINE)
-    workbook_days.append(document[match.start():] if match else "")
+workbook_days = [(ROOT / "docs/workbook" / name).read_text(encoding="utf-8") for name in DAY_NAMES]
+for name in PART_NAMES:
+    require(f"./workbook/{name}" in workbook_index, f"Workbook index missing part: {name}")
+require("**完成条件:**" not in workbook_index and "```" not in workbook_index, "Workbook index must contain navigation only")
+require(len(workbook_index.splitlines()) <= 60, "Workbook index must stay short")
 require(len(workbook_days) == 15, f"Expected 15 workbook days; found {len(workbook_days)}")
+for name in ("introduction.md", "common.md", *DAY_NAMES):
+    hint_text = (ROOT / "docs/workbook" / name).read_text(encoding="utf-8")
+    for line_number in hint_format_errors(hint_text):
+        require(False, f"Hint must use standalone emoji label and quoted explanation: {name}:{line_number}")
+
 for block in workbook_days:
-    title = block.splitlines()[0] if block else "Missing DAY"
-    require("からの" in block, f"{title} missing client/request context")
-    require("## 今日の目的" in block or "**今日のミッション:**" in block, f"{title} missing learning purpose")
-    require("## 今日のゴール" in block or "**完成条件:**" in block, f"{title} missing completion goal")
-    require("## STEP 1" in block or "### ① " in block, f"{title} missing step-by-step procedure")
+    title = block.splitlines()[0]
+    for marker in (
+        "からの",
+        "**今回の課題:**",
+        "**作業前に考えること:**",
+        "**今回学ぶこと:**",
+        "**作業メモ:**",
+        "**確認項目:**",
+    ):
+        require(marker in block, f"{title} missing {marker}")
+    require("返信の練習" not in block, f"{title} must not include removed reply-practice tasks")
+    if title.startswith("# DAY 14 "):
+        require("**相談の練習:**" in block, f"{title} missing consultation challenge")
+    if title.startswith("# DAY 15 "):
+        require("**発表の練習:**" in block, f"{title} missing presentation challenge")
+for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/[^)]+)\)", workbook):
+    relative = match.group(1)
     require(
-        "## 完了チェック" in block or "## 最終チェック" in block or "**星チェック:**" in block,
-        f"{title} missing completion checklist",
+        (ROOT / "docs" / relative).resolve().exists(),
+        f"Broken workbook image: {relative}",
     )
-    require(
-        any(term in block for term in ("報告", "返信", "確認を依頼", "発表")),
-        f"{title} missing communication/reporting task",
-    )
-for path, document in workbook_documents.items():
-    validate_markdown_links(path, document)
 
 portfolio_brief = (ROOT / "docs/portfolio-project.md").read_text(encoding="utf-8")
 for term in ("見てほしい", "制作実績", "個人情報", "portfolio/index.html", "portfolio/css/style.css", "2分間"):
@@ -204,8 +154,8 @@ assignment_blocks = re.split(r"(?=^## DAY \d+ )", assignment_checks, flags=re.MU
 assignment_blocks = [block for block in assignment_blocks if re.match(r"^## DAY \d+ ", block)]
 require(len(assignment_blocks) == 15, f"Expected 15 assignment quality blocks; found {len(assignment_blocks)}")
 for number, block in enumerate(workbook_days, start=1):
-    title = block.splitlines()[0] if block else "Missing DAY"
-    for marker in ("**入力:**", "**完成物:**", "**完成条件:**", "**証拠:**", "**追加チャレンジ:**"):
+    title = block.splitlines()[0]
+    for marker in ("**入力:**", "**完成物:**", "**完成条件:**", "**証拠:**", "**発展課題:**"):
         require(marker in block, f"{title} missing quality marker {marker}")
     require(
         block.count("**完成条件:**") == 1,
@@ -216,8 +166,8 @@ for number, block in enumerate(workbook_days, start=1):
     if number <= len(assignment_blocks):
         index_block = assignment_blocks[number - 1]
         require(
-            f"../docs/workbook/day-{number:02d}.md#day-{number}-done)" in index_block,
-            f"Assignment index DAY {number} must link to its canonical completion section",
+            f"../docs/workbook/day{number:02d}.md" in index_block,
+            f"Assignment index DAY {number} must link to the canonical workbook",
         )
         require(
             "**完成条件:**" not in index_block,
@@ -255,24 +205,43 @@ require(
     "./hht/docs/student-workbook.md" in repository_readme,
     "Repository README must link directly to the canonical student workbook",
 )
-for term in ("リポジトリのルート", "Visual Studio Code", "作業ブランチ"):
-    require(term in repository_readme, f"Repository README missing VS Code workflow term: {term}")
+for term in ("VS Code", "Git"):
+    require(term in repository_readme, f"Repository README missing local Git workflow term: {term}")
 for document_name, document in {
     "course README": readme,
     "curriculum": curriculum,
     "student workbook": workbook,
     "lesson packs": (ROOT / "lessons/README.md").read_text(encoding="utf-8"),
 }.items():
-    require(
-        "リポジトリのルート" in document and ("VS Code" in document or "Visual Studio Code" in document),
-        f"{document_name} missing repository-root VS Code rule",
-    )
+    require("VS Code" in document and "ローカルGit" in document,
+            f"{document_name} missing local VS Code / Git start rule")
+require('id="local-git-workflow"' in workbook, "Workbook missing canonical Git workflow anchor")
+require("Gitは全15回で使います" in workbook, "Workbook must require Git throughout the course")
+for block in workbook_days:
+    number = int(re.match(r"# DAY (\d+)", block).group(1))
+    for term in ("#local-git-workflow", f"day{number:02d}-start", f"day{number:02d}-end"):
+        require(term in block, f"DAY {number} missing Git workflow continuation: {term}")
+policy_paths = (
+    "docs/student-workbook.md", *(f"docs/workbook/{name}" for name in PART_NAMES), "docs/local-git.md", "submissions/README.md",
+    "docs/vscode-hands-on.md", "docs/vscode-instructor-guide.md", "docs/exercise-operations.md",
+)
+for relative in policy_paths:
+    policy = (ROOT / relative).read_text(encoding="utf-8")
+    for forbidden in ("Gitは必須ではありません", "Git必須ではない", "Gitを使わない場合", "ZIP提出", "GitHubアカウントができた人から"):
+        require(forbidden not in policy, f"Obsolete submission policy in {relative}: {forbidden}")
+git_guide = (ROOT / "docs/local-git.md").read_text(encoding="utf-8")
+for command in ("git commit", "git status --short", "git diff"):
+    require(command in git_guide, f"Git reference missing operation: {command}")
+for name in ("common.md", "introduction.md", *DAY_NAMES):
+    text = (ROOT / "docs/workbook" / name).read_text(encoding="utf-8")
+    require("提出" not in text and ".bundle" not in text,
+            f"Obsolete hand-in instruction in {name}")
 student_portal = (ROOT / "student/README.md").read_text(encoding="utf-8")
 instructor_portal = (ROOT / "instructor/README.md").read_text(encoding="utf-8")
-require("15日分のお仕事" in student_portal, "Student portal missing 15-day navigation")
+require("全15回の授業" in student_portal, "Student portal missing 15-lesson navigation")
 require("講師トークガイド" not in student_portal, "Student portal exposes instructor talk guide")
 require("講師トークガイド" in instructor_portal, "Instructor portal missing instructor talk guide")
-require("取り扱いに注意する資料" in instructor_portal, "Instructor portal missing protected-material guidance")
+require("資料の取り扱い" in instructor_portal, "Instructor portal missing protected-material guidance")
 for portal_name, portal_path in {
     "student": ROOT / "student/README.md",
     "instructor": ROOT / "instructor/README.md",
@@ -285,92 +254,8 @@ for portal_name, portal_path in {
             f"{portal_name} portal broken link: {relative}",
         )
 for match in re.finditer(r"\]\((\./[^)]+)\)", readme):
-    relative = match.group(1)
+    relative = match.group(1).split("#", 1)[0]
     require((ROOT / relative).exists(), f"Broken README link: {relative}")
-
-# Keep the local submission route usable for all fifteen lessons.
-submissions = (ROOT / "submissions/README.md").read_text(encoding="utf-8")
-local_submission_path = ROOT / "submissions/local-submission.md"
-local_submission = local_submission_path.read_text(encoding="utf-8")
-local_days = [int(value) for value in re.findall(r"^\| (\d{2}) \|", local_submission, re.MULTILINE)]
-require(local_days == list(range(1, 16)), "ZIP submission must cover DAY 01-15 exactly once in order")
-for field in ("依頼", "質問", "変更した場所", "変更しなかった場所", "確認したこと", "未確認", "バージョン", "確認URL"):
-    require(field in submissions, f"Submission instructions missing WORKLOG field: {field}")
-for term in ("before/starter-site", "before/portfolio", "after/starter-site", "after/portfolio",
-             "WORKLOG.md", "screenshots", "evidence", "changes.md", "受領", "再提出", "NOT APPLICABLE（ZIP提出）"):
-    require(term in local_submission, f"ZIP route missing source/evidence/review requirement: {term}")
-for name, document in {"student portal": student_portal, "workbook": workbook,
-                       "submissions": submissions, "instructor portal": instructor_portal}.items():
-    require("local-submission.md" in document, f"{name} must link to the non-Git route")
-require("## 標準のZIPで提出する" in submissions, "ZIP must be the standard submission route")
-require("## 任意のPRで提出してCI判定を受ける" in submissions, "PR submission must remain optional")
-rubric = (ROOT / "docs/rubric.md").read_text(encoding="utf-8")
-require("加点・減点はしません" in rubric and "授業の合否を意味しません" in rubric,
-        "Rubric must separate submission tools/CI from course grading")
-decision_text = (ROOT / "ISSUES.md").read_text(encoding="utf-8")
-issue_02 = decision_text.split("## ISSUE-02 ", 1)[1].split("## ISSUE-03 ", 1)[0]
-require("- 選択: A" in issue_02 and "Gitは必須から除外" in issue_02,
-        "ISSUE-02 local-file policy must remain explicit")
-
-submission_documents = [ROOT.parent / "README.md", ROOT / "README.md", ROOT / "ISSUES.md",
-                        ROOT / "GitHub.md", ROOT / "student/README.md", ROOT / "instructor/README.md",
-                        ROOT / "submissions/README.md", local_submission_path,
-                        ROOT / "student/assignment-checks.md", ROOT / "docs/student-workbook.md",
-                        ROOT / "docs/rubric.md", ROOT / "docs/exercise-operations.md",
-                        ROOT / "docs/submission-policy-history.md", *workbook_paths[1:]]
-for path in submission_documents:
-    document = path.read_text(encoding="utf-8") if path.is_file() else ""
-    for match in re.finditer(r"\]\((\.{1,2}/[^)#]+)(?:#([^)]*))?\)", document):
-        target = (path.parent / match.group(1)).resolve()
-        require(target.exists(), f"Broken submission link in {path.name}: {match.group(1)}")
-        if target.is_file() and target.suffix == ".md" and match.group(2):
-            target_text = target.read_text(encoding="utf-8")
-            anchors = markdown_anchors(target_text)
-            require(match.group(2) in anchors, f"Broken submission anchor in {path.name}: {match.group(0)}")
-
-# DAY links must land on the matching lesson, not only a similarly named heading.
-# Check the actual document IDs and local fragment links, including the top TOC.
-for path, document in workbook_documents.items():
-    explicit_ids = re.findall(r'<a id="([^"]+)"></a>', markdown_prose(document))
-    require(len(explicit_ids) == len(set(explicit_ids)), f"{path.name} has duplicate navigation IDs")
-workbook_anchors = markdown_anchors(workbook_index)
-for number in range(1, 16):
-    document = workbook_documents[workbook_day_paths[number - 1]]
-    explicit_ids = re.findall(r'<a id="([^"]+)"></a>', markdown_prose(document))
-    require(
-        re.search(rf'<a id="day-{number}"></a>\s+## DAY {number} ', document) is not None,
-        f"DAY {number} ID must be immediately before the matching DAY heading",
-    )
-    for suffix in ("concepts", "actions", "done"):
-        require(f"day-{number}-{suffix}" in explicit_ids, f"DAY {number} missing {suffix} destination")
-        require(f"day-{number}-{suffix}" in workbook_anchors,
-                f"Workbook index missing legacy DAY {number} {suffix} anchor")
-        require(f"./workbook/day-{number:02d}.md#day-{number}-{suffix})" in workbook_index,
-                f"Workbook index must link to DAY {number} {suffix}")
-    require(f"day-{number}" in workbook_anchors, f"Workbook index missing legacy DAY {number} anchor")
-    require(f"./workbook/day-{number:02d}.md#day-{number})" in workbook_index,
-            f"Workbook index must link directly to DAY {number}")
-    require("../student-workbook.md#workbook-days" in document, f"DAY {number} missing index navigation")
-    for adjacent in (number - 1, number + 1):
-        if 1 <= adjacent <= 15:
-            require(f"day-{adjacent:02d}.md#day-{adjacent})" in document,
-                    f"DAY {number} missing navigation to DAY {adjacent}")
-
-# All entry pages and lesson packs use real destinations in the canonical workbook.
-for entry in [ROOT.parent / "README.md", *ROOT.rglob("*.md")]:
-    document = entry.read_text(encoding="utf-8")
-    relative_entry = entry.relative_to(ROOT) if entry.is_relative_to(ROOT) else Path(entry.name)
-    for error in workbook_day_link_errors(relative_entry, markdown_prose(document)):
-        require(False, f"{entry.relative_to(ROOT.parent)}: {error}")
-    for match in re.finditer(r'\]\(([^)\s]*student-workbook\.md)#([^)]+)\)', document):
-        require(match.group(2) in workbook_anchors, f"Broken workbook entry in {entry.relative_to(ROOT.parent)}: {match.group(2)}")
-    for match in re.finditer(r'\]\(([^)\s]*(?:workbook/)?(?:day-\d{2}|overview)\.md)(?:#([^)]*))?\)', markdown_prose(document)):
-        target = (entry.parent / match.group(1)).resolve()
-        if target.parent == workbook_root.resolve():
-            require(target.is_file(), f"Missing split workbook entry in {entry.relative_to(ROOT.parent)}: {match.group(1)}")
-            if target.is_file() and match.group(2):
-                require(match.group(2) in markdown_anchors(target.read_text(encoding="utf-8")),
-                        f"Broken split workbook entry in {entry.relative_to(ROOT.parent)}: {match.group(2)}")
 
 lesson_pack_root = ROOT / "lessons"
 lesson_pack_files = [lesson_pack_root / f"{number:02d}" / "README.md" for number in range(1, 16)]
@@ -379,8 +264,6 @@ for number, path in enumerate(lesson_pack_files, start=1):
     if not path.exists():
         continue
     pack = path.read_text(encoding="utf-8")
-    require(f"../../docs/workbook/day-{number:02d}.md#day-{number})" in pack,
-            f"Lesson pack {number:02d} must link to its matching DAY")
     for marker in ("## 今日使う資料", "**生徒:**", "**講師:**", "**進行:**", "## 今日できるもの"):
         require(marker in pack, f"Lesson pack {number:02d} missing {marker}")
     for match in re.finditer(r"\]\((\.\./\.\./[^)#]+)(?:#[^)]+)?\)", pack):
@@ -474,6 +357,12 @@ with socketserver.TCPServer(("127.0.0.1", 0), handler) as server:
     finally:
         server.shutdown()
         thread.join(timeout=3)
+
+# Check the canonical DAY destination at every lesson and portal entry.
+for entry in [ROOT / "README.md", ROOT / "student/README.md", ROOT / "instructor/README.md", *sorted((ROOT / "lessons").glob("*/README.md"))]:
+    document = entry.read_text(encoding="utf-8")
+    for error in workbook_day_link_errors(entry.relative_to(ROOT), document):
+        require(False, f"{entry.relative_to(ROOT)}: {error}")
 
 issues = (ROOT / "ISSUES.md").read_text(encoding="utf-8")
 open_issues = len(re.findall(r"^- 状態: OPEN$", issues, flags=re.MULTILINE))

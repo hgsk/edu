@@ -1,0 +1,29 @@
+{
+  "editorClosure": "graceful",
+  "existingChromePreserved": true,
+  "controlFiles": [
+    {
+      "exists": false,
+      "file": "capture-command.json"
+    },
+    {
+      "exists": false,
+      "file": "capture-status.json"
+    },
+    {
+      "exists": false,
+      "file": "runtime-status.json"
+    }
+  ],
+  "status": "PASS",
+  "existingVSCodePreserved": true,
+  "checkedPids": [
+    35144,
+    64000,
+    31108,
+    24984,
+    41548
+  ],
+  "remaining": [],
+  "browserAndServerCleanup": "PASS"
+}

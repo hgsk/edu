@@ -1,0 +1,21 @@
+{
+  "finalUpdateExit": 0,
+  "unityEditorsRemaining": 0,
+  "httpServers": "closed in browser verification finally blocks",
+  "readerBrowserExit": 0,
+  "workbookBrowserExit": 0,
+  "preexistingApps": "preserved",
+  "absentPids": [
+    53960,
+    40040,
+    33080,
+    39236,
+    30864,
+    56684,
+    27424,
+    56448
+  ],
+  "previousOutputRemoved": true,
+  "status": "PASS",
+  "generatedCatalogRemoved": true
+}

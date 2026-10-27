@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "cleanup": "PASS",
+  "checks": [
+    "DAY 05: supplied files only; basic CSS; prose retained; 3-page links; 390/1100px PASS",
+    "DAY 06: supplied files only; basic CSS; prose retained; 3-page links; 390/1100px PASS"
+  ],
+  "screenshots": [
+    "day05-start.png",
+    "day05-result.png",
+    "day06-start.png",
+    "day06-result.png"
+  ],
+  "process": {
+    "pid": 35412,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-27T09:55:45.432Z"
+  }
+}

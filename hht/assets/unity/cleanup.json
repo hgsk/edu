@@ -1,0 +1,17 @@
+[
+  {
+    "pid": 14612,
+    "status": "PASS",
+    "shutdown": "forced after graceful request"
+  },
+  {
+    "pid": 35412,
+    "status": "PASS",
+    "shutdown": "graceful"
+  },
+  {
+    "pid": 5732,
+    "status": "PASS",
+    "shutdown": "graceful"
+  }
+]

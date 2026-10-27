@@ -1,0 +1,16 @@
+{
+  "status": "PASS",
+  "nativeEditorPid": 50184,
+  "checkedPids": [
+    50184,
+    47744,
+    40328,
+    35416,
+    65376
+  ],
+  "remainingOwnedProcesses": [],
+  "remainingHeadlessProcesses": [],
+  "httpServerCleanup": "PASS: browser gates and workbook script awaited close",
+  "userVSCodeWindowPreserved": 1444442,
+  "externalPublication": "NOT RUN: local workbook only"
+}

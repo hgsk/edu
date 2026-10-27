@@ -1,0 +1,25 @@
+{
+  "checks": [
+    {
+      "name": "36 units, alt text, actual image decoding",
+      "status": "PASS",
+      "images": 157
+    },
+    {
+      "name": "navigation and layout 1440px",
+      "status": "PASS"
+    },
+    {
+      "name": "navigation and layout 390px",
+      "status": "PASS"
+    }
+  ],
+  "errors": [],
+  "cleanup": "PASS",
+  "process": {
+    "pid": 24984,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-17T22:34:47.456Z"
+  },
+  "status": "PASS"
+}

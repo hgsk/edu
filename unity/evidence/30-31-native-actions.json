@@ -1,0 +1,51 @@
+{
+  "status": "PASS",
+  "narrow": {
+    "scene": "30-Graybox",
+    "time": 28.58486557006836,
+    "position": {
+      "x": -0.002864394336938858,
+      "y": 1.0299999713897705,
+      "z": -0.9488869905471802
+    },
+    "ugui": "",
+    "uitoolkit": "BLOCKED | W A S D / 0.5m buttons",
+    "particles": 0
+  },
+  "wide": {
+    "scene": "30-Graybox",
+    "time": 29.595195770263672,
+    "position": {
+      "x": 0,
+      "y": 1.0299999713897705,
+      "z": 3.5999999046325684
+    },
+    "ugui": "",
+    "uitoolkit": "GOAL | W A S D / 0.5m buttons",
+    "particles": 0
+  },
+  "kitOn": {
+    "scene": "31-Kitbash",
+    "time": 47.85213851928711,
+    "position": {
+      "x": 0,
+      "y": 1.0299999713897705,
+      "z": 3.5999999046325684
+    },
+    "ugui": "",
+    "uitoolkit": "GOAL | W A S D / 0.5m buttons | kit ON",
+    "particles": 0
+  },
+  "kitOff": {
+    "scene": "31-Kitbash",
+    "time": 93.98331451416016,
+    "position": {
+      "x": 0,
+      "y": 1.0299999713897705,
+      "z": 3.5999999046325684
+    },
+    "ugui": "",
+    "uitoolkit": "GOAL | W A S D / 0.5m buttons | kit OFF",
+    "particles": 0
+  }
+}

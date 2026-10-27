@@ -1,0 +1,27 @@
+{
+  "status": "PASS",
+  "drop": {
+    "scene": "29-PhysicsSandbox",
+    "time": 39.54472351074219,
+    "position": {
+      "x": 1.8414866924285889,
+      "y": 0.4000000059604645,
+      "z": 0
+    },
+    "ugui": "",
+    "uitoolkit": "SIMULATING | angle 15 | bounce LOW | blocks moved 3/3",
+    "particles": 0
+  },
+  "reset": {
+    "scene": "29-PhysicsSandbox",
+    "time": 52.570770263671875,
+    "position": {
+      "x": -2.799999952316284,
+      "y": 3,
+      "z": 0
+    },
+    "ugui": "",
+    "uitoolkit": "EDIT / READY | angle 15 | bounce LOW | blocks moved 0/3",
+    "particles": 0
+  }
+}

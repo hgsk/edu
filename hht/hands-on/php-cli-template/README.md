@@ -1,6 +1,6 @@
 # PHP CLIコンテナで店舗案内を生成する
 
-[DAY 11のPHP追加課題](../../docs/workbook/day-11.md#php-cli-template)が、依頼・用語・操作・提出・完成条件の正本です。Python/Jinja2と同じ店舗案内を、PHP自身の構文で生成して比較します。フォーム課題は別の選択実習として残します。
+[DAY 11のPHP追加課題](../../docs/workbook/day11.md#php-cli-template)が、依頼・用語・操作・完成条件の正本です。Python/Jinja2と同じ店舗案内を、PHP自身の構文で生成して比較します。フォーム課題は別の選択実習として残します。
 
 - `starter/`：本人の作業場所へコピーする開始データ。
 - `tests/`：PHP CLIだけで動く確認スクリプト。別ライブラリ不要。

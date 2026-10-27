@@ -1,0 +1,361 @@
+{
+  "figures": [
+    {
+      "id": "day01",
+      "source": "starter-site/index.html",
+      "output": "assets/workbook/targets/day01.png",
+      "points": [
+        {
+          "selector": "nav",
+          "label": "ページ移動"
+        },
+        {
+          "selector": "h1",
+          "label": "書き換える見出し"
+        },
+        {
+          "selector": "#hours-heading",
+          "label": "営業時間の見出し"
+        }
+      ]
+    },
+    {
+      "id": "day02",
+      "source": "starter-site/about.html",
+      "output": "assets/workbook/targets/day02.png",
+      "points": [
+        {
+          "selector": "main > section:first-child p",
+          "label": "紹介文の創業年数"
+        },
+        {
+          "selector": "#message-heading + p",
+          "label": "反映先を確認する仮文章"
+        }
+      ]
+    },
+    {
+      "id": "day03",
+      "source": "lessons/03/start/about.html",
+      "output": "assets/workbook/targets/day03.png",
+      "points": [
+        {
+          "selector": "#shop-menu",
+          "label": "デザインを調べるボタン"
+        },
+        {
+          "selector": "nav",
+          "label": "本文ボタンとは別のナビ"
+        }
+      ],
+      "cropTargets": true
+    },
+    {
+      "id": "day04-start",
+      "source": "lessons/04/start/about.html",
+      "output": "assets/workbook/targets/day04-start.png",
+      "points": [
+        {
+          "selector": "h2:has-text(\"私たちについて\")",
+          "label": "先に出てくる紹介文"
+        },
+        {
+          "selector": "h2:has-text(\"営業時間・アクセス\")",
+          "label": "下にある来店情報"
+        },
+        {
+          "selector": "p:has-text(\"水曜日\")",
+          "label": "項目名がない定休日"
+        }
+      ],
+      "cropTargets": true,
+      "cropSelectors": [
+        "h1",
+        "p:has-text(\"北海道札幌市\")"
+      ]
+    },
+    {
+      "id": "day04-result",
+      "source": "instructor/day34-examples/day4/about.html",
+      "output": "assets/workbook/targets/day04-result.png",
+      "points": [
+        {
+          "selector": "section[aria-labelledby=\"hours-heading\"]",
+          "label": "時間と定休日"
+        },
+        {
+          "selector": "section[aria-labelledby=\"access-heading\"]",
+          "label": "住所"
+        },
+        {
+          "selector": "section[aria-labelledby=\"story-heading\"]",
+          "label": "お店の紹介"
+        }
+      ]
+    },
+    {
+      "id": "day04-tags",
+      "source": "lessons/04/tag-comparison.html",
+      "output": "assets/workbook/targets/day04-tags.png",
+      "points": [
+        {
+          "selector": "section.info-card",
+          "label": "sectionの枠"
+        },
+        {
+          "selector": "div.info-card",
+          "label": "divの枠"
+        },
+        {
+          "selector": ".tag-selector-study",
+          "label": "タグ名のCSSによる違い"
+        }
+      ],
+      "cropTargets": true
+    },
+    {
+      "id": "day05",
+      "source": "starter-site/menu.html",
+      "output": "assets/workbook/targets/day05.png",
+      "points": [
+        {
+          "selector": "nav",
+          "label": "上部の共通ナビ"
+        },
+        {
+          "selector": "footer",
+          "label": "下部の共通フッター"
+        }
+      ]
+    },
+    {
+      "id": "day06",
+      "source": "starter-site/menu.html",
+      "output": "assets/workbook/targets/day06.png",
+      "points": [
+        {
+          "selector": ".menu-card:nth-child(1)",
+          "label": "1件のカードの外枠"
+        },
+        {
+          "selector": ".menu-card:nth-child(3) .price",
+          "label": "商品内の価格"
+        }
+      ],
+      "cropTargets": true,
+      "cropSelectors": [
+        ".menu-grid"
+      ]
+    },
+    {
+      "id": "day07",
+      "source": "starter-site/about.html",
+      "output": "assets/workbook/targets/day07.png",
+      "points": [
+        {
+          "selector": "main > section:last-child",
+          "label": "既存mainの最後のまとまり"
+        },
+        {
+          "selector": "footer",
+          "label": "追加先の外側にあるフッター"
+        }
+      ],
+      "cropTargets": true
+    },
+    {
+      "id": "day08",
+      "source": "starter-site/about.html",
+      "output": "assets/workbook/targets/day08.png",
+      "points": [
+        {
+          "selector": "#about-hours",
+          "label": "来店情報の見出し"
+        },
+        {
+          "selector": "main > section:last-child",
+          "label": "隠してはいけない後続の本文"
+        }
+      ],
+      "cropTargets": true
+    },
+    {
+      "id": "day09",
+      "source": "starter-site/index.html",
+      "output": "assets/workbook/targets/day09.png",
+      "points": [
+        {
+          "selector": ".hero",
+          "label": "画像を検討するヒーロー領域"
+        },
+        {
+          "selector": ".hero h1",
+          "label": "読みやすさを保つ見出し"
+        }
+      ],
+      "cropTargets": true
+    },
+    {
+      "id": "day10",
+      "source": "starter-site/menu.html",
+      "output": "assets/workbook/targets/day10.png",
+      "points": [
+        {
+          "selector": "nav",
+          "label": "狭い幅で折り返すナビ"
+        },
+        {
+          "selector": ".menu-button",
+          "label": "操作するリンク"
+        },
+        {
+          "selector": ".menu-card:nth-child(1)",
+          "label": "1列で表示されるカード"
+        }
+      ],
+      "width": 320,
+      "height": 840,
+      "viewportOnly": true
+    },
+    {
+      "id": "day11-price",
+      "source": "starter-site/menu.html",
+      "output": "assets/workbook/targets/day11-price.png",
+      "points": [
+        {
+          "selector": ".menu-card:nth-child(3) .price",
+          "label": "変更対象のアイス単品"
+        },
+        {
+          "selector": ".menu-card:nth-child(2) .price",
+          "label": "変更しないホット単品"
+        },
+        {
+          "selector": ".menu-card:nth-child(4) .price",
+          "label": "変更しないセット"
+        }
+      ],
+      "cropTargets": true,
+      "cropSelectors": [
+        ".menu-grid"
+      ]
+    },
+    {
+      "id": "day11-info",
+      "source": "starter-site/index.html",
+      "output": "assets/workbook/targets/day11-info.png",
+      "points": [
+        {
+          "selector": ".hero__content > p:not(.eyebrow)",
+          "label": "紹介文の候補"
+        },
+        {
+          "selector": "#hours-heading + p",
+          "label": "開店とラストオーダー"
+        },
+        {
+          "selector": "footer small",
+          "label": "フッターの年"
+        }
+      ]
+    },
+    {
+      "id": "day12",
+      "source": "starter-site/index.html",
+      "output": "assets/workbook/targets/day12.png",
+      "points": [
+        {
+          "selector": "h1",
+          "label": "指摘文と照合する見出し"
+        },
+        {
+          "selector": ".menu-button",
+          "label": "hoverとfocusを確かめるリンク"
+        }
+      ],
+      "cropTargets": true
+    },
+    {
+      "id": "day13",
+      "source": "starter-site/index.html",
+      "output": "assets/workbook/targets/day13.png",
+      "points": [
+        {
+          "selector": "nav",
+          "label": "公開後に移動を確かめるリンク"
+        },
+        {
+          "selector": ".hero",
+          "label": "画像や見出しの確認位置"
+        },
+        {
+          "selector": "footer",
+          "label": "更新した年の確認位置"
+        }
+      ]
+    },
+    {
+      "id": "day14",
+      "source": "portfolio/index.html",
+      "output": "assets/workbook/targets/day14.png",
+      "points": [
+        {
+          "selector": "div.line:has-text(\"自分を表す見出し\")",
+          "label": "見出しと短い紹介を書く位置"
+        },
+        {
+          "selector": "div.line:has-text(\"カフェサイトの制作実績\")",
+          "label": "制作実績を書く位置"
+        },
+        {
+          "selector": "div.line:has-text(\"本名や連絡先\")",
+          "label": "公開する情報を確認する位置"
+        }
+      ],
+      "mode": "source",
+      "width": 1100
+    },
+    {
+      "id": "day15",
+      "source": "portfolio/css/style.css",
+      "output": "assets/workbook/targets/day15.png",
+      "points": [
+        {
+          "selector": "div.line:has-text(\"body {\")",
+          "label": "ページ全体の指定"
+        },
+        {
+          "selector": "div.line:has-text(\"img {\")",
+          "label": "画像の幅の指定"
+        },
+        {
+          "selector": "div.line:last-child",
+          "label": "自分のCSSを追記する位置"
+        }
+      ],
+      "mode": "source",
+      "width": 1100
+    },
+    {
+      "id": "photo-layout",
+      "source": "references/photo-layout.html",
+      "output": "assets/workbook/targets/photo-layout.png",
+      "width": 1100,
+      "height": 650,
+      "points": [
+        {
+          "selector": ".cup-target",
+          "label": "残す被写体のカップ"
+        },
+        {
+          "selector": ".phone",
+          "label": "縦長で残る範囲"
+        },
+        {
+          "selector": ".sample-heading",
+          "label": "写真に重ねる文字の位置"
+        }
+      ]
+    }
+  ]
+}

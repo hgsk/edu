@@ -1,0 +1,53 @@
+{
+  "source": "https://kenney.nl/assets/impact-sounds",
+  "archiveSha256": "029d734af1582474edf3a694d1b0cebc97c1c152f2f39fa34d4c2bafc5de77f8",
+  "license": "CC0",
+  "files": [
+    {
+      "archivePath": "Audio/footstep_concrete_000.ogg",
+      "file": "footstep_concrete_000.ogg",
+      "sha256": "d7267e183067757c92c169de2a379abea592cfca6b39bb2e8feea15221ad79fe",
+      "bytes": 5808
+    },
+    {
+      "archivePath": "Audio/footstep_concrete_001.ogg",
+      "file": "footstep_concrete_001.ogg",
+      "sha256": "507a75eb19b897087855a3be3cf11a12d7fa37d143ad535eeebe0b8031c7325d",
+      "bytes": 6308
+    },
+    {
+      "archivePath": "Audio/footstep_concrete_002.ogg",
+      "file": "footstep_concrete_002.ogg",
+      "sha256": "b21fa546d74941196b25da8a20b7010abd8c05c4fcf93545d1f344e66a664e13",
+      "bytes": 6255
+    },
+    {
+      "archivePath": "Audio/footstep_wood_000.ogg",
+      "file": "footstep_wood_000.ogg",
+      "sha256": "5f1c252942a220d658121bd9417448cd19649ded9fff2ff15f6e50899373ce8e",
+      "bytes": 5949
+    },
+    {
+      "archivePath": "Audio/footstep_wood_001.ogg",
+      "file": "footstep_wood_001.ogg",
+      "sha256": "e4f68e1c9fd55b4dc8ca89ed2bbab6f200171bc54bdc18aa96b80d8e7336f462",
+      "bytes": 5929
+    },
+    {
+      "archivePath": "Audio/footstep_wood_002.ogg",
+      "file": "footstep_wood_002.ogg",
+      "sha256": "9ff095b05cee5eec40b081defe3f0eef7232bb16d4865ce03b9f6dbab875cfdd",
+      "bytes": 5895
+    },
+    {
+      "file": "LessonMusic.wav",
+      "origin": "original deterministic teaching signal",
+      "sha256": "35451d6e1d8b73ff9b3c050763239a938cd6d3e8da18c462e5f9f8c47061adc9"
+    },
+    {
+      "file": "LessonAmbience.wav",
+      "origin": "original deterministic teaching signal",
+      "sha256": "e006e4e36ef6294c4e829b8b0279d56e924c7e5d019dcca0a709bf3adee9dcd4"
+    }
+  ]
+}

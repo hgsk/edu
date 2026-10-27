@@ -1,0 +1,21 @@
+{
+  "status": "PASS",
+  "checkedPids": [
+    68792,
+    37944,
+    31300,
+    27340,
+    6056,
+    14060
+  ],
+  "nativeEditorPids": [
+    68792,
+    37944
+  ],
+  "closedCodeWindow": 3411810,
+  "remainingOwnedProcesses": [],
+  "remainingHeadlessProcesses": [],
+  "shutdown": "graceful",
+  "httpServerCleanup": "PASS: gates and workbook script awaited close",
+  "externalPublication": "NOT RUN: local workbook only"
+}

@@ -1,0 +1,818 @@
+{
+  "method": "Real page capture with DOM number overlays; source-reference diagrams labelled separately",
+  "config_sha256": "2f3acdead89ff579606afbbe54037da1075a1689a7802a98c4631a4afb0ab988",
+  "figures": [
+    {
+      "id": "day01",
+      "source": "starter-site/index.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day01.png",
+      "sha256": "4dc71614bf3919ec7ea2c09c2444e0a9bb2cc6bad079d46148bf83081388040a",
+      "size": [
+        1100,
+        1231
+      ],
+      "targets": [
+        {
+          "selector": "nav",
+          "label": "ページ移動",
+          "number": 1,
+          "box": {
+            "x": 893.5,
+            "y": 16,
+            "width": 184.5,
+            "height": 27.1875
+          }
+        },
+        {
+          "selector": "h1",
+          "label": "書き換える見出し",
+          "number": 2,
+          "box": {
+            "x": 22,
+            "y": 185.625,
+            "width": 641.21875,
+            "height": 161.6875
+          }
+        },
+        {
+          "selector": "#hours-heading",
+          "label": "営業時間の見出し",
+          "number": 3,
+          "box": {
+            "x": 22,
+            "y": 621.84375,
+            "width": 1056,
+            "height": 40.796875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day02",
+      "source": "starter-site/about.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day02.png",
+      "sha256": "d549520b1641bb8541a04d3f07a366725ef4e599be76893ab200c6d1c5f98374",
+      "size": [
+        1100,
+        1220
+      ],
+      "targets": [
+        {
+          "selector": "main > section:first-child p",
+          "label": "紹介文の創業年数",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 300.640625,
+            "width": 1056,
+            "height": 27.1875
+          }
+        },
+        {
+          "selector": "#message-heading + p",
+          "label": "反映先を確認する仮文章",
+          "number": 2,
+          "box": {
+            "x": 22,
+            "y": 992.171875,
+            "width": 1056,
+            "height": 27.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day03",
+      "source": "lessons/03/start/about.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day03.png",
+      "sha256": "a9360477212a71c55efecbeec512cc8c081cc1eae26b7308dbe8d96fe5516cd4",
+      "size": [
+        1100,
+        322
+      ],
+      "targets": [
+        {
+          "selector": "#shop-menu",
+          "label": "デザインを調べるボタン",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 233.453125,
+            "width": 150.15625,
+            "height": 39.96875
+          }
+        },
+        {
+          "selector": "nav",
+          "label": "本文ボタンとは別のナビ",
+          "number": 2,
+          "box": {
+            "x": 894.375,
+            "y": 16,
+            "width": 183.625,
+            "height": 27.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day04-start",
+      "source": "lessons/04/start/about.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day04-start.png",
+      "sha256": "0781d20da2fb59fbe824b3c1fc59ec0924ff011f4d0ffe4b4ead728d8850c3bb",
+      "size": [
+        1100,
+        569
+      ],
+      "targets": [
+        {
+          "selector": "h2:has-text(\"私たちについて\")",
+          "label": "先に出てくる紹介文",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 347.734375,
+            "width": 1056,
+            "height": 40.796875
+          }
+        },
+        {
+          "selector": "h2:has-text(\"営業時間・アクセス\")",
+          "label": "下にある来店情報",
+          "number": 2,
+          "box": {
+            "x": 22,
+            "y": 455.53125,
+            "width": 1056,
+            "height": 40.796875
+          }
+        },
+        {
+          "selector": "p:has-text(\"水曜日\")",
+          "label": "項目名がない定休日",
+          "number": 3,
+          "box": {
+            "x": 22,
+            "y": 559.421875,
+            "width": 1056,
+            "height": 27.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day04-result",
+      "source": "instructor/day34-examples/day4/about.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day04-result.png",
+      "sha256": "39a3b52227b229cb78e53300f61a38ca62778e4f329d1c94da7c93be7c0713a0",
+      "size": [
+        1100,
+        960
+      ],
+      "targets": [
+        {
+          "selector": "section[aria-labelledby=\"hours-heading\"]",
+          "label": "時間と定休日",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 304.546875,
+            "width": 1056,
+            "height": 169.453125
+          }
+        },
+        {
+          "selector": "section[aria-labelledby=\"access-heading\"]",
+          "label": "住所",
+          "number": 2,
+          "box": {
+            "x": 22,
+            "y": 493.90625,
+            "width": 1056,
+            "height": 115.078125
+          }
+        },
+        {
+          "selector": "section[aria-labelledby=\"story-heading\"]",
+          "label": "お店の紹介",
+          "number": 3,
+          "box": {
+            "x": 22,
+            "y": 628.890625,
+            "width": 1056,
+            "height": 131.078125
+          }
+        }
+      ]
+    },
+    {
+      "id": "day04-tags",
+      "source": "lessons/04/tag-comparison.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day04-tags.png",
+      "sha256": "3a1862fcf46c7bb6df5bd2fa882c8bb72e06936ecb4ad191df2906f0b15ce82c",
+      "size": [
+        1100,
+        554
+      ],
+      "targets": [
+        {
+          "selector": "section.info-card",
+          "label": "sectionの枠",
+          "number": 1,
+          "box": {
+            "x": 28,
+            "y": 243.140625,
+            "width": 510,
+            "height": 133.28125
+          }
+        },
+        {
+          "selector": "div.info-card",
+          "label": "divの枠",
+          "number": 2,
+          "box": {
+            "x": 562,
+            "y": 243.140625,
+            "width": 510,
+            "height": 133.28125
+          }
+        },
+        {
+          "selector": ".tag-selector-study",
+          "label": "タグ名のCSSによる違い",
+          "number": 3,
+          "box": {
+            "x": 28,
+            "y": 580.78125,
+            "width": 1044,
+            "height": 119.28125
+          }
+        }
+      ]
+    },
+    {
+      "id": "day05",
+      "source": "starter-site/menu.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day05.png",
+      "sha256": "ce01f7d2e12a410916481631b56b5cdd4778d8516b2efd49b2c78e147e254d91",
+      "size": [
+        1100,
+        926
+      ],
+      "targets": [
+        {
+          "selector": "nav",
+          "label": "上部の共通ナビ",
+          "number": 1,
+          "box": {
+            "x": 892.9375,
+            "y": 16,
+            "width": 185.0625,
+            "height": 27.1875
+          }
+        },
+        {
+          "selector": "footer",
+          "label": "下部の共通フッター",
+          "number": 2,
+          "box": {
+            "x": 0,
+            "y": 814.984375,
+            "width": 1100,
+            "height": 107.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day06",
+      "source": "starter-site/menu.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day06.png",
+      "sha256": "86a38677edac24c09ef16e2be93f04d7e031b14320e5adf9a83fafcde4980174",
+      "size": [
+        1100,
+        491
+      ],
+      "targets": [
+        {
+          "selector": ".menu-card:nth-child(1)",
+          "label": "1件のカードの外枠",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 343.828125,
+            "width": 520,
+            "height": 189.078125
+          }
+        },
+        {
+          "selector": ".menu-card:nth-child(3) .price",
+          "label": "商品内の価格",
+          "number": 2,
+          "box": {
+            "x": 43,
+            "y": 673.796875,
+            "width": 478,
+            "height": 27.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day07",
+      "source": "starter-site/about.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day07.png",
+      "sha256": "8ac7bce3323123d434f38e5fc547ca6708702ed6b062f75c2358f750c1a51d1b",
+      "size": [
+        1100,
+        438
+      ],
+      "targets": [
+        {
+          "selector": "main > section:last-child",
+          "label": "既存mainの最後のまとまり",
+          "number": 1,
+          "box": {
+            "x": 0,
+            "y": 834.5625,
+            "width": 1100,
+            "height": 277.796875
+          }
+        },
+        {
+          "selector": "footer",
+          "label": "追加先の外側にあるフッター",
+          "number": 2,
+          "box": {
+            "x": 0,
+            "y": 1112.359375,
+            "width": 1100,
+            "height": 107.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day08",
+      "source": "starter-site/about.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day08.png",
+      "sha256": "8d81d59c8f57e3cd833f966e0de3f1faad0c67aa90ae4139213a1fe9c8014821",
+      "size": [
+        1100,
+        692
+      ],
+      "targets": [
+        {
+          "selector": "#about-hours",
+          "label": "来店情報の見出し",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 517.734375,
+            "width": 1056,
+            "height": 40.796875
+          }
+        },
+        {
+          "selector": "main > section:last-child",
+          "label": "隠してはいけない後続の本文",
+          "number": 2,
+          "box": {
+            "x": 0,
+            "y": 834.5625,
+            "width": 1100,
+            "height": 277.796875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day09",
+      "source": "starter-site/index.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day09.png",
+      "sha256": "60cabd3a8243d8956487b4580599dfad7066276e8c0b9248b48cb783d18ef639",
+      "size": [
+        1100,
+        562
+      ],
+      "targets": [
+        {
+          "selector": ".hero",
+          "label": "画像を検討するヒーロー領域",
+          "number": 1,
+          "box": {
+            "x": 0,
+            "y": 59.1875,
+            "width": 1100,
+            "height": 465.75
+          }
+        },
+        {
+          "selector": ".hero h1",
+          "label": "読みやすさを保つ見出し",
+          "number": 2,
+          "box": {
+            "x": 22,
+            "y": 185.625,
+            "width": 641.21875,
+            "height": 161.6875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day10",
+      "source": "starter-site/menu.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day10.png",
+      "sha256": "9cedcce34c944987fdacf7094d6ae97f26d66047d946ac5235bae4120f82ef1f",
+      "size": [
+        320,
+        840
+      ],
+      "targets": [
+        {
+          "selector": "nav",
+          "label": "狭い幅で折り返すナビ",
+          "number": 1,
+          "box": {
+            "x": 16,
+            "y": 59.1875,
+            "width": 185.0625,
+            "height": 27.1875
+          }
+        },
+        {
+          "selector": ".menu-button",
+          "label": "操作するリンク",
+          "number": 2,
+          "box": {
+            "x": 16,
+            "y": 239.640625,
+            "width": 121.34375,
+            "height": 51.1875
+          }
+        },
+        {
+          "selector": ".menu-card:nth-child(1)",
+          "label": "1列で表示されるカード",
+          "number": 3,
+          "box": {
+            "x": 16,
+            "y": 350.015625,
+            "width": 288,
+            "height": 189.078125
+          }
+        }
+      ]
+    },
+    {
+      "id": "day11-price",
+      "source": "starter-site/menu.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day11-price.png",
+      "sha256": "5fb0925a15503411b16c3500ac25736ca021a8ef4b6890cba53a558834b25c88",
+      "size": [
+        1100,
+        491
+      ],
+      "targets": [
+        {
+          "selector": ".menu-card:nth-child(3) .price",
+          "label": "変更対象のアイス単品",
+          "number": 1,
+          "box": {
+            "x": 43,
+            "y": 673.796875,
+            "width": 478,
+            "height": 27.1875
+          }
+        },
+        {
+          "selector": ".menu-card:nth-child(2) .price",
+          "label": "変更しないホット単品",
+          "number": 2,
+          "box": {
+            "x": 579,
+            "y": 468.71875,
+            "width": 478,
+            "height": 27.1875
+          }
+        },
+        {
+          "selector": ".menu-card:nth-child(4) .price",
+          "label": "変更しないセット",
+          "number": 3,
+          "box": {
+            "x": 579,
+            "y": 673.796875,
+            "width": 478,
+            "height": 27.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day11-info",
+      "source": "starter-site/index.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day11-info.png",
+      "sha256": "24accffa962bd5c4220909658ef98216830a820d6036ada5826438ee945c20e8",
+      "size": [
+        1100,
+        1231
+      ],
+      "targets": [
+        {
+          "selector": ".hero__content > p:not(.eyebrow)",
+          "label": "紹介文の候補",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 366.5625,
+            "width": 672,
+            "height": 27.1875
+          }
+        },
+        {
+          "selector": "#hours-heading + p",
+          "label": "開店とラストオーダー",
+          "number": 2,
+          "box": {
+            "x": 22,
+            "y": 682.546875,
+            "width": 1056,
+            "height": 27.1875
+          }
+        },
+        {
+          "selector": "footer small",
+          "label": "フッターの年",
+          "number": 3,
+          "box": {
+            "x": 460.046875,
+            "y": 1169.71875,
+            "width": 179.890625,
+            "height": 17
+          }
+        }
+      ]
+    },
+    {
+      "id": "day12",
+      "source": "starter-site/index.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day12.png",
+      "sha256": "a38aaca75623760982b9ebf5594d269a9e995c6d1dd67f0df2c5927773754838",
+      "size": [
+        1100,
+        372
+      ],
+      "targets": [
+        {
+          "selector": "h1",
+          "label": "指摘文と照合する見出し",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 185.625,
+            "width": 641.21875,
+            "height": 161.6875
+          }
+        },
+        {
+          "selector": ".menu-button",
+          "label": "hoverとfocusを確かめるリンク",
+          "number": 2,
+          "box": {
+            "x": 22,
+            "y": 409.75,
+            "width": 121.34375,
+            "height": 51.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day13",
+      "source": "starter-site/index.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day13.png",
+      "sha256": "87e8ec2f8aaee3c82dfe1104ae964961607ceb70cff9089546b659f4cd9e53d0",
+      "size": [
+        1100,
+        1235
+      ],
+      "targets": [
+        {
+          "selector": "nav",
+          "label": "公開後に移動を確かめるリンク",
+          "number": 1,
+          "box": {
+            "x": 893.5,
+            "y": 16,
+            "width": 184.5,
+            "height": 27.1875
+          }
+        },
+        {
+          "selector": ".hero",
+          "label": "画像や見出しの確認位置",
+          "number": 2,
+          "box": {
+            "x": 0,
+            "y": 59.1875,
+            "width": 1100,
+            "height": 465.75
+          }
+        },
+        {
+          "selector": "footer",
+          "label": "更新した年の確認位置",
+          "number": 3,
+          "box": {
+            "x": 0,
+            "y": 1123.71875,
+            "width": 1100,
+            "height": 107.1875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day14",
+      "source": "portfolio/index.html",
+      "mode": "source",
+      "output": "assets/workbook/targets/day14.png",
+      "sha256": "355939cf680966390cbf5cc24d766b51bc6d81540a25f773a903d86037a2a47e",
+      "size": [
+        1100,
+        1022
+      ],
+      "targets": [
+        {
+          "selector": "div.line:has-text(\"自分を表す見出し\")",
+          "label": "見出しと短い紹介を書く位置",
+          "number": 1,
+          "box": {
+            "x": 75,
+            "y": 468.0625,
+            "width": 950,
+            "height": 29.6875
+          }
+        },
+        {
+          "selector": "div.line:has-text(\"カフェサイトの制作実績\")",
+          "label": "制作実績を書く位置",
+          "number": 2,
+          "box": {
+            "x": 75,
+            "y": 646.1875,
+            "width": 950,
+            "height": 29.6875
+          }
+        },
+        {
+          "selector": "div.line:has-text(\"本名や連絡先\")",
+          "label": "公開する情報を確認する位置",
+          "number": 3,
+          "box": {
+            "x": 75,
+            "y": 824.3125,
+            "width": 950,
+            "height": 29.6875
+          }
+        }
+      ]
+    },
+    {
+      "id": "day15",
+      "source": "portfolio/css/style.css",
+      "mode": "source",
+      "output": "assets/workbook/targets/day15.png",
+      "sha256": "aa6735788238edfa3ac9791bb3d95f88cc8aa9ce7e67dec04871f75c0b16b0ff",
+      "size": [
+        1100,
+        850
+      ],
+      "targets": [
+        {
+          "selector": "div.line:has-text(\"body {\")",
+          "label": "ページ全体の指定",
+          "number": 1,
+          "box": {
+            "x": 75,
+            "y": 438.375,
+            "width": 950,
+            "height": 29.6875
+          }
+        },
+        {
+          "selector": "div.line:has-text(\"img {\")",
+          "label": "画像の幅の指定",
+          "number": 2,
+          "box": {
+            "x": 75,
+            "y": 616.5,
+            "width": 950,
+            "height": 29.6875
+          }
+        },
+        {
+          "selector": "div.line:last-child",
+          "label": "自分のCSSを追記する位置",
+          "number": 3,
+          "box": {
+            "x": 75,
+            "y": 764.9375,
+            "width": 950,
+            "height": 29.6875
+          }
+        }
+      ]
+    },
+    {
+      "id": "photo-layout",
+      "source": "references/photo-layout.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/photo-layout.png",
+      "sha256": "4c8b4426fa79ea721c87891cea75c995907ecf824b30e77090b788b9df02089e",
+      "size": [
+        1100,
+        692
+      ],
+      "targets": [
+        {
+          "selector": ".cup-target",
+          "label": "残す被写体のカップ",
+          "number": 1,
+          "box": {
+            "x": 391.09375,
+            "y": 378.375,
+            "width": 132.296875,
+            "height": 96
+          }
+        },
+        {
+          "selector": ".phone",
+          "label": "縦長で残る範囲",
+          "number": 2,
+          "box": {
+            "x": 708,
+            "y": 208.78125,
+            "width": 250,
+            "height": 360
+          }
+        },
+        {
+          "selector": ".sample-heading",
+          "label": "写真に重ねる文字の位置",
+          "number": 3,
+          "box": {
+            "x": 54,
+            "y": 258.78125,
+            "width": 270,
+            "height": 48
+          }
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "scripts/capture-workbook.cjs": "6f6932ce2ef90cd14790449759175c427c9571ec39f0fb0f166181912e20f5b0",
+    "starter-site/index.html": "62b1dbf546328b79f17c4756b959482f02793d657e5e54f01343d0a602016b92",
+    "starter-site/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
+    "starter-site/about.html": "2fcd2bd4b2c1578517f6cff56e3949ad40cc67051b8244d1d9984d3861355531",
+    "lessons/03/start/about.html": "160e9b5fed470d3999e05bc87922b0add5b33ffc902c2ae31e82d5d6d4794a7a",
+    "lessons/03/start/css/style.css": "a2386d6969180af031e36b040a8fbe8265c3980da5f9ee15e9dfe841c0024184",
+    "lessons/04/start/about.html": "76d9fa391862294a0b7549ea680eb853e6fe5186bd553ccae8a42e7598d9811e",
+    "lessons/04/start/css/style.css": "4205c42aa5e242790ee747ff248d852908da62faf51e528b6541e473383de2b1",
+    "instructor/day34-examples/day4/about.html": "fa2e9b747f35cbbd8dcbc296b64c663670fc91c1df683449481ae3d44226f853",
+    "instructor/day34-examples/day4/css/style.css": "4205c42aa5e242790ee747ff248d852908da62faf51e528b6541e473383de2b1",
+    "lessons/04/tag-comparison.html": "0b6bed7c3ab87b15cb3f83a3bb955062e5a550033e50f7f34e96d325e6b32346",
+    "lessons/04/tag-comparison.css": "647b83068b1c4501018cdec6276025f473e5fb3c38d2f52445d8bb764a552414",
+    "starter-site/menu.html": "16259fb2884b12639876d792c8085e45e4fd33e93f81908bb3301d76dec2f36a",
+    "portfolio/index.html": "14e4006a9efbea0d5372a891f22940690043071cae02955dcfde8815163e1fde",
+    "portfolio/css/style.css": "68fd72e1b1f5c71cfc30ffdc88893c72d109d06fc3f1b90f7dc71c51c213b528",
+    "references/photo-layout.html": "6a7417738381df6ba980271fa885d2bf8295c7f1c7a5dd69acba2aa4bfc2247e",
+    "starter-site/images/hero-cafe.webp": "421d7a4ab41a3764e1b46520379f2124ad17a294139ac298e31d4ac107644e31"
+  },
+  "cleanup": "PASS",
+  "status": "PASS",
+  "process": {
+    "pid": 41068,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-16T12:35:16.149Z"
+  }
+}

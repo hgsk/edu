@@ -1,0 +1,244 @@
+{
+  "date": "2026-10-16",
+  "method": "built-in image_gen edits",
+  "purpose": "各DAYにつき1場面・1要点。背景と小物を整理し、登場人物は胸の名札で識別。実画面の操作証拠ではありません。",
+  "images": [
+    {
+      "day": 1,
+      "title": "依頼を受け取る",
+      "file": "day01.png",
+      "caption": "依頼を受け取ったら、まず読み、分からないことをメモします。",
+      "alt": "イラスト：依頼を受け取る。依頼を受け取ったら、まず読み、分からないことをメモします。 名札：あなた（新人）、佐藤さん（店舗責任者）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Edit ONLY the novice person wearing the teal overshirt with the Japanese badge あなた in this workbook illustration. Make this protagonist visibly younger, about 14–15 years old, with a deliberately androgynous appearance so their gender is not specified. Redesign the face to be youthful, rounder and softer, with simple small rounded eyes WITHOUT pronounced eyelashes, eyeliner or makeup, no blush emphasis, small neutral smile and no adult facial structure. Replace the chin-length neat bob with a SHORT, softly tousled dark unisex haircut: above ears and nape, natural irregular fringe, neither a stereotypically masculine spiky cut nor a feminine bob. Slim youthful shoulders and a loose straight-cut unisex teal overshirt over a cream crew-neck T-shirt, no body-shape emphasis or gendered accessories. Keep recognizable as a learner, not a toddler or chibi. Preserve the reading-a-request action, hands and letter. Keep the white chest name badge readable; exact two lines 「あなた」「新人」. The adult mustached man Sato, his face, cream shirt, green apron and badge 「佐藤さん」「店舗責任者」 must remain exactly as before. Preserve the simple cream background, generous whitespace, sparse props, composition, palette, warm editorial illustration style and landscape dimensions. Do not add new text, objects, people, panels or decorations. The only intended change is the protagonist's age and gender-neutral character design.",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）",
+        "佐藤さん（店舗責任者）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "14c4095dc960d38fb47c0eb7c4e4db20f02fb64f2a0f9f24b02999fa52237f54",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-bf871a9c-f873-4351-a7c2-607edc755092.png"
+    },
+    {
+      "day": 2,
+      "title": "同じ言葉を探す",
+      "file": "day02.png",
+      "caption": "同じ言葉を見つけても、一件ずつ使われ方を確かめます。",
+      "alt": "イラスト：同じ言葉を探す。同じ言葉を見つけても、一件ずつ使われ方を確かめます。 名札：あなた（新人）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "6adfdb86a6d874129fcc238ca5792d7e3c1e86835009d43b2cb79c904fe12dde",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-71d6ac16-cf04-4b88-a5c9-5cc1b8a8e1c8.png"
+    },
+    {
+      "day": 3,
+      "title": "ボタンの見た目をそろえる",
+      "file": "day03.png",
+      "caption": "色だけでなく、角の形と余白もそろえると同じ役目が伝わります。",
+      "alt": "イラスト：ボタンの見た目をそろえる。色だけでなく、角の形と余白もそろえると同じ役目が伝わります。 名札：あなた（新人）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "eab0b4ae1eea892f5705578df877a556718fa9a0b25e57f460c4cd8cf622701e",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-0df34bda-436f-4980-bd08-bb3a4159ea84.png"
+    },
+    {
+      "day": 4,
+      "title": "来店前の情報を整理する",
+      "file": "day04.png",
+      "caption": "時間・場所・お店の紹介を、見る人が探す順にまとめます。",
+      "alt": "イラスト：来店前の情報を整理する。時間・場所・お店の紹介を、見る人が探す順にまとめます。 名札：あなた（新人）、お客さま。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）",
+        "お客さま"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "9b86d4e07bd080f711180cdc0aacb983438446e7480a487216884a60455c5e07",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-4b6200a2-8d61-4542-93b9-94f6ecf9356a.png"
+    },
+    {
+      "day": 5,
+      "title": "ページの案内をそろえる",
+      "file": "day05.png",
+      "caption": "どのページからでも、同じ案内を使って移動できるようにします。",
+      "alt": "イラスト：ページの案内をそろえる。どのページからでも、同じ案内を使って移動できるようにします。 名札：あなた（新人）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "0ef0322436f3ed453bad0f51c67901795eb09f238026169c8f25f159eca7427d",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-201c6f4d-2688-4cac-9834-c492c1d9d884.png"
+    },
+    {
+      "day": 6,
+      "title": "商品カードを並べる",
+      "file": "day06.png",
+      "caption": "説明の長さが違っても、商品と価格を読み分けられる並びを考えます。",
+      "alt": "イラスト：商品カードを並べる。説明の長さが違っても、商品と価格を読み分けられる並びを考えます。 名札：あなた（新人）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "5ca01ae9e1eda64555786d30ed9d4d15263df744109a5aa3e2a6706c062c9788",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-9ad0c61d-27f0-4bea-a4e6-86eacd785dde.png"
+    },
+    {
+      "day": 7,
+      "title": "入力しやすいフォームを作る",
+      "file": "day07.png",
+      "caption": "欄の名前と選び方が分かると、入力途中も迷いにくくなります。",
+      "alt": "イラスト：入力しやすいフォームを作る。欄の名前と選び方が分かると、入力途中も迷いにくくなります。 名札：あなた（新人）、山本さん（先輩）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）",
+        "山本さん（先輩）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "9c7577a473cbf42cc71b9c546605fe25d186df4d0ba194286d0c97769d403f97",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-d58d1190-4292-4350-8e9d-d1f2d52500e4.png"
+    },
+    {
+      "day": 8,
+      "title": "大切な案内を邪魔せず残す",
+      "file": "day08.png",
+      "caption": "大切な案内を残すときも、本文や入力欄を隠さないようにします。",
+      "alt": "イラスト：大切な案内を邪魔せず残す。大切な案内を残すときも、本文や入力欄を隠さないようにします。 名札：あなた（新人）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "9d42b5abd38b783aa3ee4f18b34806d3a77c530303d0fe11b757f1a2ed5d55b5",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-40b7adb3-06cd-461e-9885-372bd925305b.png"
+    },
+    {
+      "day": 9,
+      "title": "写真の切り取りを考える",
+      "file": "day09.png",
+      "caption": "横長と縦長の切り取りで、見せたい被写体が残るか確かめます。",
+      "alt": "イラスト：写真の切り取りを考える。横長と縦長の切り取りで、見せたい被写体が残るか確かめます。 名札：あなた（新人）、撮影担当。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）",
+        "撮影担当"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "b2eb18fab89a4860852a22fe5883438217f8bc3ce31057e7629885e5bce30aff",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-7bd4a7d2-ae95-4b2b-9aa4-8499d2a5506b.png"
+    },
+    {
+      "day": 10,
+      "title": "スマホで読みやすくする",
+      "file": "day10.png",
+      "caption": "画面を狭くしたときも、文字とボタンが使える状態を保ちます。",
+      "alt": "イラスト：スマホで読みやすくする。画面を狭くしたときも、文字とボタンが使える状態を保ちます。 名札：あなた（新人）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "1b690c04a346be4b5b9f914557d9beb609535f65b0ef3bec5d6e0b717db14e55",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-6da4aaf7-25f3-48f4-9019-403db3b7cdc7.png"
+    },
+    {
+      "day": 11,
+      "title": "直す商品を取り違えない",
+      "file": "day11.png",
+      "caption": "似た商品を見比べて、依頼されたものだけを変更します。",
+      "alt": "イラスト：直す商品を取り違えない。似た商品を見比べて、依頼されたものだけを変更します。 名札：あなた（新人）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "b42e5839821c42243d85c0aea6d6db6bd45aecd8b441a5571294d3db21f629ab",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-8ae7076b-15b4-437b-be3c-a2cb77981467.png"
+    },
+    {
+      "day": 12,
+      "title": "指摘された場所だけ直す",
+      "file": "day12.png",
+      "caption": "OK済みの場所を残し、指摘された場所へ変更を絞ります。",
+      "alt": "イラスト：指摘された場所だけ直す。OK済みの場所を残し、指摘された場所へ変更を絞ります。 名札：あなた（新人）、山本さん（先輩）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）",
+        "山本さん（先輩）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "2c13a91fdf47a289fe90978b27daa069915bec50ec166821bf3a88b6637cdff5",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-16759f4c-f20a-465f-8ba5-5ab533a72321.png"
+    },
+    {
+      "day": 13,
+      "title": "承認とバックアップをそろえて公開する",
+      "file": "day13.png",
+      "caption": "採用案の承認、戻せるコピー、公開後の確認をそろえます。",
+      "alt": "イラスト：承認とバックアップをそろえて公開する。採用案の承認、戻せるコピー、公開後の確認をそろえます。 名札：あなた（新人）、高橋さん（最終承認）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）",
+        "高橋さん（最終承認）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "f9a6e87a88b3e739275f54c50ce4dd308766cd5477c770b3d120d5af0e0ff71d",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-c19a1b0b-1186-4dc1-8484-212b9fcb218d.png"
+    },
+    {
+      "day": 14,
+      "title": "作品で自分を紹介する",
+      "file": "day14.png",
+      "caption": "見る相手と伝えたいことを決め、実際の作品で裏付けます。",
+      "alt": "イラスト：作品で自分を紹介する。見る相手と伝えたいことを決め、実際の作品で裏付けます。 名札：あなた（新人）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "29f7f12d5890024180a3785ea3dfe91440c6e2545949953cc0369f2617c588ac",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-668bc155-f94a-4e44-b772-04a307957fb1.png"
+    },
+    {
+      "day": 15,
+      "title": "完成した作品を発表する",
+      "file": "day15.png",
+      "caption": "完成画面を見せながら、工夫した場所と確認したことを話します。",
+      "alt": "イラスト：完成した作品を発表する。完成画面を見せながら、工夫した場所と確認したことを話します。 名札：あなた（新人）、山本さん（先輩）。",
+      "prompt": "Use case: identity-preserve / precise-object-edit. Image 1 is the TARGET scene. Image 2 is the APPROVED CHARACTER REFERENCE: copy only the youthful protagonist's identity from image 2 into the target scene, NOT its action, other person, backdrop or props. Edit ONLY the person wearing teal and the white chest badge あなた. Make this same androgynous young learner, about age 14–15, appear in every illustration: short softly tousled dark unisex hair above the ears/nape, a natural irregular fringe, round youthful face, small simple rounded eyes WITHOUT pronounced eyelashes/eyeliner, no makeup or emphasized blush, small natural smile, slight youthful shoulders, loose straight-cut teal overshirt and cream crew-neck T-shirt, no gender-specific accessories or adult body contours. Gender should be left unspecified; no exaggerated masculine features or feminine styling. Do not make a toddler or chibi. Preserve the protagonist's existing task, pose, expression intent and hand interactions, adapting their head and youthful build coherently. Preserve the white chest badge with large sharp exact Japanese 「あなた」「新人」. Keep ALL OTHER CHARACTERS entirely unchanged including their faces, age, clothing, and every badge. Preserve every work object, diagram and action from the TARGET, and its sparse cream background, generous whitespace, warm illustration style, palette, framing and landscape aspect ratio. Do not add any props, text, people, decoration or UI detail. Only revise the protagonist age/identity to match reference. ",
+      "review": "PASS - youthful neutral protagonist, consistent reference identity, readable badges and original action visually inspected",
+      "badges": [
+        "あなた（新人）",
+        "山本さん（先輩）"
+      ],
+      "revision": "young-neutral-protagonist-v3",
+      "source_sha256": "22c356beadfc15d7af74abf63aa52e3329d7cc51f9dac80b20178513c6e9394e",
+      "generated_source": "C:\\Users\\hgsk8\\.codex\\generated_images\\01a14390-9d2c-7942-8dc5-213295daacba\\exec-297bba81-ecc0-4aba-9bd9-76c97bc54b08.png"
+    }
+  ],
+  "revision": "young-neutral-protagonist-v3",
+  "character_design": {
+    "protagonist": "幼い顔立ちで性別を限定しない、短めの自然な髪型の人物。青緑の服と「あなた／新人」の名札で統一。",
+    "reference_image": "day01.png"
+  }
+}

@@ -1,0 +1,160 @@
+{
+  "checks": [
+    {
+      "site": "starter-site",
+      "file": "index.html",
+      "width": 1200,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "starter-site",
+      "file": "menu.html",
+      "width": 1200,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "starter-site",
+      "file": "about.html",
+      "width": 1200,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "starter-site",
+      "file": "index.html",
+      "width": 320,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "starter-site",
+      "file": "menu.html",
+      "width": 320,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "starter-site",
+      "file": "about.html",
+      "width": 320,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/03/start",
+      "file": "index.html",
+      "width": 1200,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/03/start",
+      "file": "menu.html",
+      "width": 1200,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/03/start",
+      "file": "about.html",
+      "width": 1200,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/03/start",
+      "file": "index.html",
+      "width": 320,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/03/start",
+      "file": "menu.html",
+      "width": 320,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/03/start",
+      "file": "about.html",
+      "width": 320,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/04/start",
+      "file": "index.html",
+      "width": 1200,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/04/start",
+      "file": "menu.html",
+      "width": 1200,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/04/start",
+      "file": "about.html",
+      "width": 1200,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/04/start",
+      "file": "index.html",
+      "width": 320,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/04/start",
+      "file": "menu.html",
+      "width": 320,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    },
+    {
+      "site": "lessons/04/start",
+      "file": "about.html",
+      "width": 320,
+      "button": "PASS",
+      "destination": "PASS",
+      "overflow": "PASS"
+    }
+  ],
+  "screenshots": [
+    "guide-home.png",
+    "guide-menu-pc.png",
+    "guide-about.png",
+    "guide-menu-mobile.png"
+  ],
+  "cleanup": "PASS",
+  "process": {
+    "pid": 46244,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-10-16T10:50:30.989Z"
+  }
+}

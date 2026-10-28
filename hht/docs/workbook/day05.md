@@ -135,7 +135,11 @@ padding: 32px 16px;
 > **属性**は、HTMLタグに付ける追加情報です。  
 > たとえば、`href="menu.html"`はリンクの行き先を表します。  
 > **ARIA属性**は、画面を読み上げるソフトなどへ、要素の名前や状態を伝えるための追加情報です。  
-> `aria-current="page"`は、「このリンクが、今見ているページを指しています」という意味です。
+> `aria-current="page"`は、「このリンクが、今見ているページを指しています」という意味です。  
+> CSSの`[aria-current="page"]`は、その属性と値が付いた要素を選びます。  
+> ARIA属性で現在地を伝え、CSSで太字や下線を付けます。  
+> 同じタグに、同じ属性を重ねて書く必要はありません。  
+> [aria-currentの説明（MDN）](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current)でも確認できます。
 
 各HTMLのナビを見て、今いるページのリンクだけに `aria-current="page"`があるか確認します。  
 なければ追加し、ほかのリンクには付けません。  
@@ -163,12 +167,6 @@ CSSへ次の指定を加えます。
 ```
 
 3ページを移動し、今いるページの印が切り替わることを確認して、1枚撮影します。
-
-💡 **ヒント：**
-> `[aria-current="page"]`は、その属性と値が付いた要素を選ぶCSSの書き方です。  
-> ARIA属性は「意味や状態」を伝え、上のCSSは「太字や下線」という見た目を整えます。  
-> 同じタグに、同じ属性を重ねて書く必要はありません。  
-> [aria-currentの説明（MDN）](https://developer.mozilla.org/ja/docs/Web/Accessibility/ARIA/Reference/Attributes/aria-current)でも確認できます。
 
 ### ⌨️ 発展2：キーボードでも操作してみる
 

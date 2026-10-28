@@ -2,6 +2,8 @@
 
 ## hero-ai-master.png
 
+![ラテアートを作る手元を描いたAI生成画像の原本](./hero-ai-master.png)
+
 - 出自: OpenAIの画像生成機能で教材制作者が生成
 - 生成日: 2026-07-29
 - 用途: AI画像候補の評価、画像形式・寸法・圧縮演習
@@ -12,12 +14,16 @@
 
 ## simulated-shoot-001.jpg
 
+![ラテアートを作る手元の模擬納品画像（JPEG形式）](./simulated-shoot-001.jpg)
+
 - 出自: `hero-ai-master.png` から作成した模擬納品データ
 - 用途: カメラマン依頼、納品検収、利用条件の演習
 - 重要: 実際の写真撮影による成果物ではない
 - 教材内の模擬利用条件: 店舗公式Webサイトと確認用ページのみ。トリミング、通常範囲の明るさ・色調整可。SNS、広告、印刷は対象外
 
 ## hero-cafe.webp
+
+![カフェサイトへの差し替え候補となるラテアートの画像（WebP形式）](../../references/cafe-site/images/hero-cafe.webp)
 
 - 出自: `hero-ai-master.png` をWebP品質78で書き出し
 - ピクセル寸法: 1774 × 887

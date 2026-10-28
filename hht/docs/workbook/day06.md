@@ -34,10 +34,7 @@ Gitで開始状態を記録してから編集します。
 
 ### 📂 このDAYのフォルダーを開く
 
-VS Codeで`Documents/edu`を開き、`hht/day06`のファイルを編集します。  
-HTML・CSS・画像は、このフォルダーへ最初からコミットされています。  
-他のDAYの受講や完成物は必要ありません。  
-再開するときも、同じフォルダーを開きます。
+VS Codeで`Documents/edu`を開き、`hht/day06`のファイルを編集します。
 
 `hht/day06/menu.html`をブラウザで開き、`hht/day06/css/style.css`を編集します。
 

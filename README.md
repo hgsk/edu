@@ -13,11 +13,11 @@
 
 ## 始め方
 
-ローカルGitで変更履歴を残しながら、今あるサイトを改修します。
-
-PCのVS Codeで、講師から受け取った本人用教材フォルダーを開きます。  
-[VS Codeハンズオン手順](./hht/docs/vscode-hands-on.md)と[ローカルGitの操作](./hht/docs/local-git.md)から始めます。  
-GitHub・Codespaces・Push・Pull Requestは使いません。  
+初回は[共通のクローン手順](./hht/docs/workbook/common.md#clone-edu)で、GitHubの`hgsk/edu`をDocumentsへ取得します。  
+PCのVS Codeで`Documents/edu`を開き、ローカルGitへ変更を記録します。  
+全15回の実習は、それぞれの開始データと作業フォルダーで独立して取り組めます。  
+[各DAYの開始手順](./hht/docs/workbook/common.md#independent-day-start)と、[ローカルGitの操作](./hht/docs/local-git.md)を確認してください。  
+VS Codeの操作練習には[ハンズオン手順](./hht/docs/vscode-hands-on.md)を使います。  
 講師は[VS Codeでの進行資料](./hht/docs/vscode-instructor-guide.md)を使ってください。
 
 - [学生向け入口](./hht/student/README.md)

@@ -35,3 +35,24 @@ hht/hands-on/php-cli-template/instructor/solution/output/
 python-path-work/
 php-http-work/
 hht/hands-on/php-http-comparison/starter/output/
+
+# Retired teaching workflows; archived outside this repository.
+/.tours/
+/hht/assets/git-bundle/
+/hht/assets/day56-inplace/
+/hht/assets/day56-edge-vscode-20261027/
+/hht/assets/day56-video-20261027/
+/hht/assets/workbook/common/01-vscode.png
+/hht/assets/workbook/common/02-diff.png
+/hht/assets/workbook/common/03-staged.png
+/hht/assets/workbook/common/04-bundle.png
+/hht/assets/workbook/common/05-restored.png
+/hht/assets/workbook/common/app-cleanup.json
+/hht/assets/workbook/common/bundle-checks.json
+/hht/assets/workbook/common/capture-state.json
+/hht/assets/workbook/common/course-validation.log
+/hht/assets/workbook/common/link-checks.json
+/hht/assets/workbook/common/purpose-goal-checks.json
+/hht/assets/workbook/common/purpose-goal.png
+/hht/assets/workbook/common/purpose-goal.svg
+/hht/assets/workbook/common/workbook-tests.log

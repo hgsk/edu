@@ -1,29 +1,23 @@
-# Codespaces・HTML・CSS はじめてツアー
+# HTML・CSSの練習用ページ
 
-このフォルダーは、CodespacesのCodeTour機能を使って学ぶ練習場所です。
+VS CodeでHTML・CSSの編集とブラウザ確認を練習するページです。  
+[VS Codeハンズオン手順](../docs/vscode-hands-on.md)の操作例として使います。
 
-## 始め方
+## 使う資料
 
-1. Codespacesで、`README.md`と`hht`が見えるリポジトリのルートを開きます。
-2. おすすめに表示された`CodeTour`と`Live Server`をインストールします。
-3. 左側のアクティビティバーから`CodeTour`を開きます。
-4. `01 はじめてのCodespaces`の再生ボタンを押します。
+- **初回の教材取得：** [Documentsへクローンする手順](../docs/workbook/common.md#clone-edu)
+- **編集と表示の練習：** [VS Codeハンズオン](../docs/vscode-hands-on.md)
+- **授業の課題：** [日別ワークブックの目次](../docs/student-workbook.md)
 
-ツアーは次の順番で進みます。
+## 練習用のファイル
 
-1. はじめてのCodespaces
-2. HTMLを書いてみよう
-3. CSSで見た目を整えよう
+- **`index.html`：** 見出し・自己紹介・リンクなどのHTMLです。
+- **`style.css`：** 文字・色・余白などのCSSです。
 
-## 練習用ページ
+![練習用ページの実画面。見出しの下に練習内容があり、自己紹介と好きなものの欄が続く](../assets/app-guide/17-tour-plain.png)
 
-![自己紹介ページ。見出しの下に練習内容があり、自己紹介と好きなものの欄が続く](../assets/app-guide/17-tour-plain.png)
+この画像は、文章や色を変更する前の開始画面です。  
+変更する場所と完成条件は、ハンズオン本文を確認してください。
 
-ブラウザで確認する開始時点のページです。HTMLで文章、CSSで文字や色、配置を変更します。
-
-## 困ったとき
-
-- 表示が消えたら、コマンドパレットで`CodeTour: Resume Current Tour`を実行します。
-- ファイルを壊しても大丈夫です。`hht/tour`は練習専用です。
-- 保存してからブラウザを更新すると、変更を確認できます。
-
+HTML・CSSを保存したら、ブラウザを再読み込みして確認します。  
+同じファイルを開けば、次回も続きから練習できます。

@@ -64,8 +64,7 @@ VS Codeが未導入なら[公式Windows手順](https://code.visualstudio.com/doc
 Gitをインストールした直後に認識されない場合は、VS Codeを閉じて開き直します。
 
 HTML・CSSの基本演習ではNode.js、Python、Dockerを追加する必要はありません。  
-CodeTourは任意です。  
-この資料だけでも進められます。
+この資料の手順に沿って、VS Codeとブラウザで進めます。
 
 ## 2 VS Codeを日本語にする
 
@@ -128,7 +127,6 @@ Live Serverなど拡張機能固有の名前や `Go Live` は英語のまま表�
 
 画像はインストール済みなので歯車が表示されています。  
 未導入なら **インストール** を押します。  
-CodeTourは任意で、このハンズオンでは必須ではありません。  
 右下に `Go Live` が出れば準備完了です。
 
 ## 6 VS Codeの画面と操作を覚える

@@ -60,8 +60,8 @@ class WorkbookFilesTest(unittest.TestCase):
     def test_legacy_input_and_screenshot_checks_get_rebased_links(self):
         text = read_workbook(self.root)
         self.assertIn("](../assets/workbook/targets/day05.png)", text)
-        self.assertIn("](../lessons/03/day3-start.zip)", text)
-        self.assertIn("prepare-day.ps1 -Day 5", text)
+        self.assertIn("](../instructor/lessons/03/day3-start.zip)", text)
+        self.assertIn("hht/day05", text)
 
 
 if __name__ == "__main__":

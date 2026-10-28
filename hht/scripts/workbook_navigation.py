@@ -8,9 +8,9 @@ def workbook_day_link_errors(relative_path: PurePath, document: str) -> list[str
     errors = []
     parts = relative_path.parts
     pack_day = None
-    if (len(parts) == 3 and parts[0] == "lessons"
-            and parts[1].isdigit() and parts[2] == "README.md"):
-        pack_day = int(parts[1])
+    if (len(parts) == 4 and parts[:2] == ("instructor", "lessons")
+            and parts[2].isdigit() and parts[3] == "README.md"):
+        pack_day = int(parts[2])
 
     for match in re.finditer(
         r"\[([^\]\n]*)\]\(([^)\s]*(?:student-workbook|day-?\d{2})\.md)(?:#([^)]*))?\)", document

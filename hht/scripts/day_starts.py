@@ -12,7 +12,7 @@ def validate(root: Path) -> list[str]:
     if set(manifest['days']) != {f'{n:02d}' for n in range(1, 16)}:
         errors.append('Independent starts must cover DAY 1-15')
     for number, expected in manifest['days'].items():
-        start = (root / f'lessons/{number}/start').resolve()
+        start = (root / f'day{number}').resolve()
         actual = {p.relative_to(start).as_posix(): p for p in start.rglob('*') if p.is_file()}
         if set(actual) != set(expected):
             errors.append(f'DAY {number} start file coverage differs from manifest')
@@ -32,7 +32,9 @@ def validate(root: Path) -> list[str]:
                 if not target.is_relative_to(start) or not target.is_file():
                     errors.append(f'DAY {number} start has missing/external local file: {name}: {ref}')
         workbook = (root / f'docs/workbook/day{number}.md').read_text(encoding='utf-8')
-        for phrase in (f'prepare-day.ps1 -Day {int(number)}', f'hht/practice/day{number}'):
+        for phrase in (f'hht/day{number}',):
             if phrase not in workbook:
                 errors.append(f'DAY {number} missing independent start instruction: {phrase}')
+        if 'prepare-day.ps1' in workbook or 'hht/practice/day' in workbook:
+            errors.append(f'DAY {number} still requires generated lesson files')
     return errors

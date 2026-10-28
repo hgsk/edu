@@ -7,13 +7,13 @@ PCのVS Codeで授業を行う場合は、[VS Codeでの進行資料](../docs/vs
 
 ## 授業前
 
-1. PCのVS Codeで本人用のローカルGitリポジトリを開き、[今日の授業パック](../lessons/README.md)を選ぶ。
+1. PCのVS Codeで本人用のローカルGitリポジトリを開き、[今日の授業パック](lessons/README.md)を選ぶ。
 3. 受講者の作業場所、練習用公開先、メール環境を確認する。
 4. 学生へ見せる資料と講師用資料を分ける。
 
 ## 必要な資料
 
-- 進行: [授業パック](../lessons/README.md)・[講師ガイド](../docs/instructor-guide.md)・[講師トークガイド](../docs/instructor-talk-guide.md)・[演習運営手順](../docs/exercise-operations.md)
+- 進行: [授業パック](lessons/README.md)・[講師ガイド](../docs/instructor-guide.md)・[講師トークガイド](../docs/instructor-talk-guide.md)・[演習運営手順](../docs/exercise-operations.md)
 - DAY 5以降: [DAY 3・4改訂の影響と引き継ぎ](./day5-onward-impact.md)
 - Markdown: [記号と表示の比較・GFMの便利な書式](../docs/markdown-format-guide.md)（実画面、チェックリスト、折りたたみの例）
 - 評価: [完成条件](../student/assignment-checks.md)・[評価ルーブリック](../docs/rubric.md)

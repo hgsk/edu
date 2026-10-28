@@ -1,7 +1,7 @@
 # 各DAYの独立した開始と変更時の影響確認
 
 開始方法の正本は[共通手順](../docs/workbook/common.md#independent-day-start)です。  
-全15回で、それぞれの`lessons/NN/start`から`practice/dayNN`を準備します。  
+全15回で、コミット済みの`hht/dayNN`をそのまま編集します。  
 DAY 3・4の修正や、DAY 5以降の成果を別の回へ移す必要はありません。
 
 - **開始データ：** 各回の依頼に必要なHTML・CSS・画像・企画を含めます。
@@ -11,4 +11,4 @@ DAY 3・4の修正や、DAY 5以降の成果を別の回へ移す必要はあり
 
 教材を変更したら、[整合性検査](./course-consistency.md)と独立開始データのテストを実行します。  
 開始データの内容を変更したときは、`scripts/day-starts.json`のハッシュと掲載する実画面も更新します。  
-元の`starter-site`を変えただけでは、各回の開始データは変わりません。
+元の`references/cafe-site`を変えただけでは、各回の開始データは変わりません。

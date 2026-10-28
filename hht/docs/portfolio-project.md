@@ -43,12 +43,12 @@
 - 見てほしい相手と伝えたいこと
 - 掲載内容のメモ
 - 紙またはFigmaの簡単なワイヤーフレーム
-- [`portfolio/index.html`](../portfolio/index.html)
+- [`portfolio/index.html`](../references/portfolio-template/index.html)
 - 見出し、文章、制作実績、画像と`alt`
 
 ## 第15回で作るもの
 
-- [`portfolio/css/style.css`](../portfolio/css/style.css)
+- [`portfolio/css/style.css`](../references/portfolio-template/css/style.css)
 - スマートフォンとパソコンに対応したレイアウト
 - 必要な場合だけ使う短いCSSアニメーション
 - キーボード・文字拡大・画面幅・権利の確認

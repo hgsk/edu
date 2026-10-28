@@ -28,8 +28,8 @@ GitHubアカウントの作成やログインは不要です。
 |---|---|
 | 誰が見るか | 練習を続ける自分と、準備ができたか確認する先輩 |
 | 目的 | 編集・表示・再開の方法が分からず練習が止まる状態をなくす |
-| 何をどう変えるか | `hht/tour/index.html`のページ内見出しを「わたしの練習ページ」へ変更し、`hht/tour/style.css`のメインカラーを青緑 `#0f766e` にする |
-| 変えないところ | 自己紹介へのリンク、ページの構造、カフェ案件の`hht/starter-site` |
+| 何をどう変えるか | `hht/hands-on/vscode-basics/site/index.html`のページ内見出しを「わたしの練習ページ」へ変更し、`hht/hands-on/vscode-basics/site/style.css`のメインカラーを青緑 `#0f766e` にする |
+| 変えないところ | 自己紹介へのリンク、ページの構造、カフェ案件の`hht/references/cafe-site` |
 | 成果物 | PCに保存した練習ページと、次回開く教材フォルダー・作業ブランチ |
 
 **作業前の確認:** 「どのページを直す？」  
@@ -136,15 +136,15 @@ Live Serverなど拡張機能固有の名前や `Go Live` は英語のまま表�
 | 画面の場所 | 役割 |
 |---|---|
 | 左端のアイコン列 | ファイル・検索・ソース管理・拡張機能を切り替える |
-| 左側のエクスプローラー | `hht/tour/index.html`や`style.css`を開く |
+| 左側のエクスプローラー | `hht/hands-on/vscode-basics/site/index.html`や`style.css`を開く |
 | 中央の編集領域 | HTML・CSSを書き換える。上のタブでファイルを切り替える |
 | 行番号 | 講師へ編集箇所を伝える。画像の22行目が見出し |
 | 左下のブランチ名 | 自分の作業ブランチを確認する |
 | 右下のGo Live | Live Serverでブラウザ表示を始める |
 
 左のエクスプローラーからこの資料を開き、`Ctrl + Shift + V`でMarkdownのプレビューを表示します。  
-次に `hht/tour/index.html` を開きます。  
-`hht/tour`は練習用、`hht/starter-site`はDAY課題用です。
+次に `hht/hands-on/vscode-basics/site/index.html` を開きます。  
+`hht/hands-on/vscode-basics/site`は練習用、`hht/references/cafe-site`はDAY課題用です。
 
 | 操作 | Windowsのキー |
 |---|---|
@@ -168,13 +168,13 @@ Live Serverなど拡張機能固有の名前や `Go Live` は英語のまま表�
 エクスプローラーの `index.html` を右クリックした画面です。  
 一番上の **Open with Live Server** を選ぶと、ブラウザでページを確認できます。
 
-1. `hht/tour/index.html` で `<h1>自己紹介ページ</h1>` を検索します。
+1. `hht/hands-on/vscode-basics/site/index.html` で `<h1>自己紹介ページ</h1>` を検索します。
 2. `<h1>`と`</h1>`の間の文章だけを `わたしの練習ページ` に変えます。
 3. `Ctrl + S`で保存します。
 4. エクスプローラーの同じファイルを右クリックし、`Open with Live Server`を選びます。
 5. ブラウザで見出しが変わったことを確認します。
 
-URLの例は `http://127.0.0.1:5500/hht/tour/index.html` です。  
+URLの例は `http://127.0.0.1:5500/hht/hands-on/vscode-basics/site/index.html` です。  
 ポート番号は環境によって変わるので、実際に開いたURLを使います。  
 [Live Serverの案内](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)にある右クリック操作や右下の `Go Live` から起動できます。
 
@@ -188,7 +188,7 @@ URLの例は `http://127.0.0.1:5500/hht/tour/index.html` です。
 **依頼とのつながり:** ページの内容を残したまま、ボタンなどを指定の青緑でそろえます。  
 文章の修正と見た目の修正が別ファイルにあることを確かめます。
 
-1. `hht/tour/style.css` を開きます。
+1. `hht/hands-on/vscode-basics/site/style.css` を開きます。
 2. `--color-main: #4f46e5;`を探し、`--color-main: #0f766e;`に変更します。
 3. 保存し、ブラウザでボタンなどの色が変わったことを確認します。
 4. ブラウザの開発者ツールを `F12` または右クリックの「検証」で開き、ボタンの要素と適用されたCSSを見ます。
@@ -222,7 +222,7 @@ DAY課題ではホーム・メニュー・店舗案内をそれぞれ開きま�
 GitHubへのログイン設定ではありません。
 
 1. ソース管理を開き、変更ファイルをクリックします。
-2. `hht/tour/index.html`と`hht/tour/style.css`の差分を読み、意図した文章と色だけが変わっているか確認します。
+2. `hht/hands-on/vscode-basics/site/index.html`と`hht/hands-on/vscode-basics/site/style.css`の差分を読み、意図した文章と色だけが変わっているか確認します。
 3. この2ファイルだけを「＋」でステージします。  
    ステージは「次のコミットへ入れる対象を選ぶ」操作です。
 4. メッセージに `練習ページの見出しと色を変更` と入力し、コミットします。
@@ -243,7 +243,7 @@ GitHubへ送るPushとは別です。
 ### 安全に元へ戻す練習
 
 コミットした後は、練習ページの見出しを一度だけ変更して保存し、ブラウザで確認します。  
-ソース管理で **`hht/tour/index.html`だけ** の差分を確認し、そのファイルの「変更を破棄」を選びます。  
+ソース管理で **`hht/hands-on/vscode-basics/site/index.html`だけ** の差分を確認し、そのファイルの「変更を破棄」を選びます。  
 この操作で未コミットの編集は失われます。  
 戻す内容を確認してから実行し、「すべての変更を破棄」は使いません。
 
@@ -267,8 +267,8 @@ GitHubへ送るPushとは別です。
 1. VS Codeで前回の教材フォルダーを開き、ブランチと前回の変更状態を確認します。
 2. [学生向け入口](../student/README.md)から今回の課題を開き、講師から届いた依頼を読みます。  
    操作を始める前に、依頼者・見る人・目的・何をどう変えるか・完成条件を確認します。
-3. `hht/starter-site/index.html`をLive Serverで開き、開始時点を確認します。  
-   DAY 14〜15は `hht/portfolio/index.html` を使います。
+3. `hht/references/cafe-site/index.html`をLive Serverで開き、開始時点を確認します。  
+   DAY 14〜15は `hht/references/portfolio-template/index.html` を使います。
 4. 計画 → 編集 → 保存 → ブラウザ確認 → 差分確認の順に進めます。  
    毎回、作業記録とコミットを残します。
 5. 指定された練習用公開先で結果を確認します。  

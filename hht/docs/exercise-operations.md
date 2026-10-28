@@ -5,22 +5,22 @@
 受講者は[共通のクローン手順](./workbook/common.md#clone-edu)で、`hgsk/edu`を本人のDocumentsへ取得します。  
 授業では`Documents/edu`を開きます。  
 授業では毎回、PCのVS Codeで本人用のローカルGitリポジトリを開き、リポジトリのルートを開きます。  
-`starter-site`だけを別ワークスペースで開かせません。  
+`references/cafe-site`だけを別ワークスペースで開かせません。  
 共有の`main`や教材原本を直接編集させず、依頼メールは授業回に合わせて1通ずつ案内します。
 
 開始時の確認:
 
 1. VS Codeのエクスプローラーにルートの`README.md`と`hht`が見える。
 2. ソース管理に受講者本人のブランチまたは個人コピーが表示される。
-3. `hht/lessons`から今日の授業パックを開ける。
-4. `hht/starter-site`、`hht/fixtures`、`hht/docs`を同じワークスペースから参照できる。
+3. `hht/instructor/lessons`から今日の授業パックを開ける。
+4. `hht/references/cafe-site`、`hht/fixtures`、`hht/docs`を同じワークスペースから参照できる。
 5. 今回の作業フォルダーと、開始データの内容を確認できる。
 
 ### 各回の独立した開始データ
 
-全15回の開始データは、それぞれ`hht/lessons/NN/start`に保存しています。  
-準備コマンドと再開方法の正本は[共通の開始手順](./workbook/common.md#independent-day-start)です。  
-受講者は`hht/practice/dayNN`で作業し、開始状態と変更を同じローカルGitへ記録します。  
+全15回の開始データは、それぞれ`hht/dayNN`に保存しています。  
+フォルダーの開き方と再開方法の正本は[共通の開始手順](./workbook/common.md#independent-day-start)です。  
+受講者はコミット済みの`hht/dayNN`で作業し、その回の変更を同じローカルGitへ記録します。  
 他のDAYの成果を移行させたり、欠席回の完成物を先に作らせたりしません。  
 配布前に教材検査を実行し、開始データのファイル・ハッシュ・参照先が一致することを確認します。
 
@@ -30,11 +30,11 @@
 第1回で、編集からデプロイ、バックアップ、復元までを一度通します。  
 以後の自習では同じ手順を繰り返し、授業外でも「変更したが表示方法が分からない」「失敗が怖くて試せない」という状態を減らします。
 
-1. 準備した`hht/practice/dayNN`を編集対象として確認する。
+1. コミット済みの`hht/dayNN`を編集対象として確認する。
 2. 作業開始前を「開始時点」としてバージョン記録へ残す。  
    本人用の教材フォルダーで、配布状態のコミットを残す。
 3. PCのローカルHTTPサーバーをブラウザで表示し、編集、保存、再読み込みを試す。
-4. `practice-server/staging` または受講者ごとに分離した練習URLへ、対象ファイルだけをデプロイする。
+4. `hht/hands-on/deployment/server/staging` または受講者ごとに分離した練習URLへ、対象ファイルだけをデプロイする。
 5. 公開URLをブラウザで確認し、URLと確認時刻を記録する。
 6. 小さな変更を1件加え、2番の状態へ復元する。
 7. 「作業を開く → 編集 → 確認 → バージョン記録 → デプロイ」の自習再開手順をワークブックへ書く。
@@ -45,7 +45,7 @@
 ## 3. ブラウザ確認
 
 ローカルファイルとして開く方法とローカルHTTPサーバーで開く方法を区別します。  
-講師環境で利用できる場合は、そのDAYの`hht/practice/dayNN`をルートに静的サーバーを起動します。
+講師環境で利用できる場合は、そのDAYの`hht/dayNN`をルートに静的サーバーを起動します。
 
 確認する画面幅の目安:
 
@@ -83,11 +83,11 @@
 
 ### 段階C: 模擬公開
 
-1. `practice-server/production` の現状を `practice-server/backups/日時` へ複製する。
-2. 承認済みファイルだけを `practice-server/staging` へ配置する。
+1. `hht/hands-on/deployment/server/production` の現状を `hht/hands-on/deployment/server/backups/日時` へ複製する。
+2. 承認済みファイルだけを `hht/hands-on/deployment/server/staging` へ配置する。
 3. ステージング相当をブラウザで確認する。
 4. 公開判定表がすべてPASSか、理由付きNOT APPLICABLEであることを確認する。
-5. 承認済みファイルだけを `practice-server/production` へ配置する。
+5. 承認済みファイルだけを `hht/hands-on/deployment/server/production` へ配置する。
 6. 公開相当URLを再確認し、時刻、担当、対象、結果を記録する。
 7. 意図的な不具合演習では、バックアップから対象ファイルだけを戻す。
 

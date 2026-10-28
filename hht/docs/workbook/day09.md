@@ -15,10 +15,9 @@
 **開始データ：** グラデーションのヒーロー領域と画像を含むカフェサイトです。
 候補画像と利用条件は支給素材の台帳で確認します。  
 
-[各回の開始手順](common.md#independent-day-start)を確認し、初回だけ講座フォルダーで `.\hht\scripts\prepare-day.ps1 -Day 9` を実行します。  
-作業場所は `hht/practice/day09/` です。  
-同じ回を再開するときは準備コマンドは不要です。  
-既存の作業は上書きされません。
+VS Codeで `Documents/edu` を開き、`hht/day09/` のファイルを編集します。  
+開始データはコミット済みで、他の回の成果は必要ありません。  
+再開するときも同じフォルダーを開きます。
 
 **この回の支給素材：** [写真の依頼](../../fixtures/emails/02-hero-request.md)、[AI画像案](../../fixtures/photographer-delivery/hero-ai-master.png)、[模擬撮影データ](../../fixtures/photographer-delivery/simulated-shoot-001.jpg)、[素材台帳](../../fixtures/photographer-delivery/ASSET-MANIFEST.md)を使います。  
 素材はこのDAYから直接開けます。
@@ -44,7 +43,7 @@
 
 **VS Codeで開くもの：** 作業場所の `index.html`・`css/style.css` と `images` フォルダー。
 
-**ブラウザで見るページ：** `hht/practice/day09/index.html` の上部の大きな帯（ヒーロー領域）です。  
+**ブラウザで見るページ：** `hht/day09/index.html` の上部の大きな帯（ヒーロー領域）です。  
 開始時の背景はグラデーションです。  
 ここへ置く写真を検討し、商品一覧の画像と取り違えないようにします。
 

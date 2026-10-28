@@ -57,34 +57,25 @@ git status --short
 
 <a id="independent-day-start"></a>
 
-### 📂 初めて取り組むDAYの準備
+### 📂 今回のDAYのフォルダーを開く
 
 どのDAYも、他のDAYを終えていなくても始められます。  
-各回の`hht/lessons/NN/start`に、必要なHTML・CSS・画像・企画がそろっています。
+HTML・CSS・画像・企画は、`hht/day01`〜`hht/day15`へ最初からコミットされています。
 
 1. VS Codeで`Documents/edu`を開きます。
-2. 「ターミナル → 新しいターミナル」を開きます。
-3. リポジトリのルートで、次を実行します。  
-   以下はDAY 6の例です。
+2. 左のエクスプローラーで`hht`を開き、今回の`dayNN`を選びます。  
+   DAY 6なら`day06`です。
+3. そのDAYの本文に書かれたファイルを開いて編集します。  
+   DAY 6なら`hht/day06/menu.html`と`hht/day06/css/style.css`を使います。
 
-```powershell
-.\hht\scripts\prepare-day.ps1 -Day 6
-```
+![VS Codeでeduを開き、hht内のDAY別フォルダーとday06のHTML・CSS・画像を確認した実画面](../../assets/direct-days/day-folders.png)
 
-![VS CodeのターミナルでDAY 6の準備コマンドを実行し、作業用フォルダーの作成とファイル一覧を確認した実画面](../../assets/independent-days/prepare-day.png)
+**見るところ：** `day01`〜`day15`が初めから並んでいます。  
+`day06`の中に、その回で使うHTML・CSS・画像があります。
 
-**見るところ：** 「DAY 06 の準備ができました」と表示され、`index.html`・`menu.html`・`about.html`・`css`・`images`が作業場所にそろいます。
-
-4. 作成された`hht/practice/day06`を開き、開始状態をGitへ記録します。
-5. そのDAYの本文へ戻り、指定されたファイルを編集します。
-
-DAY番号だけを変えると、別のDAYの作業場所を準備できます。  
-同じDAYの作業フォルダーがあると、コマンドは上書きせず停止します。  
-続きを行うときは、そのフォルダーをそのまま開きます。  
-最初からやり直すときは、既存の成果を残したまま別の名前で練習できるよう講師に相談します。
-
-すべての作業を同じローカルGitリポジトリへ記録します。  
-他のDAYのファイルをコピーしたり、完成まで待ったりする必要はありません。
+フォルダーの生成やコピーは不要です。  
+再開するときも、同じ`hht/dayNN`を開きます。  
+他のDAYのファイルを変更せず、その回の修正を同じローカルGitへ記録します。
 
 ### 2. 作る：少し直して、画面で確かめる
 

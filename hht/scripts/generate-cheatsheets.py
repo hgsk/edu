@@ -12,7 +12,7 @@ from reportlab.pdfgen import canvas
 
 ROOT = Path(__file__).resolve().parents[1]
 ASSET_DIR = ROOT / "assets" / "cheatsheets"
-PDF_DIR = ROOT / "output" / "pdf"
+PDF_DIR = ROOT / "references" / "cheatsheets"
 FONT_REGULAR = r"C:\Windows\Fonts\YuGothM.ttc"
 FONT_BOLD = r"C:\Windows\Fonts\YuGothB.ttc"
 W, H = 2480, 3508

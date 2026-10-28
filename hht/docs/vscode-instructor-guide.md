@@ -33,13 +33,13 @@ VS Codeの機能紹介だけで始めません。
 5. `.vscode/extensions.json`の推奨に `ritwickdey.LiveServer` と `MS-CEINTL.vscode-language-pack-ja` があることを確認します。  
    日本語化前は日本語パックをIDで検索し、教材取得後は `@recommended` からLive Serverを入れます。  
    回線障害に備え教材ZIPを用意し、ZIP経路のGit初期化は講師が補助します。
-6. 表示確認と公開演習を分け、段階Cの `hht/practice-server` または受講者別の練習用公開先を準備します。  
+6. 表示確認と公開演習を分け、段階Cの `hht/hands-on/deployment/server` または受講者別の練習用公開先を準備します。  
    URL・対象パス・反映方法を接続票で指定します。
 
 画面共有には受講者用手順か練習コードを出します。  
 `fixtures/emails/`の回答情報、認証情報、学生別の評価は共有しません。  
 初回説明には、受講者用ハンズオンのVS Code操作を使います。  
-`hht/tour`のHTML・CSSは、その操作練習用の原本として保持します。
+`hht/hands-on/vscode-basics/site`のHTML・CSSは、その操作練習用の原本として保持します。
 
 ## 初回120分の進行
 
@@ -54,7 +54,7 @@ VS Codeの機能紹介だけで始めません。
 | 0〜5分 | 山本さんの依頼、目的、対象外、完成条件 | 何をどうしたい仕事なのかを説明する |
 | 5〜15分 | 日本語化の4画面 | 日本語パックを入れ、日本語を選択・再起動。メニューを確認 |
 | 15〜30分 | DocumentsへのクローンとローカルGitの確認 | hgsk/eduを取得し、Documents/eduを開く |
-| 30〜40分 | 推奨拡張と画面構成の画像 | Live Serverを入れ、`tour/index.html`を開く |
+| 30〜40分 | 推奨拡張と画面構成の画像 | Live Serverを入れ、`hht/hands-on/vscode-basics/site/index.html`を開く |
 | 40〜55分 | Live Server起動の画像、h1とtitle | h1の文章を変更し、ブラウザで確認 |
 | 55〜65分 | CSSの役割、色の変数 | メインカラーを変更し、表示とコードを対応づける |
 | 65〜75分 | 休憩と個別対応 | 未到達者の取得・表示を補助 |
@@ -100,9 +100,9 @@ GitHubアカウントやPushの準備待ちにしません。
 初回練習だけで第1回全体を完了と扱いません。  
 詳しい公開判定は[演習運営手順](./exercise-operations.md)を使います。
 
-1. `hht/starter-site/index.html`を開き、開始時点を確認します。  
+1. `hht/references/cafe-site/index.html`を開き、開始時点を確認します。  
    Git設定済みならコミット、未設定ならPC上の別フォルダーへ開始時点のコピーを保存します。
-2. 今回の対象ファイル一覧を決め、`hht/practice-server/staging`へ構成を保って配置します。  
+2. 今回の対象ファイル一覧を決め、`hht/hands-on/deployment/server/staging`へ構成を保って配置します。  
    初回配置では参照するCSS・画像も一覧へ含めます。
 3. ステージングの `index.html`をLive Serverで開き、実際のURLと表示を確認します。
 4. 模擬公開前の `production` の対象ファイルを日時付きの `backups` へ保存します。  
@@ -120,7 +120,7 @@ GitHubアカウントやPushの準備待ちにしません。
 授業の開始時に、作業フォルダー・ブランチ・未コミット変更を確認します。  
 新しい教材を取り込む必要がある場合は、前回の作業を記録してから講師が案内し、全員に一律のPullや変更破棄を指示しません。
 
-その後は[授業パック](../lessons/README.md)から今日の回を選び、依頼を読む → 計画 → 制作 → 確認を進めます。  
+その後は[授業パック](../instructor/lessons/README.md)から今日の回を選び、依頼を読む → 計画 → 制作 → 確認を進めます。  
 
 WindowsのPowerShellへLinux向けコマンドをそのまま貼り付けないよう案内します。  
 既存のAzure資料を使う回は、WindowsのSSHクライアント、鍵の保存先、アクセス権、転送手段を実機で事前確認してから行います。
@@ -130,5 +130,5 @@ WindowsのPowerShellへLinux向けコマンドをそのまま貼り付けない�
 - [学生ワークブック](./student-workbook.md)
 - [完成条件](../student/assignment-checks.md)
 - [演習運営手順](./exercise-operations.md)
-- [Codespacesのはじめてツアー](../tour/README.md)
+- [Codespacesのはじめてツアー](../hands-on/vscode-basics/site/README.md)
 

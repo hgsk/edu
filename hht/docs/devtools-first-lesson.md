@@ -22,7 +22,7 @@
 
 ## 1. 開いてみよう
 
-`starter-site/index.html`をローカルHTTPサーバーで表示してから、次のどれかで開きます。
+`hht/day01/index.html`をローカルHTTPサーバーで表示してから、次のどれかで開きます。
 
 - Windows／Linux: `F12`または`Ctrl + Shift + I`
 - macOS: `Command + Option + I`

@@ -10,7 +10,7 @@
 
 1. PCのVS Codeで`Documents/edu`を開き、ローカルGitの作業状態を確認する。
 2. 下の一覧から今回の課題を開く。
-3. [各DAYの開始手順](../docs/workbook/common.md#independent-day-start)に沿って、今回の作業場所を準備する。
+3. [各DAYの開始手順](../docs/workbook/common.md#independent-day-start)に沿って、今回のDAYフォルダーを開く。
 4. 依頼を読む → 計画する → 制作する → 確認する → 返信する。
 
 ## 全15回の授業
@@ -36,8 +36,8 @@
 - [共通の作業手順と作業メモ](../docs/workbook/common.md)
 - [完成条件への入口](./assignment-checks.md)
 
-全15回の開始データは、それぞれ`hht/lessons/NN/start`にあります。  
-作業場所は`hht/practice/dayNN`です。  
+全15回の開始データは、それぞれ`hht/dayNN`にあります。  
+作業場所は`hht/dayNN`です。  
 他のDAYの完成物は必要ありません。  
 具体的な開始データと編集するファイルは、今回のDAY本文を確認します。
 

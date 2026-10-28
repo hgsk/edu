@@ -5,18 +5,12 @@
 💾 **Gitでの記録：** [共通の作業手順](common.md#local-git-workflow)で、作業前後の変更を記録します。  
 作業後は `git tag -f day01-end`で、その日の最後のコミットに目印を付けます。
 
-### 📂 このDAYだけで始める
+### 📂 このDAYのフォルダーを開く
 
+VS Codeで`Documents/edu`を開き、`hht/day01`のファイルを編集します。  
+HTML・CSS・画像は、このフォルダーへ最初からコミットされています。  
 他のDAYの受講や完成物は必要ありません。  
-[共通の開始手順](./common.md#independent-day-start)に沿って、リポジトリのルートで次を実行します。
-
-```powershell
-.\hht\scripts\prepare-day.ps1 -Day 1
-```
-
-作業場所は`hht/practice/day01`です。  
-同じDAYを再開するときは準備コマンドを繰り返さず、このフォルダーを開きます。  
-別のDAYの作業フォルダーや、開始データの原本は変更しません。
+再開するときも、同じフォルダーを開きます。
 
 ![イラスト：依頼を受け取る。  
 依頼を受け取ったら、まず読み、分からないことをメモします。  
@@ -45,11 +39,11 @@
 
 ### 開くファイル：DAY 1
 
-**VS Codeで開くもの：** このDAYで準備した `hht/practice/day01/index.html` と `hht/practice/day01/css/style.css`。
+**VS Codeで開くもの：** このDAYの `hht/day01/index.html` と `hht/day01/css/style.css`。
 
 **ブラウザで見るページ：** ホームです。  
 ロゴと大きな見出しが目印です。  
-環境準備だけを練習するときは、別の `hht/tour/index.html` を使います。
+環境準備だけを練習するときは、別の `hht/hands-on/vscode-basics/site/index.html` を使います。
 
 ![DAY 1の開始データのホームの実画面（赤い番号は教材用の注釈）。  
 1はページ移動、2は書き換える見出し、3は営業時間の見出し](../../assets/workbook/targets/day01.png)
@@ -136,7 +130,7 @@ ToとCCはだれ？
 
 **困ったとき:**
 
-- 練習サーバーへ接続できない場合は、`practice-server/staging`を模擬公開先にする
+- 練習サーバーへ接続できない場合は、`hht/hands-on/deployment/server/staging`を模擬公開先にする
 - ローカルHTTPサーバーが起動しない場合は、ポート番号を確認し、講師用の共通プレビューを使う
 - どの方法でも「変更前へ戻せること」と「ブラウザで確認できること」は省略しない
 

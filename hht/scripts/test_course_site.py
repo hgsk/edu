@@ -15,7 +15,7 @@ class CourseSiteTest(unittest.TestCase):
         self.temp = tempfile.TemporaryDirectory()
         self.addCleanup(self.temp.cleanup)
         self.root = Path(self.temp.name)
-        for directory in ("starter-site", "lessons/03", "lessons/04", "docs/workbook"):
+        for directory in ("references/cafe-site", "instructor/lessons/03", "instructor/lessons/04", "day03", "day04", "docs/workbook"):
             shutil.copytree(ROOT / directory, self.root / directory)
         for file in ("scripts/course-site-contract.json", "docs/student-workbook.md"):
             destination = self.root / file
@@ -35,29 +35,29 @@ class CourseSiteTest(unittest.TestCase):
         self.assertEqual(validate(self.root), [])
 
     def test_missing_button(self):
-        self.replace("starter-site/about.html", '<a class="button menu-button" href="menu.html">メニューを見る</a>', "")
+        self.replace("references/cafe-site/about.html", '<a class="button menu-button" href="menu.html">メニューを見る</a>', "")
         self.fails_with("メニューを見る link")
 
     def test_missing_fragment(self):
-        self.replace("starter-site/menu.html", 'id="menu-list"', 'id="different"')
+        self.replace("references/cafe-site/menu.html", 'id="menu-list"', 'id="different"')
         self.fails_with("fragment #menu-list")
 
     def test_navigation_route(self):
-        self.replace("starter-site/menu.html", 'href="about.html"', 'href="missing.html"')
+        self.replace("references/cafe-site/menu.html", 'href="about.html"', 'href="missing.html"')
         self.fails_with("navigation names/order/routes")
         self.fails_with("missing href target")
 
     def test_missing_product(self):
-        self.replace("starter-site/menu.html", "アイスカフェラテ", "別の商品")
+        self.replace("references/cafe-site/menu.html", "アイスカフェラテ", "別の商品")
         self.fails_with("starting product names/count/prices")
 
     def test_hours_display_and_metadata(self):
-        self.replace("starter-site/index.html", "10:00", "09:30")
+        self.replace("references/cafe-site/index.html", "10:00", "09:30")
         self.fails_with("starting visible hours")
         self.fails_with("starting JSON-LD openingHours")
 
     def test_stale_zip(self):
-        self.replace("lessons/03/start/menu.html", "税込", "税込み")
+        self.replace("day03/menu.html", "税込", "税込み")
         self.fails_with("ZIP differs")
 
     def test_workbook_premise_drift(self):
@@ -65,17 +65,17 @@ class CourseSiteTest(unittest.TestCase):
         self.fails_with("Workbook premise changed")
 
     def test_missing_asset(self):
-        (self.root / "starter-site/css/style.css").unlink()
+        (self.root / "references/cafe-site/css/style.css").unlink()
         self.fails_with("missing href target css/style.css")
 
     def test_new_distribution_needs_coverage(self):
         path = self.root / "docs/student-workbook.md"
         with path.open("a", encoding="utf-8") as stream:
-            stream.write("\n[新しい開始データ](../lessons/05/day5-start.zip)\n")
+            stream.write("\n[新しい開始データ](../instructor/lessons/05/day5-start.zip)\n")
         self.fails_with("distribution ZIP coverage")
 
     def test_duplicate_target(self):
-        self.replace("starter-site/menu.html", '<h1>メニュー</h1>', '<h1 id="menu-list">メニュー</h1>')
+        self.replace("references/cafe-site/menu.html", '<h1>メニュー</h1>', '<h1 id="menu-list">メニュー</h1>')
         self.fails_with("duplicate id")
 
 

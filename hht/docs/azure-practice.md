@@ -67,7 +67,7 @@ Apacheは `/srv/hht-public/alice/` のファイルを `http://VM_HOST/students/a
 
 ```bash
 ssh -i ~/.ssh/hht_practice hht-alice@VM_HOST
-scp -i ~/.ssh/hht_practice hht/starter-site/index.html hht-alice@VM_HOST:/srv/hht-public/alice/
+scp -i ~/.ssh/hht_practice hht/references/cafe-site/index.html hht-alice@VM_HOST:/srv/hht-public/alice/
 sftp -i ~/.ssh/hht_practice hht-alice@VM_HOST
 ```
 

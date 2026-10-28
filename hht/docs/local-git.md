@@ -21,12 +21,12 @@ VS Codeのソース管理で変更一覧を読み、続けている作業を確�
 
 <a id="practice-baseline"></a>
 
-## 各DAYの開始データを記録する
+## 各DAYのフォルダーで作業する
 
-[共通の開始手順](./workbook/common.md#independent-day-start)で、そのDAYの作業フォルダーを準備します。  
-DAY 1なら`hht/practice/day01`、DAY 15なら`hht/practice/day15`です。  
-準備したままの状態をコミットしてから、今回のHTML・CSSを直します。  
-これにより、開始データの追加と自分の修正を別々に読めます。
+[共通の開始手順](./workbook/common.md#independent-day-start)で、そのDAYのフォルダーを開きます。  
+DAY 1なら`hht/day01`、DAY 15なら`hht/day15`です。  
+開始状態は既にコミットされているので、そのままHTML・CSSを編集します。  
+自分が加えた変更を差分で確認してコミットします。
 
 ## 編集・確認の後：差分を読んでコミットする
 

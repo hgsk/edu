@@ -124,11 +124,11 @@
   ],
   "sites": [
     {
-      "directory": "starter-site"
+      "directory": "references/cafe-site"
     },
     {
-      "directory": "lessons/03/start",
-      "zip": "lessons/03/day3-start.zip",
+      "directory": "day03",
+      "zip": "instructor/lessons/03/day3-start.zip",
       "zip_prefix": "day3-start",
       "source_contains": [
         {
@@ -142,8 +142,8 @@
       ]
     },
     {
-      "directory": "lessons/04/start",
-      "zip": "lessons/04/day4-start.zip",
+      "directory": "day04",
+      "zip": "instructor/lessons/04/day4-start.zip",
       "zip_prefix": "day4-start",
       "source_contains": [
         {

@@ -16,10 +16,9 @@
 参考作品へのリンクは `reference-cafe/index.html` です。
 架空の内容を自分の実績と偽らず、発表では演習として説明します。  
 
-[各回の開始手順](common.md#independent-day-start)を確認し、初回だけ講座フォルダーで `.\hht\scripts\prepare-day.ps1 -Day 15` を実行します。  
-作業場所は `hht/practice/day15/` です。  
-同じ回を再開するときは準備コマンドは不要です。  
-既存の作業は上書きされません。
+VS Codeで `Documents/edu` を開き、`hht/day15/` のファイルを編集します。  
+開始データはコミット済みで、他の回の成果は必要ありません。  
+再開するときも同じフォルダーを開きます。
 
 > **山本先輩からの課題**  
 > HTMLができたら、自分らしいCSSを加えましょう。  
@@ -40,9 +39,9 @@
 
 ### 開くファイル：DAY 15
 
-**VS Codeで開くもの：** `hht/practice/day15/index.html` と `hht/practice/day15/css/style.css`。
+**VS Codeで開くもの：** `hht/day15/index.html` と `hht/day15/css/style.css`。
 
-**ブラウザで見るページ：** `hht/practice/day15/index.html` の架空のポートフォリオです。  
+**ブラウザで見るページ：** `hht/day15/index.html` の架空のポートフォリオです。  
 下はCSSの編集位置を示す開始データのコードの図です。  
 図は編集する位置の参考です。
 

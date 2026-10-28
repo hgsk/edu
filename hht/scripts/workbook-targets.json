@@ -2,7 +2,7 @@
   "figures": [
     {
       "id": "day01",
-      "source": "lessons/01/start/index.html",
+      "source": "day01/index.html",
       "output": "assets/workbook/targets/day01.png",
       "points": [
         {
@@ -21,7 +21,7 @@
     },
     {
       "id": "day02",
-      "source": "lessons/02/start/about.html",
+      "source": "day02/about.html",
       "output": "assets/workbook/targets/day02.png",
       "points": [
         {
@@ -36,7 +36,7 @@
     },
     {
       "id": "day03",
-      "source": "lessons/03/start/about.html",
+      "source": "day03/about.html",
       "output": "assets/workbook/targets/day03.png",
       "points": [
         {
@@ -52,7 +52,7 @@
     },
     {
       "id": "day04-start",
-      "source": "lessons/04/start/about.html",
+      "source": "day04/about.html",
       "output": "assets/workbook/targets/day04-start.png",
       "points": [
         {
@@ -95,7 +95,7 @@
     },
     {
       "id": "day04-tags",
-      "source": "lessons/04/tag-comparison.html",
+      "source": "instructor/lessons/04/tag-comparison.html",
       "output": "assets/workbook/targets/day04-tags.png",
       "points": [
         {
@@ -115,7 +115,7 @@
     },
     {
       "id": "day05",
-      "source": "lessons/05/start/menu.html",
+      "source": "day05/menu.html",
       "output": "assets/workbook/targets/day05.png",
       "points": [
         {
@@ -130,7 +130,7 @@
     },
     {
       "id": "day06",
-      "source": "lessons/06/start/menu.html",
+      "source": "day06/menu.html",
       "output": "assets/workbook/targets/day06.png",
       "points": [
         {
@@ -149,7 +149,7 @@
     },
     {
       "id": "day07",
-      "source": "lessons/07/start/about.html",
+      "source": "day07/about.html",
       "output": "assets/workbook/targets/day07.png",
       "points": [
         {
@@ -165,7 +165,7 @@
     },
     {
       "id": "day08",
-      "source": "lessons/08/start/about.html",
+      "source": "day08/about.html",
       "output": "assets/workbook/targets/day08.png",
       "points": [
         {
@@ -181,7 +181,7 @@
     },
     {
       "id": "day09",
-      "source": "lessons/09/start/index.html",
+      "source": "day09/index.html",
       "output": "assets/workbook/targets/day09.png",
       "points": [
         {
@@ -197,7 +197,7 @@
     },
     {
       "id": "day10",
-      "source": "lessons/10/start/menu.html",
+      "source": "day10/menu.html",
       "output": "assets/workbook/targets/day10.png",
       "points": [
         {
@@ -219,7 +219,7 @@
     },
     {
       "id": "day11-price",
-      "source": "lessons/11/start/menu.html",
+      "source": "day11/menu.html",
       "output": "assets/workbook/targets/day11-price.png",
       "points": [
         {
@@ -242,7 +242,7 @@
     },
     {
       "id": "day11-info",
-      "source": "lessons/11/start/index.html",
+      "source": "day11/index.html",
       "output": "assets/workbook/targets/day11-info.png",
       "points": [
         {
@@ -261,7 +261,7 @@
     },
     {
       "id": "day12",
-      "source": "lessons/12/start/index.html",
+      "source": "day12/index.html",
       "output": "assets/workbook/targets/day12.png",
       "points": [
         {
@@ -277,7 +277,7 @@
     },
     {
       "id": "day13",
-      "source": "lessons/13/start/index.html",
+      "source": "day13/index.html",
       "output": "assets/workbook/targets/day13.png",
       "points": [
         {
@@ -296,7 +296,7 @@
     },
     {
       "id": "day14",
-      "source": "lessons/14/start/index.html",
+      "source": "day14/index.html",
       "output": "assets/workbook/targets/day14.png",
       "points": [
         {
@@ -317,7 +317,7 @@
     },
     {
       "id": "day15",
-      "source": "lessons/15/start/css/style.css",
+      "source": "day15/css/style.css",
       "output": "assets/workbook/targets/day15.png",
       "points": [
         {

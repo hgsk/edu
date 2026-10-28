@@ -52,7 +52,7 @@
 
 ## 第3回 ボタンのデザインをそろえて
 
-[図と実習](../lessons/03/README.md)／[120分・各90分の進行](../instructor/day34-guide.md)。  
+[図と実習](../instructor/lessons/03/README.md)／[120分・各90分の進行](../instructor/day34-guide.md)。  
 最初は「メニューを探す人が同じボタンだと分かるようにする」を共有。  
 本文・価格・リンク先は対象外。  
 基準はホームと授業用に確認済み。
@@ -75,7 +75,7 @@
 
 ## 第4回 お店の情報が見つけにくい
 
-[図と実習](../lessons/04/README.md)／[120分・各90分の進行](../instructor/day34-guide.md)。  
+[図と実習](../instructor/lessons/04/README.md)／[120分・各90分の進行](../instructor/day34-guide.md)。  
 最初は「来店する人が時間と場所を探せるようにする」を共有。  
 本文は保持し、見出し・項目名は追加可能。  
 タグの暗記より、図と順番の理由から始める。

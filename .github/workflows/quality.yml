@@ -61,24 +61,24 @@ jobs:
       - name: Validate HTML
         run: >-
           npx --no-install html-validate
-          "hht/tour/index.html"
+          "hht/hands-on/vscode-basics/site/index.html"
           "hht/typing-app/index.html"
           "hht/typing-app/reader.html"
-          "hht/starter-site/*.html"
-          "hht/portfolio/index.html"
+          "hht/references/cafe-site/*.html"
+          "hht/references/portfolio-template/index.html"
           "hht/hands-on/summer-festival-annual-update/starter/*.html"
 
       - name: Validate CSS
         run: >-
           npx --no-install stylelint
-          hht/tour/style.css
+          hht/hands-on/vscode-basics/site/style.css
           hht/typing-app/style.css
           hht/typing-app/reader.css
           hht/typing-app/arcade.css
-          hht/starter-site/css/style.css
-          hht/portfolio/css/style.css
+          hht/references/cafe-site/css/style.css
+          hht/references/portfolio-template/css/style.css
           hht/hands-on/summer-festival-annual-update/starter/css/style.css
-          --config hht/tour/.stylelintrc.json
+          --config hht/hands-on/vscode-basics/site/.stylelintrc.json
 
       - name: Check summer-festival links and fragments
         run: >-

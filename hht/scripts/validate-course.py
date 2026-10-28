@@ -133,9 +133,9 @@ for match in re.finditer(r"!\[[^\]]+\]\((\.\./assets/[^)]+)\)", workbook):
     )
 
 portfolio_brief = (ROOT / "docs/portfolio-project.md").read_text(encoding="utf-8")
-for term in ("見てほしい", "制作実績", "個人情報", "portfolio/index.html", "portfolio/css/style.css", "2分間"):
+for term in ("見てほしい", "制作実績", "個人情報", "references/portfolio-template/index.html", "references/portfolio-template/css/style.css", "2分間"):
     require(term in portfolio_brief, f"Portfolio project missing term: {term}")
-for relative in ("portfolio/index.html", "portfolio/css/style.css"):
+for relative in ("references/portfolio-template/index.html", "references/portfolio-template/css/style.css"):
     require((ROOT / relative).exists(), f"Missing portfolio starter file: {relative}")
 release_approval = ROOT / "student/requests/day13-release-approval.md"
 require(release_approval.exists(), "Missing Day 13 explicit release approval")
@@ -213,7 +213,7 @@ for document_name, document in {
     "course README": readme,
     "curriculum": curriculum,
     "student workbook": workbook,
-    "lesson packs": (ROOT / "lessons/README.md").read_text(encoding="utf-8"),
+    "lesson packs": (ROOT / "instructor/lessons/README.md").read_text(encoding="utf-8"),
 }.items():
     require("VS Code" in document and "ローカルGit" in document,
             f"{document_name} missing local VS Code / Git start rule")
@@ -224,7 +224,7 @@ for block in workbook_days:
     for term in ("#local-git-workflow", f"git tag -f day{number:02d}-end"):
         require(term in block, f"DAY {number} missing Git workflow continuation: {term}")
 policy_paths = (
-    "docs/student-workbook.md", *(f"docs/workbook/{name}" for name in PART_NAMES), "docs/local-git.md", "submissions/README.md",
+    "docs/student-workbook.md", *(f"docs/workbook/{name}" for name in PART_NAMES), "docs/local-git.md", "student/work-records/README.md",
     "docs/vscode-hands-on.md", "docs/vscode-instructor-guide.md", "docs/exercise-operations.md",
 )
 for relative in policy_paths:
@@ -259,7 +259,7 @@ for match in re.finditer(r"\]\((\./[^)]+)\)", readme):
     relative = match.group(1).split("#", 1)[0]
     require((ROOT / relative).exists(), f"Broken README link: {relative}")
 
-lesson_pack_root = ROOT / "lessons"
+lesson_pack_root = ROOT / "instructor/lessons"
 lesson_pack_files = [lesson_pack_root / f"{number:02d}" / "README.md" for number in range(1, 16)]
 require(len([path for path in lesson_pack_files if path.exists()]) == 15, "Expected 15 lesson packs")
 for number, path in enumerate(lesson_pack_files, start=1):
@@ -299,10 +299,10 @@ required_fixtures = [
     "fixtures/attachments/about-copy.md",
     "fixtures/photographer-delivery/hero-ai-master.png",
     "fixtures/photographer-delivery/simulated-shoot-001.jpg",
-    "starter-site/images/hero-cafe.webp",
-    "practice-server/staging/.gitkeep",
-    "practice-server/production/.gitkeep",
-    "practice-server/backups/.gitkeep",
+    "references/cafe-site/images/hero-cafe.webp",
+    "hands-on/deployment/server/staging/.gitkeep",
+    "hands-on/deployment/server/production/.gitkeep",
+    "hands-on/deployment/server/backups/.gitkeep",
     "references/textbook/sample_files.zip",
     "references/textbook/toc-html-css-1.png",
     "references/textbook/toc-html-css-2.png",
@@ -319,7 +319,7 @@ for relative in required_fixtures:
 expected_images = {
     "fixtures/photographer-delivery/hero-ai-master.png": "PNG",
     "fixtures/photographer-delivery/simulated-shoot-001.jpg": "JPEG",
-    "starter-site/images/hero-cafe.webp": "WEBP",
+    "references/cafe-site/images/hero-cafe.webp": "WEBP",
     "assets/glossary/workflow.webp": "WEBP",
     "assets/glossary/website-layers.webp": "WEBP",
     "assets/glossary/ec-cycle.webp": "WEBP",
@@ -335,7 +335,7 @@ for relative, expected_format in expected_images.items():
 
 handler = functools.partial(
     http.server.SimpleHTTPRequestHandler,
-    directory=str(ROOT / "starter-site"),
+    directory=str(ROOT / "references/cafe-site"),
 )
 with socketserver.TCPServer(("127.0.0.1", 0), handler) as server:
     thread = threading.Thread(target=server.serve_forever, daemon=True)
@@ -361,7 +361,7 @@ with socketserver.TCPServer(("127.0.0.1", 0), handler) as server:
         thread.join(timeout=3)
 
 # Check the canonical DAY destination at every lesson and portal entry.
-for entry in [ROOT / "README.md", ROOT / "student/README.md", ROOT / "instructor/README.md", *sorted((ROOT / "lessons").glob("*/README.md"))]:
+for entry in [ROOT / "README.md", ROOT / "student/README.md", ROOT / "instructor/README.md", *sorted((ROOT / "instructor/lessons").glob("*/README.md"))]:
     document = entry.read_text(encoding="utf-8")
     for error in workbook_day_link_errors(entry.relative_to(ROOT), document):
         require(False, f"{entry.relative_to(ROOT)}: {error}")

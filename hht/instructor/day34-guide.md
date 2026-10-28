@@ -30,7 +30,7 @@
 ## 授業前：目的と入力を確認
 
 1. [講座設計](../docs/course-design.md)と[実務シナリオ](../docs/project-brief.md)を確認する。
-2. 学生には[DAY 3](../lessons/03/README.md)・[DAY 4](../lessons/04/README.md)を案内する。  
+2. 学生には[DAY 3](lessons/03/README.md)・[DAY 4](lessons/04/README.md)を案内する。  
    各回の開始ZIPを配布する。  
    学生の以前の制作物を上書きしない。
 4. 依頼の不足を質問してから、教材の「授業用に確認済みの仕様」を共有する。  
@@ -119,7 +119,7 @@ DAY 3の進み具合で授業開始が遅れません。
 
 ### タグの置き換えの説明
 
-DAY 4の[タグ比較ページ](../lessons/04/tag-comparison.html)は、同じclassを付けたsectionとdivの同じ見た目と、タグ名に依存するCSSがある場合の違いを見せる教材。  
+DAY 4の[タグ比較ページ](lessons/04/tag-comparison.html)は、同じclassを付けたsectionとdivの同じ見た目と、タグ名に依存するCSSがある場合の違いを見せる教材。  
 「見た目を同じにできる」と「意味・機能が等価」を区別する。  
 sectionの見出しは話題を示すためで、枠線や横並びのためではない。
 

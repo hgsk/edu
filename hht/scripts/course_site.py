@@ -69,7 +69,7 @@ def validate(root: Path) -> list[str]:
 
     contract = json.loads((root / "scripts/course-site-contract.json").read_text(encoding="utf-8"))
     workbook = read_workbook(root)
-    distributed_zips = set(re.findall(r"\]\(\.\./(lessons/[^)]+\.zip)\)", workbook))
+    distributed_zips = set(re.findall(r"\]\(\.\./(instructor/lessons/[^)]+\.zip)\)", workbook))
     configured_zips = {site["zip"] for site in contract["sites"] if "zip" in site}
     check(distributed_zips == configured_zips, "Workbook distribution ZIP coverage differs from contract")
     for phrase in contract["workbook_phrases"]:

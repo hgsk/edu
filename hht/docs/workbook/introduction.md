@@ -54,31 +54,26 @@ VS Codeの操作画面ではありません。
 
 **読む資料：** `hht/docs/student-workbook.md` です。
 
-**カフェを編集する場所：** 自分用にコピーした `hht/starter-site` です。  
-DAY 3・4だけは、その回の開始ZIPを展開した練習用フォルダーを使います。
+**カフェを編集する場所：** 今日の`hht/dayNN`です。  
+各DAYのフォルダーに教材が入っているので、そのまま開きます。
 
 **ブラウザで確認する方法：** VS Codeの左側で対象HTMLを右クリックし、導入済みのLive Serverの **Open with Live Server** を選びます。  
 メニューがない場合は、[環境準備の手順](../vscode-hands-on.md)を確認します。  
 拡張機能が使えないPCでは、対象HTMLをエクスプローラーからブラウザで開きます。
 
-![VS Codeでカフェのhht/starter-site/index.htmlを開き、本文の編集場所を確認した実画面](../../assets/workbook/targets/open-cafe-html.jpg)
+![VS CodeでDAY別フォルダーとDAY 6のmenu.htmlを開いた実画面](../../assets/direct-days/day-folders.png)
 
-**この画面で確認する場所:**
+**この画面で確認する場所：**
 
-- **左のファイル一覧**：`docs`ではなく、`starter-site`内の`index.html`を選びます。
-- **右の編集欄の上端**：パンくずの`hht > starter-site > index.html`で、同名の別ファイルを開いていないかを確認します。
-- **右のHTML本文**：`<main>`内の`<h1>`がホームの大きな見出しです。  
-  見た目の色や余白は、HTMLの本文ではなく`css/style.css`の該当classで調整します。
+- **左のファイル一覧：** `hht`の中から今日の`dayNN`を選びます。
+- **右の編集欄の上端：** `hht > day06 > menu.html`のように、DAYとファイル名を確認します。
+- **右のHTML本文：** 今日の課題で指定された箇所を編集します。
 
-`index.html`はホーム、`menu.html`は商品一覧、`about.html`は店舗案内です。  
-同じ名前のファイルが複数あるため、上部のパンくずで `hht > starter-site` になっていることも確かめます。
+同じ名前のHTMLが複数あるので、上部のパンくずでDAYも確認します。  
+DAY 3のボタン修正も、最初から入っている`hht/day03`で取り組みます。
 
-開始用サイトの3ページには「メニューを見る」が1つずつあります。  
-ホーム・店舗案内からは商品ページへ、商品ページからは同じページの商品一覧へ移動します。  
-DAY 3では専用ZIPを使い、この3つのボタンにわざと付けた色・形の違いを直します。
-
-**環境準備で使う `hht/tour/index.html` は、別の練習ページです。**  
-カフェの依頼を直すときは、`tour`を開きません。
+**環境準備では、別の練習ページを使います。**  
+[VS Codeハンズオン](../vscode-hands-on.md)から`hht/hands-on/vscode-basics/site/index.html`を開きます。
 
 ## この本の進め方
 

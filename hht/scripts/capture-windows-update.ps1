@@ -88,8 +88,13 @@ try {
   [UpdateWindow]::SetCursorPos(850, 610) | Out-Null
   [UpdateWindow]::mouse_event(2, 0, 0, 0, [UIntPtr]::Zero)
   [UpdateWindow]::mouse_event(4, 0, 0, 0, [UIntPtr]::Zero)
+  Start-Sleep -Seconds 3
+  # Second observed first-run page: finish with the visible Get Started button.
+  [UpdateWindow]::SetCursorPos(900, 610) | Out-Null
+  [UpdateWindow]::mouse_event(2, 0, 0, 0, [UIntPtr]::Zero)
+  [UpdateWindow]::mouse_event(4, 0, 0, 0, [UIntPtr]::Zero)
   Start-Sleep -Seconds 5
-  Capture '02-new-working-folder.png' 
+  Capture '02-new-working-folder.png'
   Set-Location $target
   $summary = [System.Collections.Generic.List[string]]::new()
   $summary.Add("Working folder: $target")

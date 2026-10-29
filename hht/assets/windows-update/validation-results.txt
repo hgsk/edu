@@ -1,0 +1,20 @@
+Working folder: C:\Users\runneradmin\Documents\edu-update-20261029\edu
+Commit: 569316a30e6851f1fbdc7e95d82a758365c7a0b5
+
+> git check-attr text -- hht/day01/index.html
+hht/day01/index.html: text: unset
+Exit code: 0
+> python hht/scripts/validate-course.py
+COURSE VALIDATION: PASS
+Exit code: 0
+> python unity/scripts/build_course.py --check
+PASS: 36 units, required fields, 147 screenshot references, canonical HTML
+Exit code: 0
+> python -m unittest discover -s unity/scripts -p test_*.py
+Ran 13 tests in 1.763s
+OK
+Exit code: 0
+> python -m unittest discover -s hht/scripts -p test_*.py
+Ran 71 tests in 15.649s
+OK
+Exit code: 0

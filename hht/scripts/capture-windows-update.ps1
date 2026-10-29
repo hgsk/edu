@@ -54,7 +54,6 @@ function OpenCode($arguments) {
   Start-Process -FilePath $codePath -ArgumentList ($quoted -join ' ') | Out-Null
 }
 function Keys($keys) { [System.Windows.Forms.SendKeys]::SendWait($keys); Start-Sleep -Seconds 2 }
-function Paste($text) { Set-Clipboard $text; Keys '^v' }
 try {
   # Use Git for the clone; native Explorer and VS Code show the actual destination.
   $shell = New-Object -ComObject Shell.Application
@@ -66,7 +65,7 @@ try {
   [UpdateWindow]::SetForegroundWindow([IntPtr]$explorer.HWND) | Out-Null
   Start-Sleep -Seconds 2
   Capture '01-separate-destination.png'
-  git clone --branch docs/windows-safe-update https://github.com/hgsk/edu.git $target
+  git clone https://github.com/hgsk/edu.git $target
   if ($LASTEXITCODE) { throw 'Clone failed' }
   git -C $target fetch origin $env:GITHUB_SHA
   if ($LASTEXITCODE) { throw 'Fetch failed' }

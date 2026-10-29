@@ -1,6 +1,7 @@
 name: Checkout Bytes
 
 on:
+  workflow_dispatch:
   pull_request:
     branches: [main]
   push:
@@ -75,12 +76,12 @@ jobs:
 
       - name: Capture isolated Windows update screens
         timeout-minutes: 6
-        if: runner.os == 'Windows'
+        if: runner.os == 'Windows' && github.event_name == 'workflow_dispatch'
         shell: pwsh
         run: ./hht/scripts/capture-windows-update.ps1
 
       - uses: actions/upload-artifact@v4
-        if: always() && runner.os == 'Windows'
+        if: always() && runner.os == 'Windows' && github.event_name == 'workflow_dispatch'
         with:
           name: windows-update-screenshots
           path: ${{ runner.temp }}/windows-update-screenshots

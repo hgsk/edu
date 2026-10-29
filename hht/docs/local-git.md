@@ -3,6 +3,8 @@
 変更前後を比べ、作業の区切りを履歴へ残します。  
 授業での進め方は[共通手順](./workbook/common.md#local-git-workflow)を参照します。
 
+Windowsで古い教材を更新する場合は、[作業を守る更新手順](./workbook/common.md#windows-safe-update)を先に確認します。  
+
 ## 毎回の開始：同じフォルダーを開く
 
 初回は[Documentsへクローンする手順](./workbook/common.md#clone-edu)で、GitHubの`hgsk/edu`を取得します。  

@@ -1,0 +1,12 @@
+{
+  "run_url": "https://github.com/hgsk/edu/actions/runs/40869571031",
+  "head_sha": "7df1fdc22dfbb691c2a68c3af83466c49732a76e",
+  "validated_merge_sha": "569316a30e6851f1fbdc7e95d82a758365c7a0b5",
+  "platform": "Windows Server 2025, GitHub hosted desktop",
+  "method": "Actual Windows Explorer and VS Code screens. Git CLI cloned to a separate new folder; VS Code opened that folder and the actual validation output. Not screenshots of clicking VS Code Clone destination picker.",
+  "screenshots": {
+    "03-validation-results.png": "2f5b0587b0ab2f5bb4fa91b6898e327b3fda12ec984250ceb70342b8c4d3a89c",
+    "02-new-working-folder.png": "698a73b1a541d60e7d5671bc9422029a8052458601043d9a22955825167df0c0",
+    "01-separate-destination.png": "b7ae90625cf84cf23259ddfb736ac3d7ef8117680fbfee5e523ab59a905bfcf5"
+  }
+}

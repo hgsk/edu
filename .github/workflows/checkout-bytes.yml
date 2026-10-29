@@ -1,0 +1,88 @@
+name: Checkout Bytes
+
+on:
+  workflow_dispatch:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Course bytes (${{ matrix.os }}, autocrlf=${{ matrix.autocrlf }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: windows-latest
+            autocrlf: 'true'
+          - os: ubuntu-latest
+            autocrlf: 'false'
+    steps:
+      - name: Configure Git before first checkout
+        shell: bash
+        run: git config --global core.autocrlf '${{ matrix.autocrlf }}'
+
+      - uses: actions/checkout@v5
+
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+
+      - name: Verify every tracked file matches its committed bytes
+        shell: python
+        run: |
+          import hashlib
+          from pathlib import Path
+          import subprocess
+
+          entries = subprocess.check_output(['git', 'ls-files', '--stage', '-z'])
+          count = 0
+          crlf = 0
+          for entry in entries.split(b'\0'):
+              if not entry:
+                  continue
+              metadata, raw_path = entry.split(b'\t', 1)
+              mode, expected, stage = metadata.split()
+              path = raw_path.decode('utf-8')
+              if mode not in (b'100644', b'100755') or stage != b'0':
+                  raise SystemExit(f'Unexpected index entry: {path}')
+              data = Path(path).read_bytes()
+              actual = hashlib.sha1(b'blob ' + str(len(data)).encode() + b'\0' + data).hexdigest()
+              if actual != expected.decode():
+                  raise SystemExit(f'Checkout changed committed bytes: {path}')
+              count += 1
+              crlf += b'\r\n' in data and b'\0' not in data
+          print(f'PASS: {count} tracked files byte-identical; {crlf} CRLF text files preserved')
+
+      - name: Install Python validation dependency
+        run: python -m pip install --disable-pip-version-check pillow
+
+      - name: Validate HHT course
+        run: python hht/scripts/validate-course.py
+
+      - name: Validate Unity course
+        run: python unity/scripts/build_course.py --check
+
+      - name: Test Unity validation
+        run: python -m unittest discover -s unity/scripts -p "test_*.py"
+
+      - name: Test HHT validation
+        run: python -m unittest discover -s hht/scripts -p "test_*.py"
+
+      - name: Capture isolated Windows update screens
+        timeout-minutes: 6
+        if: runner.os == 'Windows' && github.event_name == 'workflow_dispatch'
+        shell: pwsh
+        run: ./hht/scripts/capture-windows-update.ps1
+
+      - uses: actions/upload-artifact@v4
+        if: always() && runner.os == 'Windows' && github.event_name == 'workflow_dispatch'
+        with:
+          name: windows-update-screenshots
+          path: ${{ runner.temp }}/windows-update-screenshots
+          if-no-files-found: error

@@ -57,6 +57,15 @@ class WorkbookFilesTest(unittest.TestCase):
             stream.write("\nUnique split-source change\n")
         self.assertIn("Unique split-source change", read_workbook(self.root))
 
+    def test_links_are_independent_of_root_alias(self):
+        with tempfile.TemporaryDirectory() as directory:
+            alias = Path(directory) / "alias"
+            try:
+                alias.symlink_to(self.root, target_is_directory=True)
+            except OSError as error:
+                self.skipTest(f"Directory symlinks unavailable: {error}")
+            self.assertEqual(read_workbook(alias), read_workbook(self.root))
+
     def test_legacy_input_and_screenshot_checks_get_rebased_links(self):
         text = read_workbook(self.root)
         self.assertIn("](../assets/workbook/targets/day05.png)", text)

@@ -19,7 +19,8 @@ def workbook_paths(root: Path) -> list[Path]:
 
 def read_workbook(root: Path) -> str:
     """Normalize relative links to docs/ for existing input/figure validators."""
-    docs = root / "docs"
+    # Resolve both sides: Windows TEMP may use a short-name or junction alias.
+    docs = (root / "docs").resolve()
     index = (docs / "student-workbook.md").read_text(encoding="utf-8")
     chunks = [index]
     for path in workbook_paths(root):

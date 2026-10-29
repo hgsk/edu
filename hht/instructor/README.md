@@ -5,6 +5,9 @@
 PCのVS Codeで授業を行う場合は、[VS Codeでの進行資料](../docs/vscode-instructor-guide.md)と[受講者用ハンズオン手順](../docs/vscode-hands-on.md)を使います。  
 授業パックは共通で使えます。
 
+[10月29日版スライドとの照合・未確定事項](./slide-alignment-20261029.md)を確認します。  
+新運用の提出先・評価・実画面の確認が残っています。
+
 ## 授業前
 
 1. PCのVS Codeで本人用のローカルGitリポジトリを開き、[今日の授業パック](lessons/README.md)を選ぶ。

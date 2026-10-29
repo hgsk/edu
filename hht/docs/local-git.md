@@ -1,65 +1,16 @@
 # ローカルGitの操作手順
 
-変更前後を比べ、作業の区切りを履歴へ残します。  
-授業での進め方は[共通手順](./workbook/common.md#local-git-workflow)を参照します。
+現行の操作と提出の正本は[共通手順](./workbook/common.md#local-git-workflow)です。
 
-## 毎回の開始：同じフォルダーを開く
-
-初回は[Documentsへクローンする手順](./workbook/common.md#clone-edu)で、GitHubの`hgsk/edu`を取得します。  
-毎回、VS Codeで同じ`Documents/edu`を開きます。  
-クローンで履歴も取得されるので、Gitの初期化や初期コミットは不要です。  
-`README.md`と`hht`が見えるフォルダーを使います。  
-次の授業も、同じ教材リポジトリを開きます。  
-制作ファイルは各DAY専用の作業フォルダーに分けます。
-
-```powershell
-git status --short
-```
-
-VS Codeのソース管理で変更一覧を読み、続けている作業を確認します。  
-毎回の作業でブランチを作ったり、切り替えたりする操作はありません。
+- [初回のクローン](./workbook/common.md#clone-edu)
+- [毎回の教材更新](./workbook/common.md#independent-day-start)
+- [作品の初回準備](./workbook/common.md#portfolio-start)
+- [PR提出](./workbook/common.md#submission-policy)
 
 <a id="practice-baseline"></a>
 
-## 各DAYのフォルダーで作業する
-
-[共通の開始手順](./workbook/common.md#independent-day-start)で、そのDAYのフォルダーを開きます。  
-DAY 1なら`hht/day01`、DAY 15なら`hht/day15`です。  
-開始状態は既にコミットされているので、そのままHTML・CSSを編集します。  
-自分が加えた変更を差分で確認してコミットします。
-
-## 編集・確認の後：差分を読んでコミットする
-
-ファイルを保存し、ブラウザーで表示と操作を確認します。  
-VS Codeの「ソース管理」で変更ファイルを開き、変更前後を見比べます。  
-HTMLやCSS、使った画像、その日の記録を選んで「＋」でステージします。  
-何を変えたか分かるメッセージを入力し、「コミット」を押します。
-
-![VS Codeのソース管理で変更前後を見比べた実画面](../assets/workbook/common/02-diff-clean.jpg)
-
-💡 **ヒント：**
-> コミットは、選んだファイルの状態を履歴に保存する操作です。  
-> DevToolsで試した変更は、HTML・CSSのファイルへ書き戻すことで保存できます。
-
-## 終わりの記録：同じ名前のタグを更新する
-
-以下はDAY 1のコマンドです。  
-番号は、その日のDAYに合わせます。
-
-```powershell
-git log -1 --oneline
-git tag -f day01-end
-git status --short
-```
-
-`git log -1 --oneline`で、最後に記録したコミットを確認します。  
-`git tag -f day01-end`で、そのコミットに「DAY 1の最後の記録」という目印を付けます。  
-同じコミットで繰り返しても、タグの指す先は同じです。  
-追加の修正をコミットした後は、同じコマンドでタグを更新します。  
-`-f`が更新するのはタグの指す先で、ファイルや以前のコミットを削除する操作ではありません。
-
-💡 **ヒント：**
-> タグだけでは、未コミットの変更は保存されません。  
-> 保存 → 表示確認 → 差分確認 → コミット → タグの順に進めます。
-
-作業メモのバージョン欄には `day01-end`のように、その日のタグ名を書きます。
+教材は確認・保護・破棄・Pullを行い、作品は保存・表示確認・差分確認・コミットを行います。  
+`git status --short`で、今開いているリポジトリの変更を確認できます。  
+`git log -1 --oneline`で最後のコミットを確認できます。  
+旧手順の`git tag -f day01-end`は、現行授業の必須操作ではありません。  
+教材と作品を取り違えた状態では操作を続けず、講師へ相談します。

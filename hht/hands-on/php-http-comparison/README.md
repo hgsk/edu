@@ -1,6 +1,6 @@
 # PHPリクエスト実行とPython静的HTTP配信
 
-課題条件・操作・合格条件の正本は[DAY11](../../docs/workbook/day11.md#php-http-comparison)です。
+課題条件・操作・合格条件の正本は[DAY11](../../docs/legacy-workbook/day11.md#php-http-comparison)です。
 
 `starter/`は前のPHP CLIを踏まえた比較用の完成した最小コードです。正解を補う処理はなく、学生はデータとCSSを変えて更新時期の違いを記録します。`data.php`・`render.php`・`templates/`は配信対象外、PHPは`public/`、Pythonは生成済み`output/`だけを配信します。
 

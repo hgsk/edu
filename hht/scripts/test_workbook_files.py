@@ -31,8 +31,8 @@ class WorkbookFilesTest(unittest.TestCase):
             self.assertTrue(text.startswith(f"# DAY {number} "))
             self.assertEqual(text.count("**完成条件:**"), 1)
             self.assertIn("../student-workbook.md", text)
-            self.assertIn(f"day{number:02d}-end", text)
-            self.assertNotIn("提出", text)
+            self.assertIn("#local-git-workflow", text)
+            self.assertIn("PR", text)
 
     def test_hint_format_policy(self):
         self.assertEqual(hint_format_errors("💡 **ヒント：**\n> 説明です。"), [])

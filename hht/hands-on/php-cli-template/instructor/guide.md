@@ -1,6 +1,6 @@
 # PHP CLI・wslc実習 進行と検証
 
-課題条件は[DAY 11の正本](../../../docs/workbook/day11.md#php-cli-template)を参照します。ユーザー指定のWSL Containers（wslc.exe）を標準とし、Podman導入やUbuntu内のDocker Engine準備は求めません。WSLは基盤、wslcは同梱コンテナCLIです。[Microsoft公式手順](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers)はWSL 2.9.3以上を要件にしています。
+課題条件は[DAY 11の正本](../../../docs/legacy-workbook/day11.md#php-cli-template)を参照します。ユーザー指定のWSL Containers（wslc.exe）を標準とし、Podman導入やUbuntu内のDocker Engine準備は求めません。WSLは基盤、wslcは同梱コンテナCLIです。[Microsoft公式手順](https://learn.microsoft.com/en-us/windows/wsl/tutorials/wsl-containers)はWSL 2.9.3以上を要件にしています。
 
 ## 学生の作業と正解例を分ける
 

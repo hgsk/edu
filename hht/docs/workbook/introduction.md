@@ -54,7 +54,8 @@ VS Codeの操作画面ではありません。
 
 **読む資料：** `hht/docs/student-workbook.md` です。
 
-**カフェを編集する場所：** 今日の`hht/dayNN`です。  
+**カフェを編集する場所：** DAY1〜9は今日の`hht/dayNN`です。  
+DAY10以降は教材外の同じportfolioを開きます。  
 各DAYのフォルダーに教材が入っているので、そのまま開きます。
 
 **ブラウザで確認する方法：** VS Codeの左側で対象HTMLを右クリックし、導入済みのLive Serverの **Open with Live Server** を選びます。  
@@ -74,6 +75,11 @@ DAY 3のボタン修正も、最初から入っている`hht/day03`で取り組�
 
 **環境準備では、別の練習ページを使います。**  
 [VS Codeハンズオン](../vscode-hands-on.md)から`hht/hands-on/vscode-basics/site/index.html`を開きます。
+
+## 現行運用
+
+教材更新・作品保存・PR提出は[共通手順](./common.md)を確認します。  
+DAY10以降は同じ作品の制作を続け、外部公開・相互レビュー・発表を必須にしません。
 
 ## この本の進め方
 

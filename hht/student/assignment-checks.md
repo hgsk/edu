@@ -38,26 +38,26 @@
 
 [DAY 9の完成条件](../docs/workbook/day09.md#day-9-もっとインパクトのある写真に)
 
-## DAY 10 スマートフォン対応
+## DAY 10 伝える内容を決め、ベースを作る
 
 [DAY 10の完成条件](../docs/workbook/day10.md#day-10-スマホでボタンが押しにくい)
 
-## DAY 11 複数更新と確認依頼
+## DAY 11 情報が伝わるベースを完成させる
 
 [DAY 11の完成条件](../docs/workbook/day11.md#day-11-5つの更新依頼を安全に直して)
 
-## DAY 12 transitionと差し戻し
+## DAY 12 同じ作品で、伝わりにくい所を直す
 
 [DAY 12の完成条件](../docs/workbook/day12.md#day-12-動きを整えて差し戻しに対応しよう)
 
-## DAY 13 最終承認と公開
+## DAY 13 余裕があれば、近くの人に見てもらう
 
 [DAY 13の完成条件](../docs/workbook/day13.md#day-13-カフェサイトを承認公開しよう)
 
-## DAY 14 ポートフォリオ企画・HTML
+## DAY 14 必要なフィードバックを反映する
 
 [DAY 14の完成条件](../docs/workbook/day14.md#day-14-自分のポートフォリオを企画しよう)
 
-## DAY 15 ポートフォリオ完成・公開
+## DAY 15 伝わるページとして仕上げる
 
 [DAY 15の完成条件](../docs/workbook/day15.md#day-15-ポートフォリオを完成公開しよう)

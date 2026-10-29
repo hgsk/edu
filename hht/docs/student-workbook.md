@@ -16,12 +16,12 @@
 - [DAY 7 お問い合わせフォームがほしい](./workbook/day07.md)
 - [DAY 8 営業時間を見逃さないようにして](./workbook/day08.md)
 - [DAY 9 もっとインパクトのある写真に](./workbook/day09.md)
-- [DAY 10 スマホでボタンが押しにくい](./workbook/day10.md)
-- [DAY 11 5つの更新依頼を安全に直して](./workbook/day11.md)
-- [DAY 12 動きを整えて差し戻しに対応しよう](./workbook/day12.md)
-- [DAY 13 カフェサイトを承認・公開しよう](./workbook/day13.md)
-- [DAY 14 自分のポートフォリオを企画しよう](./workbook/day14.md)
-- [DAY 15 ポートフォリオを完成・公開しよう](./workbook/day15.md)
+- [DAY 10 伝える内容を決め、ベースを作る](./workbook/day10.md)
+- [DAY 11 情報が伝わるベースを完成させる](./workbook/day11.md)
+- [DAY 12 同じ作品で、伝わりにくい所を直す](./workbook/day12.md)
+- [DAY 13 余裕があれば、近くの人に見てもらう](./workbook/day13.md)
+- [DAY 14 必要なフィードバックを反映する](./workbook/day14.md)
+- [DAY 15 伝わるページとして仕上げる](./workbook/day15.md)
 
 ## 追加講座
 

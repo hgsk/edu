@@ -32,7 +32,7 @@ Windowsの`Get-NetTCPConnection`で実際のPHP待受が['127.0.0.1']のみと�
 
 ## 実画面と終了
 
-Windows上のChromeで、`file://`ではなく上記の`http://localhost:.../`へ接続して6枚を撮影しました。PHP／Pythonそれぞれの通常・条件切替・特殊文字の画面です。[DAY11の各操作の近く](../../docs/workbook/day11.md#php-http-comparison)に掲載し、全画像の日本語・表示状態・リンクを目視確認しました。ヘッドレスChromeの実描画であり、アドレスバーやPowerShell／VS Codeの操作画面ではありません。
+Windows上のChromeで、`file://`ではなく上記の`http://localhost:.../`へ接続して6枚を撮影しました。PHP／Pythonそれぞれの通常・条件切替・特殊文字の画面です。[DAY11の各操作の近く](../../docs/legacy-workbook/day11.md#php-http-comparison)に掲載し、全画像の日本語・表示状態・リンクを目視確認しました。ヘッドレスChromeの実描画であり、アドレスバーやPowerShell／VS Codeの操作画面ではありません。
 
 PHP起動CLI PIDは20812、Pythonの検証プロセスPIDは37408。Chrome PIDは42440, 19572, 20208, 10408, 44220, 37924。記録したChromeプロセスは全て終了し、専用プロファイルを使う子プロセスの不在も確認しました。PHPは対象コンテナstopによって終了（CLI終了コード137）し、不在を確認しました。Pythonはshutdown・スレッド終了・server_closeが成功しました。cleanupはいずれもPASSです。既存プロセスや他のコンテナは停止していません。
 

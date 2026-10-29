@@ -7,6 +7,7 @@ using System;
 using System.Runtime.InteropServices;
 public class UpdateWindow {
   [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr hWnd);
+  [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
 }
 '@
 $original = (Get-Location).Path
@@ -53,33 +54,31 @@ function OpenCode($arguments) {
 function Keys($keys) { [System.Windows.Forms.SendKeys]::SendWait($keys); Start-Sleep -Seconds 2 }
 function Paste($text) { Set-Clipboard $text; Keys '^v' }
 try {
-  OpenCode @('--user-data-dir', $profile, '--disable-extensions', '--disable-workspace-trust', '--new-window')
-  Start-Sleep -Seconds 15
-  $window = Get-Process Code | Where-Object MainWindowHandle -ne 0 | Select-Object -First 1
-  if (-not $window) { throw 'VS Code window was not opened' }
-  [UpdateWindow]::SetForegroundWindow($window.MainWindowHandle) | Out-Null
-  Keys '^+p'
-  Paste 'Git: Clone'
-  Keys '{ENTER}'
-  Paste 'https://github.com/hgsk/edu.git'
-  Keys '{ENTER}'
-  Start-Sleep -Seconds 3
-  # The native destination picker is open; navigate to the new empty parent.
-  Keys '%d'
-  Paste $parent
-  Keys '{ENTER}'
+  # Use Git for the clone; native Explorer and VS Code show the actual destination.
+  $shell = New-Object -ComObject Shell.Application
+  $shell.Open($parent)
+  Start-Sleep -Seconds 5
+  $explorer = @($shell.Windows()) | Where-Object { $_.Document.Folder.Self.Path -eq $parent } | Select-Object -First 1
+  if (-not $explorer) { throw 'Destination Explorer window was not opened' }
+  [UpdateWindow]::ShowWindow([IntPtr]$explorer.HWND, 3) | Out-Null
+  [UpdateWindow]::SetForegroundWindow([IntPtr]$explorer.HWND) | Out-Null
+  Start-Sleep -Seconds 2
   Capture '01-separate-destination.png'
-  Keys '%s'
-  $deadline = (Get-Date).AddSeconds(90)
-  while (-not (Test-Path (Join-Path $target '.git/HEAD')) -and (Get-Date) -lt $deadline) { Start-Sleep -Seconds 2 }
-  if (-not (Test-Path (Join-Path $target '.git/HEAD'))) { throw 'VS Code clone did not complete' }
-  # Validate the reviewed PR head rather than main until the PR is merged.
+  git clone --branch docs/windows-safe-update https://github.com/hgsk/edu.git $target
+  if ($LASTEXITCODE) { throw 'Clone failed' }
   git -C $target fetch origin $env:GITHUB_SHA
   if ($LASTEXITCODE) { throw 'Fetch failed' }
   git -C $target checkout --detach FETCH_HEAD
   if ($LASTEXITCODE) { throw 'Checkout failed' }
-  OpenCode @('--user-data-dir', $profile, '--reuse-window', $target, (Join-Path $target 'README.md'))
-  Start-Sleep -Seconds 8
+  OpenCode @('--user-data-dir', $profile, '--disable-extensions', '--disable-gpu', '--disable-workspace-trust', '--new-window', $target, (Join-Path $target 'README.md'))
+  Start-Sleep -Seconds 15
+  $window = Get-Process Code | Where-Object MainWindowHandle -ne 0 | Select-Object -First 1
+  if (-not $window) { throw 'VS Code window was not opened' }
+  $activator = New-Object -ComObject WScript.Shell
+  $activator.AppActivate($window.Id) | Out-Null
+  [UpdateWindow]::ShowWindow($window.MainWindowHandle, 3) | Out-Null
+  [UpdateWindow]::SetForegroundWindow($window.MainWindowHandle) | Out-Null
+  Start-Sleep -Seconds 3
   Capture '02-new-working-folder.png'
   Set-Location $target
   $summary = [System.Collections.Generic.List[string]]::new()
@@ -108,11 +107,15 @@ try {
   $summary | Set-Content $result -Encoding utf8
   OpenCode @('--user-data-dir', $profile, '--reuse-window', $result)
   Start-Sleep -Seconds 5
-  Keys '^b'
+  $activator.AppActivate($window.Id) | Out-Null
+  [UpdateWindow]::SetForegroundWindow($window.MainWindowHandle) | Out-Null
+  Start-Sleep -Seconds 2
   Capture '03-validation-results.png'
 } finally {
   Set-Location $original
   # All Code instances in this hosted job were started by this capture script.
   Get-Process Code -ErrorAction SilentlyContinue | Stop-Process -Force
+  Start-Sleep -Seconds 2
   if (Get-Process Code -ErrorAction SilentlyContinue) { throw 'VS Code cleanup failed' }
+  if ($explorer) { $explorer.Quit() }
 }

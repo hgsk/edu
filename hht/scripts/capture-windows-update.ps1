@@ -46,10 +46,14 @@ function Capture($name) {
     $bitmap.Save((Join-Path $output $name), [System.Drawing.Imaging.ImageFormat]::Png)
   } finally { $graphics.Dispose(); $bitmap.Dispose() }
 }
+function OpenCode($arguments) {
+  $quoted = $arguments | ForEach-Object { '"' + $_ + '"' }
+  Start-Process -FilePath $codePath -ArgumentList ($quoted -join ' ') | Out-Null
+}
 function Keys($keys) { [System.Windows.Forms.SendKeys]::SendWait($keys); Start-Sleep -Seconds 2 }
 function Paste($text) { Set-Clipboard $text; Keys '^v' }
 try {
-  & $codePath --user-data-dir $profile --disable-extensions --disable-workspace-trust --new-window
+  OpenCode @('--user-data-dir', $profile, '--disable-extensions', '--disable-workspace-trust', '--new-window')
   Start-Sleep -Seconds 15
   $window = Get-Process Code | Where-Object MainWindowHandle -ne 0 | Select-Object -First 1
   if (-not $window) { throw 'VS Code window was not opened' }
@@ -74,7 +78,7 @@ try {
   if ($LASTEXITCODE) { throw 'Fetch failed' }
   git -C $target checkout --detach FETCH_HEAD
   if ($LASTEXITCODE) { throw 'Checkout failed' }
-  & $codePath --user-data-dir $profile --reuse-window $target (Join-Path $target 'README.md')
+  OpenCode @('--user-data-dir', $profile, '--reuse-window', $target, (Join-Path $target 'README.md'))
   Start-Sleep -Seconds 8
   Capture '02-new-working-folder.png'
   Set-Location $target
@@ -102,7 +106,7 @@ try {
   }
   $result = Join-Path $output 'validation-results.txt'
   $summary | Set-Content $result -Encoding utf8
-  & $codePath --user-data-dir $profile --reuse-window $result
+  OpenCode @('--user-data-dir', $profile, '--reuse-window', $result)
   Start-Sleep -Seconds 5
   Keys '^b'
   Capture '03-validation-results.png'

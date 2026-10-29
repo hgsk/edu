@@ -74,6 +74,7 @@ jobs:
         run: python -m unittest discover -s hht/scripts -p "test_*.py"
 
       - name: Capture isolated Windows update screens
+        timeout-minutes: 6
         if: runner.os == 'Windows'
         shell: pwsh
         run: ./hht/scripts/capture-windows-update.ps1

@@ -8,6 +8,8 @@ using System.Runtime.InteropServices;
 public class UpdateWindow {
   [DllImport("user32.dll")] public static extern bool SetForegroundWindow(IntPtr hWnd);
   [DllImport("user32.dll")] public static extern bool ShowWindow(IntPtr hWnd, int nCmdShow);
+  [DllImport("user32.dll")] public static extern bool SetCursorPos(int x, int y);
+  [DllImport("user32.dll")] public static extern void mouse_event(uint flags, uint dx, uint dy, uint data, UIntPtr extra);
 }
 '@
 $original = (Get-Location).Path
@@ -34,7 +36,7 @@ New-Item -ItemType Directory -Force (Join-Path $profile 'User') | Out-Null
   "workbench.startupEditor": "none",
   "security.workspace.trust.enabled": false,
   "git.openRepositoryInParentFolders": "never",
-  "editor.fontSize": 16,
+  "editor.fontSize": 14,
   "editor.minimap.enabled": false
 }
 '@ | Set-Content (Join-Path $profile 'User/settings.json') -Encoding utf8
@@ -79,7 +81,15 @@ try {
   [UpdateWindow]::ShowWindow($window.MainWindowHandle, 3) | Out-Null
   [UpdateWindow]::SetForegroundWindow($window.MainWindowHandle) | Out-Null
   Start-Sleep -Seconds 3
-  Capture '02-new-working-folder.png'
+  # Dismiss the first-run sign-in dialog using its visible "Continue without Signing In" control.
+  # Coordinates verified against the 1024x768 hosted desktop capture from run 40868647844.
+  $bounds = [System.Windows.Forms.Screen]::PrimaryScreen.Bounds
+  if ($bounds.Width -ne 1024 -or $bounds.Height -ne 768) { throw 'Recheck first-run dialog coordinates for this desktop size' }
+  [UpdateWindow]::SetCursorPos(850, 610) | Out-Null
+  [UpdateWindow]::mouse_event(2, 0, 0, 0, [UIntPtr]::Zero)
+  [UpdateWindow]::mouse_event(4, 0, 0, 0, [UIntPtr]::Zero)
+  Start-Sleep -Seconds 5
+  Capture '02-new-working-folder.png' 
   Set-Location $target
   $summary = [System.Collections.Generic.List[string]]::new()
   $summary.Add("Working folder: $target")
@@ -100,7 +110,6 @@ try {
     $lines | Out-String | Add-Content (Join-Path $output 'full-validation.log')
     $summary.AddRange([string[]]($lines | ForEach-Object { "$_" } | Where-Object { $_ -match 'text:|COURSE VALIDATION:|^PASS:|^Ran |^OK|^FAILED' }))
     $summary.Add("Exit code: $exit")
-    $summary.Add('')
     if ($exit) { throw "Validation failed: $exe $arguments" }
   }
   $result = Join-Path $output 'validation-results.txt'
@@ -109,7 +118,7 @@ try {
   Start-Sleep -Seconds 5
   $activator.AppActivate($window.Id) | Out-Null
   [UpdateWindow]::SetForegroundWindow($window.MainWindowHandle) | Out-Null
-  Start-Sleep -Seconds 2
+  Keys '^b'
   Capture '03-validation-results.png'
 } finally {
   Set-Location $original

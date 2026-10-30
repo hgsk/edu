@@ -2,8 +2,8 @@
 
 [目次](../student-workbook.md) · [共通手順](./common.md#local-git-workflow) · [前の回：DAY 3](./day03.md) · [次の回：DAY 5](./day05.md)
 
-💾 **Gitでの記録：** [共通の作業手順](common.md#local-git-workflow)で、作業前後の変更を記録します。  
-作業後は `git tag -f day04-end`で、その日の最後のコミットに目印を付けます。
+💾 **記録と提出：** [共通手順](common.md#local-git-workflow)に沿って、教材更新の前に必要な成果と証拠を保護します。  
+[PR提出](common.md#submission-policy)と、教材の破棄・Pullは別の操作です。
 
 ### 📂 このDAYのフォルダーを開く
 

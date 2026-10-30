@@ -5,6 +5,9 @@
 PCのVS Codeで授業を行う場合は、[VS Codeでの進行資料](../docs/vscode-instructor-guide.md)と[受講者用ハンズオン手順](../docs/vscode-hands-on.md)を使います。  
 授業パックは共通で使えます。
 
+[10月29日版スライドとの照合・未確定事項](./slide-alignment-20261029.md)を確認します。  
+新運用の提出先・評価・実画面の確認が残っています。
+
 ## 授業前
 
 1. PCのVS Codeで本人用のローカルGitリポジトリを開き、[今日の授業パック](lessons/README.md)を選ぶ。
@@ -31,3 +34,5 @@ PCのVS Codeで授業を行う場合は、[VS Codeでの進行資料](../docs/vs
 `fixtures/emails/`の回答情報や講師用メモは学生に見せません。  
 接続先、認証情報、個人別の評価記録はリポジトリへコミットしません。  
 画像の出自と用途は[素材一覧](../fixtures/photographer-delivery/ASSET-MANIFEST.md)で確認します。
+
+[PR提出・レビューとCIの統合案内](./pr-integration-20261031.md)を確認します。  

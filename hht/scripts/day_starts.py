@@ -31,7 +31,7 @@ def validate(root: Path) -> list[str]:
                 target = (path.parent / unquote(parsed.path)).resolve()
                 if not target.is_relative_to(start) or not target.is_file():
                     errors.append(f'DAY {number} start has missing/external local file: {name}: {ref}')
-        workbook = (root / f'docs/workbook/day{number}.md').read_text(encoding='utf-8')
+        workbook = (root / f'docs/{"workbook" if int(number) < 10 else "legacy-workbook"}/day{number}.md').read_text(encoding='utf-8')
         for phrase in (f'hht/day{number}',):
             if phrase not in workbook:
                 errors.append(f'DAY {number} missing independent start instruction: {phrase}')

@@ -1,0 +1,71 @@
+name: Student Assignment
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+  workflow_call:
+    inputs:
+      day:
+        type: number
+        required: true
+      work-root:
+        type: string
+        required: true
+      records-root:
+        type: string
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  contract:
+    name: Submission checker (${{ matrix.os }})
+    if: github.repository == 'hgsk/edu'
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - run: python -m unittest discover -s hht/scripts -p test_student_submission.py
+
+  evidence:
+    name: Check student evidence
+    if: github.repository != 'hgsk/edu'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout trusted checker
+        uses: actions/checkout@v5
+        with:
+          repository: hgsk/edu
+          ref: main
+          path: trusted
+          persist-credentials: false
+      - name: Checkout student source without running it
+        uses: actions/checkout@v5
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
+          path: student
+          persist-credentials: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+      - name: Check evidence only
+        env:
+          SUBMISSION_DAY: ${{ inputs.day }}
+          WORK_ROOT: ${{ inputs.work-root }}
+          RECORDS_ROOT: ${{ inputs.records-root }}
+        run: >-
+          python trusted/hht/scripts/check_student_submission.py
+          --student student --day "$SUBMISSION_DAY"
+          --work-root "$WORK_ROOT" --records-root "$RECORDS_ROOT"
+          --summary "$GITHUB_STEP_SUMMARY"

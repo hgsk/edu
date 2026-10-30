@@ -1,6 +1,6 @@
 # パス・エスケープ実習 進行と検証
 
-学生向け条件は[DAY 11の正本](../../../docs/workbook/day11.md#python-path-escaping)を参照。フォーム課題の後に、GETのパス値・クエリ・テンプレート出力を比較する別枠実習です。PHP CLI課題がBLOCKEDでも、このFlask実習は独立して進められます。
+学生向け条件は[DAY 11の正本](../../../docs/legacy-workbook/day11.md#python-path-escaping)を参照。フォーム課題の後に、GETのパス値・クエリ・テンプレート出力を比較する別枠実習です。PHP CLI課題がBLOCKEDでも、このFlask実習は独立して進められます。
 
 `starter/`を別コピーへ複製し、`solution/app.py`と`solution/templates/notice.html`を重ねると通常版の正解を検証できます。`comparison/`は重ねません。比較アプリは通常アプリをimportせず、独立したプロセスで明示フラグを要求します。受理するHTMLは固定の無害なh2だけです。任意入力のエスケープ解除、JavaScript、Cookie・認証情報・外部送信は扱いません。
 

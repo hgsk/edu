@@ -17,6 +17,7 @@ from PIL import Image
 from workbook_navigation import workbook_day_link_errors
 from day_starts import validate as validate_day_starts
 from course_site import validate as validate_site
+from course_alignment import validate as validate_alignment
 from workbook_targets import validate as validate_targets
 
 
@@ -25,6 +26,7 @@ ERRORS: list[str] = []
 ERRORS.extend(validate_site(ROOT))
 ERRORS.extend(validate_day_starts(ROOT))
 ERRORS.extend(validate_targets(ROOT))
+ERRORS.extend(validate_alignment(ROOT))
 
 
 def require(condition: bool, message: str) -> None:
@@ -145,7 +147,7 @@ if release_approval.exists():
         require(term in approval_text, f"Day 13 release approval missing term: {term}")
 require("ポートフォリオ" in lesson_blocks[13], "Lesson 14 must be a portfolio lesson")
 require("ポートフォリオ" in lesson_blocks[14], "Lesson 15 must be a portfolio lesson")
-for term in ("差し戻し", "最終承認", "公開"):
+for term in ("同じportfolio", "必須にしません"):
     require(
         term in "".join(lesson_blocks[10:13]),
         f"Lessons 11-13 missing accelerated client-work term: {term}",
@@ -221,7 +223,7 @@ require('id="local-git-workflow"' in workbook, "Workbook missing canonical Git w
 require("Gitは全15回で使います" in workbook, "Workbook must require Git throughout the course")
 for block in workbook_days:
     number = int(re.match(r"# DAY (\d+)", block).group(1))
-    for term in ("#local-git-workflow", f"git tag -f day{number:02d}-end"):
+    for term in ("#local-git-workflow", "PR"):
         require(term in block, f"DAY {number} missing Git workflow continuation: {term}")
 policy_paths = (
     "docs/student-workbook.md", *(f"docs/workbook/{name}" for name in PART_NAMES), "docs/local-git.md", "student/work-records/README.md",
@@ -236,7 +238,7 @@ for command in ("git tag -f day01-end", "git status --short", "差分", "コミ�
     require(command in git_guide, f"Git reference missing operation: {command}")
 for name in ("common.md", "introduction.md", *DAY_NAMES):
     text = (ROOT / "docs/workbook" / name).read_text(encoding="utf-8")
-    require("提出" not in text and ".bundle" not in text,
+    require("提出用ZIPを作成" not in text and ".bundle" not in text,
             f"Obsolete hand-in instruction in {name}")
 student_portal = (ROOT / "student/README.md").read_text(encoding="utf-8")
 instructor_portal = (ROOT / "instructor/README.md").read_text(encoding="utf-8")

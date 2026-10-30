@@ -21,6 +21,7 @@ class IndependentStartsTest(unittest.TestCase):
         for number in range(1, 16):
             shutil.copytree(ROOT / f'day{number:02d}', self.root / f'day{number:02d}')
         shutil.copytree(ROOT / 'docs/workbook', self.root / 'docs/workbook')
+        shutil.copytree(ROOT / 'docs/legacy-workbook', self.root / 'docs/legacy-workbook')
         (self.root / 'scripts').mkdir()
         shutil.copy2(ROOT / 'scripts/day-starts.json', self.root / 'scripts/day-starts.json')
 

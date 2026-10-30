@@ -2,7 +2,7 @@
   "workbook_phrases": [
     "3ページの対象リンクには、すでに `class=\"menu-button\"` が付いています。",
     "メニューページのリンク先は `#menu-list`",
-    "どのDAYも、他のDAYを終えていなくても始められます。"
+    "DAY1〜9は、他のDAYを終えていなくても始められます。"
   ],
   "pages": [
     "index.html",

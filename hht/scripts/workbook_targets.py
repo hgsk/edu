@@ -19,6 +19,9 @@ def validate(root: Path) -> list[str]:
         config = json.loads(config_path.read_text(encoding="utf-8"))
         report = json.loads((root / "assets/workbook/targets/captures.json").read_text(encoding="utf-8"))
         workbook = read_workbook(root)
+        # Historical figures remain checked against unchanged source data.
+        for archive in (root / "docs/legacy-workbook").glob("day*.md"):
+            workbook += archive.read_text(encoding="utf-8").replace("](../../assets/", "](../assets/")
         same("scripts/workbook-targets.json", report["config_sha256"])
         if report["status"] != "PASS" or report["cleanup"] != "PASS":
             errors.append("Numbered figure capture or browser cleanup has not passed")

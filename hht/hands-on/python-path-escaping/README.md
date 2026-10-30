@@ -1,6 +1,6 @@
 # URLのパスで画面を変え、エスケープを比較する
 
-[DAY 11のパス・エスケープ実習](../../docs/workbook/day11.md#python-path-escaping)が、操作・考察・合格条件の正本です。Flaskフォーム課題の後に、HTTPルーティングとHTML出力を学びます。
+[DAY 11のパス・エスケープ実習](../../docs/legacy-workbook/day11.md#python-path-escaping)が、操作・考察・合格条件の正本です。Flaskフォーム課題の後に、HTTPルーティングとHTML出力を学びます。
 
 - `starter/`：安全な通常アプリの開始データ。
 - `tests/`：通常アプリと教育用比較の共通検査。

@@ -1,8 +1,9 @@
 # HTML・CSS講座の教材案内
 
 架空のカフェ「NORTH LIGHT COFFEE」の更新を題材に、15回・30時間で依頼の確認、HTML・CSSの修正、表示確認、公開を学びます。  
-DAY 14・15ではポートフォリオを扱います。  
-全15回に専用の開始データがあり、他のDAYの完成物がなくても取り組めます。
+DAY10〜15では同じポートフォリオを継続制作します。  
+DAY1〜9は基礎練習です。  
+後半の開始・保存方法は[共通手順](./docs/workbook/common.md)を確認します。
 
 ## はじめて使う人へ
 
@@ -20,11 +21,13 @@ PCのVS Codeで`Documents/edu`全体を開きます。
 - **変更を記録する：** [共通の作業手順と作業メモ](./docs/workbook/common.md#local-git-workflow)を確認します。
 - **VS Codeの操作を練習する：** [VS Codeハンズオン](./docs/vscode-hands-on.md)を使います。
 
-全15回でローカルGitを使い、制作ファイル・作業メモ・必要な画像の変更履歴を残します。
+教材更新と作品のローカルGit記録を分けます。  
+提出は[全DAYでPR](./docs/workbook/common.md#submission-policy)を使います。
 
 ## DAY別の教材フォルダー
 
-各DAYのフォルダーには、編集するHTML・CSS・画像が最初から入っています。  
+DAY1〜9には基礎練習用のHTML・CSS・画像があります。  
+旧DAY10〜15は参考用として保持し、現行後半の作業先にはしません。  
 クローンしたら、そのまま開いて作業できます。
 
 - [DAY 1](./day01/) · [DAY 2](./day02/) · [DAY 3](./day03/) · [DAY 4](./day04/) · [DAY 5](./day05/)

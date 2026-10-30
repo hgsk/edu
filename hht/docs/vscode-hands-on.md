@@ -114,7 +114,7 @@ Live Serverなど拡張機能固有の名前や `Go Live` は英語のまま表�
 クローンした`Documents/edu`を開きます。  
 左側のエクスプローラーで `README.md`と`hht`を確認します。  
 次の授業も同じフォルダーを開きます。  
-作業の記録には[共通手順](./workbook/common.md#local-git-workflow)のコミットとタグを使います。
+作業の記録には[共通手順](./workbook/common.md#local-git-workflow)で教材更新と作品の記録を区別します。
 
 ## 5 推奨事項からLive Serverを追加する
 
@@ -218,7 +218,7 @@ DAY課題ではホーム・メニュー・店舗案内をそれぞれ開きま�
 赤は削除、緑は追加です。  
 左側のファイル横の `＋` で対象を選び、上のメッセージ欄と **コミット** で記録します。
 
-コミットの名前とメールが未設定なら、[ローカルGitの作者設定](./local-git.md#day-1だけリポジトリを用意する)を先に行います。  
+コミットの名前とメールが未設定なら、[ローカルGitの作者設定](./workbook/common.md#clone-edu)を先に行います。  
 GitHubへのログイン設定ではありません。
 
 1. ソース管理を開き、変更ファイルをクリックします。
@@ -264,15 +264,10 @@ GitHubへ送るPushとは別です。
 
 ## 12 2回目以降の授業を進める
 
-1. VS Codeで前回の教材フォルダーを開き、ブランチと前回の変更状態を確認します。
-2. [学生向け入口](../student/README.md)から今回の課題を開き、講師から届いた依頼を読みます。  
-   操作を始める前に、依頼者・見る人・目的・何をどう変えるか・完成条件を確認します。
-3. `hht/references/cafe-site/index.html`をLive Serverで開き、開始時点を確認します。  
-   DAY 14〜15は `hht/references/portfolio-template/index.html` を使います。
-4. 計画 → 編集 → 保存 → ブラウザ確認 → 差分確認の順に進めます。  
-   毎回、作業記録とコミットを残します。
-5. 指定された練習用公開先で結果を確認します。  
-   [共通のGitの記録](./workbook/common.md#local-git-workflow)で履歴と成果物を渡します。
+[現行の共通手順](./workbook/common.md)に沿って教材を更新します。  
+DAY1〜9の基礎練習と、DAY10以降の教材外の同じportfolioを開き分けます。  
+提出は[全DAYのPR提出](./workbook/common.md#submission-policy)です。  
+このハンズオンの環境練習と、後半の必須課題を混同しないようにします。
 
 | 既存教材にある操作 | VS Codeでの操作 |
 |---|---|

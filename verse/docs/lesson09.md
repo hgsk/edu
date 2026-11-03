@@ -43,25 +43,27 @@
 プレイヤーとデータを結びつける置き場には、`weak_map` を使います。
 
 ```verse
-    PlayerProgress := class<concrete><persistable>:
+    player_progress := class<concrete><persistable>:
         var XP : int = 0
         var Level : int = 1
 
-    var ProgressByPlayer : weak_map(player, PlayerProgress) = map{}
+    var ProgressByPlayer : weak_map(player, player_progress) = map{}
 
-    GetOrCreateProgress(Player : player) : PlayerProgress =
+    GetOrCreateProgress(Player : player) : player_progress =
         if (Progress := ProgressByPlayer[Player]):
             Progress
         else:
-            NewProgress := PlayerProgress{}
+            NewProgress := player_progress{}
             set ProgressByPlayer[Player] = NewProgress
             NewProgress
 ```
 
 
-- **`<persistable>`：** この型のデータは保存対象にできる、という印です。保存できない型をフィールドに含めるとエラーになります。
+- **`<persistable>`：** この型のデータは保存対象にできる、という印です。
+  保存できない型をフィールドに含めるとエラーになります。
 
-- **`weak_map`：** キーは弱く保持されます。プレイヤーが長く不在でも、置き場自体が壊れないための仕組みです。
+- **`weak_map`：** キーは弱く保持されます。
+  プレイヤーが長く不在でも、置き場自体が壊れないための仕組みです。
 
 - **取得の定型：** 検索して、あればそれを返し、なければ作って入れてから返す、という形にします。
 
@@ -82,7 +84,7 @@
 - [ ] `<persistable>` と `weak_map` がそれぞれ何のためにあるか説明できる
 
 
-**演習：** ハイスコアを永続化する型 `PlayerBest`（フィールドは `var BestScore : int = 0`）を定義し、プレイヤーの記録を取得する関数を書いてください。
+**演習：** ハイスコアを永続化する型 `player_best`（フィールドは `var BestScore : int = 0`）を定義し、プレイヤーの記録を取得する関数を書いてください。
 
 
 [目次](../README.md) · [前の単元：第8単元 コレクション](./lesson08.md) · [次の単元：第10単元 スタイルと命名](./lesson10.md)

@@ -32,7 +32,7 @@ using { /Fortnite.com/Devices }
 using { /Verse.org/Simulation }
 using { /UnrealEngine.com/Temporary/Diagnostics }
 
-HelloDevice := class(creative_device):
+hello_device := class(creative_device):
     OnBegin<override>()<suspends> : void =
         Print("Hello, Verse!")
         Print("2 + 3 = {2 + 3}")
@@ -62,7 +62,7 @@ HelloDevice := class(creative_device):
 ### class(creative_device)
 
 
-`HelloDevice := class(creative_device):` は、「`creative_device` を土台にした `HelloDevice` というクラスを定義する」という意味です。  
+`hello_device := class(creative_device):` は、「`creative_device` を土台にした `hello_device` というクラスを定義する」という意味です。  
 `:=` は「定義する」の記号で、第3単元で詳しく扱います。  
 このクラスをビルドすると、UEFNのコンテンツブラウザーにデバイスとして現れ、島へ配置できるようになります。
 
@@ -79,7 +79,8 @@ HelloDevice := class(creative_device):
 ### Print
 
 
-`Print("...")` は、UEFNのログへ文字を出す関数です。  
+`Print("...")` は、文字をログへ出し、同時にゲーム画面にも表示する関数です。  
+画面への表示は、既定では2秒間です。  
 文字列の中に `{ }` を書くと、その中の式の結果を埋め込めます。  
 上の例では `{2 + 3}` の部分が `5` に置き換わって表示されます。
 
@@ -89,11 +90,18 @@ HelloDevice := class(creative_device):
 
 1. 島にデバイスを配置します。  
 2. ゲームを開始します。  
-3. デバイスの `OnBegin` が呼ばれ、`Print` の内容がログへ出ます。
+3. デバイスの `OnBegin` が呼ばれ、`Print` の内容が画面とログの両方へ出ます。
 
 
-画面には何も出ません。  
-最初の一歩は「ログに出ること」を成功として確認します。
+成功の確認は、画面とログの2か所で行います。  
+ゲーム画面に文字が約2秒表示されることと、ログにも同じ内容が残ることの両方を見ます。
+
+
+**実画面について（未完了）：** この単元の手順には、本来UEFNの実画面を掲載します。  
+対象は、デバイスの配置、セッションの開始、`Print` の画面表示とログの3場面です。  
+作成環境のPCにUEFN（Fortnite）がインストールされていないため、実画面はまだ撮影できていません。  
+再開条件は、UEFNをインストールし、この単元のコードでプロジェクトを作成できることです。  
+条件がそろい次第、撮影した画像を `verse/assets/` へ保存し、この節へ掲載します。
 
 
 ## 確認
@@ -104,6 +112,8 @@ HelloDevice := class(creative_device):
 - [ ] `OnBegin` が呼ばれるタイミングを説明できる
 
 - [ ] 文字列の `{ }` で式を埋め込む書き方が分かる
+
+- [ ] `Print` の結果が、画面とログの両方へ出ることを説明できる
 
 
 **演習：** `Print` の文を自分の好きな挨拶に変え、さらに `{10 * 5}` を使って計算結果も出すコードを書いてください。

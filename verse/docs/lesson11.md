@@ -18,11 +18,15 @@ EpicはUE6のゲームプレイの基盤としてこの構造を採用する計�
 中心の考え方は3つです。
 
 
-- **entity：** コンポーネントと子entityの入れ物です。それ自体では何もしません。
+- **entity：** コンポーネントと子entityの入れ物です。
+  それ自体では何もしません。
 
-- **component：** データと振る舞いを持つ再利用可能な部品です。entityに何を持たせるかで、そのentityが何者かが決まります。同じ種類のコンポーネントは、1つのentityに1つまでです。
+- **component：** データと振る舞いを持つ再利用可能な部品です。
+  entityに何を持たせるかで、そのentityが何者かが決まります。
+  同じ種類のコンポーネントは、1つのentityに1つまでです。
 
-- **prefab：** entityとコンポーネントの階層をまとめた再利用テンプレートです。何度も配置でき、元を直すと配置済みの全体へ反映されます。
+- **prefab：** entityとコンポーネントの階層をまとめた再利用テンプレートです。
+  何度も配置でき、元を直すと配置済みの全体へ反映されます。
 
 
 組み込みのコンポーネントには、位置を決めるTransform、見た目のMesh、ライト、Niagaraのエフェクト、音、キーフレームで動かすKeyframed Movementなどがあります。
@@ -36,7 +40,7 @@ Verseで部品を作るときは、`component` を土台にクラスを定義し
 ```verse
 using { /Verse.org/SceneGraph }
 
-MyComponent := class<final_super>(component):
+my_component := class<final_super>(component):
     @editable
     Speed : float = 1.0
 
@@ -55,9 +59,11 @@ MyComponent := class<final_super>(component):
 デバイスとの違いは、ライフサイクルの名前と動き方です。
 
 
-- `OnBeginSimulation` は、シミュレーション開始時に呼ばれます。デバイスと違い、編集モードでもプレイ中でも動きます。
+- `OnBeginSimulation` は、シミュレーション開始時に呼ばれます。
+  デバイスと違い、編集モードでもプレイ中でも動きます。
 
-- `OnSimulate` は継続処理の場所です。中断可能で、コンポーネントが破棄されると自動でキャンセルされます。
+- `OnSimulate` は継続処理の場所です。
+  中断可能で、コンポーネントが破棄されると自動でキャンセルされます。
 
 - `OnEndSimulation` は終了時の後片付けの場所です。
 
@@ -72,7 +78,7 @@ MyComponent := class<final_super>(component):
 using { /Verse.org/SceneGraph }
 using { /UnrealEngine.com/Temporary/Diagnostics }
 
-DoorComponent := class<final_super>(component):
+door_component := class<final_super>(component):
     OnBeginSimulation<override>() : void =
         (super:)OnBeginSimulation()
         if (MeshComponent := Entity.GetComponent[mesh_component]):
@@ -93,7 +99,7 @@ DoorComponent := class<final_super>(component):
 繰り返し使う設定は、`<concrete>` なデータクラスに切り出すと、エディタ上で並べて編集できます。
 
 ```verse
-KeyframeSegment := class<concrete>:
+keyframe_segment := class<concrete>:
     TargetEntity : ?entity = false
     AnimationDuration : float = 2.0
 ```

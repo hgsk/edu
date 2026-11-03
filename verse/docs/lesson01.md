@@ -22,11 +22,13 @@ Verseで書くのは、たとえば得点の管理、勝敗の判定、ボタン
 ## 言語としての特徴
 
 
-- **静的型付け：** 変数や関数の型が決まっていて、コンパイル時に検査されます。型の不一致は実行前にエラーになります。
+- **静的型付け：** 変数や関数の型が決まっていて、コンパイル時に検査されます。
+  型の不一致は実行前にエラーになります。
 
 - **関数論理言語：** 関数型の考え方を土台に、「失敗」を言語の仕組みとして持つ論理型の要素を組み合わせた設計です。
 
-- **不変がデフォルト：** 一度定義した値は書き換わりません。変える必要がある値だけを `var` で宣言します。
+- **不変がデフォルト：** 一度定義した値は書き換わりません。
+  変える必要がある値だけを `var` で宣言します。
 
 - **並行処理の組み込み：** 待つ、並べて動かす、といった非同期処理が言語の機能として用意されています。
 
@@ -60,7 +62,7 @@ using { /Fortnite.com/Devices }
 using { /Verse.org/Simulation }
 using { /UnrealEngine.com/Temporary/Diagnostics }
 
-HelloDevice := class(creative_device):
+hello_device := class(creative_device):
     OnBegin<override>()<suspends> : void =
         Print("Hello, Verse!")
 ```
@@ -72,7 +74,7 @@ HelloDevice := class(creative_device):
 
 - `OnBegin` が、ゲーム開始時に呼ばれる入口です。
 
-- `Print` でログへ文字を出しています。
+- `Print` で画面とログへ文字を出しています。
 
 
 見た目はPythonに近く、インデントでブロックを表します。  

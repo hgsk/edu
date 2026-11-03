@@ -26,7 +26,7 @@ using { /Fortnite.com/Devices }
 using { /Verse.org/Simulation }
 using { /UnrealEngine.com/Temporary/Diagnostics }
 
-GameManager := class(creative_device):
+game_manager := class(creative_device):
     @editable
     StartButton : button_device = button_device{}
 
@@ -52,6 +52,10 @@ GameManager := class(creative_device):
 `@editable` を付けた項目は、UEFNの詳細パネルに現れます。  
 島に配置したボタンデバイスを `StartButton` の欄へ割り当てると、コードからそのボタンを操作できるようになります。  
 `ScoreToWin` のような数値も `@editable` にすると、コードを書き換えずにエディタ側で調整できます。
+
+
+**実画面について（未完了）：** 詳細パネルでの割り当ての実画面は、まだ掲載できていません。  
+理由と再開条件は、第2単元の「実画面について（未完了）」と同じです。
 
 
 ### Subscribe
@@ -96,7 +100,8 @@ GameManager := class(creative_device):
 - [ ] `agent` から `player` へ変換するときに `if` が必要な理由を説明できる
 
 
-**演習：** 上の `GameManager` を改造し、ボタンが押された回数を数え、10回目で「目標達成です」と出すコードを書いてください。目標回数は `@editable` で変えられるようにしてください。
+**演習：** 上の `game_manager` を改造し、ボタンが押された回数を数え、10回目で「目標達成です」と出すコードを書いてください。  
+目標回数は `@editable` で変えられるようにしてください。
 
 
 [目次](../README.md) · [前の単元：第3単元 構文の基礎](./lesson03.md) · [次の単元：第5単元 失敗可能式とoption](./lesson05.md)

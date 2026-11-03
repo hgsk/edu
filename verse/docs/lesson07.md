@@ -35,7 +35,7 @@ using { /Fortnite.com/Devices }
 using { /Verse.org/Simulation }
 using { /UnrealEngine.com/Temporary/Diagnostics }
 
-StartManager := class(creative_device):
+start_manager := class(creative_device):
     @editable
     StartButton : button_device = button_device{}
 
@@ -73,8 +73,19 @@ StartManager := class(creative_device):
 
 
 `race` の中では複数の処理が並行に進み、最初に完了した時点で残りはキャンセルされます。  
-キャンセルされたタスクが途中まで進めた変更は、トランザクションの考え方で巻き戻されます。  
-この「失敗やキャンセルで巻き戻る」性質が、Verseの並行処理を安全にしている土台です。
+ただし、キャンセルは「そのタスクの続きを実行しない」という意味です。  
+キャンセルされたタスクが既に行った変更（表示した文字、有効にしたデバイス、書き換えた状態）は、自動では取り消されません。  
+失敗コンテキストの巻き戻し（第5単元・第6単元）は、失敗した計算の中だけの仕組みで、非同期タスクのキャンセルとは別物です。  
+後片付けが必要な処理は、`defer` で登録しておきます。
+
+```verse
+    WatchBriefly()<suspends> : void =
+        Print("見張りを開始します")
+        defer Print("見張りを終了します")
+        Sleep(10.0)
+```
+
+この例では、10秒たって終わるときも、外からキャンセルされるときも、終了の表示が必ず出ます。
 
 
 💡 **ヒント：**
@@ -98,7 +109,9 @@ StartManager := class(creative_device):
 
 - [ ] `spawn{ }` した処理と、呼び出し側の進み方の関係を説明できる
 
-- [ ] `race` で負けた側の処理がどうなるか説明できる
+- [ ] `race` で負けた側の処理はキャンセルされ、実行済みの変更は残ることを説明できる
+
+- [ ] 後片付けを `defer` で登録する理由を説明できる
 
 - [ ] `Subscribe` と `Await` の使い分けを説明できる
 

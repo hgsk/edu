@@ -10,7 +10,7 @@ UEFN（Unreal Editor for Fortnite）でゲームの仕組みを作るための�
 
 プログラミングの経験がある人を対象にしています。  
 他の言語との違いを意識しながら読めるよう、C++やPythonとの対比を各単元に入れています。  
-コード例はEpic公式の表記（PascalCase）にそろえています。
+コード例はEpic公式の表記（型名はlower_snake_case、それ以外はPascalCase）にそろえています。
 
 
 **教材の状態：** Markdownによる教材です。  

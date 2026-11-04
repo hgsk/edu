@@ -81,7 +81,8 @@ start_manager := class(creative_device):
 ```verse
     WatchBriefly()<suspends> : void =
         Print("見張りを開始します")
-        defer Print("見張りを終了します")
+        defer:
+            Print("見張りを終了します")
         Sleep(10.0)
 ```
 

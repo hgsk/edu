@@ -53,6 +53,9 @@ Verseには例外（try/catch）がありません。
 成功した前提で一直線に書き、失敗した場合の分岐は `else` に寄せるのがVerseの読みやすい形です。  
 C++のように「全部チェックしてから進む」書き方をすると、かえって読みにくくなります。
 
+なお、この例の `GetFortCharacter` を使うには、ファイル先頭の `using` に `/Fortnite.com/Characters` を追加してください。  
+標準の3つだけでは、実機検証で「Unknown member `GetFortCharacter` in `agent`」というエラーになりました。
+
 
 ## option型
 
@@ -77,13 +80,15 @@ C++のように「全部チェックしてから進む」書き方をすると�
 
 ```verse
     UseBonus(Score : int) : void =
-        if (Bonus := FindBonus(Score)?):
+        BonusOption := FindBonus(Score)
+        if (Bonus := BonusOption?):
             Print("ボーナスは {Bonus} です")
 ```
 
 
-`option` を返す関数自体も失敗可能なので、呼び出しは `[ ]` ではなく `?` で開く形が用意されています。  
-どちらの形でも、「ある前提で進み、なければ抜ける」という書き方は同じです。
+`option` を返す関数の結果は、いったん変数で受けてから `?` で開きます。  
+呼び出しを `if` の条件へ直接書くと、ロールバックできない呼び出しとしてコンパイルエラーになります（実機検証で確認しました）。  
+「ある前提で進み、なければ抜ける」という考え方は、どちらの形でも同じです。
 
 
 💡 **ヒント：**

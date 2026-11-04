@@ -20,11 +20,15 @@
         var Current : int = 0
         if (Existing := XPByPlayer[Player]):
             set Current = Existing
-        set XPByPlayer[Player] = Current + Amount
+        if (set XPByPlayer[Player] = Current + Amount):
+            Print("XPを加算しました")
 ```
 
 
 検索が失敗可能なので、「あれば使う、なければ0から始める」を `if` で書くのが定型です。  
+マップへの代入も失敗可能として扱われるため、`set` は `if` の条件の中で行います（実機検証で確認しました）。  
+このマップは、デバイスの中で持つ状態です。  
+モジュール直下に置ける `var` は、後で出てくる `weak_map` だけに限られます。  
 この書き方は、第5単元の `option` の考え方そのものです。
 
 
@@ -43,9 +47,9 @@
 プレイヤーとデータを結びつける置き場には、`weak_map` を使います。
 
 ```verse
-    player_progress := class<concrete><persistable>:
-        var XP : int = 0
-        var Level : int = 1
+    player_progress := class<final><persistable>:
+        XP : int = 0
+        Level : int = 1
 
     var ProgressByPlayer : weak_map(player, player_progress) = map{}
 
@@ -54,13 +58,16 @@
             Progress
         else:
             NewProgress := player_progress{}
-            set ProgressByPlayer[Player] = NewProgress
-            NewProgress
+            if (set ProgressByPlayer[Player] = NewProgress):
+                NewProgress
+            else:
+                NewProgress
 ```
 
 
 - **`<persistable>`：** この型のデータは保存対象にできる、という印です。
   保存できない型をフィールドに含めるとエラーになります。
+  `<persistable>` のクラスには `<final>` も必要で、フィールドは `var` を付けずに書きます（実機検証で確認しました）。
 
 - **`weak_map`：** キーは弱く保持されます。
   プレイヤーが長く不在でも、置き場自体が壊れないための仕組みです。
@@ -84,7 +91,7 @@
 - [ ] `<persistable>` と `weak_map` がそれぞれ何のためにあるか説明できる
 
 
-**演習：** ハイスコアを永続化する型 `player_best`（フィールドは `var BestScore : int = 0`）を定義し、プレイヤーの記録を取得する関数を書いてください。
+**演習：** ハイスコアを永続化する型 `player_best`（フィールドは `BestScore : int = 0`）を定義し、プレイヤーの記録を取得する関数を書いてください。
 
 
 [目次](../README.md) · [前の単元：第8単元 コレクション](./lesson08.md) · [次の単元：第10単元 スタイルと命名](./lesson10.md)

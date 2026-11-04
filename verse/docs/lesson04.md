@@ -54,8 +54,11 @@ game_manager := class(creative_device):
 `ScoreToWin` のような数値も `@editable` にすると、コードを書き換えずにエディタ側で調整できます。
 
 
-**実画面について（未完了）：** 詳細パネルでの割り当ての実画面は、まだ掲載できていません。  
-理由と再開条件は、第2単元の「実画面について（未完了）」と同じです。
+**実画面で確認しました：** `game_manager` を島へ配置すると、詳細パネルに「Game Manager」の欄が現れ、`StartButton` と `ScoreToWin` を割り当て・変更できます（2026年11月に実機で確認）。  
+`StartButton` は初期状態では「なし」になっていて、島に配置したボタンデバイスをここで選びます。
+
+
+![詳細パネルの@editable欄](../assets/lesson04-editable-fields.jpg)
 
 
 ### Subscribe

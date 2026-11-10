@@ -1,0 +1,22 @@
+[
+  {
+    "file": "hht\\docs\\workbook\\day07.md",
+    "markdown": "![基本編のHTMLを追加した実画面。3つの欄に架空の情報を入力している](../../assets/day78-complete/day07-input.jpg)"
+  },
+  {
+    "file": "hht\\docs\\workbook\\day07.md",
+    "markdown": "![フォームから移動した練習用の完了ページ。お店への問い合わせは送信されていないことと、フォームへ戻るリンクを表示している](../../assets/day78-complete/day07-complete.jpg)"
+  },
+  {
+    "file": "hht\\docs\\workbook\\day08.md",
+    "markdown": "![基本編の実画面。営業時間の1行に余白と左の枠線を付けて強調している](../../assets/day78-complete/day08-result.jpg)"
+  },
+  {
+    "file": "hht\\docs\\workbook\\day08.md",
+    "markdown": "![Day8のフォームから移動した練習用の完了ページ。お店への送信ではないことを説明している](../../assets/day78-complete/day08-complete.jpg)"
+  },
+  {
+    "file": "hht\\docs\\workbook\\day08.md",
+    "markdown": "![発展編の実画面。広い画面でスクロールし、フォームの上に短い営業時間の案内が残っている](../../assets/day78-complete/day08-sticky.jpg)"
+  }
+]

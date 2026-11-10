@@ -366,7 +366,7 @@
       "source": "day08/about.html",
       "mode": "page",
       "output": "assets/workbook/targets/day08.png",
-      "sha256": "d1ebab9dc28541e1fdf4e7e288240fe57590749d039359bd39647a18b9b59689",
+      "sha256": "dd94600bafa0d005d9b9e928fd64d691e85b49c0c36d8ba5ddd09a24455ee17e",
       "size": [
         1100,
         1537
@@ -809,7 +809,7 @@
     "day06/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
     "day07/about.html": "2fcd2bd4b2c1578517f6cff56e3949ad40cc67051b8244d1d9984d3861355531",
     "day07/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
-    "day08/about.html": "401b3b2351c94cecadf5c772ddc072c2f96a7fb4877e75d1595cc2bde966a741",
+    "day08/about.html": "53dbf1b7708cad7ca53d9039c7f66bd4a2df0e4d9c24333846d4f47177182dc1",
     "day08/css/style.css": "a2491e160a899d672d56a1041e2f1f2ca43968e6a954e1a34d831a570ee483a0",
     "day09/index.html": "62b1dbf546328b79f17c4756b959482f02793d657e5e54f01343d0a602016b92",
     "day09/css/style.css": "dfecdf7f8b10d096e1999b7a7eff9d3e5acf1d9938d2445aaff875a8280307c1",
@@ -833,5 +833,17 @@
     "pid": 23500,
     "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
     "startedAt": "2026-10-28T02:02:23.852Z"
-  }
+  },
+  "partial_recaptures": [
+    {
+      "figure": "day08",
+      "report": "assets/day78-complete/day08-numbered-capture.json",
+      "process": {
+        "pid": 38220,
+        "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+        "startedAt": "2026-11-10T15:33:01.373Z"
+      },
+      "cleanup": "PASS"
+    }
+  ]
 }

@@ -1,0 +1,44 @@
+{
+  "status": "PASS",
+  "japanese_review": {
+    "status": "PASS",
+    "reviewer": "subagent japanese_review",
+    "applied": [
+      "操作結果の明示",
+      "フォーカス表示の説明",
+      "radioとcheckboxの操作の区別",
+      "補足説明の完成形",
+      "paddingの変更対象",
+      "stickyの親要素の範囲",
+      "証拠画像の枚数"
+    ]
+  },
+  "tests": {
+    "workbook": 7,
+    "navigation": 14,
+    "course_validation": "PASS",
+    "local_links_and_images": 25,
+    "html": "PASS with explicit training-form configuration",
+    "css": "PASS"
+  },
+  "html_validation_notes": [
+    "既定チェックの初回結果はhtml-validation.logに保持。",
+    "送信しない練習フォームのためwcag/h32を除外。",
+    "開始データのtype省略を許容。",
+    "checkboxで同一nameを共有する構成を許容。"
+  ],
+  "browser": {
+    "day7": "ラベル、Tab順、非送信、縦並びCSSを確認。CSSキャッシュ更新後に最終画像を再撮影。",
+    "day8": "基本編の強調、stickyの上端維持、幅320pxで通常配置へ戻ることと横はみ出しがないことを確認。",
+    "actual_browser_zoom_200_percent": "NOT RUN",
+    "emulation_note": "幅320pxの確認とブラウザ200%ズームは別扱い。"
+  },
+  "screenshots": {
+    "day07-input.jpg": "a2d6c696440a13094beb0255112af2bf34c7cdfb0e3868dddafefb96c77d68f7",
+    "day08-mobile.jpg": "db12d7ac2d1c7bd671970179c14f63ca7ae3814d0c575c55052bff16f9771598",
+    "day08-result.jpg": "7d34b6bf6cea826328185c985c2603ee1ba33e976666fadd6f6f91e19cc160bc",
+    "day08-sticky-mobile.jpg": "54f29bec34d645307329e4c9747f69b07a8be7e4b1ade7138824f9e87fef9b58",
+    "day08-sticky.jpg": "99a5058bdb58bb833c4d58cd07af9c3b6bba0448cee75b13549cb4602769108e"
+  },
+  "cleanup": "PASS: 撮影用タブを閉じ、サーバーPID 29416 の終了を確認（専用プロセスを強制終了）"
+}

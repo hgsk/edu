@@ -1,0 +1,22 @@
+
+C:\Users\hgsk8\OneDrive\ドキュメント\北ハイテク HTML+CSS講座\hht\instructor\day78-basic\day7\about.html
+  44:4  error  <form> element must have a submit button  wcag/h32
+
+C:\Users\hgsk8\OneDrive\ドキュメント\北ハイテク HTML+CSS講座\hht\instructor\day78-basic\day8\about.html
+  41:1    error  Trailing whitespace                              no-trailing-whitespace
+  45:45   error  <input> is missing recommended "type" attribute  no-implicit-input-type
+  48:147  error  Duplicate form control name "interest"           form-dup-name
+
+C:\Users\hgsk8\OneDrive\ドキュメント\北ハイテク HTML+CSS講座\hht\instructor\day78-sticky\about.html
+  42:1    error  Trailing whitespace                              no-trailing-whitespace
+  46:45   error  <input> is missing recommended "type" attribute  no-implicit-input-type
+  49:147  error  Duplicate form control name "interest"           form-dup-name
+
+✖ 7 problems (7 errors, 0 warnings)
+
+More information:
+  https://html-validate.org/rules/wcag/h32.html
+  https://html-validate.org/rules/no-trailing-whitespace.html
+  https://html-validate.org/rules/no-implicit-input-type.html
+  https://html-validate.org/rules/form-dup-name.html
+

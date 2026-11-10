@@ -1,0 +1,24 @@
+127.0.0.1 - - [28/Oct/2026 18:49:10] "GET /hht/instructor/day78-basic/day7/about.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:49:10] "GET /hht/instructor/day78-basic/day7/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:49:10] code 404, message File not found
+127.0.0.1 - - [28/Oct/2026 18:49:10] "GET /favicon.ico HTTP/1.1" 404 -
+127.0.0.1 - - [28/Oct/2026 18:49:23] "GET /hht/instructor/day78-basic/day8/about.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:49:23] "GET /hht/instructor/day78-basic/day8/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:50:12] "GET /hht/instructor/day78-basic/day7/about.html HTTP/1.1" 304 -
+127.0.0.1 - - [28/Oct/2026 18:50:14] "GET /hht/instructor/day78-sticky/about.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:50:14] "GET /hht/instructor/day78-sticky/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:50:51] "GET /hht/instructor/day78-basic/day8/about.html HTTP/1.1" 304 -
+127.0.0.1 - - [28/Oct/2026 18:50:51] "GET /hht/instructor/day78-basic/day8/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [28/Oct/2026 18:50:52] "GET /hht/instructor/day78-sticky/about.html HTTP/1.1" 304 -
+127.0.0.1 - - [28/Oct/2026 18:50:52] "GET /hht/instructor/day78-sticky/css/style.css HTTP/1.1" 304 -
+127.0.0.1 - - [28/Oct/2026 18:50:52] "GET /hht/day07/about.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:50:52] "GET /hht/day07/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:50:52] "GET /hht/day08/about.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:50:52] "GET /hht/day08/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:53:06] "GET /hht/instructor/day78-basic/day7/about.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:53:19] "GET /hht/instructor/day78-basic/day7/about.html HTTP/1.1" 304 -
+127.0.0.1 - - [28/Oct/2026 18:53:19] "GET /hht/instructor/day78-basic/day7/about.html HTTP/1.1" 304 -
+127.0.0.1 - - [28/Oct/2026 18:53:33] "GET /hht/instructor/day78-basic/day7/about.html HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:53:33] "GET /hht/instructor/day78-basic/day7/css/style.css HTTP/1.1" 200 -
+127.0.0.1 - - [28/Oct/2026 18:53:33] code 404, message File not found
+127.0.0.1 - - [28/Oct/2026 18:53:33] "GET /favicon.ico HTTP/1.1" 404 -

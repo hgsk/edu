@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "html-validate:recommended"
+  ],
+  "rules": {
+    "no-implicit-input-type": "off",
+    "form-dup-name": [
+      "error",
+      {
+        "shared": [
+          "radio",
+          "button",
+          "reset",
+          "submit",
+          "checkbox"
+        ]
+      }
+    ]
+  }
+}

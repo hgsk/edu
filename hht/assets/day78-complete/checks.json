@@ -1,0 +1,40 @@
+{
+  "scope": "complete.html方式の実装と静的検証まで（ユーザー指定）",
+  "status": "PASS for authorized scope",
+  "workbook_tests": {
+    "status": "PASS",
+    "count": 7
+  },
+  "day_start_tests": {
+    "status": "PASS",
+    "count": 6
+  },
+  "course_validation": "PASS",
+  "html_validation": "PASS",
+  "html_validation_notes": [
+    "提出ボタンの必須チェックwcag/h32は有効。",
+    "開始データに既存のtype省略と同名checkboxを許容。",
+    "day08/about.htmlのみ既存の空白行の末尾空白を許容。"
+  ],
+  "local_links_and_images": {
+    "status": "PASS",
+    "checked": 22
+  },
+  "form_contracts": {
+    "status": "PASS",
+    "forms": 4,
+    "checks": [
+      "action=complete.html",
+      "method=get",
+      "submit button",
+      "required fields",
+      "email input type",
+      "complete page and return links",
+      "DAY7 workbook code matches example"
+    ]
+  },
+  "interactive_browser_test": "NOT RUN: Work設定でローカルブラウザ無効。ユーザーが今回は実装と静的検証までを指定。",
+  "new_flow_screenshots": "NOT RUN: 同上。未撮影の画像リンクは掲載していない。",
+  "numbered_day08_start_capture": "PASS: day08-numbered-capture.json",
+  "cleanup": "PASS: capture report PID 38220 の終了を確認。対話用ブラウザ・サーバーの新規起動なし。"
+}

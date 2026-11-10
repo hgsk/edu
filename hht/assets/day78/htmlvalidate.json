@@ -1,0 +1,21 @@
+{
+  "extends": [
+    "html-validate:recommended"
+  ],
+  "rules": {
+    "wcag/h32": "off",
+    "no-implicit-input-type": "off",
+    "form-dup-name": [
+      "error",
+      {
+        "shared": [
+          "radio",
+          "button",
+          "reset",
+          "submit",
+          "checkbox"
+        ]
+      }
+    ]
+  }
+}

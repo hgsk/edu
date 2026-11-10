@@ -1,0 +1,28 @@
+.127.0.0.1 - - [11/Nov/2026 00:45:01] code 408, message Form body timed out
+127.0.0.1 - - [11/Nov/2026 00:45:01] "POST /complete.html HTTP/1.1" 408 -
+.127.0.0.1 - - [11/Nov/2026 00:45:01] "POST /complete.html HTTP/1.1" 400 -
+127.0.0.1 - - [11/Nov/2026 00:45:01] "POST /complete.html HTTP/1.1" 400 -
+127.0.0.1 - - [11/Nov/2026 00:45:01] code 400, message Invalid form encoding
+127.0.0.1 - - [11/Nov/2026 00:45:01] "POST /complete.html HTTP/1.1" 400 -
+127.0.0.1 - - [11/Nov/2026 00:45:01] code 400, message Invalid form encoding
+127.0.0.1 - - [11/Nov/2026 00:45:01] "POST /complete.html HTTP/1.1" 400 -
+127.0.0.1 - - [11/Nov/2026 00:45:01] code 400, message Invalid form encoding
+127.0.0.1 - - [11/Nov/2026 00:45:01] "POST /complete.html HTTP/1.1" 400 -
+.127.0.0.1 - - [11/Nov/2026 00:45:02] "POST /complete.html HTTP/1.1" 303 -
+127.0.0.1 - - [11/Nov/2026 00:45:02] "GET /complete.html HTTP/1.1" 200 -
+127.0.0.1 - - [11/Nov/2026 00:45:02] "GET /complete.html HTTP/1.1" 200 -
+.127.0.0.1 - - [11/Nov/2026 00:45:02] "POST /complete.html HTTP/1.1" 400 -
+127.0.0.1 - - [11/Nov/2026 00:45:02] "POST /complete.html HTTP/1.1" 400 -
+127.0.0.1 - - [11/Nov/2026 00:45:02] "POST /complete.html HTTP/1.1" 400 -
+.127.0.0.1 - - [11/Nov/2026 00:45:03] code 404, message Unknown practice endpoint
+127.0.0.1 - - [11/Nov/2026 00:45:03] "POST /about.html HTTP/1.1" 404 -
+127.0.0.1 - - [11/Nov/2026 00:45:03] code 415, message Use an HTML form
+127.0.0.1 - - [11/Nov/2026 00:45:03] "POST /complete.html HTTP/1.1" 415 -
+127.0.0.1 - - [11/Nov/2026 00:45:03] code 413, message Form body is too large
+127.0.0.1 - - [11/Nov/2026 00:45:03] "POST /complete.html HTTP/1.1" 413 -
+127.0.0.1 - - [11/Nov/2026 00:45:03] "POST /complete.html HTTP/1.1" 400 -
+.
+----------------------------------------------------------------------
+Ran 6 tests in 3.221s
+
+OK

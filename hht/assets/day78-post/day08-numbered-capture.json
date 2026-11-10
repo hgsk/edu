@@ -1,0 +1,53 @@
+{
+  "method": "Real page capture with DOM number overlays; source-reference diagrams labelled separately",
+  "config_sha256": "d89aee0641dc359aba23c4fdb3df4a640e3d3b59486a1c36fe5724591555ca76",
+  "figures": [
+    {
+      "id": "day08",
+      "source": "day08/about.html",
+      "mode": "page",
+      "output": "assets/workbook/targets/day08.png",
+      "sha256": "dd94600bafa0d005d9b9e928fd64d691e85b49c0c36d8ba5ddd09a24455ee17e",
+      "size": [
+        1100,
+        1537
+      ],
+      "targets": [
+        {
+          "selector": "#about-hours",
+          "label": "来店情報の見出し",
+          "number": 1,
+          "box": {
+            "x": 22,
+            "y": 517.734375,
+            "width": 1056,
+            "height": 40.796875
+          }
+        },
+        {
+          "selector": "main > section:last-child",
+          "label": "隠してはいけない後続の本文",
+          "number": 2,
+          "box": {
+            "x": 0,
+            "y": 1112.359375,
+            "width": 1100,
+            "height": 844.859375
+          }
+        }
+      ]
+    }
+  ],
+  "sources": {
+    "scripts/capture-workbook.cjs": "6f6932ce2ef90cd14790449759175c427c9571ec39f0fb0f166181912e20f5b0",
+    "day08/about.html": "397410b80a7dd8d1aae95da213d6e77a98d03a1d6791837df9f38fad334a78bf",
+    "day08/css/style.css": "a2491e160a899d672d56a1041e2f1f2ca43968e6a954e1a34d831a570ee483a0"
+  },
+  "cleanup": "PASS",
+  "status": "PASS",
+  "process": {
+    "pid": 236,
+    "executable": "C:\\Users\\hgsk8\\AppData\\Local\\ms-playwright\\chromium_headless_shell-1234\\chrome-headless-shell-win64\\chrome-headless-shell.exe",
+    "startedAt": "2026-11-10T15:43:28.256Z"
+  }
+}

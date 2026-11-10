@@ -1,0 +1,67 @@
+{
+  "status": "PASS for implementation and automated validation",
+  "flow": "POST -> local receiver validation -> 303 -> GET complete.html",
+  "storage": "Received fields printed to stdout; no server-managed file/database storage or email sending",
+  "bind": "127.0.0.1 only",
+  "http_tests": {
+    "status": "PASS",
+    "tests": 17,
+    "cases": [
+      "valid POST, 303, completion GET and refresh",
+      "required fields and email",
+      "missing/duplicate values, encoding and field limit",
+      "endpoint/content-type/body size",
+      "incomplete body timeout",
+      "all supplied form methods and completion files",
+      "DAY7/DAY8 folders copied outside repository: standalone receiver POST/303/GET"
+    ]
+  },
+  "material_tests": {
+    "passed": 27,
+    "skipped": 1
+  },
+  "course_validation": "PASS",
+  "html_validation": "PASS",
+  "local_links": {
+    "status": "PASS",
+    "checked": 37
+  },
+  "numbered_day08_screenshot": "PASS: existing repository capture utility; actual page screenshot refreshed",
+  "interactive_browser_validation": "NOT RUN: previous Work browser setting disabled; no interactive browser actions attempted",
+  "terminal_startup_screenshot": "NOT RUN",
+  "cleanup": "PASS: test HTTP listeners closed and worker/server threads joined; test run completed.",
+  "push": "NOT RUN",
+  "folder_server_tests": {
+    "total": 31,
+    "passed": 30,
+    "skipped": 1
+  },
+  "entrypoints": [
+    "hht/day07/server.py",
+    "hht/day08/server.py",
+    "hht/instructor/day78-basic/day7/server.py",
+    "hht/instructor/day78-basic/day8/server.py",
+    "hht/instructor/day78-sticky/server.py"
+  ],
+  "startup": "Run python server.py inside the DAY folder; repeated runs reuse the same folder/version on that port",
+  "startup_idempotency": {
+    "status": "PASS",
+    "same_folder": "Existing listener reused; repeated CLI returns normally with URL",
+    "concurrent_start": "Exactly one listener created, one invocation reused it",
+    "different_folder": "Rejected without stopping the existing server",
+    "different_version": "Rejected with restart guidance",
+    "other_application": "Rejected without stopping the existing application",
+    "readiness_timeout": "Bounded retries; test PASS",
+    "identity": "Resolved folder fingerprint and loaded server source fingerprint; absolute paths not exposed"
+  },
+  "received_data_logging": {
+    "status": "PASS",
+    "destination": "stdout of the running server; flushed per POST",
+    "format": "[POST受信] followed by one JSON record containing path and fields",
+    "fields": "All parsed fields, including repeated checkbox values as arrays",
+    "validation_errors": "Parsed invalid field values are logged as received; malformed encoding is not logged as form fields",
+    "escaping": "JSON escapes newlines and terminal control characters",
+    "terminal_encoding": "cp932 with emoji tested; ASCII JSON fallback preserves validity",
+    "completion_get": "Does not log another POST record"
+  }
+}

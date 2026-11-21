@@ -6,6 +6,9 @@
 **追加講座：** [ゲーム・プログラミングのための基礎数学](./math/index.html)（アニメーション・入力操作付き）。  
 [講座案内](./math/README.md)。
 
+**追加講座：** [UEFN Verse講座](./verse/index.html)（コード例と確認付き・12単元）。  
+[講座案内](./verse/README.md)。
+
 架空のカフェサイトの更新を通して、HTML・CSSから確認・公開まで学ぶ15回（30時間）の教材です。
 
 **授業の入口：** [学生ワークブックの目次](./hht/docs/student-workbook.md)。  
